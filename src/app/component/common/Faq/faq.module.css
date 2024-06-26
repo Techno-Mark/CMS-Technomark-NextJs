@@ -1,0 +1,71 @@
+.faqsection.title-text {
+  text-align: left;
+  width: 80%;
+}
+
+.cardheader {
+  position: relative;
+}
+
+.cardheader.collapsed:after {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  /* content: url(../images/plus-circle.png); */
+}
+
+.cardheader:after {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.55rem;
+  /* content: url(../images/minus-circle.png); */
+}
+
+.cardheader {
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #bbc2cd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cardheader:hover {
+  border-color: #1d3557;
+  background: rgba(22, 137, 68, 0.05);
+}
+
+.cardtitle {
+  margin-bottom: 0;
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.cardtitle span {
+  margin-right: 15px;
+  font-weight: 400;
+}
+
+.cardbody {
+  margin-left: 25px;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.cardbody p {
+  color: #1d3557;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+/* .cardtitle::after{
+    content: url(https://tm-html-phi.vercel.app/assets/images/plus-circle.png) !important;
+} */
+
+.faqimg{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}

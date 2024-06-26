@@ -1,0 +1,36 @@
+/******GUATANTEE TECHNOMARK SECTION START*****/
+
+.iconTextArea .inlineIcon {
+  display: flex;
+  align-items: center;
+}
+
+.iconTextArea {
+  margin-bottom: 2.5rem;
+}
+
+.iconTextArea:last-child {
+  margin-bottom: 0;
+}
+
+.iconTextArea .inlineIcon h4 {  
+  margin-bottom: 1rem;
+  color: #1d3557;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  margin-left: 20px;
+}
+
+.iconTextArea p {
+  color: #1d3557;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  width: 80%;
+  padding-left: 3.5rem;
+}
+
+.checkicon img{
+  width: 2rem;
+}

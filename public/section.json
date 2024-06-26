@@ -1,0 +1,404 @@
+{
+  "homeSection": {
+    "title": "We helps you rapidly adapt future-enabled"
+  },
+  "techstartup": {
+    "title": "Take your startup to the next level with the best of <b>Techno</b><span>Mark</span>",
+    "subtitle": "As Startup Technology Partners, We craft products for global startups, Contributing significantly to their success stories"
+  },
+  "techIcons": [
+    {
+      "title": "Meet Your <span>Diverse</span>",
+      "data": [
+        {
+          "src": "/images/android.png",
+          "alt": "Android"
+        },
+        {
+          "src": "/images/Apple_logo.png",
+          "alt": "Apple"
+        },
+        {
+          "src": "/images/kotlin.png",
+          "alt": "kotlin"
+        },
+        {
+          "src": "/images/swift.png",
+          "alt": "swift"
+        },
+        {
+          "src": "/images/react-native.png",
+          "alt": "react-native"
+        },
+        {
+          "src": "/images/flutter.png",
+          "alt": "flutter"
+        },
+        {
+          "src": "/images/react.png",
+          "alt": "react"
+        },
+        {
+          "src": "/images/next-js.png",
+          "alt": "nextjs"
+        },
+        {
+          "src": "/images/angular.png",
+          "alt": "Angular9"
+        },
+        {
+          "src": "/images/js-icon.png",
+          "alt": "javascript"
+        },
+        {
+          "src": "/images/jquery.png",
+          "alt": "jquery"
+        },
+        {
+          "src": "/images/html-icon.png",
+          "alt": "html"
+        },
+        {
+          "src": "/images/node.png",
+          "alt": "node"
+        },
+        {
+          "src": "/images/php-icon.png",
+          "alt": "php"
+        },
+        {
+          "src": "/images/python-icon.png",
+          "alt": "python"
+        },
+        {
+          "src": "/images/dotnet.png",
+          "alt": "dotnet"
+        },
+        {
+          "src": "/images/laravel-icon.png",
+          "alt": "laravel"
+        },
+        {
+          "src": "/images/Ruby_On_Rails.png",
+          "alt": "ruby on rails"
+        }
+      ]
+    }
+  ],
+  "methodology":[
+    {
+      "title": "Our <span>Methodology</span> in Action",
+      "subtitle" : "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap.",
+      "data": [
+        {
+          "cardNumber": "01",
+          "title": "Assess",
+          "description": "Scrutinize project architecture, infrastructure, performance, & security.",
+          "details": [
+            "Technology Decisions",
+            "Architectural Design & Patterns",
+            "Infrastructure and Deployment Structures",
+            "Security Assessment",
+            "Code and Quality Review",
+            "Performance Scores",
+            "Development Process Audit"
+          ]
+        },
+        {
+          "cardNumber": "02",
+          "title": "Plan",
+          "description": "Identify project goals, scope, resources, timeline, and risks.",
+          "details": [
+            "Project Goals",
+            "Scope Definition",
+            "Resource Allocation",
+            "Timeline Planning",
+            "Risk Management"
+          ]
+        },
+        {
+          "cardNumber": "03",
+          "title": "Design",
+          "description": "Create UI/UX designs, system architecture, and database schema.",
+          "details": [
+            "UI/UX Designs",
+            "System Architecture",
+            "Database Schema"
+          ]
+        },
+        {
+          "cardNumber": "04",
+          "title": "Execute",
+          "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap.",
+          "details": [
+            "Roadmap Creation",
+            {
+              "title": "Agile Practices",
+              "items": [
+                "Sprint Planning",
+                "Sprint Development",
+                "Sprint Review"
+              ]
+            },
+            "Infrastructure and Deployment Structures",
+            "Security Assessment",
+            "Code and Quality Review",
+            "Performance Scores",
+            "Development Process Audit"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Our Core <span>Services</span>",
+      "subtitle" : "Foundational Excellence",
+      "data":[
+        {
+            "icon": "/images/enterprise.png",
+            "text": "Enterprise Software",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        },
+        {
+            "icon": "/images/hire-develop.png",
+            "text": "Hire Developers",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform.",
+            "alt": "hire developer"
+        },
+        {
+            "icon": "/images/mobile-programming.png",
+            "text": "Mobile Apps",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "Mobile Apps"
+        },
+        {
+            "icon": "/images/cloud-add.png",
+            "text": "Cloud Native",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        },
+        {
+            "icon": "/images/cpu-charge.png",
+            "text": "AI Development",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        },
+        {
+            "icon": "/images/airdrop.png",
+            "text": "IoT App",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        },
+        {
+            "icon": "/images/convert-3d-cube.png",
+            "text": "Blockchain",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        },
+        {
+            "icon": "/images/shopping-cart.png",
+            "text": "Ecommerce",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform",
+            "alt": "enterprise"
+        }
+       
+    ]
+    }
+  ],
+  "casestudy": [
+    {
+      "title": "Case Studies",
+      "subtitle" : "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges.",
+      "data": [
+        {
+          "title": "Airattix",
+          "image": "/images/Airattrix.png",
+          "text": "Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+          "subpoints": [
+            "Core Technology: Angular JS | Flutter",
+            "Number of Developers: 5",
+            "Type Of Service: Accelerator"
+          ],
+          "video": "/images/Case-study.mp4",
+          "additionalTitle": "Results",
+          "additionalPoints": [
+            { "score": "90%", "description": "SEO Score" },
+            { "score": "38%", "description": "Conversion Rate" },
+            { "score": "2 X", "description": "Reach" },
+            { "score": "2 X", "description": "Team Scaling" }
+          ]
+        },
+        {
+          "title": "Airattix",
+          "image": "/images/Airattrix.png",
+          "text": "Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+          "subpoints": [
+            "Core Technology: Angular JS | Flutter",
+            "Number of Developers: 5",
+            "Type Of Service: Accelerator"
+          ],
+          "video": "/images/Case-study.mp4",
+          "additionalTitle": "Results",
+          "additionalPoints": [
+            { "score": "90%", "description": "SEO Score" },
+            { "score": "38%", "description": "Conversion Rate" },
+            { "score": "2 X", "description": "Reach" },
+            { "score": "2 X", "description": "Team Scaling" }
+          ]
+        },
+        {
+          "title": "Airattix",
+          "image": "/images/Airattrix.png",
+          "text": "Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+          "subpoints": [
+            "Core Technology: Angular JS | Flutter",
+            "Number of Developers: 5",
+            "Type Of Service: Accelerator"
+          ],
+          "video": "/images/Case-study.mp4",
+          "additionalTitle": "Results",
+          "additionalPoints": [
+            { "score": "90%", "description": "SEO Score" },
+            { "score": "38%", "description": "Conversion Rate" },
+            { "score": "2 X", "description": "Reach" },
+            { "score": "2 X", "description": "Team Scaling" }
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "title": "Frequently Asked <span>Questions</span>",
+      "data": [
+        {
+            "question": "How can IT outsourcing benefit our startup?",
+            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge."
+        },
+        {
+            "question": "Can a small business benefit from IT services provided by a startup de",
+            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge."
+        },
+        {
+            "question": "Can we scale IT solutions as our startup grows?",
+            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge."
+        },
+        {
+            "question": "What security measures are in place to protect our sensitive data?",
+            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge."
+        },
+        {
+            "question": "What is the typical timeframe for implementing IT solutions for startups?",
+            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge."
+        }
+    ]
+    }
+  ],
+  "client": [
+    {
+      "title": "Clients <span>Speak</span>",
+      "subtitle" : "Dont’t take our word for it",
+      "data": [
+        {
+          "name": "Client One",
+          "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+          "designation": "CEO, Company One",
+          "profileImage": "/images/client-1.png",
+          "companyLogo": "/images/Airattrix.png"
+        },
+        {
+          "name": "Client Two",
+          "testimonial": "The team was very supportive and the results were fantastic!",
+          "designation": "Marketing Director, Company Two",
+          "profileImage": "/images/client-2.png",
+          "companyLogo": "/images/Givsum.png"
+        },
+        {
+          "name": "Client Three",
+          "testimonial": "I highly recommend their services. Professional and efficient.",
+          "designation": "CTO, Company Three",
+          "profileImage": "/images/client-3.png",
+          "companyLogo": "/images/hls-logo.png"
+        }
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Awards & Recognition",
+      "data": [
+        { "src": "/images/award1.png", "alt": "Android" },
+        { "src": "/images/award2.png", "alt": "Android" },
+        { "src": "/images/award3.png", "alt": "Android" },
+        { "src": "/images/award4.png", "alt": "Android" },
+        { "src": "/images/award5.png", "alt": "Android" },
+        { "src": "/images/award6.png", "alt": "Android" },
+        { "src": "/images/award7.png", "alt": "Android" },
+        { "src": "/images/award8.png", "alt": "Android" },
+        { "src": "/images/award9.png", "alt": "Android" },
+        { "src": "/images/award10.png", "alt": "Android" },
+        { "src": "/images/award11.png", "alt": "Android" },
+        { "src": "/images/award12.png", "alt": "Android" }
+      ]
+    }
+  ],
+  "achievement": [
+    {
+      "title": "A Legacy of 15 Years of Trust with",
+      "subtitle" : "Within the market, among customers, and with our people. <span> Pacific Group of Companies </span>",
+      "data": [
+        {
+            "number": "4000+",
+            "title": "Happy Customers"
+        },
+        {
+            "number": "1000+",
+            "title": "Professionals"
+        },
+        {
+            "number": "4000",
+            "title": "Locations"
+        }
+    ]
+    
+    }
+  ],
+  "guarantee": [
+    {
+      "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+      "videosrc": "/images/generalvideo.mp4",
+      "data": [
+        {
+          "title": "Build Right. Build Smart",
+          "description": "We float the product canvas to all stakeholders with information lik."
+        },
+        {
+          "title": "Ship Early. Ship Often",
+          "description": "We float the product canvas to all stakeholders with information lik."
+        },
+        {
+          "title": "We engineer. We deliver",
+          "description": "We float the product canvas to all stakeholders with information lik."
+        }
+      ]
+    }
+  ],
+  "formsection": [
+    {
+      "title": "What will happen next?",
+      "data": [
+        {
+          "text":  "We’ll reach out to you within 24 hours."
+        },
+        {
+          "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+        },
+        {
+          "text": " You can start 15-days risk-free trial with us."
+        }
+      ]
+    }
+  ]
+}

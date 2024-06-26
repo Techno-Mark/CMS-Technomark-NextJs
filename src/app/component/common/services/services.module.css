@@ -1,0 +1,101 @@
+.servicesbox {
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #bbc2cd;
+  border-top: 1px solid #bbc2cd;
+  padding: 3rem 1rem;
+}
+.servicerightborder {
+  border-right: none !important;
+}
+.servicesbox .icon {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    rgba(40, 74, 121, 0.8) 0%,
+    rgba(29, 53, 87, 0.8) 100%
+  );
+  line-height: 5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 100px;
+  outline: 6px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.servicesbox .icon img {
+  max-width: 2.5rem;
+}
+.servicesbox:hover .icon {
+  border-radius: 100px;
+  outline: 6px solid rgba(22, 137, 68, 0.5);
+  background: #1d3557;
+}
+
+.servicesbox .servicetitle {
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  letter-spacing: 0.48px;
+  margin-bottom: 1.25rem;
+  text-transform: capitalize;
+}
+
+.servicesbox .servicedescribe {
+  color: #1d3557;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.servicesinnerbox {
+  transition: 0.8s;
+  margin-bottom: 2rem;
+}
+
+.servicesbox:hover .servicesinnerbox {
+  transform: translateY(-20px);
+}
+
+.servicesbox .moresection {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.servicesbox .moresection a {
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #168944;
+}
+
+.servicesbox:hover .moresection a {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .servicesbox {
+    width: 90%;
+    margin: 0 auto 20px;
+    padding-top: 40px;
+    border: 1px solid #bbc2cd !important;
+  }
+  .servicesbox {
+    border-right: 1px solid #bbc2cd !important;
+  }
+}

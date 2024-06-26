@@ -1,0 +1,116 @@
+.coreservices {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f8fafb;
+}
+.meetdiverse {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f8fafb;
+  z-index: 2;
+}
+.cmptrustsection,
+.awardsection {
+  background: #fff;
+}
+.faqsection {
+  position: relative;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.faqsection h2 {
+  text-align: left;
+}
+.leftbubblecircle {
+  position: absolute;
+  left: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 0;
+}
+.rightbubblecircle {
+  position: absolute;
+  right: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: -1;
+}
+.casestudiessection h2 {
+  text-align: left;
+}
+.casestudiessection .casestudytitle {
+  position: relative;
+  text-align: left;
+  margin-left: 110px;
+}
+.casestudiessection .casestudytitle::before {
+  content: "";
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  left: -7.2rem;
+  background: linear-gradient(#168944 100%, #40aa46 100%);
+  top: 17px;
+}
+.clientspeaksection {
+  position: relative;
+  z-index: 1;
+}
+.clientcurve {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.guaranteetmsection {
+  border: 1px solid #e8ebee;
+  background: #e7f8ea;
+  box-shadow: 10px 0px 0px 0px #fff;
+}
+.guaranteetmsection .videoarea video {
+  object-fit: initial;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.guaranteetmsection .videoarea {
+  position: relative;
+}
+
+.guaranteetmsection .videoarea .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out all;
+}
+
+.guaranteetmsection .videoarea .play-btn:hover {
+  background: #f13c31;
+}
+
+.guaranteetmsection .videoarea .play-btn:hover svg path {
+  fill: #ffffff;
+}
+
+.formsection {
+  border-top: 1px solid #e8ebee;
+  border-bottom: 1px solid #e8ebee;
+  background: #fcfffd;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .guaranteetmsection .videoarea {
+    padding-bottom: 20px;
+  }
+}

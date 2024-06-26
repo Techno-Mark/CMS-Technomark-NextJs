@@ -1,0 +1,85 @@
+.client-speak-section .client-curve {
+  position: absolute;
+  top: 0;
+}
+
+.client-slide-wrapper .slick-list {
+  overflow: visible;
+}
+
+.clientslideinner {
+  position: relative;
+  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.08);
+  border: 1.292px solid #bbc2cd;
+  background: #fff;
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.clientslideinner .textarea {
+ flex: 2;
+}
+
+.clientslideinner .clientpic {
+  flex: 1;
+}
+.clientslideinner .clientpic img{
+  margin-left: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logobox {
+  border: 1px solid #e8ebee;
+  display: inline-block;
+  padding: 3rem 5rem;
+}
+
+.textbox {
+  padding: 2.5rem;
+}
+
+.textbox p {
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 3.5rem;
+  width: 95%;
+}
+
+.textbox h4 {
+  color: #1d3557;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.textbox h6 {
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 3rem;
+  margin-bottom: 0;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .clientslideinner  {
+    flex-direction: column-reverse;
+    padding-top: 150px;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  .logobox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }  
+  .clientslideinner .clientpic {
+    padding-inline: 2.5rem; 
+  }
+}
