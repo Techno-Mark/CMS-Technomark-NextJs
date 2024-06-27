@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = process.env.api_url;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export const getdata = async (param: string) => {
   console.log("apiEndpoint", API_URL);
 
