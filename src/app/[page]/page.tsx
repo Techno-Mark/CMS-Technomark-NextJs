@@ -1,24 +1,23 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import TitleSection from '@component/common/title/page';
-import Homesection from "./_homesection/page";
+"use client";
+import GuaranteePoints from "@/app/component/common/guaranteepoint/page";
+import Video from "@/app/component/common/video/video";
+import Faq from "@app/component/common/Faq/page";
+import Achivement from "@app/component/common/achivement/page";
+import CaseStudy from "@app/component/common/casestudy/page";
+import Client from "@app/component/common/client/page";
+import FormSection from "@app/component/common/formsection/formsection";
+import MethodologyBox from "@app/component/common/methodologybox/page";
+import Services from "@app/component/common/services/page";
+import Singleaward from "@app/component/common/singleaward/page";
+import Techicons from "@app/component/common/techicons/page";
 import TectStartupBg from "@app/component/tect-startup-bg/page";
-import MethodologyBox from '@app/component/common/methodologybox/page';
-import Services from '@app/component/common/services/page';
-import CaseStudy from '@app/component/common/casestudy/page';
-import Techicons from '@app/component/common/techicons/page';
-import GuaranteePoints from '@/app/component/common/guaranteepoint/page';
-import Video from '@/app/component/common/video/video';
-import Client from '@app/component/common/client/page'
-import Achivement from '@app/component/common/achivement/page';
-import Faq from '@app/component/common/Faq/page';
-import Singleaward from '@app/component/common/singleaward/page';
-import FormSection from '@app/component/common/formsection/formsection'
-import Loading from "@common/loading/loading"
-import styles from './home.module.css'
-import { getdata } from '../api/api';
-
+import Loading from "@common/loading/loading";
+import TitleSection from "@component/common/title/page";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { getdata } from "../api/api";
+import Homesection from "./_homesection/page";
+import styles from "./home.module.css";
 
 interface SectionData {
   title?: string;
@@ -64,8 +63,6 @@ const Page: React.FC = () => {
     fetchData();
   }, []);
 
-
-
   return (
     <>
       {homeData != null && (
@@ -77,19 +74,41 @@ const Page: React.FC = () => {
               <img src="/images/gradient-bubble.svg" alt="bubble" />
             </div>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.methodology[0].title, subtitle: homeData.methodology[0].subtitle }} titleClassName="methodologytitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.methodology[0].title,
+                  subtitle: homeData.methodology[0].subtitle,
+                }}
+                titleClassName="methodologytitle"
+              />
               <MethodologyBox props={homeData.methodology} />
             </div>
           </section>
           <section className={`${styles.coreservices} tm-section`}>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.services[0].title, subtitle: homeData.services[0].subtitle }} titleFirst={false} titleClassName="servicestitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.services[0].title,
+                  subtitle: homeData.services[0].subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="servicestitle"
+              />
               <Services props={homeData.services} />
             </div>
           </section>
-          <section className={`${styles.casestudiessection} tm-section bg-white`}>
+          <section
+            className={`${styles.casestudiessection} tm-section bg-white`}
+          >
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.casestudy[0].title, subtitle: homeData.casestudy[0].subtitle }} titleFirst={true} titleClassName="casestudytitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.casestudy[0].title,
+                  subtitle: homeData.casestudy[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="casestudytitle"
+              />
               <CaseStudy props={homeData.casestudy} />
             </div>
           </section>
@@ -98,18 +117,32 @@ const Page: React.FC = () => {
               <img src="/images/gradient-bubble.svg" alt="bubble" />
             </div>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.techIcons[0].title, subtitle: homeData.techIcons[0].subtitle }} titleFirst={true} titleClassName="meetdivresetitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.techIcons[0].title,
+                  subtitle: homeData.techIcons[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="meetdivresetitle"
+              />
               <Techicons props={homeData.techIcons} />
             </div>
           </section>
           <section className={`${styles.guaranteetmsection} tm-section`}>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.guarantee[0].title }} titleFirst={true} titleClassName="guaranteetitle" />
+              <TitleSection
+                sectionData={{ title: homeData.guarantee[0].title }}
+                titleFirst={true}
+                titleClassName="guaranteetitle"
+              />
               <div className="flex flex-wrap">
                 <div className="lg:w-1/2 md:w-full">
                   <div className={styles.videoarea}>
                     <video loop autoPlay muted>
-                      <source src={homeData.guarantee[0].videosrc} type="video/mp4" />
+                      <source
+                        src={homeData.guarantee[0].videosrc}
+                        type="video/mp4"
+                      />
                     </video>
                   </div>
                 </div>
@@ -122,17 +155,37 @@ const Page: React.FC = () => {
           <section className="w-full overflow-hidden videoSection">
             <Video props={video} />
           </section>
-          <section className={`${styles.clientspeaksection} tm-section bg-white`}>
-            <img className={styles.clientcurve} src="/images/client-shape.png" alt="shape" />
+          <section
+            className={`${styles.clientspeaksection} tm-section bg-white`}
+          >
+            <img
+              className={styles.clientcurve}
+              src="/images/client-shape.png"
+              alt="shape"
+            />
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.client[0].title, subtitle: homeData.client[0].subtitle }} titleFirst={false} titleClassName="clienttitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.client[0].title,
+                  subtitle: homeData.client[0].subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="clienttitle"
+              />
               <Client props={homeData.client} />
             </div>
           </section>
           <section className={`${styles.cmptrustsection} tm-section `}>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.achievement[0].title, subtitle: homeData.achievement[0].subtitle }} titleFirst={true} titleClassName="achievementtitle" />
-              <Achivement props={homeData.achievement} />
+              <TitleSection
+                sectionData={{
+                  title: homeData.achievement[0].title,
+                  subtitle: homeData.achievement[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="achievementtitle"
+              />
+              <Achivement props={homeData.achievement[0]} />
             </div>
           </section>
           <section className={`${styles.faqsection} tm-section`}>
@@ -142,7 +195,14 @@ const Page: React.FC = () => {
             <div className="container mx-auto">
               <div className="flex flex-wrap">
                 <div className="w-full md:w-1/4">
-                  <TitleSection sectionData={{ title: homeData.faq[0].title, subtitle: homeData.faq[0].subtitle }} titleFirst={true} titleClassName="faqtitle" />
+                  <TitleSection
+                    sectionData={{
+                      title: homeData.faq[0].title,
+                      subtitle: homeData.faq[0].subtitle,
+                    }}
+                    titleFirst={true}
+                    titleClassName="faqtitle"
+                  />
                 </div>
                 <div className="w-full md:w-3/4">
                   <Faq props={homeData.faq} />
@@ -152,7 +212,14 @@ const Page: React.FC = () => {
           </section>
           <section className={`${styles.awardsection} tm-section `}>
             <div className="container mx-auto">
-              <TitleSection sectionData={{ title: homeData.awards[0].title, subtitle: homeData.awards[0].subtitle }} titleFirst={true} titleClassName="awardtitle" />
+              <TitleSection
+                sectionData={{
+                  title: homeData.awards[0].title,
+                  subtitle: homeData.awards[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="awardtitle"
+              />
               <Singleaward props={homeData.awards} />
             </div>
           </section>
@@ -166,6 +233,6 @@ const Page: React.FC = () => {
       {!homeData && <Loading />}
     </>
   );
-}
+};
 
 export default Page;

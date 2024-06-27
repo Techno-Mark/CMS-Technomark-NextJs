@@ -23,7 +23,7 @@
 
 .cardheader {
   border-radius: 12px;
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
   border: 1px solid #bbc2cd;
   background: #fff;
   cursor: pointer;
@@ -64,8 +64,8 @@
     content: url(https://tm-html-phi.vercel.app/assets/images/plus-circle.png) !important;
 } */
 
-.faqimg{
+/* .faqimg{
   position: absolute;
   right: 20px;
   top: 15px;
-}
+} */
