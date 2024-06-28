@@ -1,24 +1,25 @@
 import React from 'react';
 import Button from "@/app/component/common/button/page";
 import styles from './tectstartupbg.module.css'
+import Image from 'next/image';
 
 interface SectionData {
     title?: string;
     subtitle?: string;
 }
-
+  
 interface techstartup {
     sectionData: SectionData;
 }
 
-const TectStartupBg: React.FC<techstartup> = ({ sectionData }) => {
+const TectStartupBg: React.FC<any> = ({ sectionData = { title: '', subtitle: ''} }) => {
     return (
         <section className={`${styles.tectstartupbg} tm-section`} id="tectstartupbg">
             <div className={styles.leftradientshape}>
-                <img src="/images/left-line-bg.svg" alt="left" />
+                <Image src="/images/left-line-bg.svg" alt="left" height={600} width={1920} />
             </div>
             <div className={styles.rightradientshape}>
-                <img src="/images/right-line-bg.svg" alt="right" />
+                <Image src="/images/right-line-bg.svg" alt="right" height={600} width={1920} />
             </div>
             <div className="container mx-auto bg-white relative z-5 max-w-screen-xl">
                 <div className={`flex flex-wrap ${styles.techsubcontainer}`}>
