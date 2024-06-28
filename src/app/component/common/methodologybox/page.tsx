@@ -19,10 +19,10 @@ interface MethodologyBoxProps {
     };
 }
 
-const MethodologyBox: React.FC<MethodologyBoxProps> = ({ props }: any) => {
+const MethodologyBox: React.FC<any> = ({ props }: any) => {
     return (
         <div className="flex flex-wrap -mx-4">
-            {props[0]?.data?.map((card: any, index: any) => (
+            {props?.data?.map((card: any, index: any) => (
                 <div key={index} className={`${styles.flipcard} w-full md:w-1/2 lg:w-1/4`}>
                     <div className={styles.inner}>
                         <div className={styles.front}>

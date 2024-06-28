@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./header.module.css";
 import MenuLink from "./menuLink/MenuLink";
+import Image from "next/image";
 const Header = () => {
   const menuItems = [
     {
@@ -32,7 +33,7 @@ const Header = () => {
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src="/images/logo.svg" className="h-10" alt="Logo" />
+            <Image src="/images/logo.svg" className="h-10" alt="Logo" width={165} height={30}/>
           </Link>
           <button
             data-collapse-toggle="mega-menu-full"

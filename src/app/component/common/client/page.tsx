@@ -1,9 +1,10 @@
 // Testimonials.tsx
-import React from 'react';
+"use client"
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import styles from './client.module.css'
+import Image from 'next/image';
 
 interface client {
   name: string;
@@ -13,20 +14,16 @@ interface client {
   companyLogo: string;
 }
 
-interface TestimonialsProps {
-  props?: {
-    data: client[];
-  };
-}
+ interface TestimonialsProps {
+   props?: any
+ }
 
-const Testimonials: React.FC<TestimonialsProps> = ({ props }:any) => {
+const Client: React.FC<any> = ({ props }:any) => {
   const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <button type="button" className="slick-arrow slick-prev">Previous</button>,
-    nextArrow: <button type="button" className="slick-arrow slick-next">Next</button>,
     responsive: [
       {
         breakpoint: 767,
@@ -39,13 +36,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ props }:any) => {
   };
 
   return (
-    <div>
       <Slider {...settings}>
-        {props[0]?.data?.map((testimonial: any) => (
-          <div className={styles.clientslideinner} key={testimonial}>
+        {props?.data?.map((testimonial: any, index: any) => (
+          <div className={styles.clientslideinner} key={index}>
             <div className={styles.textarea}>
               <div className={styles.logobox}>
-                <img src={testimonial.companyLogo} alt="logo" />
+                <Image src={testimonial.companyLogo} alt="logo" width={200} height={45} />
               </div>
               <div className={styles.textbox}>
                 <p>{testimonial.testimonial}</p>
@@ -54,13 +50,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ props }:any) => {
               </div>
             </div>
             <div className={styles.clientpic}>
-              <img src={testimonial.profileImage} alt="client" />
+              <Image src={testimonial.profileImage} width={420} height={560} alt="client"/>
             </div>  
           </div>
         ))}
       </Slider>
-    </div>
   );
 };
 
-export default Testimonials;
+export default Client;

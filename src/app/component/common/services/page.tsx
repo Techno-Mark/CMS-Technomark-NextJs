@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './services.module.css';
+import Image from 'next/image';
 
 interface services {
   icon: string;
@@ -14,10 +15,10 @@ interface ServicesProps {
 };
 }
 
-const Services: React.FC<ServicesProps> = ({ props }: any) => {
+const Services: React.FC<any> = ({ props }: any) => {
   return (
     <div className="flex flex-wrap -mx-4">
-      {props[0]?.data?.map((service: any, index: any) => (
+      {props?.data?.map((service: any, index: any) => (
         <div
           key={index}
           className={`w-full md:w-1/2 lg:w-1/4 ` }
@@ -25,7 +26,7 @@ const Services: React.FC<ServicesProps> = ({ props }: any) => {
           <div className={`${styles.servicesbox}  ${index < 4 ? '!border-t-0' : ''} ${(index + 1) % 4 === 0 ? styles.servicerightborder : ''}`}>
             <div className={styles.servicesinnerbox}>
               <div className={styles.icon}>
-                <img src={service.icon} alt={service.alt} />
+                <Image src={service.icon} alt={service.alt} height={30} width={33}/>
               </div>
               <h3 className={styles.servicetitle}>{service.text}</h3>
               <p className={styles.servicedescribe}>{service.description}</p>

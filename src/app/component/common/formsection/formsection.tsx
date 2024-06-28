@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from "@/app/component/common/button/page";
 import styles from "./formsection.module.css"
+import Image from 'next/image';
 
 
 interface formsection {
@@ -14,7 +15,7 @@ interface formProps {
 }
 
 
-const formsection: React.FC<formProps> = ({ props }: any) => {
+const formsection: React.FC<any> = ({ props }: any) => {
     return (
         <>
             <div className={`flex flex-wrap ${styles.formcontainer}`}>
@@ -36,7 +37,7 @@ const formsection: React.FC<formProps> = ({ props }: any) => {
                 <div className={styles.formright}>
                     <div className={styles.formbubblebg}>
                         <div className={styles.formbubblecircle}>
-                            <img src="/images/gradient-bubble.svg" alt="bubble" />
+                            <Image src="/images/gradient-bubble.svg" alt="bubble" height={500} width={500}/>
                         </div>
                     </div>
                     <div className={styles.formarea}>

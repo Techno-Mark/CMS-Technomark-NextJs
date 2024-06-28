@@ -1,11 +1,13 @@
 "use client"
 import Button from "@/app/component/common/button/page";
-import { NextArrow, PrevArrow } from "@component/common/customarrow/page";
+import NextArrow from "@app/component/common/customarrow/next";
+import PrevArrow from "@app/component/common/customarrow/prev";
 import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styles from "./casestudy.module.css";
+import Image from "next/image";
 
 interface casestudy {
   title: string;
@@ -17,13 +19,13 @@ interface casestudy {
   additionalPoints: { score: string; description: string }[];
 }
 
-interface CaseStudyProps {
-  props?: {
-    data: casestudy[];
-  };
-}
+// interface CaseStudyProps {
+//   props?: {
+//     data: casestudy[];
+//   };
+// }
 
-const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
+const CaseStudy: React.FC<any> = ({ props }: any) => {
   const [currentslide, setcurrentslide] = useState(0);
   const settings = {
     slidesToShow: 1.4,
@@ -59,7 +61,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
     <>
       <div className={styles.caseslide} id="case-slide">
         <Slider {...settings}>
-          {props[0]?.data?.map((caseStudy: any, index: any) => (
+          {props?.data?.map((caseStudy: any, index: any) => (
             <div
               key={index}
               className={`${styles.casebox} ${
@@ -67,12 +69,12 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
               }`}
             >
               <div className={styles.textarea}>
-                <img src={caseStudy.image} alt="logo" />
+                <Image  src={caseStudy.image} alt="logo" width={200} height={200}/>
                 <p>{caseStudy.text}</p>
                 <ul className={styles.techusetext}>
                   {caseStudy.subpoints.map((point: any, i: any) => (
                     <li key={i}>
-                      <img src="/images/check-circle.png" alt="check" />
+                      <Image src="/images/check-circle.png" alt="check" height={20} width={20}/>
                       {point}
                     </li>
                   ))}

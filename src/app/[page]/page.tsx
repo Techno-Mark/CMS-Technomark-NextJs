@@ -14,10 +14,11 @@ import TectStartupBg from "@app/component/tect-startup-bg/page";
 import Loading from "@common/loading/loading";
 import TitleSection from "@component/common/title/page";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { getdata } from "../api/api";
 import Homesection from "./_homesection/page";
 import styles from "./home.module.css";
+import Image from "next/image";
 
 interface SectionData {
   title?: string;
@@ -26,7 +27,7 @@ interface SectionData {
 
 interface HomeProps {
   homeSection: SectionData;
-  techstartup: SectionData;
+  techstartup: any;
   methodology?: any;
   services?: any;
   casestudy?: any;
@@ -50,28 +51,37 @@ const Page: React.FC = () => {
     Title: "TechnoMark",
   };
 
-  const fetchData = async () => {
-    const res = await getdata(pathname);
+  // const fetchData = async () => {
+  //   const res = await getdata(pathname);
+  //   if (res) {
+  //     setHomeData(res.data.templateData);
+  //   } else {
+  //     console.log("something went wrong");
+  //   }
+  // };
+
+  const fetchData = useCallback(async () => {
+    const res = await getdata(window.location.pathname);
     if (res) {
       setHomeData(res.data.templateData);
     } else {
       console.log("something went wrong");
     }
-  };
+  }, []); 
 
   useEffect(() => {
     fetchData();
-  }, []);
+  },[fetchData]);
 
   return (
     <>
       {homeData != null && (
         <>
           <Homesection sectionData={homeData.homeSection} />
-          <TectStartupBg sectionData={homeData.techstartup} />
+          <TectStartupBg sectionData={homeData.techstartup}/>
           <section className={`${styles.methodology} tm-section bg-white`}>
             <div className={styles.leftbubblecircle}>
-              <img src="/images/gradient-bubble.svg" alt="bubble" />
+              <Image src="/images/gradient-bubble.svg" alt="bubble" height={850} width={850}/>
             </div>
             <div className="container mx-auto">
               <TitleSection
@@ -81,7 +91,7 @@ const Page: React.FC = () => {
                 }}
                 titleClassName="methodologytitle"
               />
-              <MethodologyBox props={homeData.methodology} />
+              <MethodologyBox props={homeData.methodology[0]} />
             </div>
           </section>
           <section className={`${styles.coreservices} tm-section`}>
@@ -94,7 +104,7 @@ const Page: React.FC = () => {
                 titleFirst={false}
                 titleClassName="servicestitle"
               />
-              <Services props={homeData.services} />
+              <Services props={homeData.services[0]} />
             </div>
           </section>
           <section
@@ -109,12 +119,12 @@ const Page: React.FC = () => {
                 titleFirst={true}
                 titleClassName="casestudytitle"
               />
-              <CaseStudy props={homeData.casestudy} />
+              <CaseStudy props={homeData.casestudy[0]} />
             </div>
           </section>
           <section className={`${styles.meetdiverse} tm-section `}>
             <div className={styles.rightbubblecircle}>
-              <img src="/images/gradient-bubble.svg" alt="bubble" />
+              <Image src="/images/gradient-bubble.svg" alt="bubble" width={850} height={850}/>
             </div>
             <div className="container mx-auto">
               <TitleSection
@@ -125,7 +135,7 @@ const Page: React.FC = () => {
                 titleFirst={true}
                 titleClassName="meetdivresetitle"
               />
-              <Techicons props={homeData.techIcons} />
+              <Techicons props={homeData.techIcons[0]} />
             </div>
           </section>
           <section className={`${styles.guaranteetmsection} tm-section`}>
@@ -147,7 +157,7 @@ const Page: React.FC = () => {
                   </div>
                 </div>
                 <div className="lg:w-1/2 md:w-full px-4">
-                  <GuaranteePoints props={homeData.guarantee} />
+                  <GuaranteePoints props={homeData.guarantee[0]} />
                 </div>
               </div>
             </div>
@@ -158,10 +168,12 @@ const Page: React.FC = () => {
           <section
             className={`${styles.clientspeaksection} tm-section bg-white`}
           >
-            <img
+            <Image
               className={styles.clientcurve}
               src="/images/client-shape.png"
               alt="shape"
+              height={1060}
+              width={1930}
             />
             <div className="container mx-auto">
               <TitleSection
@@ -172,7 +184,7 @@ const Page: React.FC = () => {
                 titleFirst={false}
                 titleClassName="clienttitle"
               />
-              <Client props={homeData.client} />
+              <Client props={homeData.client[0]} />
             </div>
           </section>
           <section className={`${styles.cmptrustsection} tm-section `}>
@@ -190,7 +202,7 @@ const Page: React.FC = () => {
           </section>
           <section className={`${styles.faqsection} tm-section`}>
             <div className={styles.leftbubblecircle}>
-              <img src="/images/gradient-bubble.svg" alt="bubble" />
+              <Image src="/images/gradient-bubble.svg" alt="bubble" height={850} width={850} />
             </div>
             <div className="container mx-auto">
               <div className="flex flex-wrap">
@@ -205,7 +217,7 @@ const Page: React.FC = () => {
                   />
                 </div>
                 <div className="w-full md:w-3/4">
-                  <Faq props={homeData.faq} />
+                  <Faq props={homeData.faq[0]} />
                 </div>
               </div>
             </div>
@@ -220,7 +232,7 @@ const Page: React.FC = () => {
                 titleFirst={true}
                 titleClassName="awardtitle"
               />
-              <Singleaward props={homeData.awards} />
+              <Singleaward props={homeData.awards[0]} />
             </div>
           </section>
           <section className={`${styles.formsection} tm-section bg-white`}>

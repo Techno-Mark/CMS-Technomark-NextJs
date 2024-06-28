@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@/app/component/common/button/page";
 import styles from './homesection.module.css';
 import TypeingTexts from '@app/component/common/typeingtexts/TypeingTexts'
+import Image from "next/image";
 
 interface SectionData {
   title?: string;
@@ -36,7 +37,7 @@ const Homesection: React.FC<HomeSectionProps> = ({ sectionData }) => {
           <TypeingTexts props={typingtext} />
           <Button href="#" text="Book 30 MIN CALL" variant="primary" />
           <div className={styles.linearrow}>
-            <img src="/images/line-arrow.svg" alt="" />
+            <Image src="/images/line-arrow.svg" alt="arrow" height={130} width={36} />
           </div>
         </div>
       </section>

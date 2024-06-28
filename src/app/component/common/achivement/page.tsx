@@ -2,23 +2,21 @@
 import React from "react";
 import styles from "./achivment.module.css";
 
-interface Achievement {
-  number?: string;
-  title?: string;
+type achievement = {
+  number: string;
+  title: string;
 }
 
 interface Achievementprops {
   props: {
-    data: Achievement[];
+    data: achievement[];
   };
 }
 
-const Achivement: React.FC<Achievementprops> = ({ props }: any) => {
-  console.log("ars", props);
-
+const Achivement: React.FC<any> = ({ props }: any) => {
   return (
     <div className="achivement-section flex flex-wrap">
-      {props.data.map((achievement: any, index: any) => (
+      {props?.data?.map((achievement: any, index: any) => (
         <div key={index} className="w-full md:w-1/2 lg:w-1/3 px-5">
           <div className={`${styles.achivementbox} p-4`}>
             <h3>{achievement.number}</h3>

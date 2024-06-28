@@ -1,8 +1,8 @@
 // components/GuaranteePoints/GuaranteePoints.tsx
 'use client';
 import React, { useEffect, useState } from 'react';
-import { getGuaranteeData } from '@app/api/guarantee';
 import styles from './GuaranteePoints.module.css';
+import Image from 'next/image';
 
 interface guarantee {
     title: string;
@@ -18,7 +18,7 @@ interface guaranteeProps {
 const commonIcon = '/images/check-circle.png';
 const commonAltText = 'check';
 
-const GuaranteePoints: React.FC<guaranteeProps> = ({ props }: any) => {
+const GuaranteePoints: React.FC<any> = ({ props }: any) => {
     // const [points, setPoints] = useState<GuaranteePoint[] | null>(null);
 
     // useEffect(() => {
@@ -36,11 +36,11 @@ const GuaranteePoints: React.FC<guaranteeProps> = ({ props }: any) => {
 
     return (
         <>
-             {props[0]?.data?.map((point: any, index: any) => (
+             {props?.data?.map((point: any, index: any) => (
                 <div key={index} className={styles.iconTextArea}>
                     <div className={styles.inlineIcon}>
                         <div className={styles.checkicon}>
-                            <img src={commonIcon} alt={commonAltText} />
+                            <Image src={commonIcon} alt={commonAltText} height={24} width={24}/>
                         </div>
                         <h4>{point.title}</h4>
                     </div>

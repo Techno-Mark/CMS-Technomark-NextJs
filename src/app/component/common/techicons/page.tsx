@@ -2,6 +2,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './techicons.module.css'
+import Image from 'next/image';
 
 interface TechIcon {
   src: string;
@@ -17,7 +18,7 @@ interface TechIconProps {
 
 
 
-const TechIcons: React.FC<TechIconProps> = ({ props }: any) => {
+const TechIcons: React.FC<any> = ({ props }: any) => {
   const [icons, setIcons] = useState<TechIcon[]>([]);
 
   // useEffect(() => {
@@ -32,10 +33,10 @@ const TechIcons: React.FC<TechIconProps> = ({ props }: any) => {
   return (
     <div className={styles.meetgridicon}>
       <ul>
-        {props[0]?.data?.map((item: any, index: any) => {
+        {props?.data?.map((item: any, index: any) => {
           return(
           <li key={index}>
-            <img src={item.src} alt={item.alt} className="w-16 h-16 mx-auto" />
+            <Image src={item.src} alt={item.alt} width={48} height={48} className="w-16 h-16 mx-auto" />
             <p>{item.alt}</p>
           </li>
           )

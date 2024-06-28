@@ -2,6 +2,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./faq.module.css";
+import Image from "next/image";
 
 interface faq {
   question: string;
@@ -14,7 +15,7 @@ interface FaqSectionProps {
   };
 }
 
-const FaqSection: React.FC<FaqSectionProps> = ({ props }: any) => {
+const FaqSection: React.FC<any> = ({ props }: any) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -27,7 +28,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ props }: any) => {
       id="accordion-collapse"
       data-accordion="collapse"
     >
-      {props[0]?.data?.map((faq: any, index: any) => (
+      {props?.data?.map((faq: any, index: any) => (
         <div key={index} className={`${styles.cardheader} mb-5`}>
           <h2 id={`accordion-collapse-heading-${index}`}>
             <button
@@ -42,14 +43,15 @@ const FaqSection: React.FC<FaqSectionProps> = ({ props }: any) => {
                 <span className="mr-2">{index + 1}.</span>
                 {faq.question}
               </div>
-              <img
-                src={
-                  openIndex === index
-                    ? "/images/minus-circle.svg"
-                    : "/images/plus-circle.svg"
-                }
+              <Image src={
+                openIndex === index
+                  ? "/images/minus-circle.svg"
+                  : "/images/plus-circle.svg"
+              }
                 alt={openIndex === index ? "Collapse" : "Expand"}
                 className={styles.faqimg}
+                height={36}
+                width={36}
               />
             </button>
           </h2>

@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './singleaward.module.css'
+import Image from 'next/image';
 
 interface awards {
   src: string;
@@ -13,7 +14,7 @@ interface awardsprops {
   };
 }
 
-const Award: React.FC<awardsprops> = ({props}: any) => {
+const Award: React.FC<any> = ({props}: any) => {
   // const [awards, setAwards] = useState<Award[]>([]);
 
   // useEffect(() => {
@@ -28,9 +29,9 @@ const Award: React.FC<awardsprops> = ({props}: any) => {
   return (
     <div className="award-section">
       <ul className={styles.awardlist}>
-        {props[0]?.data?.map((award: any, index: any) => (
+        {props?.data?.map((award: any, index: any) => (
           <li key={index}>
-            <img src={award.src} alt={award.alt}/>
+            <Image src={award.src} alt={award.alt} width={107} height={107}/>
           </li>
         ))}
       </ul>
