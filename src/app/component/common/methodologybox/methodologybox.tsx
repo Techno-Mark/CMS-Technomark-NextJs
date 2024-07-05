@@ -19,7 +19,7 @@ interface MethodologyBoxProps {
     };
 }
 
-const MethodologyBox: React.FC<any> = ({ props }: any) => {
+const MethodologyBox: React.FC<MethodologyBoxProps> = ({ props }: any) => {
     return (
         <div className="flex flex-wrap -mx-4">
             {props?.data?.map((card: any, index: any) => (

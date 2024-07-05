@@ -1,6 +1,5 @@
 // components/GuaranteePoints/GuaranteePoints.tsx
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './GuaranteePoints.module.css';
 import Image from 'next/image';
 
@@ -9,35 +8,21 @@ interface guarantee {
     description: string;
 }
 
-
 interface guaranteeProps {
     props?: {
         data: guarantee[];
     };
+    isProblemStatement?: boolean; // Optional flag
 }
+
 const commonIcon = '/images/check-circle.png';
 const commonAltText = 'check';
 
-const GuaranteePoints: React.FC<any> = ({ props }: any) => {
-    // const [points, setPoints] = useState<GuaranteePoint[] | null>(null);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await getGuaranteeData();
-    //         setPoints(result.points);
-    //     };
-
-    //     fetchData();
-    // }, []);
-
-    // if (!points) {
-    //     return <div>Loading...</div>;
-    // }
-
+const GuaranteePoints: React.FC<guaranteeProps> = ({ props, isProblemStatement }) => {
     return (
         <>
-             {props?.data?.map((point: any, index: any) => (
-                <div key={index} className={styles.iconTextArea}>
+            {props?.data?.map((point: guarantee, index: number) => (
+                <div key={index} className={`${styles.iconTextArea} ${isProblemStatement ? styles.problemStatement : ''}`}>
                     <div className={styles.inlineIcon}>
                         <div className={styles.checkicon}>
                             <Image src={commonIcon} alt={commonAltText} height={24} width={24}/>

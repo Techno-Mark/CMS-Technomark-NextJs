@@ -70,20 +70,6 @@ body {
   margin-right: initial;
 }
 
-/* #case-slide .slick-slide{
-  width: 530px !important;
-  margin-right: 2rem;
-  transition: width 1s ease-in-out;
-}
-
-#case-slide .slick-slide.slick-active {
-  width: 1100px !important;
-} */
-
-/* #case-slide .slick-slide.slick-active .resultarea {
-  opacity: 1;
-} */
-
 .case-studies-section {
   overflow: hidden;
   border-bottom: 1px solid #e8ebee;
@@ -137,6 +123,12 @@ body {
 .achievementtitle p {
   margin-bottom: 5rem;
 }
+.achievementtitle p span{
+  display: block;
+  font-size: 2rem;
+  color: #168944;
+  font-weight: 700;
+}
 .faqtitleh2 {
   margin-bottom: 5rem;
 }
@@ -150,7 +142,52 @@ body {
   margin-right: auto;
   margin-left: inherit;
 }
+.casestudylisttitle h2{
+  margin-bottom: 2rem;
+}
+.casestudylisttitle p{
+  margin: 0 auto 5rem;
+  max-width: 50%;
+}
+.casestudydetailtitle h2{
+  margin-bottom: 2rem;
+  color: #fff !important;
+}
+.casestudydetailtitle p{
+  margin: 0 auto 5rem;
+  max-width: 60%;
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+}
 
+.businessimpacttitle h2{
+  color: #fff !important;
+}
+
+.businessimpacttitle p{
+  color: #fff;
+  width: 75%;
+  margin-inline: auto;
+}
+.problemstatementtitle h2{
+  text-align: left;
+}
+
+.majorscreensection .slick-list{
+  overflow: visible;
+}
+
+.majorscreentitle h2{
+  color: #fff !important;
+  margin-bottom: 5rem;
+}
+.featurestitle h2{
+  margin-bottom: 5rem;
+}
+.Challengessolutionstitle h2{
+  margin-bottom: 5rem;
+}
 @media only screen and (max-width: 1536px) {
   html {
     font-size: 12px !important;

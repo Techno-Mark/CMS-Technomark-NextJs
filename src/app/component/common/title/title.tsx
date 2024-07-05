@@ -13,7 +13,7 @@ interface TitleSectionProps {
   titleClassName?: string;
 }
 
-const TitleSection: React.FC<any> = ({ sectionData = { title: '', subtitle: '', subDesc: '' }, titleFirst = true, titleClassName}) => {
+const TitleSection: React.FC<TitleSectionProps> = ({ sectionData = { title: '', subtitle: '', subDesc: '' }, titleFirst = true, titleClassName}) => {
   return (
     <div className={`title-section mb-6 ${titleClassName}`}>
       {titleFirst ? (

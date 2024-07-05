@@ -1,7 +1,6 @@
 // src/components/Achivement.tsx
 import React from "react";
-import styles from "./achivment.module.css";
-
+import styles from './achievement.module.css'
 type achievement = {
   number: string;
   title: string;
@@ -13,7 +12,8 @@ interface Achievementprops {
   };
 }
 
-const Achivement: React.FC<any> = ({ props }: any) => {
+const Achivement: React.FC<Achievementprops> = ({ props }: any) => {
+  console.log("achievement", props);
   return (
     <div className="achivement-section flex flex-wrap">
       {props?.data?.map((achievement: any, index: any) => (

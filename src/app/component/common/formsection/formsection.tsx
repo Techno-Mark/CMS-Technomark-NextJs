@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Button from "@/app/component/common/button/page";
+import Button from "@/app/component/common/button/button";
 import styles from "./formsection.module.css"
 import Image from 'next/image';
 
@@ -15,7 +15,7 @@ interface formProps {
 }
 
 
-const formsection: React.FC<any> = ({ props }: any) => {
+const formsection: React.FC<formProps> = ({ props }: any) => {
     return (
         <>
             <div className={`flex flex-wrap ${styles.formcontainer}`}>

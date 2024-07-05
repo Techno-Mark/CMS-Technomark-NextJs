@@ -1,5 +1,3 @@
-// FaqSection.tsx
-"use client";
 import React, { useState } from "react";
 import styles from "./faq.module.css";
 import Image from "next/image";
@@ -15,7 +13,7 @@ interface FaqSectionProps {
   };
 }
 
-const FaqSection: React.FC<any> = ({ props }: any) => {
+const FaqSection: React.FC<FaqSectionProps> = ({ props }: any) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -60,7 +58,7 @@ const FaqSection: React.FC<any> = ({ props }: any) => {
             className={`${openIndex === index ? "" : "hidden"}`}
             aria-labelledby={`accordion-collapse-heading-${index}`}
           >
-            <div className={styles.cardbody}>
+            <div className={`${styles.cardbody} ml-5 mb-5`}>
               <p>{faq.answer}</p>
             </div>
           </div>

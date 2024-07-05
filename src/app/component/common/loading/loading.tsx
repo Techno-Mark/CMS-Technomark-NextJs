@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function loading() {
+const Loading: React.FC = () => {
   return (
     <div>loading ...</div>
-  )
+  );
 }
 
-export default loading
+export default Loading;

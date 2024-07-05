@@ -31,6 +31,31 @@
   padding-left: 3.5rem;
 }
 
+.checkicon{
+  width: 2rem;
+}
 .checkicon img{
   width: 2rem;
 }
+
+.problemStatement{
+  display: flex;
+  align-items: flex-start;
+}
+.problemStatement.iconTextArea p {
+  padding-left: 1.5rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  width: 100%;
+  font-weight: 400;
+}
+.problemStatement.iconTextArea .inlineIcon h4 {  
+  margin: 0;
+}  
+.problemStatement .checkicon{
+  position: relative;
+  top: 12px;
+}
+
+
+@media only screen and (max-width: 767px) {}

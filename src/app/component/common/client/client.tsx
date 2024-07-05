@@ -1,5 +1,3 @@
-// Testimonials.tsx
-"use client"
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -18,7 +16,7 @@ interface client {
    props?: any
  }
 
-const Client: React.FC<any> = ({ props }:any) => {
+const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
   const settings = {
     infinite: true,
     speed: 500,

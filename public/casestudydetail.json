@@ -2,102 +2,175 @@
     "data": {
         "templateData": {
             "sectionsOrder": [
-                "homeSection",
+                "casestudydetailherosection",
                 "techstartup",
-                "methodology",
-                "services",
-                "casestudy",
-                "techIcons",
-                "guarantee",
-                "videosection",
+                "businessimpact",
+                "problemstatement",
+                "projectscreens",
+                "Challengessolutions",
+                "majorscreen",
+                "features",
                 "client",
-                "achievement",
+                "casestudy",
+                "methodology",
                 "faq",
                 "awards",
                 "formsection"
             ],
-            "faq": [
-                {
-                    "data": [
-                        {
-                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "How can IT outsourcing benefit our startup?"
-                        },
-                        {
-                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can a small business benefit from IT services provided by a startup de"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can we scale IT solutions as our startup grows?"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What security measures are in place to protect our sensitive data?"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
-                        }
-                    ],
-                    "title": "Frequently Asked <span>Questions</span>"
-                }
-            ],
-            "awards": [
-                {
-                    "data": [
-                        {
-                            "alt": "Android",
-                            "src": "/images/award1.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award2.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award3.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award4.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award5.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award6.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award7.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award8.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award9.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award10.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award11.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award12.png"
-                        }
-                    ],
-                    "title": "Awards & Recognition"
-                }
-            ],
+            "casestudydetailherosection": {
+                "label": "Resources",
+                "title": "HLS Global Taxation Software",
+                "subtitle": "HLS Global Group is an International accounting & Business advisory firm",
+                "benefits": [
+                    {
+                        "icon": "/images/globe.png",
+                        "label": "Country",
+                        "value": "United States"
+                    },
+                    {
+                        "icon": "/images/industry.png",
+                        "label": "Industry",
+                        "value": "Accounting"
+                    },
+                    {
+                        "icon": "/images/technology.png",
+                        "label": "Technology",
+                        "value": ".NET | Angular | Azure Cloud"
+                    }
+                ],
+                "performances": [
+                    {
+                        "title": "10X",
+                        "description": "Increase in traffic that the platform receives"
+                    },
+                    {
+                        "title": "2X",
+                        "description": "Operational Efficiency"
+                    },
+                    {
+                        "title": "600,000+",
+                        "description": "Users accessing the platform during a day"
+                    },
+                    {
+                        "title": "95%",
+                        "description": "Automated Workflow"
+                    }
+                ],
+                "performanceImage": "/images/performance.png"
+            },
+            "techstartup": {
+                "title": "About a <span>HLS Global</span>",
+                "subtitle": "HLS Global Group is an international accounting and business advisory firm with a focus on providing superior services in the areas of accounting, tax, audit, advisory, and consulting.",
+                "isCaseStudy": true
+            },
+            "businessimpact": {
+                "title": "Business Impact",
+                "subtitle": "The client automated 95% workflow, reduced turnaround time, increased efficiency, seamlessly handled high volumes of data, and ensured a reliable document management system"
+            },
+            "problemstatement": {
+                "data": [
+                    {
+                        "description": "Tedious and time-consuming tax return preparation for 1000+ clients from over 100+ fortune 500 companies"
+                    },
+                    {
+                        "description": "Providing real-time status updates to clients on tax return status, queries, and resolution to strengthen the business relationship."
+                    },
+                    {
+                        "description": "Complex UI and process in their legacy system. The client wanted a simplified design and modern application to enhance the user experience with a scalable and robust application ."
+                    }
+                ],
+                "title": "Problem <span>Statement</span>"
+            },
+            "projectscreens": {
+                "images": [
+                    {
+                        "imaegurl": "/images/Mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/Mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/Mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/Mockup.png"
+                    }
+                ]
+            },
+            "Challengessolutions": {
+                "title": "Challenges & <span>Solutions</span>",
+                "resourceSolutions": [
+                    {
+                        "challenge": "Tedious and time-consuming tax return preparation for 1000+ clients from over 100+ fortune 500 companies.",
+                        "solutionTitle": "Re-engineering the entire solution",
+                        "solutionDescription": "TechnoMark’s technical team conceptualized and created an automated solution that spans the entire process to handle and meet the individual tax return application for the client."
+                    },
+                    {
+                        "challenge": "Providing real-time status updates to clients on tax return status, queries, and resolution to strengthen the business relationship.",
+                        "solutionTitle": "Feature Enhancement & Development",
+                        "solutionDescription": "Introducing new features, such as advanced search filters, mobile responsiveness, workflow automation, simplified invoicing and personalized user dashboards, to enrich the platform's functionality."
+                    },
+                    {
+                        "challenge": "Complex UI and process in their legacy system. The client wanted a simplified design and modern application to enhance the user experience with a scalable and robust application.",
+                        "solutionTitle": "Implemented right product development cycle",
+                        "solutionDescription": "With the help of right product development approach and right technical team of seasoned experts, helped client to leverage cloud-based SaaS application to automate their day-to-day taxation operations."
+                    }
+                ]
+            },
+            "majorscreen": {
+                "title": "Major Screens",
+                "images": [
+                    {
+                        "imaegurl": "/images/major-mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/major-mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/major-mockup.png"
+                    },
+                    {
+                        "imaegurl": "/images/major-mockup.png"
+                    }
+                ]
+            },
+            "features": {
+                "data": [
+                    {
+                        "icon": "/images/enterprise.png",
+                        "text": "Enterprise Software"
+                    },
+                    {
+                        "icon": "/images/hire-develop.png",
+                        "text": "Hire Developers"
+                    },
+                    {
+                        "icon": "/images/mobile-programming.png",
+                        "text": "Mobile Apps"
+                    },
+                    {
+                        "icon": "/images/cloud-add.png",
+                        "text": "Cloud Native"
+                    },
+                    {
+                        "icon": "/images/cpu-charge.png",
+                        "text": "AI Development"
+                    },
+                    {
+                        "icon": "/images/airdrop.png",
+                        "text": "IoT App"
+                    },
+                    {
+                        "icon": "/images/convert-3d-cube.png",
+                        "text": "Blockchain"
+                    },
+                    {
+                        "icon": "/images/shopping-cart.png",
+                        "text": "Ecommerce"
+                    }
+                ],
+                "title": "Key <span>Features</span>"
+            },
             "client": [
                 {
                     "data": [
@@ -125,62 +198,6 @@
                     ],
                     "title": "Clients <span>Speak</span>",
                     "subtitle": "Dont’t take our word for it"
-                }
-            ],
-            "services": [
-                {
-                    "data": [
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/enterprise.png",
-                            "text": "Enterprise Software",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "hire developer",
-                            "icon": "/images/hire-develop.png",
-                            "text": "Hire Developers",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform."
-                        },
-                        {
-                            "alt": "Mobile Apps",
-                            "icon": "/images/mobile-programming.png",
-                            "text": "Mobile Apps",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/cloud-add.png",
-                            "text": "Cloud Native",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/cpu-charge.png",
-                            "text": "AI Development",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/airdrop.png",
-                            "text": "IoT App",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/convert-3d-cube.png",
-                            "text": "Blockchain",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        },
-                        {
-                            "alt": "enterprise",
-                            "icon": "/images/shopping-cart.png",
-                            "text": "Ecommerce",
-                            "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                        }
-                    ],
-                    "title": "Our Core <span>Services</span>",
-                    "subtitle": "Foundational Excellence"
                 }
             ],
             "casestudy": [
@@ -377,151 +394,6 @@
                     "subtitle": "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges."
                 }
             ],
-            "guarantee": [
-                {
-                    "data": [
-                        {
-                            "title": "Build Right. Build Smart",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "Ship Early. Ship Often",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "We engineer. We deliver",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        }
-                    ],
-                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
-                    "videosrc": "/images/generalvideo.mp4"
-                }
-            ],
-            "techIcons": [
-                {
-                    "data": [
-                        {
-                            "alt": "Android",
-                            "src": "/images/android.png"
-                        },
-                        {
-                            "alt": "Apple",
-                            "src": "/images/Apple_logo.png"
-                        },
-                        {
-                            "alt": "kotlin",
-                            "src": "/images/kotlin.png"
-                        },
-                        {
-                            "alt": "swift",
-                            "src": "/images/swift.png"
-                        },
-                        {
-                            "alt": "react-native",
-                            "src": "/images/react-native.png"
-                        },
-                        {
-                            "alt": "flutter",
-                            "src": "/images/flutter.png"
-                        },
-                        {
-                            "alt": "react",
-                            "src": "/images/react.png"
-                        },
-                        {
-                            "alt": "nextjs",
-                            "src": "/images/next-js.png"
-                        },
-                        {
-                            "alt": "Angular9",
-                            "src": "/images/angular.png"
-                        },
-                        {
-                            "alt": "javascript",
-                            "src": "/images/js-icon.png"
-                        },
-                        {
-                            "alt": "jquery",
-                            "src": "/images/jquery.png"
-                        },
-                        {
-                            "alt": "html",
-                            "src": "/images/html-icon.png"
-                        },
-                        {
-                            "alt": "node",
-                            "src": "/images/node.png"
-                        },
-                        {
-                            "alt": "php",
-                            "src": "/images/php-icon.png"
-                        },
-                        {
-                            "alt": "python",
-                            "src": "/images/python-icon.png"
-                        },
-                        {
-                            "alt": "dotnet",
-                            "src": "/images/dotnet.png"
-                        },
-                        {
-                            "alt": "laravel",
-                            "src": "/images/laravel-icon.png"
-                        },
-                        {
-                            "alt": "ruby on rails",
-                            "src": "/images/Ruby_On_Rails.png"
-                        }
-                    ],
-                    "title": "Meet Your <span>Diverse</span>"
-                }
-            ],
-            "achievement": [
-                {
-                    "data": [
-                        {
-                            "title": "Happy Customers",
-                            "number": "4000+"
-                        },
-                        {
-                            "title": "Professionals",
-                            "number": "1000+"
-                        },
-                        {
-                            "title": "Locations",
-                            "number": "4000"
-                        }
-                    ],
-                    "title": "A Legacy of 15 Years of Trust with",
-                    "subtitle": "Within the market, among customers, and with our people. <span> Pacific Group of Companies </span>"
-                }
-            ],
-            "formsection": [
-                {
-                    "data": [
-                        {
-                            "text": "We’ll reach out to you within 24 hours."
-                        },
-                        {
-                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
-                        },
-                        {
-                            "text": " You can start 15-days risk-free trial with us."
-                        }
-                    ],
-                    "title": "What will happen next?"
-                }
-            ],
-            "homeSection": {
-                "title": "We helps you rapidly adapt future-enabled",
-                "typingtext": [
-                    "Interactive Mobile App",
-                    "IOT Solution",
-                    "Custom Enterprice Software",
-                    "AI/ML",
-                    "Engaging User Experiance"
-                ]
-            },
             "methodology": [
                 {
                     "data": [
@@ -587,22 +459,104 @@
                     "subtitle": "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap."
                 }
             ],
-            "techstartup": {
-                "title": "Take your startup to the next level with the best of <b>Techno</b><span>Mark</span>",
-                "subtitle": "As Startup Technology Partners, We craft products for global startups, Contributing significantly to their success stories"
-            },
-            "casestudylist": {
-                "title": "Our work in Action",
-                "subtitle": "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!",
-                "label": "Case Studies"
-            },
-            "videosection": {
-                "video": {
-                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
-                    "subTitle": "We are",
-                    "Title": "TechnoMark"
+            "faq": [
+                {
+                    "data": [
+                        {
+                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "How can IT outsourcing benefit our startup?"
+                        },
+                        {
+                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can a small business benefit from IT services provided by a startup de"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can we scale IT solutions as our startup grows?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What security measures are in place to protect our sensitive data?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
+                        }
+                    ],
+                    "title": "Frequently Asked <span>Questions</span>"
                 }
-            }
+            ],
+            "awards": [
+                {
+                    "data": [
+                        {
+                            "alt": "Android",
+                            "src": "/images/award1.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award2.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award3.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award4.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award5.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award6.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award7.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award8.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award9.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award10.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award11.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award12.png"
+                        }
+                    ],
+                    "title": "Awards & Recognition"
+                }
+            ],
+            "formsection": [
+                {
+                    "data": [
+                        {
+                            "text": "We’ll reach out to you within 24 hours."
+                        },
+                        {
+                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+                        },
+                        {
+                            "text": " You can start 15-days risk-free trial with us."
+                        }
+                    ],
+                    "title": "What will happen next?"
+                }
+            ]
         }
     }
 }

@@ -1,0 +1,334 @@
+{
+    "data": {
+        "templateData": {
+            "sectionsOrder": [
+                "casestudylist",
+                "guarantee",
+                "videosection",
+                "faq",
+                "awards",
+                "formsection"
+            ],
+            "casestudylist": [
+                {
+                    "data": [
+                        {
+                            "category": "Software Development",
+                            "text": "Software Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Development & Operation",
+                            "text": "Development Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Artificial Intelligence",
+                            "text": "Artificial Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Software Development",
+                            "text": "Software Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Development & Operation",
+                            "text": "Development Airattix v, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Artificial Intelligence",
+                            "text": "Artificial Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Our work in Action",
+                    "subtitle": "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!",
+                    "label": "Case Studies"
+                }
+            ],
+            "faq": [
+                {
+                    "data": [
+                        {
+                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "How can IT outsourcing benefit our startup?"
+                        },
+                        {
+                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can a small business benefit from IT services provided by a startup de"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can we scale IT solutions as our startup grows?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What security measures are in place to protect our sensitive data?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
+                        }
+                    ],
+                    "title": "Frequently Asked <span>Questions</span>"
+                }
+            ],
+            "videosection": {
+                "video": {
+                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
+                    "subTitle": "We are",
+                    "Title": "TechnoMark"
+                }
+            },
+            "guarantee": [
+                {
+                    "data": [
+                        {
+                            "title": "Build Right. Build Smart",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "Ship Early. Ship Often",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "We engineer. We deliver",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        }
+                    ],
+                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+                    "videosrc": "/images/generalvideo.mp4"
+                }
+            ],
+            "awards": [
+                {
+                    "data": [
+                        {
+                            "alt": "Android",
+                            "src": "/images/award1.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award2.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award3.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award4.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award5.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award6.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award7.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award8.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award9.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award10.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award11.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award12.png"
+                        }
+                    ],
+                    "title": "Awards & Recognition"
+                }
+            ],
+            "formsection": [
+                {
+                    "data": [
+                        {
+                            "text": "We’ll reach out to you within 24 hours."
+                        },
+                        {
+                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+                        },
+                        {
+                            "text": " You can start 15-days risk-free trial with us."
+                        }
+                    ],
+                    "title": "What will happen next?"
+                }
+            ]
+        }
+    }
+}

@@ -1,5 +1,3 @@
-// components/TechIcons/TechIcons.tsx
-'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './techicons.module.css'
 import Image from 'next/image';
@@ -18,7 +16,7 @@ interface TechIconProps {
 
 
 
-const TechIcons: React.FC<any> = ({ props }: any) => {
+const TechIcons: React.FC<TechIconProps> = ({ props }: any) => {
   const [icons, setIcons] = useState<TechIcon[]>([]);
 
   // useEffect(() => {
