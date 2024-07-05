@@ -1,9 +1,6 @@
 .techsubcontainer {
   padding: 4rem 5rem;
 }
-/* .techsubcontainer .maintitle {
-  padding-right: 30px;
-} */
 .tectstartupbg {
   background: #e7f8ea;
   box-shadow: 10px 0px 0px 0px #fff;
@@ -55,4 +52,10 @@
 .techbgbtn a {
   margin-left: initial;
   margin-right: auto;
+}
+.techcasestudycontainer h2 {
+  margin-bottom: 2.5rem;
+}
+.techcasestudycontainer h2 span {
+  font-weight: 600;
 }

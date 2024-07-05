@@ -6,7 +6,7 @@ interface NextArrowProps {
   onClick?: () => void;
 }
 
-const NextArrow: React.FC<any> = ({ onClick }) => (
+const NextArrow: React.FC<NextArrowProps> = ({ onClick }) => (
   <div className="slick-next slick-arrow" onClick={onClick}>
     <Image src="/images/Arrow-slideright.png" alt="Next" width={60} height={60}/>
   </div>
