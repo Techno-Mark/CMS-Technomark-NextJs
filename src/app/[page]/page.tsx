@@ -23,6 +23,8 @@ import CaseStudyDetail from "@component/common/casestudydetail/casestudydetail";
 import Challenges from "@/app/component/common/Challenges/Challenges";
 import ScreenSlider from "@component/common/screenslider/screenslider";
 import styles from "./home.module.css";
+import Herosection from "@component/common/herosection/herosection";
+import ProductSolutions from "../component/common/productsolutions/productsolutions";
 
 interface SectionData {
   title?: string;
@@ -53,6 +55,9 @@ interface HomeProps {
   Challengessolutions?: any;
   majorscreen?: any;
   features?: any;
+  productherosection?: any;
+  productservices?: any;
+  productsolutions?: any;
   props: any;
 }
 
@@ -63,7 +68,6 @@ const Page: React.FC = () => {
   const fetchData = useCallback(async () => {
     const res = await getdata(pathname);
     if (res) {
-      console.log("res", res);
       setHomeData(res.data.templateData);
     } else {
       console.log("something went wrong");
@@ -391,6 +395,36 @@ const Page: React.FC = () => {
                 titleClassName="featurestitle"
               />
               <Services props={homeData.features} isFeatured={true} />
+            </div>
+          </section>
+        );
+      case "productherosection":
+        return homeData?.productherosection && (
+          <section className={`${styles.prodcutherosection} tm-section bg-white`}>
+            <Herosection props={homeData.productherosection} />
+          </section>
+        );
+      case "productservices":
+        return homeData?.productservices && (
+          <section className={`${styles.productservices} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.productservices.title,
+                  subtitle: homeData.productservices.subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="servicestitle"
+              />
+              <Services props={homeData.productservices} isProduct={true} />
+            </div>
+          </section>
+        );
+      case "productsolutions":
+        return homeData?.productsolutions && (
+          <section className={`${styles.productsolutions} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <ProductSolutions props={homeData.productsolutions} />
             </div>
           </section>
         );

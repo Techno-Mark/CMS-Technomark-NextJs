@@ -58,7 +58,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }:any) => {
   };
 
   return (
-    <>
+    <div className={styles.casestudyparent}>
       <div className={styles.caseslide} id="case-slide">
         <Slider {...settings}>
           {props?.data?.map((caseStudy: CaseStudy, index: number) => (
@@ -116,7 +116,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }:any) => {
       <div className="container mx-auto viewallbtn">
         <Button href="#" text="VIEW ALL" variant="secondary" />
       </div>
-    </>
+    </div>
   );
 };
 

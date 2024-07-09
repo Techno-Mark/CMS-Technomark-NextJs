@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './services.module.css';
-import Image from 'next/image';
+import React from "react";
+import styles from "./services.module.css";
+import Image from "next/image";
 
 interface Service {
   icon: string;
@@ -14,12 +14,17 @@ interface ServicesProps {
     data: Service[];
   };
   isFeatured?: boolean;
+  isProduct?: boolean;
 }
 
-const Services: React.FC<ServicesProps> = ({ props, isFeatured }) => {
+const Services: React.FC<ServicesProps> = ({
+  props,
+  isFeatured,
+  isProduct,
+}) => {
 
   const services = props?.data || [];
-  const columns = isFeatured ? 5 : 4;
+  const columns = isFeatured ? 5 : isProduct ? 3 : 4;
   const totalItems = services.length;
   const rows = Math.ceil(totalItems / columns);
 
@@ -34,19 +39,34 @@ const Services: React.FC<ServicesProps> = ({ props, isFeatured }) => {
         return (
           <div
             key={index}
-            className={`w-full ${isFeatured ? 'md:w-1/5' : 'md:w-1/2 lg:w-1/4'}`}
+            className={`w-full 
+                ${isFeatured
+                ? "md:w-1/5"
+                : isProduct
+                  ? "md:w-1/3"
+                  : "md:w-1/2 lg:w-1/4"
+              }`}
           >
             <div
-              className={`${styles.servicesbox} ${!isFirstRow && !isLastRow ? '' : '!border-t-0'} ${
-                isRightMostColumn ? styles.servicerightborder : ''
-              } ${isBottomBorder && !isLastRow ? 'border-b border-gray-300' : ''}`}
+              className={`${styles.servicesbox} ${!isFirstRow && !isLastRow ? "" : "!border-t-0"
+                } ${isRightMostColumn ? styles.servicerightborder : ""} ${isBottomBorder && !isLastRow ? "border-b border-gray-300" : ""
+                }`}
             >
               <div className={styles.servicesinnerbox}>
                 <div className={styles.icon}>
-                  <Image src={service.icon} alt={service.alt} height={30} width={33} />
+                  <Image
+                    src={service.icon}
+                    alt={service.alt}
+                    height={30}
+                    width={33}
+                  />
                 </div>
                 <h3 className={styles.servicetitle}>{service.text}</h3>
-                {!isFeatured && <p className={styles.servicedescribe}>{service.description}</p>}
+                {!isFeatured && (
+                  <p className={styles.servicedescribe}>
+                    {service.description}
+                  </p>
+                )}
                 {!isFeatured && (
                   <div className={styles.moresection}>
                     <a href="#">read more</a>

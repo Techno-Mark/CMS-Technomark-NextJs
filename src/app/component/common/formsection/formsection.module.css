@@ -98,6 +98,10 @@
 .formarea .formwrap input {
   font-size: 1.1rem;
 }
+.formarea :global(.formbtn a) {
+  margin-right: auto;
+  margin-left: inherit;
+}
 
 @media only screen and (max-width: 992px) {
   .formcontainer {

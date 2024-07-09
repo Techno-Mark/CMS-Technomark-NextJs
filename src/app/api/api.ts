@@ -11,6 +11,9 @@ export const getdata = async (param: string) => {
   if (param === "/casestudydetail"){
     param = "/case-study-detail";
   }
+  if (param === "/product"){
+    param = "/product";
+  }
   try {
     const response = await axios.get(`${API_URL}getBySlug${param}`, {
       headers: {
@@ -20,6 +23,7 @@ export const getdata = async (param: string) => {
     //const response = await axios.get(`http://localhost:3000/section.json`);
     //const response = await axios.get(`http://localhost:3000/casestudylist.json`);
     //const response = await axios.get(`http://localhost:3000/casestudydetail.json`);
+    //const response = await axios.get(`http://localhost:3000/product.json`);
     return response.data;
   } catch (error) {
     console.error("Error fetching guarantee data:", error);
