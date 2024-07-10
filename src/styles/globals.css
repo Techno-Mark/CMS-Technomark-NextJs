@@ -27,7 +27,37 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
+  /* .text-balance {
     text-wrap: balance;
+  } */
+}
+
+.tm-section {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+@media only screen and (max-width: 1536px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 8px !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #case-slide .slick-arrow {
+    bottom: -6rem;
   }
 }

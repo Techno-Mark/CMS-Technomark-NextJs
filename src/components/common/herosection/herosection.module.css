@@ -1,0 +1,25 @@
+.label {
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 4rem;
+  text-align: left;
+  color: rgba(29, 53, 87, 0.5);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+.imagecontainer{
+    display: flex;
+    justify-content: center;
+}
+.herocontainer :global(a){
+    margin-left: inherit;
+    margin-right: auto;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .herocontainer{
+    max-width: 90%;
+  }
+}
