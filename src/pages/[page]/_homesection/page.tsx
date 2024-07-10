@@ -11,10 +11,25 @@ interface SectionData {
 }
 
 interface HomeSectionProps {
-  sectionData: SectionData;
+  sectionData?: SectionData; // Make sectionData optional
 }
 
-const Homesection: React.FC<HomeSectionProps> = ({ sectionData }) => {
+const isSectionData = (data: any): data is SectionData => {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    Array.isArray(data.typingtext) &&
+    data.typingtext.every((item: any) => typeof item === "string")
+  );
+};
+
+const Homesection: React.FC<HomeSectionProps> = ({
+  sectionData = {} as SectionData,
+}) => {
+  const validSectionData = isSectionData(sectionData)
+    ? sectionData
+    : { title: "Title", typingtext: ["typing..."] };
+
   return (
     <>
       <section className={styles.newhomesection} id="new-home-section">
@@ -24,8 +39,8 @@ const Homesection: React.FC<HomeSectionProps> = ({ sectionData }) => {
           </video>
         </div>
         <div className={`${styles.hometext} mx-auto max-w-2xl`}>
-          <h1 className={styles.maintitle}>{sectionData.title}</h1>
-          <TypeingTexts props={sectionData.typingtext} />
+          <h1 className={styles.maintitle}>{validSectionData.title}</h1>
+          <TypeingTexts props={validSectionData.typingtext} />
           <Button href="#" text="Book 30 MIN CALL" variant="primary" />
           <div className={styles.linearrow}>
             <Image
