@@ -1,9 +1,0 @@
-.textStyleing {
-    background: #168944;
-    background: linear-gradient(to right, #168944 0%, #40AA46 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
