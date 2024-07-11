@@ -1,0 +1,129 @@
+.flip-parent {
+  display: flex;
+}
+
+.flipcard {
+  background-color: transparent;
+  perspective: 1000px;
+  border: 1px solid #bbc2cd;
+  height: 600px;
+  background: #ffffff;
+}
+
+.flipcard .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipcard .inner .front {
+  text-align: center;
+}
+
+.flipcard .inner .front,
+.flipcard .inner .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flipcard .inner .back {
+  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.flipcard:hover .inner {
+  transform: rotateX(180deg);
+}
+
+.custom-container .col-lg-3 {
+  padding: 0;
+}
+
+.flipcard .inner .front h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 6rem;
+  line-height: 6rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flipcard .inner .front .cardtitle {
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.flipcard .inner .front .cardtext {
+  color: #1d3557;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 2rem;
+  width: 70%;
+}
+
+.flipcard .inner .back ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+
+.flipcard .inner .back ul li {
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2rem;
+  opacity: 0.8;
+  transition: 0.5s ease-in-out all;
+  border: 1px solid transparent;
+}
+
+.flipcard .inner .back ul li ul {
+  list-style: disc;
+  margin: 7px 0 0;
+}
+
+.flipcard .inner .back ul li:hover {
+  opacity: 1;
+  color: #ffffff;
+  border-image: linear-gradient(to left, #3da745, #ffffff) 1 0;
+}
+
+@media only screen and (max-width: 1536px) {
+  .flipcard {
+    height: 470px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .flipcard {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .flipcard {
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+}
