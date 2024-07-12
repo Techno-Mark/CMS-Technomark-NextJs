@@ -34,10 +34,11 @@ interface HomeProps {
 }
 
 export const getServerSideProps: GetServerSideProps<{
-  homeData: HomeProps;
+  maindata: HomeProps;
   caseStudy: HomeProps;
   caseStudyDetails: HomeProps;
   product: HomeProps;
+  technology: HomeProps;
 }> = async () => {
   const apiCall = async (param: string) => {
     const res = await axios.get(
@@ -55,43 +56,49 @@ export const getServerSideProps: GetServerSideProps<{
     const caseStudyPromise = apiCall("case-study-list");
     const caseStudyDetailsPromise = apiCall("case-study-detail");
     const productPromise = apiCall("product");
+    const technologyPromise = apiCall("technology");
+    
 
-    const [homeData, caseStudy, caseStudyDetails, product] = await Promise.all([
+    const [maindata, caseStudy, caseStudyDetails, product, technology] = await Promise.all([
       homeDataPromise,
       caseStudyPromise,
       caseStudyDetailsPromise,
       productPromise,
+      technologyPromise,
     ]);
 
     return {
-      props: { homeData, caseStudy, caseStudyDetails, product },
+      props: { maindata, caseStudy, caseStudyDetails, product, technology },
     };
   } catch (error) {
     console.error("Error fetching home page data:", error);
     return {
       props: {
-        homeData: null,
+        maindata: null,
         caseStudy: null,
         caseStudyDetails: null,
         product: null,
+        technology: null,
       },
     };
   }
 };
 
 export default function page({
-  homeData,
+  maindata,
   caseStudy,
   caseStudyDetails,
   product,
+  technology,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <DataComponent
-        homeData={homeData}
+        maindata={maindata}
         caseStudy={caseStudy}
         caseStudyDetails={caseStudyDetails}
         product={product}
+        technology={technology}
       />
     </>
   );

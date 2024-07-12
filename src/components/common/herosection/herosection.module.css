@@ -1,3 +1,20 @@
+
+.herocontainer :global(.title-section h2) {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.herocontainer :global(.title-section p) {
+  margin-bottom: 4rem;
+  text-align: left;
+  font-size: 2.2rem;
+  line-height: 4rem;
+}
+
+.techherocontainer :global(.title-section h2) {
+  margin: 2rem 0;
+}
+
+
 .label {
   font-family: Montserrat;
   font-size: 1.5rem;
@@ -8,18 +25,33 @@
   margin-bottom: 3rem;
   text-transform: uppercase;
 }
-.imagecontainer{
-    display: flex;
-    justify-content: center;
+.imagecontainer {
+  display: flex;
+  justify-content: center;
 }
-.herocontainer :global(a){
-    margin-left: inherit;
-    margin-right: auto;
+.herocontainer :global(a) {
+  margin-left: inherit;
+  margin-right: auto;
 }
+.techimgcontainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.techherocontainer {
+  position: relative;
+  z-index: 5;
+}
+
 
 
 @media only screen and (max-width: 767px) {
-  .herocontainer{
+  .herocontainer {
     max-width: 90%;
+  }
+  .herotechimg img{
+    max-width: 10rem;
   }
 }

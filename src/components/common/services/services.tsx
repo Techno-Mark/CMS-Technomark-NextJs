@@ -15,16 +15,17 @@ interface ServicesProps {
   };
   isFeatured?: boolean;
   isProduct?: boolean;
+  istechservice?: boolean;
 }
 
 const Services: React.FC<ServicesProps> = ({
   props,
   isFeatured,
   isProduct,
+  istechservice,
 }) => {
-
   const services = props?.data || [];
-  const columns = isFeatured ? 5 : isProduct ? 3 : 4;
+  const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
   const totalItems = services.length;
   const rows = Math.ceil(totalItems / columns);
 
@@ -40,17 +41,20 @@ const Services: React.FC<ServicesProps> = ({
           <div
             key={index}
             className={`w-full 
-                ${isFeatured
-                ? "md:w-1/5"
-                : isProduct
-                  ? "md:w-1/3"
-                  : "md:w-1/2 lg:w-1/4"
-              }`}
+                ${
+                  isFeatured
+                    ? "md:w-1/5"
+                    : isProduct || istechservice
+                    ? "md:w-1/3"
+                    : "md:w-1/2 lg:w-1/4"
+                }`}
           >
             <div
-              className={`${styles.servicesbox} ${!isFirstRow && !isLastRow ? "" : "!border-t-0"
-                } ${isRightMostColumn ? styles.servicerightborder : ""} ${isBottomBorder && !isLastRow ? "border-b border-gray-300" : ""
-                }`}
+              className={`${styles.servicesbox} ${
+                !isFirstRow && !isLastRow ? "" : "!border-t-0"
+              } ${isRightMostColumn ? styles.servicerightborder : ""} ${
+                isBottomBorder && !isLastRow ? "border-b border-gray-300" : ""
+              }`}
             >
               <div className={styles.servicesinnerbox}>
                 <div className={styles.icon}>
@@ -67,7 +71,7 @@ const Services: React.FC<ServicesProps> = ({
                     {service.description}
                   </p>
                 )}
-                {!isFeatured && (
+                {!isFeatured && !istechservice && (
                   <div className={styles.moresection}>
                     <a href="#">read more</a>
                   </div>

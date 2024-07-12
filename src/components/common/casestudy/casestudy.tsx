@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styles from "./casestudy.module.css";
 import Image from "next/image";
-import PrevArrow from "../customarrow/prev";
-import NextArrow from "../customarrow/next";
+import NextArrow from '@/components/common/customarrow/next';
+import PrevArrow from '@/components/common/customarrow/prev';
 import Button from "../button/button";
 
 interface CaseStudy {

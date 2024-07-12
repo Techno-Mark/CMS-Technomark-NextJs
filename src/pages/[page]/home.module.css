@@ -1,71 +1,61 @@
+.methodology :global(.title-section h2) {
+  margin-bottom: 1.25rem;
+}
+.methodology :global(.title-section p) {
+  width: 66%;
+  margin: 0 auto 3.8rem;
+}
+
 .coreservices {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   background: #f8fafb;
 }
+.coreservices :global(.title-section h2),
+.productservices :global(.title-section h2),
+.techservices :global(.title-section h2),
+.singletechservices :global(.title-section h2) {
+  margin-bottom: 4rem;
+}
+.coreservices :global(.title-section p),
+.productservices :global(.title-section p),
+.techservices :global(.title-section p),
+.singletechservices :global(.title-section p) {
+  margin-bottom: 0.6rem;
+}
+
+.casestudiessection {
+  overflow: hidden;
+  border-bottom: 1px solid #e8ebee;
+}
+.casestudiessection :global(.title-section h2) {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+.casestudiessection :global(.title-section p) {
+  position: relative;
+  text-align: left;
+  padding-left: 7rem;
+  margin-bottom: 5rem;
+}
+.casestudiessection :global(.title-section p::before) {
+  content: "";
+  width: 6rem;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(#168944 100%, #40aa46 100%);
+  top: 17px;
+}
+
 .meetdiverse {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   background: #f8fafb;
   z-index: 2;
 }
-.cmptrustsection,
-.awardsection {
-  background: #fff;
-}
-.faqsection {
-  position: relative;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #fff;
-}
-
-.faqsection h2 {
-  text-align: left;
-}
-.leftbubblecircle {
-  position: absolute;
-  left: -16rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  z-index: 0;
-}
-.rightbubblecircle {
-  position: absolute;
-  right: -16rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  z-index: -1;
-}
-.casestudiessection {
-  overflow: hidden;
-  border-bottom: 1px solid #e8ebee;
-}
-.casestudiessection h2 {
-  text-align: left;
-}
-.casestudiessection .casestudytitle {
-  position: relative;
-  text-align: left;
-  margin-left: 110px;
-}
-.casestudiessection .casestudytitle::before {
-  content: "";
-  width: 100px;
-  height: 4px;
-  position: absolute;
-  left: -7.2rem;
-  background: linear-gradient(#168944 100%, #40aa46 100%);
-  top: 17px;
-}
-.clientspeaksection {
-  position: relative;
-  z-index: 1;
-}
-.clientcurve {
-  position: absolute;
-  top: 0;
-  z-index: -1;
+.meetdiverse :global(.title-section h2) {
+  margin-bottom: 5rem;
 }
 
 .guaranteetmsection {
@@ -73,16 +63,17 @@
   background: #e7f8ea;
   box-shadow: 10px 0px 0px 0px #fff;
 }
+.guaranteetmsection :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+.guaranteetmsection .videoarea {
+  position: relative;
+}
 .guaranteetmsection .videoarea video {
   object-fit: initial;
   width: 100%;
   border-radius: 10px;
 }
-
-.guaranteetmsection .videoarea {
-  position: relative;
-}
-
 .guaranteetmsection .videoarea .play-btn {
   position: absolute;
   top: 50%;
@@ -97,13 +88,61 @@
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out all;
 }
-
 .guaranteetmsection .videoarea .play-btn:hover {
   background: #f13c31;
 }
-
 .guaranteetmsection .videoarea .play-btn:hover svg path {
   fill: #ffffff;
+}
+
+.clientspeaksection {
+  position: relative;
+  z-index: 1;
+}
+.clientspeaksection :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+.clientspeaksection :global(.title-section p) {
+  margin-bottom: 0.6rem;
+}
+.clientcurve {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.trustsection {
+  background: #fff;
+}
+.trustsection :global(.title-section h2) {
+  margin-bottom: 1.2rem;
+}
+.trustsection :global(.title-section p) {
+  margin-bottom: 5rem;
+}
+.trustsection :global(.title-section p span) {
+  display: block;
+  font-size: 2rem;
+  color: #168944;
+  font-weight: 700;
+}
+
+.faqsection {
+  position: relative;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+}
+.faqsection :global(.title-section h2) {
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
+.awardsection {
+  background: #fff;
+}
+.awardsection :global(.title-section h2) {
+  margin-bottom: 5rem;
 }
 
 .formsection {
@@ -122,6 +161,32 @@
   margin-bottom: 3rem;
   text-transform: uppercase;
 }
+.casestudylist :global(.title-section h2) {
+  margin-bottom: 2rem;
+}
+.casestudylist :global(.title-section p) {
+  margin: 0 auto 5rem;
+  max-width: 50%;
+}
+
+.casestudydetailherosection {
+  background-image: url(/images/casedetailbg.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.casestudydetailherosection :global(.title-section h2) {
+  margin-bottom: 2rem;
+  color: #fff !important;
+}
+.casestudydetailherosection :global(.title-section p) {
+  margin: 0 auto 5rem;
+  max-width: 60%;
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+}
 .casestudydetaillabel {
   font-family: Montserrat;
   font-size: 1.5rem;
@@ -133,39 +198,46 @@
   text-transform: uppercase;
 }
 
-.casestudydetailherosection {
-  background-image: url(/images/casedetailbg.png);
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-}
-
 .businessimpactsection {
   background: #1d3557;
   box-shadow: 0px 24px 84px 0px rgba(198, 214, 190, 0.3);
+}
+.businessimpactsection :global(.title-section h2) {
+  color: #fff !important;
+}
+.businessimpactsection :global(.title-section p) {
+  color: #fff;
+  width: 75%;
+  margin-inline: auto;
+}
+
+.problemstatement :global(.title-section h2) {
+  text-align: left;
+}
+
+.challangesolutions :global(.title-section h2) {
+  margin-bottom: 5rem;
 }
 
 .majorscreensection {
   background: #1d3557;
 }
-
-.businessimpacttitle h2 {
-  color: red !important;
+.majorscreensection :global(.title-section h2) {
+  color: #fff !important;
+  margin-bottom: 5rem;
 }
 
-.businessimpacttitle p {
-  color: #fff;
-  width: 75%;
-  margin-inline: auto;
+.features :global(.title-section h2) {
+  margin-bottom: 5rem;
 }
+
 .productservices {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   background: #f2f5f9;
 }
+
 .productsolutions {
-  
   border: none;
   border-bottom: 4px solid;
   border-image-slice: 1;
@@ -173,7 +245,82 @@
   border-image-source: linear-gradient(90deg, #6e9979 0%, #b7ffc9 100%);
   border-image-repeat: stretch;
 }
-.productbg{
+
+.technologyhomesection {
+  padding: 5rem 0;
+}
+
+.techslider {
+  border-bottom: 1px solid #bbc2cd;
+  background: #e3f3e6;
+}
+
+.techslider :global(.title-section h2) {
+  margin-bottom: 2rem;
+}
+.techslider :global(.title-section p) {
+  margin: 0 auto 4rem;
+  max-width: 70%;
+}
+
+.techservices {
+  background: #fafbfc;
+  border-top: 1px solid #e8ebee;
+  border-bottom: 1px solid #e8ebee;
+}
+
+.techservices :global(.title-section h2) {
+  margin-bottom: 1.25rem;
+}
+.techservices :global(.title-section p) {
+  margin-bottom: 5rem;
+}
+
+.technenifits {
+  position: relative;
+  border: none;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(90deg, #3db762 100%, #67ab6b 100%);
+  border-image-repeat: stretch;
+  border-bottom: 4px solid #94cc7c;
+  overflow: hidden;
+}
+
+.hiredeveloper {
+  border-top: 1px solid #bbc2cd;
+  border-bottom: 1px solid #bbc2cd;
+  background: #fafbfc;
+}
+
+.singletechservices {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f2f5f9;
+  background-blend-mode: darken, normal;
+}
+
+.techexpert {
+  border-top: 1px solid #bbc2cd;
+  border-bottom: 1px solid #bbc2cd;
+}
+
+.leftbubblecircle {
+  position: absolute;
+  left: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 0;
+}
+.rightbubblecircle {
+  position: absolute;
+  right: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: -1;
+}
+
+.productbg {
   position: absolute;
   left: -4rem;
   width: 50%;
@@ -183,6 +330,7 @@
   background-size: cover;
   top: 0;
 }
+
 @media only screen and (max-width: 767px) {
   .guaranteetmsection .videoarea {
     padding-bottom: 20px;

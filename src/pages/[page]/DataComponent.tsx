@@ -19,6 +19,11 @@ import ScreenSlider from "@/components/common/screenslider/screenslider";
 import Challenges from "@/components/common/Challenges/Challenges";
 import Herosection from "@/components/common/herosection/herosection";
 import ProductSolutions from "@/components/common/productsolutions/productsolutions";
+import TechSlider from "@/components/common/techslider/techslider";
+import TechService from "@/components/common/techservice/techservice";
+import TechExpert from "@/components/common/techexpert/techexpert";
+import TechBenifits from "@/components/common/techbenifits/techbenifits";
+import HireDeveloper from "@/components/common/hiredeveloper/hiredeveloper";
 import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import styles from "./home.module.css";
@@ -50,466 +55,475 @@ interface HomeProps {
   productherosection?: any;
   productservices?: any;
   productsolutions?: any;
+  technologyhomesection?: any;
+  techslider?: any;
+  techservices?: any;
+  technenifits?: any;
+  hiredeveloper?: any;
+  singletechservices?: any;
+  techexpert?: any;
   props: any;
 }
 
 const DataComponent = ({
-  homeData,
+  maindata,
   caseStudy,
   caseStudyDetails,
   product,
+  technology,
 }: {
-  homeData: HomeProps;
+  maindata: HomeProps;
   caseStudy: HomeProps;
   caseStudyDetails: HomeProps;
   product: HomeProps;
+  technology: HomeProps;
 }) => {
   const pathName: any = usePathname();
-  const [data, setData] = useState<HomeProps>();
+  const [homeData,setHomeData] = useState<HomeProps>();
 
   useEffect(() => {
     if (pathName === "/home") {
-      setData(homeData);
+      setHomeData(maindata);
     } else if (pathName === "/casestudylist") {
-      setData(caseStudy);
+      setHomeData(caseStudy);
     } else if (pathName === "/casestudydetail") {
-      setData(caseStudyDetails);
+      setHomeData(caseStudyDetails);
     } else if (pathName === "/product") {
-      setData(product);
+      setHomeData(product);
+    } else if (pathName === "/technology"){
+      setHomeData(technology);
     }
   }, [pathName]);
+
 
   const renderSection = (sectionName: string) => {
     switch (sectionName) {
       case "homeSection":
-        return (
-          data?.homeSection && <Homesection sectionData={data.homeSection} />
+        return homeData?.homeSection && (
+          <Homesection sectionData={homeData.homeSection} />
         );
       case "techstartup":
-        return (
-          data?.techstartup && <TectStartupBg sectionData={data.techstartup} />
+        return homeData?.techstartup && (
+          <TectStartupBg sectionData={homeData.techstartup} />
         );
       case "methodology":
-        return (
-          data?.methodology && (
-            <section className={`${styles.methodology} tm-section bg-white`}>
-              <div className={styles.leftbubblecircle}>
-                <Image
-                  src="/images/gradient-bubble.svg"
-                  alt="bubble"
-                  height={850}
-                  width={850}
-                />
-              </div>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.methodology[0].title,
-                    subtitle: data.methodology[0].subtitle,
-                  }}
-                  titleClassName="methodologytitle"
-                />
-                <MethodologyBox props={data.methodology[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.methodology && (
+          <section className={`${styles.methodology} tm-section bg-white`}>
+            <div className={styles.leftbubblecircle}>
+              <Image src="/images/gradient-bubble.svg" alt="bubble" height={850} width={850} />
+            </div>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.methodology[0].title,
+                  subtitle: homeData.methodology[0].subtitle,
+                }}
+                titleClassName="methodologytitle"
+              />
+              <MethodologyBox props={homeData.methodology[0]} />
+            </div>
+          </section>
         );
       case "services":
-        return (
-          data?.services && (
-            <section className={`${styles.coreservices} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.services[0].title,
-                    subtitle: data.services[0].subtitle,
-                  }}
-                  titleFirst={false}
-                  titleClassName="servicestitle"
-                />
-                <Services props={data.services[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.services && (
+          <section className={`${styles.coreservices} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.services[0].title,
+                  subtitle: homeData.services[0].subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="servicestitle"
+              />
+              <Services props={homeData.services[0]} />
+            </div>
+          </section>
         );
       case "casestudy":
-        return (
-          data?.casestudy && (
-            <section
-              className={`${styles.casestudiessection} tm-section bg-white`}
-            >
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.casestudy[0].title,
-                    subtitle: data.casestudy[0].subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="casestudytitle"
-                />
-                <CaseStudy props={data.casestudy[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.casestudy && (
+          <section className={`${styles.casestudiessection} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.casestudy[0].title,
+                  subtitle: homeData.casestudy[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="casestudytitle"
+              />
+              <CaseStudy props={homeData.casestudy[0]} />
+            </div>
+          </section>
         );
       case "techIcons":
-        return (
-          data?.techIcons && (
-            <section className={`${styles.meetdiverse} tm-section`}>
-              <div className={styles.rightbubblecircle}>
-                <Image
-                  src="/images/gradient-bubble.svg"
-                  alt="bubble"
-                  width={850}
-                  height={850}
-                />
-              </div>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.techIcons[0].title,
-                    subtitle: data.techIcons[0].subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="meetdivresetitle"
-                />
-                <TechIcons props={data.techIcons[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.techIcons && (
+          <section className={`${styles.meetdiverse} tm-section`}>
+            <div className={styles.rightbubblecircle}>
+              <Image src="/images/gradient-bubble.svg" alt="bubble" width={850} height={850} />
+            </div>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.techIcons[0].title,
+                  subtitle: homeData.techIcons[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="meetdivresetitle"
+              />
+              <TechIcons props={homeData.techIcons[0]} />
+            </div>
+          </section>
         );
       case "guarantee":
-        return (
-          data?.guarantee && (
-            <section className={`${styles.guaranteetmsection} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{ title: data.guarantee[0].title }}
-                  titleFirst={true}
-                  titleClassName="guaranteetitle"
-                />
-                <div className="flex flex-wrap">
-                  <div className="lg:w-1/2 md:w-full">
-                    <div className={styles.videoarea}>
-                      <video loop autoPlay muted>
-                        <source
-                          src={data.guarantee[0].videosrc}
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
-                  </div>
-                  <div className="lg:w-1/2 md:w-full pl-10">
-                    <GuaranteePoints props={data.guarantee[0]} />
+        return homeData?.guarantee && (
+          <section className={`${styles.guaranteetmsection} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{ title: homeData.guarantee[0].title }}
+                titleFirst={true}
+                titleClassName="guaranteetitle"
+              />
+              <div className="flex flex-wrap">
+                <div className="lg:w-1/2 md:w-full">
+                  <div className={styles.videoarea}>
+                    <video loop autoPlay muted>
+                      <source
+                        src={homeData.guarantee[0].videosrc}
+                        type="video/mp4"
+                      />
+                    </video>
                   </div>
                 </div>
+                <div className="lg:w-1/2 md:w-full pl-10">
+                  <GuaranteePoints props={homeData.guarantee[0]} />
+                </div>
               </div>
-            </section>
-          )
+            </div>
+          </section>
         );
       case "videosection":
-        return (
-          data?.videosection && (
-            <section className="w-full overflow-hidden videoSection">
-              <Video props={data.videosection.video} />
-            </section>
-          )
+        return homeData?.videosection && (
+          <section className="w-full overflow-hidden videoSection">
+            <Video props={homeData.videosection.video} />
+          </section>
         );
       case "client":
-        return (
-          data?.client && (
-            <section
-              className={`${styles.clientspeaksection} tm-section bg-white`}
-            >
-              <Image
-                className={styles.clientcurve}
-                src="/images/client-shape.png"
-                alt="shape"
-                height={1060}
-                width={1930}
+        return homeData?.client && (
+          <section className={`${styles.clientspeaksection} tm-section bg-white`}>
+            <Image
+              className={styles.clientcurve}
+              src="/images/client-shape.png"
+              alt="shape"
+              height={1060}
+              width={1930}
+            />
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.client[0].title,
+                  subtitle: homeData.client[0].subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="clienttitle"
               />
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.client[0].title,
-                    subtitle: data.client[0].subtitle,
-                  }}
-                  titleFirst={false}
-                  titleClassName="clienttitle"
-                />
-                <Client props={data.client[0]} />
-              </div>
-            </section>
-          )
+              <Client props={homeData.client[0]} />
+            </div>
+          </section>
         );
       case "achievement":
-        return (
-          data?.achievement && (
-            <section className={`${styles.cmptrustsection} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.achievement[0].title,
-                    subtitle: data.achievement[0].subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="achievementtitle"
-                />
-                <Achievement props={data.achievement[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.achievement && (
+          <section className={`${styles.trustsection} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.achievement[0].title,
+                  subtitle: homeData.achievement[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="achievementtitle"
+              />
+              <Achievement props={homeData.achievement[0]} />
+            </div>
+          </section>
         );
       case "faq":
-        return (
-          data?.faq && (
-            <section className={`${styles.faqsection} tm-section`}>
-              <div className={styles.leftbubblecircle}>
-                <Image
-                  src="/images/gradient-bubble.svg"
-                  alt="bubble"
-                  height={850}
-                  width={850}
-                />
-              </div>
-              <div className="container mx-auto">
-                <div className="flex flex-wrap">
-                  <div className="w-full md:w-1/4">
-                    <TitleSection
-                      sectionData={{
-                        title: data.faq[0].title,
-                        subtitle: data.faq[0].subtitle,
-                      }}
-                      titleFirst={true}
-                      titleClassName="faqtitle"
-                    />
-                  </div>
-                  <div className="w-full md:w-3/4">
-                    <Faq props={data.faq[0]} />
-                  </div>
+        return homeData?.faq && (
+          <section className={`${styles.faqsection} tm-section`}>
+            <div className={styles.leftbubblecircle}>
+              <Image src="/images/gradient-bubble.svg" alt="bubble" height={850} width={850} />
+            </div>
+            <div className="container mx-auto">
+              <div className="flex flex-wrap">
+                <div className="w-full md:w-1/4">
+                  <TitleSection
+                    sectionData={{
+                      title: homeData.faq[0].title,
+                      subtitle: homeData.faq[0].subtitle,
+                    }}
+                    titleFirst={true}
+                    titleClassName="faqtitle"
+                  />
+                </div>
+                <div className="w-full md:w-3/4">
+                  <Faq props={homeData.faq[0]} />
                 </div>
               </div>
-            </section>
-          )
+            </div>
+          </section>
         );
       case "awards":
-        return (
-          data?.awards && (
-            <section className={`${styles.awardsection} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.awards[0].title,
-                    subtitle: data.awards[0].subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="awardtitle"
-                />
-                <Singleaward props={data.awards[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.awards && (
+          <section className={`${styles.awardsection} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.awards[0].title,
+                  subtitle: homeData.awards[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="awardtitle"
+              />
+              <Singleaward props={homeData.awards[0]} />
+            </div>
+          </section>
         );
       case "formsection":
-        return (
-          data?.formsection && (
-            <section className={`${styles.formsection} tm-section bg-white`}>
-              <div className="container mx-auto">
-                <FormSection props={data.formsection} />
-              </div>
-            </section>
-          )
+        return homeData?.formsection && (
+          <section className={`${styles.formsection} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <FormSection props={homeData.formsection} />
+            </div>
+          </section>
         );
       case "casestudylist":
-        return (
-          data?.casestudylist && (
-            <section className={`${styles.casestudylist} tm-section bg-white`}>
-              <div className="container mx-auto">
-                <p className={styles.casestudylistlabel}>
-                  {data.casestudylist[0].label}
-                </p>
-                <TitleSection
-                  sectionData={{
-                    title: data.casestudylist[0].title,
-                    subtitle: data.casestudylist[0].subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="casestudylisttitle"
-                />
-                <CaseStudyList props={data.casestudylist[0]} />
-              </div>
-            </section>
-          )
+        return homeData?.casestudylist && (
+          <section className={`${styles.casestudylist} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <p className={styles.casestudylistlabel}>{homeData.casestudylist[0].label}</p>
+              <TitleSection
+                sectionData={{
+                  title: homeData.casestudylist[0].title,
+                  subtitle: homeData.casestudylist[0].subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="casestudylisttitle"
+              />
+              <CaseStudyList props={homeData.casestudylist[0]} />
+            </div>
+          </section>
         );
       case "casestudydetailherosection":
-        return (
-          data?.casestudydetailherosection && (
-            <section
-              className={`${styles.casestudydetailherosection} tm-section`}
-            >
-              <div className="container mx-auto">
-                <p className={styles.casestudydetaillabel}>
-                  {data.casestudydetailherosection.label}
-                </p>
-                <TitleSection
-                  sectionData={{
-                    title: data.casestudydetailherosection.title,
-                    subtitle: data.casestudydetailherosection.subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="casestudydetailtitle"
-                />
-                <CaseStudyDetail props={data.casestudydetailherosection} />
-              </div>
-            </section>
-          )
+        return homeData?.casestudydetailherosection && (
+          <section className={`${styles.casestudydetailherosection} tm-section`}>
+            <div className="container mx-auto">
+              <p className={styles.casestudydetaillabel}>{homeData.casestudydetailherosection.label}</p>
+              <TitleSection
+                sectionData={{
+                  title: homeData.casestudydetailherosection.title,
+                  subtitle: homeData.casestudydetailherosection.subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="casestudydetailtitle"
+              />
+              <CaseStudyDetail props={homeData.casestudydetailherosection} />
+            </div>
+          </section>
         );
       case "businessimpact":
-        return (
-          data?.businessimpact && (
-            <section className={`${styles.businessimpactsection} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.businessimpact.title,
-                    subtitle: data.businessimpact.subtitle,
-                  }}
-                  titleFirst={true}
-                  titleClassName="businessimpacttitle"
-                />
-              </div>
-            </section>
-          )
+        return homeData?.businessimpact && (
+          <section className={`${styles.businessimpactsection} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.businessimpact.title,
+                  subtitle: homeData.businessimpact.subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="businessimpacttitle"
+              />
+            </div>
+          </section>
         );
       case "problemstatement":
-        return (
-          data?.problemstatement && (
-            <section
-              className={`${styles.problemstatement} tm-section bg-white`}
-            >
-              <div className="container mx-auto">
-                <div className="flex flex-wrap">
-                  <div className="w-full md:w-1/4">
-                    <TitleSection
-                      sectionData={{
-                        title: data.problemstatement.title,
-                      }}
-                      titleFirst={true}
-                      titleClassName="problemstatementtitle"
-                    />
-                  </div>
-                  <div className="w-full md:w-3/4">
-                    <GuaranteePoints
-                      props={data.problemstatement}
-                      isProblemStatement={true}
-                    />
-                  </div>
+        return homeData?.problemstatement && (
+          <section className={`${styles.problemstatement} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <div className="flex flex-wrap">
+                <div className="w-full md:w-1/4">
+                  <TitleSection
+                    sectionData={{
+                      title: homeData.problemstatement.title,
+                    }}
+                    titleFirst={true}
+                    titleClassName="problemstatementtitle"
+                  />
+                </div>
+                <div className="w-full md:w-3/4">
+                  <GuaranteePoints props={homeData.problemstatement} isProblemStatement={true} />
                 </div>
               </div>
-            </section>
-          )
+            </div>
+          </section>
         );
       case "projectscreens":
-        return (
-          data?.projectscreens && (
-            <section className={`${styles.projectscreen} bg-white`}>
-              <div className="container mx-auto">
-                <ScreenSlider props={data.projectscreens} useSlider1={true} />
-              </div>
-            </section>
-          )
+        return homeData?.projectscreens && (
+          <section className={`${styles.projectscreen} bg-white`}>
+            <div className="container mx-auto">
+              <ScreenSlider props={homeData.projectscreens} useSlider1={true} />
+            </div>
+          </section>
         );
       case "Challengessolutions":
-        return (
-          data?.Challengessolutions && (
-            <section
-              className={`${styles.challangesolutions} tm-section bg-white`}
-            >
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.Challengessolutions.title,
-                  }}
-                  titleClassName="Challengessolutionstitle"
-                />
-                <Challenges props={data.Challengessolutions} />
-              </div>
-            </section>
-          )
+        return homeData?.Challengessolutions && (
+          <section className={`${styles.challangesolutions} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.Challengessolutions.title,
+                }}
+                titleClassName="Challengessolutionstitle"
+              />
+              <Challenges props={homeData.Challengessolutions} />
+            </div>
+          </section>
         );
       case "majorscreen":
-        return (
-          data?.majorscreen && (
-            <section
-              className={`${styles.majorscreensection} tm-section majorscreensection`}
-            >
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.majorscreen.title,
-                  }}
-                  titleClassName="majorscreentitle"
-                />
-                <ScreenSlider props={data.majorscreen} useSlider1={false} />
-              </div>
-            </section>
-          )
+        return homeData?.majorscreen && (
+          <section className={`${styles.majorscreensection} tm-section majorscreensection`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.majorscreen.title,
+                }}
+                titleClassName="majorscreentitle"
+              />
+              <ScreenSlider props={homeData.majorscreen} useSlider1={false} />
+            </div>
+          </section>
         );
       case "features":
-        return (
-          data?.features && (
-            <section className={`${styles.features} tm-section bg-white`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.features.title,
-                  }}
-                  titleClassName="featurestitle"
-                />
-                <Services props={data.features} isFeatured={true} />
-              </div>
-            </section>
-          )
+        return homeData?.features && (
+          <section className={`${styles.features} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.features.title,
+                }}
+                titleClassName="featurestitle"
+              />
+              <Services props={homeData.features} isFeatured={true} />
+            </div>
+          </section>
         );
       case "productherosection":
-        return (
-          data?.productherosection && (
-            <section
-              className={`${styles.prodcutherosection} tm-section bg-white`}
-            >
-              <Herosection props={data.productherosection} />
-            </section>
-          )
+        return homeData?.productherosection && (
+          <section className={`${styles.prodcutherosection} tm-section bg-white`}>
+            <Herosection props={homeData.productherosection} />
+          </section>
         );
       case "productservices":
-        return (
-          data?.productservices && (
-            <section className={`${styles.productservices} tm-section`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: data.productservices.title,
-                    subtitle: data.productservices.subtitle,
-                  }}
-                  titleFirst={false}
-                  titleClassName="servicestitle"
-                />
-                <Services props={data.productservices} isProduct={true} />
-              </div>
-            </section>
-          )
+        return homeData?.productservices && (
+          <section className={`${styles.productservices} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.productservices.title,
+                  subtitle: homeData.productservices.subtitle,
+                }}
+                titleFirst={false}
+                titleClassName="servicestitle"
+              />
+              <Services props={homeData.productservices} isProduct={true} />
+            </div>
+          </section>
         );
       case "productsolutions":
-        return (
-          data?.productsolutions && (
-            <section
-              className={`${styles.productsolutions} tm-section bg-white`}
-            >
-              <div className="container mx-auto">
-                <ProductSolutions props={data.productsolutions} />
-              </div>
+        return homeData?.productsolutions && (
+          <section className={`${styles.productsolutions} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <ProductSolutions props={homeData.productsolutions} />
+            </div>
+          </section>
+        );
+      case "technologyhomesection":
+        return homeData?.technologyhomesection && (
+          <>
+            <section className={`${styles.technologyhomesection} tm-section bg-white`}>
+              {/* <img src={homeData.technologyhomesection.techimage} alt="" /> */}
+              <Herosection props={homeData.technologyhomesection} istechnology={true} />
             </section>
-          )
+          </>
+        );
+      case "techslider":
+        return homeData?.techslider && (
+          <section className={`${styles.techslider} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.techslider.title,
+                  subtitle: homeData.techslider.subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="techslidertitle"
+              />
+              <TechSlider props={homeData.techslider} />
+            </div>
+          </section>
+        );
+      case "techservices":
+        return homeData?.techservices && (
+          <section className={`${styles.techservices} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.techservices.title,
+                  subtitle: homeData.techservices.subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="techservicestitle"
+              />
+              <TechService props={homeData.techservices.services} />
+            </div>
+          </section>
+        );
+      case "technenifits":
+        return homeData?.technenifits && (
+          <section className={`${styles.technenifits} bg-white`}>
+            <TechBenifits props={homeData.technenifits} />
+          </section>
+        );
+      case "hiredeveloper":
+        return homeData?.hiredeveloper && (
+          <section className={`${styles.hiredeveloper} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <HireDeveloper props={homeData.hiredeveloper} />
+            </div>
+          </section>
+        );
+      case "singletechservices":
+        return homeData?.singletechservices && (
+          <section className={`${styles.singletechservices} tm-section`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: homeData.singletechservices.title,
+                  subtitle: homeData.singletechservices.subtitle,
+                }}
+                titleFirst={true}
+                titleClassName="servicestitle"
+              />
+              <Services props={homeData.singletechservices} istechservice={true} />
+            </div>
+          </section>
+        );
+      case "techexpert":
+        return homeData?.techexpert && (
+          <section className={`${styles.techexpert} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TechExpert props={homeData.techexpert} />
+            </div>
+          </section>
         );
       default:
         return null;
@@ -517,8 +531,8 @@ const DataComponent = ({
   };
   return (
     <>
-      {data ? (
-        data.sectionsOrder.map((sectionName: any) => (
+      {homeData ? (
+        homeData.sectionsOrder.map((sectionName: any) => (
           <React.Fragment key={sectionName}>
             {renderSection(sectionName)}
           </React.Fragment>
