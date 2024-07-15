@@ -1,0 +1,60 @@
+.productsolutionlist ul li {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e8ebee;
+  border-bottom: 1px solid #e8ebee;
+  color: #1d3557;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.productsolutionlist ul li .scalearea {
+  transition: 0.5s ease-in-out all;
+}
+
+.productsolutionlist ul li .scalearea img {
+  transition: transform 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  padding-right: 20px;
+  position: absolute;
+  left: -4rem;
+  max-width: 5rem;
+}
+
+.productsolutionlist ul li:hover .scalearea img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.productsolutionlist ul li:hover .scalearea {
+  transform: translateX(40px);
+  color: #168944;
+}
+
+.productbg  {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(/images/product-solution.png);
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+
+/* .productbg {
+  position: absolute;
+  left: -4rem;
+  top: 5rem;
+} */
+
+
+@media only screen and (max-width: 767px) {
+    .productbg  {
+        position: inherit;
+        width: 100%;
+        height: 350px;
+        margin: 0 auto;
+    }
+}

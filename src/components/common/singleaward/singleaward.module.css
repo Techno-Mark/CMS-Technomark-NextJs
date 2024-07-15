@@ -1,0 +1,13 @@
+.awardlist{
+    grid-row-gap: 5rem;
+    grid-column-gap: 5rem;
+    list-style-type: none;
+    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.awardlist li img{
+    max-width: 7rem;
+}
