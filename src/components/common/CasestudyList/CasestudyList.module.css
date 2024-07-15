@@ -31,7 +31,7 @@
 .caseslide {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -195,9 +195,10 @@
 
 .tabContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .tabButton {

@@ -56,4 +56,14 @@
 }
 
 
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 992px) {
+  .iconTextArea .inlineIcon h4{
+    margin-left: 10px;
+  }
+  .iconTextArea p{
+    width: 100%;
+  }
+  .iconTextArea {
+    margin-bottom: 2rem;
+  }
+}

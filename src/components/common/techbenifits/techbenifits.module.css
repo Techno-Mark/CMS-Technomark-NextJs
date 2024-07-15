@@ -83,6 +83,9 @@
     width: 100%;
     max-width: none;
   }
+  .benefitListItem:hover{
+    width: 100%;
+  }
   .benifitdetails {
     padding: 5rem 3rem;
   }

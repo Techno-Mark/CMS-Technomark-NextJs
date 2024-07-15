@@ -53,7 +53,7 @@
 @media only screen and (max-width: 767px) {
     .productbg  {
         position: inherit;
-        width: 75%;
+        width: 100%;
         height: 350px;
         margin: 0 auto;
     }

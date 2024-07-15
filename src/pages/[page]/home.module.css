@@ -213,6 +213,7 @@
 
 .problemstatement :global(.title-section h2) {
   text-align: left;
+  margin-bottom: 5rem;
 }
 
 .challangesolutions :global(.title-section h2) {
@@ -334,5 +335,9 @@
 @media only screen and (max-width: 767px) {
   .guaranteetmsection .videoarea {
     padding-bottom: 20px;
+  }
+  .casestudylist :global(.title-section p),
+  .casestudydetailherosection :global(.title-section p) {
+    max-width: 90%;
   }
 }

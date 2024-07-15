@@ -18,10 +18,14 @@
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
+  text-align: left;
+}
+.cardtitle img{
+  max-width: 4rem;
 }
 
 .cardtitle span {
-  margin-right: 15px;
+  margin-right: 1rem;
   font-weight: 400;
 }
 

@@ -19,24 +19,15 @@ interface TechIconProps {
 const TechIcons: React.FC<TechIconProps> = ({ props }: any) => {
   const [icons, setIcons] = useState<TechIcon[]>([]);
 
-  // useEffect(() => {
-  //   const fetchIcons = async () => {
-  //     const data = await getTechIconsData();
-  //     setIcons(data);
-  //   };
-
-  //   fetchIcons();
-  // }, []);
-
   return (
     <div className={styles.meetgridicon}>
       <ul>
         {props?.data?.map((item: any, index: any) => {
-          return(
-          <li key={index}>
-            <Image src={item.src} alt={item.alt} width={48} height={48} className="w-16 h-16 mx-auto" />
-            <p>{item.alt}</p>
-          </li>
+          return (
+            <li key={index}>
+              <Image src={item.src} alt={item.alt} width={48} height={48} className="w-20 h-20 mx-auto" />
+              <p>{item.alt}</p>
+            </li>
           )
         }
         )}
