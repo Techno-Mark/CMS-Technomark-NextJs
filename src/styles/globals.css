@@ -8,6 +8,21 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #168944;
+  --primary-variant-one: #40AA46;
+  --primary-background: #E7F8EA;
+  --secondary--color: #1D3557;
+  --secondary--variant-one: #344968;
+  --white-color: #fff;
+  --border-primary: #BBC2CD;
+  --border-secondary: #E8EBEE;
+  --border-ternary: #e6e6e6;
+  --border-quaternary: #8E9AAB;
+  --border-quinary: #94CC7C; 
+  --bg-primary: #f8fafb;
+  --bg-secondary: #f2f5f9;
+  --bg-ternary: #FAFBFC;
+  --bg-quaternary: #e3f3e6;
 }
 
 @media (prefers-color-scheme: dark) {

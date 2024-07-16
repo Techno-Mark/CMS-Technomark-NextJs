@@ -1,8 +1,8 @@
 .productsolutionlist ul li {
   padding: 1rem 1.25rem;
-  border-top: 1px solid #e8ebee;
-  border-bottom: 1px solid #e8ebee;
-  color: #1d3557;
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+  color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 3rem;
@@ -29,7 +29,7 @@
 
 .productsolutionlist ul li:hover .scalearea {
   transform: translateX(40px);
-  color: #168944;
+  color: var(--primary-color);
 }
 
 .productbg  {

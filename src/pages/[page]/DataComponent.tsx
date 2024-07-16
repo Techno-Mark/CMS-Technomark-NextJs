@@ -204,7 +204,7 @@ const DataComponent = ({
         );
       case "videosection":
         return homeData?.videosection && (
-          <section className="w-full overflow-hidden videoSection">
+          <section className={`w-full overflow-hidden ${styles.videoSection}`}>
             <Video props={homeData.videosection.video} />
           </section>
         );
@@ -489,7 +489,7 @@ const DataComponent = ({
         );
       case "technenifits":
         return homeData?.technenifits && (
-          <section className={`${styles.technenifits} bg-white`}>
+          <section className={`${styles.technenifits} bg-white tm-section`}>
             <TechBenifits props={homeData.technenifits} />
           </section>
         );

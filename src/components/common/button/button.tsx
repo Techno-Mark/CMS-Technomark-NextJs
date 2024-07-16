@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ href, text, variant }) => {
   const baseClass = styles.newPrimarybtn;
   const variantClass = variant === 'secondary' ? styles.secondarybtn : '';
-  const strokeColor = variant === 'secondary' ? '#1D3557' : '#ffffff';
+  const strokeColor = variant === 'secondary' ? '#1D3557' : 'var(--white-color)';
 
 
   return (

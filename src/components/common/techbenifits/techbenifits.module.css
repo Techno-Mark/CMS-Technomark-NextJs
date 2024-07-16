@@ -33,7 +33,7 @@
   padding: 0.75rem 1.5rem;
   border-radius: 130px;
   border: 2px solid transparent;
-  background: linear-gradient(90deg, #1d3557 0%, #617289 100%);
+  background: linear-gradient(90deg, var(--secondary--color) 0%, #617289 100%);
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
 }
 .benefitListItem:hover {
   border-color: #f8fcfa;
-  background: #168944;
+  background: var(--primary-color);
   box-shadow: 0px 4px 17px 0px rgba(255, 255, 255, 0.2) inset,
     0px 10px 12px 0px rgba(0, 0, 0, 0.2);
   width: 275px;
@@ -51,7 +51,7 @@
 
 .benefitListItem p {
   margin-bottom: 0;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3rem;

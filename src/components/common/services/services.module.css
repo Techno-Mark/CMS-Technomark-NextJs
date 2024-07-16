@@ -1,8 +1,8 @@
 .servicesbox {
   text-align: center;
   position: relative;
-  border-right: 1px solid #bbc2cd;
-  border-top: 1px solid #bbc2cd;
+  border-right: 1px solid var(--border-primary);
+  border-top: 1px solid var(--border-primary);
   padding: 3rem 1rem;
 }
 .servicerightborder {
@@ -31,11 +31,11 @@
 .servicesbox:hover .icon {
   border-radius: 100px;
   outline: 6px solid rgba(22, 137, 68, 0.5);
-  background: #1d3557;
+  background: var(--secondary--color);
 }
 
 .servicesbox .servicetitle {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.6rem;
@@ -45,7 +45,7 @@
 }
 
 .servicesbox .servicedescribe {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 2rem;
@@ -72,7 +72,7 @@
   transform: translateY(40px);
   transition: 0.5s;
   opacity: 0;
-  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -80,7 +80,7 @@
   font-weight: 700;
   line-height: 1.4rem;
   text-transform: uppercase;
-  border-bottom: 2px solid #168944;
+  border-bottom: 2px solid var(--primary-color);;
 }
 
 .servicesbox:hover .moresection a {
@@ -93,9 +93,9 @@
     width: 90%;
     margin: 0 auto 20px;
     padding-top: 40px;
-    border: 1px solid #bbc2cd !important;
+    border: 1px solid var(--border-primary) !important;
   }
   .servicesbox {
-    border-right: 1px solid #bbc2cd !important;
+    border-right: 1px solid var(--border-primary) !important;
   }
 }

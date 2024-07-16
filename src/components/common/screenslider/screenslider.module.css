@@ -5,7 +5,7 @@
       rgba(255, 255, 255, 0.5) 0%,
       rgba(255, 255, 255, 0.5) 100%
     ),
-    #e8ebee;
+    var(--border-secondary);
   padding: 7.5rem 0px;
 }
 .projectslidewrapper .projectimg{
