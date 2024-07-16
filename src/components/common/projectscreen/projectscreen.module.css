@@ -1,6 +1,6 @@
 .projectslidewrapper {
     border-radius: 20px;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), #E8EBEE;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), var(--border-secondary);
     padding: 7.5rem 0px;
 }
 .projectimg img{

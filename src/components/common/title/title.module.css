@@ -3,21 +3,21 @@
   font-weight: 600;
   line-height: 4rem;
   text-align: center;
-  color: #fff;
+  color: var(--white-color);
 }
 .maintitle.maindarktitle {
-  color: #1d3557;
+  color: var(--secondary--color);
 }
 .maintitlespan span {
-  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: normal;
-  border-bottom: 3px solid #40aa46;
+  border-bottom: 3px solid var(--primary-variant-one);
 }
 .subtitle {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 2.5rem;

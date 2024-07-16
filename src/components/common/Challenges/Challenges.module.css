@@ -8,14 +8,14 @@
     padding: 1.25rem 1rem 1.25rem 2rem;
     border-radius: 12px;
     background: #E5F6E7;
-    border: 1px solid #94CC7C;
+    border: 1px solid var(--border-quinary);
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.02);
     transition: 0.5s ease-in-out all;
 }
 
 .solutiontext:hover {
-    background: #ffffff;
-    outline: 1px solid #94CC7C;
+    background: var(--white-color);
+    outline: 1px solid var(--border-quinary);
     box-shadow: 2px 6px 8px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -24,7 +24,7 @@
     font-weight: 600;
     line-height: 4rem;
     transition: 0.5s ease-in-out all;
-    background: linear-gradient(90deg, #168944 0.08%, #40AA46 99.95%);
+    background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -37,7 +37,7 @@
 
 .solutiontext p,
 .solutiontext p b {
-    color: #344968;
+    color: var(--secondary--variant-one);
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.5rem;
@@ -50,11 +50,11 @@
 }
 
 .solutionGreenArea {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), #E7F8EA;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), var(--primary-background);
     padding: 2rem 0;
     border-radius: 12px;
-    background: #344968;
-    border: 1px solid #94CC7C;
+    background: var(--secondary--variant-one);
+    border: 1px solid var(--border-quinary);
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.02);
     transition: 1s ease-in-out all;
     flex: 0 0 48%;
@@ -68,7 +68,7 @@
 
 .solutionGreenArea .inlineArea {
     border-radius: 0px 12px 12px 0px;
-    background: #FFF;
+    background: var(--white-color);
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
     width: 95%;
 }
@@ -88,7 +88,7 @@
 }
 
 .solutionGreenArea .inlineArea b {
-    color: #1D3557;
+    color: var(--secondary--color);
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 4rem;
@@ -100,7 +100,7 @@
 }
 
 .solutionGreenArea p {
-    color: #ffffff;
+    color: var(--white-color);
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 2.8rem;

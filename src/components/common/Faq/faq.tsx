@@ -37,7 +37,7 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
               aria-controls={`accordion-collapse-body-${index}`}
               onClick={() => handleToggle(index)}
             >
-              <div className="">
+              <div className="flex">
                 <span className="mr-2">{index + 1}.</span>
                 {faq.question}
               </div>

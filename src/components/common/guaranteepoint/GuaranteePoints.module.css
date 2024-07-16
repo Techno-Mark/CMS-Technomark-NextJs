@@ -13,7 +13,7 @@
 
 .iconTextArea .inlineIcon h4 {  
   margin-bottom: 1rem;
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.6rem;
@@ -21,7 +21,7 @@
 }
 
 .iconTextArea p {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 2.2rem;
@@ -56,4 +56,14 @@
 }
 
 
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 992px) {
+  .iconTextArea .inlineIcon h4{
+    margin-left: 10px;
+  }
+  .iconTextArea p{
+    width: 100%;
+  }
+  .iconTextArea {
+    margin-bottom: 2rem;
+  }
+}

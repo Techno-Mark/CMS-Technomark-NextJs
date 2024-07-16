@@ -5,9 +5,9 @@
 .flipcard {
   background-color: transparent;
   perspective: 1000px;
-  border: 1px solid #bbc2cd;
+  border: 1px solid var(--border-primary);
   height: 600px;
-  background: #ffffff;
+  background: var(--white-color);
 }
 
 .flipcard .inner {
@@ -36,7 +36,7 @@
 }
 
 .flipcard .inner .back {
-  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   color: white;
   transform: rotateX(180deg);
 }
@@ -57,14 +57,14 @@
   letter-spacing: -2px;
   margin-bottom: 1.25rem;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .flipcard .inner .front .cardtitle {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
@@ -73,7 +73,7 @@
 }
 
 .flipcard .inner .front .cardtext {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 2rem;
@@ -105,8 +105,8 @@
 
 .flipcard .inner .back ul li:hover {
   opacity: 1;
-  color: #ffffff;
-  border-image: linear-gradient(to left, #3da745, #ffffff) 1 0;
+  color: var(--white-color);
+  border-image: linear-gradient(to left, #3da745, var(--white-color)) 1 0;
 }
 
 @media only screen and (max-width: 1536px) {

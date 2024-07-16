@@ -27,7 +27,7 @@ const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
         breakpoint: 767,
         settings: {
           slidesToShow: 1.1,
-          infinite: false
+          infinite: false,
         }
       }
     ]

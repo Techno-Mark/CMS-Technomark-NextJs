@@ -1,3 +1,7 @@
+.methodology {
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+}
 .methodology :global(.title-section h2) {
   margin-bottom: 1.25rem;
 }
@@ -7,9 +11,9 @@
 }
 
 .coreservices {
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f8fafb;
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-primary);
 }
 .coreservices :global(.title-section h2),
 .productservices :global(.title-section h2),
@@ -26,7 +30,7 @@
 
 .casestudiessection {
   overflow: hidden;
-  border-bottom: 1px solid #e8ebee;
+  border-bottom: 1px solid var(--border-secondary);
 }
 .casestudiessection :global(.title-section h2) {
   text-align: left;
@@ -44,14 +48,17 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(#168944 100%, #40aa46 100%);
+  background: linear-gradient(
+    var(--primary-color) 100%,
+    var(--primary-variant-one) 100%
+  );
   top: 17px;
 }
 
 .meetdiverse {
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f8fafb;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-primary);
   z-index: 2;
 }
 .meetdiverse :global(.title-section h2) {
@@ -59,9 +66,9 @@
 }
 
 .guaranteetmsection {
-  border: 1px solid #e8ebee;
-  background: #e7f8ea;
-  box-shadow: 10px 0px 0px 0px #fff;
+  border: 0px solid var(--border-primary);
+  background: var(--primary-background);
+  box-shadow: 10px 0px 0px 0px var(--white-color);
 }
 .guaranteetmsection :global(.title-section h2) {
   margin-bottom: 5rem;
@@ -81,7 +88,7 @@
   width: 70px;
   height: 70px;
   line-height: 70px;
-  background: #ffffff;
+  background: var(--white-color);
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
@@ -92,12 +99,19 @@
   background: #f13c31;
 }
 .guaranteetmsection .videoarea .play-btn:hover svg path {
-  fill: #ffffff;
+  fill: var(--white-color);
+}
+
+.videoSection {
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
 }
 
 .clientspeaksection {
   position: relative;
   z-index: 1;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
 }
 .clientspeaksection :global(.title-section h2) {
   margin-bottom: 5rem;
@@ -112,7 +126,9 @@
 }
 
 .trustsection {
-  background: #fff;
+  background: var(--white-color);
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
 }
 .trustsection :global(.title-section h2) {
   margin-bottom: 1.2rem;
@@ -123,15 +139,15 @@
 .trustsection :global(.title-section p span) {
   display: block;
   font-size: 2rem;
-  color: #168944;
+  color: var(--primary-color);
   font-weight: 700;
 }
 
 .faqsection {
   position: relative;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #fff;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--white-color);
 }
 .faqsection :global(.title-section h2) {
   text-align: left;
@@ -139,16 +155,15 @@
 }
 
 .awardsection {
-  background: #fff;
+  background: var(--white-color);
 }
 .awardsection :global(.title-section h2) {
   margin-bottom: 5rem;
 }
 
 .formsection {
-  border-top: 1px solid #e8ebee;
-  border-bottom: 1px solid #e8ebee;
-  background: #fcfffd;
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .casestudylistlabel {
@@ -178,12 +193,12 @@
 }
 .casestudydetailherosection :global(.title-section h2) {
   margin-bottom: 2rem;
-  color: #fff !important;
+  color: var(--white-color) !important;
 }
 .casestudydetailherosection :global(.title-section p) {
   margin: 0 auto 5rem;
   max-width: 60%;
-  color: #fff;
+  color: var(--white-color);
   font-size: 2.25rem;
   line-height: 3.5rem;
 }
@@ -199,42 +214,55 @@
 }
 
 .businessimpactsection {
-  background: #1d3557;
+  background: var(--secondary--color);
   box-shadow: 0px 24px 84px 0px rgba(198, 214, 190, 0.3);
 }
 .businessimpactsection :global(.title-section h2) {
-  color: #fff !important;
+  color: var(--white-color) !important;
 }
 .businessimpactsection :global(.title-section p) {
-  color: #fff;
+  color: var(--white-color);
   width: 75%;
   margin-inline: auto;
 }
 
+
+.problemstatement{
+  border-top: 1px solid var(--border-ternary);
+}
 .problemstatement :global(.title-section h2) {
   text-align: left;
+  margin-bottom: 5rem;
 }
 
+.challangesolutions{
+  border-bottom: 1px solid var(--border-ternary);
+}
 .challangesolutions :global(.title-section h2) {
   margin-bottom: 5rem;
 }
 
 .majorscreensection {
-  background: #1d3557;
+  background: var(--secondary--color);
 }
 .majorscreensection :global(.title-section h2) {
-  color: #fff !important;
+  color: var(--white-color) !important;
   margin-bottom: 5rem;
 }
 
+
+.features{
+  border-top: 1px solid var(--border-quaternary);
+  border-bottom: 1px solid var(--border-quaternary);
+}
 .features :global(.title-section h2) {
   margin-bottom: 5rem;
 }
 
 .productservices {
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f2f5f9;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-secondary);
 }
 
 .productsolutions {
@@ -251,10 +279,9 @@
 }
 
 .techslider {
-  border-bottom: 1px solid #bbc2cd;
-  background: #e3f3e6;
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-quaternary);
 }
-
 .techslider :global(.title-section h2) {
   margin-bottom: 2rem;
 }
@@ -264,9 +291,9 @@
 }
 
 .techservices {
-  background: #fafbfc;
-  border-top: 1px solid #e8ebee;
-  border-bottom: 1px solid #e8ebee;
+  background: var(--bg-ternary);
+  border-top: 2px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
 }
 
 .techservices :global(.title-section h2) {
@@ -277,32 +304,32 @@
 }
 
 .technenifits {
-  position: relative;
+  padding: 0;
   border: none;
   border-image-slice: 1;
   border-width: 5px;
   border-image-source: linear-gradient(90deg, #3db762 100%, #67ab6b 100%);
   border-image-repeat: stretch;
-  border-bottom: 4px solid #94cc7c;
-  overflow: hidden;
+  border-top: 1px solid var(--border-quinary);
+  border-bottom: 7px solid var(--border-quinary);
 }
 
 .hiredeveloper {
-  border-top: 1px solid #bbc2cd;
-  border-bottom: 1px solid #bbc2cd;
-  background: #fafbfc;
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-ternary);
 }
 
 .singletechservices {
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f2f5f9;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-secondary);
   background-blend-mode: darken, normal;
 }
 
 .techexpert {
-  border-top: 1px solid #bbc2cd;
-  border-bottom: 1px solid #bbc2cd;
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .leftbubblecircle {
@@ -334,5 +361,12 @@
 @media only screen and (max-width: 767px) {
   .guaranteetmsection .videoarea {
     padding-bottom: 20px;
+  }
+  .casestudylist :global(.title-section p),
+  .casestudydetailherosection :global(.title-section p) {
+    max-width: 90%;
+  }
+  .technenifits {
+    padding-inline: 2rem;
   }
 }

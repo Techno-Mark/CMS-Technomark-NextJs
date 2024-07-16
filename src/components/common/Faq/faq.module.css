@@ -4,24 +4,28 @@
 }
 .cardheader {
   border-radius: 12px;
-  border: 1px solid #bbc2cd;
-  background: #fff;
+  border: 1px solid var(--border-primary);
+  background: var(--white-color);
   cursor: pointer;
 }
 .cardheader:hover {
-  border-color: #1d3557;
+  border-color: var(--secondary--color);
   background: rgba(22, 137, 68, 0.05);
 }
 .cardtitle {
   margin-bottom: 0;
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
+  text-align: left;
+}
+.cardtitle img{
+  max-width: 4rem;
 }
 
 .cardtitle span {
-  margin-right: 15px;
+  margin-right: 1rem;
   font-weight: 400;
 }
 
@@ -30,7 +34,7 @@
 }
 
 .cardbody p {
-  color: #1d3557;
+  color: var(--secondary--color);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 2rem;
