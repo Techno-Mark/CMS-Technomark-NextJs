@@ -18,7 +18,11 @@ const Header = () => {
     },
     {
       name: "Case Studies",
-      path: "/case_studies",
+      path: "/casestudylist",
+    },
+    {
+      name: "Technologies",
+      path: "/technology",
     },
     {
       name: "Contact Us",
@@ -27,14 +31,13 @@ const Header = () => {
   ];
   return (
     <header className={styles.headerContainer}>
-      <nav className="bg-white border-gray-200">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-          <Link
-            href="#"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <Image src="/images/logo.svg" className="h-10" alt="Logo" width={165} height={30}/>
-          </Link>
+      <nav className={`${styles.navigationbar} bg-white`}>
+        <div className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}>
+          <div className={`${styles.logocontainer}`}>
+            <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse px-12">
+              <Image src="/images/logo.svg" className="h-10" alt="Logo" width={232} height={37} />
+            </Link>
+          </div>
           <button
             data-collapse-toggle="mega-menu-full"
             type="button"
@@ -59,13 +62,10 @@ const Header = () => {
               />
             </svg>
           </button>
-          <div
-            id="mega-menu-full"
-            className="items-center justify-between font-medium hidden w-full md:flex md:w-auto"
-          >
-            <ul className="flex flex-col items-center p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold">
+          <div id="mega-menu-full" className={`${styles.megamenufull} items-center justify-between font-medium hidden w-full h-full md:flex md:w-auto pr-16`}>
+            <ul className="flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-7 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold">
               {menuItems.map((menu) => (
-                <li className="relative" key={menu.name}>
+                <li className={`${styles.navlink} relative h-full flex items-center`} key={menu.name}>
                   <MenuLink item={menu} key={menu.name} />
                 </li>
               ))}
@@ -95,22 +95,8 @@ const Header = () => {
               </li> */}
             </ul>
           </div>
-          <div className="p-3">
-            <svg
-              width="37"
-              height="36"
-              viewBox="0 0 37 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32.0052 19.185C31.7693 21.7383 30.811 24.1716 29.2426 26.2002C27.6742 28.2288 25.5605 29.7687 23.1488 30.6398C20.7371 31.5109 18.1272 31.6772 15.6245 31.1191C13.1218 30.5611 10.8297 29.3018 9.01656 27.4887C7.20341 25.6755 5.94413 23.3835 5.38608 20.8807C4.82804 18.378 4.9943 15.7681 5.86541 13.3564C6.73653 10.9448 8.27647 8.83105 10.305 7.26263C12.3336 5.69421 14.7669 4.73596 17.3202 4.5C15.8253 6.5224 15.106 9.01417 15.293 11.5221C15.48 14.0301 16.561 16.3876 18.3393 18.1659C20.1176 19.9442 22.4752 21.0252 24.9831 21.2122C27.4911 21.3992 29.9828 20.6799 32.0052 19.185Z"
-                stroke="#1D3557"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <div className={`${styles.headersideimg} px-7 h-full flex items-center`}>
+            <img src="/images/coffee.svg" alt="" />
           </div>
         </div>
       </nav>

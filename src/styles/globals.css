@@ -24,6 +24,8 @@
   --bg-secondary: #f2f5f9;
   --bg-ternary: #FAFBFC;
   --bg-quaternary: #e3f3e6;
+  --bg-footer: #182d4a;
+  --footer--primary: #BFCFD9;
 }
 
 @media (prefers-color-scheme: dark) {

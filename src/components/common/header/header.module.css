@@ -1,0 +1,39 @@
+.navcontainer{
+  height: 5.62rem;
+}
+.logocontainer {
+  display: flex;
+  height: 100%;
+  border-right: 1px solid var(--border-quaternary);
+}
+.logocontainer img{
+  width: auto;
+}
+.navigationbar {
+  border-bottom: 1px solid var(--border-quaternary);
+}
+.navlink {
+  font-family: Montserrat;
+  color: var(--secondary--color);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+}
+.navlink:hover {
+  color: var(--primary-color);
+}
+.headersideimg {
+  border-left: 1px solid var(--border-quaternary);
+}
+.headersideimg img{
+  max-width: 2.25rem;
+}
+@media only screen and (max-width: 992px) {
+  .megamenufull{
+    padding-right: 0;
+  }
+}
+
+

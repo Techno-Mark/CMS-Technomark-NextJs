@@ -58,11 +58,14 @@
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 2rem;
+  margin-bottom: 0.6rem;
 }
 
 .techusetext li img {
   margin-right: 0.8rem;
   width: 1.25rem;
+  position: relative;
+  top: 8px;
 }
 
 .casebox .readmore {
