@@ -1,17 +1,18 @@
 .casebox {
   position: relative;
   padding: 2rem;
-  margin-right: 2rem;
-  border: 1px solid var(--border-primary);
   transition: width 1s ease-in-out;
   background: linear-gradient(0deg, var(--white-color) 0%, var(--white-color) 100%),
     lightgray 50% / cover no-repeat;
   display: flex !important;
   width: auto !important;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient( 90deg,#ebcb5b 0%,#017ca1 49.5%, #61b946 100%);
 }
 
 .casebox .textarea {
-  flex: 1;
+  flex: 1.5;
 }
 
 .casebox .resultarea {
@@ -51,7 +52,8 @@
 }
 
 .techusetext li img {
-  margin-right: 10px;
+  margin-right: 0.8rem;
+  width: 1.25rem;
 }
 
 .casebox .readmore {
@@ -114,8 +116,8 @@
 }
 
 .resultarea .videoarea video {
-  height: 200px;
-  width: 90%;
+  height: 90%;
+  width: 100%;
   margin: 0 auto;
   display: block;
   border-radius: 40px;
@@ -160,7 +162,7 @@
   cursor: pointer;
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out all;
-  display: flex;
+  display: none !important;
   align-items: center;
   justify-content: center;
 }

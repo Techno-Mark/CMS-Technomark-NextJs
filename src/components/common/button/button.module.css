@@ -1,72 +1,123 @@
-
 .newPrimarybtn {
-    position: relative;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    background-color: var(--primary-color);
-    background: linear-gradient(to right,var(--primary-color), var(--primary-variant-one));
-    color: var(--white-color);
-    transition: all ease 0.6s;
-    font-family: "Montserrat";
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    height: 70px;
-    border-radius: 100px;
-    padding-inline: 20px;
-    width: fit-content;
-    text-transform: uppercase;
-    text-decoration: none !important;
-    outline: none !important;
-    margin: 3rem auto 0;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-  }
-  .newPrimarybtn span {
-    background: rgba(10, 132, 63, 0.5);
-    border-radius: 100%;
-    margin-left: 10px;
-    transition: all 0.5s ease-in-out;
-    padding: 10px;
-  }
-  .newPrimarybtn:hover {
-    font-weight: 600;
-  }
-  .newPrimarybtn.secondarybtn {
-    background: var(--white-color);
-    color: var(--secondary--color);
-    border: 1px solid var(--secondary--color);
-    text-shadow: none;
-  } 
-  .newPrimarybtn.secondarybtn span {
-    background: var(--white-color);
-    border: 1px solid var(--border-primary);
-  }
-  .newPrimarybtn:hover span {
-    background: rgba(10, 132, 63, 1);
-    margin-left: 25px;
-    transition: all 0.5s ease-in-out;
-  }
-  .newPrimarybtn.secondarybtn:hover {
-    border: 1px solid rgba(10, 132, 63, 1);
-  }
-  .newPrimarybtn span svg path {
-    transition: all 0.5s ease-in-out;
-  }
-  .newPrimarybtn.secondarybtn:hover svg path {
-    stroke: var(--white-color);
-  }
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-variant-one)
+  );
+  color: var(--white-color);
+  transition: all ease 0.6s;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  height: 70px;
+  border-radius: 100px;
+  padding-inline: 20px;
+  width: fit-content;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  outline: none !important;
+  margin: 3rem auto 0;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+.newPrimarybtn:hover {
+  font-weight: 600;
+}
+.newPrimarybtn span {
+  margin-left: 18px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 100px;
+  border: 1px solid var(--primary-variant-two);
+  background: var(--primary-variant-one);
+  overflow: hidden;
+  padding: 1rem;
+  width: 45px;
+  height: 45px;
+}
+.newPrimarybtn:hover span {
+  background: rgba(10, 132, 63, 1);
+  margin-left: 25px;
+  transition: all 0.5s ease-in-out;
+}
+.arrowanimatebtn {
+  position: relative;
+}
+.arrowanimatebtn::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/arrow-right-circle.png);
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+  left: 34%;
+  top: 0;
+  transform: translateX(-50px);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.arrowanimatebtn .icon:before {
+  content: "";
+  background-image: url(/images/arrow-right-circle.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0px);
+  transition: transform 0.5s ease-in-out;
+}
+.newPrimarybtn:hover .arrowanimatebtn::before {
+  transform: translateX(-14px);
+}
 
+.newPrimarybtn:hover .icon:before {
+  transform: translateX(50px);
+}
 
-  @media only screen and (max-width: 1499px) {
-    .newPrimarybtn {
-      font-size: 16px;
-      line-height: 16px;
-      height: 60px;
-    }
+.newPrimarybtn.secondarybtn {
+  background: var(--white-color);
+  color: var(--secondary--color);
+  border: 1px solid var(--secondary--color);
+  text-shadow: none;
+}
+
+.newPrimarybtn.secondarybtn .icon:before {
+  background-image: url(/images/arrow-right-black.png);
+}
+.newPrimarybtn.secondarybtn span {
+  background: var(--white-color);
+  border: 1px solid var(--border-primary);
+}
+
+.newPrimarybtn.secondarybtn:hover span {
+  background: rgba(10, 132, 63, 1);
+  margin-left: 25px;
+  transition: all 0.5s ease-in-out;
+}
+.newPrimarybtn.secondarybtn:hover {
+  border: 1px solid var(--primary-color);
+}
+
+@media only screen and (max-width: 1499px) {
+  .newPrimarybtn {
+    font-size: 16px;
+    line-height: 16px;
+    height: 60px;
   }
-  @media only screen and (max-width: 767) {
-    .newPrimarybtn {
-      height: 60px;
-    }
+}
+@media only screen and (max-width: 767px) {
+  .newPrimarybtn {
+    height: 60px;
   }
+}

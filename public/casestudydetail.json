@@ -70,13 +70,13 @@
             "problemstatement": {
                 "data": [
                     {
-                        "description": "Tedious and time-consuming tax return preparation for 1000+ clients from over 100+ fortune 500 companies"
+                        "description": "<span>Tedious and time-consuming tax return</span> preparation for 1000+ clients from over 100+ fortune 500 companies"
                     },
                     {
-                        "description": "Providing real-time status updates to clients on tax return status, queries, and resolution to strengthen the business relationship."
+                        "description": "<span>Providing real-time status updates</span> to clients on tax return status, queries, and resolution to strengthen the business relationship."
                     },
                     {
-                        "description": "Complex UI and process in their legacy system. The client wanted a simplified design and modern application to enhance the user experience with a scalable and robust application ."
+                        "description": "<span>Complex UI and process in their legacy system.</span> The client wanted a simplified design and modern application to enhance the user experience with a scalable and robust application ."
                     }
                 ],
                 "title": "Problem <span>Statement</span>"

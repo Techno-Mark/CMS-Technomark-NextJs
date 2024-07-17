@@ -70,7 +70,7 @@
 }
 .combineslidercontainer :global(.slick-prev) {
   left: inherit;
-  right: 6rem;
+  right: 7rem;
 }
 .combineslidercontainer :global(.slick-list) {
   overflow: visible;
@@ -84,7 +84,19 @@
   margin-right: auto;
   margin-left: initial;
 }
-
+.combineslidercontainer :global(.slick-arrow svg) {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  transition: all 0.5s ease;
+}
+.combineslidercontainer :global(.slick-arrow:hover svg) {
+  background: var(--secondary--color);
+  border-radius: 100%;
+}
+.combineslidercontainer :global(.slick-arrow:hover svg path) {
+  stroke: var(--white-color);
+}
 
 
 @media only screen and (max-width: 992px) {

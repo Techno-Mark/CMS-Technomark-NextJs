@@ -50,6 +50,9 @@
   font-weight: 500;
   line-height: 2rem;
 }
+.textpadding{
+  padding-inline: 3rem;
+}
 
 .servicesinnerbox {
   transition: 0.8s;

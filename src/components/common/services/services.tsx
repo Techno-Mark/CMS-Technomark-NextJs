@@ -67,11 +67,11 @@ const Services: React.FC<ServicesProps> = ({
                 </div>
                 <h3 className={styles.servicetitle}>{service.text}</h3>
                 {!isFeatured && (
-                  <p className={styles.servicedescribe}>
+                  <p className={`${styles.servicedescribe} ${isProduct ? styles.textpadding : ""}`}>
                     {service.description}
                   </p>
                 )}
-                {!isFeatured && !istechservice && (
+                {!isFeatured && !istechservice && !isProduct &&(
                   <div className={styles.moresection}>
                     <a href="#">read more</a>
                   </div>

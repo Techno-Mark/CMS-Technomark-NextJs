@@ -18,20 +18,24 @@
 .meetgridicon ul li {
   text-align: center;
   padding: 2rem 1.25rem;
-  border: 0.5px solid #f2f2f2;
+  border: 1px solid var(--border-secondary);
   background: var(--white-color);
   transition: 0.5s ease-in-out all;
 }
 
 .meetgridicon ul li:hover {
-  border: 1px solid #f8f8f8;
-  background: var(--white-color);
-  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-quaternary);
+  background: var(--bg-ternary);
 }
 
 .meetgridicon ul li img {
   margin-bottom: 1rem;
   object-fit: contain;
+  transition: 0.5s;
+}
+
+.meetgridicon ul li:hover img {
+  transform: scale(1.1);
 }
 
 .meetgridicon ul li p {

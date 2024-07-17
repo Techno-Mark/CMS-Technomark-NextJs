@@ -9,7 +9,9 @@
   cursor: pointer;
 }
 .cardheader:hover {
-  border-color: var(--secondary--color);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient( 90deg,#ebcb5b 0%,#017ca1 49.5%, #61b946 100%);
   background: rgba(22, 137, 68, 0.05);
 }
 .cardtitle {
@@ -39,4 +41,15 @@
   font-weight: 500;
   line-height: 2rem;
   padding-left: 25px;
+}
+.collapsed {
+  max-height: 0;
+}
+
+.expanded {
+  max-height: 500px; /* Adjust this value to be more than enough for your content */
+}
+
+.transition-max-height {
+  transition: ax-height 0.5s ease-in-out;
 }
