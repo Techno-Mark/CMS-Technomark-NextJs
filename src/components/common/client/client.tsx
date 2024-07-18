@@ -19,6 +19,7 @@ interface client {
 const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
   const settings = {
     infinite: true,
+    dots: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

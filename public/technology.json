@@ -3,10 +3,10 @@
         "templateData": {
             "sectionsOrder": [
                 "technologyhomesection",
-                "techslider",
                 "techservices",
-                "technenifits",
+                "techslider",
                 "hiredeveloper",
+                "technenifits",
                 "casestudy",
                 "singletechservices",
                 "guarantee",

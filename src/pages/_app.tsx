@@ -19,6 +19,14 @@ const footerItem = [
         name: "Blog",
         path: "/blogs",
       },
+      {
+        name: "Sitemap",
+        path: "/Sitemap",
+      },
+      {
+        name: "Contact",
+        path: "/Contact",
+      },
     ],
   },
   {
@@ -35,6 +43,26 @@ const footerItem = [
       {
         name: "Mobile App",
         path: "/mobile_apps",
+      },
+      {
+        name: "Cloud Native",
+        path: "/Cloud_Native",
+      },
+      {
+        name: "AI Development",
+        path: "/AI_Development",
+      },
+      {
+        name: "IoT App",
+        path: "/IoT_App",
+      },
+      {
+        name: "Blockchain",
+        path: "/Blockchain",
+      },
+      {
+        name: "Ecommerce",
+        path: "/Ecommerce",
       },
     ],
   },
