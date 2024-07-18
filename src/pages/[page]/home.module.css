@@ -219,6 +219,7 @@
 }
 .businessimpactsection :global(.title-section h2) {
   color: var(--white-color) !important;
+  margin-bottom: 1rem;
 }
 .businessimpactsection :global(.title-section p) {
   color: var(--white-color);

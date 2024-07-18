@@ -42,8 +42,8 @@
 }
 .problemStatement.iconTextArea p {
   padding-left: 1.5rem;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   width: 100%;
   font-weight: 400;
 }
@@ -52,7 +52,36 @@
 }  
 .problemStatement .checkicon{
   position: relative;
-  top: 12px;
+  top: 8px;
+}
+
+
+.problemStatement .description span {
+  padding-right: 5px;
+  transition: 1s ease-in-out all;
+  padding: 2px 5px 2px 1px;
+  position: relative;
+  font-weight: 600;
+}
+
+.problemStatement .description span:hover {
+  background: #e6f7e9;
+}
+
+.problemStatement .description span:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #168944 0.08%, #40AA46 99.95%);
+  transition: width .8s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.problemStatement .description span:hover::after {
+  width: 100%;
 }
 
 

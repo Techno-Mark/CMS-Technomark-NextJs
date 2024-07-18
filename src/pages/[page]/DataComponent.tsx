@@ -392,12 +392,6 @@ const DataComponent = ({
         return homeData?.majorscreen && (
           <section className={`${styles.majorscreensection} tm-section majorscreensection`}>
             <div className="container mx-auto">
-              <TitleSection
-                sectionData={{
-                  title: homeData.majorscreen.title,
-                }}
-                titleClassName="majorscreentitle"
-              />
               <ScreenSlider props={homeData.majorscreen} useSlider1={false} />
             </div>
           </section>

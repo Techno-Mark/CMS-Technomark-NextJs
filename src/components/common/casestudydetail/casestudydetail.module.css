@@ -1,6 +1,6 @@
 .resourcestripe {
   background: rgba(0, 0, 0, 0.5);
-  padding: 0.7rem 0;
+  padding: 1.1rem 0;
   margin: 4.5rem 0;
   margin-top: 2.5rem;
   border: 1px solid;
@@ -63,7 +63,11 @@
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0.08%,
+    var(--primary-variant-one) 99.95%
+  );
   transition: width 0.8s;
   position: absolute;
   left: 0;
@@ -76,7 +80,11 @@
 }
 
 .performancebox:hover h2 {
-  background: linear-gradient(90deg, var(--white-color) 0.08%, var(--white-color) 99.95%);
+  background: linear-gradient(
+    90deg,
+    var(--white-color) 0.08%,
+    var(--white-color) 99.95%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -88,7 +96,11 @@
   line-height: 4.2rem;
   transition: 0.5s ease-in-out all;
   margin-bottom: 0;
-  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0.08%,
+    var(--primary-variant-one) 99.95%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

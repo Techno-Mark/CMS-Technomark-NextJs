@@ -25,11 +25,11 @@ const GuaranteePoints: React.FC<guaranteeProps> = ({ props, isProblemStatement }
                 <div key={index} className={`${styles.iconTextArea} ${isProblemStatement ? styles.problemStatement : ''}`}>
                     <div className={styles.inlineIcon}>
                         <div className={styles.checkicon}>
-                            <Image src={commonIcon} alt={commonAltText} height={24} width={24}/>
+                            <Image src={commonIcon} alt={commonAltText} height={24} width={24} />
                         </div>
                         <h4>{point.title}</h4>
                     </div>
-                    <p>{point.description}</p>
+                    <p className={styles.description} dangerouslySetInnerHTML={{ __html: point.description }}/>
                 </div>
             ))}
         </>
