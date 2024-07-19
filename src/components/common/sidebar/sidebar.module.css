@@ -1,0 +1,172 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -1px;
+  height: 100%;
+  width: 6rem;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-left: 1px solid #8e9aab;
+  border-top: 1px solid #8e9aab;
+}
+.sidebarbtn {
+  height: 100%;
+  color: var(--border-quaternary);
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  border: none;
+  background-color: transparent;
+  transform: rotate(90deg);
+  transform-origin: center;
+  white-space: nowrap;
+  width: 0;
+  padding: 0;
+  position: absolute;
+  top: -10rem;
+}
+.sidebarbtn .show-drawer {
+  display: block;
+}
+.sidebarimgs {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -40px;
+}
+.imgtwo {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 18px;
+}
+.imgtwo img {
+  width: 18px;
+  animation: movingarrow 1s infinite;
+}
+
+@keyframes movingarrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(-6px);
+  }
+
+  60% {
+    transform: translateX(-3px);
+  }
+}
+/* .animate-spin-slow {
+  animation: spin 3s linear infinite;
+} */
+.container {
+  padding: 5rem 10rem 0;
+}
+.drawer {
+  background: #123456;
+  box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.24);
+  height: 100vh;
+  padding: 3rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 2000ms ease-in-out;
+  width: 80%;
+  z-index: 10;
+  overflow: hidden;
+  transition: transform 1.3s ease-in-out;
+}
+#sidebarpopup.showDrawer .drawer {
+  transform: translateX(0);
+}
+.formcirlerotate {
+  position: absolute;
+  top: 3rem;
+  right: 10rem;
+}
+.formcirlerotate img {
+  animation: spin 30s linear infinite;
+  margin-left: auto;
+  max-width: 12rem;
+}
+@keyframes spin {
+  from {
+    transform: rotate(-0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.projectform input,
+.projectform textarea {
+  color: var(--white-color);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  font-style: normal;
+  background: transparent;
+  border: none;
+  outline: none !important;
+  border-bottom: 1px solid #c0c0c0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.projectform label {
+  color: var(--white-color);
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.formtitle {
+  color: #f8f8f8;
+  font-family: Montserrat;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-bottom: 3rem;
+}
+.sidebar :global(.submitbtn a) {
+  margin-right: auto;
+  margin-left: inherit;
+}
+
+@media only screen and (max-width: 1499px) {
+  .sidebarimgs {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .drawer {
+    width: 100%;
+    padding-top: 10rem;
+  }
+  .container {
+    padding: 10rem 0 0;
+  }
+  .formcirlerotate {
+    top: 12rem;
+  }
+  .sidebar {
+    top: -200%;
+  }
+}
