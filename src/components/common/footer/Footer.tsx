@@ -121,7 +121,7 @@ const Footer = (props: any) => {
         <hr className="my-6 border-gray-500 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between max-w-screen-lg mx-auto">
           <span className={`${styles.footerbottomleft}`}>
-            Copyright © 2024 <Link href="/">TechnoMark.</Link>. All Rights
+            Copyright © 2024 <Link href="/">TechnoMark.</Link> All Rights
             Reserved.
           </span>
           <div
