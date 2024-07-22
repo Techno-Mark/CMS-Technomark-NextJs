@@ -46,7 +46,7 @@ interface SidebarProps {
                                 value="FormWithProjectDescription"
                             />
                             <div className="flex flex-col">
-                                <label htmlFor="fullName">What's your name?</label>
+                                <label htmlFor="fullName">What&apos;s your name?</label>
                                 <input
                                     type="text"
                                     placeholder="Type your fullname"
@@ -55,7 +55,7 @@ interface SidebarProps {
                                 />
                             </div>
                             <div className="flex flex-col">
-                                <label htmlFor="email">What's your email address?</label>
+                                <label htmlFor="email">What&apos;s your email address?</label>
                                 <input
                                     type="email"
                                     placeholder="Type email address"
@@ -66,7 +66,7 @@ interface SidebarProps {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4 mb-10">
                             <div className="flex flex-col">
-                                <label htmlFor="phone">What's your mobile number?</label>
+                                <label htmlFor="phone">What&apos;s your mobile number?</label>
                                 <input
                                     type="tel"
                                     id="phone"
@@ -84,7 +84,7 @@ interface SidebarProps {
                             </div>
                             <div className="flex flex-col">
                                 <label htmlFor="organizationName">
-                                    What's your organization name?
+                                    What&apos;s your organization name?
                                 </label>
                                 <input
                                     type="text"
