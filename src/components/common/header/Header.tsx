@@ -3,8 +3,16 @@ import Link from "next/link";
 import styles from "./header.module.css";
 import MenuLink from "./menuLink/MenuLink";
 import Image from "next/image";
+import Hamburger from "@/assets/icon/hamburger";
+import Close from "@/assets/icon/close";
 
-const Header = () => {
+
+interface HeaderProps {
+  onShowDrawer: () => void;
+}
+
+
+const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] = useState(false);
@@ -43,33 +51,33 @@ const Header = () => {
         },
         {
           name: "Software development",
-          path: "/swift",
-          icons: "/images/swift.svg",
-        },
-        {
-          name: "Software development",
           path: "/Software development",
-          icons: "/images/Software.svg",
+          icons: "/images/software.svg",
         },
         {
           name: "Consultation",
           path: "/Consultation",
-          icons: "/images/Consultation.svg",
+          icons: "/images/consultation.svg",
         },
         {
           name: "Blockchain",
           path: "/Blockchain",
-          icons: "/images/Blockchain.svg",
+          icons: "/images/blockchain.svg",
         },
         {
           name: "Mobile Apps",
           path: "/Mobile Apps",
-          icons: "/images/Mobileapp.svg",
+          icons: "/images/mobileapp.svg",
         },
         {
           name: "Digital transformation",
           path: "/Digital transformation",
           icons: "/images/digital.svg",
+        },
+        {
+          name: "iop app",
+          path: "/iot",
+          icons: "/images/iot.svg",
         },
         {
           name: "UI & UX Design",
@@ -236,16 +244,9 @@ const Header = () => {
           >
             <span className="sr-only">Open main menu</span>
             {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                <path d="M8.5 25.5L25.4999 8.50011" stroke="#1D3557" strokeWidth="2.125" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M25.4999 25.4999L8.5 8.5" stroke="#1D3557" strokeWidth="2.125" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                <path d="M4.25 9.91797H29.75" stroke="#1D3557" strokeWidth="2.125" strokeLinecap="round" />
-                <path d="M4.25 17H29.75" stroke="#1D3557" strokeWidth="2.125" strokeLinecap="round" />
-                <path d="M4.25 24.082H29.75" stroke="#1D3557" strokeWidth="2.125" strokeLinecap="round" />
-              </svg>
+                <Close className="closeicon" color="#1D3557" />
+              ) : (                
+                <Hamburger className="hamburgericon" color="#1D3557" />
             )}
           </button>
           <div id="mega-menu-full" className={`${styles.megamenufull} items-center justify-between font-medium ${isMenuOpen ? "flex" : "hidden"} w-full h-full md:flex md:w-auto pr-16`}>
@@ -259,7 +260,7 @@ const Header = () => {
                         className={`${styles.submenu} ${
                           (menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
                           (menu.name === "Services" && isServicesSubMenuOpen)
-                            ? "block"
+                            ? "customblock"
                             : "hidden"
                         }`}
                       >
@@ -287,9 +288,9 @@ const Header = () => {
             <div className={`${styles.themebtn} flex justify-center h-full`}>
               <img src="/images/coffee.svg" alt="" />
             </div>
-            <Link href="#" className={styles.projectbtn}>
-              Start a project
-            </Link>
+            <div className={styles.projectbtn}>
+            <button onClick={onShowDrawer}>START A PROJECT</button>
+            </div>
           </div>
         </div>
       </nav>

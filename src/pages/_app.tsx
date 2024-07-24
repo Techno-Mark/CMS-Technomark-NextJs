@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
 import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/Header";
+import SideBar from "@/components/common/sidebar/sidebar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
@@ -107,9 +109,15 @@ const footerItem = [
 ];
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerVisible((prev) => !prev);
+  };
   return (
     <>
-      <Header />
+      <Header onShowDrawer={toggleDrawer} />
+      <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <Component {...pageProps} />
       <Footer props={footerItem} />
     </>

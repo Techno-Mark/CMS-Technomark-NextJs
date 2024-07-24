@@ -1,5 +1,6 @@
 .headerContainer {
   position: relative;
+  z-index: 99;
 }
 .navcontainer {
   height: 5.62rem;
@@ -57,7 +58,7 @@
 .responsiveheader .togglebtn {
   margin-left: auto;
 }
-.projectbtn {
+.projectbtn{
   display: none;
   color: var(--secondary--color);
   text-align: center;
@@ -70,6 +71,7 @@
 }
 .responsiveheader .projectbtn {
   display: block;
+  flex: 2;
 }
 .submenu {
   position: absolute;
@@ -129,6 +131,10 @@
   overflow: hidden;
 }
 
+.navlink :global(.customblock){
+  display: none;
+}
+
 
 @media only screen and (max-width: 992px) {
   .megamenufull {
@@ -184,6 +190,10 @@
   .submenulink a img {
     margin-right: 1.5rem;
   }
+  .navlink :global(.customblock){
+    display: block;
+  }
+  
 }
 
 
