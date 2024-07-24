@@ -18,23 +18,15 @@ interface client {
 
 const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
   const settings = {
-    infinite: true,
-    dots: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1.1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1.1,
-          infinite: false,
-        }
-      }
-    ]
+    
   };
 
   return (
+    <div className={styles.clientcontainer}>
       <Slider {...settings}>
         {props?.data?.map((testimonial: any, index: any) => (
           <div className={styles.clientslideinner} key={index}>
@@ -54,6 +46,7 @@ const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
           </div>
         ))}
       </Slider>
+    </div>
   );
 };
 

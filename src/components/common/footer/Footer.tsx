@@ -2,8 +2,14 @@ import Link from "next/link";
 import styles from "./footer.module.css";
 import Image from "next/image";
 const Footer = (props: any) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <footer className={`${styles.footerContainer}`}>
+      <div className={styles.footerarrow} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
+        <Image src="/images/footerarrow.svg" alt="footer arrow" height={54} width={54}/>
+      </div>
       <div className="container mx-auto w-full p-4 py-20 lg:pt-20">
         <div className="md:flex md:justify-between">
           <div className={`${styles.footerdetails} mb-10 md:mb-0`}>

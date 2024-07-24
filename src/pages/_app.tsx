@@ -4,6 +4,7 @@ import Header from "@/components/common/header/Header";
 import SideBar from "@/components/common/sidebar/sidebar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import CustomerLabel from '@/components/common/customerlabel/customerlabel';
 
 const footerItem = [
   {
@@ -118,6 +119,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Header onShowDrawer={toggleDrawer} />
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
+      <CustomerLabel />
       <Component {...pageProps} />
       <Footer props={footerItem} />
     </>

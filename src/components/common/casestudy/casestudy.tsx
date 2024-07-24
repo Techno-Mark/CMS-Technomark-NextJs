@@ -28,7 +28,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
-    slidesToShow: 1.4,
+    slidesToShow: 1.2,
     slidesToScroll: 1,
     arrows: true,
     dots: false,
@@ -139,7 +139,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
           ))}
         </Slider>
       </div>
-      <div className="container mx-auto viewallbtn">
+      <div className="mx-auto viewallbtn">
         <Button href="#" text="VIEW ALL" variant="secondary" />
       </div>
     </div>

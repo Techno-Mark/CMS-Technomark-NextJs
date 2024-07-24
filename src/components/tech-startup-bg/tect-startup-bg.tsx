@@ -26,7 +26,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({ sectionData = { title: ''
             <div className={styles.rightradientshape}>
                 <Image src="/images/right-line-bg.svg" alt="right" height={600} width={1920} />
             </div>
-            <div className={`container ${styles.container} mx-auto bg-white relative z-5`}>
+            <div className={` ${styles.container} mx-auto bg-white relative z-5`}>
                 <div className={containerClassNames}>
                     {sectionData.isCaseStudy ? (
                         // Case Study Detail Page Layout
