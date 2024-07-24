@@ -16,6 +16,20 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -227,73 +241,71 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
   };
 
   return (
-    <header className={`${styles.headerContainer} ${isMenuOpen ? styles.responsiveheader : ""}`}>
-      <nav className={`${styles.navigationbar} bg-white`}>
-        <div className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}>
-          <div className={`${styles.logocontainer}`}>
-            <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse px-12">
-              <Image src="/images/logo.svg" className="h-10" alt="Logo" width={232} height={37} />
-            </Link>
-          </div>
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className={` ${styles.togglebtn} inline-flex items-center w-10 mr-5 justify-center text-sm rounded-lg md:hidden`}
-            aria-controls="mega-menu-full"
-            aria-expanded={isMenuOpen ? "true" : "false"}
-          >
-            <span className="sr-only">Open main menu</span>
-            {isMenuOpen ? (
-                <Close className="closeicon" color="#1D3557" />
-              ) : (                
-                <Hamburger className="hamburgericon" color="#1D3557" />
-            )}
-          </button>
-          <div id="mega-menu-full" className={`${styles.megamenufull} items-center justify-between font-medium ${isMenuOpen ? "flex" : "hidden"} w-full h-full md:flex md:w-auto pr-16`}>
-            <ul className="flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-7 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold">
-              {menuItems.map((menu) => (
-                <li className={`${styles.navlink} h-full flex items-center ${(menu.name === "Technologies" && isTechnologiesSubMenuOpen && isMenuOpen) || (menu.name === "Services" && isServicesSubMenuOpen && isMenuOpen) ? styles.active: ""}`} key={menu.name}>
-                  <div onClick={menu.submenu ? (menu.name === "Technologies" ? toggleTechnologiesSubMenu : toggleServicesSubMenu) : undefined} className={`${styles.cursorpointer} cursor-pointer`}>
-                    <MenuLink item={menu} key={menu.name} />
-                    {menu.submenu && (
-                      <ul
-                        className={`${styles.submenu} ${
-                          (menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
+    // <header className={`${styles.headerContainer} ${isMenuOpen ? styles.responsiveheader : ""}`}>
+    <header className={`${styles.headerContainer} ${isSticky ? styles.stickyHeader : ""} ${isMenuOpen ? styles.responsiveheader : ""}`}>          <nav className={`${styles.navigationbar} bg-white`}>
+      <div className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}>
+        <div className={`${styles.logocontainer}`}>
+          <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse px-12">
+            <Image src="/images/logo.svg" className="h-10" alt="Logo" width={232} height={37} />
+          </Link>
+        </div>
+        <button
+          onClick={toggleMenu}
+          type="button"
+          className={` ${styles.togglebtn} inline-flex items-center w-10 mr-5 justify-center text-sm rounded-lg md:hidden`}
+          aria-controls="mega-menu-full"
+          aria-expanded={isMenuOpen ? "true" : "false"}
+        >
+          <span className="sr-only">Open main menu</span>
+          {isMenuOpen ? (
+            <Close className="closeicon" color="#1D3557" />
+          ) : (
+            <Hamburger className="hamburgericon" color="#1D3557" />
+          )}
+        </button>
+        <div id="mega-menu-full" className={`${styles.megamenufull} items-center justify-between font-medium ${isMenuOpen ? "flex" : "hidden"} w-full h-full md:flex md:w-auto`}>
+          <ul className="flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-7 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold">
+            {menuItems.map((menu) => (
+              <li className={`${styles.navlink} h-full flex items-center ${(menu.name === "Technologies" && isTechnologiesSubMenuOpen && isMenuOpen) || (menu.name === "Services" && isServicesSubMenuOpen && isMenuOpen) ? styles.active : ""}`} key={menu.name}>
+                <div onClick={menu.submenu ? (menu.name === "Technologies" ? toggleTechnologiesSubMenu : toggleServicesSubMenu) : undefined} className={`${styles.cursorpointer} cursor-pointer`}>
+                  <MenuLink item={menu} key={menu.name} />
+                  {menu.submenu && (
+                    <ul
+                      className={`${styles.submenu} ${(menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
                           (menu.name === "Services" && isServicesSubMenuOpen)
-                            ? "customblock"
-                            : "hidden"
+                          ? "customblock"
+                          : "hidden"
                         }`}
-                      >
-                        {menu.submenu.map((submenu) => (
-                          <li
-                            key={submenu.name}
-                            className={`${styles.submenulink} p-2 ${
-                              menu.name === "Services" ? "md:w-1/3" : "md:w-1/4"
+                    >
+                      {menu.submenu.map((submenu) => (
+                        <li
+                          key={submenu.name}
+                          className={`${styles.submenulink} p-2 ${menu.name === "Services" ? "md:w-1/3" : "md:w-1/4"
                             }`}
-                          >
-                            <Link href={submenu.path}>
-                              <img src={submenu.icons} alt={submenu.name} className="inline-block mr-2" />
-                              <span>{submenu.name}</span>  
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+                        >
+                          <Link href={submenu.path}>
+                            <Image src={submenu.icons} alt={submenu.name} width={48} height={48}className="inline-block mr-2" />
+                            <span>{submenu.name}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={`${styles.headersideimg} px-7 h-full flex items-center`}>
+          <div className={`${styles.themebtn} flex justify-center h-full`}>
+            <img src="/images/coffee.svg" alt="" />
           </div>
-          <div className={`${styles.headersideimg} px-7 h-full flex items-center`}>
-            <div className={`${styles.themebtn} flex justify-center h-full`}>
-              <img src="/images/coffee.svg" alt="" />
-            </div>
-            <div className={styles.projectbtn}>
+          <div className={styles.projectbtn}>
             <button onClick={onShowDrawer}>START A PROJECT</button>
-            </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
     </header>
   );
 };

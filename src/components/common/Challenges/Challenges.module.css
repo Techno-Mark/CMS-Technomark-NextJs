@@ -1,6 +1,6 @@
 .resourceSolutionBox {
     margin-bottom: 2.5rem;
-    column-gap: 2.5rem;
+    column-gap: 2rem;
     transition: 0.5s ease-in-out all;
 }
 
@@ -47,6 +47,7 @@
 
 .solutiontext p b {
     font-weight: 600;
+    line-height: 3rem;
 }
 
 .solutionGreenArea {
@@ -90,9 +91,9 @@
 
 .solutionGreenArea .inlineArea b {
     color: var(--secondary--color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    line-height: 4rem;
+    line-height: 3rem;
     letter-spacing: 0.24px;
 }
 

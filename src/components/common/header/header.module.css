@@ -1,6 +1,16 @@
 .headerContainer {
   position: relative;
-  z-index: 99;
+  z-index: 999;
+  transition: all ease 0.7s;
+}
+.stickyHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  transition: all ease 0.7s;
+  box-shadow: -4px -2px 5px 0 rgb(0 0 0 / 50%);
 }
 .navcontainer {
   height: 5.62rem;
@@ -16,7 +26,7 @@
 .navigationbar {
   border-bottom: 1px solid var(--border-quaternary);
 }
-.navlink .cursorpointer > a{
+.navlink .cursorpointer > a {
   font-family: Montserrat;
   color: var(--secondary--color);
   font-size: 1.25rem;
@@ -24,9 +34,15 @@
   font-weight: 600;
   line-height: 1.25rem;
   text-transform: uppercase;
+  height: 100%;
+  line-height: 4.5rem;
+  display: block;
 }
-.navlink:hover {
+.navlink:hover a{
   color: var(--primary-color);
+}
+.cursorpointer{
+  height: 100%;
 }
 .headersideimg {
   border-left: 1px solid var(--border-quaternary);
@@ -39,7 +55,7 @@
   height: 100%;
 }
 .responsiveheader .megamenufull {
- height: calc(100vh - 95px);
+  height: calc(100vh - 95px);
   overflow-x: scroll;
 }
 .responsiveheader .megamenufull ul {
@@ -47,7 +63,7 @@
   align-items: flex-start;
 }
 .responsiveheader .navlink {
-  height: 60px;
+  height: 70px;
   padding: 20px 0;
   width: 100%;
   border-bottom: 1px solid var(--border-secondary);
@@ -58,7 +74,7 @@
 .responsiveheader .togglebtn {
   margin-left: auto;
 }
-.projectbtn{
+.projectbtn {
   display: none;
   color: var(--secondary--color);
   text-align: center;
@@ -81,7 +97,7 @@
   background-color: white;
   padding: 1.5rem 2.5rem;
   border-right: 1px solid var(--border-ternary);
-  border-bottom: 1px solid var(--border-ternary); 
+  border-bottom: 1px solid var(--border-ternary);
   border-left: 1px solid var(--border-ternary);
   z-index: 1000;
 }
@@ -123,18 +139,17 @@
   width: 100%;
 }
 
-.submenulink:hover img{
+.submenulink:hover img {
   outline: 4px solid rgba(22, 137, 68, 0.5);
 }
 
-.noscroll{
+.noscroll {
   overflow: hidden;
 }
 
-.navlink :global(.customblock){
+.navlink :global(.customblock) {
   display: none;
 }
-
 
 @media only screen and (max-width: 992px) {
   .megamenufull {
@@ -182,18 +197,19 @@
   }
   .responsiveheader .navlink.active .submenu {
     display: flex;
+    border: none;
   }
-  .navlink .cursorpointer > a{
+  .navlink .cursorpointer > a {
     font-size: 2.5rem;
-    line-height: 2.5rem;
+    line-height: 3rem;
   }
   .submenulink a img {
     margin-right: 1.5rem;
   }
-  .navlink :global(.customblock){
+  .navlink :global(.customblock) {
     display: block;
   }
-  
+  .cursorpointer{
+    height: auto;
+  }
 }
-
-

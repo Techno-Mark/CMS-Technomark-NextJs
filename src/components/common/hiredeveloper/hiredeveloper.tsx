@@ -27,9 +27,9 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props }) => {
 
     return (
         <div className="container mx-auto">
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center">
                 {developerTypes.map((developer, index) => (
-                    <div key={index} className="w-full md:w-1/3 p-4">
+                    <div key={index} className="w-full md:w-1/2 2xl:w-1/3 p-4">
                         <div className={`${styles.devTimeBox}`}>
                             <div className={styles.devloperimg}>
                                 <Image src={developer.image.src} alt={developer.image.alt} width={125} height={105}/>

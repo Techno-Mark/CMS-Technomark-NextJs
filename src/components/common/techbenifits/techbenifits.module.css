@@ -25,7 +25,7 @@
 }
 .benefitListWrapper {
   position: relative;
-  left: 30rem;
+  left: 25rem;
   top: 15rem;
 }
 
@@ -62,7 +62,14 @@
   margin-right: auto;
 }
 
-
+@media only screen and (max-width: 1536px) {
+  .benifitContainer :global(.title-section h2) {
+    font-size: 2.6rem;
+  }
+  .benefitListWrapper {
+    left: 20rem;
+  }
+}
 @media only screen and (max-width: 1200px) {
   .benefitListItem{
     max-width: 17rem;

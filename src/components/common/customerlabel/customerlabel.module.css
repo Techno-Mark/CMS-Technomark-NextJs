@@ -1,0 +1,37 @@
+.customerfixedlabel {
+  position: fixed;
+  top: 10rem;
+  z-index: 99;
+  border-radius: 0px 20px 20px 0px;
+  background: var(--red--primary);
+  padding: 1.25rem;
+  max-width: 8rem;
+}
+.customerfixedlabel img {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+  max-height: 3rem;
+  object-fit: contain;
+}
+.customerfixedlabel h5 {
+  color: var(--white-color);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.customerfixedlabel p {
+  color: var(--white-color);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem;
+}

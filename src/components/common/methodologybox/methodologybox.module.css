@@ -83,8 +83,7 @@
 .flipcard .inner .back ul {
   list-style-type: none;
   margin: 0;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
+  padding-inline: 1rem;
 }
 
 .flipcard .inner .back ul li {
@@ -92,7 +91,7 @@
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 1.6rem;
   opacity: 0.8;
   transition: 0.5s ease-in-out all;
   border: 1px solid transparent;
@@ -112,6 +111,10 @@
 @media only screen and (max-width: 1536px) {
   .flipcard {
     height: 470px;
+  }
+  .flipcard .inner .back ul li {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
 }
 

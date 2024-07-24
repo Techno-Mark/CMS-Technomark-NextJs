@@ -29,8 +29,16 @@ const Services: React.FC<ServicesProps> = ({
   const totalItems = services.length;
   const rows = Math.ceil(totalItems / columns);
 
+  const getClassName = () => {
+    if (isFeatured) return styles.featureservices;
+    if (isProduct) return styles.productservices;
+    if (istechservice) return styles.techservices;
+    return styles.simpleservices;
+  };
+
+
   return (
-    <div className="flex flex-wrap -mx-4">
+    <div className={`flex flex-wrap -mx-4 ${getClassName()}`}>
       {services.map((service: any, index: any) => {
         const isFirstRow = index < columns;
         const isRightMostColumn = (index + 1) % columns === 0;
@@ -38,17 +46,7 @@ const Services: React.FC<ServicesProps> = ({
         const isLastRow = index >= (rows - 1) * columns;
 
         return (
-          <div
-            key={index}
-            className={`w-full 
-                ${
-                  isFeatured
-                    ? "md:w-1/5"
-                    : isProduct || istechservice
-                    ? "md:w-1/3"
-                    : "md:w-1/2 lg:w-1/4"
-                }`}
-          >
+          <div key={index} className={`w-full ${isFeatured ? "w-1/2 md:w-1/5" : isProduct || istechservice ? "md:w-1/3" : "md:w-1/2 lg:w-1/4"}`}>
             <div
               className={`${styles.servicesbox} ${
                 !isFirstRow && !isLastRow ? "" : "!border-t-0"

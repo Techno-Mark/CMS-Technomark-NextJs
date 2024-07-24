@@ -44,13 +44,19 @@
   text-transform: capitalize;
 }
 
+.featureservices .servicesbox .servicetitle {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+
 .servicesbox .servicedescribe {
   color: var(--secondary--color);
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 2rem;
 }
-.textpadding{
+.textpadding {
   padding-inline: 3rem;
 }
 
@@ -71,24 +77,48 @@
 }
 
 .servicesbox .moresection a {
-  margin: 0 10px;
   transform: translateY(40px);
   transition: 0.5s;
   opacity: 0;
-  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0.08%,
+    var(--primary-variant-one) 99.95%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.4rem;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--primary-color);;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .servicesbox:hover .moresection a {
   transform: translateY(0px);
   opacity: 1;
+}
+
+@media only screen and (max-width: 1536px) {
+  .featureservices .servicesbox .servicetitle {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .servicesbox .servicedescribe{
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .simpleservices .servicesbox {
+    width: 90%;
+    margin: 0 auto 20px;
+    padding-top: 40px;
+    border: 1px solid var(--border-primary) !important;
+    border-right: 1px solid var(--border-primary) !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -97,8 +127,6 @@
     margin: 0 auto 20px;
     padding-top: 40px;
     border: 1px solid var(--border-primary) !important;
-  }
-  .servicesbox {
     border-right: 1px solid var(--border-primary) !important;
   }
 }

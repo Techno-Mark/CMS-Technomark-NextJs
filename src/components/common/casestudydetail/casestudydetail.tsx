@@ -46,8 +46,8 @@ const CaseStudyDetail: React.FC<CaseStudyDetailProps> = ({ props }) => {
               ))}
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="performanceimg">
-                <Image src={props.performanceImage} alt="performance" className="w-full" height={800} width={700}/>
+              <div className={styles.performanceimg}>
+                <Image src={props.performanceImage} alt="performance" className="w-full" height={700} width={920}/>
               </div>
             </div>
           </div>

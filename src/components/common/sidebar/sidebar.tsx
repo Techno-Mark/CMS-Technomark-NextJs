@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Image from "next/image";
 import styles from "./sidebar.module.css";
 import Button from "../button/button";
@@ -8,10 +8,27 @@ interface SidebarProps {
     toggleDrawer: () => void;
   }
   
-  const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
+    const [isWhiteSidebar, setIsWhiteSidebar] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY >= window.innerHeight) {
+          setIsWhiteSidebar(true);
+        } else {
+          setIsWhiteSidebar(false);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
 
     return (
-        <section className={`${styles.sidebar} ${isDrawerVisible ? styles.showDrawer : ""}`} id={styles.sidebarpopup} >
+        //<section className={`${styles.sidebar} ${isDrawerVisible ? styles.showDrawer : ""}`} id={styles.sidebarpopup} >
+        <section className={`${styles.sidebar} ${isDrawerVisible ? styles.showDrawer : ""} ${isWhiteSidebar ? styles.whitesidebar : ""}`} id={styles.sidebarpopup}>
             <button type="button" className={styles.sidebarbtn} onClick={toggleDrawer}> START A NEW PROJECT</button>
             <div className={styles.sidebarimgs}>
                 <div className={styles.imgone}>

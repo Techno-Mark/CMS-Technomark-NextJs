@@ -17,14 +17,12 @@
 }
 .coreservices :global(.title-section h2),
 .productservices :global(.title-section h2),
-.techservices :global(.title-section h2),
-.singletechservices :global(.title-section h2) {
+.techservices :global(.title-section h2) {
   margin-bottom: 4rem;
 }
 .coreservices :global(.title-section p),
 .productservices :global(.title-section p),
-.techservices :global(.title-section p),
-.singletechservices :global(.title-section p) {
+.techservices :global(.title-section p){
   margin-bottom: 0.6rem;
 }
 
@@ -183,7 +181,7 @@
 }
 .casestudylist :global(.title-section p) {
   margin: 0 auto 5rem;
-  max-width: 75%;
+  max-width: 80%;
   font-size: 2.25rem;
   line-height: 4rem;
 }
@@ -201,7 +199,7 @@
 }
 .casestudydetailherosection :global(.title-section p) {
   margin: 0 auto 5rem;
-  max-width: 60%;
+  max-width: 80%;
   color: var(--white-color);
   font-size: 2.25rem;
   line-height: 3.5rem;
@@ -330,6 +328,12 @@
   border-bottom: 1px solid var(--border-ternary);
   background: var(--bg-secondary);
   background-blend-mode: darken, normal;
+}
+.singletechservices :global(.title-section h2) {
+  margin-bottom: 1.6rem;
+}
+.singletechservices :global(.title-section p) {
+  margin-bottom: 4rem;
 }
 
 .techexpert {

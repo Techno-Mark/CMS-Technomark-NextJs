@@ -1,16 +1,22 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -1px;
+  right: -2px;
   height: 100%;
   width: 6rem;
-  z-index: 999;
+  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  border-left: 1px solid #8e9aab;
-  border-top: 1px solid #8e9aab;
+  border-left: 1px solid var(--border-quaternary);
+  border-top: 1px solid var(--border-quaternary);
+}
+#sidebarpopup.showDrawer {
+  z-index: 9999;
+}
+.whitesidebar {
+  background: var(--white-color);
 }
 .sidebarbtn {
   height: 100%;
@@ -70,7 +76,7 @@
   padding: 5rem 10rem 0;
 }
 .drawer {
-  background: #123456;
+  background: var(--secondary--color);
   box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.24);
   height: 100vh;
   padding: 3rem;
@@ -168,5 +174,11 @@
   }
   .sidebar {
     top: -200%;
+  }
+  .projectform label,
+  .projectform input,
+  .projectform textarea{
+    font-size: 2rem;
+    line-height: 3rem;
   }
 }
