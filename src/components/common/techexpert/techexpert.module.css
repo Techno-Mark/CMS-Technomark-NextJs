@@ -59,10 +59,11 @@
 
 .expertContainer :global(.title-section h2) {
   text-align: left;
+  max-width: 37rem;
 }
 
 
-@media only screen and (max-width: 1536px) {
+@media only screen and (max-width: 1560px) {
   .expertlistbox p{
     font-size: 1.6rem;
     line-height: 2rem;

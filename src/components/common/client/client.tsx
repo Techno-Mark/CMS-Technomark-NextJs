@@ -20,9 +20,16 @@ const Client: React.FC<TestimonialsProps> = ({ props }:any) => {
   const settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 1.1,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1.1,
+        }
+      }
+    ]
   };
 
   return (

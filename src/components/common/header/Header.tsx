@@ -245,7 +245,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     <header className={`${styles.headerContainer} ${isSticky ? styles.stickyHeader : ""} ${isMenuOpen ? styles.responsiveheader : ""}`}>          <nav className={`${styles.navigationbar} bg-white`}>
       <div className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}>
         <div className={`${styles.logocontainer}`}>
-          <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse px-12">
+          <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse px-14">
             <Image src="/images/logo.svg" className="h-10" alt="Logo" width={232} height={37} />
           </Link>
         </div>
@@ -264,7 +264,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
           )}
         </button>
         <div id="mega-menu-full" className={`${styles.megamenufull} items-center justify-between font-medium ${isMenuOpen ? "flex" : "hidden"} w-full h-full md:flex md:w-auto`}>
-          <ul className="flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-7 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold">
+          <ul className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}>
             {menuItems.map((menu) => (
               <li className={`${styles.navlink} h-full flex items-center ${(menu.name === "Technologies" && isTechnologiesSubMenuOpen && isMenuOpen) || (menu.name === "Services" && isServicesSubMenuOpen && isMenuOpen) ? styles.active : ""}`} key={menu.name}>
                 <div onClick={menu.submenu ? (menu.name === "Technologies" ? toggleTechnologiesSubMenu : toggleServicesSubMenu) : undefined} className={`${styles.cursorpointer} cursor-pointer`}>
@@ -298,7 +298,8 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         </div>
         <div className={`${styles.headersideimg} px-7 h-full flex items-center`}>
           <div className={`${styles.themebtn} flex justify-center h-full`}>
-            <img src="/images/coffee.svg" alt="" />
+            {/* <img src="/images/coffee.svg" alt="" /> */}
+            <Image src="/images/coffee.svg" alt="" width={90} height={90}/>
           </div>
           <div className={styles.projectbtn}>
             <button onClick={onShowDrawer}>START A PROJECT</button>

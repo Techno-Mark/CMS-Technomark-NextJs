@@ -18,7 +18,7 @@ interface TechExpertProps {
 const TechExpert: React.FC<TechExpertProps> = ({ props }) => {
   return (
     <div className={`container mx-auto ${styles.expertContainer}`}>
-      <div className="flex flex-wrap sm:flex-row flex-col items-center">
+      <div className="flex flex-wrap sm:flex-row flex-col">
         <div className={`w-full md:w-1/2 ${styles.expertdetails}`}>
           <TitleSection
             sectionData={{

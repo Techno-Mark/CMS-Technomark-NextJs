@@ -37,7 +37,7 @@ const CaseStudyDetail: React.FC<CaseStudyDetailProps> = ({ props }) => {
       </div>
       <div className="performance-section">
           <div className="flex flex-wrap items-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-[42%]">
               {props.performances.map((item, index) => (
                 <div key={index} className={`${styles.performancebox}`}>
                   <h2>{item.title}</h2>
@@ -45,9 +45,9 @@ const CaseStudyDetail: React.FC<CaseStudyDetailProps> = ({ props }) => {
                 </div>
               ))}
             </div>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-[58%]">
               <div className={styles.performanceimg}>
-                <Image src={props.performanceImage} alt="performance" className="w-full" height={700} width={920}/>
+                <Image src={props.performanceImage} alt="performance" className="w-full" height={694} width={920}/>
               </div>
             </div>
           </div>

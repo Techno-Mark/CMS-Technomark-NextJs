@@ -21,8 +21,9 @@
 .clientslideinner .clientpic img{
   margin-left: auto;
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  max-width: 25rem;
+  max-width: 32rem;
 }
 
 .logobox {

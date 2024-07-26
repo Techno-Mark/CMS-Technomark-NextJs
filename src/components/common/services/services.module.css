@@ -3,7 +3,7 @@
   position: relative;
   border-right: 1px solid var(--border-primary);
   border-top: 1px solid var(--border-primary);
-  padding: 3rem 1rem;
+  padding: 4.5rem 1rem;
 }
 .servicerightborder {
   border-right: none !important;
@@ -43,12 +43,14 @@
   margin-bottom: 1.25rem;
   text-transform: capitalize;
 }
-
+/* 
 .featureservices .servicesbox .servicetitle {
   font-size: 1.1rem;
   line-height: 1.3rem;
+} */
+.featureservices .servicesbox{
+  padding: 2.5rem 1rem;
 }
-
 
 .servicesbox .servicedescribe {
   color: var(--secondary--color);
@@ -100,7 +102,7 @@
   opacity: 1;
 }
 
-@media only screen and (max-width: 1536px) {
+@media only screen and (max-width: 1560px) {
   .featureservices .servicesbox .servicetitle {
     font-size: 1.2rem;
     line-height: 1.4rem;
