@@ -51,8 +51,8 @@
 
 .flipcard .inner .front h3 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 6rem;
-  line-height: 6rem;
+  font-size: 5.1rem;
+  line-height: 4.4rem;
   font-weight: 400;
   letter-spacing: -2px;
   margin-bottom: 1.25rem;
@@ -67,7 +67,7 @@
   color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: 2.1rem;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
 }
@@ -76,8 +76,8 @@
   color: var(--secondary--color);
   font-size: 1.3rem;
   font-weight: 500;
-  line-height: 2rem;
-  width: 70%;
+  line-height: 2.2rem;
+  width: 75%;
 }
 
 .flipcard .inner .back ul {
@@ -89,7 +89,7 @@
 .flipcard .inner .back ul li {
   padding: 0.5rem 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.6rem;
   opacity: 0.8;
@@ -108,7 +108,7 @@
   border-image: linear-gradient(to left, #3da745, var(--white-color)) 1 0;
 }
 
-@media only screen and (max-width: 1536px) {
+@media only screen and (max-width: 1920px) {
   .flipcard {
     height: 470px;
   }

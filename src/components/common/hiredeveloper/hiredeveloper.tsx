@@ -26,7 +26,6 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props }) => {
     const { developerTypes } = props;
 
     return (
-        <div className="container mx-auto">
             <div className="flex flex-wrap justify-center">
                 {developerTypes.map((developer, index) => (
                     <div key={index} className="w-full md:w-1/2 2xl:w-1/3 p-4">
@@ -52,7 +51,6 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props }) => {
                     </div>
                 ))}
             </div>
-        </div>
     );
 };
 

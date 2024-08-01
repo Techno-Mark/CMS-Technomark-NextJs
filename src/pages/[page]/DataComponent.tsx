@@ -185,7 +185,7 @@ const DataComponent = ({
                 titleClassName="guaranteetitle"
               />
               <div className="flex flex-wrap">
-                <div className="lg:w-1/2 md:w-full">
+                <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
                   <div className={styles.videoarea}>
                     <video loop autoPlay muted>
                       <source
@@ -253,7 +253,7 @@ const DataComponent = ({
             <div className={styles.leftbubblecircle}>
               <Image src="/images/gradient-bubble.svg" alt="bubble" height={850} width={850} />
             </div>
-            <div className="container mx-auto">
+            <div className="container mx-auto relative z-10">
               <div className="flex flex-wrap">
                 <div className="w-full md:w-1/4">
                   <TitleSection

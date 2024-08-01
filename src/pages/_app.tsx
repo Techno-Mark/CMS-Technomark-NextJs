@@ -116,12 +116,12 @@ export default function App({ Component, pageProps }: AppProps) {
     setIsDrawerVisible((prev) => !prev);
   };
   return (
-    <>
+    <div className='maindiv'>
       <Header onShowDrawer={toggleDrawer} />
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <CustomerLabel />
       <Component {...pageProps} />
       <Footer props={footerItem} />
-    </>
+    </div>
   );
 }

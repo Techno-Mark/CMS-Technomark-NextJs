@@ -13,9 +13,9 @@
   transition: all ease 0.6s;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: 20px;
-  line-height: 20px;
-  height: 70px;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  height: 4.5rem;
   border-radius: 100px;
   padding-inline: 20px;
   width: fit-content;
@@ -36,8 +36,8 @@
   background: var(--primary-variant-one);
   overflow: hidden;
   padding: 1rem;
-  width: 45px;
-  height: 45px;
+  width: 2.8rem;
+  height: 2.8rem;
 }
 .newPrimarybtn:hover span {
   background: rgba(10, 132, 63, 1);
@@ -58,14 +58,14 @@
   left: 34%;
   top: 0;
   transform: translateX(-50px);
-  background-size: auto;
+  background-size: 130%;
   background-position: center;
   background-repeat: no-repeat;
 }
 .arrowanimatebtn .icon:before {
   content: "";
   background-image: url(/images/arrow-right-circle.png);
-  background-size: auto;
+  background-size: 130%;
   background-position: center;
   background-repeat: no-repeat;
   display: block;
@@ -78,7 +78,7 @@
   transition: transform 0.5s ease-in-out;
 }
 .newPrimarybtn:hover .arrowanimatebtn::before {
-  transform: translateX(-14px);
+  transform: translateX(-11px);
 }
 
 .newPrimarybtn:hover .icon:before {
@@ -94,6 +94,7 @@
 
 .newPrimarybtn.secondarybtn .icon:before {
   background-image: url(/images/arrow-right-black.png);
+  background-size: 50%;
 }
 .newPrimarybtn.secondarybtn span {
   background: var(--white-color);
@@ -109,15 +110,12 @@
   border: 1px solid var(--primary-color);
 }
 
-@media only screen and (max-width: 1499px) {
-  .newPrimarybtn {
-    font-size: 16px;
-    line-height: 16px;
-    height: 60px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .newPrimarybtn {
-    height: 60px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+  }
+  .newPrimarybtn:hover .arrowanimatebtn::before {
+    transform: translateX(-6px);
   }
 }

@@ -15,9 +15,9 @@
 #sidebarpopup.showDrawer {
   z-index: 9999;
 }
-.whitesidebar {
+/* .whitesidebar {
   background: var(--white-color);
-}
+} */
 .sidebarbtn {
   height: 100%;
   color: var(--border-quaternary);

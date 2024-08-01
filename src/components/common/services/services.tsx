@@ -38,7 +38,7 @@ const Services: React.FC<ServicesProps> = ({
 
 
   return (
-    <div className={`flex flex-wrap -mx-4 ${getClassName()}`}>
+    <div className={`flex flex-wrap  ${getClassName()}`}>
       {services.map((service: any, index: any) => {
         const isFirstRow = index < columns;
         const isRightMostColumn = (index + 1) % columns === 0;

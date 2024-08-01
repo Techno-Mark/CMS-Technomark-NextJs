@@ -2,6 +2,7 @@
 .herocontainer :global(.title-section h2) {
   margin-bottom: 2rem;
   text-align: left;
+  font-weight: 700;
 }
 .herocontainer :global(.title-section p) {
   margin-bottom: 4rem;
@@ -17,6 +18,9 @@
 .techherocontainer :global(.title-section p) {
   font-size: 2.4rem;
   line-height: 4rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -26,7 +30,8 @@
   font-weight: 600;
   line-height: 4rem;
   text-align: left;
-  color: rgba(29, 53, 87, 0.5);
+  color: var(--secondary--color);
+  opacity: 0.5;
   margin-bottom: 3rem;
   text-transform: uppercase;
 }

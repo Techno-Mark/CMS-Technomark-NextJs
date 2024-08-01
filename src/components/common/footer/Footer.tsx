@@ -8,17 +8,17 @@ const Footer = (props: any) => {
   return (
     <footer className={`${styles.footerContainer}`}>
       <div className={styles.footerarrow} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-        <Image src="/images/footerarrow.svg" alt="footer arrow" height={54} width={54}/>
+        <Image src="/images/footerarrow.svg" alt="footer arrow" height={54} width={54} />
       </div>
-      <div className="container mx-auto w-full p-4 py-20 lg:pt-20">
+      <div className="container mx-auto w-full pt-20 pb-16 lg:pt-20">
         <div className="md:flex md:justify-between">
           <div className={`${styles.footerdetails} mb-10 md:mb-0`}>
             <Link href="/" className={`${styles.footerlogo} flex items-center`}>
               <Image
                 src="/images/footerlogo.svg"
-                className="h-14 me-3"
+                className=""
                 alt="Logo"
-                height={100}
+                height={120}
                 width={100}
               />
             </Link>
@@ -66,33 +66,33 @@ const Footer = (props: any) => {
               </Link>
             </div>
             <div className={`${styles.sociallinks} flex`}>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center justify-center">
                 <Image
-                  src="/images/facebook.svg"
+                  src="/images/facebook1.svg"
                   alt="facebook"
                   height={54}
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center justify-center">
                 <Image
-                  src="/images/youtube.svg"
+                  src="/images/youtube1.svg"
                   alt="youtube"
                   height={54}
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center justify-center">
                 <Image
-                  src="/images/linkedin.svg"
+                  src="/images/linkedin1.svg"
                   alt="linkedin"
                   height={54}
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center justify-center">
                 <Image
-                  src="/images/twitter.svg"
+                  src="/images/twitter1.svg"
                   alt="twitter"
                   height={54}
                   width={54}
@@ -113,7 +113,7 @@ const Footer = (props: any) => {
                     <li className="mb-4" key={index}>
                       <Link
                         href={d.path}
-                        className="text-[1rem] hover:underline"
+                        className="text-[1rem]"
                       >
                         {d.name}
                       </Link>
@@ -124,9 +124,10 @@ const Footer = (props: any) => {
             ))}
           </div>
         </div>
-        <hr className="my-6 border-gray-500 sm:mx-auto lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between max-w-screen-lg mx-auto">
-          <span className={`${styles.footerbottomleft}`}>
+      </div>
+      <div className={`${styles.footerbottom} py-6`}>
+        <div className={`container sm:flex sm:items-center sm:justify-between mx-auto`}>
+          <span className={`${styles.footerbottomleft} `}>
             Copyright © 2024 <Link href="/">TechnoMark.</Link> All Rights
             Reserved.
           </span>

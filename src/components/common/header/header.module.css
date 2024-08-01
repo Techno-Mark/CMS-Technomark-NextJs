@@ -50,7 +50,6 @@
 .headersideimg img {
   max-width: 2.25rem;
 }
-
 .responsiveheader .navcontainer {
   height: 100%;
 }
@@ -151,9 +150,9 @@
   display: none;
 }
 
-@media only screen and (max-width: 992px) {
-  .megamenufull {
-    padding-right: 0 !important;
+@media only screen and (max-width: 1023px) {
+  .navlink .cursorpointer > a {
+    font-size: 1.1rem;
   }
 }
 

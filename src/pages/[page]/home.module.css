@@ -6,10 +6,10 @@
   margin-bottom: 1.25rem;
 }
 .methodology :global(.title-section p) {
-  width: 66%;
+  width: 70%;
   margin: 0 auto 3.8rem;
+  opacity: 0.7;
 }
-
 .coreservices {
   border-top: 1px solid var(--border-primary);
   border-bottom: 1px solid var(--border-primary);
@@ -73,10 +73,12 @@
 }
 .guaranteetmsection .videoarea {
   position: relative;
+  height: 100%;
 }
 .guaranteetmsection .videoarea video {
   object-fit: initial;
   width: 100%;
+  height: 100%;
   border-radius: 10px;
 }
 .guaranteetmsection .videoarea .play-btn {
@@ -181,7 +183,7 @@
 }
 .casestudylist :global(.title-section p) {
   margin: 0 auto 5rem;
-  max-width: 80%;
+  max-width: 75%;
   font-size: 2.25rem;
   line-height: 4rem;
 }
@@ -199,7 +201,7 @@
 }
 .casestudydetailherosection :global(.title-section p) {
   margin: 0 auto 5rem;
-  max-width: 80%;
+  max-width: 66%;
   color: var(--white-color);
   font-size: 2.25rem;
   line-height: 3.5rem;
@@ -210,7 +212,8 @@
   font-weight: 600;
   line-height: 4rem;
   text-align: center;
-  color: rgba(255, 255, 255, 1);
+  color: var(--white-color);
+  opacity: 0.5;
   margin-bottom: 3rem;
   text-transform: uppercase;
 }
@@ -225,8 +228,9 @@
 }
 .businessimpactsection :global(.title-section p) {
   color: var(--white-color);
-  width: 75%;
+  width: 70%;
   margin-inline: auto;
+  font-weight: 400;
 }
 
 
@@ -348,6 +352,9 @@
   transform: translate(0, -50%);
   z-index: 0;
 }
+.leftbubblecircle img{
+  max-width: 40rem;
+}
 .rightbubblecircle {
   position: absolute;
   right: -16rem;
@@ -377,5 +384,8 @@
   }
   .technenifits {
     padding-inline: 2rem;
+  }
+  .methodology :global(.title-section p) {
+    width: 100%;
   }
 }

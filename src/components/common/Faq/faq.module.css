@@ -1,3 +1,6 @@
+.faqcontainer{
+  padding-left: 6rem;
+}
 .cardheader {
   position: relative;
   transition: all 0.3s ease;
@@ -12,6 +15,7 @@
   border: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient( 90deg,#ebcb5b 0%,#017ca1 49.5%, #61b946 100%);
+  /* border-image-source: url(/images/faq3.svg) round; */
   background: rgba(22, 137, 68, 0.05);
 }
 .cardtitle {
@@ -28,6 +32,9 @@
 
 .cardtitle span {
   margin-right: 1rem;
+  color: var(--secondary--color);
+  font-family: Montserrat;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
@@ -40,7 +47,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 2rem;
-  padding-left: 25px;
+  padding-left: 3rem;
 }
 .collapsed {
   max-height: 0;
@@ -52,4 +59,9 @@
 
 .transition-max-height {
   transition: ax-height 0.5s ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+.faqcontainer{
+  padding-left: 0;
+}
 }

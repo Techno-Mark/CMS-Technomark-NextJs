@@ -8,12 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        '2xl': '1560px',
+      },
       container: {
         center: true,
         padding: {
           DEFAULT: '5%',
           md: '7%',
-          'xl': '10%',
         }
       },
       backgroundImage: {

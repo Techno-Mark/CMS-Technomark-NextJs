@@ -30,7 +30,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({ sectionData = { title: ''
                 <div className={containerClassNames}>
                     {sectionData.isCaseStudy ? (
                         // Case Study Detail Page Layout
-                        <>
+                        <div className={styles.casestudytech}>
                             <div className="w-full">
                                 <h2 className={`maintitle !text-center ${styles.maintitle}`} dangerouslySetInnerHTML={{ __html: safeTitle }} />
                             </div>
@@ -39,7 +39,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({ sectionData = { title: ''
                                     {sectionData.subtitle}
                                 </p>
                             </div>
-                        </>
+                        </div>
                     ) : (
                         // Default Home Page Layout
                         <>
