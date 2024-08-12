@@ -43,17 +43,18 @@ export const getServerSideProps: GetServerSideProps<{
   const apiCall = async (param: string) => {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
+      // `http://localhost:3001/casestudylist.json`,
       {
         headers: {
           referal: "http://localhost:3001",
         },
       }
     );
-    return res.data.data.templateData;
+    return res.data.data;
   };
   try {
     const homeDataPromise = apiCall("home-page");
-    const caseStudyPromise = apiCall("case-study-list");
+    const caseStudyPromise = apiCall("casestudylist");
     const caseStudyDetailsPromise = apiCall("case-study-detail");
     const productPromise = apiCall("product");
     const technologyPromise = apiCall("technology");

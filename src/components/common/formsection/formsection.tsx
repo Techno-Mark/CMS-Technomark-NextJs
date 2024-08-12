@@ -19,11 +19,24 @@ const FormSection: React.FC<formProps> = ({ props }: any) => {
       <div className={`flex flex-wrap ${styles.formcontainer}`}>
         <div className={styles.formleft}>
           <div className={styles.formtext}>
-            <h3>{props[0].title}</h3>
+            <h3>
+              {props.find((item: any) => item.title)
+                ? props.find((item: any) => item.title).title
+                : ""}
+            </h3>
             <ul>
-              {props[0]?.data?.map((item: any, index: any) => {
-                return <li key={index}>{item.text}</li>;
-              })}
+              {props?.find((item: any) => item.Data) &&
+                props
+                  ?.find((item: any) => item.Data)
+                  .Data?.map((item: any, index: any) => {
+                    return (
+                      <li key={index}>
+                        {item.items.find((item: any) => item.text)
+                          ? item.items.find((item: any) => item.text).text
+                          : ""}
+                      </li>
+                    );
+                  })}
             </ul>
           </div>
         </div>
