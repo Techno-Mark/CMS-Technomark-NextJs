@@ -755,6 +755,7 @@ const DataComponent = ({
         return null;
     }
   };
+  console.log(homeData)
   return (
     <>
       {homeData ? (
