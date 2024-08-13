@@ -27,7 +27,7 @@ import HireDeveloper from "@/components/common/hiredeveloper/hiredeveloper";
 import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import styles from "./home.module.css";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -68,32 +68,45 @@ interface HomeProps {
 const DataComponent = ({
   maindata,
   caseStudy,
-  caseStudyDetails,
+  hlsCaseStudyDetails,
+  airattixCaseStudyDetails,
+  givsumCaseStudyDetails,
   product,
   technology,
 }: {
   maindata: HomeProps;
   caseStudy: HomeProps;
-  caseStudyDetails: HomeProps;
+  hlsCaseStudyDetails: HomeProps;
+  airattixCaseStudyDetails: HomeProps;
+  givsumCaseStudyDetails: HomeProps;
   product: HomeProps;
   technology: HomeProps;
 }) => {
   const pathName: any = usePathname();
+  const searchParams = useSearchParams();
   const [homeData, setHomeData] = useState<any>();
 
+  const client = searchParams.get("client");
+
+  const fullPathWithParams = client ? `${pathName}?client=${client}` : pathName;
+
   useEffect(() => {
-    if (pathName === "/home") {
+    if (fullPathWithParams === "/home") {
       setHomeData(maindata);
-    } else if (pathName === "/casestudylist") {
+    } else if (fullPathWithParams === "/casestudylist") {
       setHomeData(caseStudy);
-    } else if (pathName === "/casestudydetail") {
-      setHomeData(caseStudyDetails);
-    } else if (pathName === "/product") {
+    } else if (fullPathWithParams === "/casestudydetail?client=HLS") {
+      setHomeData(hlsCaseStudyDetails);
+    } else if (fullPathWithParams === "/casestudydetail?client=Airattix") {
+      setHomeData(airattixCaseStudyDetails);
+    } else if (fullPathWithParams === "/casestudydetail?client=Givsum") {
+      setHomeData(givsumCaseStudyDetails);
+    } else if (fullPathWithParams === "/product") {
       setHomeData(product);
-    } else if (pathName === "/technology") {
+    } else if (fullPathWithParams === "/technology") {
       setHomeData(technology);
     }
-  }, [pathName]);
+  }, [fullPathWithParams]);
 
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
@@ -104,14 +117,10 @@ const DataComponent = ({
           )
         );
       case "techstartup":
-        return (
-          homeData?.techstartup && (
-            <TectStartupBg sectionData={homeData.techstartup} />
-          )
-        );
+        return sectionData && <TectStartupBg sectionData={sectionData} />;
       case "methodology":
         return (
-          homeData?.methodology && (
+          sectionData && (
             <section className={`${styles.methodology} tm-section bg-white`}>
               <div className={styles.leftbubblecircle}>
                 <Image
@@ -124,12 +133,26 @@ const DataComponent = ({
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.methodology[0].title,
-                    subtitle: homeData.methodology[0].subtitle,
+                    title: sectionData.find((item: any) => item.headingText)
+                      ? sectionData.find((item: any) => item.headingText)
+                          .headingText
+                      : "",
+                    subtitle: sectionData.find(
+                      (item: any) => item.subDescriptionText
+                    )
+                      ? sectionData.find((item: any) => item.subDescriptionText)
+                          .subDescriptionText
+                      : "",
                   }}
                   titleClassName="methodologytitle"
                 />
-                <MethodologyBox props={homeData.methodology[0]} />
+                <MethodologyBox
+                  props={
+                    sectionData.find((item: any) => item.Card)
+                      ? sectionData.find((item: any) => item.Card).Card
+                      : []
+                  }
+                />
               </div>
             </section>
           )
@@ -154,20 +177,30 @@ const DataComponent = ({
         );
       case "casestudy":
         return (
-          homeData?.casestudy && (
+          sectionData && (
             <section
               className={`${styles.casestudiessection} tm-section bg-white`}
             >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.casestudy[0].title,
-                    subtitle: homeData.casestudy[0].subtitle,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: sectionData.find((item: any) => item.subTitle)
+                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                      : "",
                   }}
                   titleFirst={true}
                   titleClassName="casestudytitle"
                 />
-                <CaseStudy props={homeData.casestudy[0]} />
+                <CaseStudy
+                  props={
+                    sectionData.find((item: any) => item.Data)
+                      ? sectionData.find((item: any) => item.Data).Data
+                      : []
+                  }
+                />
               </div>
             </section>
           )
@@ -253,9 +286,9 @@ const DataComponent = ({
             </section>
           )
         );
-      case "client":
+      case "clientspeak":
         return (
-          homeData?.client && (
+          sectionData && (
             <section
               className={`${styles.clientspeaksection} tm-section bg-white`}
             >
@@ -269,13 +302,21 @@ const DataComponent = ({
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.client[0].title,
-                    subtitle: homeData.client[0].subtitle,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: "",
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
                 />
-                <Client props={homeData.client[0]} />
+                <Client
+                  props={
+                    sectionData.find((item: any) => item.Data)
+                      ? sectionData.find((item: any) => item.Data).Data
+                      : []
+                  }
+                />
               </div>
             </section>
           )
@@ -406,36 +447,46 @@ const DataComponent = ({
         );
       case "casestudydetailherosection":
         return (
-          homeData?.casestudydetailherosection && (
+          sectionData && (
             <section
               className={`${styles.casestudydetailherosection} tm-section`}
             >
               <div className="container mx-auto">
                 <p className={styles.casestudydetaillabel}>
-                  {homeData.casestudydetailherosection.label}
+                  {sectionData.find((item: any) => item.label)
+                    ? sectionData.find((item: any) => item.label).label
+                    : ""}
                 </p>
                 <TitleSection
                   sectionData={{
-                    title: homeData.casestudydetailherosection.title,
-                    subtitle: homeData.casestudydetailherosection.subtitle,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: sectionData.find((item: any) => item.subTitle)
+                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                      : "",
                   }}
                   titleFirst={true}
                   titleClassName="casestudydetailtitle"
                 />
-                <CaseStudyDetail props={homeData.casestudydetailherosection} />
+                <CaseStudyDetail props={sectionData} />
               </div>
             </section>
           )
         );
       case "businessimpact":
         return (
-          homeData?.businessimpact && (
+          sectionData && (
             <section className={`${styles.businessimpactsection} tm-section`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.businessimpact.title,
-                    subtitle: homeData.businessimpact.subtitle,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: sectionData.find((item: any) => item.subTitle)
+                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                      : "",
                   }}
                   titleFirst={true}
                   titleClassName="businessimpacttitle"
@@ -474,59 +525,87 @@ const DataComponent = ({
         );
       case "projectscreens":
         return (
-          homeData?.projectscreens && (
+          sectionData && (
             <section className={`${styles.projectscreen} bg-white`}>
               <div className="container mx-auto">
                 <ScreenSlider
-                  props={homeData.projectscreens}
+                  props={
+                    sectionData.find((item: any) => item.Images)
+                      ? sectionData.find((item: any) => item.Images).Images
+                      : []
+                  }
                   useSlider1={true}
                 />
               </div>
             </section>
           )
         );
-      case "Challengessolutions":
+      case "challengessolutions":
         return (
-          homeData?.Challengessolutions && (
+          sectionData && (
             <section
               className={`${styles.challangesolutions} tm-section bg-white`}
             >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.Challengessolutions.title,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
                   }}
                   titleClassName="Challengessolutionstitle"
                 />
-                <Challenges props={homeData.Challengessolutions} />
+                <Challenges
+                  props={
+                    sectionData.find(
+                      (item: any) => item["Resource Solutions"]
+                    )?.["Resource Solutions"]
+                  }
+                />
               </div>
             </section>
           )
         );
       case "majorscreen":
         return (
-          homeData?.majorscreen && (
+          sectionData && (
             <section
               className={`${styles.majorscreensection} tm-section majorscreensection`}
             >
               <div className="container mx-auto">
-                <ScreenSlider props={homeData.majorscreen} useSlider1={false} />
+                <ScreenSlider
+                  props={
+                    sectionData.find((item: any) => item.Images)
+                      ? sectionData.find((item: any) => item.Images).Images
+                      : []
+                  }
+                  useSlider1={false}
+                />
               </div>
             </section>
           )
         );
-      case "features":
+      case "keyfeatures":
         return (
-          homeData?.features && (
+          sectionData && (
             <section className={`${styles.features} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: homeData.features.title,
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
                   }}
                   titleClassName="featurestitle"
                 />
-                <Services props={homeData.features} isFeatured={true} />
+                <Services
+                  props={
+                    sectionData.find((item: any) => item.Data)
+                      ? sectionData.find((item: any) => item.Data).Data
+                      : ""
+                  }
+                  isFeatured={true}
+                />
               </div>
             </section>
           )
@@ -676,7 +755,6 @@ const DataComponent = ({
         return null;
     }
   };
-  console.log(homeData);
   return (
     <>
       {homeData ? (

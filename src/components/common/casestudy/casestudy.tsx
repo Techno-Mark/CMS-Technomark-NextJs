@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styles from "./casestudy.module.css";
 import Image from "next/image";
-import NextArrow from '@/components/common/customarrow/next';
-import PrevArrow from '@/components/common/customarrow/prev';
+import NextArrow from "@/components/common/customarrow/next";
+import PrevArrow from "@/components/common/customarrow/prev";
 import Button from "../button/button";
 
 interface CaseStudy {
@@ -61,7 +61,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
     <div className={styles.casestudyparent}>
       <div className={styles.caseslide} id="case-slide">
         <Slider {...settings}>
-          {props?.data?.map((caseStudy: CaseStudy, index: number) => (
+          {props?.map((caseStudy: any, index: number) => (
             <div
               key={index}
               className={`${styles.casebox} ${
@@ -70,27 +70,50 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
             >
               <div className={styles.textarea}>
                 <Image
-                  src={caseStudy.image}
+                  src={
+                    caseStudy.items.find((item: any) => item.image)
+                      ? caseStudy.items.find((item: any) => item.image).image
+                      : ""
+                  }
                   alt="logo"
                   width={200}
                   height={200}
                 />
-                <p>{caseStudy.text}</p>
+                <p>
+                  {caseStudy.items.find((item: any) => item.text)
+                    ? caseStudy.items.find((item: any) => item.text).text
+                    : ""}
+                </p>
                 <ul className={styles.techusetext}>
-                  {caseStudy.subpoints.map((point: string, i: number) => (
-                    <li key={i}>
-                      <Image
-                        src="/images/check-circle.png"
-                        alt="check"
-                        height={20}
-                        width={20}
-                      />
-                      {point}
-                    </li>
-                  ))}
+                  {caseStudy.items.find((item: any) => item.subPoints) &&
+                    caseStudy.items
+                      .find((item: any) => item.subPoints)
+                      .subPoints.split(",")
+                      .map((point: string, i: number) => (
+                        <li key={i}>
+                          <Image
+                            src="/images/check-circle.png"
+                            alt="check"
+                            height={20}
+                            width={20}
+                          />
+                          {point}
+                        </li>
+                      ))}
                 </ul>
-                <a className={styles.readmore} href="#">
-                  read more
+                <a
+                  className={styles.readmore}
+                  href={
+                    caseStudy.items.find((item: any) => item.linkUrl)
+                      ? caseStudy.items.find((item: any) => item.linkUrl)
+                          .linkUrl
+                      : "#"
+                  }
+                >
+                  {caseStudy.items.find((item: any) => item.linkText)
+                    ? caseStudy.items.find((item: any) => item.linkText)
+                        .linkText
+                    : "Read More"}
                 </a>
               </div>
               <div className={styles.resultarea}>
@@ -99,7 +122,12 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                     <source
                       width="320"
                       height="240"
-                      src={caseStudy.video}
+                      src={
+                        caseStudy.items.find((item: any) => item.video)
+                          ? caseStudy.items.find((item: any) => item.video)
+                              .video
+                          : "/images/Case-study.mp4"
+                      }
                       type="video/mp4"
                     />
                   </video>
@@ -119,20 +147,25 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                   </div>
                 </div>
                 <div className={styles.resultview}>
-                  <h4>{caseStudy.additionalTitle}</h4>
-                  <ul className={styles.successratiobox}>
-                    {caseStudy.additionalPoints.map(
-                      (
-                        point: { score: string; description: string },
-                        i: number
-                      ) => (
-                        <li key={i}>
-                          <p>{point.score}</p>
-                          <span>{point.description}</span>
-                        </li>
+                  <h4>
+                    {caseStudy.items.find((item: any) => item.additionalTitle)
+                      ? caseStudy.items.find(
+                          (item: any) => item.additionalTitle
+                        ).additionalTitle
+                      : ""}
+                  </h4>
+                  <ul
+                    className={styles.successratiobox}
+                    dangerouslySetInnerHTML={{
+                      __html: caseStudy.items.find(
+                        (item: any) => item.additionalPoints
                       )
-                    )}
-                  </ul>
+                        ? caseStudy.items.find(
+                            (item: any) => item.additionalPoints
+                          ).additionalPoints
+                        : "",
+                    }}
+                  />
                 </div>
               </div>
             </div>

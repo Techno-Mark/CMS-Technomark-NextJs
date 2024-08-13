@@ -106,9 +106,11 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
             </ul>
             <a
               className={styles.readmore}
-              // href={caseStudy.items
-              // .find((item: any) => item.linkUrl)?caseStudy.items
-              // .find((item: any) => item.linkUrl).linkUrl:"#"}
+              href={
+                caseStudy.items.find((item: any) => item.linkUrl)
+                  ? caseStudy.items.find((item: any) => item.linkUrl).linkUrl
+                  : "#"
+              }
             >
               {caseStudy.items.find((item: any) => item.linkText)
                 ? caseStudy.items.find((item: any) => item.linkText).linkText

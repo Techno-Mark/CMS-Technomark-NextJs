@@ -36,7 +36,9 @@ interface HomeProps {
 export const getServerSideProps: GetServerSideProps<{
   maindata: HomeProps;
   caseStudy: HomeProps;
-  caseStudyDetails: HomeProps;
+  hlsCaseStudyDetails: HomeProps;
+  airattixCaseStudyDetails: HomeProps;
+  givsumCaseStudyDetails: HomeProps;
   product: HomeProps;
   technology: HomeProps;
 }> = async () => {
@@ -55,21 +57,40 @@ export const getServerSideProps: GetServerSideProps<{
   try {
     const homeDataPromise = apiCall("home-page");
     const caseStudyPromise = apiCall("casestudylist");
-    const caseStudyDetailsPromise = apiCall("case-study-detail");
+    const hlsCaseStudyDetailsPromise = apiCall("hlscasestudydetails");
+    const airattixCaseStudyDetailsPromise = apiCall("airattixcasestudydetails");
+    const givsumCaseStudyDetailsPromise = apiCall("givsumcasestudydetails");
     const productPromise = apiCall("product");
     const technologyPromise = apiCall("technology");
-    
 
-    const [maindata, caseStudy, caseStudyDetails, product, technology] = await Promise.all([
+    const [
+      maindata,
+      caseStudy,
+      hlsCaseStudyDetails,
+      airattixCaseStudyDetails,
+      givsumCaseStudyDetails,
+      product,
+      technology,
+    ] = await Promise.all([
       homeDataPromise,
       caseStudyPromise,
-      caseStudyDetailsPromise,
+      hlsCaseStudyDetailsPromise,
+      airattixCaseStudyDetailsPromise,
+      givsumCaseStudyDetailsPromise,
       productPromise,
       technologyPromise,
     ]);
 
     return {
-      props: { maindata, caseStudy, caseStudyDetails, product, technology },
+      props: {
+        maindata,
+        caseStudy,
+        hlsCaseStudyDetails,
+        airattixCaseStudyDetails,
+        givsumCaseStudyDetails,
+        product,
+        technology,
+      },
     };
   } catch (error) {
     console.error("Error fetching home page data:", error);
@@ -77,7 +98,9 @@ export const getServerSideProps: GetServerSideProps<{
       props: {
         maindata: null,
         caseStudy: null,
-        caseStudyDetails: null,
+        hlsCaseStudyDetails: null,
+        airattixCaseStudyDetails: null,
+        givsumCaseStudyDetails: null,
         product: null,
         technology: null,
       },
@@ -88,7 +111,9 @@ export const getServerSideProps: GetServerSideProps<{
 export default function page({
   maindata,
   caseStudy,
-  caseStudyDetails,
+  hlsCaseStudyDetails,
+  airattixCaseStudyDetails,
+  givsumCaseStudyDetails,
   product,
   technology,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -97,7 +122,9 @@ export default function page({
       <DataComponent
         maindata={maindata}
         caseStudy={caseStudy}
-        caseStudyDetails={caseStudyDetails}
+        hlsCaseStudyDetails={hlsCaseStudyDetails}
+        airattixCaseStudyDetails={airattixCaseStudyDetails}
+        givsumCaseStudyDetails={givsumCaseStudyDetails}
         product={product}
         technology={technology}
       />
