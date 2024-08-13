@@ -21,8 +21,12 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
   };
 
   return (
-    <div className={styles.faqcontainer} id="accordion-collapse" data-accordion="collapse">
-      {props?.data?.map((faq: any, index: any) => (
+    <div
+      className={styles.faqcontainer}
+      id="accordion-collapse"
+      data-accordion="collapse"
+    >
+      {props?.map((faq: any, index: any) => (
         <div key={index} className={`${styles.cardheader} mb-5`}>
           <h2 id={`accordion-collapse-heading-${index}`}>
             <button
@@ -34,9 +38,11 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
               onClick={() => handleToggle(index)}
             >
               <div className="flex">
-              <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
 
-                {faq.question}
+                {faq.items.find((item: any) => item.question)
+                  ? faq.items.find((item: any) => item.question).question
+                  : ""}
               </div>
               <Image
                 src={
@@ -59,7 +65,11 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
             aria-labelledby={`accordion-collapse-heading-${index}`}
           >
             <div className={`${styles.cardbody} ml-5 mb-5`}>
-              <p>{faq.answer}</p>
+              <p>
+                {faq.items.find((item: any) => item.answer)
+                  ? faq.items.find((item: any) => item.answer).answer
+                  : ""}
+              </p>
             </div>
           </div>
         </div>

@@ -14,9 +14,7 @@ interface Casestudy {
 }
 
 interface CaseStudyListProps {
-  props: {
-    data: Casestudy[];
-  };
+  props: any;
 }
 
 const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
@@ -25,22 +23,41 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
 
   const categories = [
     "All",
-    ...Array.from(new Set(props.data.map((caseStudy) => caseStudy.category))),
+    ...Array.from(
+      new Set(
+        props.find((item: any) => item.Buttons)
+          ? props
+              .find((item: any) => item.Buttons)
+              .Buttons.map(
+                (entry: any) =>
+                  entry.items.find((item: any) => item.buttonText).buttonText
+              )
+          : []
+      )
+    ),
   ];
 
   const filteredData =
     selectedCategory === "All"
-      ? props.data
-      : props.data.filter(
-          (caseStudy) => caseStudy.category === selectedCategory
-        );
+      ? props.find((item: any) => item.Data)
+        ? props.find((item: any) => item.Data).Data
+        : []
+      : props.find((item: any) => item.Data)
+      ? props
+          .find((item: any) => item.Data)
+          .Data.filter(
+            (caseStudy: any) =>
+              caseStudy.items.find((item: any) => item.category).category ===
+              selectedCategory
+          )
+      : [];
 
   const displayedData = showAll ? filteredData : filteredData.slice(0, 3);
 
   return (
     <div className={styles.caseslide} id="case-slide">
       <div className={styles.tabContainer}>
-        {categories.map((category, index) => (
+        {categories.map((category: any, index) => (
           <button
             key={index}
             className={`${styles.tabButton} ${
@@ -52,26 +69,52 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
           </button>
         ))}
       </div>
-      {displayedData.map((caseStudy, index) => (
+      {displayedData.map((caseStudy: any, index: number) => (
         <div key={index} className={styles.casebox}>
           <div className={styles.textarea}>
-            <Image src={caseStudy.image} alt="logo" width={200} height={200} />
-            <p>{caseStudy.text}</p>
+            <Image
+              src={
+                caseStudy.items.find((item: any) => item.image)
+                  ? caseStudy.items.find((item: any) => item.image).image
+                  : ""
+              }
+              alt="logo"
+              width={200}
+              height={200}
+            />
+            <p>
+              {caseStudy.items.find((item: any) => item.text)
+                ? caseStudy.items.find((item: any) => item.text).text
+                : ""}
+            </p>
             <ul className={styles.techusetext}>
-              {caseStudy.subpoints.map((point, i) => (
-                <li key={i}>
-                  <Image
-                    src="/images/check-circle.png"
-                    alt="check"
-                    height={20}
-                    width={20}
-                  />
-                  {point}
-                </li>
-              ))}
+              {caseStudy.items.find((item: any) => item.subPoints) &&
+                caseStudy.items
+                  .find((item: any) => item.subPoints)
+                  .subPoints.split(",")
+                  .map((point: string, i: number) => (
+                    <li key={i}>
+                      <Image
+                        src="/images/check-circle.png"
+                        alt="check"
+                        height={20}
+                        width={20}
+                      />
+                      {point}
+                    </li>
+                  ))}
             </ul>
-            <a className={styles.readmore} href="#">
-              read more
+            <a
+              className={styles.readmore}
+              href={
+                caseStudy.items.find((item: any) => item.linkUrl)
+                  ? caseStudy.items.find((item: any) => item.linkUrl).linkUrl
+                  : "#"
+              }
+            >
+              {caseStudy.items.find((item: any) => item.linkText)
+                ? caseStudy.items.find((item: any) => item.linkText).linkText
+                : "Read More"}
             </a>
           </div>
           <div className={styles.resultarea}>
@@ -80,7 +123,11 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
                 <source
                   width="320"
                   height="240"
-                  src={caseStudy.video}
+                  src={
+                    caseStudy.items.find((item: any) => item.video)
+                      ? caseStudy.items.find((item: any) => item.video).video
+                      : "/images/Case-study.mp4"
+                  }
                   type="video/mp4"
                 />
               </video>
@@ -100,15 +147,23 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
               </div>
             </div>
             <div className={styles.resultview}>
-              <h4>{caseStudy.additionalTitle}</h4>
-              <ul className={styles.successratiobox}>
-                {caseStudy.additionalPoints.map((point, i) => (
-                  <li key={i}>
-                    <p>{point.score}</p>
-                    <span>{point.description}</span>
-                  </li>
-                ))}
-              </ul>
+              <h4>
+                {caseStudy.items.find((item: any) => item.additionalTitle)
+                  ? caseStudy.items.find((item: any) => item.additionalTitle)
+                      .additionalTitle
+                  : ""}
+              </h4>
+              <ul
+                className={styles.successratiobox}
+                dangerouslySetInnerHTML={{
+                  __html: caseStudy.items.find(
+                    (item: any) => item.additionalPoints
+                  )
+                    ? caseStudy.items.find((item: any) => item.additionalPoints)
+                        .additionalPoints
+                    : "",
+                }}
+              />
             </div>
           </div>
         </div>

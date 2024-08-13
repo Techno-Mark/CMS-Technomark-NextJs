@@ -10,9 +10,7 @@ interface ProjectImage {
 }
 
 interface ProjectScreenProps {
-  props: {
-    images: ProjectImage[];
-  };
+  props: any;
   useSlider1: boolean;
 }
 
@@ -102,9 +100,18 @@ const ScreenSlider: React.FC<ProjectScreenProps> = ({ props, useSlider1 }) => {
       }
     >
       <Slider {...selectedSettings}>
-        {props.images.map((image, index) => (
+        {props.map((image: any, index: number) => (
           <div key={index} className={styles.projectimg}>
-            <Image src={image.imaegurl} alt="Mockup" width={600} height={400} />
+            <Image
+              src={
+                image.items.find((item: any) => item.imaegUrl)
+                  ? image.items.find((item: any) => item.imaegUrl).imaegUrl
+                  : ""
+              }
+              alt="Mockup"
+              width={600}
+              height={400}
+            />
           </div>
         ))}
       </Slider>

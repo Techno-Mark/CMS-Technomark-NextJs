@@ -10,9 +10,7 @@ interface Service {
 }
 
 interface ServicesProps {
-  props: {
-    data: Service[];
-  };
+  props: any;
   isFeatured?: boolean;
   isProduct?: boolean;
   istechservice?: boolean;
@@ -24,7 +22,7 @@ const Services: React.FC<ServicesProps> = ({
   isProduct,
   istechservice,
 }) => {
-  const services = props?.data || [];
+  const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
   const totalItems = services.length;
   const rows = Math.ceil(totalItems / columns);
@@ -36,7 +34,6 @@ const Services: React.FC<ServicesProps> = ({
     return styles.simpleservices;
   };
 
-
   return (
     <div className={`flex flex-wrap  ${getClassName()}`}>
       {services.map((service: any, index: any) => {
@@ -46,7 +43,16 @@ const Services: React.FC<ServicesProps> = ({
         const isLastRow = index >= (rows - 1) * columns;
 
         return (
-          <div key={index} className={`w-full ${isFeatured ? "w-1/2 md:w-1/5" : isProduct || istechservice ? "md:w-1/3" : "md:w-1/2 lg:w-1/4"}`}>
+          <div
+            key={index}
+            className={`w-full ${
+              isFeatured
+                ? "w-1/2 md:w-1/5"
+                : isProduct || istechservice
+                ? "md:w-1/3"
+                : "md:w-1/2 lg:w-1/4"
+            }`}
+          >
             <div
               className={`${styles.servicesbox} ${
                 !isFirstRow && !isLastRow ? "" : "!border-t-0"
@@ -57,19 +63,38 @@ const Services: React.FC<ServicesProps> = ({
               <div className={styles.servicesinnerbox}>
                 <div className={styles.icon}>
                   <Image
-                    src={service.icon}
-                    alt={service.alt}
+                    src={
+                      service.items.find((item: any) => item.icon)
+                        ? service.items.find((item: any) => item.icon).icon
+                        : ""
+                    }
+                    alt={
+                      service.items.find((item: any) => item.text)
+                        ? service.items.find((item: any) => item.text).text
+                        : ""
+                    }
                     height={30}
                     width={33}
                   />
                 </div>
-                <h3 className={styles.servicetitle}>{service.text}</h3>
+                <h3 className={styles.servicetitle}>
+                  {service.items.find((item: any) => item.text)
+                    ? service.items.find((item: any) => item.text).text
+                    : ""}
+                </h3>
                 {!isFeatured && (
-                  <p className={`${styles.servicedescribe} ${isProduct ? styles.textpadding : ""}`}>
-                    {service.description}
+                  <p
+                    className={`${styles.servicedescribe} ${
+                      isProduct ? styles.textpadding : ""
+                    }`}
+                  >
+                    {service.items.find((item: any) => item.description)
+                      ? service.items.find((item: any) => item.description)
+                          .description
+                      : ""}
                   </p>
                 )}
-                {!isFeatured && !istechservice && !isProduct &&(
+                {!isFeatured && !istechservice && !isProduct && (
                   <div className={styles.moresection}>
                     <a href="#">read more</a>
                   </div>

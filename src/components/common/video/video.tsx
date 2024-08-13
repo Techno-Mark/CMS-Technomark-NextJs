@@ -5,14 +5,26 @@ const Video = (props: any) => {
     <div className={`${styles.videoContainer}`}>
       <video
         className={styles.video}
-        src={props.props.videoUrl}
+        src={
+          props.props.find((item: any) => item.videoUrl)
+            ? props.props.find((item: any) => item.videoUrl).videoUrl
+            : "/images/Case-study.mp4"
+        }
         autoPlay
         loop
         muted
       />
       <div className={`${styles.textOverlay}`}>
-        <p className={`${styles.videoTextSubTitle}`}>{props.props.subTitle}</p>
-        <h3 className={`${styles.videoTextTitle}`}>{props.props.Title}</h3>
+        <p className={`${styles.videoTextSubTitle}`}>
+          {props.props.find((item: any) => item.subTitle)
+            ? props.props.find((item: any) => item.subTitle).subTitle
+            : ""}
+        </p>
+        <h3 className={`${styles.videoTextTitle}`}>
+          {props.props.find((item: any) => item.title)
+            ? props.props.find((item: any) => item.title).title
+            : ""}
+        </h3>
       </div>
     </div>
     // <div className={`${styles.clipTextVideo}`}>

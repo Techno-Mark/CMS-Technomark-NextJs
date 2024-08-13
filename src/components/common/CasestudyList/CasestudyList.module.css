@@ -196,6 +196,7 @@
   border-bottom: 2px solid var(--primary-color);
   position: absolute;
   bottom: 2rem;
+  cursor: pointer;
 }
 
 .tabContainer {
