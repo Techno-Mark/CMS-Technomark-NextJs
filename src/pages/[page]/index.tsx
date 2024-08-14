@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps<{
         },
       }
     );
-    return res.data;
+    return res.data.data;
   };
   try {
     const homeDataPromise = apiCall("homePage");
