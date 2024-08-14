@@ -34,13 +34,13 @@ interface HomeProps {
 }
 
 export const getServerSideProps: GetServerSideProps<{
-  maindata: HomeProps;
-  caseStudy: HomeProps;
-  hlsCaseStudyDetails: HomeProps;
-  airattixCaseStudyDetails: HomeProps;
-  givsumCaseStudyDetails: HomeProps;
-  services: HomeProps;
-  technology: HomeProps;
+  maindata: any;
+  caseStudy: any;
+  hlsCaseStudyDetails: any;
+  airattixCaseStudyDetails: any;
+  givsumCaseStudyDetails: any;
+  services: any;
+  technology: any;
 }> = async () => {
   const apiCall = async (param: string) => {
     const res = await axios.get(
