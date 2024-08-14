@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Homesection from "./_homesection/page";
+import Homesection from "@/components/homesection/HomeSection";
 import TectStartupBg from "@/components/tech-startup-bg/tect-startup-bg";
 import TitleSection from "@/components/common/title/title";
 import MethodologyBox from "@/components/common/methodologybox/methodologybox";
