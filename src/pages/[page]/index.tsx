@@ -44,17 +44,16 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async () => {
   const apiCall = async (param: string) => {
     const res = await axios.get(
-      // `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
-      'https://jsonplaceholder.typicode.com/todos/1',
+      `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
+      // 'https://jsonplaceholder.typicode.com/todos/1',
       // `http://localhost:3001/casestudylist.json`,
       {
         headers: {
-          // referal: "http://localhost:3001",
+          referal: "http://localhost:3001",
         },
       }
     );
-    console.log("data1",res)
-    return res.data;
+    return res;
   };
   try {
     const homeDataPromise = apiCall("homePage");
