@@ -16,115 +16,83 @@
                 "awards",
                 "formsection"
             ],
-            "faq": [
+            "homeSection": {
+                "title": "We helps you rapidly adapt future-enabled",
+                "typingtext": [
+                    "Interactive Mobile App",
+                    "IOT Solution",
+                    "Custom Enterprice Software",
+                    "AI/ML",
+                    "Engaging User Experiance"
+                ]
+            },
+            "techstartup": {
+                "title": "Take your startup to the next level with the best of <b>Techno</b><span>Mark</span>",
+                "subtitle": "As Startup Technology Partners, We craft products for global startups, Contributing significantly to their success stories"
+            },
+            "methodology": [
                 {
                     "data": [
                         {
-                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "How can IT outsourcing benefit our startup?"
+                            "title": "Assess",
+                            "details": [
+                                "Technology Decisions",
+                                "Architectural Design & Patterns",
+                                "Infrastructure and Deployment Structures",
+                                "Security Assessment",
+                                "Code and Quality Review",
+                                "Performance Scores",
+                                "Development Process Audit"
+                            ],
+                            "cardNumber": "01",
+                            "description": "Scrutinize project architecture, infrastructure, performance, & security."
                         },
                         {
-                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can a small business benefit from IT services provided by a startup de"
+                            "title": "Plan",
+                            "details": [
+                                "Project Goals",
+                                "Scope Definition",
+                                "Resource Allocation",
+                                "Timeline Planning",
+                                "Risk Management"
+                            ],
+                            "cardNumber": "02",
+                            "description": "Identify project goals, scope, resources, timeline, and risks."
                         },
                         {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can we scale IT solutions as our startup grows?"
+                            "title": "Design",
+                            "details": [
+                                "UI/UX Designs",
+                                "System Architecture",
+                                "Database Schema"
+                            ],
+                            "cardNumber": "03",
+                            "description": "Create UI/UX designs, system architecture, and database schema."
                         },
                         {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What security measures are in place to protect our sensitive data?"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
+                            "title": "Execute",
+                            "details": [
+                                "Roadmap Creation",
+                                {
+                                    "items": [
+                                        "Sprint Planning",
+                                        "Sprint Development",
+                                        "Sprint Review"
+                                    ],
+                                    "title": "Agile Practices"
+                                },
+                                "Infrastructure and Deployment Structures",
+                                "Security Assessment",
+                                "Code and Quality Review",
+                                "Performance Scores",
+                                "Development Process Audit"
+                            ],
+                            "cardNumber": "04",
+                            "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap."
                         }
                     ],
-                    "title": "Frequently Asked <span>Questions</span>"
-                }
-            ],
-            "awards": [
-                {
-                    "data": [
-                        {
-                            "alt": "Android",
-                            "src": "/images/award1.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award2.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award3.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award4.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award5.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award6.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award7.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award8.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award9.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award10.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award11.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award12.png"
-                        }
-                    ],
-                    "title": "Awards & Recognition"
-                }
-            ],
-            "client": [
-                {
-                    "data": [
-                        {
-                            "name": "Client One",
-                            "companyLogo": "/images/Airattrix.png",
-                            "designation": "CEO, Company One",
-                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
-                            "profileImage": "/images/client-1.png"
-                        },
-                        {
-                            "name": "Client Two",
-                            "companyLogo": "/images/Givsum.png",
-                            "designation": "Marketing Director, Company Two",
-                            "testimonial": "The team was very supportive and the results were fantastic!",
-                            "profileImage": "/images/client-2.png"
-                        },
-                        {
-                            "name": "Client Three",
-                            "companyLogo": "/images/hls-logo.png",
-                            "designation": "CTO, Company Three",
-                            "testimonial": "I highly recommend their services. Professional and efficient.",
-                            "profileImage": "/images/client-3.png"
-                        }
-                    ],
-                    "title": "Clients <span>Speak</span>",
-                    "subtitle": "Dont’t take our word for it"
+                    "title": "Our <span>Methodology</span> in Action",
+                    "subtitle": "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap."
                 }
             ],
             "services": [
@@ -377,26 +345,6 @@
                     "subtitle": "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges."
                 }
             ],
-            "guarantee": [
-                {
-                    "data": [
-                        {
-                            "title": "Build Right. Build Smart",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "Ship Early. Ship Often",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "We engineer. We deliver",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        }
-                    ],
-                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
-                    "videosrc": "/images/generalvideo.mp4"
-                }
-            ],
             "techIcons": [
                 {
                     "data": [
@@ -476,6 +424,62 @@
                     "title": "Meet Your <span>Diverse</span>"
                 }
             ],
+            "guarantee": [
+                {
+                    "data": [
+                        {
+                            "title": "Build Right. Build Smart",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "Ship Early. Ship Often",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "We engineer. We deliver",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        }
+                    ],
+                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+                    "videosrc": "/images/generalvideo.mp4"
+                }
+            ],
+            "videosection": {
+                "video": {
+                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
+                    "subTitle": "We are",
+                    "Title": "TechnoMark"
+                }
+            },
+            "client": [
+                {
+                    "data": [
+                        {
+                            "name": "Client One",
+                            "companyLogo": "/images/Airattrix.png",
+                            "designation": "CEO, Company One",
+                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+                            "profileImage": "/images/client-1.png"
+                        },
+                        {
+                            "name": "Client Two",
+                            "companyLogo": "/images/Givsum.png",
+                            "designation": "Marketing Director, Company Two",
+                            "testimonial": "The team was very supportive and the results were fantastic!",
+                            "profileImage": "/images/client-2.png"
+                        },
+                        {
+                            "name": "Client Three",
+                            "companyLogo": "/images/hls-logo.png",
+                            "designation": "CTO, Company Three",
+                            "testimonial": "I highly recommend their services. Professional and efficient.",
+                            "profileImage": "/images/client-3.png"
+                        }
+                    ],
+                    "title": "Clients <span>Speak</span>",
+                    "subtitle": "Dont’t take our word for it"
+                }
+            ],
             "achievement": [
                 {
                     "data": [
@@ -496,6 +500,88 @@
                     "subtitle": "Within the market, among customers, and with our people. <span> Pacific Group of Companies </span>"
                 }
             ],
+            "faq": [
+                {
+                    "data": [
+                        {
+                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "How can IT outsourcing benefit our startup?"
+                        },
+                        {
+                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can a small business benefit from IT services provided by a startup de"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can we scale IT solutions as our startup grows?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What security measures are in place to protect our sensitive data?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
+                        }
+                    ],
+                    "title": "Frequently Asked <span>Questions</span>"
+                }
+            ],
+            "awards": [
+                {
+                    "data": [
+                        {
+                            "alt": "Android",
+                            "src": "/images/award1.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award2.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award3.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award4.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award5.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award6.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award7.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award8.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award9.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award10.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award11.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award12.png"
+                        }
+                    ],
+                    "title": "Awards & Recognition"
+                }
+            ],
             "formsection": [
                 {
                     "data": [
@@ -511,98 +597,7 @@
                     ],
                     "title": "What will happen next?"
                 }
-            ],
-            "homeSection": {
-                "title": "We helps you rapidly adapt future-enabled",
-                "typingtext": [
-                    "Interactive Mobile App",
-                    "IOT Solution",
-                    "Custom Enterprice Software",
-                    "AI/ML",
-                    "Engaging User Experiance"
-                ]
-            },
-            "methodology": [
-                {
-                    "data": [
-                        {
-                            "title": "Assess",
-                            "details": [
-                                "Technology Decisions",
-                                "Architectural Design & Patterns",
-                                "Infrastructure and Deployment Structures",
-                                "Security Assessment",
-                                "Code and Quality Review",
-                                "Performance Scores",
-                                "Development Process Audit"
-                            ],
-                            "cardNumber": "01",
-                            "description": "Scrutinize project architecture, infrastructure, performance, & security."
-                        },
-                        {
-                            "title": "Plan",
-                            "details": [
-                                "Project Goals",
-                                "Scope Definition",
-                                "Resource Allocation",
-                                "Timeline Planning",
-                                "Risk Management"
-                            ],
-                            "cardNumber": "02",
-                            "description": "Identify project goals, scope, resources, timeline, and risks."
-                        },
-                        {
-                            "title": "Design",
-                            "details": [
-                                "UI/UX Designs",
-                                "System Architecture",
-                                "Database Schema"
-                            ],
-                            "cardNumber": "03",
-                            "description": "Create UI/UX designs, system architecture, and database schema."
-                        },
-                        {
-                            "title": "Execute",
-                            "details": [
-                                "Roadmap Creation",
-                                {
-                                    "items": [
-                                        "Sprint Planning",
-                                        "Sprint Development",
-                                        "Sprint Review"
-                                    ],
-                                    "title": "Agile Practices"
-                                },
-                                "Infrastructure and Deployment Structures",
-                                "Security Assessment",
-                                "Code and Quality Review",
-                                "Performance Scores",
-                                "Development Process Audit"
-                            ],
-                            "cardNumber": "04",
-                            "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap."
-                        }
-                    ],
-                    "title": "Our <span>Methodology</span> in Action",
-                    "subtitle": "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap."
-                }
-            ],
-            "techstartup": {
-                "title": "Take your startup to the next level with the best of <b>Techno</b><span>Mark</span>",
-                "subtitle": "As Startup Technology Partners, We craft products for global startups, Contributing significantly to their success stories"
-            },
-            "casestudylist": {
-                "title": "Our work in Action",
-                "subtitle": "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!",
-                "label": "Case Studies"
-            },
-            "videosection": {
-                "video": {
-                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
-                    "subTitle": "We are",
-                    "Title": "TechnoMark"
-                }
-            }
+            ]
         }
     }
 }

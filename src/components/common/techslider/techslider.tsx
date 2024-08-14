@@ -1,12 +1,12 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import styles from './techslider.module.css';
-import Image from 'next/image';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import styles from "./techslider.module.css";
+import Image from "next/image";
 import Button from "@/components/common/button/button";
-import NextArrow from '@/components/common/customarrow/next';
-import PrevArrow from '@/components/common/customarrow/prev';
+import NextArrow from "@/components/common/customarrow/next";
+import PrevArrow from "@/components/common/customarrow/prev";
 
 interface ImageData {
   src: string;
@@ -22,18 +22,15 @@ interface CombineText {
   description: string;
 }
 
-interface Slide {
-  combineBox: CombineBox;
-  combineText: CombineText;
-}
-
 interface TechSliderProps {
-  props: {
-    slides: Slide[];
-  };
+  props: any;
 }
 
 const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
+  const slides = props.find((item: any) => item.Slides)?.Slides || [];
+  const buttonText =
+    props.find((item: any) => item.buttonText)?.buttonText || "";
+
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -78,26 +75,60 @@ const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
   return (
     <div id="combine-slide" className={styles.combineslidercontainer}>
       <Slider {...settings}>
-        {props.slides.map((slide, index) => (
+        {slides.map((slide: any, index: number) => (
           <div key={index} className={`${styles.combineboxwrapper}`}>
             <div className={styles.combinebox}>
               <ul>
-                {slide.combineBox.images.map((image, imgIndex) => (
-                  <li key={imgIndex}>
-                    <Image src={image.src} alt={image.alt} width={36} height={36} />
-                  </li>
-                ))}
+                <li className="flex gap-4">
+                  <Image
+                    src={
+                      slide.items.find((item: any) => item.firstImage)
+                        ? slide.items.find((item: any) => item.firstImage)
+                            .firstImage
+                        : ""
+                    }
+                    alt=""
+                    width={36}
+                    height={36}
+                  />
+                  <Image
+                    src={"/images/plus-icon.svg"}
+                    alt="Plus"
+                    width={36}
+                    height={36}
+                  />
+                  <Image
+                    src={
+                      slide.items.find((item: any) => item.secondImage)
+                        ? slide.items.find((item: any) => item.secondImage)
+                            .secondImage
+                        : ""
+                    }
+                    alt=""
+                    width={36}
+                    height={36}
+                  />
+                </li>
               </ul>
             </div>
             <div className={styles.combinetext}>
-              <h3>{slide.combineText.title}</h3>
-              <p>{slide.combineText.description}</p>
+              <h3>
+                {slide.items.find((item: any) => item.title)
+                  ? slide.items.find((item: any) => item.title).title
+                  : ""}
+              </h3>
+              <p>
+                {slide.items.find((item: any) => item.description)
+                  ? slide.items.find((item: any) => item.description)
+                      .description
+                  : ""}
+              </p>
             </div>
           </div>
         ))}
       </Slider>
       <div className="viewallbtn">
-        <Button href="#" text="HIRE NOW" variant="primary" />
+        <Button href="#" text={buttonText} variant="primary" />
       </div>
     </div>
   );
