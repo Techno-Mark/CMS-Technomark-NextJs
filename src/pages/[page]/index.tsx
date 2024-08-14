@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps<{
   hlsCaseStudyDetails: HomeProps;
   airattixCaseStudyDetails: HomeProps;
   givsumCaseStudyDetails: HomeProps;
-  product: HomeProps;
+  services: HomeProps;
   technology: HomeProps;
 }> = async () => {
   const apiCall = async (param: string) => {
@@ -55,13 +55,13 @@ export const getServerSideProps: GetServerSideProps<{
     return res.data.data;
   };
   try {
-    const homeDataPromise = apiCall("home-page");
+    const homeDataPromise = apiCall("homePage");
     const caseStudyPromise = apiCall("casestudylist");
     const hlsCaseStudyDetailsPromise = apiCall("hlscasestudydetails");
     const airattixCaseStudyDetailsPromise = apiCall("airattixcasestudydetails");
     const givsumCaseStudyDetailsPromise = apiCall("givsumcasestudydetails");
-    const productPromise = apiCall("product");
-    const technologyPromise = apiCall("technology");
+    const servicesPromise = apiCall("servicePage");
+    const technologyPromise = apiCall("technologyPage");
 
     const [
       maindata,
@@ -69,7 +69,7 @@ export const getServerSideProps: GetServerSideProps<{
       hlsCaseStudyDetails,
       airattixCaseStudyDetails,
       givsumCaseStudyDetails,
-      product,
+      services,
       technology,
     ] = await Promise.all([
       homeDataPromise,
@@ -77,7 +77,7 @@ export const getServerSideProps: GetServerSideProps<{
       hlsCaseStudyDetailsPromise,
       airattixCaseStudyDetailsPromise,
       givsumCaseStudyDetailsPromise,
-      productPromise,
+      servicesPromise,
       technologyPromise,
     ]);
 
@@ -88,7 +88,7 @@ export const getServerSideProps: GetServerSideProps<{
         hlsCaseStudyDetails,
         airattixCaseStudyDetails,
         givsumCaseStudyDetails,
-        product,
+        services,
         technology,
       },
     };
@@ -101,7 +101,7 @@ export const getServerSideProps: GetServerSideProps<{
         hlsCaseStudyDetails: null,
         airattixCaseStudyDetails: null,
         givsumCaseStudyDetails: null,
-        product: null,
+        services: null,
         technology: null,
       },
     };
@@ -114,7 +114,7 @@ export default function page({
   hlsCaseStudyDetails,
   airattixCaseStudyDetails,
   givsumCaseStudyDetails,
-  product,
+  services,
   technology,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
@@ -125,7 +125,7 @@ export default function page({
         hlsCaseStudyDetails={hlsCaseStudyDetails}
         airattixCaseStudyDetails={airattixCaseStudyDetails}
         givsumCaseStudyDetails={givsumCaseStudyDetails}
-        product={product}
+        services={services}
         technology={technology}
       />
     </>

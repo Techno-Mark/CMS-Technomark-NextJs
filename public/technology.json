@@ -1,827 +1,827 @@
 {
-    "data": {
-        "templateData": {
-            "sectionsOrder": [
-                "technologyhomesection",
-                "techservices",
-                "techslider",
-                "hiredeveloper",
-                "technenifits",
-                "casestudy",
-                "singletechservices",
-                "guarantee",
-                "techIcons",
-                "techexpert",
-                "methodology",
-                "client",
-                "faq",
-                "awards",
-                "formsection"
-            ],
-            "client": [
+  "data": {
+    "templateData": {
+      "sectionsOrder": [
+        "technologyhomesection",
+        "techservices",
+        "techslider",
+        "hiredeveloper",
+        "technenifits",
+        "casestudy",
+        "singletechservices",
+        "guarantee",
+        "techIcons",
+        "techexpert",
+        "methodology",
+        "client",
+        "faq",
+        "awards",
+        "formsection"
+      ],
+      "technologyhomesection": {
+        "title": "Android App Development",
+        "subtitle": "We embrace the power of technology to provide cutting-edge digital solutions that propel our clients toward unprecedented success",
+        "url": "#",
+        "heroImage": "/images/android-vector.png",
+        "techimage": "/images/techno-shape.svg"
+      },
+      "techservices": {
+        "title": "Android App Development <span> Services We Offer </span>",
+        "subtitle": "From Fortune 500 companies to unicorn startups, businesses have leveraged our extensive Android development services to create scalable apps with rich user experiences across the Android ecosystem.",
+        "services": [
+          {
+            "title": "Custom Android App Development",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          },
+          {
+            "title": "Kotlin MultiPlatform Development",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          },
+          {
+            "title": "Legacy Android App Modernization",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          },
+          {
+            "title": "Android Embedded (IoT) Development",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          },
+          {
+            "title": "App Code Audit & Optimization",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          },
+          {
+            "title": "Custom Android App Development",
+            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
+          }
+        ]
+      },
+      "techslider": {
+        "title": "Technologies We Use In <span>Combination with Android</span>",
+        "subtitle": "At TechnoMark, we seamlessly integrate various backend technologies and databases with Flutter to enhance the capabilities and functionalities of our mobile applications.",
+        "slides": [
+          {
+            "combineBox": {
+              "images": [
                 {
-                    "data": [
-                        {
-                            "name": "Client One",
-                            "companyLogo": "/images/Airattrix.png",
-                            "designation": "CEO, Company One",
-                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
-                            "profileImage": "/images/client-1.png"
-                        },
-                        {
-                            "name": "Client Two",
-                            "companyLogo": "/images/Givsum.png",
-                            "designation": "Marketing Director, Company Two",
-                            "testimonial": "The team was very supportive and the results were fantastic!",
-                            "profileImage": "/images/client-2.png"
-                        },
-                        {
-                            "name": "Client Three",
-                            "companyLogo": "/images/hls-logo.png",
-                            "designation": "CTO, Company Three",
-                            "testimonial": "I highly recommend their services. Professional and efficient.",
-                            "profileImage": "/images/client-3.png"
-                        }
-                    ],
-                    "title": "Clients <span>Speak</span>",
-                    "subtitle": "Dont’t take our word for it"
-                }
-            ],
-            "casestudy": [
+                  "src": "/images/combine-android.svg",
+                  "alt": "android"
+                },
                 {
-                    "data": [
-                        {
-                            "category": "Software Development",
-                            "text": "Software Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        },
-                        {
-                            "category": "Development & Operation",
-                            "text": "Development Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        },
-                        {
-                            "category": "Artificial Intelligence",
-                            "text": "Artificial Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        },
-                        {
-                            "category": "Software Development",
-                            "text": "Software Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        },
-                        {
-                            "category": "Development & Operation",
-                            "text": "Development Airattix v, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        },
-                        {
-                            "category": "Artificial Intelligence",
-                            "text": "Artificial Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
-                            "image": "/images/Airattrix.png",
-                            "title": "Airattix",
-                            "video": "/images/Case-study.mp4",
-                            "subpoints": [
-                                "Core Technology: Angular JS | Flutter",
-                                "Number of Developers: 5",
-                                "Type Of Service: Accelerator"
-                            ],
-                            "additionalTitle": "Results",
-                            "additionalPoints": [
-                                {
-                                    "score": "90%",
-                                    "description": "SEO Score"
-                                },
-                                {
-                                    "score": "38%",
-                                    "description": "Conversion Rate"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Reach"
-                                },
-                                {
-                                    "score": "2 X",
-                                    "description": "Team Scaling"
-                                }
-                            ]
-                        }
-                    ],
-                    "title": "Android Tech Projects",
-                    "subtitle": "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges."
-                }
-            ],
-            "methodology": [
+                  "src": "/images/plus-icon.svg",
+                  "alt": "plus"
+                },
                 {
-                    "data": [
-                        {
-                            "title": "Assess",
-                            "details": [
-                                "Technology Decisions",
-                                "Architectural Design & Patterns",
-                                "Infrastructure and Deployment Structures",
-                                "Security Assessment",
-                                "Code and Quality Review",
-                                "Performance Scores",
-                                "Development Process Audit"
-                            ],
-                            "cardNumber": "01",
-                            "description": "Scrutinize project architecture, infrastructure, performance, & security."
-                        },
-                        {
-                            "title": "Plan",
-                            "details": [
-                                "Project Goals",
-                                "Scope Definition",
-                                "Resource Allocation",
-                                "Timeline Planning",
-                                "Risk Management"
-                            ],
-                            "cardNumber": "02",
-                            "description": "Identify project goals, scope, resources, timeline, and risks."
-                        },
-                        {
-                            "title": "Design",
-                            "details": [
-                                "UI/UX Designs",
-                                "System Architecture",
-                                "Database Schema"
-                            ],
-                            "cardNumber": "03",
-                            "description": "Create UI/UX designs, system architecture, and database schema."
-                        },
-                        {
-                            "title": "Execute",
-                            "details": [
-                                "Roadmap Creation",
-                                {
-                                    "items": [
-                                        "Sprint Planning",
-                                        "Sprint Development",
-                                        "Sprint Review"
-                                    ],
-                                    "title": "Agile Practices"
-                                },
-                                "Infrastructure and Deployment Structures",
-                                "Security Assessment",
-                                "Code and Quality Review",
-                                "Performance Scores",
-                                "Development Process Audit"
-                            ],
-                            "cardNumber": "04",
-                            "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap."
-                        }
-                    ],
-                    "title": "Our <span>Methodology</span> in Action",
-                    "subtitle": "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap."
+                  "src": "/images/Firebase.svg",
+                  "alt": "Firebase"
                 }
-            ],
-            "faq": [
-                {
-                    "data": [
-                        {
-                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "How can IT outsourcing benefit our startup?"
-                        },
-                        {
-                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can a small business benefit from IT services provided by a startup de"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "Can we scale IT solutions as our startup grows?"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What security measures are in place to protect our sensitive data?"
-                        },
-                        {
-                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
-                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
-                        }
-                    ],
-                    "title": "Frequently Asked <span>Questions</span>"
-                }
-            ],
-            "awards": [
-                {
-                    "data": [
-                        {
-                            "alt": "Android",
-                            "src": "/images/award1.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award2.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award3.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award4.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award5.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award6.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award7.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award8.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award9.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award10.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award11.png"
-                        },
-                        {
-                            "alt": "Android",
-                            "src": "/images/award12.png"
-                        }
-                    ],
-                    "title": "Awards & Recognition"
-                }
-            ],
-            "formsection": [
-                {
-                    "data": [
-                        {
-                            "text": "We’ll reach out to you within 24 hours."
-                        },
-                        {
-                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
-                        },
-                        {
-                            "text": " You can start 15-days risk-free trial with us."
-                        }
-                    ],
-                    "title": "What will happen next?"
-                }
-            ],
-            "guarantee": [
-                {
-                    "data": [
-                        {
-                            "title": "Build Right. Build Smart",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "Ship Early. Ship Often",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "We engineer. We deliver",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        }
-                    ],
-                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
-                    "videosrc": "/images/generalvideo.mp4"
-                }
-            ],
-            "techIcons": [
-                {
-                    "data": [
-                        {
-                            "alt": "Android",
-                            "src": "/images/android.png"
-                        },
-                        {
-                            "alt": "Apple",
-                            "src": "/images/Apple_logo.png"
-                        },
-                        {
-                            "alt": "kotlin",
-                            "src": "/images/kotlin.png"
-                        },
-                        {
-                            "alt": "swift",
-                            "src": "/images/swift.png"
-                        },
-                        {
-                            "alt": "react-native",
-                            "src": "/images/react-native.png"
-                        },
-                        {
-                            "alt": "flutter",
-                            "src": "/images/flutter.png"
-                        },
-                        {
-                            "alt": "react",
-                            "src": "/images/react.png"
-                        },
-                        {
-                            "alt": "nextjs",
-                            "src": "/images/next-js.png"
-                        },
-                        {
-                            "alt": "Angular9",
-                            "src": "/images/angular.png"
-                        },
-                        {
-                            "alt": "javascript",
-                            "src": "/images/js-icon.png"
-                        },
-                        {
-                            "alt": "jquery",
-                            "src": "/images/jquery.png"
-                        },
-                        {
-                            "alt": "html",
-                            "src": "/images/html-icon.png"
-                        },
-                        {
-                            "alt": "node",
-                            "src": "/images/node.png"
-                        },
-                        {
-                            "alt": "php",
-                            "src": "/images/php-icon.png"
-                        },
-                        {
-                            "alt": "python",
-                            "src": "/images/python-icon.png"
-                        },
-                        {
-                            "alt": "dotnet",
-                            "src": "/images/dotnet.png"
-                        },
-                        {
-                            "alt": "laravel",
-                            "src": "/images/laravel-icon.png"
-                        },
-                        {
-                            "alt": "ruby on rails",
-                            "src": "/images/Ruby_On_Rails.png"
-                        }
-                    ],
-                    "title": "Meet Your <span>Diverse</span>"
-                }
-            ],
-            "technologyhomesection": {
-                "title": "Android App Development",
-                "subtitle": "We embrace the power of technology to provide cutting-edge digital solutions that propel our clients toward unprecedented success",
-                "url": "#",
-                "heroImage": "/images/android-vector.png",
-                "techimage": "/images/techno-shape.svg"
+              ]
             },
-            "techslider": {
-                "title": "Technologies We Use In <span>Combination with Android</span>",
-                "subtitle": "At TechnoMark, we seamlessly integrate various backend technologies and databases with Flutter to enhance the capabilities and functionalities of our mobile applications.",
-                "slides": [
-                    {
-                        "combineBox": {
-                            "images": [
-                                {
-                                    "src": "/images/combine-android.svg",
-                                    "alt": "android"
-                                },
-                                {
-                                    "src": "/images/plus-icon.svg",
-                                    "alt": "plus"
-                                },
-                                {
-                                    "src": "/images/Firebase.svg",
-                                    "alt": "Firebase"
-                                }
-                            ]
-                        },
-                        "combineText": {
-                            "title": "Android + Firebase",
-                            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
-                        }
-                    },
-                    {
-                        "combineBox": {
-                            "images": [
-                                {
-                                    "src": "/images/combine-android.svg",
-                                    "alt": "android"
-                                },
-                                {
-                                    "src": "/images/plus-icon.svg",
-                                    "alt": "plus"
-                                },
-                                {
-                                    "src": "/images/combine-node-js.png",
-                                    "alt": "Node.js"
-                                }
-                            ]
-                        },
-                        "combineText": {
-                            "title": "Android + Node.js",
-                            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
-                        }
-                    },
-                    {
-                        "combineBox": {
-                            "images": [
-                                {
-                                    "src": "/images/combine-android.svg",
-                                    "alt": "android"
-                                },
-                                {
-                                    "src": "/images/plus-icon.svg",
-                                    "alt": "plus"
-                                },
-                                {
-                                    "src": "/images/combine-mongo.svg",
-                                    "alt": "mongo"
-                                }
-                            ]
-                        },
-                        "combineText": {
-                            "title": "Android + MongoDB",
-                            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
-                        }
-                    },
-                    {
-                        "combineBox": {
-                            "images": [
-                                {
-                                    "src": "/images/combine-android.svg",
-                                    "alt": "android"
-                                },
-                                {
-                                    "src": "/images/plus-icon.svg",
-                                    "alt": "plus"
-                                },
-                                {
-                                    "src": "/images/combine-python.svg",
-                                    "alt": "python"
-                                }
-                            ]
-                        },
-                        "combineText": {
-                            "title": "Android + Python",
-                            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
-                        }
-                    },
-                    {
-                        "combineBox": {
-                            "images": [
-                                {
-                                    "src": "/images/combine-flutter.svg",
-                                    "alt": "flutter"
-                                },
-                                {
-                                    "src": "/images/plus-icon.svg",
-                                    "alt": "plus"
-                                },
-                                {
-                                    "src": "/images/combine-api.svg",
-                                    "alt": "api"
-                                }
-                            ]
-                        },
-                        "combineText": {
-                            "title": "Flutter + Fast API",
-                            "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
-                        }
-                    }
-                ]
-            },
-            "techservices": {
-                "title": "Android App Development <span> Services We Offer </span>",
-                "subtitle": "From Fortune 500 companies to unicorn startups, businesses have leveraged our extensive Android development services to create scalable apps with rich user experiences across the Android ecosystem.",
-                "services": [
-                    {
-                        "title": "Custom Android App Development",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    },
-                    {
-                        "title": "Kotlin MultiPlatform Development",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    },
-                    {
-                        "title": "Legacy Android App Modernization",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    },
-                    {
-                        "title": "Android Embedded (IoT) Development",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    },
-                    {
-                        "title": "App Code Audit & Optimization",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    },
-                    {
-                        "title": "Custom Android App Development",
-                        "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality."
-                    }
-                ]
-            },
-            "technenifits": {
-                "title": "Want To Build Your Dream Mobile App <span>Using Android?</span>",
-                "subtitle": "TechnoMark can be your trusted Flutter app development company, harnessing the power of this cross-platform technology for your app project. With a focus on user-centric design and seamless performance, we deliver Flutter apps that leave a lasting impression.",
-                "url": "#",
-                "heroImage": "/images/hand-with-bg.png",
-                "benefits": [
-                    {
-                        "image": {
-                            "src": "/images/shield-tick.png",
-                            "alt": "shield"
-                        },
-                        "text": "100% NDA Protected"
-                    },
-                    {
-                        "image": {
-                            "src": "/images/arrow-swap-horizontal.png",
-                            "alt": "horizontal"
-                        },
-                        "text": "100% Resource substitution"
-                    },
-                    {
-                        "image": {
-                            "src": "/images/profile-2user.png",
-                            "alt": "2user"
-                        },
-                        "text": "Flexible Hiring models"
-                    },
-                    {
-                        "image": {
-                            "src": "/images/rotate-left.png",
-                            "alt": "left"
-                        },
-                        "text": "100% Refund Policy"
-                    }
-                ]
-            },
-            "hiredeveloper": {
-                "developerTypes": [
-                    {
-                        "type": "Part-time Developer",
-                        "hoursPerMonth": "80 Hours/Month",
-                        "image": {
-                            "src": "/images/part-time.png",
-                            "alt": "part-time"
-                        },
-                        "details": [
-                            "4 hours a day, 5 days a week",
-                            "Monthly Billing",
-                            "Hiring Period (min) - 80 Hours",
-                            "Availability - When required"
-                        ],
-                        "link": {
-                            "url": "#",
-                            "text": "Hire Now"
-                        }
-                    },
-                    {
-                        "type": "Full-time Developer",
-                        "hoursPerMonth": "160 Hours/Month",
-                        "image": {
-                            "src": "/images/full-time.png",
-                            "alt": "full-time"
-                        },
-                        "details": [
-                            "8 Hrs/Day – 5 Days/Week",
-                            "Monthly Billing",
-                            "Hiring Period (min) - 160 Hours",
-                            "Availability - Dedicated"
-                        ],
-                        "link": {
-                            "url": "#",
-                            "text": "Hire Now"
-                        }
-                    },
-                    {
-                        "type": "Hourly Developer",
-                        "hoursPerMonth": "Custom Hours",
-                        "image": {
-                            "src": "/images/hourly-time.png",
-                            "alt": "hourly-time"
-                        },
-                        "details": [
-                            "Availability - On Demand",
-                            "Monthly Billing",
-                            "Hiring Period (min) - 40 Hours",
-                            "Availability - Quick On-boarding"
-                        ],
-                        "link": {
-                            "url": "#",
-                            "text": "Hire Now"
-                        }
-                    }
-                ]
-            },
-            "techexpert": {
-                "title": "Our Android App Development <span>Expertise</span>",
-                "Image": "/images/expert-android.png",
-                "expertiseList": [
-                    {
-                        "text": "Custom App Development"
-                    },
-                    {
-                        "text": "UI/UX Design"
-                    },
-                    {
-                        "text": "API Integration: Seamless"
-                    },
-                    {
-                        "text": "Performance Optimization"
-                    },
-                    {
-                        "text": "Security Features"
-                    },
-                    {
-                        "text": "Maintenance & Support"
-                    },
-                    {
-                        "text": "Cross-Platform Development"
-                    },
-                    {
-                        "text": "Testing & QA"
-                    }
-                ]
-            },
-            "singletechservices": {
-                "data": [
-                    {
-                        "alt": "enterprise",
-                        "icon": "/images/enterprise.png",
-                        "text": "Enterprise Software",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                    },
-                    {
-                        "alt": "hire developer",
-                        "icon": "/images/hire-develop.png",
-                        "text": "Hire Developers",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform."
-                    },
-                    {
-                        "alt": "Mobile Apps",
-                        "icon": "/images/mobile-programming.png",
-                        "text": "Mobile Apps",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                    },
-                    {
-                        "alt": "enterprise",
-                        "icon": "/images/cloud-add.png",
-                        "text": "Cloud Native",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                    },
-                    {
-                        "alt": "enterprise",
-                        "icon": "/images/cpu-charge.png",
-                        "text": "AI Development",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                    },
-                    {
-                        "alt": "enterprise",
-                        "icon": "/images/airdrop.png",
-                        "text": "IoT App",
-                        "description": "We build intuitive and engaging Android, iOS and cross-platform"
-                    }
-                ],
-                "title": "Why Choose <span>Android</span>",
-                "subtitle": "Flutter offers many benefits to users for developing cross-platform apps. So, let's know a few reasons to choose Flutter for your next mobile app development project."
+            "combineText": {
+              "title": "Android + Firebase",
+              "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
             }
+          },
+          {
+            "combineBox": {
+              "images": [
+                {
+                  "src": "/images/combine-android.svg",
+                  "alt": "android"
+                },
+                {
+                  "src": "/images/plus-icon.svg",
+                  "alt": "plus"
+                },
+                {
+                  "src": "/images/combine-node-js.png",
+                  "alt": "Node.js"
+                }
+              ]
+            },
+            "combineText": {
+              "title": "Android + Node.js",
+              "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
+            }
+          },
+          {
+            "combineBox": {
+              "images": [
+                {
+                  "src": "/images/combine-android.svg",
+                  "alt": "android"
+                },
+                {
+                  "src": "/images/plus-icon.svg",
+                  "alt": "plus"
+                },
+                {
+                  "src": "/images/combine-mongo.svg",
+                  "alt": "mongo"
+                }
+              ]
+            },
+            "combineText": {
+              "title": "Android + MongoDB",
+              "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
+            }
+          },
+          {
+            "combineBox": {
+              "images": [
+                {
+                  "src": "/images/combine-android.svg",
+                  "alt": "android"
+                },
+                {
+                  "src": "/images/plus-icon.svg",
+                  "alt": "plus"
+                },
+                {
+                  "src": "/images/combine-python.svg",
+                  "alt": "python"
+                }
+              ]
+            },
+            "combineText": {
+              "title": "Android + Python",
+              "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
+            }
+          },
+          {
+            "combineBox": {
+              "images": [
+                {
+                  "src": "/images/combine-flutter.svg",
+                  "alt": "flutter"
+                },
+                {
+                  "src": "/images/plus-icon.svg",
+                  "alt": "plus"
+                },
+                {
+                  "src": "/images/combine-api.svg",
+                  "alt": "api"
+                }
+              ]
+            },
+            "combineText": {
+              "title": "Flutter + Fast API",
+              "description": "The best-fit app development combination to launch your MVP faster and robust toolkit to build high-quality, feature-rich apps that are scalable, performant, and easy to maintain."
+            }
+          }
+        ]
+      },
+      "hiredeveloper": {
+        "developerTypes": [
+          {
+            "type": "Part-time Developer",
+            "hoursPerMonth": "80 Hours/Month",
+            "image": {
+              "src": "/images/part-time.png",
+              "alt": "part-time"
+            },
+            "details": [
+              "4 hours a day, 5 days a week",
+              "Monthly Billing",
+              "Hiring Period (min) - 80 Hours",
+              "Availability - When required"
+            ],
+            "link": {
+              "url": "#",
+              "text": "Hire Now"
+            }
+          },
+          {
+            "type": "Full-time Developer",
+            "hoursPerMonth": "160 Hours/Month",
+            "image": {
+              "src": "/images/full-time.png",
+              "alt": "full-time"
+            },
+            "details": [
+              "8 Hrs/Day – 5 Days/Week",
+              "Monthly Billing",
+              "Hiring Period (min) - 160 Hours",
+              "Availability - Dedicated"
+            ],
+            "link": {
+              "url": "#",
+              "text": "Hire Now"
+            }
+          },
+          {
+            "type": "Hourly Developer",
+            "hoursPerMonth": "Custom Hours",
+            "image": {
+              "src": "/images/hourly-time.png",
+              "alt": "hourly-time"
+            },
+            "details": [
+              "Availability - On Demand",
+              "Monthly Billing",
+              "Hiring Period (min) - 40 Hours",
+              "Availability - Quick On-boarding"
+            ],
+            "link": {
+              "url": "#",
+              "text": "Hire Now"
+            }
+          }
+        ]
+      },
+      "technenifits": {
+        "title": "Want To Build Your Dream Mobile App <span>Using Android?</span>",
+        "subtitle": "TechnoMark can be your trusted Flutter app development company, harnessing the power of this cross-platform technology for your app project. With a focus on user-centric design and seamless performance, we deliver Flutter apps that leave a lasting impression.",
+        "url": "#",
+        "heroImage": "/images/hand-with-bg.png",
+        "benefits": [
+          {
+            "image": {
+              "src": "/images/shield-tick.png",
+              "alt": "shield"
+            },
+            "text": "100% NDA Protected"
+          },
+          {
+            "image": {
+              "src": "/images/arrow-swap-horizontal.png",
+              "alt": "horizontal"
+            },
+            "text": "100% Resource substitution"
+          },
+          {
+            "image": {
+              "src": "/images/profile-2user.png",
+              "alt": "2user"
+            },
+            "text": "Flexible Hiring models"
+          },
+          {
+            "image": {
+              "src": "/images/rotate-left.png",
+              "alt": "left"
+            },
+            "text": "100% Refund Policy"
+          }
+        ]
+      },
+      "casestudy": [
+        {
+          "data": [
+            {
+              "category": "Software Development",
+              "text": "Software Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            },
+            {
+              "category": "Development & Operation",
+              "text": "Development Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            },
+            {
+              "category": "Artificial Intelligence",
+              "text": "Artificial Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            },
+            {
+              "category": "Software Development",
+              "text": "Software Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            },
+            {
+              "category": "Development & Operation",
+              "text": "Development Airattix v, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            },
+            {
+              "category": "Artificial Intelligence",
+              "text": "Artificial Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+              "image": "/images/Airattrix.png",
+              "title": "Airattix",
+              "video": "/images/Case-study.mp4",
+              "subpoints": [
+                "Core Technology: Angular JS | Flutter",
+                "Number of Developers: 5",
+                "Type Of Service: Accelerator"
+              ],
+              "additionalTitle": "Results",
+              "additionalPoints": [
+                {
+                  "score": "90%",
+                  "description": "SEO Score"
+                },
+                {
+                  "score": "38%",
+                  "description": "Conversion Rate"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Reach"
+                },
+                {
+                  "score": "2 X",
+                  "description": "Team Scaling"
+                }
+              ]
+            }
+          ],
+          "title": "Android Tech Projects",
+          "subtitle": "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges."
         }
+      ],
+      "singletechservices": {
+        "data": [
+          {
+            "alt": "enterprise",
+            "icon": "/images/enterprise.png",
+            "text": "Enterprise Software",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform"
+          },
+          {
+            "alt": "hire developer",
+            "icon": "/images/hire-develop.png",
+            "text": "Hire Developers",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform."
+          },
+          {
+            "alt": "Mobile Apps",
+            "icon": "/images/mobile-programming.png",
+            "text": "Mobile Apps",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform"
+          },
+          {
+            "alt": "enterprise",
+            "icon": "/images/cloud-add.png",
+            "text": "Cloud Native",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform"
+          },
+          {
+            "alt": "enterprise",
+            "icon": "/images/cpu-charge.png",
+            "text": "AI Development",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform"
+          },
+          {
+            "alt": "enterprise",
+            "icon": "/images/airdrop.png",
+            "text": "IoT App",
+            "description": "We build intuitive and engaging Android, iOS and cross-platform"
+          }
+        ],
+        "title": "Why Choose <span>Android</span>",
+        "subtitle": "Flutter offers many benefits to users for developing cross-platform apps. So, let's know a few reasons to choose Flutter for your next mobile app development project."
+      },
+      "guarantee": [
+        {
+          "data": [
+            {
+              "title": "Build Right. Build Smart",
+              "description": "We float the product canvas to all stakeholders with information lik."
+            },
+            {
+              "title": "Ship Early. Ship Often",
+              "description": "We float the product canvas to all stakeholders with information lik."
+            },
+            {
+              "title": "We engineer. We deliver",
+              "description": "We float the product canvas to all stakeholders with information lik."
+            }
+          ],
+          "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+          "videosrc": "/images/generalvideo.mp4"
+        }
+      ],
+      "techIcons": [
+        {
+          "data": [
+            {
+              "alt": "Android",
+              "src": "/images/android.png"
+            },
+            {
+              "alt": "Apple",
+              "src": "/images/Apple_logo.png"
+            },
+            {
+              "alt": "kotlin",
+              "src": "/images/kotlin.png"
+            },
+            {
+              "alt": "swift",
+              "src": "/images/swift.png"
+            },
+            {
+              "alt": "react-native",
+              "src": "/images/react-native.png"
+            },
+            {
+              "alt": "flutter",
+              "src": "/images/flutter.png"
+            },
+            {
+              "alt": "react",
+              "src": "/images/react.png"
+            },
+            {
+              "alt": "nextjs",
+              "src": "/images/next-js.png"
+            },
+            {
+              "alt": "Angular9",
+              "src": "/images/angular.png"
+            },
+            {
+              "alt": "javascript",
+              "src": "/images/js-icon.png"
+            },
+            {
+              "alt": "jquery",
+              "src": "/images/jquery.png"
+            },
+            {
+              "alt": "html",
+              "src": "/images/html-icon.png"
+            },
+            {
+              "alt": "node",
+              "src": "/images/node.png"
+            },
+            {
+              "alt": "php",
+              "src": "/images/php-icon.png"
+            },
+            {
+              "alt": "python",
+              "src": "/images/python-icon.png"
+            },
+            {
+              "alt": "dotnet",
+              "src": "/images/dotnet.png"
+            },
+            {
+              "alt": "laravel",
+              "src": "/images/laravel-icon.png"
+            },
+            {
+              "alt": "ruby on rails",
+              "src": "/images/Ruby_On_Rails.png"
+            }
+          ],
+          "title": "Meet Your <span>Diverse</span>"
+        }
+      ],
+      "techexpert": {
+        "title": "Our Android App Development <span>Expertise</span>",
+        "Image": "/images/expert-android.png",
+        "expertiseList": [
+          {
+            "text": "Custom App Development"
+          },
+          {
+            "text": "UI/UX Design"
+          },
+          {
+            "text": "API Integration: Seamless"
+          },
+          {
+            "text": "Performance Optimization"
+          },
+          {
+            "text": "Security Features"
+          },
+          {
+            "text": "Maintenance & Support"
+          },
+          {
+            "text": "Cross-Platform Development"
+          },
+          {
+            "text": "Testing & QA"
+          }
+        ]
+      },
+      "methodology": [
+        {
+          "data": [
+            {
+              "title": "Assess",
+              "details": [
+                "Technology Decisions",
+                "Architectural Design & Patterns",
+                "Infrastructure and Deployment Structures",
+                "Security Assessment",
+                "Code and Quality Review",
+                "Performance Scores",
+                "Development Process Audit"
+              ],
+              "cardNumber": "01",
+              "description": "Scrutinize project architecture, infrastructure, performance, & security."
+            },
+            {
+              "title": "Plan",
+              "details": [
+                "Project Goals",
+                "Scope Definition",
+                "Resource Allocation",
+                "Timeline Planning",
+                "Risk Management"
+              ],
+              "cardNumber": "02",
+              "description": "Identify project goals, scope, resources, timeline, and risks."
+            },
+            {
+              "title": "Design",
+              "details": [
+                "UI/UX Designs",
+                "System Architecture",
+                "Database Schema"
+              ],
+              "cardNumber": "03",
+              "description": "Create UI/UX designs, system architecture, and database schema."
+            },
+            {
+              "title": "Execute",
+              "details": [
+                "Roadmap Creation",
+                {
+                  "items": [
+                    "Sprint Planning",
+                    "Sprint Development",
+                    "Sprint Review"
+                  ],
+                  "title": "Agile Practices"
+                },
+                "Infrastructure and Deployment Structures",
+                "Security Assessment",
+                "Code and Quality Review",
+                "Performance Scores",
+                "Development Process Audit"
+              ],
+              "cardNumber": "04",
+              "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap."
+            }
+          ],
+          "title": "Our <span>Methodology</span> in Action",
+          "subtitle": "We employ a systematic approach, commencing with project assessment, transitioning to technology consultation, engaging in brainstorming, and ultimately executing the roadmap."
+        }
+      ],
+      "client": [
+        {
+          "data": [
+            {
+              "name": "Client One",
+              "companyLogo": "/images/Airattrix.png",
+              "designation": "CEO, Company One",
+              "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+              "profileImage": "/images/client-1.png"
+            },
+            {
+              "name": "Client Two",
+              "companyLogo": "/images/Givsum.png",
+              "designation": "Marketing Director, Company Two",
+              "testimonial": "The team was very supportive and the results were fantastic!",
+              "profileImage": "/images/client-2.png"
+            },
+            {
+              "name": "Client Three",
+              "companyLogo": "/images/hls-logo.png",
+              "designation": "CTO, Company Three",
+              "testimonial": "I highly recommend their services. Professional and efficient.",
+              "profileImage": "/images/client-3.png"
+            }
+          ],
+          "title": "Clients <span>Speak</span>",
+          "subtitle": "Dont’t take our word for it"
+        }
+      ],
+      "faq": [
+        {
+          "data": [
+            {
+              "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+              "question": "How can IT outsourcing benefit our startup?"
+            },
+            {
+              "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+              "question": "Can a small business benefit from IT services provided by a startup de"
+            },
+            {
+              "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+              "question": "Can we scale IT solutions as our startup grows?"
+            },
+            {
+              "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+              "question": "What security measures are in place to protect our sensitive data?"
+            },
+            {
+              "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+              "question": "What is the typical timeframe for implementing IT solutions for startups?"
+            }
+          ],
+          "title": "Frequently Asked <span>Questions</span>"
+        }
+      ],
+      "awards": [
+        {
+          "data": [
+            {
+              "alt": "Android",
+              "src": "/images/award1.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award2.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award3.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award4.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award5.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award6.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award7.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award8.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award9.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award10.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award11.png"
+            },
+            {
+              "alt": "Android",
+              "src": "/images/award12.png"
+            }
+          ],
+          "title": "Awards & Recognition"
+        }
+      ],
+      "formsection": [
+        {
+          "data": [
+            {
+              "text": "We’ll reach out to you within 24 hours."
+            },
+            {
+              "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+            },
+            {
+              "text": " You can start 15-days risk-free trial with us."
+            }
+          ],
+          "title": "What will happen next?"
+        }
+      ]
     }
+  }
 }

@@ -204,6 +204,33 @@
                     "label": "Case Studies"
                 }
             ],
+            "guarantee": [
+                {
+                    "data": [
+                        {
+                            "title": "Build Right. Build Smart",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "Ship Early. Ship Often",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "We engineer. We deliver",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        }
+                    ],
+                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+                    "videosrc": "/images/generalvideo.mp4"
+                }
+            ],
+            "videosection": {
+                "video": {
+                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
+                    "subTitle": "We are",
+                    "Title": "TechnoMark"
+                }
+            },
             "faq": [
                 {
                     "data": [
@@ -229,33 +256,6 @@
                         }
                     ],
                     "title": "Frequently Asked <span>Questions</span>"
-                }
-            ],
-            "videosection": {
-                "video": {
-                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
-                    "subTitle": "We are",
-                    "Title": "TechnoMark"
-                }
-            },
-            "guarantee": [
-                {
-                    "data": [
-                        {
-                            "title": "Build Right. Build Smart",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "Ship Early. Ship Often",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        },
-                        {
-                            "title": "We engineer. We deliver",
-                            "description": "We float the product canvas to all stakeholders with information lik."
-                        }
-                    ],
-                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
-                    "videosrc": "/images/generalvideo.mp4"
                 }
             ],
             "awards": [

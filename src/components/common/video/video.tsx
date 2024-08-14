@@ -8,7 +8,7 @@ const Video = (props: any) => {
         src={
           props.props.find((item: any) => item.videoUrl)
             ? props.props.find((item: any) => item.videoUrl).videoUrl
-            : "/images/Case-study.mp4"
+            : "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4"
         }
         autoPlay
         loop
