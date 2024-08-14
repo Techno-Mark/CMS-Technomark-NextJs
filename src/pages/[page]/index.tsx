@@ -18,6 +18,7 @@ interface HomeProps {
   faq?: any;
   awards?: any;
   formsection?: any;
+  contactform?: any;
   casestudylist?: any;
   videosection?: any;
   casestudydetailherosection?: any;
@@ -42,7 +43,8 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async () => {
   const apiCall = async (param: string) => {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
+      // `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
+      "http://localhost:3000/contact.json",
       {
         headers: {
           referal: "http://localhost:3001",
@@ -57,15 +59,15 @@ export const getServerSideProps: GetServerSideProps<{
     const caseStudyDetailsPromise = apiCall("case-study-detail");
     const productPromise = apiCall("product");
     const technologyPromise = apiCall("technology");
-    
 
-    const [maindata, caseStudy, caseStudyDetails, product, technology] = await Promise.all([
-      homeDataPromise,
-      caseStudyPromise,
-      caseStudyDetailsPromise,
-      productPromise,
-      technologyPromise,
-    ]);
+    const [maindata, caseStudy, caseStudyDetails, product, technology] =
+      await Promise.all([
+        homeDataPromise,
+        caseStudyPromise,
+        caseStudyDetailsPromise,
+        productPromise,
+        technologyPromise,
+      ]);
 
     return {
       props: { maindata, caseStudy, caseStudyDetails, product, technology },

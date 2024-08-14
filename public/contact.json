@@ -1,0 +1,46 @@
+{
+    "data": {
+        "templateData": {
+            "sectionsOrder": [
+                "contactform",
+                "achievement"
+            ],
+            "contactform": [
+                {
+                    "data": [
+                        {
+                            "text": "We’ll reach out to you within 24 hours."
+                        },
+                        {
+                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+                        },
+                        {
+                            "text": " You can start 15-days risk-free trial with us."
+                        }
+                    ],
+                    "title": "Get in touch!"
+                }
+            ],
+            "achievement": [
+                {
+                    "data": [
+                        {
+                            "title": "Happy Customers",
+                            "number": "4000+"
+                        },
+                        {
+                            "title": "Professionals",
+                            "number": "1000+"
+                        },
+                        {
+                            "title": "Locations",
+                            "number": "4000"
+                        }
+                    ],
+                    "title": "A Legacy of 15 Years of Trust with",
+                    "subtitle": "Within the market, among customers, and with our people. <span> Pacific Group of Companies </span>"
+                }
+            ]
+        }
+    }
+}
