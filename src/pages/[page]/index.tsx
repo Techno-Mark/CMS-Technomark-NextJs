@@ -53,6 +53,7 @@ export const getServerSideProps: GetServerSideProps<{
         },
       }
     );
+    console.log("response", res)
     return res;
   };
   try {
