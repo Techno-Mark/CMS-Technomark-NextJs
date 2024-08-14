@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps<{
         },
       }
     );
-    return res.data.data;
+    return res.data;
   };
   try {
     const homeDataPromise = apiCall("homePage");
@@ -117,6 +117,16 @@ export default function page({
   services,
   technology,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(
+    "hello",
+    maindata,
+    caseStudy,
+    hlsCaseStudyDetails,
+    airattixCaseStudyDetails,
+    givsumCaseStudyDetails,
+    services,
+    technology
+  );
   return (
     <>
       <DataComponent
