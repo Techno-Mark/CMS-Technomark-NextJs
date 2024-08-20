@@ -82,7 +82,6 @@ const DataComponent = ({
   services: HomeProps;
   technology: HomeProps;
 }) => {
-  console.log("hello inside")
   const pathName: any = usePathname();
   const searchParams = useSearchParams();
   const [homeData, setHomeData] = useState<any>();
@@ -100,7 +99,6 @@ const DataComponent = ({
     services,
     technology
   );
-
   useEffect(() => {
     if (fullPathWithParams === "/home") {
       setHomeData(maindata);
