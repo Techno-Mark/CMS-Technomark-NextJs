@@ -53,8 +53,8 @@ export const getServerSideProps: GetServerSideProps<{
         },
       }
     );
-    console.log("response", res.data)
-    return res.data.data;
+    console.log("response", res.data.data)
+    return res.data;
   };
   try {
     const homeDataPromise = apiCall("homePage");
