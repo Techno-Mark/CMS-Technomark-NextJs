@@ -32,6 +32,24 @@ interface HomeProps {
   props: any;
 }
 
+// Function to make an API call
+const apiCall = async (param: string) => {
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
+      {
+        headers: {
+          referal: "https://cms-technomark-next-js.vercel.app",
+        },
+      }
+    );
+    return res.data.data;
+  } catch (error) {
+    console.error(`Error fetching ${param} data:`, error);
+    return null; // Handle error by returning null
+  }
+};
+
 export const getServerSideProps: GetServerSideProps<{
   maindata: any;
   caseStudy: any;
@@ -41,27 +59,25 @@ export const getServerSideProps: GetServerSideProps<{
   services: any;
   technology: any;
 }> = async () => {
-  const apiCall = async (param: string) => {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
-      {
-        headers: {
-          referal: "https://cms-technomark-next-js.vercel.app",
-        },
-      }
-    );
-    console.log("response", res.data.data);
-    return res.data.data;
-  };
-
   try {
-    const maindata = await apiCall("homePage");
-    const caseStudy = await apiCall("casestudylist");
-    const hlsCaseStudyDetails = await apiCall("hlscasestudydetails");
-    const airattixCaseStudyDetails = await apiCall("airattixcasestudydetails");
-    const givsumCaseStudyDetails = await apiCall("givsumcasestudydetails");
-    const services = await apiCall("servicePage");
-    const technology = await apiCall("technologyPage");
+    // Fetch all data in parallel
+    const [
+      maindata,
+      caseStudy,
+      hlsCaseStudyDetails,
+      airattixCaseStudyDetails,
+      givsumCaseStudyDetails,
+      services,
+      technology,
+    ] = await Promise.all([
+      apiCall("homePage"),
+      apiCall("casestudylist"),
+      apiCall("hlscasestudydetails"),
+      apiCall("airattixcasestudydetails"),
+      apiCall("givsumcasestudydetails"),
+      apiCall("servicePage"),
+      apiCall("technologyPage"),
+    ]);
 
     return {
       props: {
@@ -90,7 +106,8 @@ export const getServerSideProps: GetServerSideProps<{
   }
 };
 
-export default function page({
+// Page component rendering the data
+export default function Page({
   maindata,
   caseStudy,
   hlsCaseStudyDetails,
