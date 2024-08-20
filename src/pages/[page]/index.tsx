@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<{
       // `http://localhost:3001/casestudylist.json`,
       {
         headers: {
-          referal: "http://localhost:3001",
+          referal: "https://cms-technomark-next-js.vercel.app",
         },
       }
     );
