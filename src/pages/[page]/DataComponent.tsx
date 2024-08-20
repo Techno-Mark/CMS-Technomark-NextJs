@@ -67,20 +67,20 @@ interface HomeProps {
 
 const DataComponent = ({
   maindata,
-  caseStudy,
-  hlsCaseStudyDetails,
-  airattixCaseStudyDetails,
-  givsumCaseStudyDetails,
-  services,
-  technology,
+  // caseStudy,
+  // hlsCaseStudyDetails,
+  // airattixCaseStudyDetails,
+  // givsumCaseStudyDetails,
+  // services,
+  // technology,
 }: {
   maindata: HomeProps;
-  caseStudy: HomeProps;
-  hlsCaseStudyDetails: HomeProps;
-  airattixCaseStudyDetails: HomeProps;
-  givsumCaseStudyDetails: HomeProps;
-  services: HomeProps;
-  technology: HomeProps;
+  // caseStudy: HomeProps;
+  // hlsCaseStudyDetails: HomeProps;
+  // airattixCaseStudyDetails: HomeProps;
+  // givsumCaseStudyDetails: HomeProps;
+  // services: HomeProps;
+  // technology: HomeProps;
 }) => {
   const pathName: any = usePathname();
   const searchParams = useSearchParams();
@@ -92,29 +92,30 @@ const DataComponent = ({
   console.log(
     fullPathWithParams,
     maindata,
-    caseStudy,
-    hlsCaseStudyDetails,
-    airattixCaseStudyDetails,
-    givsumCaseStudyDetails,
-    services,
-    technology
+    // caseStudy,
+    // hlsCaseStudyDetails,
+    // airattixCaseStudyDetails,
+    // givsumCaseStudyDetails,
+    // services,
+    // technology
   );
   useEffect(() => {
     if (fullPathWithParams === "/home") {
       setHomeData(maindata);
-    } else if (fullPathWithParams === "/casestudylist") {
-      setHomeData(caseStudy);
-    } else if (fullPathWithParams === "/casestudydetail?client=HLS") {
-      setHomeData(hlsCaseStudyDetails);
-    } else if (fullPathWithParams === "/casestudydetail?client=Airattix") {
-      setHomeData(airattixCaseStudyDetails);
-    } else if (fullPathWithParams === "/casestudydetail?client=Givsum") {
-      setHomeData(givsumCaseStudyDetails);
-    } else if (fullPathWithParams === "/services") {
-      setHomeData(services);
-    } else if (fullPathWithParams === "/technology") {
-      setHomeData(technology);
-    }
+    } 
+    // else if (fullPathWithParams === "/casestudylist") {
+    //   setHomeData(caseStudy);
+    // } else if (fullPathWithParams === "/casestudydetail?client=HLS") {
+    //   setHomeData(hlsCaseStudyDetails);
+    // } else if (fullPathWithParams === "/casestudydetail?client=Airattix") {
+    //   setHomeData(airattixCaseStudyDetails);
+    // } else if (fullPathWithParams === "/casestudydetail?client=Givsum") {
+    //   setHomeData(givsumCaseStudyDetails);
+    // } else if (fullPathWithParams === "/services") {
+    //   setHomeData(services);
+    // } else if (fullPathWithParams === "/technology") {
+    //   setHomeData(technology);
+    // }
   }, [fullPathWithParams]);
 
   const renderSection = (sectionName: string, sectionData: any) => {

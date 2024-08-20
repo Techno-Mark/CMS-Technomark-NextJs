@@ -35,12 +35,12 @@ interface HomeProps {
 
 export const getServerSideProps: GetServerSideProps<{
   maindata: any;
-  caseStudy: any;
-  hlsCaseStudyDetails: any;
-  airattixCaseStudyDetails: any;
-  givsumCaseStudyDetails: any;
-  services: any;
-  technology: any;
+  // caseStudy: any;
+  // hlsCaseStudyDetails: any;
+  // airattixCaseStudyDetails: any;
+  // givsumCaseStudyDetails: any;
+  // services: any;
+  // technology: any;
 }> = async () => {
   const apiCall = async (param: string) => {
     const res = await axios.get(
@@ -58,40 +58,40 @@ export const getServerSideProps: GetServerSideProps<{
   };
   try {
     const homeDataPromise = apiCall("homePage");
-    const caseStudyPromise = apiCall("casestudylist");
-    const hlsCaseStudyDetailsPromise = apiCall("hlscasestudydetails");
-    const airattixCaseStudyDetailsPromise = apiCall("airattixcasestudydetails");
-    const givsumCaseStudyDetailsPromise = apiCall("givsumcasestudydetails");
-    const servicesPromise = apiCall("servicePage");
-    const technologyPromise = apiCall("technologyPage");
+    // const caseStudyPromise = apiCall("casestudylist");
+    // const hlsCaseStudyDetailsPromise = apiCall("hlscasestudydetails");
+    // const airattixCaseStudyDetailsPromise = apiCall("airattixcasestudydetails");
+    // const givsumCaseStudyDetailsPromise = apiCall("givsumcasestudydetails");
+    // const servicesPromise = apiCall("servicePage");
+    // const technologyPromise = apiCall("technologyPage");
 
     const [
       maindata,
-      caseStudy,
-      hlsCaseStudyDetails,
-      airattixCaseStudyDetails,
-      givsumCaseStudyDetails,
-      services,
-      technology,
+      // caseStudy,
+      // hlsCaseStudyDetails,
+      // airattixCaseStudyDetails,
+      // givsumCaseStudyDetails,
+      // services,
+      // technology,
     ] = await Promise.all([
       homeDataPromise,
-      caseStudyPromise,
-      hlsCaseStudyDetailsPromise,
-      airattixCaseStudyDetailsPromise,
-      givsumCaseStudyDetailsPromise,
-      servicesPromise,
-      technologyPromise,
+      // caseStudyPromise,
+      // hlsCaseStudyDetailsPromise,
+      // airattixCaseStudyDetailsPromise,
+      // givsumCaseStudyDetailsPromise,
+      // servicesPromise,
+      // technologyPromise,
     ]);
 
     return {
       props: {
         maindata,
-        caseStudy,
-        hlsCaseStudyDetails,
-        airattixCaseStudyDetails,
-        givsumCaseStudyDetails,
-        services,
-        technology,
+        // caseStudy,
+        // hlsCaseStudyDetails,
+        // airattixCaseStudyDetails,
+        // givsumCaseStudyDetails,
+        // services,
+        // technology,
       },
     };
   } catch (error) {
@@ -99,12 +99,12 @@ export const getServerSideProps: GetServerSideProps<{
     return {
       props: {
         maindata: null,
-        caseStudy: null,
-        hlsCaseStudyDetails: null,
-        airattixCaseStudyDetails: null,
-        givsumCaseStudyDetails: null,
-        services: null,
-        technology: null,
+        // caseStudy: null,
+        // hlsCaseStudyDetails: null,
+        // airattixCaseStudyDetails: null,
+        // givsumCaseStudyDetails: null,
+        // services: null,
+        // technology: null,
       },
     };
   }
@@ -112,23 +112,23 @@ export const getServerSideProps: GetServerSideProps<{
 
 export default function page({
   maindata,
-  caseStudy,
-  hlsCaseStudyDetails,
-  airattixCaseStudyDetails,
-  givsumCaseStudyDetails,
-  services,
-  technology,
+  // caseStudy,
+  // hlsCaseStudyDetails,
+  // airattixCaseStudyDetails,
+  // givsumCaseStudyDetails,
+  // services,
+  // technology,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <DataComponent
         maindata={maindata}
-        caseStudy={caseStudy}
-        hlsCaseStudyDetails={hlsCaseStudyDetails}
-        airattixCaseStudyDetails={airattixCaseStudyDetails}
-        givsumCaseStudyDetails={givsumCaseStudyDetails}
-        services={services}
-        technology={technology}
+        // caseStudy={caseStudy}
+        // hlsCaseStudyDetails={hlsCaseStudyDetails}
+        // airattixCaseStudyDetails={airattixCaseStudyDetails}
+        // givsumCaseStudyDetails={givsumCaseStudyDetails}
+        // services={services}
+        // technology={technology}
       />
     </>
   );
