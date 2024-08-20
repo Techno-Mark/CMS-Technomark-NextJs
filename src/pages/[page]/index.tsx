@@ -54,7 +54,7 @@ export const getServerSideProps: GetServerSideProps<{
       }
     );
     console.log("response", res.data.data)
-    return res.data;
+    return res.data.data;
   };
   try {
     const homeDataPromise = apiCall("homePage");
