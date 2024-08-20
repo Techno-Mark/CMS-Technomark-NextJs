@@ -1,39 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import React from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import DataComponent from "./DataComponent";
 
 interface HomeProps {
-  sectionsOrder: string[];
-  homeSection: any;
-  techstartup: any;
-  methodology?: any;
-  services?: any;
-  casestudy?: any;
-  techIcons?: any;
-  guarantee?: any;
-  client?: any;
-  achievement?: any;
-  faq?: any;
-  awards?: any;
-  formsection?: any;
-  casestudylist?: any;
-  videosection?: any;
-  casestudydetailherosection?: any;
-  businessimpact?: any;
-  problemstatement?: any;
-  projectscreens?: any;
-  Challengessolutions?: any;
-  majorscreen?: any;
-  features?: any;
-  productherosection?: any;
-  productservices?: any;
-  productsolutions?: any;
-  props: any;
-}
-
-export const getServerSideProps: GetServerSideProps<{
   maindata: any;
   caseStudy: any;
   hlsCaseStudyDetails: any;
@@ -41,47 +10,67 @@ export const getServerSideProps: GetServerSideProps<{
   givsumCaseStudyDetails: any;
   services: any;
   technology: any;
-}> = async () => {
-  const apiCall = async (param: string) => {
+}
+
+// Utility function to make API calls
+const apiCall = async (param: string) => {
+  try {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
-      // 'https://jsonplaceholder.typicode.com/todos/1',
-      // `http://localhost:3001/casestudylist.json`,
       {
         headers: {
           referal: "http://localhost:3001",
         },
       }
     );
-    console.log("response", res.data)
     return res.data.data;
-  };
-  try {
-    const homeDataPromise = apiCall("homePage");
-    const caseStudyPromise = apiCall("casestudylist");
-    const hlsCaseStudyDetailsPromise = apiCall("hlscasestudydetails");
-    const airattixCaseStudyDetailsPromise = apiCall("airattixcasestudydetails");
-    const givsumCaseStudyDetailsPromise = apiCall("givsumcasestudydetails");
-    const servicesPromise = apiCall("servicePage");
-    const technologyPromise = apiCall("technologyPage");
+  } catch (error) {
+    console.error(`Error fetching ${param} data:`, error);
+    return null; // Handle error by returning null
+  }
+};
 
-    const [
-      maindata,
-      caseStudy,
-      hlsCaseStudyDetails,
-      airattixCaseStudyDetails,
-      givsumCaseStudyDetails,
-      services,
-      technology,
-    ] = await Promise.all([
-      homeDataPromise,
-      caseStudyPromise,
-      hlsCaseStudyDetailsPromise,
-      airattixCaseStudyDetailsPromise,
-      givsumCaseStudyDetailsPromise,
-      servicesPromise,
-      technologyPromise,
-    ]);
+export const getServerSideProps: GetServerSideProps<HomeProps> = async (
+  context
+) => {
+  const { resolvedUrl } = context;
+  let maindata = null;
+  let caseStudy = null;
+  let hlsCaseStudyDetails = null;
+  let airattixCaseStudyDetails = null;
+  let givsumCaseStudyDetails = null;
+  let services = null;
+  let technology = null;
+  
+  try {
+    // Determine the API endpoint based on the pathname and query parameters
+    switch (resolvedUrl) {
+      case "/home":
+        maindata = await apiCall("homePage");
+        break;
+      case "/casestudylist":
+        caseStudy = await apiCall("casestudylist");
+        break;
+      case "/casestudydetail?client=HLS":
+        hlsCaseStudyDetails = await apiCall("hlscasestudydetails");
+        break;
+      case "/casestudydetail?client=Airattix":
+        airattixCaseStudyDetails = await apiCall("airattixcasestudydetails");
+        break;
+      case "/casestudydetail?client=Givsum":
+        givsumCaseStudyDetails = await apiCall("givsumcasestudydetails");
+        break;
+      case "/services":
+        services = await apiCall("servicePage");
+        break;
+      case "/technology":
+        technology = await apiCall("technologyPage");
+        break;
+      default:
+        return {
+          notFound: true, // Serve a 404 page if the route is not matched
+        };
+    }
 
     return {
       props: {
@@ -95,7 +84,7 @@ export const getServerSideProps: GetServerSideProps<{
       },
     };
   } catch (error) {
-    console.error("Error fetching home page data:", error);
+    console.error("Error fetching data:", error);
     return {
       props: {
         maindata: null,
@@ -110,7 +99,9 @@ export const getServerSideProps: GetServerSideProps<{
   }
 };
 
-export default function page({
+const Page: React.FC<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({
   maindata,
   caseStudy,
   hlsCaseStudyDetails,
@@ -118,18 +109,27 @@ export default function page({
   givsumCaseStudyDetails,
   services,
   technology,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  return (
-    <>
-      <DataComponent
-        maindata={maindata}
-        caseStudy={caseStudy}
-        hlsCaseStudyDetails={hlsCaseStudyDetails}
-        airattixCaseStudyDetails={airattixCaseStudyDetails}
-        givsumCaseStudyDetails={givsumCaseStudyDetails}
-        services={services}
-        technology={technology}
-      />
-    </>
+}) => {
+  console.log(
+    maindata,
+    caseStudy,
+    hlsCaseStudyDetails,
+    airattixCaseStudyDetails,
+    givsumCaseStudyDetails,
+    services,
+    technology
   );
-}
+  return (
+    <DataComponent
+      maindata={maindata}
+      caseStudy={caseStudy}
+      hlsCaseStudyDetails={hlsCaseStudyDetails}
+      airattixCaseStudyDetails={airattixCaseStudyDetails}
+      givsumCaseStudyDetails={givsumCaseStudyDetails}
+      services={services}
+      technology={technology}
+    />
+  );
+};
+
+export default Page;
