@@ -7,9 +7,14 @@ import styles from "./herosection.module.css";
 interface HeroSectionProps {
   props: any;
   istechnology?: boolean;
+  istechstartup?: boolean;
 }
 
-const Herosection: React.FC<HeroSectionProps> = ({ props, istechnology }) => {
+const Herosection: React.FC<HeroSectionProps> = ({
+  props,
+  istechnology,
+  istechstartup,
+}) => {
   if (istechnology) {
     return (
       <>
@@ -66,8 +71,13 @@ const Herosection: React.FC<HeroSectionProps> = ({ props, istechnology }) => {
       </>
     );
   }
+
   return (
-    <div className={`container mx-auto ${styles.herocontainer}`}>
+    <div
+      className={`container mx-auto ${styles.herocontainer} ${
+        istechstartup ? styles.techstartpcontainer : ""
+      }`}
+    >
       <div className="flex flex-wrap sm:flex-row flex-col-reverse items-center">
         <div className="w-full md:w-1/2">
           <p className={styles.label}>
@@ -86,13 +96,47 @@ const Herosection: React.FC<HeroSectionProps> = ({ props, istechnology }) => {
             }}
             titleClassName="herosectiontitle"
           />
-          <Button
-            href={props.url}
-            text="Get Free Consultation"
-            variant="primary"
-          />
+          {istechstartup ? (
+            <Button
+              href={
+                props.find((item: any) => item.buttonUrl)
+                  ? props.find((item: any) => item.buttonUrl).buttonUrl
+                  : "#"
+              }
+              text={
+                props.find((item: any) => item.buttonText)
+                  ? props.find((item: any) => item.buttonText).buttonText
+                  : "Contact Now"
+              }
+              variant="secondary"
+            />
+          ) : (
+            <Button
+              href={
+                props.find((item: any) => item.buttonUrl)
+                  ? props.find((item: any) => item.buttonUrl).buttonUrl
+                  : "#"
+              }
+              text={
+                props.find((item: any) => item.buttonText)
+                  ? props.find((item: any) => item.buttonText).buttonText
+                  : "Get Free Consultation"
+              }
+              variant="primary"
+            />
+          )}
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 relative">
+          {istechstartup && (
+            <div className={styles.formcirlerotate}>
+              <Image
+                src="/images/animatecircle.png"
+                alt="circle"
+                width={250}
+                height={250}
+              />
+            </div>
+          )}
           <div className={styles.imagecontainer}>
             <Image
               src={

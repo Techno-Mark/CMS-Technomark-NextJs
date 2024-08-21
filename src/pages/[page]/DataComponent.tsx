@@ -28,6 +28,8 @@ import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import styles from "./home.module.css";
 import { usePathname, useSearchParams } from "next/navigation";
+import ValueService from "@/components/common/valueservice/valueservice";
+import Engage from "@/components/common/engageSection/engage";
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -73,6 +75,7 @@ const DataComponent = ({
   givsumCaseStudyDetails,
   services,
   technology,
+  startup,
 }: {
   maindata: HomeProps;
   caseStudy: HomeProps;
@@ -81,6 +84,7 @@ const DataComponent = ({
   givsumCaseStudyDetails: HomeProps;
   services: HomeProps;
   technology: HomeProps;
+  startup: HomeProps;
 }) => {
   const pathName: any = usePathname();
   const searchParams = useSearchParams();
@@ -89,16 +93,7 @@ const DataComponent = ({
   const client = searchParams.get("client");
 
   const fullPathWithParams = client ? `${pathName}?client=${client}` : pathName;
-  console.log(
-    fullPathWithParams,
-    maindata,
-    caseStudy,
-    hlsCaseStudyDetails,
-    airattixCaseStudyDetails,
-    givsumCaseStudyDetails,
-    services,
-    technology
-  );
+
   useEffect(() => {
     if (fullPathWithParams === "/home") {
       setHomeData(maindata);
@@ -114,6 +109,8 @@ const DataComponent = ({
       setHomeData(services);
     } else if (fullPathWithParams === "/technology") {
       setHomeData(technology);
+    } else if (fullPathWithParams === "/start_up_services") {
+      setHomeData(startup);
     }
   }, [fullPathWithParams]);
 
@@ -438,9 +435,19 @@ const DataComponent = ({
       case "formsection":
         return (
           sectionData && (
-            <section className={`${styles.formsection} tm-section bg-white`}>
+            <section
+              className={`${
+                fullPathWithParams === "/start_up_services"
+                  ? styles.techstrtupformsection
+                  : styles.formsection
+              } tm-section bg-white`}
+            >
               <div className="container mx-auto">
-                <FormSection props={sectionData} />
+                {fullPathWithParams === "/start_up_services" ? (
+                  <FormSection props={sectionData} techstartupform={true} />
+                ) : (
+                  <FormSection props={sectionData} />
+                )}
               </div>
             </section>
           )
@@ -627,7 +634,10 @@ const DataComponent = ({
                       : "",
                   }}
                   titleFirst={
-                    fullPathWithParams === "/technology" ? true : false
+                    fullPathWithParams === "/technology" ||
+                    fullPathWithParams === "/start_up_services"
+                      ? true
+                      : false
                   }
                   titleClassName="featurestitle"
                 />
@@ -640,6 +650,15 @@ const DataComponent = ({
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
+                  />
+                ) : fullPathWithParams === "/start_up_services" ? (
+                  <Services
+                    props={
+                      sectionData.find((item: any) => item.Data)
+                        ? sectionData.find((item: any) => item.Data).Data
+                        : ""
+                    }
+                    isFeatured={true}
                   />
                 ) : (
                   <Services
@@ -661,7 +680,11 @@ const DataComponent = ({
             <section
               className={`${styles.prodcutherosection} tm-section bg-white`}
             >
-              <Herosection props={sectionData} />
+              {fullPathWithParams === "/start_up_services" ? (
+                <Herosection props={sectionData} istechstartup={true} />
+              ) : (
+                <Herosection props={sectionData} />
+              )}
             </section>
           )
         );
@@ -796,7 +819,41 @@ const DataComponent = ({
           sectionData && (
             <section className={`${styles.techexpert} tm-section bg-white`}>
               <div className="container mx-auto">
-                <TechExpert props={sectionData} />
+                {fullPathWithParams === "/start_up_services" ? (
+                  <TechExpert props={sectionData} istechstartupexpert />
+                ) : (
+                  <TechExpert props={sectionData} />
+                )}
+              </div>
+            </section>
+          )
+        );
+      case "valueservice":
+        return (
+          sectionData && (
+            <section className={`${styles.valueservice} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <ValueService props={sectionData} />
+              </div>
+            </section>
+          )
+        );
+      case "engagesection":
+        return (
+          sectionData && (
+            <section className={`${styles.hiredeveloper} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="servicestitle"
+                />
+                <Engage props={sectionData} />
               </div>
             </section>
           )

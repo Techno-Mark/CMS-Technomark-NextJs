@@ -40,7 +40,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
     swipe: false,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    afterChange: (current: number) => setCurrentSlide(current),
+    afterChange: (current: number) => setCurrentSlide(Math.ceil(current)),
     responsive: [
       {
         breakpoint: 1450,

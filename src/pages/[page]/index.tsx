@@ -10,6 +10,7 @@ interface HomeProps {
   givsumCaseStudyDetails: any;
   services: any;
   technology: any;
+  startup: any;
 }
 
 // Utility function to make API calls
@@ -41,7 +42,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   let givsumCaseStudyDetails = null;
   let services = null;
   let technology = null;
-  
+  let startup = null;
+
   try {
     // Determine the API endpoint based on the pathname and query parameters
     switch (resolvedUrl) {
@@ -66,6 +68,9 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
       case "/technology":
         technology = await apiCall("technologyPage");
         break;
+      case "/start_up_services":
+        startup = await apiCall("startupPage");
+        break;
       default:
         return {
           notFound: true, // Serve a 404 page if the route is not matched
@@ -81,6 +86,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         givsumCaseStudyDetails,
         services,
         technology,
+        startup,
       },
     };
   } catch (error) {
@@ -94,6 +100,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         givsumCaseStudyDetails: null,
         services: null,
         technology: null,
+        startup: null,
       },
     };
   }
@@ -109,16 +116,8 @@ const Page: React.FC<
   givsumCaseStudyDetails,
   services,
   technology,
+  startup,
 }) => {
-  console.log(
-    maindata,
-    caseStudy,
-    hlsCaseStudyDetails,
-    airattixCaseStudyDetails,
-    givsumCaseStudyDetails,
-    services,
-    technology
-  );
   return (
     <DataComponent
       maindata={maindata}
@@ -128,6 +127,7 @@ const Page: React.FC<
       givsumCaseStudyDetails={givsumCaseStudyDetails}
       services={services}
       technology={technology}
+      startup={startup}
     />
   );
 };

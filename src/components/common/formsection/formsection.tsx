@@ -11,12 +11,17 @@ interface formProps {
   props?: {
     data: formsection[];
   };
+  techstartupform?: boolean;
 }
 
-const FormSection: React.FC<formProps> = ({ props }: any) => {
+const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
   return (
     <>
-      <div className={`flex flex-wrap ${styles.formcontainer}`}>
+      <div
+        className={`flex flex-wrap ${styles.formcontainer} ${
+          techstartupform ? styles.techstartupform : ""
+        }`}
+      >
         <div className={styles.formleft}>
           <div className={styles.formtext}>
             <h3>

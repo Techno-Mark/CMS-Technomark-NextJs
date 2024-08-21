@@ -345,6 +345,10 @@
   border-bottom: 1px solid var(--border-primary);
 }
 
+.techstrtupformsection {
+  background: var(--primary-background);
+}
+
 .leftbubblecircle {
   position: absolute;
   left: -16rem;
