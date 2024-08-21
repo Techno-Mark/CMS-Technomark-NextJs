@@ -29,6 +29,7 @@ import Image from "next/image";
 import styles from "./home.module.css";
 import { usePathname } from "next/navigation";
 import ContactFormSection from "@/components/common/contactformsection/formsection";
+import WorldMap from "@/components/common/worldMap/worldMap";
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -41,6 +42,7 @@ interface HomeProps {
   guarantee?: any;
   client?: any;
   achievement?: any;
+  Locations?: any;
   faq?: any;
   awards?: any;
   contactform?: any;
@@ -82,7 +84,6 @@ const DataComponent = ({
 }) => {
   const pathName: any = usePathname();
   const [homeData, setHomeData] = useState<HomeProps>();
-  console.log("🚀 ~ homeData:", homeData);
 
   useEffect(() => {
     if (pathName === "/home") {
@@ -356,196 +357,13 @@ const DataComponent = ({
                   <ContactFormSection props={homeData.contactform} />
                 </div>
               </section>
-              <section className={`${styles.mapsection} ${styles.paddtb}`}>
-                <div className={styles.mapcontainer}>
-                  <Image
-                    height={45}
-                    width={45}
-                    src="/images/world-map.png"
-                    alt="map"
-                    className={styles.map}
-                  />
-                  <div className={`${styles.pin} ${styles.hawaiipin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.californiapin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.texaspin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.Ahmedabadpin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.mumbaipin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.hyderabadpin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                  <div className={`${styles.pin} ${styles.sydneypin}`}>
-                    <Image
-                      height={45}
-                      width={45}
-                      src="/images/Google_Maps_pin.png"
-                      alt="pin"
-                    />
-                  </div>
-                </div>
-                <div
-                  className={`${styles.container} ${styles.customcontainer}`}
-                >
-                  <div className="flex flex-wrap">
-                    <div
-                      className={`md:w-full pr-4 pl-4 ${styles.leftcommontext}`}
-                    >
-                      <div className={`text-left ${styles.titletext}`}>
-                        <h2>
-                          We Are <span>Globally Available Now</span>
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mt-10 justify-center">
-                    <div className="grid grid-cols-1 md:grid-cols-4">
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/usa-flag.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Texas, USA</h3>
-                        </div>
-                        <p>
-                          Dallas Communications Bldg. 3 E. Royal Lane Suite
-                          Irving, TX - 75039
-                        </p>
-                      </div>
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/usa-flag.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Hawaii, USA</h3>
-                        </div>
-                        <p>
-                          810 Richards Street Suite 300 Honolulu, HI - 96813
-                        </p>
-                      </div>
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/usa-flag.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>California, USA</h3>
-                        </div>
-                        <p>
-                          300 Spectrum Center Dr Suite 400,Irvine, CA - 92618
-                        </p>
-                      </div>
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/australia-flag-icon.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Texas, USA</h3>
-                        </div>
-                        <p>
-                          Level 11, 68 Alfred Street Milsons Point, NSW - 2061
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mt-10 justify-center ">
-                    <div className="md:w-[90%]  grid  grid-cols-1 md:grid-cols-3 w-full ml-4 md:pr-4 md:pl-4">
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/india-flag-icon.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Mumbai, India</h3>
-                        </div>
-                        <p>
-                          Office No- 4, 4th Floor, Marol, Andheri East, Mumbai -
-                          400059
-                        </p>
-                      </div>
-                      <div className={`${styles.addressbox} mr-[30px]`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/india-flag-icon.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Ahmedabad, India</h3>
-                        </div>
-                        <p>Megha House,S.G Highway Ahmedabad - 380051</p>
-                      </div>
-                      <div className={`${styles.addressbox}`}>
-                        <div className={`${styles.inlinecity}`}>
-                          <Image
-                            src="/images/india-flag-icon.png"
-                            alt="usa-flag"
-                            height={35}
-                            width={35}
-                          />
-                          <h3>Hyderabad, India</h3>
-                        </div>
-                        <p>
-                          Dwaraka Pride, Huda Techno, Madhapur, Hyderabad -
-                          500081
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
             </>
+          )
+        );
+      case "Locations":
+        return (
+          homeData?.Locations && (
+            <WorldMap locations={homeData.Locations[0].data} />
           )
         );
       case "casestudylist":

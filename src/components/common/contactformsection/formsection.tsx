@@ -16,19 +16,15 @@ interface formProps {
 const ContactFormSection: React.FC<formProps> = ({ props }: any) => {
   return (
     <>
-      <div className={`flex flex-wrap ${styles.formcontainer}`}>
+      <div
+        className={`flex justify-center items-center flex-wrap ${styles.formcontainer}`}
+      >
         <div className={styles.formleft}>
           <div className={styles.formtext}>
-            <h3>{props[0].title} </h3>
-            <p className={styles.desc}>
-              You are one step away from creating an agile business product and
-              make it your next success story.
-            </p>
+            <h3>{props[0].title}</h3>
+            <p className={styles.desc}>{props[0].desc}</p>
             <div className={styles.bannerline}></div>
-            <b className={styles.bottomdesc}>
-              Let's discuss about your business model and project requirements
-              in detail.
-            </b>
+            <b className={styles.bottomdesc}>{props[0].bottomdesc}</b>
           </div>
         </div>
         <div className={styles.formright}>

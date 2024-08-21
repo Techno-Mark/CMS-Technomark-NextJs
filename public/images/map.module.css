@@ -1,0 +1,38 @@
+.animation {
+    -webkit-animation: pulsate 5s linear infinite;
+    -moz-animation: pulsate 5s linear infinite;
+    animation: pulsate 5s linear infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        width: 40px;
+    }
+
+    50% {
+        width: 45px;
+    }
+
+    100% {
+        width: 40px;
+    }
+}
+
+.plusAnimation {
+    animation: plus-animation 2s infinite;
+}
+
+@keyframes plus-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

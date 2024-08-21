@@ -19,10 +19,10 @@
 
 .desc {
   max-width: 500px;
-  font-size: 18px;
+  font-size: 25px;
   color: var(--secondary--color);
   font-weight: 500;
-  line-height: 32px;
+  /* line-height: 32px; */
 }
 
 .bottomdesc{
@@ -110,4 +110,5 @@
     flex-direction: column;
     row-gap: 50px;
   }
+
 }
