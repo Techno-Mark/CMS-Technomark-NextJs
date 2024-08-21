@@ -3,9 +3,9 @@
     padding-top: 20rem;
     overflow: hidden;
     background: #fff;
-  }
+}
 
-.mapcontainer {
+.mapContainer {
     position: relative;
     width: 82%;
     max-width: 1200px;
@@ -13,14 +13,12 @@
 }
 
 .map {
-    height: 100%;
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 82%;
-    object-fit: contain;
-    object-position: top;
+    top: -17rem;
+    right: -4rem;
+    /* object-fit: contain; */
+    /* object-position: top right; */
 }
 
 .container {
@@ -53,38 +51,38 @@
 }
 
 .hawaiipin {
-    top: 13%;
-    left: 33.5%;
+    top: -66px;
+    left: -10%;
 }
 
 .californiapin {
-    top: 20%;
-    left: 31%;
+    top: -112px;
+    left: -3%;
 }
 
 .texaspin {
-    top: 15%;
-    left: 35.5%;
+    top: -90px;
+    left: -1%;
 }
 
 .ahmedabadpin {
-    top: 22%;
-    right: 23.2%;
+    top: 0px;
+    left: 62%;
 }
 
 .mumbaipin {
-    top: 23.8%;
-    right: 22.5%;
+    top: 60%;
+    left: 63%;
 }
 
 .hyderabadpin {
-    top: 25%;
-    right: 21.8%;
+    top: 18px;
+    left: 64.5%;
 }
 
 .sydneypin {
-    top: 44%;
-    left: 85%;
+    top: 225px;
+    left: 84%;
 }
 
 .mapsection .pin img {
@@ -149,4 +147,112 @@
     line-height: 35px;
     margin-bottom: 0;
     width: 83%;
+}
+
+@media only screen and (max-width: 1499px) {
+    .map {
+        top: -13rem;
+        right: -2rem;
+        width: 100%;
+    }
+
+    .hawaiipin {
+        left: 18%;
+    }
+
+    .californiapin {
+        left: 23%;
+    }
+
+    .texaspin {
+        left: 25%;
+    }
+
+    .ahmedabadpin {
+        top: 5px;
+        left: 70%;
+    }
+
+    .mumbaipin {
+        top: 20px;
+        left: 70.6%;
+    }
+
+    .hyderabadpin {
+        top: 20px;
+        left: 71.6%;
+    }
+
+    .sydneypin {
+        top: 162px;
+        left: 88%;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .map {
+        top: 0;
+        right: 0;
+        width: 100%;
+        position: inherit;
+    }
+
+    .mapsection {
+        position: relative;
+        padding-top: 0rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .hawaiipin {
+        left: 18%;
+        top: 22%;
+    }
+
+    .californiapin {
+        left: 20%;
+        top: 22%;
+    }
+
+    .texaspin {
+        left: 22%;
+        top: 25%;
+    }
+
+    .ahmedabadpin {
+        top: 34%;
+        left: 68%;
+    }
+
+    .mumbaipin {
+        top: 36%;
+        left: 69%;
+    }
+
+    .hyderabadpin {
+        top: 39%;
+        left: 70%;
+    }
+
+    .sydneypin {
+        top: 73%;
+        left: 85%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .mapsection .pin img {
+        width: 25px;
+    }
+
+    .mapsection {
+        position: relative;
+        padding-top: 0rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .mapContainer {
+        width: 100%;
+    }
 }

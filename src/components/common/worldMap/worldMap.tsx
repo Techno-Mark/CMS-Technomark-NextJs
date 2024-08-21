@@ -11,6 +11,7 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
   return (
     <section className={`${styles.mapsection} ${styles.paddtb}`}>
       <div className={styles.worldMapContainer}>
+        <div className={styles.mapContainer}>
         <Image
           height={700}
           width={1633}
@@ -18,7 +19,6 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
           alt="World Map"
           className={styles.map}
         />
-        <div className={styles.mapContainer}>
           {mapData.map((location: any, index: number) => (
             <div
               key={index}
@@ -38,7 +38,7 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
                 height={45}
                 width={45}
                 src="/images/Google_Maps_pin.png"
-                alt="Location Pin"
+                alt={location.city}
               />
             </div>
           ))}

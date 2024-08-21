@@ -111,4 +111,8 @@
     row-gap: 50px;
   }
 
+  .desc{
+    font-size: 18px;
+  }
+
 }
