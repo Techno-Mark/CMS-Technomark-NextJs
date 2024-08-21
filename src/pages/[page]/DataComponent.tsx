@@ -30,6 +30,8 @@ import styles from "./home.module.css";
 import { usePathname, useSearchParams } from "next/navigation";
 import ValueService from "@/components/common/valueservice/valueservice";
 import Engage from "@/components/common/engageSection/engage";
+import ContactFormSection from "@/components/common/contactformsection/formsection";
+import WorldMap from "@/components/common/worldMap/worldMap";
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -76,6 +78,7 @@ const DataComponent = ({
   services,
   technology,
   startup,
+  contactus,
 }: {
   maindata: HomeProps;
   caseStudy: HomeProps;
@@ -85,6 +88,7 @@ const DataComponent = ({
   services: HomeProps;
   technology: HomeProps;
   startup: HomeProps;
+  contactus: HomeProps;
 }) => {
   const pathName: any = usePathname();
   const searchParams = useSearchParams();
@@ -111,6 +115,8 @@ const DataComponent = ({
       setHomeData(technology);
     } else if (fullPathWithParams === "/start_up_services") {
       setHomeData(startup);
+    } else if (fullPathWithParams === "/contact_us") {
+      setHomeData(contactus);
     }
   }, [fullPathWithParams]);
 
@@ -189,8 +195,15 @@ const DataComponent = ({
                     title: sectionData.find((item: any) => item.title)
                       ? sectionData.find((item: any) => item.title).title
                       : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    subtitle: sectionData.find(
+                      (item: any) => item.subTitle || item.subtitle
+                    )
+                      ? sectionData.find(
+                          (item: any) => item.subTitle || item.subtitle
+                        ).subTitle ||
+                        sectionData.find(
+                          (item: any) => item.subTitle || item.subtitle
+                        ).subtitle
                       : "",
                   }}
                   titleFirst={true}
@@ -622,7 +635,13 @@ const DataComponent = ({
       case "keyfeatures":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section
+              className={`${
+                fullPathWithParams === "/contact_us"
+                  ? styles.techstrtupformsection
+                  : styles.features
+              } tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -641,15 +660,16 @@ const DataComponent = ({
                   }
                   titleClassName="featurestitle"
                 />
-                {fullPathWithParams === "/casestudydetail?client=Airattix" ||
-                fullPathWithParams === "/casestudydetail?client=Givsum" ||
-                fullPathWithParams === "/casestudydetail?client=HLS" ? (
+                {fullPathWithParams === "/casestudydetail?client=HLS" ||
+                fullPathWithParams === "/casestudydetail?client=Airattix" ||
+                fullPathWithParams === "/casestudydetail?client=Givsum" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
+                    isFeatured={true}
                   />
                 ) : fullPathWithParams === "/start_up_services" ? (
                   <Services
@@ -667,7 +687,6 @@ const DataComponent = ({
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
-                    isProduct={true}
                   />
                 )}
               </div>
@@ -858,6 +877,20 @@ const DataComponent = ({
             </section>
           )
         );
+      case "contactform":
+        return (
+          sectionData && (
+            <>
+              <section className={`${styles.contactform} tm-section bg-white`}>
+                <div className="container mx-auto">
+                  <ContactFormSection props={sectionData} />
+                </div>
+              </section>
+            </>
+          )
+        );
+      case "locations":
+        return sectionData && <WorldMap props={sectionData} />;
       default:
         return null;
     }

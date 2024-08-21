@@ -11,6 +11,7 @@ interface HomeProps {
   services: any;
   technology: any;
   startup: any;
+  contactus: any;
 }
 
 // Utility function to make API calls
@@ -43,6 +44,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   let services = null;
   let technology = null;
   let startup = null;
+  let contactus = null;
 
   try {
     // Determine the API endpoint based on the pathname and query parameters
@@ -71,6 +73,9 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
       case "/start_up_services":
         startup = await apiCall("startupPage");
         break;
+      case "/contact_us":
+        contactus = await apiCall("contactusPage");
+        break;
       default:
         return {
           notFound: true, // Serve a 404 page if the route is not matched
@@ -87,6 +92,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         services,
         technology,
         startup,
+        contactus,
       },
     };
   } catch (error) {
@@ -101,6 +107,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         services: null,
         technology: null,
         startup: null,
+        contactus: null,
       },
     };
   }
@@ -117,6 +124,7 @@ const Page: React.FC<
   services,
   technology,
   startup,
+  contactus,
 }) => {
   return (
     <DataComponent
@@ -128,6 +136,7 @@ const Page: React.FC<
       services={services}
       technology={technology}
       startup={startup}
+      contactus={contactus}
     />
   );
 };

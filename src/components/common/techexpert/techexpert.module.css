@@ -80,6 +80,7 @@
   line-height: 2.6rem;
   letter-spacing: 0.24px;
   transition: 0.5s ease-in-out;
+  padding-bottom: 20px;
 }
 .techstartupbox:hover p {
   transform: translateX(10px);

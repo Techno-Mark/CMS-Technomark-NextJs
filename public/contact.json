@@ -1,0 +1,164 @@
+{
+    "data": {
+        "templateData": {
+            "sectionsOrder": [
+                "contactform",
+                "Locations",
+                "services",
+                "client",
+                "achievement"
+            ],
+            "contactform": [
+                {
+                    "title": "Get in touch!",
+                    "desc": "You are one step away from creating an agile business product and make it your next success story.",
+                    "bottomdesc": "Let's discuss about your business model and project requirements in detail."
+                }
+            ],
+            "achievement": [
+                {
+                    "data": [
+                        {
+                            "title": "Happy Customers",
+                            "number": "4000+"
+                        },
+                        {
+                            "title": "Professionals",
+                            "number": "1000+"
+                        },
+                        {
+                            "title": "Locations",
+                            "number": "4000"
+                        }
+                    ],
+                    "title": "A Legacy of 15 Years of Trust with",
+                    "subtitle": "Within the market, among customers, and with our people. <span> Pacific Group of Companies </span>"
+                }
+            ],
+            "Locations": [
+                {
+                    "data": [
+                        {
+                            "flagSrc": "/images/india-flag-icon.png",
+                            "flagAlt": "india-flag",
+                            "country": "India",
+                            "city": "Mumbai",
+                            "address": "Office No- 4, 4th Floor, Marol, Andheri East, Mumbai - 400059"
+                        },
+                        {
+                            "flagSrc": "/images/india-flag-icon.png",
+                            "flagAlt": "india-flag",
+                            "country": "India",
+                            "city": "Ahmedabad",
+                            "address": "Megha House, S.G Highway Ahmedabad - 380051"
+                        },
+                        {
+                            "flagSrc": "/images/india-flag-icon.png",
+                            "flagAlt": "india-flag",
+                            "country": "India",
+                            "city": "Ahmedabad",
+                            "address": "2nd Floor, Shilp Zaveri, Shyamal Crossroads, Ahmedabad - 380015"
+                        },
+                        {
+                            "flagSrc": "/images/india-flag-icon.png",
+                            "flagAlt": "india-flag",
+                            "country": "India",
+                            "city": "Hyderabad",
+                            "address": "Dwaraka Pride, Huda Techno, Madhapur, Hyderabad - 500081"
+                        },
+                        {
+                            "flagSrc": "/images/usa-flag.png",
+                            "flagAlt": "usa-flag",
+                            "city": "Texas",
+                            "country": "USA",
+                            "address": "Dallas Communications Bldg. 3 E. Royal Lane Suite Irving, TX - 75039"
+                        },
+                        {
+                            "flagSrc": "/images/usa-flag.png",
+                            "flagAlt": "usa-flag",
+                            "country": "USA",
+                            "city": "Hawaii",
+                            "address": "810 Richards Street Suite 300 Honolulu, HI - 96813"
+                        },
+                        {
+                            "flagSrc": "/images/usa-flag.png",
+                            "flagAlt": "usa-flag",
+                            "country": "USA",
+                            "city": "California",
+                            "address": "300 Spectrum Center Dr Suite 400, Irvine, CA - 92618"
+                        },
+                        {
+                            "flagSrc": "/images/australia-flag-icon.png",
+                            "flagAlt": "australia-flag",
+                            "country": "Australia",
+                            "city": "Sydney",
+                            "address": "Level 11, 68 Alfred Street Milsons Point, NSW - 2061"
+                        }
+                    ]
+                }
+            ],
+            "services": [
+                {
+                    "isFeatured": false,
+                    "istechservice": true,
+                    "isProduct": true,
+                    "data": [
+                        {
+                            "alt": "sales",
+                            "icon": "/images/sales-Inquiry.png",
+                            "text": "Sales Inquiry",
+                            "description": "hello@technomark.io"
+                        },
+                        {
+                            "alt": "calling",
+                            "icon": "/images/calling.png",
+                            "text": "Customer Support",
+                            "description": "+91 - 70690 08181"
+                        },
+                        {
+                            "alt": "briefcase",
+                            "icon": "/images/briefcase.png",
+                            "text": "Career Opportunities",
+                            "description": "career@technomark.io"
+                        },
+                        {
+                            "alt": "sales",
+                            "icon": "/images/sales-Inquiry.png",
+                            "text": "Feedback",
+                            "description": "info@technomark.io"
+                        }
+                    ]
+                }
+            ],
+            "client": [
+                {
+                    "data": [
+                        {
+                            "name": "Renee Parker",
+                            "companyLogo": "/images/Airattrix.png",
+                            "designation": "CEO - Littel, Schroeder and McGlynn",
+                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+                            "profileImage": "/images/client-1.png"
+                        },
+                        {
+                            "name": "Maria Dorwart",
+                            "companyLogo": "/images/Givsum.png",
+                            "designation": "CEO - Littel, Schroeder and McGlynn",
+                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+                            "profileImage": "/images/client-2.png"
+                        },
+                        {
+                            "name": "Hideyuki Nakanishi",
+                            "companyLogo": "/images/hls-logo.png",
+                            "designation": "Technology Lead",
+                            "testimonial": "TechoMark offered exceptional service on our ITR project. We were facing challenges due to outdated systems and fragmented workflows, but TechoMark's dedicated team armed with .NET, Angular JS, and Azure expertise developed a comprehensive solution in 18 months. The new platform integrates essential features like client and HR portals.",
+                            "profileImage": "/images/client-3.png"
+                        }
+                    ],
+                    "title": "Clients <span>Speak</span>",
+                    "subtitle": "Dont’t take our word for it"
+                }
+            ]
+        }
+    }
+}
