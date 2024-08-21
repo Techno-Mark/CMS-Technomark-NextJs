@@ -8,19 +8,14 @@ interface formsection {
 }
 
 interface formProps {
-  props?: {
-    data: formsection[];
-  };
-  techstartupform?: boolean;
+  props?: any;
 }
 
-const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
+const ContactFormSection: React.FC<formProps> = ({ props }: any) => {
   return (
     <>
       <div
-        className={`flex flex-wrap ${styles.formcontainer} ${
-          techstartupform ? styles.techstartupform : ""
-        }`}
+        className={`flex justify-center items-center flex-wrap ${styles.formcontainer}`}
       >
         <div className={styles.formleft}>
           <div className={styles.formtext}>
@@ -29,20 +24,17 @@ const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
                 ? props.find((item: any) => item.title).title
                 : ""}
             </h3>
-            <ul>
-              {props?.find((item: any) => item.Data) &&
-                props
-                  ?.find((item: any) => item.Data)
-                  .Data?.map((item: any, index: any) => {
-                    return (
-                      <li key={index}>
-                        {item.items.find((item: any) => item.text)
-                          ? item.items.find((item: any) => item.text).text
-                          : ""}
-                      </li>
-                    );
-                  })}
-            </ul>
+            <p className={styles.desc}>
+              {props.find((item: any) => item.subTitle)
+                ? props.find((item: any) => item.subTitle).subTitle
+                : ""}
+            </p>
+            <div className={styles.bannerline}></div>
+            <b className={styles.bottomdesc}>
+              {props.find((item: any) => item.desc)
+                ? props.find((item: any) => item.desc).desc
+                : ""}
+            </b>
           </div>
         </div>
         <div className={styles.formright}>
@@ -57,7 +49,7 @@ const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
             </div>
           </div>
           <div className={styles.formarea}>
-            <h4>Request a Free Quote</h4>
+            <h4>Let&apos;s Discuss</h4>
             <div className={styles.formwrap}>
               <input
                 className="required"
@@ -91,7 +83,7 @@ const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
               />
             </div>
             <div className="formbtn">
-              <Button href="#" text="send request" variant="primary" />
+              <Button href="#" text="SUBMIT" variant="primary" />
             </div>
           </div>
         </div>
@@ -100,4 +92,4 @@ const FormSection: React.FC<formProps> = ({ props, techstartupform }: any) => {
   );
 };
 
-export default FormSection;
+export default ContactFormSection;

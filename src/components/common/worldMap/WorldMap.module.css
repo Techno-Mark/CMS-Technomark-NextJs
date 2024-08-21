@@ -1,0 +1,258 @@
+.mapsection {
+    position: relative;
+    padding-top: 20rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.mapContainer {
+    position: relative;
+    width: 82%;
+    max-width: 1200px;
+    margin-left: auto;
+}
+
+.map {
+    display: block;
+    position: absolute;
+    top: -17rem;
+    right: -4rem;
+    /* object-fit: contain; */
+    /* object-position: top right; */
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.titletext h2 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 42px;
+    color: var(--secondary--color);
+    margin-top: 0;
+    margin: 1rem 0;
+}
+
+.titletext h2 span {
+    background: linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: normal;
+    border-bottom: 3px solid #40aa46;
+}
+
+.hawaiipin {
+    top: -66px;
+    left: -10%;
+}
+
+.californiapin {
+    top: -112px;
+    left: -3%;
+}
+
+.texaspin {
+    top: -90px;
+    left: -1%;
+}
+
+.ahmedabadpin {
+    top: 0px;
+    left: 62%;
+}
+
+.mumbaipin {
+    top: 60%;
+    left: 63%;
+}
+
+.hyderabadpin {
+    top: 18px;
+    left: 64.5%;
+}
+
+.sydneypin {
+    top: 225px;
+    left: 84%;
+}
+
+.mapsection .pin img {
+    width: 45px;
+    opacity: 0.8;
+}
+
+.mapsection .pin {
+    -webkit-animation: pulsate 5s linear infinite;
+    -moz-animation: pulsate 5s linear infinite;
+    animation: pulsate 5s linear infinite;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.inlinecity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inlinecity img {
+    border-radius: 100%;
+    margin-right: 15px;
+    width: 35px;
+}
+
+.inlinecity h3 {
+    color: #1d3557;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    transition: 0.5s;
+    border-bottom: 1px solid transparent;
+}
+
+.addressbox:hover .inlinecity h3 {
+    color: #1e8f45;
+    border-bottom: 1px solid #1e8f45;
+}
+
+.addressbox p {
+    color: #617289;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-bottom: 0;
+    width: 83%;
+}
+
+@media only screen and (max-width: 1499px) {
+    .map {
+        top: -13rem;
+        right: -2rem;
+        width: 100%;
+    }
+
+    .hawaiipin {
+        left: 18%;
+    }
+
+    .californiapin {
+        left: 23%;
+    }
+
+    .texaspin {
+        left: 25%;
+    }
+
+    .ahmedabadpin {
+        top: 5px;
+        left: 70%;
+    }
+
+    .mumbaipin {
+        top: 20px;
+        left: 70.6%;
+    }
+
+    .hyderabadpin {
+        top: 20px;
+        left: 71.6%;
+    }
+
+    .sydneypin {
+        top: 162px;
+        left: 88%;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .map {
+        top: 0;
+        right: 0;
+        width: 100%;
+        position: inherit;
+    }
+
+    .mapsection {
+        position: relative;
+        padding-top: 0rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .hawaiipin {
+        left: 18%;
+        top: 22%;
+    }
+
+    .californiapin {
+        left: 20%;
+        top: 22%;
+    }
+
+    .texaspin {
+        left: 22%;
+        top: 25%;
+    }
+
+    .ahmedabadpin {
+        top: 34%;
+        left: 68%;
+    }
+
+    .mumbaipin {
+        top: 36%;
+        left: 69%;
+    }
+
+    .hyderabadpin {
+        top: 39%;
+        left: 70%;
+    }
+
+    .sydneypin {
+        top: 73%;
+        left: 85%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .mapsection .pin img {
+        width: 25px;
+    }
+
+    .mapsection {
+        position: relative;
+        padding-top: 0rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .mapContainer {
+        width: 100%;
+    }
+}

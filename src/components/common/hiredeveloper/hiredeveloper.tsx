@@ -4,11 +4,16 @@ import Image from "next/image";
 
 interface HireDeveloperProps {
   props: any;
+  isengaged?: boolean;
 }
 
-const HireDeveloper: React.FC<HireDeveloperProps> = ({ props }) => {
+const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div
+      className={`flex flex-wrap justify-center ${
+        isengaged ? styles.hireengaged : ""
+      }`}
+    >
       {props
         .find((item: any) => item["Developer Card"])
         ?.["Developer Card"].map((developer: any, index: number) => (

@@ -10,6 +10,8 @@ interface HomeProps {
   givsumCaseStudyDetails: any;
   services: any;
   technology: any;
+  startup: any;
+  contactus: any;
 }
 
 // Utility function to make API calls
@@ -41,6 +43,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   let givsumCaseStudyDetails = null;
   let services = null;
   let technology = null;
+  let startup = null;
+  let contactus = null;
 
   try {
     // Determine the API endpoint based on the pathname and query parameters
@@ -66,6 +70,12 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
       case "/technology":
         technology = await apiCall("technologyPage");
         break;
+      case "/start_up_services":
+        startup = await apiCall("startupPage");
+        break;
+      case "/contact_us":
+        contactus = await apiCall("contactusPage");
+        break;
       default:
         return {
           notFound: true, // Serve a 404 page if the route is not matched
@@ -81,6 +91,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         givsumCaseStudyDetails,
         services,
         technology,
+        startup,
+        contactus,
       },
     };
   } catch (error) {
@@ -94,6 +106,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
         givsumCaseStudyDetails: null,
         services: null,
         technology: null,
+        startup: null,
+        contactus: null,
       },
     };
   }
@@ -109,16 +123,9 @@ const Page: React.FC<
   givsumCaseStudyDetails,
   services,
   technology,
+  startup,
+  contactus,
 }) => {
-  console.log(
-    maindata,
-    caseStudy,
-    hlsCaseStudyDetails,
-    airattixCaseStudyDetails,
-    givsumCaseStudyDetails,
-    services,
-    technology
-  );
   return (
     <DataComponent
       maindata={maindata}
@@ -128,6 +135,8 @@ const Page: React.FC<
       givsumCaseStudyDetails={givsumCaseStudyDetails}
       services={services}
       technology={technology}
+      startup={startup}
+      contactus={contactus}
     />
   );
 };

@@ -54,6 +54,25 @@
   position: relative;
   z-index: 5;
 }
+.formcirlerotate {
+  position: absolute;
+  top: -6rem;
+  left: -2rem;
+}
+.formcirlerotate img {
+  animation: spin 30s linear infinite;
+  margin-left: auto;
+  max-width: 14rem;
+}
+@keyframes spin {
+  from {
+    transform: rotate(-0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
 
 
 

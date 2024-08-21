@@ -28,6 +28,10 @@ import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import styles from "./home.module.css";
 import { usePathname, useSearchParams } from "next/navigation";
+import ValueService from "@/components/common/valueservice/valueservice";
+import Engage from "@/components/common/engageSection/engage";
+import ContactFormSection from "@/components/common/contactformsection/formsection";
+import WorldMap from "@/components/common/worldMap/worldMap";
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -73,6 +77,8 @@ const DataComponent = ({
   givsumCaseStudyDetails,
   services,
   technology,
+  startup,
+  contactus,
 }: {
   maindata: HomeProps;
   caseStudy: HomeProps;
@@ -81,6 +87,8 @@ const DataComponent = ({
   givsumCaseStudyDetails: HomeProps;
   services: HomeProps;
   technology: HomeProps;
+  startup: HomeProps;
+  contactus: HomeProps;
 }) => {
   const pathName: any = usePathname();
   const searchParams = useSearchParams();
@@ -89,16 +97,7 @@ const DataComponent = ({
   const client = searchParams.get("client");
 
   const fullPathWithParams = client ? `${pathName}?client=${client}` : pathName;
-  console.log(
-    fullPathWithParams,
-    maindata,
-    caseStudy,
-    hlsCaseStudyDetails,
-    airattixCaseStudyDetails,
-    givsumCaseStudyDetails,
-    services,
-    technology
-  );
+
   useEffect(() => {
     if (fullPathWithParams === "/home") {
       setHomeData(maindata);
@@ -114,6 +113,10 @@ const DataComponent = ({
       setHomeData(services);
     } else if (fullPathWithParams === "/technology") {
       setHomeData(technology);
+    } else if (fullPathWithParams === "/start_up_services") {
+      setHomeData(startup);
+    } else if (fullPathWithParams === "/contact_us") {
+      setHomeData(contactus);
     }
   }, [fullPathWithParams]);
 
@@ -192,8 +195,15 @@ const DataComponent = ({
                     title: sectionData.find((item: any) => item.title)
                       ? sectionData.find((item: any) => item.title).title
                       : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    subtitle: sectionData.find(
+                      (item: any) => item.subTitle || item.subtitle
+                    )
+                      ? sectionData.find(
+                          (item: any) => item.subTitle || item.subtitle
+                        ).subTitle ||
+                        sectionData.find(
+                          (item: any) => item.subTitle || item.subtitle
+                        ).subtitle
                       : "",
                   }}
                   titleFirst={true}
@@ -438,9 +448,19 @@ const DataComponent = ({
       case "formsection":
         return (
           sectionData && (
-            <section className={`${styles.formsection} tm-section bg-white`}>
+            <section
+              className={`${
+                fullPathWithParams === "/start_up_services"
+                  ? styles.techstrtupformsection
+                  : styles.formsection
+              } tm-section bg-white`}
+            >
               <div className="container mx-auto">
-                <FormSection props={sectionData} />
+                {fullPathWithParams === "/start_up_services" ? (
+                  <FormSection props={sectionData} techstartupform={true} />
+                ) : (
+                  <FormSection props={sectionData} />
+                )}
               </div>
             </section>
           )
@@ -615,7 +635,13 @@ const DataComponent = ({
       case "keyfeatures":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section
+              className={`${
+                fullPathWithParams === "/contact_us"
+                  ? styles.techstrtupformsection
+                  : styles.features
+              } tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -627,19 +653,32 @@ const DataComponent = ({
                       : "",
                   }}
                   titleFirst={
-                    fullPathWithParams === "/technology" ? true : false
+                    fullPathWithParams === "/technology" ||
+                    fullPathWithParams === "/start_up_services"
+                      ? true
+                      : false
                   }
                   titleClassName="featurestitle"
                 />
-                {fullPathWithParams === "/casestudydetail?client=Airattix" ||
-                fullPathWithParams === "/casestudydetail?client=Givsum" ||
-                fullPathWithParams === "/casestudydetail?client=HLS" ? (
+                {fullPathWithParams === "/casestudydetail?client=HLS" ||
+                fullPathWithParams === "/casestudydetail?client=Airattix" ||
+                fullPathWithParams === "/casestudydetail?client=Givsum" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
+                    isFeatured={true}
+                  />
+                ) : fullPathWithParams === "/start_up_services" ? (
+                  <Services
+                    props={
+                      sectionData.find((item: any) => item.Data)
+                        ? sectionData.find((item: any) => item.Data).Data
+                        : ""
+                    }
+                    isFeatured={true}
                   />
                 ) : (
                   <Services
@@ -648,7 +687,6 @@ const DataComponent = ({
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
-                    isProduct={true}
                   />
                 )}
               </div>
@@ -661,7 +699,11 @@ const DataComponent = ({
             <section
               className={`${styles.prodcutherosection} tm-section bg-white`}
             >
-              <Herosection props={sectionData} />
+              {fullPathWithParams === "/start_up_services" ? (
+                <Herosection props={sectionData} istechstartup={true} />
+              ) : (
+                <Herosection props={sectionData} />
+              )}
             </section>
           )
         );
@@ -796,11 +838,59 @@ const DataComponent = ({
           sectionData && (
             <section className={`${styles.techexpert} tm-section bg-white`}>
               <div className="container mx-auto">
-                <TechExpert props={sectionData} />
+                {fullPathWithParams === "/start_up_services" ? (
+                  <TechExpert props={sectionData} istechstartupexpert />
+                ) : (
+                  <TechExpert props={sectionData} />
+                )}
               </div>
             </section>
           )
         );
+      case "valueservice":
+        return (
+          sectionData && (
+            <section className={`${styles.valueservice} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <ValueService props={sectionData} />
+              </div>
+            </section>
+          )
+        );
+      case "engagesection":
+        return (
+          sectionData && (
+            <section className={`${styles.hiredeveloper} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="servicestitle"
+                />
+                <Engage props={sectionData} />
+              </div>
+            </section>
+          )
+        );
+      case "contactform":
+        return (
+          sectionData && (
+            <>
+              <section className={`${styles.contactform} tm-section bg-white`}>
+                <div className="container mx-auto">
+                  <ContactFormSection props={sectionData} />
+                </div>
+              </section>
+            </>
+          )
+        );
+      case "locations":
+        return sectionData && <WorldMap props={sectionData} />;
       default:
         return null;
     }

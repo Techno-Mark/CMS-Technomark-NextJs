@@ -43,9 +43,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({
         <div className={containerClassNames}>
           {sectionData.find((item: any) => item.isCaseStudy) &&
           (sectionData.find((item: any) => item.isCaseStudy).isCaseStudy ==
-          "true"
-            ? true
-            : false) ? (
+          "true") ? (
             // Case Study Detail Page Layout
             <div className={styles.casestudytech}>
               <div className="w-full">
@@ -64,7 +62,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({
             </div>
           ) : (
             // Default Home Page Layout
-            <>
+            <div className="flex items-center justify-center">
               <div className="lg:w-1/2 md:w-full">
                 <h2
                   className={`maintitle ${styles.maintitle} `}
@@ -81,7 +79,7 @@ const TectStartupBg: React.FC<TectStartupBgProps> = ({
                   <Button href="#" text="Read more" variant="secondary" />
                 </div>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>

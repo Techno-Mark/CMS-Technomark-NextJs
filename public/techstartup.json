@@ -1,0 +1,697 @@
+{
+    "data": {
+        "templateData": {
+            "sectionsOrder": [
+                "techstrtupherosection",
+                "techstrtupformsection",
+                "methodology",
+                "valueservice",
+                "casestudy",
+                "techstartupexpert",
+                "startupfeatures",
+                "guarantee",
+                "videosection",
+                "engagesection",
+                "client",
+                "faq",
+                "awards"
+            ],
+            "techstrtupherosection": {
+                "label": "Start-up Services",
+                "title": "Your Trusted Technology Partner",
+                "subtitle": "As Startup Technology Partners, We craft products for global startups, Contributing significantly to their success stories",
+                "url": "#",
+                "heroImage": "/images/techstrtup.png"
+            },
+            "client": [
+                {
+                    "data": [
+                        {
+                            "name": "Client One",
+                            "companyLogo": "/images/Airattrix.png",
+                            "designation": "CEO, Company One",
+                            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin iaculis hendrerit orci, ut fringilla libero luctussed. Nulla ultrices lectus leo, at aliquam felissuscipit nec. Maecenas volutpat neque ac elit pretium,in pellentesque lacus blandit. Nullam ut lacus sedmauris euismod convallis elementum ac felis.",
+                            "profileImage": "/images/client-1.png"
+                        },
+                        {
+                            "name": "Client Two",
+                            "companyLogo": "/images/Givsum.png",
+                            "designation": "Marketing Director, Company Two",
+                            "testimonial": "The team was very supportive and the results were fantastic!",
+                            "profileImage": "/images/client-2.png"
+                        },
+                        {
+                            "name": "Client Three",
+                            "companyLogo": "/images/hls-logo.png",
+                            "designation": "CTO, Company Three",
+                            "testimonial": "I highly recommend their services. Professional and efficient.",
+                            "profileImage": "/images/client-3.png"
+                        }
+                    ],
+                    "title": "Clients <span>Speak</span>",
+                    "subtitle": "Dont’t take our word for it"
+                }
+            ],
+            "casestudy": [
+                {
+                    "data": [
+                        {
+                            "category": "Software Development",
+                            "text": "Software Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Development & Operation",
+                            "text": "Development Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Artificial Intelligence",
+                            "text": "Artificial Airattix, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Software Development",
+                            "text": "Software Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Development & Operation",
+                            "text": "Development Airattix v, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        },
+                        {
+                            "category": "Artificial Intelligence",
+                            "text": "Artificial Airattix second, an innovative platform in the storage solutions market, connects individuals seeking storage spaces with those who have available space to offer.",
+                            "image": "/images/Airattrix.png",
+                            "title": "Airattix",
+                            "video": "/images/Case-study.mp4",
+                            "subpoints": [
+                                "Core Technology: Angular JS | Flutter",
+                                "Number of Developers: 5",
+                                "Type Of Service: Accelerator"
+                            ],
+                            "additionalTitle": "Results",
+                            "additionalPoints": [
+                                {
+                                    "score": "90%",
+                                    "description": "SEO Score"
+                                },
+                                {
+                                    "score": "38%",
+                                    "description": "Conversion Rate"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Reach"
+                                },
+                                {
+                                    "score": "2 X",
+                                    "description": "Team Scaling"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Case Studies",
+                    "subtitle": "Explore our impressive projects where our web developers assisted <br> accredited organizations in overcoming technology hurdles and startup challenges."
+                }
+            ],
+            "methodology": [
+                {
+                    "data": [
+                        {
+                            "title": "Assess",
+                            "details": [
+                                "Technology Decisions",
+                                "Architectural Design & Patterns",
+                                "Infrastructure and Deployment Structures",
+                                "Security Assessment",
+                                "Code and Quality Review",
+                                "Performance Scores",
+                                "Development Process Audit"
+                            ],
+                            "cardNumber": "01",
+                            "description": "Scrutinize project architecture, infrastructure, performance, & security."
+                        },
+                        {
+                            "title": "Plan",
+                            "details": [
+                                "Project Goals",
+                                "Scope Definition",
+                                "Resource Allocation",
+                                "Timeline Planning",
+                                "Risk Management"
+                            ],
+                            "cardNumber": "02",
+                            "description": "Identify project goals, scope, resources, timeline, and risks."
+                        },
+                        {
+                            "title": "Design",
+                            "details": [
+                                "UI/UX Designs",
+                                "System Architecture",
+                                "Database Schema"
+                            ],
+                            "cardNumber": "03",
+                            "description": "Create UI/UX designs, system architecture, and database schema."
+                        },
+                        {
+                            "title": "Execute",
+                            "details": [
+                                "Roadmap Creation",
+                                {
+                                    "items": [
+                                        "Sprint Planning",
+                                        "Sprint Development",
+                                        "Sprint Review"
+                                    ],
+                                    "title": "Agile Practices"
+                                },
+                                "Infrastructure and Deployment Structures",
+                                "Security Assessment",
+                                "Code and Quality Review",
+                                "Performance Scores",
+                                "Development Process Audit"
+                            ],
+                            "cardNumber": "04",
+                            "description": "Personalize sprint planning, incorporate latest trends, and create a roadmap."
+                        }
+                    ],
+                    "title": "Facing Startup Challenges? Here's a <span>One-stop solution</span>",
+                    "subtitle": "Facing Startup challenges? We've got you covered. Challenges at every startup stage?"
+                }
+            ],
+            "faq": [
+                {
+                    "data": [
+                        {
+                            "answer": "IT1 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "How can IT outsourcing benefit our startup?"
+                        },
+                        {
+                            "answer": "IT2 outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can a small business benefit from IT services provided by a startup de"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "Can we scale IT solutions as our startup grows?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What security measures are in place to protect our sensitive data?"
+                        },
+                        {
+                            "answer": "IT outsourcing allows startups to access specialized skills, reduce costs, and focus on core competencies. It accelerates development, enhances flexibility, and provides a competitive edge.",
+                            "question": "What is the typical timeframe for implementing IT solutions for startups?"
+                        }
+                    ],
+                    "title": "Frequently Asked <span>Questions</span>"
+                }
+            ],
+            "awards": [
+                {
+                    "data": [
+                        {
+                            "alt": "Android",
+                            "src": "/images/award1.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award2.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award3.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award4.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award5.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award6.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award7.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award8.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award9.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award10.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award11.png"
+                        },
+                        {
+                            "alt": "Android",
+                            "src": "/images/award12.png"
+                        }
+                    ],
+                    "title": "Awards & Recognition"
+                }
+            ],
+            "techstrtupformsection": [
+                {
+                    "data": [
+                        {
+                            "text": "We’ll reach out to you within 24 hours."
+                        },
+                        {
+                            "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+                        },
+                        {
+                            "text": " You can start 15-days risk-free trial with us."
+                        }
+                    ],
+                    "title": "What will happen next?"
+                }
+            ],
+            "guarantee": [
+                {
+                    "data": [
+                        {
+                            "title": "Build Right. Build Smart",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "Ship Early. Ship Often",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        },
+                        {
+                            "title": "We engineer. We deliver",
+                            "description": "We float the product canvas to all stakeholders with information lik."
+                        }
+                    ],
+                    "title": "100% Guarantee of <b>Techno<span>Mark</span></b>",
+                    "videosrc": "/images/generalvideo.mp4"
+                }
+            ],
+            "techIcons": [
+                {
+                    "data": [
+                        {
+                            "alt": "Android",
+                            "src": "/images/android.png"
+                        },
+                        {
+                            "alt": "Apple",
+                            "src": "/images/Apple_logo.png"
+                        },
+                        {
+                            "alt": "kotlin",
+                            "src": "/images/kotlin.png"
+                        },
+                        {
+                            "alt": "swift",
+                            "src": "/images/swift.png"
+                        },
+                        {
+                            "alt": "react-native",
+                            "src": "/images/react-native.png"
+                        },
+                        {
+                            "alt": "flutter",
+                            "src": "/images/flutter.png"
+                        },
+                        {
+                            "alt": "react",
+                            "src": "/images/react.png"
+                        },
+                        {
+                            "alt": "nextjs",
+                            "src": "/images/next-js.png"
+                        },
+                        {
+                            "alt": "Angular9",
+                            "src": "/images/angular.png"
+                        },
+                        {
+                            "alt": "javascript",
+                            "src": "/images/js-icon.png"
+                        },
+                        {
+                            "alt": "jquery",
+                            "src": "/images/jquery.png"
+                        },
+                        {
+                            "alt": "html",
+                            "src": "/images/html-icon.png"
+                        },
+                        {
+                            "alt": "node",
+                            "src": "/images/node.png"
+                        },
+                        {
+                            "alt": "php",
+                            "src": "/images/php-icon.png"
+                        },
+                        {
+                            "alt": "python",
+                            "src": "/images/python-icon.png"
+                        },
+                        {
+                            "alt": "dotnet",
+                            "src": "/images/dotnet.png"
+                        },
+                        {
+                            "alt": "laravel",
+                            "src": "/images/laravel-icon.png"
+                        },
+                        {
+                            "alt": "ruby on rails",
+                            "src": "/images/Ruby_On_Rails.png"
+                        }
+                    ],
+                    "title": "Meet Your <span>Diverse</span>"
+                }
+            ],
+            "startupfeatures": {
+                "data": [
+                    {
+                        "icon": "/images/enterprise.png",
+                        "text": "Enterprise Software"
+                    },
+                    {
+                        "icon": "/images/hire-develop.png",
+                        "text": "Hire Developers"
+                    },
+                    {
+                        "icon": "/images/mobile-programming.png",
+                        "text": "Mobile Apps"
+                    },
+                    {
+                        "icon": "/images/cloud-add.png",
+                        "text": "Cloud Native"
+                    },
+                    {
+                        "icon": "/images/cpu-charge.png",
+                        "text": "AI Development"
+                    },
+                    {
+                        "icon": "/images/airdrop.png",
+                        "text": "IoT App"
+                    },
+                    {
+                        "icon": "/images/convert-3d-cube.png",
+                        "text": "Blockchain"
+                    },
+                    {
+                        "icon": "/images/shopping-cart.png",
+                        "text": "Ecommerce"
+                    },
+                    {
+                        "icon": "/images/convert-3d-cube.png",
+                        "text": "Blockchain"
+                    },
+                    {
+                        "icon": "/images/shopping-cart.png",
+                        "text": "Ecommerce"
+                    }
+                ],
+                "title": "The TechnoMark <span>Assurance</span>",
+                "subtitle": "We are dedicated to delivering cutting-edge solutions with an unwavering commitment to innovation, quality, and your success.​"
+            },
+            "videosection": {
+                "video": {
+                    "videoUrl": "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4",
+                    "subTitle": "We are",
+                    "Title": "TechnoMark"
+                }
+            },
+            "engagesection": {
+                "developerTypes": [
+                    {
+                        "type": "Part-time Developer",
+                        "hoursPerMonth": "80 Hours/Month",
+                        "image": {
+                            "src": "/images/part-time.png",
+                            "alt": "part-time"
+                        },
+                        "details": [
+                            "On demand agile teams for end to end product engineering starting from conceptualization, rapid MVPs, development to scaling and more."
+                        ],
+                        "link": {
+                            "url": "#",
+                            "text": "Hire Now"
+                        }
+                    },
+                    {
+                        "type": "Full-time Developer",
+                        "hoursPerMonth": "160 Hours/Month",
+                        "image": {
+                            "src": "/images/full-time.png",
+                            "alt": "full-time"
+                        },
+                        "details": [
+                            "A team that is an extension of yours. Fill in short-term technology gaps or build a Centre of Excellence"
+                        ],
+                        "link": {
+                            "url": "#",
+                            "text": "Hire Now"
+                        }
+                    },
+                    {
+                        "type": "Hourly Developer",
+                        "hoursPerMonth": "Custom Hours",
+                        "image": {
+                            "src": "/images/hourly-time.png",
+                            "alt": "hourly-time"
+                        },
+                        "details": [
+                            "Have specific requirements?Hire one of our expert developers on demand."
+                        ],
+                        "link": {
+                            "url": "#",
+                            "text": "Hire Now"
+                        }
+                    }
+                ]
+            },
+            "techstartupexpert": {
+                "title": "Why Techno<span>Mark</span>",
+                "toptitle": "Tops the Charts for Hiring Dedicated Developers in India!",
+                "Image": "/images/expert-android.png",
+                "expertiseList": [
+                    {
+                        "text": "Agile Methodology to keep you on the same page with our Development Process"
+                    },
+                    {
+                        "text": "Faster Resource Accessibility to kick-start your Project at the Earliest"
+                    },
+                    {
+                        "text": "Top 3% of IT Talent across the Globe"
+                    },
+                    {
+                        "text": "Code Security "
+                    },
+                    {
+                        "text": "Zero hiring fee, quick onboarding"
+                    },
+                    {
+                        "text": "Large Technical Pool with wider Technology Stack to meet your expectations"
+                    },
+                    {
+                        "text": "Simple & Transparent Pricing with Flexible Hiring Models"
+                    },
+                    {
+                        "text": "Successful On-Time Delivery of Project"
+                    },
+                    {
+                        "text": "Adherence to data security practices"
+                    },
+                    {
+                        "text": "Fully Signed NDA to ensure Business Confidentiality"
+                    },
+                    {
+                        "text": "Easy Exit Policy"
+                    }
+                ]
+            },
+            "valueservice": {
+                "title": "Value Added Services Across <span>Startup Stages</span>",
+                "subtitle": "When hiring developers, businesses mostly prefer in-house developers, freelance developers, or outsourcing to a software development company like TechnoMark.",
+                "services": [
+                  {
+                    "title": "Seed - Creator",
+                    "items": [
+                      "Idea Validation & Refinement",
+                      "Discovery Brainstorming Workshops",
+                      "Roadmap Creation",
+                      "MVP Design & Development"
+                    ]
+                  },
+                  {
+                    "title": "Scale - Accelerator",
+                    "items": [
+                      "Technical Assessment and Consultation",
+                      "Quick Team Scaling",
+                      "Performance Optimization",
+                      "Analytics & Improved Engagement",
+                      "Usability Assessment & Improvement",
+                      "Architectural Improvement For Scalability",
+                      "DevOps Support",
+                      "Technology Audit",
+                      "Security Improvement"
+                    ]
+                  },
+                  {
+                    "title": "Hyper Growth - Scaler",
+                    "items": [
+                      "Team Ramp Up",
+                      "Re-engineering",
+                      "Personalization & Intelligence",
+                      "Improved UX Through Micro-Interactions",
+                      "DevOps",
+                      "Test Automation",
+                      "Compliances",
+                      "Big Data & Machine Learning"
+                    ]
+                  }
+                ]
+              }
+        }
+    }
+}

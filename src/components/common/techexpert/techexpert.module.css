@@ -62,6 +62,31 @@
   max-width: 37rem;
 }
 
+.techstartupbox {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.techstartupbox img {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.techstartupbox p {
+  color: var(--secondary--color);
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.6rem;
+  letter-spacing: 0.24px;
+  transition: 0.5s ease-in-out;
+  padding-bottom: 20px;
+}
+.techstartupbox:hover p {
+  transform: translateX(10px);
+  text-decoration: underline;
+}
+
 
 @media only screen and (max-width: 1560px) {
   .expertlistbox p{
