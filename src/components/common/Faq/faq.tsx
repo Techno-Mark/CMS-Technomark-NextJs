@@ -14,7 +14,7 @@ interface FaqSectionProps {
 }
 
 const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -37,12 +37,9 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
               aria-controls={`accordion-collapse-body-${index}`}
               onClick={() => handleToggle(index)}
             >
-              <div className="flex">
+              <div className={`${styles.questionText} flex`}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-
-                {faq.items.find((item: any) => item.question)
-                  ? faq.items.find((item: any) => item.question).question
-                  : ""}
+                {faq.items.find((item: any) => item.question)?.question || ""}
               </div>
               <Image
                 src={
@@ -65,11 +62,7 @@ const Faq: React.FC<FaqSectionProps> = ({ props }: any) => {
             aria-labelledby={`accordion-collapse-heading-${index}`}
           >
             <div className={`${styles.cardbody} ml-5 mb-5`}>
-              <p>
-                {faq.items.find((item: any) => item.answer)
-                  ? faq.items.find((item: any) => item.answer).answer
-                  : ""}
-              </p>
+              <p>{faq.items.find((item: any) => item.answer)?.answer || ""}</p>
             </div>
           </div>
         </div>
