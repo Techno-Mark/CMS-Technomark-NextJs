@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
     {
       name: "Start-up Services",
-      path: "/start_up_services",
+      path: "/start-up-services",
     },
     {
       name: "Case Studies",
@@ -217,7 +217,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
     {
       name: "Contact Us",
-      path: "/contact_us",
+      path: "/contact-us",
     },
   ];
 

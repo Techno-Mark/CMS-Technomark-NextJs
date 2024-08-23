@@ -1,37 +1,76 @@
-import React, { useEffect, useState } from "react";
-import Homesection from "@/components/homesection/HomeSection";
-import TectStartupBg from "@/components/tech-startup-bg/tect-startup-bg";
-import TitleSection from "@/components/common/title/title";
-import MethodologyBox from "@/components/common/methodologybox/methodologybox";
-import Services from "@/components/common/services/services";
-import CaseStudy from "@/components/common/casestudy/casestudy";
-import TechIcons from "@/components/common/techicons/techicons";
-import GuaranteePoints from "@/components/common/guaranteepoint/guaranteepoint";
-import Video from "@/components/common/video/video";
-import Client from "@/components/common/client/client";
-import Achievement from "@/components/common/achievement/achievement";
-import Faq from "@/components/common/Faq/faq";
-import Singleaward from "@/components/common/singleaward/singleaward";
-import FormSection from "@/components/common/formsection/formsection";
-import CaseStudyList from "@/components/common/CasestudyList/CasestudyList";
-import CaseStudyDetail from "@/components/common/casestudydetail/casestudydetail";
-import ScreenSlider from "@/components/common/screenslider/screenslider";
-import Challenges from "@/components/common/Challenges/Challenges";
-import Herosection from "@/components/common/herosection/herosection";
-import ProductSolutions from "@/components/common/productsolutions/productsolutions";
-import TechSlider from "@/components/common/techslider/techslider";
-import TechService from "@/components/common/techservice/techservice";
-import TechExpert from "@/components/common/techexpert/techexpert";
-import TechBenifits from "@/components/common/techbenifits/techbenifits";
-import HireDeveloper from "@/components/common/hiredeveloper/hiredeveloper";
 import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import React, { lazy, useEffect, useState } from "react";
 import styles from "./home.module.css";
-import { usePathname, useSearchParams } from "next/navigation";
-import ValueService from "@/components/common/valueservice/valueservice";
-import Engage from "@/components/common/engageSection/engage";
-import ContactFormSection from "@/components/common/contactformsection/formsection";
-import WorldMap from "@/components/common/worldMap/worldMap";
+
+const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
+const TechStartupBg = lazy(
+  () => import("@/components/tech-startup-bg/tech-startup-bg")
+);
+const TitleSection = lazy(() => import("@/components/common/title/title"));
+const MethodologyBox = lazy(
+  () => import("@/components/common/methodologybox/methodologybox")
+);
+const Services = lazy(() => import("@/components/common/services/services"));
+const CaseStudy = lazy(() => import("@/components/common/casestudy/casestudy"));
+const TechIcons = lazy(() => import("@/components/common/techicons/techicons"));
+const GuaranteePoints = lazy(
+  () => import("@/components/common/guaranteepoint/guaranteepoint")
+);
+const Video = lazy(() => import("@/components/common/video/video"));
+const Client = lazy(() => import("@/components/common/client/client"));
+const Achievement = lazy(
+  () => import("@/components/common/achievement/achievement")
+);
+const Faq = lazy(() => import("@/components/common/Faq/faq"));
+const Singleaward = lazy(
+  () => import("@/components/common/singleaward/singleaward")
+);
+const FormSection = lazy(
+  () => import("@/components/common/formsection/formsection")
+);
+const CaseStudyList = lazy(
+  () => import("@/components/common/CasestudyList/CasestudyList")
+);
+const CaseStudyDetail = lazy(
+  () => import("@/components/common/casestudydetail/casestudydetail")
+);
+const ScreenSlider = lazy(
+  () => import("@/components/common/screenslider/screenslider")
+);
+const Challenges = lazy(
+  () => import("@/components/common/Challenges/Challenges")
+);
+const Herosection = lazy(
+  () => import("@/components/common/herosection/herosection")
+);
+const ProductSolutions = lazy(
+  () => import("@/components/common/productsolutions/productsolutions")
+);
+const TechSlider = lazy(
+  () => import("@/components/common/techslider/techslider")
+);
+const TechService = lazy(
+  () => import("@/components/common/techservice/techservice")
+);
+const TechExpert = lazy(
+  () => import("@/components/common/techexpert/techexpert")
+);
+const TechBenifits = lazy(
+  () => import("@/components/common/techbenifits/techbenifits")
+);
+const HireDeveloper = lazy(
+  () => import("@/components/common/hiredeveloper/hiredeveloper")
+);
+const Engage = lazy(() => import("@/components/common/engageSection/engage"));
+const ValueService = lazy(
+  () => import("@/components/common/valueservice/valueservice")
+);
+const ContactFormSection = lazy(
+  () => import("@/components/common/contactformsection/formsection")
+);
+const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -69,63 +108,20 @@ interface HomeProps {
   props: any;
 }
 
-const DataComponent = ({
-  maindata,
-  caseStudy,
-  hlsCaseStudyDetails,
-  airattixCaseStudyDetails,
-  givsumCaseStudyDetails,
-  services,
-  technology,
-  startup,
-  contactus,
-}: {
-  maindata: HomeProps;
-  caseStudy: HomeProps;
-  hlsCaseStudyDetails: HomeProps;
-  airattixCaseStudyDetails: HomeProps;
-  givsumCaseStudyDetails: HomeProps;
-  services: HomeProps;
-  technology: HomeProps;
-  startup: HomeProps;
-  contactus: HomeProps;
-}) => {
+const DataComponent = ({ data }: { data: HomeProps }) => {
   const pathName: any = usePathname();
-  const searchParams = useSearchParams();
   const [homeData, setHomeData] = useState<any>();
 
-  const client = searchParams.get("client");
-
-  const fullPathWithParams = client ? `${pathName}?client=${client}` : pathName;
-
   useEffect(() => {
-    if (fullPathWithParams === "/home") {
-      setHomeData(maindata);
-    } else if (fullPathWithParams === "/casestudylist") {
-      setHomeData(caseStudy);
-    } else if (fullPathWithParams === "/casestudydetail?client=HLS") {
-      setHomeData(hlsCaseStudyDetails);
-    } else if (fullPathWithParams === "/casestudydetail?client=Airattix") {
-      setHomeData(airattixCaseStudyDetails);
-    } else if (fullPathWithParams === "/casestudydetail?client=Givsum") {
-      setHomeData(givsumCaseStudyDetails);
-    } else if (fullPathWithParams === "/services") {
-      setHomeData(services);
-    } else if (fullPathWithParams === "/technology") {
-      setHomeData(technology);
-    } else if (fullPathWithParams === "/start_up_services") {
-      setHomeData(startup);
-    } else if (fullPathWithParams === "/contact_us") {
-      setHomeData(contactus);
-    }
-  }, [fullPathWithParams]);
+    setHomeData(data);
+  }, [pathName]);
 
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
       case "herosections":
         return sectionData && <Homesection sectionData={sectionData} />;
       case "techstartup":
-        return sectionData && <TectStartupBg sectionData={sectionData} />;
+        return sectionData && <TechStartupBg sectionData={sectionData} />;
       case "methodology":
         return (
           sectionData && (
@@ -233,6 +229,7 @@ const DataComponent = ({
                 />
               </div>
               <div className="container mx-auto">
+                {/* {sectionData && (console.log("sectionData",sectionData))} */}
                 <TitleSection
                   sectionData={{
                     title: sectionData.find((item: any) => item.title)
@@ -245,6 +242,7 @@ const DataComponent = ({
                   titleFirst={true}
                   titleClassName="meetdivresetitle"
                 />
+
                 <TechIcons
                   props={
                     sectionData.find((item: any) => item.Icons)
@@ -366,7 +364,7 @@ const DataComponent = ({
                   titleClassName="achievementtitle"
                 />
                 <Achievement
-                  props={
+                  data={
                     sectionData.find((item: any) => item.Data)
                       ? sectionData.find((item: any) => item.Data).Data
                       : ""
@@ -450,13 +448,13 @@ const DataComponent = ({
           sectionData && (
             <section
               className={`${
-                fullPathWithParams === "/start_up_services"
+                pathName === "/start-up-services"
                   ? styles.techstrtupformsection
                   : styles.formsection
               } tm-section bg-white`}
             >
               <div className="container mx-auto">
-                {fullPathWithParams === "/start_up_services" ? (
+                {pathName === "/start-up-services" ? (
                   <FormSection props={sectionData} techstartupform={true} />
                 ) : (
                   <FormSection props={sectionData} />
@@ -516,7 +514,7 @@ const DataComponent = ({
                   titleFirst={true}
                   titleClassName="casestudydetailtitle"
                 />
-                <CaseStudyDetail props={sectionData} />
+                <CaseStudyDetail data={sectionData} />
               </div>
             </section>
           )
@@ -637,7 +635,7 @@ const DataComponent = ({
           sectionData && (
             <section
               className={`${
-                fullPathWithParams === "/contact_us"
+                pathName === "/contact-us"
                   ? styles.techstrtupformsection
                   : styles.features
               } tm-section bg-white`}
@@ -653,16 +651,16 @@ const DataComponent = ({
                       : "",
                   }}
                   titleFirst={
-                    fullPathWithParams === "/technology" ||
-                    fullPathWithParams === "/start_up_services"
+                    pathName === "/technology" ||
+                    pathName === "/start-up-services"
                       ? true
                       : false
                   }
                   titleClassName="featurestitle"
                 />
-                {fullPathWithParams === "/casestudydetail?client=HLS" ||
-                fullPathWithParams === "/casestudydetail?client=Airattix" ||
-                fullPathWithParams === "/casestudydetail?client=Givsum" ? (
+                {pathName === "/casestudydetail-HLS" ||
+                pathName === "/casestudydetail-Airattix" ||
+                pathName === "/casestudydetail-Givsum" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
@@ -671,7 +669,7 @@ const DataComponent = ({
                     }
                     isFeatured={true}
                   />
-                ) : fullPathWithParams === "/start_up_services" ? (
+                ) : pathName === "/start-up-services" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
@@ -699,7 +697,7 @@ const DataComponent = ({
             <section
               className={`${styles.prodcutherosection} tm-section bg-white`}
             >
-              {fullPathWithParams === "/start_up_services" ? (
+              {pathName === "/start-up-services" ? (
                 <Herosection props={sectionData} istechstartup={true} />
               ) : (
                 <Herosection props={sectionData} />
@@ -838,7 +836,7 @@ const DataComponent = ({
           sectionData && (
             <section className={`${styles.techexpert} tm-section bg-white`}>
               <div className="container mx-auto">
-                {fullPathWithParams === "/start_up_services" ? (
+                {pathName === "/start-up-services" ? (
                   <TechExpert props={sectionData} istechstartupexpert />
                 ) : (
                   <TechExpert props={sectionData} />
@@ -895,7 +893,7 @@ const DataComponent = ({
         return null;
     }
   };
-  console.log(homeData);
+  console.log("homeData", homeData);
   return (
     <>
       {homeData ? (
