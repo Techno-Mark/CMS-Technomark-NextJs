@@ -71,6 +71,7 @@ const ContactFormSection = lazy(
   () => import("@/components/common/contactformsection/formsection")
 );
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
+const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -889,6 +890,33 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         );
       case "locations":
         return sectionData && <WorldMap props={sectionData} />;
+      case "bloglist":
+        return (
+          sectionData && (
+            <section className={`${styles.casestudylist} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <p className={styles.casestudylistlabel}>
+                  {sectionData.find((item: any) => item.label)
+                    ? sectionData.find((item: any) => item.label).label
+                    : ""}
+                </p>
+                <TitleSection
+                  sectionData={{
+                    title: sectionData.find((item: any) => item.title)
+                      ? sectionData.find((item: any) => item.title).title
+                      : "",
+                    subtitle: sectionData.find((item: any) => item.subtitle)
+                      ? sectionData.find((item: any) => item.subtitle).subtitle
+                      : "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="casestudylisttitle"
+                />
+                <BlogList props={sectionData} />
+              </div>
+            </section>
+          )
+        );
       default:
         return null;
     }

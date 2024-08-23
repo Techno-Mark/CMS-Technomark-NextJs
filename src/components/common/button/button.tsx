@@ -2,12 +2,13 @@ import React from "react";
 import styles from "./button.module.css";
 
 interface ButtonProps {
-  href: string;
+  href?: string;
   text: string;
   variant: "primary" | "secondary";
+  onClick?: any;
 }
 
-const Button: React.FC<ButtonProps> = ({ href, text, variant }) => {
+const Button: React.FC<ButtonProps> = ({ href, text, variant, onClick }) => {
   const baseClass = styles.newPrimarybtn;
   const variantClass = variant === "secondary" ? styles.secondarybtn : "";
   const strokeColor =
@@ -15,12 +16,21 @@ const Button: React.FC<ButtonProps> = ({ href, text, variant }) => {
 
   return (
     <>
-      <a href={href} className={`${baseClass} ${variantClass}`}>
-        {text}
-        <span className={styles.arrowanimatebtn}>
-          <i className={styles.icon}></i>
-        </span>
-      </a>
+      {!!href ? (
+        <a href={href} className={`${baseClass} ${variantClass}`}>
+          {text}
+          <span className={styles.arrowanimatebtn}>
+            <i className={styles.icon}></i>
+          </span>
+        </a>
+      ) : (
+        <p className={`${baseClass} ${variantClass}`} onClick={onClick}>
+          {text}
+          <span className={styles.arrowanimatebtn}>
+            <i className={styles.icon}></i>
+          </span>
+        </p>
+      )}
     </>
   );
 };

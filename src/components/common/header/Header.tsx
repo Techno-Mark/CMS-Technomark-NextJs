@@ -119,6 +119,10 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
       path: "/casestudylist",
     },
     {
+      name: "Blogs",
+      path: "/blogs",
+    },
+    {
       name: "Technologies",
       path: "/technology",
       submenu: [

@@ -9,7 +9,7 @@ interface HomeProps {
 const apiCall = async (param: string) => {
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}getBySlug${param}`,
+      `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
       {
         headers: {
           referal: "http://localhost:3001",
@@ -27,7 +27,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
   const { resolvedUrl } = context;
-  console.log("resolve", resolvedUrl);
 
   try {
     let data = await apiCall(resolvedUrl);
