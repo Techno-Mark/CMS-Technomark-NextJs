@@ -9,14 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        '2xl': '1560px',
+        "2xl": "1560px",
+      },
+      boxShadow: {
+        "custom-green": "-4px 6px 0px 0px rgba(64, 170, 70, 0.20)",
       },
       container: {
         center: true,
         padding: {
-          DEFAULT: '5%',
-          md: '7%',
-        }
+          DEFAULT: "5%",
+          md: "7%",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

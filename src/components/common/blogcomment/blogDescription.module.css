@@ -1,0 +1,21 @@
+.blogDetails .mainHeading {
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.blogDetails > .subtitle {
+    font-size: 24px;
+}
+
+.blogDetails .description > p {
+    font-size: 1.5rem;
+    margin: 40px 0;
+    text-align: justify;
+}
+
+.blogDetails li {
+    font-size: 1.5rem;
+    margin: 40px 0;
+    text-align: justify;
+}

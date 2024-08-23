@@ -215,6 +215,31 @@
   text-transform: uppercase;
 }
 
+.bloglistlabel {
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 4rem;
+  text-align: center;
+  color: rgba(29, 53, 87, 0.5);
+  text-transform: uppercase;
+}
+
+.bloglist :global(.title-section h2) {
+  margin-bottom: 2rem;
+  max-width: 65%;
+  text-align: center;
+  margin: 2rem auto;
+  font-weight: bold;
+}
+.bloglist :global(.title-section p) {
+  margin: 0 auto;
+  line-height: inherit;
+  font-size: 2.25rem;
+}
+
+
+
 .businessimpactsection {
   background: var(--secondary--color);
   box-shadow: 0px 24px 84px 0px rgba(198, 214, 190, 0.3);
@@ -375,8 +400,6 @@
   overflow: hidden;
   background: #fff;
 }
-
-
 
 @media only screen and (max-width: 767px) {
   .guaranteetmsection .videoarea {

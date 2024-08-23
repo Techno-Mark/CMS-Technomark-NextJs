@@ -9,6 +9,7 @@ interface HomeProps {
   homeSection: any;
   techstartup: any;
   methodology?: any;
+  bloglist?: any;
   services?: any;
   casestudy?: any;
   techIcons?: any;
@@ -44,7 +45,7 @@ export const getServerSideProps: GetServerSideProps<{
   const apiCall = async (param: string) => {
     const res = await axios.get(
       // `${process.env.NEXT_PUBLIC_API_URL}getBySlug/${param}`,
-      "http://localhost:3000/contact.json",
+      "http://localhost:3000/blogdetail.json",
       {
         headers: {
           referal: "http://localhost:3001",

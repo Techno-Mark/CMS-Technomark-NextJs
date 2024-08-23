@@ -30,11 +30,16 @@ import styles from "./home.module.css";
 import { usePathname } from "next/navigation";
 import ContactFormSection from "@/components/common/contactformsection/formsection";
 import WorldMap from "@/components/common/worldMap/worldMap";
+import BlogComment from "@/components/common/blogcomment/blogcomment";
+import BlogDescription from "@/components/common/blogcomment/blogDescription";
 
 interface HomeProps {
   sectionsOrder: string[];
   homeSection: any;
   techstartup: any;
+  bloglist?: any;
+  blogComment?: any;
+  blogDescription?: any;
   methodology?: any;
   services?: any;
   casestudy?: any;
@@ -97,6 +102,8 @@ const DataComponent = ({
     } else if (pathName === "/technology") {
       setHomeData(technology);
     } else if (pathName === "/contact_us") {
+      setHomeData(technology);
+    } else if (pathName === "/blog_details") {
       setHomeData(technology);
     }
   }, [pathName]);
@@ -385,6 +392,35 @@ const DataComponent = ({
                 <CaseStudyList props={homeData.casestudylist[0]} />
               </div>
             </section>
+          )
+        );
+      case "bloglist":
+        return (
+          homeData?.bloglist && (
+            <>
+              <section className={`${styles.bloglist} tm-section bg-white`}>
+                <div className="container mx-auto">
+                  <p className={styles.bloglistlabel}>
+                    {homeData.bloglist[0].label}
+                  </p>
+                  <TitleSection
+                    sectionData={{
+                      title: homeData.bloglist[0].title,
+                      subtitle: homeData.bloglist[0].subtitle,
+                    }}
+                    titleFirst={true}
+                    titleClassName="bloglisttitle"
+                  />
+                </div>
+              </section>
+
+              <section
+                className={`${styles.bloglistsection} pb-10  bg-white relative`}
+              >
+                <BlogComment props={homeData?.blogComment} />
+                <BlogDescription props={homeData?.blogDescription} />
+              </section>
+            </>
           )
         );
       case "casestudydetailherosection":
