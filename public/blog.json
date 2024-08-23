@@ -1,0 +1,80 @@
+{
+  "data": {
+    "templateData": {
+      "sectionsOrder": ["bloglist", "formsection"],
+      "bloglist": [
+        {
+          "title": "Blogs & News",
+          "subtitle": "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!",
+          "label": "Resources",
+          "buttons": [
+            "Software Development",
+            "Development & operation",
+            "Artificial Intelligence",
+            "Automation",
+            "Marketing"
+          ],
+          "buttonText": "VIEW ALL",
+          "blogData": [
+            {
+              "category": "Software Development",
+              "date": "22 Feb 2024",
+              "title": "Investigating the Human Behind User Experience Design",
+              "description": "Every journey in life has a beginning, where it all started. Welcome to my blog on the human psychology behind UX design.",
+              "imageUrl": "https://crm-stageapi.pacificabs.com:3004/public/TM/images/givesume@4x-8-1724386288377.png",
+              "redirectLink": "/"
+            },
+            {
+              "category": "Software Development",
+              "date": "15 Mar 2024",
+              "title": "The Rise of Progressive Web Apps",
+              "description": "Learn how PWAs are transforming the mobile experience by combining the best of web and mobile apps.",
+              "imageUrl": "https://crm-stageapi.pacificabs.com:3004/public/TM/images/givesume@4x-8-1724386288377.png",
+              "redirectLink": "/"
+            },
+            {
+              "category": "Software Development",
+              "date": "05 Apr 2024",
+              "title": "Understanding Serverless Architectures",
+              "description": "Discover the advantages of serverless computing and how it can simplify deployment and scaling.",
+              "imageUrl": "https://crm-stageapi.pacificabs.com:3004/public/TM/images/givesume@4x-8-1724386288377.png",
+              "redirectLink": "/"
+            },
+            {
+              "category": "Software Development",
+              "date": "05 Apr 2024",
+              "title": "Understanding Serverless Architectures",
+              "description": "Discover the advantages of serverless computing and how it can simplify deployment and scaling.",
+              "imageUrl": "https://crm-stageapi.pacificabs.com:3004/public/TM/images/givesume@4x-8-1724386288377.png",
+              "redirectLink": "/"
+            },
+            {
+              "category": "Artificial Intelligence",
+              "date": "22 May 2024",
+              "title": "The Role of Big Data in Predictive Analytics",
+              "description": "Explore how big data is leveraged in predictive analytics to drive business decisions.",
+              "imageUrl": "https://crm-stageapi.pacificabs.com:3004/public/TM/images/givesume@4x-8-1724386288377.png",
+              "redirectLink": "/"
+            }
+          ]
+        }
+      ],
+      "formsection": [
+        {
+          "data": [
+            {
+              "text": "We’ll reach out to you within 24 hours."
+            },
+            {
+              "text": "We’ll discuss your project and gather your requirements and business objectives, and develop a proposal accordingly."
+            },
+            {
+              "text": " You can start 15-days risk-free trial with us."
+            }
+          ],
+          "title": "What will happen next?"
+        }
+      ]
+    }
+  }
+}
