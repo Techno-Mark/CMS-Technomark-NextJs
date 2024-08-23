@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./formsection.module.css";
 import Image from "next/image";
 import Button from "../button/button";
+import { toast } from "react-toastify";
 
 interface FormSectionData {
   text: string;
@@ -79,7 +80,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
             email: formData.email,
             mobileNumber: formData.mobileNumber,
             companyName: formData.companyName,
-            message: null,
+            // message: null,
           }),
         }
       );
@@ -88,7 +89,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
         throw new Error("Network response was not ok");
       }
 
-      alert("Form submitted successfully!");
+      toast.success("Form submitted successfully!");
       setFormData({
         fullName: "",
         email: "",

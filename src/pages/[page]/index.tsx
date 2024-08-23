@@ -1,6 +1,8 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import DataComponent from "./DataComponent";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface HomeProps {
   data: any;
@@ -49,7 +51,12 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
-  return <DataComponent data={data} />;
+  return (
+    <>
+      <ToastContainer />
+      <DataComponent data={data} />
+    </>
+  );
 };
 
 export default Page;

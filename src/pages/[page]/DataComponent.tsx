@@ -933,7 +933,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           </React.Fragment>
         ))
       ) : (
-        <Loading />
+        <>
+          <div className="flex items-center justify-center py-10">
+            <Image
+              src="https://crm-stageapi.pacificabs.com:3004/public/TM/images/404-art.84f63a54-1724410205306.svg"
+              alt="bubble"
+              height={850}
+              width={850}
+            />
+          </div>
+        </>
       )}
     </>
   );
