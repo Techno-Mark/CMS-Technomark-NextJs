@@ -3,6 +3,7 @@ import axios from "axios";
 import DataComponent from "./DataComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 interface HomeProps {
   data: any;
@@ -51,8 +52,17 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
+  console.log(data);
   return (
     <>
+      <Head>
+        <title>{!!data ? data.title : ""}</title>
+        <meta name="title" content={!!data ? data.metaTitle : ""} />
+        <meta name="description" content={!!data ? data.metaDescription : ""} />
+        <meta name="keywords" content={!!data ? data.metaKeywords : ""} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <ToastContainer />
       <DataComponent data={data} />
     </>

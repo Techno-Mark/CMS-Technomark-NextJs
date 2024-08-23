@@ -112,9 +112,11 @@ interface HomeProps {
 const DataComponent = ({ data }: { data: HomeProps }) => {
   const pathName: any = usePathname();
   const [homeData, setHomeData] = useState<any>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setHomeData(data);
+    setLoading(false);
   }, [pathName]);
 
   const renderSection = (sectionName: string, sectionData: any) => {
@@ -932,6 +934,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             ))}
           </React.Fragment>
         ))
+      ) : loading ? (
+        <Loading />
       ) : (
         <>
           <div className="flex items-center justify-center py-10">
