@@ -111,13 +111,14 @@ const footerItem = [
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+  
 
   const toggleDrawer = () => {
     setIsDrawerVisible((prev) => !prev);
   };
   return (
     <div className='maindiv'>
-      <Header onShowDrawer={toggleDrawer} />
+      <Header onShowDrawer={toggleDrawer} headerData={pageProps.headerData}/>
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <CustomerLabel />
       <Component {...pageProps} />

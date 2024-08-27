@@ -25,6 +25,23 @@ const apiCall = async (param: string) => {
     return null;
   }
 };
+const fetchHeaderFooter = async (param: string) => {
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/menu/getByName/${param}`,
+      {
+        headers: {
+          referal: "http://localhost:3001",
+        },
+      }
+    );
+    return res.data.data;
+  } catch (error) {
+    console.error(`Error fetching ${param} data:`, error);
+    return null;
+  }
+};
+
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
@@ -32,11 +49,14 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   const { resolvedUrl } = context;
 
   try {
-    let data = await apiCall(resolvedUrl);
-
+    // let data = await apiCall(resolvedUrl);
+    let data = null
+    let [headerData, footerData] = await Promise.all([fetchHeaderFooter("Main Header Menu"),fetchHeaderFooter("Footer Menu")]);
     return {
       props: {
         data,
+        headerData: headerData?.menuItem,
+        footerData
       },
     };
   } catch (error) {

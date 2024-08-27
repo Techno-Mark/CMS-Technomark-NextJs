@@ -6,11 +6,20 @@ import Image from "next/image";
 import Hamburger from "@/assets/icon/hamburger";
 import Close from "@/assets/icon/close";
 
-interface HeaderProps {
-  onShowDrawer: () => void;
+interface MenuItem {
+  id: string;
+  link: string;
+  logo?: string;
+  name: string;
+  children: MenuItem[];
 }
 
-const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
+interface HeaderProps {
+  onShowDrawer: () => void;
+  headerData: Array<MenuItem>;
+}
+
+const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
@@ -293,7 +302,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
             <ul
               className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}
             >
-              {menuItems.map((menu) => (
+              {headerData.map((menu) => (
                 <li
                   className={`${styles.navlink} h-full flex items-center ${
                     (menu.name === "Technologies" &&
@@ -309,7 +318,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                 >
                   <div
                     onClick={
-                      menu.submenu
+                      menu.children && menu.children.length
                         ? menu.name === "Technologies"
                           ? toggleTechnologiesSubMenu
                           : toggleServicesSubMenu
@@ -318,7 +327,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                     className={`${styles.cursorpointer} cursor-pointer`}
                   >
                     <MenuLink item={menu} key={menu.name} />
-                    {menu.submenu && (
+                    {menu.children && menu.children && (
                       <ul
                         className={`${styles.submenu} ${
                           (menu.name === "Technologies" &&
@@ -328,16 +337,16 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                             : "hidden"
                         }`}
                       >
-                        {menu.submenu.map((submenu) => (
+                        {menu.children.map((submenu) => (
                           <li
                             key={submenu.name}
                             className={`${styles.submenulink} p-2 ${
                               menu.name === "Services" ? "md:w-1/3" : "md:w-1/4"
                             }`}
                           >
-                            <Link href={submenu.path}>
+                            <Link href={submenu.link}>
                               <Image
-                                src={submenu.icons}
+                                src={submenu.logo!}
                                 alt={submenu.name}
                                 width={48}
                                 height={48}
