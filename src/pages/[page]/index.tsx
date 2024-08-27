@@ -42,21 +42,25 @@ const fetchHeaderFooter = async (param: string) => {
   }
 };
 
-
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
   const { resolvedUrl } = context;
 
   try {
-    // let data = await apiCall(resolvedUrl);
-    let data = null
-    let [headerData, footerData] = await Promise.all([fetchHeaderFooter("Main Header Menu"),fetchHeaderFooter("Footer Menu")]);
+    let data = null;
+   
+      data = await apiCall(resolvedUrl);
+      
+    let [headerData, footerData] = await Promise.all([
+      fetchHeaderFooter("Main Header Menu"),
+      fetchHeaderFooter("Footer Menu"),
+    ]);
     return {
       props: {
         data,
         headerData: headerData?.menuItem,
-        footerData
+        footerData,
       },
     };
   } catch (error) {
