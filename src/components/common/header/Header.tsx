@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
     {
       name: "Services",
-      path: "/services",
+      path: "/productengineering",
       submenu: [
         {
           name: "Product engineering",
