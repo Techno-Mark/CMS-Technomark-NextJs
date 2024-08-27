@@ -673,10 +673,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     }
                     isFeatured={true}
                   />
-                ) : pathName === "/productengineering" ||
-                  pathName === "/softwaredevelopment" ||
-                  pathName === "/mobileapps" ||
-                  pathName === "/uiux" ? (
+                ) : pathName === "/productengineering" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
