@@ -663,7 +663,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 />
                 {pathName === "/casestudydetail-HLS" ||
                 pathName === "/casestudydetail-Airattix" ||
-                pathName === "/casestudydetail-Givsum" ? (
+                pathName === "/casestudydetail-Givsum" ||
+                pathName === "/start-up-services" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
@@ -672,14 +673,17 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     }
                     isFeatured={true}
                   />
-                ) : pathName === "/start-up-services" ? (
+                ) : pathName === "/productengineering" ||
+                  pathName === "/softwaredevelopment" ||
+                  pathName === "/mobileapps" ||
+                  pathName === "/uiux" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
                         ? sectionData.find((item: any) => item.Data).Data
                         : ""
                     }
-                    isFeatured={true}
+                    isProduct={true}
                   />
                 ) : (
                   <Services

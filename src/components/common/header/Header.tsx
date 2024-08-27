@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
     {
       name: "Services",
-      path: "/services",
+      path: "/productengineering",
       submenu: [
         {
           name: "Product engineering",
@@ -64,27 +64,27 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         },
         {
           name: "Software development",
-          path: "/Software development",
+          path: "/softwaredevelopment",
           icons: "/images/software.svg",
         },
         {
           name: "Consultation",
-          path: "/Consultation",
+          path: "/consultation",
           icons: "/images/consultation.svg",
         },
         {
           name: "Blockchain",
-          path: "/Blockchain",
+          path: "/blockchain",
           icons: "/images/blockchain.svg",
         },
         {
           name: "Mobile Apps",
-          path: "/Mobile Apps",
+          path: "/mobileapps",
           icons: "/images/mobileapp.svg",
         },
         {
           name: "Digital transformation",
-          path: "/Digital transformation",
+          path: "/digitaltransformation",
           icons: "/images/digital.svg",
         },
         {
