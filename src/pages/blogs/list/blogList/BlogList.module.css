@@ -145,3 +145,14 @@
   border-bottom: 2px solid var(--primary-color);
   display: inline-block;
 }
+
+/* Mobile screen adjustments */
+@media (max-width: 768px) {
+  .readmore {
+    opacity: 1;
+    transform: translateY(2rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 100%;
+    padding-bottom: 10px;
+  }
+}
