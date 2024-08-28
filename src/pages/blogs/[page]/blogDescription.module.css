@@ -24,6 +24,12 @@
   text-align: justify;
 }
 
+.blogDetails img {
+  object-fit: contain;
+  cursor: pointer;
+  width: 100%;
+}
+
 /* Mobile screen adjustments */
 @media (max-width: 768px) {
   .blogDetails h4 {
