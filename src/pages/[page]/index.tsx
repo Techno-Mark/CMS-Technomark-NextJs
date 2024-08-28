@@ -26,12 +26,13 @@ const apiCall = async (param: string) => {
   }
 };
 const fetchHeaderFooter = async (param: string) => {
+  let referalHeader = process.env.REFERAL_HEADER;
   try {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_BASE_URL}/menu/getByName/${param}`,
       {
         headers: {
-          referal: "http://localhost:3001",
+          referal: referalHeader,
         },
       }
     );

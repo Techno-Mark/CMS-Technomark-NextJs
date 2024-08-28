@@ -47,192 +47,192 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
     }
   }, [isMenuOpen]);
 
-  const menuItems = [
-    {
-      name: "Home",
-      path: "/home",
-    },
-    {
-      name: "Services",
-      path: "/services",
-      submenu: [
-        {
-          name: "Product engineering",
-          path: "/productengineering",
-          icons: "/images/product.svg",
-        },
-        {
-          name: "Testing & Automation",
-          path: "/testing",
-          icons: "/images/testing.svg",
-        },
-        {
-          name: "AI & ML Development",
-          path: "/aiml",
-          icons: "/images/aiml.svg",
-        },
-        {
-          name: "Software development",
-          path: "/Software development",
-          icons: "/images/software.svg",
-        },
-        {
-          name: "Consultation",
-          path: "/Consultation",
-          icons: "/images/consultation.svg",
-        },
-        {
-          name: "Blockchain",
-          path: "/Blockchain",
-          icons: "/images/blockchain.svg",
-        },
-        {
-          name: "Mobile Apps",
-          path: "/Mobile Apps",
-          icons: "/images/mobileapp.svg",
-        },
-        {
-          name: "Digital transformation",
-          path: "/Digital transformation",
-          icons: "/images/digital.svg",
-        },
-        {
-          name: "iop app",
-          path: "/iot",
-          icons: "/images/iot.svg",
-        },
-        {
-          name: "UI & UX Design",
-          path: "/uiux",
-          icons: "/images/uiux.svg",
-        },
-        {
-          name: "Cloud engineering & Devops",
-          path: "/cloud",
-          icons: "/images/cloud.svg",
-        },
-        {
-          name: "migration & modernization",
-          path: "/migration",
-          icons: "/images/migration.svg",
-        },
-        // Add more technology items as needed
-      ],
-    },
-    {
-      name: "Start-up Services",
-      path: "/start-up-services",
-    },
-    {
-      name: "Case Studies",
-      path: "/casestudylist",
-    },
-    {
-      name: "Blogs",
-      path: "/blogs",
-    },
-    {
-      name: "Technologies",
-      path: "/technology",
-      submenu: [
-        {
-          name: "Android",
-          path: "/android",
-          icons: "/images/android.svg",
-        },
-        {
-          name: "iOS",
-          path: "/ios",
-          icons: "/images/ios.svg",
-        },
-        {
-          name: "Kotlin",
-          path: "/kotlin",
-          icons: "/images/kotlin.svg",
-        },
-        {
-          name: "Swift",
-          path: "/swift",
-          icons: "/images/swift.svg",
-        },
-        {
-          name: "React native",
-          path: "/reactnative",
-          icons: "/images/reactnative.svg",
-        },
-        {
-          name: "flutter",
-          path: "/flutter",
-          icons: "/images/flutter.svg",
-        },
-        {
-          name: "react",
-          path: "/react",
-          icons: "/images/react.svg",
-        },
-        {
-          name: "next js",
-          path: "/nextjs",
-          icons: "/images/nextjs.svg",
-        },
-        {
-          name: "angular",
-          path: "/angular",
-          icons: "/images/angular.svg",
-        },
-        {
-          name: "js",
-          path: "/js",
-          icons: "/images/js.svg",
-        },
-        {
-          name: "jquery",
-          path: "/jquery",
-          icons: "/images/jquery.svg",
-        },
-        {
-          name: "html5",
-          path: "/html",
-          icons: "/images/html5.svg",
-        },
-        {
-          name: "nodejs",
-          path: "/nodejs",
-          icons: "/images/nodejs.svg",
-        },
-        {
-          name: "php",
-          path: "/php",
-          icons: "/images/php.svg",
-        },
-        {
-          name: "python",
-          path: "/python",
-          icons: "/images/python.svg",
-        },
-        {
-          name: ".net",
-          path: "/dotnet",
-          icons: "/images/dotnet.svg",
-        },
-        {
-          name: "laravel",
-          path: "/laravel",
-          icons: "/images/laravel.svg",
-        },
-        {
-          name: "rubyonrails",
-          path: "/rubyonrails",
-          icons: "/images/rubyonrails.svg",
-        },
-        // Add more technology items as needed
-      ],
-    },
-    {
-      name: "Contact Us",
-      path: "/contact-us",
-    },
-  ];
+  // const menuItems = [
+  //   {
+  //     name: "Home",
+  //     path: "/home",
+  //   },
+  //   {
+  //     name: "Services",
+  //     path: "/services",
+  //     submenu: [
+  //       {
+  //         name: "Product engineering",
+  //         path: "/productengineering",
+  //         icons: "/images/product.svg",
+  //       },
+  //       {
+  //         name: "Testing & Automation",
+  //         path: "/testing",
+  //         icons: "/images/testing.svg",
+  //       },
+  //       {
+  //         name: "AI & ML Development",
+  //         path: "/aiml",
+  //         icons: "/images/aiml.svg",
+  //       },
+  //       {
+  //         name: "Software development",
+  //         path: "/Software development",
+  //         icons: "/images/software.svg",
+  //       },
+  //       {
+  //         name: "Consultation",
+  //         path: "/Consultation",
+  //         icons: "/images/consultation.svg",
+  //       },
+  //       {
+  //         name: "Blockchain",
+  //         path: "/Blockchain",
+  //         icons: "/images/blockchain.svg",
+  //       },
+  //       {
+  //         name: "Mobile Apps",
+  //         path: "/Mobile Apps",
+  //         icons: "/images/mobileapp.svg",
+  //       },
+  //       {
+  //         name: "Digital transformation",
+  //         path: "/Digital transformation",
+  //         icons: "/images/digital.svg",
+  //       },
+  //       {
+  //         name: "iop app",
+  //         path: "/iot",
+  //         icons: "/images/iot.svg",
+  //       },
+  //       {
+  //         name: "UI & UX Design",
+  //         path: "/uiux",
+  //         icons: "/images/uiux.svg",
+  //       },
+  //       {
+  //         name: "Cloud engineering & Devops",
+  //         path: "/cloud",
+  //         icons: "/images/cloud.svg",
+  //       },
+  //       {
+  //         name: "migration & modernization",
+  //         path: "/migration",
+  //         icons: "/images/migration.svg",
+  //       },
+  //       // Add more technology items as needed
+  //     ],
+  //   },
+  //   {
+  //     name: "Start-up Services",
+  //     path: "/start-up-services",
+  //   },
+  //   {
+  //     name: "Case Studies",
+  //     path: "/casestudylist",
+  //   },
+  //   {
+  //     name: "Blogs",
+  //     path: "/blogs",
+  //   },
+  //   {
+  //     name: "Technologies",
+  //     path: "/technology",
+  //     submenu: [
+  //       {
+  //         name: "Android",
+  //         path: "/android",
+  //         icons: "/images/android.svg",
+  //       },
+  //       {
+  //         name: "iOS",
+  //         path: "/ios",
+  //         icons: "/images/ios.svg",
+  //       },
+  //       {
+  //         name: "Kotlin",
+  //         path: "/kotlin",
+  //         icons: "/images/kotlin.svg",
+  //       },
+  //       {
+  //         name: "Swift",
+  //         path: "/swift",
+  //         icons: "/images/swift.svg",
+  //       },
+  //       {
+  //         name: "React native",
+  //         path: "/reactnative",
+  //         icons: "/images/reactnative.svg",
+  //       },
+  //       {
+  //         name: "flutter",
+  //         path: "/flutter",
+  //         icons: "/images/flutter.svg",
+  //       },
+  //       {
+  //         name: "react",
+  //         path: "/react",
+  //         icons: "/images/react.svg",
+  //       },
+  //       {
+  //         name: "next js",
+  //         path: "/nextjs",
+  //         icons: "/images/nextjs.svg",
+  //       },
+  //       {
+  //         name: "angular",
+  //         path: "/angular",
+  //         icons: "/images/angular.svg",
+  //       },
+  //       {
+  //         name: "js",
+  //         path: "/js",
+  //         icons: "/images/js.svg",
+  //       },
+  //       {
+  //         name: "jquery",
+  //         path: "/jquery",
+  //         icons: "/images/jquery.svg",
+  //       },
+  //       {
+  //         name: "html5",
+  //         path: "/html",
+  //         icons: "/images/html5.svg",
+  //       },
+  //       {
+  //         name: "nodejs",
+  //         path: "/nodejs",
+  //         icons: "/images/nodejs.svg",
+  //       },
+  //       {
+  //         name: "php",
+  //         path: "/php",
+  //         icons: "/images/php.svg",
+  //       },
+  //       {
+  //         name: "python",
+  //         path: "/python",
+  //         icons: "/images/python.svg",
+  //       },
+  //       {
+  //         name: ".net",
+  //         path: "/dotnet",
+  //         icons: "/images/dotnet.svg",
+  //       },
+  //       {
+  //         name: "laravel",
+  //         path: "/laravel",
+  //         icons: "/images/laravel.svg",
+  //       },
+  //       {
+  //         name: "rubyonrails",
+  //         path: "/rubyonrails",
+  //         icons: "/images/rubyonrails.svg",
+  //       },
+  //       // Add more technology items as needed
+  //     ],
+  //   },
+  //   {
+  //     name: "Contact Us",
+  //     path: "/contact-us",
+  //   },
+  // ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
