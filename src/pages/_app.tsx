@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/Header";
 import SideBar from "@/components/common/sidebar/sidebar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import CustomerLabel from '@/components/common/customerlabel/customerlabel';
+import CustomerLabel from "@/components/common/customerlabel/customerlabel";
 
 const footerItem = [
   {
@@ -116,12 +116,12 @@ export default function App({ Component, pageProps }: AppProps) {
     setIsDrawerVisible((prev) => !prev);
   };
   return (
-    <div className='maindiv'>
+    <div className="maindiv">
       <Header onShowDrawer={toggleDrawer} />
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <CustomerLabel />
       <Component {...pageProps} />
-      <Footer props={footerItem} />
+      <Footer data={footerItem} />
     </div>
   );
 }

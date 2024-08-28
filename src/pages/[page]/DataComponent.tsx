@@ -406,7 +406,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   </div>
                   <div className="w-full md:w-3/4">
                     <Faq
-                      props={
+                      data={
                         sectionData.find(
                           (item: any) => item["Question Answers"]
                         )?.["Question Answers"]
