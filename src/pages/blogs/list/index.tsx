@@ -6,12 +6,22 @@ import BlogList from "./blogList/BlogList";
 import axios from "axios";
 import FormSection from "@/components/common/formsection/formsection";
 
-const index = () => {
-  const [formData, setFormData] = useState<any>(null);
+interface FormSectionData {
+  formsection: any;
+}
 
-  const apiCallForm = async (param: any) => {
+interface ApiResponse {
+  data: {
+    formatData: FormSectionData[];
+  };
+}
+
+const Index: React.FC = () => {
+  const [formData, setFormData] = useState<FormSectionData | null>(null);
+
+  const apiCallForm = async (param: string) => {
     try {
-      const res = await axios.get(
+      const res = await axios.get<ApiResponse>(
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
@@ -19,10 +29,9 @@ const index = () => {
           },
         }
       );
-      setFormData(res.data.data);
+      setFormData(res.data.data.formatData[0]);
     } catch (error) {
-      console.error(`Error fetching data:`, error);
-      return null;
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -48,19 +57,15 @@ const index = () => {
         </div>
       </section>
 
-      {!!formData &&
-        !!formData.formatData &&
-        !!formData.formatData[0].formsection && (
-          <section className={`${styles.formsection} tm-section bg-white`}>
-            <div className="container mx-auto">
-              <FormSection
-                props={!!formData ? formData.formatData[0].formsection : ""}
-              />
-            </div>
-          </section>
-        )}
+      {formData?.formsection && (
+        <section className={`${styles.formsection} tm-section bg-white`}>
+          <div className="container mx-auto">
+            <FormSection props={formData.formsection} />
+          </div>
+        </section>
+      )}
     </>
   );
 };
 
-export default index;
+export default Index;
