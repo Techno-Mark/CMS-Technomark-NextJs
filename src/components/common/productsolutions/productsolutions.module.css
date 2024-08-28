@@ -32,13 +32,14 @@
   color: var(--primary-color);
 }
 
-.productbg  {
+.productbg {
   position: absolute;
   left: 0;
   width: 50%;
   height: 100%;
   /* background-image: url(/images/product-solution.png); */
-  background-size: 100% 100%; 
+  background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
   bottom: 0;
 }
@@ -51,10 +52,10 @@
 
 
 @media only screen and (max-width: 767px) {
-    .productbg  {
-        position: inherit;
-        width: 100%;
-        height: 350px;
-        margin: 0 auto;
-    }
+  .productbg {
+    position: inherit;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+  }
 }

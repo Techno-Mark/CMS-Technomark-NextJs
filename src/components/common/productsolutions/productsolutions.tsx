@@ -2,30 +2,38 @@ import React from "react";
 import styles from "./productsolutions.module.css";
 import Image from "next/image";
 
+interface ListItem {
+  text?: string;
+}
+
+interface PropsItem {
+  image?: string;
+  "List Items"?: {
+    items: ListItem[];
+  }[];
+}
+
 interface ProductSolutionsProps {
-  props: any;
+  props: PropsItem[];
 }
 
 const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
-  const image = props.find((item: any) => item.image)?.image || "";
-  const listItems = props.find((item: any) => item["List Items"])?.[
-    "List Items"
-  ];
+  const image = props.find((item) => item.image)?.image || "";
+  const listItems =
+    props.find((item) => item["List Items"])?.["List Items"] || [];
 
   return (
-    <div className={`flex flex-wrap items-center`}>
+    <div className="flex flex-wrap items-center">
       <div className="w-full md:w-1/2">
         <div
           className={styles.productbg}
           style={{ backgroundImage: `url(${image})` }}
-        >
-          {/* <img src="/images/product-solution.png" alt="" /> */}
-        </div>
+        ></div>
       </div>
       <div className="w-full md:w-1/2">
         <div className={styles.productsolutionlist}>
           <ul>
-            {listItems.map((item: any, index: number) => (
+            {listItems.map((listItem, index) => (
               <li key={index}>
                 <div className={styles.scalearea}>
                   <Image
@@ -34,9 +42,7 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
                     height={50}
                     width={80}
                   />
-                  {item.items.find((item: any) => item.text)
-                    ? item.items.find((item: any) => item.text).text
-                    : ""}
+                  {listItem.items?.find((item) => item.text)?.text || ""}
                 </div>
               </li>
             ))}

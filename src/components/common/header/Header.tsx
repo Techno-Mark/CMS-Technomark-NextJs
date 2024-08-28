@@ -1,10 +1,22 @@
-import { useState, useEffect } from "react";
+import Close from "@/assets/icon/close";
+import Hamburger from "@/assets/icon/hamburger";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import MenuLink from "./menuLink/MenuLink";
-import Image from "next/image";
-import Hamburger from "@/assets/icon/hamburger";
-import Close from "@/assets/icon/close";
+
+interface SubmenuItem {
+  name: string;
+  path: string;
+  icons: string;
+}
+
+interface MenuItem {
+  name: string;
+  path: string;
+  submenu?: SubmenuItem[];
+}
 
 interface HeaderProps {
   onShowDrawer: () => void;
@@ -19,11 +31,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      setIsSticky(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,14 +39,22 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add(styles.noscroll);
-    } else {
-      document.body.classList.remove(styles.noscroll);
-    }
+    document.body.classList.toggle(styles.noscroll, isMenuOpen);
   }, [isMenuOpen]);
 
-  const menuItems = [
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const toggleSubMenu = (menuType: string) => {
+    if (menuType === "services") {
+      setIsServicesSubMenuOpen((prev) => !prev);
+      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false);
+    } else if (menuType === "technologies") {
+      setIsTechnologiesSubMenuOpen((prev) => !prev);
+      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false);
+    }
+  };
+
+  const menuItems: MenuItem[] = [
     {
       name: "Home",
       path: "/home",
@@ -87,16 +103,8 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
           path: "/digitaltransformation",
           icons: "/images/digital.svg",
         },
-        {
-          name: "iop app",
-          path: "/iot",
-          icons: "/images/iot.svg",
-        },
-        {
-          name: "UI & UX Design",
-          path: "/uiux",
-          icons: "/images/uiux.svg",
-        },
+        { name: "iop app", path: "/iot", icons: "/images/iot.svg" },
+        { name: "UI & UX Design", path: "/uiux", icons: "/images/uiux.svg" },
         {
           name: "Cloud engineering & Devops",
           path: "/cloudengineering",
@@ -107,7 +115,6 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
           path: "/migration",
           icons: "/images/migration.svg",
         },
-        // Add more technology items as needed
       ],
     },
     {
@@ -126,97 +133,32 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
       name: "Technologies",
       path: "/technology",
       submenu: [
-        {
-          name: "Android",
-          path: "/android",
-          icons: "/images/android.svg",
-        },
-        {
-          name: "iOS",
-          path: "/ios",
-          icons: "/images/ios.svg",
-        },
-        {
-          name: "Kotlin",
-          path: "/kotlin",
-          icons: "/images/kotlin.svg",
-        },
-        {
-          name: "Swift",
-          path: "/swift",
-          icons: "/images/swift.svg",
-        },
+        { name: "Android", path: "/android", icons: "/images/android.svg" },
+        { name: "iOS", path: "/ios", icons: "/images/ios.svg" },
+        { name: "Kotlin", path: "/kotlin", icons: "/images/kotlin.svg" },
+        { name: "Swift", path: "/swift", icons: "/images/swift.svg" },
         {
           name: "React native",
           path: "/reactnative",
           icons: "/images/reactnative.svg",
         },
-        {
-          name: "flutter",
-          path: "/flutter",
-          icons: "/images/flutter.svg",
-        },
-        {
-          name: "react",
-          path: "/react",
-          icons: "/images/react.svg",
-        },
-        {
-          name: "next js",
-          path: "/nextjs",
-          icons: "/images/nextjs.svg",
-        },
-        {
-          name: "angular",
-          path: "/angular",
-          icons: "/images/angular.svg",
-        },
-        {
-          name: "js",
-          path: "/js",
-          icons: "/images/js.svg",
-        },
-        {
-          name: "jquery",
-          path: "/jquery",
-          icons: "/images/jquery.svg",
-        },
-        {
-          name: "html5",
-          path: "/html",
-          icons: "/images/html5.svg",
-        },
-        {
-          name: "nodejs",
-          path: "/nodejs",
-          icons: "/images/nodejs.svg",
-        },
-        {
-          name: "php",
-          path: "/php",
-          icons: "/images/php.svg",
-        },
-        {
-          name: "python",
-          path: "/python",
-          icons: "/images/python.svg",
-        },
-        {
-          name: ".net",
-          path: "/dotnet",
-          icons: "/images/dotnet.svg",
-        },
-        {
-          name: "laravel",
-          path: "/laravel",
-          icons: "/images/laravel.svg",
-        },
+        { name: "flutter", path: "/flutter", icons: "/images/flutter.svg" },
+        { name: "react", path: "/react", icons: "/images/react.svg" },
+        { name: "next js", path: "/nextjs", icons: "/images/nextjs.svg" },
+        { name: "angular", path: "/angular", icons: "/images/angular.svg" },
+        { name: "js", path: "/js", icons: "/images/js.svg" },
+        { name: "jquery", path: "/jquery", icons: "/images/jquery.svg" },
+        { name: "html5", path: "/html", icons: "/images/html5.svg" },
+        { name: "nodejs", path: "/nodejs", icons: "/images/nodejs.svg" },
+        { name: "php", path: "/php", icons: "/images/php.svg" },
+        { name: "python", path: "/python", icons: "/images/python.svg" },
+        { name: ".net", path: "/dotnet", icons: "/images/dotnet.svg" },
+        { name: "laravel", path: "/laravel", icons: "/images/laravel.svg" },
         {
           name: "rubyonrails",
           path: "/rubyonrails",
           icons: "/images/rubyonrails.svg",
         },
-        // Add more technology items as needed
       ],
     },
     {
@@ -225,26 +167,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleServicesSubMenu = () => {
-    setIsServicesSubMenuOpen(!isServicesSubMenuOpen);
-    if (isTechnologiesSubMenuOpen) {
-      setIsTechnologiesSubMenuOpen(false);
-    }
-  };
-
-  const toggleTechnologiesSubMenu = () => {
-    setIsTechnologiesSubMenuOpen(!isTechnologiesSubMenuOpen);
-    if (isServicesSubMenuOpen) {
-      setIsServicesSubMenuOpen(false);
-    }
-  };
-
   return (
-    // <header className={`${styles.headerContainer} ${isMenuOpen ? styles.responsiveheader : ""}`}>
     <header
       className={`${styles.headerContainer} ${
         isSticky ? styles.stickyHeader : ""
@@ -254,9 +177,9 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         <div
           className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}
         >
-          <div className={`${styles.logocontainer}`}>
+          <div className={styles.logocontainer}>
             <Link
-              href="#"
+              href="/"
               className="flex items-center space-x-3 rtl:space-x-reverse px-14"
             >
               <Image
@@ -310,12 +233,10 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                   <div
                     onClick={
                       menu.submenu
-                        ? menu.name === "Technologies"
-                          ? toggleTechnologiesSubMenu
-                          : toggleServicesSubMenu
+                        ? () => toggleSubMenu(menu.name.toLowerCase())
                         : undefined
                     }
-                    className={`${styles.cursorpointer} cursor-pointer`}
+                    className={styles.cursorpointer}
                   >
                     <MenuLink item={menu} key={menu.name} />
                     {menu.submenu && (
@@ -333,9 +254,12 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                             key={submenu.name}
                             className={`${styles.submenulink} p-2 ${
                               menu.name === "Services" ? "md:w-1/3" : "md:w-1/4"
-                            }`}
+                            } flex items-center gap-x-3 rounded`}
                           >
-                            <Link href={submenu.path}>
+                            <Link
+                              href={submenu.path}
+                              className="whitespace-nowrap"
+                            >
                               <Image
                                 src={submenu.icons}
                                 alt={submenu.name}
