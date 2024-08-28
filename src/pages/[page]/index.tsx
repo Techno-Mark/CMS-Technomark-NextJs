@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   const { resolvedUrl } = context;
 
   try {
-    let data = await apiCall(resolvedUrl);
+    let data = resolvedUrl != "/blogs" && (await apiCall(resolvedUrl));
 
     return {
       props: {
