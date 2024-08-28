@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         },
         {
           name: "Testing & Automation",
-          path: "/testing",
+          path: "/testingautomation",
           icons: "/images/testing.svg",
         },
         {
@@ -127,7 +127,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     },
     {
       name: "Blogs",
-      path: "/blogs",
+      path: "/blogs/list",
     },
     {
       name: "Technologies",

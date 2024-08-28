@@ -1,0 +1,395 @@
+.methodology {
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+}
+.methodology :global(.title-section h2) {
+  margin-bottom: 1.25rem;
+}
+.methodology :global(.title-section p) {
+  width: 70%;
+  margin: 0 auto 3.8rem;
+  opacity: 0.7;
+}
+.coreservices {
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-primary);
+}
+.coreservices :global(.title-section h2),
+.productservices :global(.title-section h2),
+.techservices :global(.title-section h2) {
+  margin-bottom: 4rem;
+}
+.coreservices :global(.title-section p),
+.productservices :global(.title-section p),
+.techservices :global(.title-section p){
+  margin-bottom: 0.6rem;
+}
+
+.casestudiessection {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-secondary);
+}
+.casestudiessection :global(.title-section h2) {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+.casestudiessection :global(.title-section p) {
+  position: relative;
+  text-align: left;
+  padding-left: 7rem;
+  margin-bottom: 5rem;
+}
+.casestudiessection :global(.title-section p::before) {
+  content: "";
+  width: 6rem;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(
+    var(--primary-color) 100%,
+    var(--primary-variant-one) 100%
+  );
+  top: 17px;
+}
+
+.meetdiverse {
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-primary);
+  z-index: 2;
+}
+.meetdiverse :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+
+.guaranteetmsection {
+  border: 0px solid var(--border-primary);
+  background: var(--primary-background);
+  box-shadow: 10px 0px 0px 0px var(--white-color);
+}
+.guaranteetmsection :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+.guaranteetmsection .videoarea {
+  position: relative;
+  height: 100%;
+}
+.guaranteetmsection .videoarea video {
+  object-fit: initial;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.guaranteetmsection .videoarea .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: var(--white-color);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out all;
+}
+.guaranteetmsection .videoarea .play-btn:hover {
+  background: #f13c31;
+}
+.guaranteetmsection .videoarea .play-btn:hover svg path {
+  fill: var(--white-color);
+}
+
+.videoSection {
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+}
+
+.clientspeaksection {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+}
+.clientspeaksection :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+.clientspeaksection :global(.title-section p) {
+  margin-bottom: 0.6rem;
+}
+.clientcurve {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.trustsection {
+  background: var(--white-color);
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+}
+.trustsection :global(.title-section h2) {
+  margin-bottom: 1.2rem;
+}
+.trustsection :global(.title-section p) {
+  margin-bottom: 5rem;
+}
+.trustsection :global(.title-section p span) {
+  display: block;
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.faqsection {
+  position: relative;
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--white-color);
+}
+.faqsection :global(.title-section h2) {
+  text-align: left;
+  margin-bottom: 5rem;
+  padding-right: 10px;
+}
+
+.awardsection {
+  background: var(--white-color);
+}
+.awardsection :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+
+.formsection {
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.casestudylistlabel {
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 4rem;
+  text-align: center;
+  color: rgba(29, 53, 87, 0.5);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+.casestudylist :global(.title-section h2) {
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.casestudylist :global(.title-section p) {
+  margin: 0 auto 5rem;
+  max-width: 75%;
+  font-size: 2.25rem;
+  line-height: 4rem;
+}
+
+.casestudydetailherosection {
+  background-image: url(/images/casedetailbg.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.casestudydetailherosection :global(.title-section h2) {
+  margin-bottom: 2rem;
+  color: var(--white-color) !important;
+}
+.casestudydetailherosection :global(.title-section p) {
+  margin: 0 auto 5rem;
+  max-width: 66%;
+  color: var(--white-color);
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+}
+.casestudydetaillabel {
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 4rem;
+  text-align: center;
+  color: var(--white-color);
+  opacity: 0.5;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.businessimpactsection {
+  background: var(--secondary--color);
+  box-shadow: 0px 24px 84px 0px rgba(198, 214, 190, 0.3);
+}
+.businessimpactsection :global(.title-section h2) {
+  color: var(--white-color) !important;
+  margin-bottom: 1rem;
+}
+.businessimpactsection :global(.title-section p) {
+  color: var(--white-color);
+  width: 70%;
+  margin-inline: auto;
+  font-weight: 400;
+}
+
+
+.problemstatement{
+  border-top: 1px solid var(--border-ternary);
+}
+.problemstatement :global(.title-section h2) {
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
+.challangesolutions{
+  border-bottom: 1px solid var(--border-ternary);
+}
+.challangesolutions :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+
+.majorscreensection {
+  background: var(--secondary--color);
+}
+.majorscreensection :global(.title-section h2) {
+  color: var(--white-color) !important;
+  margin-bottom: 5rem;
+}
+
+
+.features{
+  border-top: 1px solid var(--border-quaternary);
+  border-bottom: 1px solid var(--border-quaternary);
+}
+.features :global(.title-section h2) {
+  margin-bottom: 5rem;
+}
+
+.productservices {
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-secondary);
+}
+
+.productsolutions {
+  border: none;
+  border-bottom: 4px solid;
+  border-image-slice: 1;
+  border-width: 7px;
+  border-image-source: linear-gradient(90deg, #6e9979 0%, #b7ffc9 100%);
+  border-image-repeat: stretch;
+}
+
+.technologyhomesection {
+  padding: 5rem 0;
+}
+
+.techslider {
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-quaternary);
+}
+.techslider :global(.title-section h2) {
+  margin-bottom: 2rem;
+}
+.techslider :global(.title-section p) {
+  margin: 0 auto 4rem;
+  max-width: 70%;
+}
+
+.techservices {
+  background: var(--bg-ternary);
+  border-top: 2px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+}
+
+.techservices :global(.title-section h2) {
+  margin-bottom: 1.25rem;
+}
+.techservices :global(.title-section p) {
+  margin-bottom: 5rem;
+}
+
+.technenifits {
+  padding: 0;
+  border: none;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(90deg, #3db762 100%, #67ab6b 100%);
+  border-image-repeat: stretch;
+  border-top: 1px solid var(--border-quinary);
+  border-bottom: 7px solid var(--border-quinary);
+}
+
+.hiredeveloper {
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-ternary);
+}
+
+.singletechservices {
+  border-top: 1px solid var(--border-ternary);
+  border-bottom: 1px solid var(--border-ternary);
+  background: var(--bg-secondary);
+  background-blend-mode: darken, normal;
+}
+.singletechservices :global(.title-section h2) {
+  margin-bottom: 1.6rem;
+}
+.singletechservices :global(.title-section p) {
+  margin-bottom: 4rem;
+}
+
+.techexpert {
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.techstrtupformsection {
+  background: var(--primary-background);
+}
+
+.leftbubblecircle {
+  position: absolute;
+  left: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 0;
+}
+.leftbubblecircle img{
+  max-width: 40rem;
+}
+.rightbubblecircle {
+  position: absolute;
+  right: -16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: -1;
+}
+
+.productbg {
+  position: absolute;
+  left: -4rem;
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  background-image: url(/images/product-solution.png);
+  background-size: cover;
+  top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .guaranteetmsection .videoarea {
+    padding-bottom: 20px;
+  }
+  .casestudylist :global(.title-section p),
+  .casestudydetailherosection :global(.title-section p) {
+    max-width: 90%;
+  }
+  .technenifits {
+    padding-inline: 2rem;
+  }
+  .methodology :global(.title-section p) {
+    width: 100%;
+  }
+}
