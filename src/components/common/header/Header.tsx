@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         },
         {
           name: "Cloud engineering & Devops",
-          path: "/cloud",
+          path: "/cloudengineering",
           icons: "/images/cloud.svg",
         },
         {
