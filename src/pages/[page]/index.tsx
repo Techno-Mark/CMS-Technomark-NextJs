@@ -15,7 +15,7 @@ const apiCall = async (param: string) => {
       `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
       {
         headers: {
-          referal: "http://localhost:3001",
+          referal: process.env.REFERAL_HEADER || "",
         },
       }
     );
@@ -52,7 +52,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Head>

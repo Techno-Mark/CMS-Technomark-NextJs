@@ -9,16 +9,26 @@ import Image from "next/image";
 import { convertDate } from "@/utils/commonFunction";
 import BlogDescription from "./blogDescription";
 import FormSection from "@/components/common/formsection/formsection";
+import Head from "next/head";
 
 interface BlogData {
   title: string;
   subTitle: string;
-  authorImageUrl: string;
+  slug: string;
   authorName: string;
+  bannerImageUrl: string;
+  thumbnailImageUrl: string;
+  authorImageUrl: string;
+  description: string;
+  tags: string;
+  categories: {
+    name: string;
+  }[];
+  metaTitle: string;
+  metaDescription: string;
+  metaKeywords: string;
   createdAt: string;
   updatedAt: string;
-  bannerImageUrl: string;
-  description: string;
 }
 
 interface FormSectionData {
@@ -38,7 +48,7 @@ const BlogPage: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`,
         {
           headers: {
-            referal: "http://localhost:3001",
+            referal: process.env.REFERAL_HEADER || "",
           },
         }
       );
@@ -54,7 +64,7 @@ const BlogPage: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: "http://localhost:3001",
+            referal: process.env.REFERAL_HEADER || "",
           },
         }
       );
@@ -77,6 +87,14 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>{!!data ? data.title : ""}</title>
+        <meta name="title" content={!!data ? data.metaTitle : ""} />
+        <meta name="description" content={!!data ? data.metaDescription : ""} />
+        <meta name="keywords" content={!!data ? data.metaKeywords : ""} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <section className={`${styles.casestudylist} tm-section bg-white`}>
         <div className="container mx-auto">
           <p className={styles.casestudylistlabel}>Resources</p>

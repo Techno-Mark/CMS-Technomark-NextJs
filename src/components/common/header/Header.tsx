@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
           path: "/digitaltransformation",
           icons: "/images/digital.svg",
         },
-        { name: "iop app", path: "/iot", icons: "/images/iot.svg" },
+        { name: "iop app", path: "/iotservice", icons: "/images/iot.svg" },
         { name: "UI & UX Design", path: "/uiux", icons: "/images/uiux.svg" },
         {
           name: "Cloud engineering & Devops",
@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
         },
         {
           name: "migration & modernization",
-          path: "/migration",
+          path: "/migrationmodernization",
           icons: "/images/migration.svg",
         },
       ],

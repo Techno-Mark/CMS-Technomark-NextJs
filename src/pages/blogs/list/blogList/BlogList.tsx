@@ -37,7 +37,7 @@ const BlogList = ({ props }: any) => {
         `${process.env.NEXT_PUBLIC_API_URL}blog/list`,
         {
           headers: {
-            referal: "http://localhost:3001",
+            referal: process.env.REFERAL_HEADER || "",
           },
         }
       );
