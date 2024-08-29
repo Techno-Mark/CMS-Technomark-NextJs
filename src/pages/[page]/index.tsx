@@ -4,6 +4,7 @@ import DataComponent from "./DataComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import { fetchHeaderFooterData } from "@/serverAction/fetchHeaderFooterData";
 
 interface HomeProps {
   data: any;
@@ -32,11 +33,19 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   const { resolvedUrl } = context;
 
   try {
-    let data = await apiCall(resolvedUrl);
+    let data = null;
 
+    data = await apiCall(resolvedUrl);
+
+    let [headerData, footerData] = await Promise.all([
+      fetchHeaderFooterData("Main Header Menu"),
+      fetchHeaderFooterData("Footer Menu"),
+    ]);
     return {
       props: {
         data,
+        headerData: headerData?.menuItem,
+        footerData: footerData?.menuItem,
       },
     };
   } catch (error) {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./footer.module.css";
 import Image from "next/image";
 const Footer = (props: any) => {
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -103,16 +104,16 @@ const Footer = (props: any) => {
           <div
             className={`${styles.footerlinks} grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4`}
           >
-            {props.props.map((x: any, index: any) => (
+            {props.footerData?.map((x: any, index: any) => (
               <div key={index}>
                 <h3 className="mb-6 font-medium min-h-6 text-white capitilize">
-                  {x.title}
+                  {x?.name == "" || x.name == "#" ? "" : x.name}
                 </h3>
                 <ul className={styles.footerlinksul}>
-                  {x.child.map((d: any, index: any) => (
+                  {x.children.map((d: any, index: any) => (
                     <li className="mb-4" key={index}>
                       <Link
-                        href={d.path}
+                        href={d.link}
                         className="text-[1rem]"
                       >
                         {d.name}

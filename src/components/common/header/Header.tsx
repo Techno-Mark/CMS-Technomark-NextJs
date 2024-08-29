@@ -6,17 +6,26 @@ import Image from "next/image";
 import Hamburger from "@/assets/icon/hamburger";
 import Close from "@/assets/icon/close";
 
-interface HeaderProps {
-  onShowDrawer: () => void;
+interface MenuItem {
+  id: string;
+  link: string;
+  logo?: string;
+  name: string;
+  children: MenuItem[];
 }
 
-const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
+interface HeaderProps {
+  onShowDrawer: () => void;
+  headerData: Array<MenuItem>;
+}
+
+const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
     useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -38,192 +47,192 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     }
   }, [isMenuOpen]);
 
-  const menuItems = [
-    {
-      name: "Home",
-      path: "/home",
-    },
-    {
-      name: "Services",
-      path: "/productengineering",
-      submenu: [
-        {
-          name: "Product engineering",
-          path: "/productengineering",
-          icons: "/images/product.svg",
-        },
-        {
-          name: "Testing & Automation",
-          path: "/testing",
-          icons: "/images/testing.svg",
-        },
-        {
-          name: "AI & ML Development",
-          path: "/aiml",
-          icons: "/images/aiml.svg",
-        },
-        {
-          name: "Software development",
-          path: "/softwaredevelopment",
-          icons: "/images/software.svg",
-        },
-        {
-          name: "Consultation",
-          path: "/consultation",
-          icons: "/images/consultation.svg",
-        },
-        {
-          name: "Blockchain",
-          path: "/blockchain",
-          icons: "/images/blockchain.svg",
-        },
-        {
-          name: "Mobile Apps",
-          path: "/mobileapps",
-          icons: "/images/mobileapp.svg",
-        },
-        {
-          name: "Digital transformation",
-          path: "/digitaltransformation",
-          icons: "/images/digital.svg",
-        },
-        {
-          name: "iop app",
-          path: "/iot",
-          icons: "/images/iot.svg",
-        },
-        {
-          name: "UI & UX Design",
-          path: "/uiux",
-          icons: "/images/uiux.svg",
-        },
-        {
-          name: "Cloud engineering & Devops",
-          path: "/cloud",
-          icons: "/images/cloud.svg",
-        },
-        {
-          name: "migration & modernization",
-          path: "/migration",
-          icons: "/images/migration.svg",
-        },
-        // Add more technology items as needed
-      ],
-    },
-    {
-      name: "Start-up Services",
-      path: "/start-up-services",
-    },
-    {
-      name: "Case Studies",
-      path: "/casestudylist",
-    },
-    {
-      name: "Blogs",
-      path: "/blogs",
-    },
-    {
-      name: "Technologies",
-      path: "/technology",
-      submenu: [
-        {
-          name: "Android",
-          path: "/android",
-          icons: "/images/android.svg",
-        },
-        {
-          name: "iOS",
-          path: "/ios",
-          icons: "/images/ios.svg",
-        },
-        {
-          name: "Kotlin",
-          path: "/kotlin",
-          icons: "/images/kotlin.svg",
-        },
-        {
-          name: "Swift",
-          path: "/swift",
-          icons: "/images/swift.svg",
-        },
-        {
-          name: "React native",
-          path: "/reactnative",
-          icons: "/images/reactnative.svg",
-        },
-        {
-          name: "flutter",
-          path: "/flutter",
-          icons: "/images/flutter.svg",
-        },
-        {
-          name: "react",
-          path: "/react",
-          icons: "/images/react.svg",
-        },
-        {
-          name: "next js",
-          path: "/nextjs",
-          icons: "/images/nextjs.svg",
-        },
-        {
-          name: "angular",
-          path: "/angular",
-          icons: "/images/angular.svg",
-        },
-        {
-          name: "js",
-          path: "/js",
-          icons: "/images/js.svg",
-        },
-        {
-          name: "jquery",
-          path: "/jquery",
-          icons: "/images/jquery.svg",
-        },
-        {
-          name: "html5",
-          path: "/html",
-          icons: "/images/html5.svg",
-        },
-        {
-          name: "nodejs",
-          path: "/nodejs",
-          icons: "/images/nodejs.svg",
-        },
-        {
-          name: "php",
-          path: "/php",
-          icons: "/images/php.svg",
-        },
-        {
-          name: "python",
-          path: "/python",
-          icons: "/images/python.svg",
-        },
-        {
-          name: ".net",
-          path: "/dotnet",
-          icons: "/images/dotnet.svg",
-        },
-        {
-          name: "laravel",
-          path: "/laravel",
-          icons: "/images/laravel.svg",
-        },
-        {
-          name: "rubyonrails",
-          path: "/rubyonrails",
-          icons: "/images/rubyonrails.svg",
-        },
-        // Add more technology items as needed
-      ],
-    },
-    {
-      name: "Contact Us",
-      path: "/contact-us",
-    },
-  ];
+  // const menuItems = [
+  //   {
+  //     name: "Home",
+  //     path: "/home",
+  //   },
+  //   {
+  //     name: "Services",
+  //     path: "/services",
+  //     submenu: [
+  //       {
+  //         name: "Product engineering",
+  //         path: "/productengineering",
+  //         icons: "/images/product.svg",
+  //       },
+  //       {
+  //         name: "Testing & Automation",
+  //         path: "/testing",
+  //         icons: "/images/testing.svg",
+  //       },
+  //       {
+  //         name: "AI & ML Development",
+  //         path: "/aiml",
+  //         icons: "/images/aiml.svg",
+  //       },
+  //       {
+  //         name: "Software development",
+  //         path: "/Software development",
+  //         icons: "/images/software.svg",
+  //       },
+  //       {
+  //         name: "Consultation",
+  //         path: "/Consultation",
+  //         icons: "/images/consultation.svg",
+  //       },
+  //       {
+  //         name: "Blockchain",
+  //         path: "/Blockchain",
+  //         icons: "/images/blockchain.svg",
+  //       },
+  //       {
+  //         name: "Mobile Apps",
+  //         path: "/Mobile Apps",
+  //         icons: "/images/mobileapp.svg",
+  //       },
+  //       {
+  //         name: "Digital transformation",
+  //         path: "/Digital transformation",
+  //         icons: "/images/digital.svg",
+  //       },
+  //       {
+  //         name: "iop app",
+  //         path: "/iot",
+  //         icons: "/images/iot.svg",
+  //       },
+  //       {
+  //         name: "UI & UX Design",
+  //         path: "/uiux",
+  //         icons: "/images/uiux.svg",
+  //       },
+  //       {
+  //         name: "Cloud engineering & Devops",
+  //         path: "/cloud",
+  //         icons: "/images/cloud.svg",
+  //       },
+  //       {
+  //         name: "migration & modernization",
+  //         path: "/migration",
+  //         icons: "/images/migration.svg",
+  //       },
+  //       // Add more technology items as needed
+  //     ],
+  //   },
+  //   {
+  //     name: "Start-up Services",
+  //     path: "/start-up-services",
+  //   },
+  //   {
+  //     name: "Case Studies",
+  //     path: "/casestudylist",
+  //   },
+  //   {
+  //     name: "Blogs",
+  //     path: "/blogs",
+  //   },
+  //   {
+  //     name: "Technologies",
+  //     path: "/technology",
+  //     submenu: [
+  //       {
+  //         name: "Android",
+  //         path: "/android",
+  //         icons: "/images/android.svg",
+  //       },
+  //       {
+  //         name: "iOS",
+  //         path: "/ios",
+  //         icons: "/images/ios.svg",
+  //       },
+  //       {
+  //         name: "Kotlin",
+  //         path: "/kotlin",
+  //         icons: "/images/kotlin.svg",
+  //       },
+  //       {
+  //         name: "Swift",
+  //         path: "/swift",
+  //         icons: "/images/swift.svg",
+  //       },
+  //       {
+  //         name: "React native",
+  //         path: "/reactnative",
+  //         icons: "/images/reactnative.svg",
+  //       },
+  //       {
+  //         name: "flutter",
+  //         path: "/flutter",
+  //         icons: "/images/flutter.svg",
+  //       },
+  //       {
+  //         name: "react",
+  //         path: "/react",
+  //         icons: "/images/react.svg",
+  //       },
+  //       {
+  //         name: "next js",
+  //         path: "/nextjs",
+  //         icons: "/images/nextjs.svg",
+  //       },
+  //       {
+  //         name: "angular",
+  //         path: "/angular",
+  //         icons: "/images/angular.svg",
+  //       },
+  //       {
+  //         name: "js",
+  //         path: "/js",
+  //         icons: "/images/js.svg",
+  //       },
+  //       {
+  //         name: "jquery",
+  //         path: "/jquery",
+  //         icons: "/images/jquery.svg",
+  //       },
+  //       {
+  //         name: "html5",
+  //         path: "/html",
+  //         icons: "/images/html5.svg",
+  //       },
+  //       {
+  //         name: "nodejs",
+  //         path: "/nodejs",
+  //         icons: "/images/nodejs.svg",
+  //       },
+  //       {
+  //         name: "php",
+  //         path: "/php",
+  //         icons: "/images/php.svg",
+  //       },
+  //       {
+  //         name: "python",
+  //         path: "/python",
+  //         icons: "/images/python.svg",
+  //       },
+  //       {
+  //         name: ".net",
+  //         path: "/dotnet",
+  //         icons: "/images/dotnet.svg",
+  //       },
+  //       {
+  //         name: "laravel",
+  //         path: "/laravel",
+  //         icons: "/images/laravel.svg",
+  //       },
+  //       {
+  //         name: "rubyonrails",
+  //         path: "/rubyonrails",
+  //         icons: "/images/rubyonrails.svg",
+  //       },
+  //       // Add more technology items as needed
+  //     ],
+  //   },
+  //   {
+  //     name: "Contact Us",
+  //     path: "/contact-us",
+  //   },
+  // ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -293,7 +302,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
             <ul
               className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}
             >
-              {menuItems.map((menu) => (
+              {headerData?.map((menu) => (
                 <li
                   className={`${styles.navlink} h-full flex items-center ${
                     (menu.name === "Technologies" &&
@@ -309,7 +318,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                 >
                   <div
                     onClick={
-                      menu.submenu
+                      menu.children && menu.children.length
                         ? menu.name === "Technologies"
                           ? toggleTechnologiesSubMenu
                           : toggleServicesSubMenu
@@ -318,7 +327,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                     className={`${styles.cursorpointer} cursor-pointer`}
                   >
                     <MenuLink item={menu} key={menu.name} />
-                    {menu.submenu && (
+                    {menu.children && menu.children && (
                       <ul
                         className={`${styles.submenu} ${
                           (menu.name === "Technologies" &&
@@ -328,16 +337,16 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                             : "hidden"
                         }`}
                       >
-                        {menu.submenu.map((submenu) => (
+                        {menu.children.map((submenu) => (
                           <li
                             key={submenu.name}
                             className={`${styles.submenulink} p-2 ${
                               menu.name === "Services" ? "md:w-1/3" : "md:w-1/4"
                             }`}
                           >
-                            <Link href={submenu.path}>
+                            <Link href={submenu.link}>
                               <Image
-                                src={submenu.icons}
+                                src={submenu.logo!}
                                 alt={submenu.name}
                                 width={48}
                                 height={48}

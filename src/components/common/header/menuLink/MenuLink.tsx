@@ -7,9 +7,9 @@ const MenuLink = ({ item }: any) => {
   const pathname = usePathname();
   return (
     <Link
-      href={item.path}
+      href={item.link}
       className={`py-2 px-5 uppercase ${
-        pathname === item.path &&
+        pathname === item.link &&
         `bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-variant-one)] inline-block text-transparent bg-clip-text ${styles.active}`
       }`}
     >
