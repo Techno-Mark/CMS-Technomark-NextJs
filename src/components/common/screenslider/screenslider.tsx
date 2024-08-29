@@ -6,7 +6,7 @@ import styles from "./screenslider.module.css";
 import Image from "next/image";
 
 interface ImageItem {
-  imageUrl: string;
+  imaegUrl: string;
 }
 
 interface ScreenSliderProps {
@@ -52,7 +52,6 @@ const settings2 = {
 
 const ScreenSlider: React.FC<ScreenSliderProps> = ({ props, useSlider1 }) => {
   const selectedSettings = useSlider1 ? settings1 : settings2;
-
   return (
     <div
       className={
@@ -60,11 +59,11 @@ const ScreenSlider: React.FC<ScreenSliderProps> = ({ props, useSlider1 }) => {
       }
     >
       <Slider {...selectedSettings}>
-        {props.flatMap(({ items }, index) =>
+        {props.map(({ items }, index) =>
           items.map((item, itemIndex) => (
             <div key={`${index}-${itemIndex}`} className={styles.projectimg}>
               <Image
-                src={item.imageUrl}
+                src={item.imaegUrl}
                 alt={`Slide image ${index}-${itemIndex}`}
                 width={600}
                 height={400}

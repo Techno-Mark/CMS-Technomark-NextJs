@@ -6,7 +6,10 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "../list/home.module.css";
 import Image from "next/image";
-import { convertDate } from "@/utils/commonFunction";
+import {
+  convertDetails1Date,
+  convertDetails2Date,
+} from "@/utils/commonFunction";
 import BlogDescription from "./blogDescription";
 import FormSection from "@/components/common/formsection/formsection";
 import Head from "next/head";
@@ -135,11 +138,11 @@ const BlogPage: React.FC = () => {
                 </h3>
                 <div className="flex justify-between font-medium text-2xl">
                   <span>
-                    {data?.createdAt ? convertDate(data.createdAt) : ""}
+                    {data?.createdAt ? convertDetails1Date(data.createdAt) : ""}
                   </span>
                   <span>
                     Last updated{" "}
-                    {data?.updatedAt ? convertDate(data.updatedAt) : ""}
+                    {data?.updatedAt ? convertDetails2Date(data.updatedAt) : ""}
                   </span>
                 </div>
               </div>
