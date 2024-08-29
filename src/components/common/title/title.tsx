@@ -8,16 +8,16 @@ interface SectionData {
 }
 
 interface TitleSectionProps {
-  sectionData: SectionData;
+  sectionData?: SectionData;
   titleFirst?: boolean;
   titleClassName?: string;
-  singleLine?: boolean; // New prop to control single-line layout
+  singleLine?: boolean;
 }
 
 const TitleSection: React.FC<TitleSectionProps> = ({
   sectionData = { title: "", subtitle: "", subDesc: "" },
   titleFirst = true,
-  titleClassName,
+  titleClassName = "",
   singleLine = false,
 }) => {
   const dynamicClassName = titleClassName ? styles[titleClassName] : "";
@@ -37,7 +37,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
           )}
           {sectionData.subtitle && (
             <p
-              className={`${styles.subtitle}`}
+              className={styles.subtitle}
               dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
             />
           )}

@@ -16,7 +16,7 @@ const apiCall = async (param: string) => {
       `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
       {
         headers: {
-          referal: "http://localhost:3001",
+          referal: process.env.REFERAL_HEADER || "",
         },
       }
     );
@@ -33,9 +33,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   const { resolvedUrl } = context;
 
   try {
-    let data = null;
-
-    data = await apiCall(resolvedUrl);
+    let data = resolvedUrl != "/blogs" && (await apiCall(resolvedUrl));
 
     let [headerData, footerData] = await Promise.all([
       fetchHeaderFooterData("Main Header Menu"),
@@ -61,7 +59,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Head>

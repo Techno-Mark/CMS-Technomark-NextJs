@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/Header";
 import SideBar from "@/components/common/sidebar/sidebar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import CustomerLabel from '@/components/common/customerlabel/customerlabel';
+import CustomerLabel from "@/components/common/customerlabel/customerlabel";
 
 // const footerItem = [
 //   {

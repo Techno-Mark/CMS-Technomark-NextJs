@@ -1,9 +1,9 @@
-
 .herocontainer :global(.title-section h2) {
   margin-bottom: 2rem;
   text-align: left;
   font-weight: 700;
 }
+
 .herocontainer :global(.title-section p) {
   margin-bottom: 4rem;
   text-align: left;
@@ -15,6 +15,7 @@
   margin: 2rem 0;
   font-weight: 700;
 }
+
 .techherocontainer :global(.title-section p) {
   font-size: 2.4rem;
   line-height: 4rem;
@@ -35,14 +36,17 @@
   margin-bottom: 3rem;
   text-transform: uppercase;
 }
+
 .imagecontainer {
   display: flex;
   justify-content: center;
 }
+
 .herocontainer :global(a) {
   margin-left: inherit;
   margin-right: auto;
 }
+
 .techimgcontainer {
   position: absolute;
   top: 0;
@@ -50,20 +54,24 @@
   display: flex;
   justify-content: center;
 }
+
 .techherocontainer {
   position: relative;
   z-index: 5;
 }
+
 .formcirlerotate {
   position: absolute;
   top: -6rem;
   left: -2rem;
 }
+
 .formcirlerotate img {
   animation: spin 30s linear infinite;
   margin-left: auto;
   max-width: 14rem;
 }
+
 @keyframes spin {
   from {
     transform: rotate(-0deg);
@@ -74,13 +82,12 @@
   }
 }
 
-
-
 @media only screen and (max-width: 767px) {
   .herocontainer {
     max-width: 90%;
   }
-  .herotechimg img{
+
+  .herotechimg img {
     max-width: 10rem;
   }
 }
