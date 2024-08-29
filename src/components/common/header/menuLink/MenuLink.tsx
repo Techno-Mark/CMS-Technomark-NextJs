@@ -5,7 +5,7 @@ import styles from "./menulink.module.css";
 
 interface MenuItem {
   name: string;
-  link: string;
+  path: string;
 }
 
 interface MenuLinkProps {
@@ -14,10 +14,10 @@ interface MenuLinkProps {
 
 const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
   const pathname = usePathname();
-  const isActive = pathname === item.link;
+  const isActive = pathname === item.path;
   return (
     <Link
-      href={item.link}
+      href={item.path}
       className={`py-2 px-5 uppercase ${
         isActive &&
         `bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-variant-one)] inline-block text-transparent bg-clip-text ${styles.active}`

@@ -35,15 +35,15 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   try {
     let data = resolvedUrl != "/blogs" && (await apiCall(resolvedUrl));
 
-    let [headerData, footerData] = await Promise.all([
-      fetchHeaderFooterData("Main Header Menu"),
-      fetchHeaderFooterData("Footer Menu"),
-    ]);
+    // let [headerData, footerData] = await Promise.all([
+    //   fetchHeaderFooterData("Main Header Menu"),
+    //   fetchHeaderFooterData("Footer Menu"),
+    // ]);
     return {
       props: {
         data,
-        headerData: headerData?.menuItem,
-        footerData: footerData?.menuItem,
+        headerData: null,
+        footerData: null,
       },
     };
   } catch (error) {
