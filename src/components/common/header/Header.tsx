@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
     useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -302,7 +302,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             <ul
               className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}
             >
-              {headerData.map((menu) => (
+              {headerData?.map((menu) => (
                 <li
                   className={`${styles.navlink} h-full flex items-center ${
                     (menu.name === "Technologies" &&

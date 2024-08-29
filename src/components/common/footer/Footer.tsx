@@ -104,7 +104,7 @@ const Footer = (props: any) => {
           <div
             className={`${styles.footerlinks} grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4`}
           >
-            {props.footerData.map((x: any, index: any) => (
+            {props.footerData?.map((x: any, index: any) => (
               <div key={index}>
                 <h3 className="mb-6 font-medium min-h-6 text-white capitilize">
                   {x?.name == "" || x.name == "#" ? "" : x.name}

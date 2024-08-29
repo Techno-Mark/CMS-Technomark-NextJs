@@ -122,8 +122,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <CustomerLabel />
       <Component {...pageProps} />
-      {/* <Footer props={footerItem} footerData={pageProps.footerData?.menuItem}/> */}
-      <Footer footerData={pageProps.footerData?.menuItem}/>
+      <Footer footerData={pageProps.footerData}/>
     </div>
   );
 }
