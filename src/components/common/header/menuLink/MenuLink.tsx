@@ -5,7 +5,7 @@ import styles from "./menulink.module.css";
 
 interface MenuItem {
   name: string;
-  path: string;
+  link: string;
 }
 
 interface MenuLinkProps {
@@ -14,7 +14,7 @@ interface MenuLinkProps {
 
 const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
   const pathname = usePathname();
-  const isActive = pathname === item.path;
+  const isActive = pathname === item.link;
   return (
     <Link
       href={item.link}
