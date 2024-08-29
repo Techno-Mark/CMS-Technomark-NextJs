@@ -684,7 +684,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   pathName === "/aiml" ||
                   pathName === "/blockchain" ||
                   pathName === "/iotservice" ||
-                  pathName === "/migrationmodernization" ? (
+                  pathName === "/migrationmodernization" ||
+                  pathName === "/home" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
@@ -935,6 +936,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
+  console.log(homeData)
   return (
     <>
       {homeData ? (
