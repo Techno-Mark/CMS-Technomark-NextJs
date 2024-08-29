@@ -27,10 +27,11 @@ const Index: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "",
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
           },
         }
       );
+      console.log(res.data.data)
       setData(res.data.data);
       setFormData(res.data.data.formatData[0]);
     } catch (error) {

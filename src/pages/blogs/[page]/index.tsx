@@ -48,7 +48,7 @@ const BlogPage: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "",
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
           },
         }
       );
@@ -64,7 +64,7 @@ const BlogPage: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "",
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
           },
         }
       );
