@@ -98,14 +98,23 @@ const BlogPage: React.FC = () => {
       <section className={`${styles.casestudylist} tm-section bg-white`}>
         <div className="container mx-auto">
           <p className={styles.casestudylistlabel}>Resources</p>
-          <TitleSection
+          {/* <TitleSection
             sectionData={{
               title: data?.title || "",
               subtitle: data?.subTitle || "",
             }}
-            titleFirst={true}
-            titleClassName="bloglisttitle"
-          />
+            titleClassName="bloglisttitle w-[75%]"
+          /> */}
+          {data?.title && (
+            <h2 className="max-w-[65%] mx-auto text-[var(--secondary--color)] text-3xl md:text-5xl font-bold !leading-normal text-center mb-10 md:mb-16">
+              {data.title}
+            </h2>
+          )}
+          {data?.subTitle && (
+            <p className="max-w-[80%] mx-auto text-[var(--secondary--color)] text-xl md:text-4xl !leading-normal font-medium text-center mb-10 md:mb-16">
+              {data.subTitle}
+            </p>
+          )}
         </div>
 
         <div className="container mx-auto">
@@ -158,7 +167,8 @@ const BlogPage: React.FC = () => {
             </div>
           </div>
         </div>
-
+      </section>
+      <section className="bg-white relative pb-8 md:pb-16">
         {data && <BlogDescription props={data} />}
       </section>
 

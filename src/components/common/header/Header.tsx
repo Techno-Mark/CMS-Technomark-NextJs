@@ -110,11 +110,11 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
           path: "/cloudengineering",
           icons: "/images/cloud.svg",
         },
-        {
-          name: "migration & modernization",
-          path: "/migrationmodernization",
-          icons: "/images/migration.svg",
-        },
+        // {
+        //   name: "migration & modernization",
+        //   path: "/migrationmodernization",
+        //   icons: "/images/migration.svg",
+        // },
       ],
     },
     {
