@@ -1,30 +1,39 @@
-import React from "react";
-import Image from "next/image";
-import TitleSection from "@/components/common/title/title";
 import Button from "@/components/common/button/button";
+import TitleSection from "@/components/common/title/title";
+import Image from "next/image";
+import React from "react";
 import styles from "./herosection.module.css";
 
+interface HeroSectionItem {
+  label?: string;
+  title?: string;
+  subTitle?: string;
+  techImage?: string;
+  heroImage?: string;
+  buttonUrl?: string;
+  buttonText?: string;
+}
+
 interface HeroSectionProps {
-  props: any;
-  istechnology?: boolean;
-  istechstartup?: boolean;
+  props: HeroSectionItem[];
+  isTechnology?: boolean;
+  isTechStartup?: boolean;
 }
 
 const Herosection: React.FC<HeroSectionProps> = ({
   props,
-  istechnology,
-  istechstartup,
+  isTechnology,
+  isTechStartup,
 }) => {
-  if (istechnology) {
+  const findItem = (key: keyof HeroSectionItem) =>
+    props.find((item) => item[key]);
+
+  if (isTechnology) {
     return (
       <>
         <div className={styles.techimgcontainer}>
           <Image
-            src={
-              props.find((item: any) => item.techImage)
-                ? props.find((item: any) => item.techImage).techImage
-                : ""
-            }
+            src={findItem("techImage")?.techImage || ""}
             alt=""
             width={1920}
             height={160}
@@ -33,11 +42,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
         <div className={`container mx-auto ${styles.techherocontainer}`}>
           <div className={`flex justify-center ${styles.herotechimg}`}>
             <Image
-              src={
-                props.find((item: any) => item.heroImage)
-                  ? props.find((item: any) => item.heroImage).heroImage
-                  : ""
-              }
+              src={findItem("heroImage")?.heroImage || ""}
               alt="hero image"
               height={160}
               width={160}
@@ -45,26 +50,14 @@ const Herosection: React.FC<HeroSectionProps> = ({
           </div>
           <TitleSection
             sectionData={{
-              title: props.find((item: any) => item.title)
-                ? props.find((item: any) => item.title).title
-                : "",
-              subtitle: props.find((item: any) => item.subTitle)
-                ? props.find((item: any) => item.subTitle).subTitle
-                : "",
+              title: findItem("title")?.title || "",
+              subtitle: findItem("subTitle")?.subTitle || "",
             }}
             titleClassName="techherosectiontitle"
           />
           <Button
-            href={
-              props.find((item: any) => item.buttonUrl)
-                ? props.find((item: any) => item.buttonUrl).buttonUrl
-                : "#"
-            }
-            text={
-              props.find((item: any) => item.buttonText)
-                ? props.find((item: any) => item.buttonText).buttonText
-                : ""
-            }
+            href={findItem("buttonUrl")?.buttonUrl || "#"}
+            text={findItem("buttonText")?.buttonText || ""}
             variant="secondary"
           />
         </div>
@@ -75,59 +68,37 @@ const Herosection: React.FC<HeroSectionProps> = ({
   return (
     <div
       className={`container mx-auto ${styles.herocontainer} ${
-        istechstartup ? styles.techstartpcontainer : ""
+        isTechStartup ? styles.techstartpcontainer : ""
       }`}
     >
       <div className="flex flex-wrap sm:flex-row flex-col-reverse items-center">
         <div className="w-full md:w-1/2">
-          <p className={styles.label}>
-            {props.find((item: any) => item.label)
-              ? props.find((item: any) => item.label).label
-              : ""}
-          </p>
+          <p className={styles.label}>{findItem("label")?.label || ""}</p>
           <TitleSection
             sectionData={{
-              title: props.find((item: any) => item.title)
-                ? props.find((item: any) => item.title).title
-                : "",
-              subtitle: props.find((item: any) => item.subTitle)
-                ? props.find((item: any) => item.subTitle).subTitle
-                : "",
+              title: findItem("title")?.title || "",
+              subtitle: findItem("subTitle")?.subTitle || "",
             }}
             titleClassName="herosectiontitle"
           />
-          {istechstartup ? (
+          {isTechStartup ? (
             <Button
-              href={
-                props.find((item: any) => item.buttonUrl)
-                  ? props.find((item: any) => item.buttonUrl).buttonUrl
-                  : "#"
-              }
-              text={
-                props.find((item: any) => item.buttonText)
-                  ? props.find((item: any) => item.buttonText).buttonText
-                  : "Contact Now"
-              }
+              href={findItem("buttonUrl")?.buttonUrl || "#"}
+              text={findItem("buttonText")?.buttonText || "Contact Now"}
               variant="secondary"
             />
           ) : (
             <Button
-              href={
-                props.find((item: any) => item.buttonUrl)
-                  ? props.find((item: any) => item.buttonUrl).buttonUrl
-                  : "#"
-              }
+              href={findItem("buttonUrl")?.buttonUrl || "#"}
               text={
-                props.find((item: any) => item.buttonText)
-                  ? props.find((item: any) => item.buttonText).buttonText
-                  : "Get Free Consultation"
+                findItem("buttonText")?.buttonText || "Get Free Consultation"
               }
               variant="primary"
             />
           )}
         </div>
         <div className="w-full md:w-1/2 relative">
-          {istechstartup && (
+          {isTechStartup && (
             <div className={styles.formcirlerotate}>
               <Image
                 src="/images/animatecircle.png"
@@ -139,11 +110,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           )}
           <div className={styles.imagecontainer}>
             <Image
-              src={
-                props.find((item: any) => item.heroImage)
-                  ? props.find((item: any) => item.heroImage).heroImage
-                  : ""
-              }
+              src={findItem("heroImage")?.heroImage || ""}
               alt="Hero Image"
               width={500}
               height={700}

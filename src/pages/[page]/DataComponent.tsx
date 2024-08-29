@@ -154,7 +154,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleClassName="methodologytitle"
                 />
                 <MethodologyBox
-                  props={
+                  data={
                     sectionData.find((item: any) => item.Card)
                       ? sectionData.find((item: any) => item.Card).Card
                       : []
@@ -406,7 +406,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   </div>
                   <div className="w-full md:w-3/4">
                     <Faq
-                      props={
+                      data={
                         sectionData.find(
                           (item: any) => item["Question Answers"]
                         )?.["Question Answers"]
@@ -676,7 +676,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 ) : pathName === "/productengineering" ||
                   pathName === "/softwaredevelopment" ||
                   pathName === "/mobileapps" ||
-                  pathName === "/uiux" ? (
+                  pathName === "/uiux" ||
+                  pathName === "/testingautomation" ||
+                  pathName === "/consultation" ||
+                  pathName === "/digitaltransformation" ||
+                  pathName === "/cloudengineering" ||
+                  pathName === "/aiml" ||
+                  pathName === "/blockchain" ||
+                  pathName === "/iotservice" ||
+                  pathName === "/migrationmodernization" ||
+                  pathName === "/home" ? (
                   <Services
                     props={
                       sectionData.find((item: any) => item.Data)
@@ -705,7 +714,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               className={`${styles.prodcutherosection} tm-section bg-white`}
             >
               {pathName === "/start-up-services" ? (
-                <Herosection props={sectionData} istechstartup={true} />
+                <Herosection props={sectionData} isTechStartup={true} />
               ) : (
                 <Herosection props={sectionData} />
               )}
@@ -750,7 +759,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 className={`${styles.technologyhomesection} tm-section bg-white`}
               >
                 {/* <img src={homeData.technologyhomesection.techimage} alt="" /> */}
-                <Herosection props={sectionData} istechnology={true} />
+                <Herosection props={sectionData} isTechnology={true} />
               </section>
             </>
           )
@@ -927,7 +936,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  console.log("homeData", homeData);
+  console.log(homeData)
   return (
     <>
       {homeData ? (

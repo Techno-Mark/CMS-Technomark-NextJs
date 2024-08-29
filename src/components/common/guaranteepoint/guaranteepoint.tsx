@@ -1,28 +1,28 @@
-// components/GuaranteePoints/GuaranteePoints.tsx
 import React from "react";
 import styles from "./GuaranteePoints.module.css";
 import Image from "next/image";
 
-interface guarantee {
+interface PointItem {
   title: string;
   description: string;
 }
 
-interface guaranteeProps {
-  props?: any;
-  isProblemStatement?: boolean; // Optional flag
+interface Point {
+  items: PointItem[];
 }
 
-const commonIcon = "/images/check-circle.png";
-const commonAltText = "check";
+interface GuaranteePointsProps {
+  props: Point[];
+  isProblemStatement?: boolean;
+}
 
-const GuaranteePoints: React.FC<guaranteeProps> = ({
+const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
   props,
   isProblemStatement,
 }) => {
   return (
     <>
-      {props?.map((point: any, index: number) => (
+      {props?.map((point, index) => (
         <div
           key={index}
           className={`${styles.iconTextArea} ${
@@ -32,24 +32,22 @@ const GuaranteePoints: React.FC<guaranteeProps> = ({
           <div className={styles.inlineIcon}>
             <div className={styles.checkicon}>
               <Image
-                src={commonIcon}
-                alt={commonAltText}
+                src="/images/check-circle.png"
+                alt="check"
                 height={24}
                 width={24}
               />
             </div>
             <h4>
-              {point.items.find((item: any) => item.title)
-                ? point.items.find((item: any) => item.title).title
-                : ""}
+              {point.items.find((item) => item.title)?.title || ""}
             </h4>
           </div>
           <p
             className={styles.description}
             dangerouslySetInnerHTML={{
-              __html: point.items.find((item: any) => item.description)
-                ? point.items.find((item: any) => item.description).description
-                : "",
+              __html:
+                point.items.find((item) => item.description)?.description ||
+                "",
             }}
           />
         </div>

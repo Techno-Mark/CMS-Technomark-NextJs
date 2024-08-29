@@ -4,7 +4,7 @@ export const fetchHeaderFooterData = async (param: string) => {
   try {
     let referalHeader = process.env.REFERAL_HEADER;
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/menu/getByName/${param}`,
+      `${process.env.NEXT_PUBLIC_API_URL}menu/getByName/${param}`,
       {
         headers: {
           referal: referalHeader,
