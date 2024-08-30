@@ -31,7 +31,6 @@ const Index: React.FC = () => {
           },
         }
       );
-      console.log(res.data.data)
       setData(res.data.data);
       setFormData(res.data.data.formatData[0]);
     } catch (error) {
