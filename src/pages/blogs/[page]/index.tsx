@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import TitleSection from "@/components/common/title/title";
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "../list/home.module.css";
 import Image from "next/image";
@@ -42,19 +42,28 @@ interface FormSectionData {
 
 const BlogPage: React.FC = () => {
   const param = useParams();
+  const searchParams = useSearchParams();
   const [data, setData] = useState<BlogData | null>(null);
   const [formData, setFormData] = useState<FormSectionData | null>(null);
 
+  const isPreview = searchParams.get("preview") === "true";
+
   const apiCall = async (slug: string | string[]) => {
     try {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`,
-        {
-          headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-          },
-        }
-      );
+      let hashId = searchParams.get("id");
+      const url = isPreview
+        ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
+        : `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`;
+
+      const res = await axios.get(url, {
+        headers: {
+          referal: process.env.REFERAL_HEADER || "http://localhost:3001",
+        },
+      });
+      if(isPreview){
+        setData(res.data.data.data);
+        return;
+      }
       setData(res.data.data);
     } catch (error) {
       console.error("Error fetching blog data:", error);
