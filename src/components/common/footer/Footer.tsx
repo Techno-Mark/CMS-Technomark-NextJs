@@ -4,15 +4,16 @@ import styles from "./footer.module.css";
 
 interface FooterProps {
   footerData: {
-    title: string;
-    child: {
+    name: string;
+    children: {
       name: string;
-      path: string;
+      link: string;
     }[];
   }[];
 }
 
 const Footer: React.FC<FooterProps> = ({ footerData }) => {
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -70,12 +71,12 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             {footerData?.map((section, sectionIndex) => (
               <div key={sectionIndex}>
                 <h3 className="mb-6 font-medium text-white capitalize">
-                  {section.title}
+                  {section.name}
                 </h3>
                 <ul className={styles.footerlinksul}>
-                  {section.child.map((link, linkIndex) => (
+                  {section.children.map((link, linkIndex) => (
                     <li className="mb-4" key={linkIndex}>
-                      <Link href={link.path}>
+                      <Link href={link.link}>
                         <span className="text-[1rem]">{link.name}</span>
                       </Link>
                     </li>
