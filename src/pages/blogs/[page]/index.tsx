@@ -106,19 +106,19 @@ const BlogPage: React.FC = () => {
             titleClassName="bloglisttitle w-[75%]"
           /> */}
           {data?.title && (
-            <h2 className="max-w-[65%] mx-auto text-[var(--secondary--color)] text-3xl md:text-5xl font-bold !leading-normal text-center mb-10 md:mb-16">
+            <h2 className="md:max-w-[65%] mx-auto text-[var(--secondary--color)] text-3xl md:text-5xl font-bold !leading-normal text-center mb-10 md:mb-16">
               {data.title}
             </h2>
           )}
           {data?.subTitle && (
-            <p className="max-w-[80%] mx-auto text-[var(--secondary--color)] text-xl md:text-4xl !leading-normal font-medium text-center mb-10 md:mb-16">
+            <p className="md:max-w-[80%] mx-auto text-[var(--secondary--color)] text-xl md:text-4xl !leading-normal font-medium text-center mb-10 md:mb-16">
               {data.subTitle}
             </p>
           )}
         </div>
 
         <div className="container mx-auto">
-          <div className="shadow-custom-green p-16 mb-20 bg-[rgba(231,248,234,0.40)]">
+          <div className="shadow-custom-green p-16 bg-[rgba(231,248,234,0.40)]">
             <div className="flex w-full">
               {data?.authorImageUrl && (
                 <Image
