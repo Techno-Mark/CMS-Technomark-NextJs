@@ -84,6 +84,7 @@
   list-style-type: none;
   margin: 0;
   padding-inline: 1rem;
+  width: 100%;
 }
 
 .flipcard .inner .back ul li {
@@ -99,7 +100,7 @@
 
 .flipcard .inner .back ul li ul {
   list-style: disc;
-  margin: 7px 0 0;
+  margin: 7px 5px 0;
 }
 
 .flipcard .inner .back ul li:hover {
@@ -112,6 +113,7 @@
   .flipcard {
     height: 470px;
   }
+
   .flipcard .inner .back ul li {
     font-size: 1.3rem;
     line-height: 1.5rem;
