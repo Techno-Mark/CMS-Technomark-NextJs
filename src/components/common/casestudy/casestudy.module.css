@@ -4,11 +4,9 @@
   margin-right: 2rem;
   border: 1px solid var(--border-primary);
   transition: width 1s ease-in-out;
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       var(--white-color) 0%,
-      var(--white-color) 100%
-    ),
+      var(--white-color) 100%),
     lightgray 50% / cover no-repeat;
   display: flex !important;
   width: auto !important;
@@ -17,14 +15,17 @@
 
 .activeSlide.casebox {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(
-    347.79% 137.52% at 0% 0%,
-    #f3f3dd 0%,
-    #e1e3ef 35%,
-    #e4f4e9 74%,
-    #f1e1f1 100%
-  );
+  background: radial-gradient(347.79% 137.52% at 0% 0%,
+      #f3f3dd 0%,
+      #e1e3ef 35%,
+      #e4f4e9 74%,
+      #f1e1f1 100%);
   border: 1px solid #ebcb5b;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,
+      #ebcb5b 0%,
+      #017ca1 50%,
+      #61b946 100%);
 }
 
 .casebox .textarea {
@@ -77,11 +78,9 @@
 .readmore {
   margin: 0;
   transition: 0.5s;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0.08%,
-    var(--primary-variant-one) 99.95%
-  );
+  background: linear-gradient(90deg,
+      var(--primary-color) 0.08%,
+      var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -199,11 +198,9 @@
 .readmore {
   margin: 0;
   transition: 0.5s;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0.08%,
-    var(--primary-variant-one) 99.95%
-  );
+  background: linear-gradient(90deg,
+      var(--primary-color) 0.08%,
+      var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -216,10 +213,11 @@
   bottom: 2rem;
 }
 
-.caseslide :global(.slick-list){
+.caseslide :global(.slick-list) {
   overflow: visible;
 
 }
+
 .caseslide :global(.slick-arrow) {
   position: absolute;
   z-index: 99;
@@ -228,6 +226,7 @@
   cursor: pointer;
   width: 5rem;
 }
+
 .caseslide :global(.slick-arrow svg) {
   height: 5rem;
   width: 5rem;
@@ -235,13 +234,16 @@
   border-radius: 100%;
   transition: all 0.5s ease;
 }
+
 .caseslide :global(.slick-arrow:hover svg) {
   background: var(--secondary--color);
 }
+
 .caseslide :global(.slick-arrow:hover svg path) {
   stroke: var(--white-color);
 
 }
+
 .caseslide :global(.slick-arrow::before) {
   opacity: 0;
 }
@@ -258,16 +260,19 @@
   margin-left: auto;
   margin-right: initial;
 }
+
 @media only screen and (max-width: 767px) {
   .casebox {
     flex-direction: column;
     row-gap: 40px;
     padding-bottom: 50px;
   }
+
   .casebox .resultarea {
     border-left: none;
     padding-left: 0;
   }
+
   .techusetext li img {
     top: 2px;
   }

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "./blogDescription.module.css";
+import Link from "next/link";
 
 interface BlogDescProps {
   description: string;
@@ -22,12 +23,14 @@ const BlogDescription: React.FC<{ props: BlogDescProps }> = ({ props }) => {
       <div className="sticky top-[75px] ml-10 mt-20 self-start">
         {["whatsapp", "linkdin", "twitter", "youtube", "facebook", "share"].map(
           (icon, index) => (
-            <img
-              key={index}
-              src={`/images/${icon}.png`}
-              className="rounded-full mb-7 h-[40px] w-[40px] lg:h-[60px] lg:w-[60px]"
-              alt={`${icon}-icon`}
-            />
+            <Link href={"/"} target="_blank">
+              <img
+                key={index}
+                src={`/images/${icon}.png`}
+                className="rounded-full mb-7 h-[40px] w-[40px] lg:h-[60px] lg:w-[60px]"
+                alt={`${icon}-icon`}
+              />
+            </Link>
           )
         )}
       </div>

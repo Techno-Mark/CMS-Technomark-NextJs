@@ -2,15 +2,20 @@ import React from "react";
 import styles from "./services.module.css";
 import Image from "next/image";
 
+interface ServiceItem {
+  icon?: string;
+  text?: string;
+  description?: string;
+  alt?: string;
+}
+
 interface Service {
-  icon: string;
-  text: string;
-  description: string;
-  alt: string;
+  items: ServiceItem[];
+  keyMultiple: number;
 }
 
 interface ServicesProps {
-  props: any;
+  props: Service[];
   isFeatured?: boolean;
   isProduct?: boolean;
   istechservice?: boolean;
@@ -18,9 +23,9 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({
   props,
-  isFeatured,
-  isProduct,
-  istechservice,
+  isFeatured = false,
+  isProduct = false,
+  istechservice = false,
 }) => {
   const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
@@ -35,63 +40,58 @@ const Services: React.FC<ServicesProps> = ({
   };
 
   return (
-    <div className={`flex flex-wrap  ${getClassName()}`}>
-      {services.map((service: any, index: any) => {
+    <div className={`flex flex-wrap ${getClassName()}`}>
+      {services.map((service, index) => {
         const isFirstRow = index < columns;
         const isRightMostColumn = (index + 1) % columns === 0;
         const isBottomBorder = index < (rows - 1) * columns;
         const isLastRow = index >= (rows - 1) * columns;
 
+        const icon = service.items.find((item) => item.icon)?.icon || "";
+        const text = service.items.find((item) => item.text)?.text || "";
+        const description =
+          service.items.find((item) => item.description)?.description || "";
+        const alt = service.items.find((item) => item.alt)?.alt || "";
+
         return (
           <div
             key={index}
-            className={`w-full ${
+            className={`w-full  ${
               isFeatured
                 ? "w-1/2 md:w-1/5"
                 : isProduct || istechservice
                 ? "md:w-1/3"
                 : "md:w-1/2 lg:w-1/4"
+            } border-t border-r border-[var(--border-primary)] ${
+              columns === 3
+                ? "[&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
+                : "[&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
             }`}
           >
+            {/* ${styles.serviceBorder}  */}
             <div
-              className={`${styles.servicesbox} ${
-                !isFirstRow && !isLastRow ? "" : "!border-t-0"
-              } ${isRightMostColumn ? styles.servicerightborder : ""} ${
-                isBottomBorder && !isLastRow ? "border-b border-gray-300" : ""
-              }`}
+              className={`${styles.servicesbox}
+              ${isRightMostColumn ? styles.servicerightborder : ""}`}
             >
               <div className={styles.servicesinnerbox}>
-                <div className={styles.icon}>
-                  <Image
-                    src={
-                      service.items.find((item: any) => item.icon)
-                        ? service.items.find((item: any) => item.icon).icon
-                        : ""
-                    }
-                    alt={
-                      service.items.find((item: any) => item.text)
-                        ? service.items.find((item: any) => item.text).text
-                        : ""
-                    }
-                    height={30}
-                    width={33}
-                  />
-                </div>
-                <h3 className={styles.servicetitle}>
-                  {service.items.find((item: any) => item.text)
-                    ? service.items.find((item: any) => item.text).text
-                    : ""}
-                </h3>
+                {icon && (
+                  <div className={styles.icon}>
+                    <Image
+                      src={icon}
+                      alt={alt || text}
+                      height={30}
+                      width={33}
+                    />
+                  </div>
+                )}
+                <h3 className={styles.servicetitle}>{text}</h3>
                 {!isFeatured && (
                   <p
                     className={`${styles.servicedescribe} ${
                       isProduct ? styles.textpadding : ""
                     }`}
                   >
-                    {service.items.find((item: any) => item.description)
-                      ? service.items.find((item: any) => item.description)
-                          .description
-                      : ""}
+                    {description}
                   </p>
                 )}
                 {!isFeatured && !istechservice && !isProduct && (
