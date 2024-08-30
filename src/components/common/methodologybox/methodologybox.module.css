@@ -6,8 +6,12 @@
   background-color: transparent;
   perspective: 1000px;
   border: 1px solid var(--border-primary);
+  border-left: none;
   height: 600px;
   background: var(--white-color);
+}
+.flipcard:first-child {
+border-left: 1px solid var(--border-primary);
 }
 
 .flipcard .inner {
