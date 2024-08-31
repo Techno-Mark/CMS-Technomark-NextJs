@@ -23,7 +23,7 @@ const BlogDescription: React.FC<{ props: BlogDescProps }> = ({ props }) => {
       <div className="sticky top-[75px] ml-10 mt-20 self-start">
         {["whatsapp", "linkdin", "twitter", "youtube", "facebook", "share"].map(
           (icon, index) => (
-            <Link href={"/"} target="_blank">
+            <Link href={"/"} target="_blank" key={index}>
               <img
                 key={index}
                 src={`/images/${icon}.png`}
