@@ -1,6 +1,6 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./GuaranteePoints.module.css";
-import Image from "next/image";
 
 interface PointItem {
   title: string;

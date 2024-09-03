@@ -9,13 +9,12 @@ interface HomeSectionProps {
 }
 
 const HomeSection: React.FC<HomeSectionProps> = ({ sectionData }) => {
-  const backgroundVideo = sectionData.find((item: any) => item.backgroundVideo)?.backgroundVideo ?? "/images/hero.mp4";
-  const headingText = sectionData.find((item: any) => item.headingText)?.headingText ?? "";
-  const ctaText = sectionData.find((item: any) => item.ctaText)?.ctaText ?? "";
-  const servicesChangeText = sectionData
-    .find((item: any) => item["Services Change text"])
-    ?.["Services Change text"].map(
-      (entry: any) => entry.items.find((item: any) => item.headingText)?.headingText
+  const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4";
+  const headingText = sectionData.headingText ?? "";
+  const ctaText = sectionData.ctaText ?? "";
+  const servicesChangeText =
+    sectionData?.servicesChargeText.map(
+      (entry: any) => entry.headingText
     ) ?? [];
 
   return (
@@ -30,7 +29,12 @@ const HomeSection: React.FC<HomeSectionProps> = ({ sectionData }) => {
         <TypeingTexts props={servicesChangeText} />
         <Button href="#" text={ctaText} variant="primary" />
         <div className={homeStyles.linearrow}>
-          <Image src="/images/line-arrow.svg" alt="arrow" height={130} width={36} />
+          <Image
+            src="/images/line-arrow.svg"
+            alt="arrow"
+            height={130}
+            width={36}
+          />
         </div>
       </div>
     </section>
