@@ -237,16 +237,21 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <div className="flex flex-wrap">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
                     <div className={styles.videoarea}>
-                      <video loop autoPlay muted>
-                        <source
-                          src={
-                            sectionData.image
-                              ? sectionData.image
-                              : "/images/Case-study.mp4"
-                          }
-                          type="video/mp4"
+                      {sectionData.image ? (
+                        <Image
+                          src={sectionData.image}
+                          alt="Gurrentee Technomark"
+                          width={900}
+                          height={500}
                         />
-                      </video>
+                      ) : (
+                        <video loop autoPlay muted>
+                          <source
+                            src={"/images/Case-study.mp4"}
+                            type="video/mp4"
+                          />
+                        </video>
+                      )}
                     </div>
                   </div>
                   <div className="lg:w-1/2 md:w-full pl-10 flex flex-col items-center justify-center">
