@@ -2,25 +2,19 @@ import React from "react";
 import styles from "./productsolutions.module.css";
 import Image from "next/image";
 
-interface ListItem {
-  text?: string;
-}
-
 interface PropsItem {
   image?: string;
-  "List Items"?: {
-    items: ListItem[];
-  }[];
+  listItems:  [{text:string}];
 }
 
 interface ProductSolutionsProps {
-  props: PropsItem[];
+  props: PropsItem;
 }
 
 const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
-  const image = props.find((item) => item.image)?.image || "";
+  const image = props?.image || "";
   const listItems =
-    props.find((item) => item["List Items"])?.["List Items"] || [];
+    props?.listItems || [];
 
   return (
     <div className="flex flex-wrap items-center">
@@ -42,7 +36,7 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
                     height={50}
                     width={80}
                   />
-                  {listItem.items?.find((item) => item.text)?.text || ""}
+                  {listItem?.text || ""}
                 </div>
               </li>
             ))}

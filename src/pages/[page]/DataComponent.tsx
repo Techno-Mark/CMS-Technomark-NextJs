@@ -237,7 +237,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <div className="flex flex-wrap">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
                     <div className={styles.videoarea}>
-                      {sectionData.image ? (
+                      {sectionData.image && !sectionData.image.endsWith(".mp4") ? (
                         <Image
                           src={sectionData.image}
                           alt="Gurrentee Technomark"
@@ -682,7 +682,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //       </section>
       //     )
       //   );
-      case "productsolutions":
+      case "Product Solutions":
         return (
           sectionData && (
             <section
