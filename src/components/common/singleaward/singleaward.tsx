@@ -12,22 +12,18 @@ interface Award {
 }
 
 interface SingleAwardProps {
-  data: Award[];
+  props: AwardItem[];
 }
 
-const SingleAward: React.FC<SingleAwardProps> = ({ data }) => {
+const SingleAward: React.FC<SingleAwardProps> = ({ props }) => {
   return (
     <div className="award-section">
       <ul className={styles.awardlist}>
-        {data.map((award, index) => (
-          <li key={award.keyMultiple}>
+        {props.map((award, index) => (
+          <li key={index}>
             <Image
-              src={
-                award.items.length > 0 && award.items[0].iconImage
-                  ? award.items[0].iconImage
-                  : "/default-image.png"
-              }
-              alt={`Award ${award.keyMultiple}`}
+              src={!!award.iconImage ? award.iconImage : ""}
+              alt={`${index}`}
               width={107}
               height={107}
             />

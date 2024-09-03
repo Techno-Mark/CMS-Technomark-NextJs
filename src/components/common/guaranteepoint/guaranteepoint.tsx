@@ -12,7 +12,7 @@ interface Point {
 }
 
 interface GuaranteePointsProps {
-  props: Point[];
+  props: PointItem[];
   isProblemStatement?: boolean;
 }
 
@@ -38,16 +38,12 @@ const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
                 width={24}
               />
             </div>
-            <h4>
-              {point.items.find((item) => item.title)?.title || ""}
-            </h4>
+            <h4>{point.title || ""}</h4>
           </div>
           <p
             className={styles.description}
             dangerouslySetInnerHTML={{
-              __html:
-                point.items.find((item) => item.description)?.description ||
-                "",
+              __html: point.description || "",
             }}
           />
         </div>

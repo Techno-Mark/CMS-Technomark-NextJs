@@ -10,9 +10,7 @@ interface ImageItem {
 }
 
 interface ScreenSliderProps {
-  props: {
-    items: ImageItem[];
-  }[];
+  props: ImageItem[];
   useSlider1: boolean;
 }
 
@@ -59,19 +57,17 @@ const ScreenSlider: React.FC<ScreenSliderProps> = ({ props, useSlider1 }) => {
       }
     >
       <Slider {...selectedSettings}>
-        {props.map(({ items }, index) =>
-          items.map((item, itemIndex) => (
-            <div key={`${index}-${itemIndex}`} className={styles.projectimg}>
-              <Image
-                src={item.imaegUrl}
-                alt={`Slide image ${index}-${itemIndex}`}
-                width={600}
-                height={400}
-                layout="responsive"
-              />
-            </div>
-          ))
-        )}
+        {props.map((item, index) => (
+          <div key={`${index}`} className={styles.projectimg}>
+            <Image
+              src={item.imaegUrl}
+              alt={`Slide image ${index}`}
+              width={600}
+              height={400}
+              layout="responsive"
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );

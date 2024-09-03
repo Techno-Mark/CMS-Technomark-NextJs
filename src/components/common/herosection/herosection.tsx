@@ -15,7 +15,7 @@ interface HeroSectionItem {
 }
 
 interface HeroSectionProps {
-  props: HeroSectionItem[];
+  props: HeroSectionItem;
   isTechnology?: boolean;
   isTechStartup?: boolean;
 }
@@ -25,15 +25,12 @@ const Herosection: React.FC<HeroSectionProps> = ({
   isTechnology,
   isTechStartup,
 }) => {
-  const findItem = (key: keyof HeroSectionItem) =>
-    props.find((item) => item[key]);
-
   if (isTechnology) {
     return (
       <>
         <div className={styles.techimgcontainer}>
           <Image
-            src={findItem("techImage")?.techImage || ""}
+            src={props?.techImage || ""}
             alt=""
             width={1920}
             height={160}
@@ -42,7 +39,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
         <div className={`container mx-auto ${styles.techherocontainer}`}>
           <div className={`flex justify-center ${styles.herotechimg}`}>
             <Image
-              src={findItem("heroImage")?.heroImage || ""}
+              src={props?.heroImage || ""}
               alt="hero image"
               height={160}
               width={160}
@@ -50,14 +47,14 @@ const Herosection: React.FC<HeroSectionProps> = ({
           </div>
           <TitleSection
             sectionData={{
-              title: findItem("title")?.title || "",
-              subtitle: findItem("subTitle")?.subTitle || "",
+              title: props?.title || "",
+              subtitle: props?.subTitle || "",
             }}
             titleClassName="techherosectiontitle"
           />
           <Button
-            href={findItem("buttonUrl")?.buttonUrl || "#"}
-            text={findItem("buttonText")?.buttonText || ""}
+            href={props?.buttonUrl || "#"}
+            text={props?.buttonText || ""}
             variant="secondary"
           />
         </div>
@@ -73,26 +70,24 @@ const Herosection: React.FC<HeroSectionProps> = ({
     >
       <div className="flex flex-wrap sm:flex-row flex-col-reverse items-center">
         <div className="w-full md:w-1/2">
-          <p className={styles.label}>{findItem("label")?.label || ""}</p>
+          <p className={styles.label}>{props?.label || ""}</p>
           <TitleSection
             sectionData={{
-              title: findItem("title")?.title || "",
-              subtitle: findItem("subTitle")?.subTitle || "",
+              title: props?.title || "",
+              subtitle: props?.subTitle || "",
             }}
             titleClassName="herosectiontitle"
           />
           {isTechStartup ? (
             <Button
-              href={findItem("buttonUrl")?.buttonUrl || "#"}
-              text={findItem("buttonText")?.buttonText || "Contact Now"}
+              href={props?.buttonUrl || "#"}
+              text={props?.buttonText || "Contact Now"}
               variant="secondary"
             />
           ) : (
             <Button
-              href={findItem("buttonUrl")?.buttonUrl || "#"}
-              text={
-                findItem("buttonText")?.buttonText || "Get Free Consultation"
-              }
+              href={props?.buttonUrl || "#"}
+              text={props?.buttonText || "Get Free Consultation"}
               variant="primary"
             />
           )}
@@ -110,7 +105,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           )}
           <div className={styles.imagecontainer}>
             <Image
-              src={findItem("heroImage")?.heroImage || ""}
+              src={props?.heroImage || ""}
               alt="Hero Image"
               width={500}
               height={700}

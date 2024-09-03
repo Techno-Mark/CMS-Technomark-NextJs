@@ -43,9 +43,9 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
     };
   }, []);
 
-  const title = props.find((item: any) => item.title)?.title || "";
-  const subtitle = props.find((item: any) => item.subTitle)?.subTitle || "";
-  const Services = props.find((item: any) => item.Services)?.Services || [];
+  const title = props?.title || "";
+  const subtitle = props?.subTitle || "";
+  const services = props?.services || [];
 
   return (
     <div className="flex flex-wrap sm:flex-row flex-col">
@@ -68,29 +68,20 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
       </div>
       <div className={`w-full md:w-1/2 ${styles.borderleftscroll}`}>
         <div className={`${styles.sectioncontent}`}>
-          {Services.map((service: any, index: number) => (
+          {services.map((service: any, index: number) => (
             <section
               key={index}
               id={`section${index + 1}`}
               data-image={`/images/${index + 1}-${
-                service.items.find((item: any) => item.title)
-                  ? service.items
-                      .find((item: any) => item.title)
-                      .title.split(" ")[0]
-                  : "Seed"
+                !!service.title ? service.title.split(" ")[0] : "Seed"
               }.gif`}
             >
               <div className={styles.servicesscrollbox}>
                 <h2>{index + 1}</h2>
-                <h3>
-                  {service.items.find((item: any) => item.title)
-                    ? service.items.find((item: any) => item.title).title
-                    : ""}
-                </h3>
+                <h3>{!!service.title ? service.title : ""}</h3>
                 <ul>
-                  {service.items
-                    .find((item: any) => item.items)
-                    ?.items.split(",")
+                  {service?.items
+                    .split(",")
                     .map((item: any, itemIndex: number) => (
                       <li key={itemIndex}>
                         <img

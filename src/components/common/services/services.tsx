@@ -9,13 +9,8 @@ interface ServiceItem {
   alt?: string;
 }
 
-interface Service {
-  items: ServiceItem[];
-  keyMultiple: number;
-}
-
 interface ServicesProps {
-  props: Service[];
+  props: ServiceItem[];
   isFeatured?: boolean;
   isProduct?: boolean;
   istechservice?: boolean;
@@ -43,11 +38,13 @@ const Services: React.FC<ServicesProps> = ({
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
         const isRightMostColumn = (index + 1) % columns === 0;
-        const icon = service.items.find((item) => item.icon)?.icon || "";
-        const text = service.items.find((item) => item.text)?.text || "";
-        const description =
-          service.items.find((item) => item.description)?.description || "";
-        const alt = service.items.find((item) => item.alt)?.alt || "";
+        const isBottomBorder = index < (rows - 1) * columns;
+        const isLastRow = index >= (rows - 1) * columns;
+
+        const icon = service?.icon || "";
+        const text = service?.text || "";
+        const description = service?.description || "";
+        const alt = service?.alt || "";
 
         return (
           <div

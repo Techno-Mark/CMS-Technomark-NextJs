@@ -10,11 +10,9 @@ interface TechStartupBgProps {
 const TechStartupBg: React.FC<TechStartupBgProps> = ({
   sectionData = { title: "", subTitle: "", isCaseStudy: false },
 }) => {
-  const isCaseStudy =
-    sectionData.find((item: any) => item.isCaseStudy)?.isCaseStudy === "true";
-  const title = sectionData.find((item: any) => item.title)?.title ?? "";
-  const subTitle =
-    sectionData.find((item: any) => item.subTitle)?.subTitle ?? "";
+  const isCaseStudy = sectionData?.isCaseStudy == "true";
+  const title = sectionData?.title ?? "";
+  const subTitle = sectionData?.subTitle ?? "";
 
   const containerClassNames = `flex flex-wrap ${techStyles.techsubcontainer} ${
     isCaseStudy ? `flex-col ${techStyles.techcasestudycontainer}` : ""

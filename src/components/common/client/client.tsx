@@ -12,13 +12,8 @@ interface ClientItem {
   companyLogo?: string;
 }
 
-interface ClientData {
-  items: ClientItem[];
-  keyMultiple: number;
-}
-
 interface TestimonialsProps {
-  props: ClientData[];
+  props: ClientItem[];
 }
 
 const Client: React.FC<TestimonialsProps> = ({ props }) => {
@@ -41,18 +36,13 @@ const Client: React.FC<TestimonialsProps> = ({ props }) => {
     <div className={styles.clientcontainer}>
       <Slider {...settings}>
         {props.map((clientData, index) => {
-          const { items } = clientData;
-          const name = items.find((item) => item.name)?.name || "Anonymous";
-          const testimonial =
-            items.find((item) => item.testimonial)?.testimonial ||
-            "No testimonial available.";
+          const items = clientData;
+          const name = items?.name || "Anonymous";
+          const testimonial = items?.testimonial || "No testimonial available.";
           const designation =
-            items.find((item) => item.designation)?.designation ||
-            "Designation not available.";
-          const profileImage =
-            items.find((item) => item.profileImage)?.profileImage || "";
-          const companyLogo =
-            items.find((item) => item.companyLogo)?.companyLogo || "";
+            items?.designation || "Designation not available.";
+          const profileImage = items?.profileImage || "";
+          const companyLogo = items?.companyLogo || "";
 
           return (
             <div className={styles.clientslideinner} key={index}>

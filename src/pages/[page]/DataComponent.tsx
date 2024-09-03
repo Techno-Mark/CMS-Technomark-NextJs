@@ -120,12 +120,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   }, [pathName]);
 
   const renderSection = (sectionName: string, sectionData: any) => {
+    console.log(sectionName);
     switch (sectionName) {
       case "herosections":
         return sectionData && <Homesection sectionData={sectionData} />;
-      case "techstartup":
+      case "Tech Startup":
         return sectionData && <TechStartupBg sectionData={sectionData} />;
-      case "methodology":
+      case "Methodology":
         return (
           sectionData && (
             <section className={`${styles.methodology} tm-section bg-white`}>
@@ -140,25 +141,17 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.headingText)
-                      ? sectionData.find((item: any) => item.headingText)
-                          .headingText
+                    title: !!sectionData.headingText
+                      ? sectionData.headingText
                       : "",
-                    subtitle: sectionData.find(
-                      (item: any) => item.subDescriptionText
-                    )
-                      ? sectionData.find((item: any) => item.subDescriptionText)
-                          .subDescriptionText
+                    subtitle: !!sectionData.subDescriptionText
+                      ? sectionData.subDescriptionText
                       : "",
                   }}
                   titleClassName="methodologytitle"
                 />
                 <MethodologyBox
-                  data={
-                    sectionData.find((item: any) => item.Card)
-                      ? sectionData.find((item: any) => item.Card).Card
-                      : []
-                  }
+                  data={!!sectionData.card ? sectionData.card : []}
                 />
               </div>
             </section>
@@ -182,7 +175,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //       </section>
       //     )
       //   );
-      case "casestudy":
+      case "Case Study":
         return (
           sectionData && (
             <section
@@ -191,30 +184,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find(
-                      (item: any) => item.subTitle || item.subtitle
-                    )
-                      ? sectionData.find(
-                          (item: any) => item.subTitle || item.subtitle
-                        ).subTitle ||
-                        sectionData.find(
-                          (item: any) => item.subTitle || item.subtitle
-                        ).subtitle
-                      : "",
+                    title: sectionData.title || "",
+                    subtitle:
+                      sectionData.subTitle || sectionData.subtitle || "",
                   }}
                   titleFirst={true}
                   titleClassName="casestudytitle"
                 />
-                <CaseStudy
-                  props={
-                    sectionData.find((item: any) => item.Data)
-                      ? sectionData.find((item: any) => item.Data).Data
-                      : []
-                  }
-                />
+                <CaseStudy props={!!sectionData.data ? sectionData.data : []} />
               </div>
             </section>
           )
@@ -257,16 +234,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "guarantee":
+      case "Guarantee":
         return (
           sectionData && (
             <section className={`${styles.guaranteetmsection} tm-section`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.heading)
-                      ? sectionData.find((item: any) => item.heading).heading
-                      : "",
+                    title: !!sectionData.heading ? sectionData.heading : "",
                   }}
                   titleFirst={true}
                   titleClassName="guaranteetitle"
@@ -277,9 +252,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       <video loop autoPlay muted>
                         <source
                           src={
-                            sectionData.find((item: any) => item.image)
-                              ? sectionData.find((item: any) => item.image)
-                                  .image
+                            !!sectionData.image
+                              ? sectionData.image
                               : "/images/Case-study.mp4"
                           }
                           type="video/mp4"
@@ -290,10 +264,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   <div className="lg:w-1/2 md:w-full pl-10 flex flex-col items-center justify-center">
                     <GuaranteePoints
                       props={
-                        sectionData.find((item: any) => item.RightText)
-                          ? sectionData.find((item: any) => item.RightText)
-                              .RightText
-                          : ""
+                        !!sectionData.rightText ? sectionData.rightText : ""
                       }
                     />
                   </div>
@@ -302,7 +273,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "videosection":
+      case "Video Section":
         return (
           sectionData && (
             <section
@@ -312,7 +283,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "clientspeak":
+      case "Client Speak":
         return (
           sectionData && (
             <section
@@ -328,23 +299,15 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
                 />
-                <Client
-                  props={
-                    sectionData.find((item: any) => item.Data)
-                      ? sectionData.find((item: any) => item.Data).Data
-                      : []
-                  }
-                />
+                <Client props={!!sectionData.data ? sectionData.data : []} />
               </div>
             </section>
           )
@@ -377,10 +340,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "frequentlyAskedQuestions":
+      case "Frequently  Asked  Questions":
         return (
           sectionData && (
             <section className={`${styles.faqsection} tm-section`}>
+              {sectionData.heading}
               <div className={styles.leftbubblecircle}>
                 <Image
                   src="/images/gradient-bubble.svg"
@@ -394,10 +358,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   <div className="w-full md:w-1/4">
                     <TitleSection
                       sectionData={{
-                        title: sectionData.find((item: any) => item.heading)
-                          ? sectionData.find((item: any) => item.heading)
-                              .heading
-                          : "",
+                        title: !!sectionData.heading ? sectionData.heading : "",
                         subtitle: "",
                       }}
                       titleFirst={true}
@@ -407,9 +368,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   <div className="w-full md:w-3/4">
                     <Faq
                       data={
-                        sectionData.find(
-                          (item: any) => item["Question Answers"]
-                        )?.["Question Answers"]
+                        !!sectionData.questionAnswers
+                          ? sectionData.questionAnswers
+                          : []
                       }
                     />
                   </div>
@@ -418,35 +379,27 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "awardsRecognition":
+      case "Awards & Recognition":
         return (
           sectionData && (
             <section className={`${styles.awardsection} tm-section`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.heading)
-                      ? sectionData.find((item: any) => item.heading).heading
-                      : "",
+                    title: !!sectionData.heading ? sectionData.heading : "",
                     subtitle: "",
                   }}
                   titleFirst={true}
                   titleClassName="awardtitle"
                 />
                 <Singleaward
-                  data={
-                    sectionData.find((item: any) => item["Award icons"])
-                      ? sectionData.find((item: any) => item["Award icons"])?.[
-                          "Award icons"
-                        ]
-                      : []
-                  }
+                  props={!!sectionData.awardIcons ? sectionData.awardIcons : []}
                 />
               </div>
             </section>
           )
         );
-      case "contactformsection":
+      case "Contact Form Section":
         return (
           sectionData && (
             <section
@@ -457,32 +410,29 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               } tm-section bg-white`}
             >
               <div className="container mx-auto">
-                {pathName === "/start-up-services" ? (
-                  <FormSection props={sectionData} techstartupform={true} />
-                ) : (
-                  <FormSection props={sectionData} />
-                )}
+                <FormSection
+                  props={sectionData}
+                  techstartupform={
+                    !!sectionData.isImageFirst && sectionData.isImageFirst
+                  }
+                />
               </div>
             </section>
           )
         );
-      case "casestudylist":
+      case "Case Study List":
         return (
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
                 <p className={styles.casestudylistlabel}>
-                  {sectionData.find((item: any) => item.label)
-                    ? sectionData.find((item: any) => item.label).label
-                    : ""}
+                  {!!sectionData.label ? sectionData.label : ""}
                 </p>
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subtitle)
-                      ? sectionData.find((item: any) => item.subtitle).subtitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subtitle
+                      ? sectionData.subtitle
                       : "",
                   }}
                   titleFirst={true}
@@ -493,7 +443,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "casestudydetailherosection":
+      case "Case Study Detail Hero Section":
         return (
           sectionData && (
             <section
@@ -501,17 +451,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             >
               <div className="container mx-auto">
                 <p className={styles.casestudydetaillabel}>
-                  {sectionData.find((item: any) => item.label)
-                    ? sectionData.find((item: any) => item.label).label
-                    : ""}
+                  {!!sectionData.label ? sectionData.label : ""}
                 </p>
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -522,18 +468,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "businessimpact":
+      case "Business Impact":
         return (
           sectionData && (
             <section className={`${styles.businessimpactsection} tm-section`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -571,24 +515,20 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //       </section>
       //     )
       //   );
-      case "projectscreens":
+      case "Project Screens":
         return (
           sectionData && (
             <section className={`${styles.projectscreen} bg-white`}>
               <div className="container mx-auto">
                 <ScreenSlider
-                  props={
-                    sectionData.find((item: any) => item.Images)
-                      ? sectionData.find((item: any) => item.Images).Images
-                      : []
-                  }
+                  props={!!sectionData.images ? sectionData.images : []}
                   useSlider1={true}
                 />
               </div>
             </section>
           )
         );
-      case "challengessolutions":
+      case "Challenges Solutions":
         return (
           sectionData && (
             <section
@@ -597,24 +537,22 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
+                    title: !!sectionData.title ? sectionData.title : "",
                   }}
                   titleClassName="Challengessolutionstitle"
                 />
                 <Challenges
                   props={
-                    sectionData.find(
-                      (item: any) => item["Resource Solutions"]
-                    )?.["Resource Solutions"]
+                    !!sectionData.resourceSolutions
+                      ? sectionData.resourceSolutions
+                      : []
                   }
                 />
               </div>
             </section>
           )
         );
-      case "majorscreen":
+      case "Major Screen":
         return (
           sectionData && (
             <section
@@ -622,11 +560,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             >
               <div className="container mx-auto">
                 <ScreenSlider
-                  props={
-                    sectionData.find((item: any) => item.Images)
-                      ? sectionData.find((item: any) => item.Images).Images
-                      : []
-                  }
+                  props={!!sectionData.images ? sectionData.images : []}
                   useSlider1={false}
                 />
               </div>
@@ -669,11 +603,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subtitle)
-                      ? sectionData.find((item: any) => item.subtitle).subtitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subtitle
+                      ? sectionData.subtitle
                       : "",
                   }}
                   titleFirst={false}
@@ -691,17 +623,72 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "productherosection":
+      case "Tech Feature":
+        return (
+          sectionData && (
+            <section className={`${styles.features} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: "",
+                  }}
+                  titleFirst={
+                    !!sectionData.isTitleFirst
+                      ? sectionData.isTitleFirst
+                      : false
+                  }
+                  titleClassName="featurestitle"
+                />
+                <Services
+                  props={!!sectionData.data ? sectionData.data : ""}
+                  isFeatured={true}
+                />
+              </div>
+            </section>
+          )
+        );
+      case "Tech Feature With Sub Title":
+        return (
+          sectionData && (
+            <section className={`${styles.features} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
+                      : "",
+                  }}
+                  titleFirst={
+                    !!sectionData.isTitleFirst
+                      ? sectionData.isTitleFirst
+                      : false
+                  }
+                  titleClassName="featurestitle"
+                />
+                <Services
+                  props={!!sectionData.data ? sectionData.data : ""}
+                  isFeatured={true}
+                />
+              </div>
+            </section>
+          )
+        );
+      case "Product Hero Section":
         return (
           sectionData && (
             <section
               className={`${styles.prodcutherosection} tm-section bg-white`}
             >
-              {pathName === "/start-up-services" ? (
-                <Herosection props={sectionData} isTechStartup={true} />
-              ) : (
-                <Herosection props={sectionData} />
-              )}
+              <Herosection
+                props={sectionData}
+                isTechStartup={
+                  !!sectionData.isTechStartup
+                    ? sectionData.isTechStartup
+                    : false
+                }
+              />
             </section>
           )
         );
@@ -831,21 +818,24 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //       </section>
       //     )
       //   );
-      case "techexpert":
+      case "Tech Expert":
         return (
           sectionData && (
             <section className={`${styles.techexpert} tm-section bg-white`}>
               <div className="container mx-auto">
-                {pathName === "/start-up-services" ? (
-                  <TechExpert props={sectionData} istechstartupexpert />
-                ) : (
-                  <TechExpert props={sectionData} />
-                )}
+                <TechExpert
+                  props={sectionData}
+                  istechstartupexpert={
+                    !!sectionData.istechstartupexpert
+                      ? sectionData.istechstartupexpert
+                      : false
+                  }
+                />
               </div>
             </section>
           )
         );
-      case "valueservice":
+      case "Value Service":
         return (
           sectionData && (
             <section className={`${styles.valueservice} tm-section bg-white`}>
@@ -855,16 +845,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "engagesection":
+      case "Engage Section":
         return (
           sectionData && (
             <section className={`${styles.hiredeveloper} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
+                    title: !!sectionData.title ? sectionData.title : "",
                     subtitle: "",
                   }}
                   titleFirst={true}
@@ -920,6 +908,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
+  console.log(homeData);
   return (
     <>
       {homeData ? (
