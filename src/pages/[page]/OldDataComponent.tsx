@@ -434,7 +434,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleClassName="awardtitle"
                 />
                 <Singleaward
-                  data={
+                  props={
                     sectionData.find((item: any) => item["Award icons"])
                       ? sectionData.find((item: any) => item["Award icons"])?.[
                           "Award icons"
@@ -636,7 +636,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "keyfeatures":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section
+              className={`${
+                pathName === "/contact-us"
+                  ? styles.techstrtupformsection
+                  : styles.features
+              } tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -647,46 +653,56 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       ? sectionData.find((item: any) => item.subtitle).subtitle
                       : "",
                   }}
-                  titleFirst={false}
+                  titleFirst={
+                    pathName === "/technology" ||
+                    pathName === "/start-up-services"
+                      ? true
+                      : false
+                  }
                   titleClassName="featurestitle"
                 />
-                <Services
-                  props={
-                    sectionData.find((item: any) => item.Data)
-                      ? sectionData.find((item: any) => item.Data).Data
-                      : ""
-                  }
-                  isProduct={true}
-                />
-              </div>
-            </section>
-          )
-        );
-      case "keyFeatureWithDetails":
-        return (
-          sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
-              <div className="container mx-auto">
-                <TitleSection
-                  sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subtitle)
-                      ? sectionData.find((item: any) => item.subtitle).subtitle
-                      : "",
-                  }}
-                  titleFirst={false}
-                  titleClassName="featurestitle"
-                />
-                <Services
-                  props={
-                    sectionData.find((item: any) => item.Data)
-                      ? sectionData.find((item: any) => item.Data).Data
-                      : ""
-                  }
-                  isFeatured={true}
-                />
+                {pathName === "/casestudydetail-HLS" ||
+                pathName === "/casestudydetail-Airattix" ||
+                pathName === "/casestudydetail-Givsum" ||
+                pathName === "/start-up-services" ? (
+                  <Services
+                    props={
+                      sectionData.find((item: any) => item.Data)
+                        ? sectionData.find((item: any) => item.Data).Data
+                        : ""
+                    }
+                    isFeatured={true}
+                  />
+                ) : pathName === "/productengineering" ||
+                  pathName === "/softwaredevelopment" ||
+                  pathName === "/mobileapps" ||
+                  pathName === "/uiux" ||
+                  pathName === "/testingautomation" ||
+                  pathName === "/consultation" ||
+                  pathName === "/digitaltransformation" ||
+                  pathName === "/cloudengineering" ||
+                  pathName === "/aiml" ||
+                  pathName === "/blockchain" ||
+                  pathName === "/iotservice" ||
+                  pathName === "/migrationmodernization" ||
+                  pathName === "/home" ? (
+                  <Services
+                    props={
+                      sectionData.find((item: any) => item.Data)
+                        ? sectionData.find((item: any) => item.Data).Data
+                        : ""
+                    }
+                    isProduct={true}
+                  />
+                ) : (
+                  <Services
+                    props={
+                      sectionData.find((item: any) => item.Data)
+                        ? sectionData.find((item: any) => item.Data).Data
+                        : ""
+                    }
+                  />
+                )}
               </div>
             </section>
           )
