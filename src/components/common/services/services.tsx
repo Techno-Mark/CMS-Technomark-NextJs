@@ -42,11 +42,7 @@ const Services: React.FC<ServicesProps> = ({
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
-        const isFirstRow = index < columns;
         const isRightMostColumn = (index + 1) % columns === 0;
-        const isBottomBorder = index < (rows - 1) * columns;
-        const isLastRow = index >= (rows - 1) * columns;
-
         const icon = service.items.find((item) => item.icon)?.icon || "";
         const text = service.items.find((item) => item.text)?.text || "";
         const description =
@@ -56,19 +52,14 @@ const Services: React.FC<ServicesProps> = ({
         return (
           <div
             key={index}
-            className={`w-full  ${
-              isFeatured
-                ? "w-1/2 md:w-1/5"
-                : isProduct || istechservice
-                ? "md:w-1/3"
-                : "md:w-1/2 lg:w-1/4"
+            className={`w-full ${
+              isFeatured ? "w-1/2 md:w-1/5" : ""
             } border-t border-r border-[var(--border-primary)] ${
               columns === 3
-                ? "[&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
-                : "[&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
+                ? "md:w-1/3 [&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
+                : "md:w-1/2 lg:w-1/4 [&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
             }`}
           >
-            {/* ${styles.serviceBorder}  */}
             <div
               className={`${styles.servicesbox}
               ${isRightMostColumn ? styles.servicerightborder : ""}`}

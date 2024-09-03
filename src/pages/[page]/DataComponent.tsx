@@ -434,7 +434,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleClassName="awardtitle"
                 />
                 <Singleaward
-                  props={
+                  data={
                     sectionData.find((item: any) => item["Award icons"])
                       ? sectionData.find((item: any) => item["Award icons"])?.[
                           "Award icons"
