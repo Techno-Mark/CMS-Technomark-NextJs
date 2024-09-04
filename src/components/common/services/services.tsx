@@ -14,6 +14,7 @@ interface ServicesProps {
   isFeatured?: boolean;
   isProduct?: boolean;
   istechservice?: boolean;
+  iscontactservice?: boolean;
 }
 
 const Services: React.FC<ServicesProps> = ({
@@ -21,6 +22,7 @@ const Services: React.FC<ServicesProps> = ({
   isFeatured = false,
   isProduct = false,
   istechservice = false,
+  iscontactservice = false,
 }) => {
   const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
@@ -87,11 +89,14 @@ const Services: React.FC<ServicesProps> = ({
                     {description}
                   </p>
                 )}
-                {!isFeatured && !istechservice && !isProduct && (
-                  <div className={styles.moresection}>
-                    <a href="#">read more</a>
-                  </div>
-                )}
+                {!isFeatured &&
+                  !istechservice &&
+                  !isProduct &&
+                  !iscontactservice && (
+                    <div className={styles.moresection}>
+                      <a href="#">read more</a>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

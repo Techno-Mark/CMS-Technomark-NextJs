@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./formsection.module.css";
 import Image from "next/image";
 import Button from "../button/button";
 
-interface formsection {
-  text: string;
-}
-
-interface formProps {
-  props?: any;
-}
-
-const ContactFormSection: React.FC<formProps> = ({ props }: any) => {
+const ContactFormSection = ({ props }: any) => {
   return (
     <>
       <div
@@ -19,21 +11,13 @@ const ContactFormSection: React.FC<formProps> = ({ props }: any) => {
       >
         <div className={styles.formleft}>
           <div className={styles.formtext}>
-            <h3>
-              {props.find((item: any) => item.title)
-                ? props.find((item: any) => item.title).title
-                : ""}
-            </h3>
+            <h3>{!!props.title ? props.title : ""}</h3>
             <p className={styles.desc}>
-              {props.find((item: any) => item.subTitle)
-                ? props.find((item: any) => item.subTitle).subTitle
-                : ""}
+              {!!props.subTitle ? props.subTitle : ""}
             </p>
             <div className={styles.bannerline}></div>
             <b className={styles.bottomdesc}>
-              {props.find((item: any) => item.desc)
-                ? props.find((item: any) => item.desc).desc
-                : ""}
+              {!!props.desc ? props.desc : ""}
             </b>
           </div>
         </div>

@@ -556,6 +556,18 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
+      case "Contact Feature":
+        return (
+          sectionData && (
+            <section
+              className={`${styles.techstrtupformsection} tm-section bg-white`}
+            >
+              <div className="container mx-auto">
+                <Services props={sectionData.data} iscontactservice={true} />
+              </div>
+            </section>
+          )
+        );
       case "Key Features":
         return (
           sectionData && (
@@ -589,14 +601,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={false}
                   titleClassName="featurestitle"
                 />
-                <Services
-                  props={
-                    sectionData.find((item: any) => item.Data)
-                      ? sectionData.find((item: any) => item.Data).Data
-                      : ""
-                  }
-                  isFeatured={true}
-                />
+                <Services props={!!sectionData.data ? sectionData.data : ""} />
               </div>
             </section>
           )
@@ -688,7 +693,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //       </section>
       //     )
       //   );
-      case "productsolutions":
+      case "Product Solutions":
         return (
           sectionData && (
             <section
@@ -841,7 +846,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "contactform":
+      case "Contact Form":
         return (
           sectionData && (
             <>
@@ -853,7 +858,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </>
           )
         );
-      case "locations":
+      case "Locations":
         return sectionData && <WorldMap props={sectionData} />;
       case "bloglist":
         return (
