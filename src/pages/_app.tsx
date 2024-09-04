@@ -5,6 +5,8 @@ import SideBar from "@/components/common/sidebar/sidebar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import CustomerLabel from "@/components/common/customerlabel/customerlabel";
+import { NextPageContext } from "next";
+import { fetchHeaderFooterData } from "@/serverAction/fetchHeaderFooterData";
 
 const footerItem = [
   {
@@ -111,17 +113,45 @@ const footerItem = [
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+  const [commonData, setCommonData] = useState({
+    headerData:null as any, footerData:null as any
+  });
+
+  if(commonData.headerData === null && commonData.footerData === null){
+    setCommonData({
+      headerData:pageProps.headerData,
+      footerData:pageProps.footerData
+    })
+  }
 
   const toggleDrawer = () => {
     setIsDrawerVisible((prev) => !prev);
   };
+
   return (
-    <div className="maindiv">
-      <Header onShowDrawer={toggleDrawer} />
+    <div className='maindiv'>
+      <Header onShowDrawer={toggleDrawer} headerData={commonData?.headerData?.menuItem} />
       <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
       <CustomerLabel />
       <Component {...pageProps} />
-      <Footer data={footerItem} />
+      <Footer footerData={commonData?.footerData?.menuItem} />
     </div>
   );
 }
+
+
+
+App.getInitialProps = async (ctx: NextPageContext) => {
+ 
+    const [header, footer] = await Promise.all([
+      fetchHeaderFooterData("Main Header Menu"),
+      fetchHeaderFooterData("Footer Menu"),
+    ]);
+     
+  return {
+    pageProps: {
+      headerData:header,
+      footerData:footer,
+    },
+  };
+};

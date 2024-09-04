@@ -8,27 +8,28 @@ import MenuLink from "./menuLink/MenuLink";
 
 interface SubmenuItem {
   name: string;
-  path: string;
-  icons: string;
+  link: string;
+  logo: string;
 }
 
 interface MenuItem {
   name: string;
-  path: string;
-  submenu?: SubmenuItem[];
+  link: string;
+  children?: SubmenuItem[];
 }
 
 interface HeaderProps {
   onShowDrawer: () => void;
+  headerData: Array<MenuItem>;
 }
 
-const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
+const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
     useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
@@ -54,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
     }
   };
 
-  const menuItems: MenuItem[] = [
+  const menuItems: any[] = [
     {
       name: "Home",
       path: "/home",
@@ -216,7 +217,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
             <ul
               className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}
             >
-              {menuItems.map((menu) => (
+              {headerData?.map((menu) => (
                 <li
                   className={`${styles.navlink} h-full flex items-center ${
                     (menu.name === "Technologies" &&
@@ -232,14 +233,14 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                 >
                   <div
                     onClick={
-                      menu.submenu
+                      menu.children && menu.children.length
                         ? () => toggleSubMenu(menu.name.toLowerCase())
                         : undefined
                     }
                     className={styles.cursorpointer}
                   >
                     <MenuLink item={menu} key={menu.name} />
-                    {menu.submenu && (
+                    {menu.children && menu.children && (
                       <ul
                         className={`${styles.submenu} ${
                           (menu.name === "Technologies" &&
@@ -249,7 +250,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                             : "hidden"
                         }`}
                       >
-                        {menu.submenu.map((submenu) => (
+                        {menu.children.map((submenu) => (
                           <li
                             key={submenu.name}
                             className={`${styles.submenulink} p-2 ${
@@ -257,11 +258,11 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer }) => {
                             } flex items-center gap-x-3 rounded`}
                           >
                             <Link
-                              href={submenu.path}
+                              href={submenu.link}
                               className="whitespace-nowrap"
                             >
                               <Image
-                                src={submenu.icons}
+                                src={submenu.logo!}
                                 alt={submenu.name}
                                 width={48}
                                 height={48}
