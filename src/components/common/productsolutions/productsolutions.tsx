@@ -8,19 +8,16 @@ interface ListItem {
 
 interface PropsItem {
   image?: string;
-  "List Items"?: {
-    items: ListItem[];
-  }[];
+  listItems?: ListItem[];
 }
 
 interface ProductSolutionsProps {
-  props: PropsItem[];
+  props: PropsItem;
 }
 
 const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
-  const image = props.find((item) => item.image)?.image || "";
-  const listItems =
-    props.find((item) => item["List Items"])?.["List Items"] || [];
+  const image = props?.image || "";
+  const listItems = !!props.listItems ? props.listItems : [];
 
   return (
     <div className="flex flex-wrap items-center">
@@ -42,7 +39,7 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
                     height={50}
                     width={80}
                   />
-                  {listItem.items?.find((item) => item.text)?.text || ""}
+                  {listItem?.text || ""}
                 </div>
               </li>
             ))}

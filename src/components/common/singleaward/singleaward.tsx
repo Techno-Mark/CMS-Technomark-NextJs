@@ -1,31 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./singleaward.module.css";
 import Image from "next/image";
 
-interface awards {
-  src: string;
-  alt: string;
+interface AwardItem {
+  iconImage: string;
 }
 
-interface awardsprops {
-  props?: {
-    data: awards[];
-  };
+interface Award {
+  items: AwardItem[];
+  keyMultiple: number;
 }
 
-const Singleaward: React.FC<awardsprops> = ({ props }: any) => {
+interface SingleAwardProps {
+  props: AwardItem[];
+}
+
+const SingleAward: React.FC<SingleAwardProps> = ({ props }) => {
   return (
     <div className="award-section">
       <ul className={styles.awardlist}>
-        {props?.map((award: any, index: any) => (
+        {props.map((award, index) => (
           <li key={index}>
             <Image
-              src={
-                award.items.find((item: any) => item.iconImage)
-                  ? award.items.find((item: any) => item.iconImage).iconImage
-                  : ""
-              }
-              alt={index}
+              src={!!award.iconImage ? award.iconImage : ""}
+              alt={`${index}`}
               width={107}
               height={107}
             />
@@ -36,4 +34,4 @@ const Singleaward: React.FC<awardsprops> = ({ props }: any) => {
   );
 };
 
-export default Singleaward;
+export default SingleAward;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import styles from "./techicons.module.css";
 import Image from "next/image";
+import React from "react";
+import styles from "./techicons.module.css";
 
 interface TechIcon {
   src: string;
@@ -9,40 +9,24 @@ interface TechIcon {
 }
 
 interface TechIconProps {
-  props?: {
-    data: TechIcon[];
-  };
+  data: TechIcon[];
 }
 
-const TechIcons: React.FC<TechIconProps> = ({ props }: any) => {
-  const [icons, setIcons] = useState<TechIcon[]>([]);
-
+const TechIcons: React.FC<TechIconProps> = ({ data }) => {
   return (
     <div className={styles.meetgridicon}>
       <ul>
-        {props?.map((item: any, index: any) => {
+        {data?.map((tech: any, index: any) => {
           return (
             <li key={index}>
               <Image
-                src={
-                  item.items.find((item: any) => item.icon)
-                    ? item.items.find((item: any) => item.icon).icon
-                    : ""
-                }
-                alt={
-                  item.items.find((item: any) => item.title)
-                    ? item.items.find((item: any) => item.title).title
-                    : ""
-                }
+                src={tech.icon}
+                alt={tech.title}
                 width={48}
                 height={48}
                 className="w-20 h-20 mx-auto"
               />
-              <p>
-                {item.items.find((item: any) => item.title)
-                  ? item.items.find((item: any) => item.title).title
-                  : ""}
-              </p>
+              <p>{tech.title}</p>
             </li>
           );
         })}

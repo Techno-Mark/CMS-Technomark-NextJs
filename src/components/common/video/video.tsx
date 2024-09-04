@@ -1,13 +1,13 @@
 import styles from "./video.module.css";
 
-const Video = (props: any) => {
+const Video = ({ props }: any) => {
   return (
     <div className={`${styles.videoContainer}`}>
       <video
         className={styles.video}
         src={
-          props.props.find((item: any) => item.videoUrl)
-            ? props.props.find((item: any) => item.videoUrl).videoUrl
+          !!props.videoUrl
+            ? props.videoUrl
             : "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4"
         }
         autoPlay
@@ -16,14 +16,10 @@ const Video = (props: any) => {
       />
       <div className={`${styles.textOverlay}`}>
         <p className={`${styles.videoTextSubTitle}`}>
-          {props.props.find((item: any) => item.subTitle)
-            ? props.props.find((item: any) => item.subTitle).subTitle
-            : ""}
+          {!!props.subTitle ? props.subTitle : ""}
         </p>
         <h3 className={`${styles.videoTextTitle}`}>
-          {props.props.find((item: any) => item.title)
-            ? props.props.find((item: any) => item.title).title
-            : ""}
+          {!!props.title ? props.title : ""}
         </h3>
       </div>
     </div>

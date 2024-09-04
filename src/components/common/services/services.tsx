@@ -9,16 +9,12 @@ interface ServiceItem {
   alt?: string;
 }
 
-interface Service {
-  items: ServiceItem[];
-  keyMultiple: number;
-}
-
 interface ServicesProps {
-  props: Service[];
+  props: ServiceItem[];
   isFeatured?: boolean;
   isProduct?: boolean;
   istechservice?: boolean;
+  iscontactservice?: boolean;
 }
 
 const Services: React.FC<ServicesProps> = ({
@@ -26,6 +22,7 @@ const Services: React.FC<ServicesProps> = ({
   isFeatured = false,
   isProduct = false,
   istechservice = false,
+  iscontactservice = false,
 }) => {
   const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
@@ -39,39 +36,37 @@ const Services: React.FC<ServicesProps> = ({
     return styles.simpleservices;
   };
 
+  const getColumnClass = () => {
+    if (columns === 5) return "w-1/2 md:w-1/5"; // 5 columns
+    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4"; // 4 columns
+    if (columns === 3) return "w-full md:w-1/3"; // 3 columns
+  };
+
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
-        const isFirstRow = index < columns;
         const isRightMostColumn = (index + 1) % columns === 0;
         const isBottomBorder = index < (rows - 1) * columns;
         const isLastRow = index >= (rows - 1) * columns;
 
-        const icon = service.items.find((item) => item.icon)?.icon || "";
-        const text = service.items.find((item) => item.text)?.text || "";
-        const description =
-          service.items.find((item) => item.description)?.description || "";
-        const alt = service.items.find((item) => item.alt)?.alt || "";
+        const icon = service?.icon || "";
+        const text = service?.text || "";
+        const description = service?.description || "";
+        const alt = service?.alt || "";
 
         return (
           <div
             key={index}
-            className={`w-full  ${
-              isFeatured
-                ? "w-1/2 md:w-1/5"
-                : isProduct || istechservice
-                ? "md:w-1/3"
-                : "md:w-1/2 lg:w-1/4"
-            } border-t border-r border-[var(--border-primary)] ${
+            className={`${getColumnClass()} border-t border-r border-[var(--border-primary)] ${
               columns === 3
                 ? "[&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
                 : "[&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
             }`}
           >
-            {/* ${styles.serviceBorder}  */}
             <div
-              className={`${styles.servicesbox}
-              ${isRightMostColumn ? styles.servicerightborder : ""}`}
+              className={`${styles.servicesbox} ${
+                isRightMostColumn ? styles.servicerightborder : ""
+              }`}
             >
               <div className={styles.servicesinnerbox}>
                 {icon && (
@@ -94,11 +89,14 @@ const Services: React.FC<ServicesProps> = ({
                     {description}
                   </p>
                 )}
-                {!isFeatured && !istechservice && !isProduct && (
-                  <div className={styles.moresection}>
-                    <a href="#">read more</a>
-                  </div>
-                )}
+                {!isFeatured &&
+                  !istechservice &&
+                  !isProduct &&
+                  !iscontactservice && (
+                    <div className={styles.moresection}>
+                      <a href="#">read more</a>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

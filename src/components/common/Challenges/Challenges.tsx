@@ -18,11 +18,7 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
               {(index + 1).toString().padStart(2, "0")}.
             </h3>
             <p>
-              <b>
-                {solution.items.find((item: any) => item.challenge)
-                  ? solution.items.find((item: any) => item.challenge).challenge
-                  : ""}
-              </b>
+              <b>{!!solution.challenge ? solution.challenge : ""}</b>
             </p>
           </div>
           <div className={`w-full lg:w-1/2 ${styles.solutionGreenArea}`}>
@@ -34,18 +30,12 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
                   width={35}
                   height={35}
                 />
-                <b>
-                  {solution.items.find((item: any) => item.solutionTitle)
-                    ? solution.items.find((item: any) => item.solutionTitle)
-                        .solutionTitle
-                    : ""}
-                </b>
+                <b>{!!solution.solutionTitle ? solution.solutionTitle : ""}</b>
               </div>
             </div>
             <p>
-              {solution.items.find((item: any) => item.solutionDescription)
-                ? solution.items.find((item: any) => item.solutionDescription)
-                    .solutionDescription
+              {!!solution.solutionDescription
+                ? solution.solutionDescription
                 : ""}
             </p>
           </div>

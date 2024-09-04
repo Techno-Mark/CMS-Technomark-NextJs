@@ -19,9 +19,7 @@ interface CaseStudy {
 }
 
 interface CaseStudyProps {
-  props?: {
-    data: CaseStudy[];
-  };
+  props?: CaseStudy[];
 }
 
 const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
@@ -70,25 +68,16 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
             >
               <div className={styles.textarea}>
                 <Image
-                  src={
-                    caseStudy.items.find((item: any) => item.image)
-                      ? caseStudy.items.find((item: any) => item.image).image
-                      : ""
-                  }
+                  src={!!caseStudy.image ? caseStudy.image : ""}
                   alt="logo"
                   width={200}
                   height={200}
                 />
-                <p>
-                  {caseStudy.items.find((item: any) => item.text)
-                    ? caseStudy.items.find((item: any) => item.text).text
-                    : ""}
-                </p>
+                <p>{!!caseStudy.text ? caseStudy.text : ""}</p>
                 <ul className={styles.techusetext}>
-                  {caseStudy.items.find((item: any) => item.subPoints) &&
-                    caseStudy.items
-                      .find((item: any) => item.subPoints)
-                      .subPoints.split(",")
+                  {!!caseStudy.subPoints &&
+                    caseStudy.subPoints
+                      .split(",")
                       .map((point: string, i: number) => (
                         <li key={i}>
                           <Image
@@ -103,17 +92,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                 </ul>
                 <a
                   className={styles.readmore}
-                  href={
-                    caseStudy.items.find((item: any) => item.linkUrl)
-                      ? caseStudy.items.find((item: any) => item.linkUrl)
-                          .linkUrl
-                      : "#"
-                  }
+                  href={!!caseStudy.linkUrl ? caseStudy.linkUrl : "#"}
                 >
-                  {caseStudy.items.find((item: any) => item.linkText)
-                    ? caseStudy.items.find((item: any) => item.linkText)
-                        .linkText
-                    : "Read More"}
+                  {!!caseStudy.linkText ? caseStudy.linkText : "Read More"}
                 </a>
               </div>
               <div className={styles.resultarea}>
@@ -123,9 +104,8 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                       width="320"
                       height="240"
                       src={
-                        caseStudy.items.find((item: any) => item.video)
-                          ? caseStudy.items.find((item: any) => item.video)
-                              .video
+                        !!caseStudy.video
+                          ? caseStudy.video
                           : "/images/Case-study.mp4"
                       }
                       type="video/mp4"
@@ -148,21 +128,15 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                 </div>
                 <div className={styles.resultview}>
                   <h4>
-                    {caseStudy.items.find((item: any) => item.additionalTitle)
-                      ? caseStudy.items.find(
-                          (item: any) => item.additionalTitle
-                        ).additionalTitle
+                    {!!caseStudy.additionalTitle
+                      ? caseStudy.additionalTitle
                       : ""}
                   </h4>
                   <ul
                     className={styles.successratiobox}
                     dangerouslySetInnerHTML={{
-                      __html: caseStudy.items.find(
-                        (item: any) => item.additionalPoints
-                      )
-                        ? caseStudy.items.find(
-                            (item: any) => item.additionalPoints
-                          ).additionalPoints
+                      __html: !!caseStudy.additionalPoints
+                        ? caseStudy.additionalPoints
                         : "",
                     }}
                   />

@@ -116,15 +116,11 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
       >
         <div className={styles.formleft}>
           <div className={styles.formtext}>
-            <h3>{props?.find((item: any) => item.title)?.title || ""}</h3>
+            <h3>{props?.title || ""}</h3>
             <ul>
-              {props
-                ?.find((item: any) => item.Data)
-                ?.Data.map((item: any, index: any) => (
-                  <li key={index}>
-                    {item.items.find((item: any) => item.text)?.text || ""}
-                  </li>
-                ))}
+              {props?.data.map((item: any, index: any) => (
+                <li key={index}>{item.text || ""}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -140,7 +136,9 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
             </div>
           </div>
           <div className={styles.formarea}>
-            <h4>Request a Free Quote</h4>
+            <h4>
+              {!!props.formTitle ? props.formTitle : "Request a Free Quote"}
+            </h4>
             <form onSubmit={handleSubmit}>
               <div className={styles.formwrap}>
                 <input
@@ -205,7 +203,9 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
               </div>
               <div className="formbtn">
                 <Button
-                  text="Send Request"
+                  text={
+                    !!props.buttonLabel ? props.buttonLabel : "Send Request"
+                  }
                   variant="primary"
                   onClick={handleSubmit}
                 />

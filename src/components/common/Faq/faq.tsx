@@ -7,13 +7,8 @@ interface FaqItem {
   answer: string;
 }
 
-interface FaqData {
-  items: FaqItem[];
-  keyMultiple: number;
-}
-
 interface FaqProps {
-  data: FaqData[];
+  data: FaqItem[];
 }
 
 const Faq: React.FC<FaqProps> = ({ data }) => {
@@ -24,13 +19,17 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
   };
 
   return (
-    <div className={styles.faqcontainer} id="accordion-collapse" data-accordion="collapse">
+    <div
+      className={styles.faqcontainer}
+      id="accordion-collapse"
+      data-accordion="collapse"
+    >
       {data.map((faqData, index) => {
-        const question = faqData.items.find((item) => item.question)?.question || "";
-        const answer = faqData.items.find((item) => item.answer)?.answer || "";
+        const question = faqData.question || "";
+        const answer = faqData.answer || "";
 
         return (
-          <div key={faqData.keyMultiple} className={`${styles.cardheader} mb-5`}>
+          <div key={index} className={`${styles.cardheader} mb-5`}>
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
@@ -41,11 +40,15 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
                 onClick={() => handleToggle(index)}
               >
                 <div className={`${styles.questionText} flex`}>
-                  <span>{String(faqData.keyMultiple).padStart(2, "0")}</span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                   {question}
                 </div>
                 <Image
-                  src={openIndex === index ? "/images/minus-circle.svg" : "/images/plus-circle.svg"}
+                  src={
+                    openIndex === index
+                      ? "/images/minus-circle.svg"
+                      : "/images/plus-circle.svg"
+                  }
                   alt={openIndex === index ? "Collapse" : "Expand"}
                   className={styles.faqimg}
                   height={36}

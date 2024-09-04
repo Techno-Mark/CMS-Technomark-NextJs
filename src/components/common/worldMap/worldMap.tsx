@@ -7,30 +7,24 @@ interface WorldMapProps {
 }
 
 const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
-  const mapData = props.find((item: any) => item.Data)?.Data || [];
+  const mapData = props?.data || [];
   return (
     <section className={`${styles.mapsection} ${styles.paddtb}`}>
       <div className={styles.worldMapContainer}>
         <div className={styles.mapContainer}>
-        <Image
-          height={700}
-          width={1633}
-          src="/images/world-map.png"
-          alt="World Map"
-          className={styles.map}
-        />
+          <Image
+            height={700}
+            width={1633}
+            src="/images/world-map.png"
+            alt="World Map"
+            className={styles.map}
+          />
           {mapData.map((location: any, index: number) => (
             <div
               key={index}
               className={`${styles.pin} ${
                 styles[
-                  `${
-                    location.items.find((item: any) => item.city)
-                      ? location.items
-                          .find((item: any) => item.city)
-                          .city.toLowerCase()
-                      : ""
-                  }pin`
+                  `${!!location.city ? location.city.toLowerCase() : ""}pin`
                 ]
               }`}
             >
@@ -49,9 +43,7 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
               <div className={`text-left ${styles.titletext}`}>
                 <h2
                   dangerouslySetInnerHTML={{
-                    __html: props.find((item: any) => item.title)
-                      ? props.find((item: any) => item.title).title
-                      : "",
+                    __html: !!props.title ? props.title : "",
                   }}
                 />
               </div>
@@ -63,36 +55,17 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
                 <div key={index} className={`${styles.addressbox} mb-10 mx-4`}>
                   <div className={`${styles.inlinecity}`}>
                     <Image
-                      src={
-                        location.items.find((item: any) => item.icon)
-                          ? location.items.find((item: any) => item.icon).icon
-                          : ""
-                      }
-                      alt={`${
-                        location.items.find((item: any) => item.country)
-                          ? location.items.find((item: any) => item.country)
-                              .country
-                          : ""
-                      }-flag`}
+                      src={!!location.icon ? location.icon : ""}
+                      alt={`${!!location.country ? location.country : ""}-flag`}
                       height={35}
                       width={35}
                     />
                     <h3>
-                      {location.items.find((item: any) => item.city)
-                        ? location.items.find((item: any) => item.city).city
-                        : ""}
-                      ,{" "}
-                      {location.items.find((item: any) => item.country)
-                        ? location.items.find((item: any) => item.country)
-                            .country
-                        : ""}
+                      {!!location.city ? location.city : ""},
+                      {!!location.country ? location.country : ""}
                     </h3>
                   </div>
-                  <p>
-                    {location.items.find((item: any) => item.address)
-                      ? location.items.find((item: any) => item.address).address
-                      : ""}
-                  </p>
+                  <p>{!!location.address ? location.address : ""}</p>
                 </div>
               ))}
             </div>

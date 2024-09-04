@@ -44,7 +44,7 @@ const BlogPage: React.FC = () => {
   const param = useParams();
   const searchParams = useSearchParams();
   const [data, setData] = useState<BlogData | null>(null);
-  const [formData, setFormData] = useState<FormSectionData | null>(null);
+  const [formData, setFormData] = useState<any>(null);
 
   const isPreview = searchParams.get("preview") === "true";
 
@@ -80,7 +80,7 @@ const BlogPage: React.FC = () => {
           },
         }
       );
-      setFormData(res.data.data);
+      setFormData(res.data.data.formatData[0]);
     } catch (error) {
       console.error("Error fetching data:", error);
       return null;
@@ -184,10 +184,10 @@ const BlogPage: React.FC = () => {
         {data && <BlogDescription props={data} />}
       </section>
 
-      {formData?.formatData?.[0]?.formsection && (
+      {formData?.["Contact Form Section"] && (
         <section className={`${styles.formsection} tm-section bg-white`}>
           <div className="container mx-auto">
-            <FormSection props={formData.formatData[0].formsection} />
+            <FormSection props={formData?.["Contact Form Section"]} />
           </div>
         </section>
       )}
