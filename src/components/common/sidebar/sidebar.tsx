@@ -26,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
     <section
       className={`${styles.sidebar} ${
         isDrawerVisible ? styles.showDrawer : ""
-      } ${isWhiteSidebar ? styles.whitesidebar : ""}`}
+      } ${isWhiteSidebar ? styles.whitesidebar : ""} !bg-white`}
       id={styles.sidebarpopup}
     >
       <button

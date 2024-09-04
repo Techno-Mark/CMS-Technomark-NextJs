@@ -402,7 +402,10 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <FormSection
                   props={sectionData}
                   techstartupform={
-                    !!sectionData.isImageFirst && sectionData.isImageFirst
+                    !!sectionData.isImageFirst &&
+                    sectionData.isImageFirst == "true"
+                      ? true
+                      : false
                   }
                 />
               </div>
@@ -571,15 +574,20 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Key Features":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section className={`${styles.methodology} tm-section bg-[#f2f5f9]`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
                     title: sectionData.title,
                     subtitle: sectionData.subtitle,
                   }}
-                  titleFirst={false}
-                  titleClassName="featurestitle"
+                  titleFirst={
+                    !!sectionData.isTitleFirst &&
+                    sectionData.isTitleFirst == "true"
+                      ? true
+                      : false
+                  }
+                  titleClassName="methodologytitle"
                 />
                 <Services props={sectionData.data} isProduct={true} />
               </div>
@@ -589,7 +597,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "keyFeatureWithDetails":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section className={`${styles.features} tm-section bg-[#f2f5f9]`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -609,7 +617,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Tech Feature":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section className={`${styles.features} tm-section bg-[#f2f5f9]`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -634,7 +642,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Tech Feature With Sub Title":
         return (
           sectionData && (
-            <section className={`${styles.features} tm-section bg-white`}>
+            <section className={`${styles.features} tm-section bg-[#f2f5f9]`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
