@@ -34,6 +34,12 @@ const Services: React.FC<ServicesProps> = ({
     return styles.simpleservices;
   };
 
+  const getColumnClass = () => {
+    if (columns === 5) return "w-1/2 md:w-1/5"; // 5 columns
+    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4"; // 4 columns
+    if (columns === 3) return "w-full md:w-1/3"; // 3 columns
+  };
+
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
@@ -49,17 +55,16 @@ const Services: React.FC<ServicesProps> = ({
         return (
           <div
             key={index}
-            className={`w-full ${
-              isFeatured ? "w-1/2 md:w-1/5" : ""
-            } border-t border-r border-[var(--border-primary)] ${
+            className={`${getColumnClass()} border-t border-r border-[var(--border-primary)] ${
               columns === 3
-                ? "md:w-1/3 [&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
-                : "md:w-1/2 lg:w-1/4 [&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
+                ? "[&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
+                : "[&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
             }`}
           >
             <div
-              className={`${styles.servicesbox}
-              ${isRightMostColumn ? styles.servicerightborder : ""}`}
+              className={`${styles.servicesbox} ${
+                isRightMostColumn ? styles.servicerightborder : ""
+              }`}
             >
               <div className={styles.servicesinnerbox}>
                 {icon && (

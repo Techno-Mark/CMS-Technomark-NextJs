@@ -237,7 +237,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <div className="flex flex-wrap">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
                     <div className={styles.videoarea}>
-                      {sectionData.image ? (
+                      {!!sectionData.image &&
+                      sectionData.image.includes(".mp4") ? (
+                        <video loop autoPlay muted>
+                          <source src={sectionData.image} type="video/mp4" />
+                        </video>
+                      ) : !!sectionData.image &&
+                        !sectionData.image.includes(".mp4") ? (
                         <Image
                           src={sectionData.image}
                           alt="Gurrentee Technomark"
@@ -880,7 +886,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  // console.log(homeData);
+  console.log(homeData);
   return (
     <>
       {homeData ? (

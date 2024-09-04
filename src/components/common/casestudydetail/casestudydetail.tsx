@@ -61,7 +61,9 @@ const CaseStudyDetail = ({ data }: any) => {
                 return (
                   <div
                     key={index}
-                    className={`${styles.performancebox} flex-grow !p-0`}
+                    className={`${styles.performancebox} ${
+                      performances.length === index + 1 ? "" : "mb-[2rem]"
+                    } flex-grow !p-0`}
                   >
                     <div className="flex flex-col gap-4 items-center justify-center h-full">
                       <h2>{title}</h2>

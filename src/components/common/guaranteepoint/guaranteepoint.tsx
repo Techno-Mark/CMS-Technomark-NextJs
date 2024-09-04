@@ -7,10 +7,6 @@ interface PointItem {
   description: string;
 }
 
-interface Point {
-  items: PointItem[];
-}
-
 interface GuaranteePointsProps {
   props: PointItem[];
   isProblemStatement?: boolean;
