@@ -17,6 +17,7 @@ const ContactFormSection = ({ props }: any) => {
     mobileNumber: "",
     companyName: "",
   });
+  const [isSuccess, setIsSuccess] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -56,6 +57,7 @@ const ContactFormSection = ({ props }: any) => {
     }
 
     try {
+      setIsSuccess(1);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}contact-us/save`,
         {
@@ -77,7 +79,13 @@ const ContactFormSection = ({ props }: any) => {
         throw new Error("Network response was not ok");
       }
 
-      toast.success("Form submitted successfully!");
+      // toast.success("Form submitted successfully!");
+
+      setIsSuccess(2);
+      setTimeout(() => {
+        setIsSuccess(0);
+      }, 10000);
+
       setFormData({
         fullName: "",
         email: "",
@@ -194,6 +202,19 @@ const ContactFormSection = ({ props }: any) => {
                   onClick={handleSubmit}
                 />
               </div>
+              {!!isSuccess && isSuccess === 1 && (
+                <div className="mt-8">
+                  <p className="text-yellow-500 text-2xl">submitting...</p>
+                </div>
+              )}
+
+              {!!isSuccess && isSuccess === 2 && (
+                <div className="mt-8">
+                  <p className="text-green-800 text-2xl">
+                    Your request has been successfully submitted!
+                  </p>
+                </div>
+              )}
             </form>
           </div>
         </div>
