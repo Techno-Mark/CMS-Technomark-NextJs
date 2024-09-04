@@ -72,7 +72,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
         {
           method: "POST",
           headers: {
-            referal: process.env.REFERAL_HEADER || "",
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
