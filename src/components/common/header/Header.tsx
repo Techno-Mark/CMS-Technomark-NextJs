@@ -240,7 +240,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                     className={styles.cursorpointer}
                   >
                     <MenuLink item={menu} key={menu.name} />
-                    {menu.children && menu.children && (
+                    {menu.children && menu.children.length > 0 && (
                       <ul
                         className={`${styles.submenu} ${
                           (menu.name === "Technologies" &&
