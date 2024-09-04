@@ -19,7 +19,7 @@ interface ApiResponse {
 
 const Index: React.FC = () => {
   const [data, setData] = useState<any>(null);
-  const [formData, setFormData] = useState<FormSectionData | null>(null);
+  const [formData, setFormData] = useState<any>(null);
 
   const apiCallForm = async (param: string) => {
     try {
@@ -67,11 +67,10 @@ const Index: React.FC = () => {
           <BlogList />
         </div>
       </section>
-
-      {formData?.formsection && (
+      {formData?.["Contact Form Section"] && (
         <section className={`${styles.formsection} tm-section bg-white`}>
           <div className="container mx-auto">
-            <FormSection props={formData.formsection} />
+            <FormSection props={formData?.["Contact Form Section"]} />
           </div>
         </section>
       )}
