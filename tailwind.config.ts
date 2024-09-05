@@ -8,15 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        '2xl': '1560px',
-      },
+      // screens: {
+      //   "2xl": "1560px",
+      // },
       container: {
+        screens: {
+          default: "1180px",
+          "2xl": "1560px",
+          xl: "1280px",
+          lg: "1024px",
+          md: "768px",
+          sm: "640px",
+        },
         center: true,
         padding: {
-          DEFAULT: '5%',
-          md: '7%',
-        }
+          DEFAULT: "15px",
+          // DEFAULT: '5%',
+          // md: '7%',
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

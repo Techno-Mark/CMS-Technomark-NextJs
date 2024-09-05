@@ -14,9 +14,9 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
   const title = sectionData?.title ?? "";
   const subTitle = sectionData?.subTitle ?? "";
 
-  const containerClassNames = `flex flex-wrap ${techStyles.techsubcontainer} ${
-    isCaseStudy ? `flex-col ${techStyles.techcasestudycontainer}` : ""
-  }`;
+  const containerClassNames = `bg-white flex flex-wrap ${
+    techStyles.techsubcontainer
+  } ${isCaseStudy ? `flex-col ${techStyles.techcasestudycontainer}` : ""}`;
 
   return (
     <section
@@ -39,7 +39,7 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
           width={1920}
         />
       </div>
-      <div className={` ${techStyles.container} mx-auto bg-white relative z-5`}>
+      <div className={`container mx-auto relative z-5`}>
         <div className={containerClassNames}>
           {isCaseStudy ? (
             // Case Study Detail Page Layout
@@ -59,16 +59,20 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
           ) : (
             // Default Home Page Layout
             <div className="flex items-center justify-center flex-col md:flex-row">
-              <div className="lg:w-1/2 md:w-full">
+              <div className="lg:w-1/2 md:w-full px-4">
                 <h2
                   className={`maintitle ${techStyles.maintitle} !text-center md:!text-left`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               </div>
-              <div className="lg:w-1/2 md:w-full py-4">
-                <p className={`sub-title ${techStyles.subtitle} !text-center md:!text-left`}>{subTitle}</p>
+              <div className="lg:w-1/2 md:w-full p-4">
+                <p
+                  className={`sub-title ${techStyles.subtitle} !text-center md:!text-left`}
+                >
+                  {subTitle}
+                </p>
                 <div className={`${techStyles.techbgbtn}`}>
-                  <Button href="#" text="Read more" variant="secondary"/>
+                  <Button href="#" text="Read more" variant="secondary" />
                 </div>
               </div>
             </div>

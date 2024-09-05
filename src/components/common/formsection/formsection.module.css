@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
 }
+
 .techstartupform {
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -10,9 +11,11 @@
 .formleft {
   flex: 3;
 }
+
 .formright {
   flex: 2;
 }
+
 .formtext h3 {
   font-family: Montserrat;
   color: var(--secondary--color);
@@ -21,10 +24,12 @@
   font-weight: 800;
   margin-bottom: 2rem;
 }
+
 .techstartupform .formleft,
 .techstartupform .formright {
   flex: 2;
 }
+
 .techstartupform .formleft {
   padding-left: 10rem;
 }
@@ -47,6 +52,7 @@
 .formbubblebg {
   position: relative;
 }
+
 .techstartupform .formbubblebg {
   display: none;
 }
@@ -125,9 +131,14 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 767px) {
   .formcontainer {
     flex-direction: column;
     row-gap: 50px;
+  }
+
+  .formright {
+    width: 100%;
+    max-width: 450px;
   }
 }
