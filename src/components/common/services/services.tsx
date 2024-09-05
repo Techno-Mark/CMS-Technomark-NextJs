@@ -27,7 +27,7 @@ const Services: React.FC<ServicesProps> = ({
   const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
   const totalItems = services.length;
-  const rows = Math.ceil(totalItems / columns);
+  const itemsInLastRow = totalItems % columns || columns;
 
   const getClassName = () => {
     if (isFeatured) return styles.featureservices;
@@ -45,10 +45,6 @@ const Services: React.FC<ServicesProps> = ({
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
-        const isRightMostColumn = (index + 1) % columns === 0;
-        const isBottomBorder = index < (rows - 1) * columns;
-        const isLastRow = index >= (rows - 1) * columns;
-
         const icon = service?.icon || "";
         const text = service?.text || "";
         const description = service?.description || "";
@@ -57,17 +53,11 @@ const Services: React.FC<ServicesProps> = ({
         return (
           <div
             key={index}
-            className={`${getColumnClass()} border-t border-r border-[var(--border-primary)] ${
-              columns === 3
-                ? "[&:nth-child(3n)]:border-r-transparent [&:nth-child(-n+3)]:border-t-transparent"
-                : "[&:nth-child(4n)]:border-r-transparent [&:nth-child(-n+4)]:border-t-transparent"
+            className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] [&:nth-child(${columns}n)]:border-r-transparent [&:nth-last-child(-n+${itemsInLastRow})]:border-b-transparent ${
+              itemsInLastRow === 1 ? "[&:last-child]:border-b-transparent" : ""
             }`}
           >
-            <div
-              className={`${styles.servicesbox} ${
-                isRightMostColumn ? styles.servicerightborder : ""
-              }`}
-            >
+            <div className={`${styles.servicesbox}`}>
               <div className={styles.servicesinnerbox}>
                 {icon && (
                   <div className={styles.icon}>
