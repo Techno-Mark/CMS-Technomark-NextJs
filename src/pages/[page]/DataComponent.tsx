@@ -195,7 +195,17 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               className={`${styles.casestudiessection} tm-section bg-white`}
             >
               <div className="container mx-auto">
-                <TitleSection
+                <div className="flex flex-col items-center justify-center text-black">
+                  <h2
+                    className="text-[#40aa46] text-6xl font-bold border-b-4 mb-6 border-[#40aa46]"
+                    dangerouslySetInnerHTML={{ __html: sectionData.title }}
+                  />
+                  <p
+                    className="w-[70%] text-center mb-4 opacity-70 text-2xl leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
+                  />
+                </div>
+                {/* <TitleSection
                   sectionData={{
                     title: sectionData.title || "",
                     subtitle:
@@ -203,7 +213,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   }}
                   titleFirst={true}
                   titleClassName="casestudytitle"
-                />
+                /> */}
                 <CaseStudy props={!!sectionData.data ? sectionData.data : []} />
               </div>
             </section>
@@ -248,7 +258,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName="guaranteetitle"
                 />
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap !mt-24">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
                     <div className={styles.videoarea}>
                       {!!sectionData.image &&
@@ -436,7 +446,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
-                <p className={styles.casestudylistlabel}>
+                <p className={`!mb-1 ${styles.casestudylistlabel}`}>
                   {!!sectionData.label ? sectionData.label : ""}
                 </p>
                 <TitleSection

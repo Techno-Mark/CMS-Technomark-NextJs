@@ -22,7 +22,7 @@
 }
 .coreservices :global(.title-section p),
 .productservices :global(.title-section p),
-.techservices :global(.title-section p){
+.techservices :global(.title-section p) {
   margin-bottom: 0.6rem;
 }
 
@@ -182,10 +182,10 @@
   font-weight: bold;
 }
 .casestudylist :global(.title-section p) {
-  margin: 0 auto 5rem;
-  max-width: 75%;
-  font-size: 2.25rem;
-  line-height: 4rem;
+  width: 70%;
+  margin: 0 auto 3.8rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 .casestudydetailherosection {
@@ -233,8 +233,7 @@
   font-weight: 400;
 }
 
-
-.problemstatement{
+.problemstatement {
   border-top: 1px solid var(--border-ternary);
 }
 .problemstatement :global(.title-section h2) {
@@ -242,7 +241,7 @@
   margin-bottom: 5rem;
 }
 
-.challangesolutions{
+.challangesolutions {
   border-bottom: 1px solid var(--border-ternary);
 }
 .challangesolutions :global(.title-section h2) {
@@ -257,8 +256,7 @@
   margin-bottom: 5rem;
 }
 
-
-.features{
+.features {
   border-top: 1px solid var(--border-quaternary);
   border-bottom: 1px solid var(--border-quaternary);
 }
@@ -356,7 +354,7 @@
   transform: translate(0, -50%);
   z-index: 0;
 }
-.leftbubblecircle img{
+.leftbubblecircle img {
   max-width: 40rem;
 }
 .rightbubblecircle {
