@@ -64,7 +64,11 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
               aria-labelledby={`accordion-collapse-heading-${index}`}
             >
               <div className={`${styles.cardbody} ml-5 mb-5`}>
-                <p>{answer}</p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: !!answer ? answer : "",
+                  }}
+                />
               </div>
             </div>
           </div>
