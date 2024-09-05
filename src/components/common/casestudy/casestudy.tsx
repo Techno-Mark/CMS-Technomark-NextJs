@@ -75,8 +75,8 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                 />
                 <p>{!!caseStudy.text ? caseStudy.text : ""}</p>
                 <ul className={styles.techusetext}>
-                  {!!caseStudy.subPoints &&
-                    caseStudy.subPoints
+                  {!!caseStudy.subpoints &&
+                    caseStudy.subpoints
                       .split(",")
                       .map((point: string, i: number) => (
                         <li key={i}>

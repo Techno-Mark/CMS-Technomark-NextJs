@@ -274,7 +274,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       )}
                     </div>
                   </div>
-                  <div className="lg:w-1/2 md:w-full pl-10 flex flex-col items-center justify-center">
+                  <div className="lg:w-1/2 md:w-full pl-20 flex flex-col items-start justify-center">
                     <GuaranteePoints
                       props={
                         !!sectionData.rightText ? sectionData.rightText : ""
@@ -317,7 +317,12 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       ? sectionData.subTitle
                       : "",
                   }}
-                  titleFirst={false}
+                  titleFirst={
+                    !!sectionData.isTitleFirst &&
+                    sectionData.isTitleFirst == "true"
+                      ? true
+                      : false
+                  }
                   titleClassName="clienttitle"
                 />
                 <Client props={!!sectionData.data ? sectionData.data : []} />
@@ -692,10 +697,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <Herosection
                 props={sectionData}
                 isTechStartup={
-                  !!sectionData.isTechStartup
-                    ? sectionData.isTechStartup
+                  !!sectionData.isTechStartup &&
+                  sectionData.isTechStartup == "true"
+                    ? true
                     : false
                 }
+                scrollToSection={scrollToSection}
+                formSectionRef={formSectionRef}
               />
             </section>
           )

@@ -43,7 +43,8 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
         )
       : [];
 
-      const displayedData = showAll ? filteredData : filteredData.slice(0, 3);
+  // Display 3 items by default, show all if "View All" is clicked
+  const displayedData = showAll ? filteredData : filteredData.slice(0, 3);
 
   return (
     <div className={styles.caseslide} id="case-slide">
@@ -138,14 +139,14 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
           </div>
         </div>
       ))}
-      <button
-        className={`${styles.tabButton} ${styles.viewbtn} ${
-          showAll ? styles.activeTab : ""
-        } mx-auto`}
-        onClick={() => setShowAll(!showAll)}
-      >
-        {showAll ? "Show Less" : "VIEW ALL"}
-      </button>
+      {!showAll && (
+        <button
+          className={`${styles.tabButton} ${styles.viewbtn} mx-auto`}
+          onClick={() => setShowAll(true)}
+        >
+          VIEW ALL
+        </button>
+      )}
     </div>
   );
 };
