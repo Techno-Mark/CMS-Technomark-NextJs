@@ -10,8 +10,9 @@
   height: 600px;
   background: var(--white-color);
 }
+
 .flipcard:first-child {
-border-left: 1px solid var(--border-primary);
+  border-left: 1px solid var(--border-primary);
 }
 
 .flipcard .inner {
@@ -127,6 +128,15 @@ border-left: 1px solid var(--border-primary);
 @media only screen and (max-width: 1024px) {
   .flipcard {
     height: 300px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .flipcard:nth-child(3) {
+    border-left: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+  }
+  .flipcard:nth-child(4) {
+    border-bottom: 1px solid var(--border-primary);
   }
 }
 
@@ -134,6 +144,6 @@ border-left: 1px solid var(--border-primary);
   .flipcard {
     max-width: 80%;
     margin: 0 auto 20px;
-    border: 1px solid  var(--border-primary);
+    border: 1px solid var(--border-primary);
   }
 }
