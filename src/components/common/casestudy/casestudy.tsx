@@ -85,6 +85,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                             alt="check"
                             height={20}
                             width={20}
+                            className="-mt-1"
                           />
                           {point}
                         </li>
