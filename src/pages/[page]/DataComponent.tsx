@@ -212,7 +212,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Tech Icons":
         return (
           sectionData && (
-            <section className={`${styles.meetdiverse} tm-section`}>
+            <section className={`${styles.methodology} bg-white tm-section`}>
               <div className={styles.rightbubblecircle}>
                 <Image
                   src="/images/gradient-bubble.svg"
@@ -228,7 +228,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subtitle,
                   }}
                   titleFirst={true}
-                  titleClassName="meetdivresetitle"
+                  titleClassName="methodologytitle"
                 />
 
                 <TechIcons data={sectionData.icons} />
@@ -318,8 +318,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       : "",
                   }}
                   titleFirst={
-                    !!sectionData.isTitleFirst &&
-                    sectionData.isTitleFirst == "true"
+                    !!sectionData.isTitalFist &&
+                    sectionData.isTitalFist == "true"
                       ? true
                       : false
                   }
@@ -352,7 +352,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section className={`${styles.faqsection} tm-section`}>
-              {sectionData.heading}
               <div className={styles.leftbubblecircle}>
                 <Image
                   src="/images/gradient-bubble.svg"
@@ -595,7 +594,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
-              className={`${styles.methodology} tm-section bg-[#f2f5f9]`}
+              className={`${styles.clientspeaksection} ${styles.methodology} tm-section bg-[#f2f5f9]`}
             >
               <div className="container mx-auto">
                 <TitleSection
@@ -609,7 +608,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       ? true
                       : false
                   }
-                  titleClassName="methodologytitle"
+                  titleClassName="clienttitle"
                 />
                 <Services props={sectionData.data} isProduct={true} />
               </div>
