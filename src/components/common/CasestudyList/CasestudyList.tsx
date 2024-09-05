@@ -48,7 +48,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
 
   return (
     <div className={styles.caseslide} id="case-slide">
-      <div className={styles.tabContainer}>
+      {/* <div className={styles.tabContainer}>
         {categories.map((category: any, index) => (
           <button
             key={index}
@@ -60,7 +60,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
             {category}
           </button>
         ))}
-      </div>
+      </div> */}
       {displayedData.map((caseStudy: any, index: number) => (
         <div key={index} className={styles.casebox}>
           <div className={styles.textarea}>
