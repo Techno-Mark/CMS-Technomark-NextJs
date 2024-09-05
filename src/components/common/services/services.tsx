@@ -27,7 +27,6 @@ const Services: React.FC<ServicesProps> = ({
   const services = props || [];
   const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
   const totalItems = services.length;
-  const itemsInLastRow = totalItems % columns || columns;
 
   const getClassName = () => {
     if (isFeatured) return styles.featureservices;
@@ -37,10 +36,15 @@ const Services: React.FC<ServicesProps> = ({
   };
 
   const getColumnClass = () => {
-    if (columns === 5) return "w-1/2 md:w-1/5"; // 5 columns
-    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4"; // 4 columns
-    if (columns === 3) return "w-full md:w-1/3"; // 3 columns
+    if (columns === 5) return `w-1/2 md:w-1/5 ${styles.responsiveFiveBottomBorder}`;
+    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4";
+    if (columns === 3) return "w-full md:w-1/3";
   };
+
+  const isLastRow = (index: number) =>
+    index >= totalItems - (totalItems % columns || columns);
+  const isLastColumn = (index: number) => (index + 1) % columns === 0;
+  // const itemsInLastRow = totalItems % columns || columns;
 
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
@@ -53,7 +57,14 @@ const Services: React.FC<ServicesProps> = ({
         return (
           <div
             key={index}
-            className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] [&:nth-child(${columns}n)]:border-r-transparent [&:nth-last-child(-n+${itemsInLastRow})]:border-b-transparent [&:last-child]:border-b-transparent ${styles.responsiveBottomBorder}`}
+            className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] ${
+              isLastColumn(index) ? "md:border-r-transparent" : ""
+            } ${isLastRow(index) ? "md:border-b-transparent" : ""} ${
+              styles.responsiveBottomBorder
+            }`}
+            // className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] [&:nth-child(${columns}n)]:border-r-transparent [&:nth-last-child(-n+${itemsInLastRow})]:border-b-transparent [&:last-child]:border-b-transparent ${
+            //   styles.responsiveBottomBorder
+            // }`}
           >
             <div className={`${styles.servicesbox}`}>
               <div className={styles.servicesinnerbox}>

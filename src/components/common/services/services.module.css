@@ -117,6 +117,14 @@
   opacity: 1;
 }
 
+.border-r-transparent {
+  border-right: transparent;
+}
+
+.border-b-transparent {
+  border-bottom: transparent;
+}
+
 @media only screen and (max-width: 1560px) {
   .featureservices .servicesbox .servicetitle {
     font-size: 1.2rem;
@@ -152,6 +160,11 @@
     border-bottom: 1px solid var(--border-primary) !important;
   }
 
+  .responsiveFiveBottomBorder:nth-last-child(2n) {
+    border-right: 1px solid var(--border-primary) !important;
+  }
+
+  .responsiveFiveBottomBorder:nth-last-child(2),
   .responsiveBottomBorder:last-child {
     border-bottom: 1px solid transparent !important;
   }

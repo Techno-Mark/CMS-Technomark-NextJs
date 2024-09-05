@@ -31,7 +31,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
         <>
           {sectionData.title && (
             <h2
-              className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan}`}
+              className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan} !mb-4`}
               dangerouslySetInnerHTML={{ __html: sectionData.title }}
             />
           )}
