@@ -462,9 +462,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               className={`${styles.casestudydetailherosection} tm-section`}
             >
               <div className="container mx-auto">
-                <p className={styles.casestudydetaillabel}>
+                {/* <p className={styles.casestudydetaillabel}>
                   {!!sectionData.label ? sectionData.label : ""}
-                </p>
+                </p> */}
                 <TitleSection
                   sectionData={{
                     title: !!sectionData.title ? sectionData.title : "",

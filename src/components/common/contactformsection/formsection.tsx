@@ -18,6 +18,7 @@ const ContactFormSection = ({ props }: any) => {
     companyName: "",
   });
   const [isSuccess, setIsSuccess] = useState(0);
+  const [message, setMessage] = useState("");
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -59,53 +60,61 @@ const ContactFormSection = ({ props }: any) => {
     }
 
     try {
-      setIsSuccess(1);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}contact-us/save`,
-        {
-          method: "POST",
-          headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.fullName,
-            email: formData.email,
-            mobileNumber: formData.mobileNumber,
-            companyName: formData.companyName,
-          }),
+      if (isSuccess !== 1) {
+        setIsSuccess(1);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}contact-us/save`,
+          {
+            method: "POST",
+            headers: {
+              referal: process.env.REFERAL_HEADER || "http://localhost:3001",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: formData.fullName,
+              email: formData.email,
+              mobileNumber: formData.mobileNumber,
+              companyName: formData.companyName,
+            }),
+          }
+        );
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          setIsSuccess(3);
+          setMessage(responseData.data.email);
+          setTimeout(() => {
+            setIsSuccess(0);
+            setMessage("");
+          }, 10000);
+          return;
         }
-      );
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+        setIsSuccess(2);
+        setTimeout(() => {
+          setIsSuccess(0);
+          setMessage("");
+        }, 10000);
+
+        setFormData({
+          fullName: "",
+          email: "",
+          mobileNumber: "",
+          companyName: "",
+        });
+        setErrors({
+          fullName: "",
+          email: "",
+          mobileNumber: "",
+          companyName: "",
+        });
       }
-
-      // toast.success("Form submitted successfully!");
-
-      setIsSuccess(2);
-      setTimeout(() => {
-        setIsSuccess(0);
-      }, 10000);
-
-      setFormData({
-        fullName: "",
-        email: "",
-        mobileNumber: "",
-        companyName: "",
-      });
-      setErrors({
-        fullName: "",
-        email: "",
-        mobileNumber: "",
-        companyName: "",
-      });
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
-  // Hook to detect clicks outside the form to clear errors
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (formRef.current && !formRef.current.contains(event.target as Node)) {
@@ -223,17 +232,19 @@ const ContactFormSection = ({ props }: any) => {
                   onClick={handleSubmit}
                 />
               </div>
-              {!!isSuccess && isSuccess === 1 && (
-                <div className="mt-8">
-                  <p className="text-yellow-500 text-2xl">submitting...</p>
-                </div>
-              )}
 
               {!!isSuccess && isSuccess === 2 && (
                 <div className="mt-8">
-                  <p className="text-green-800 text-2xl">
-                    Your request has been successfully submitted!
+                  <p className="text-green-800 text:md md:text-xl">
+                    Thank you for contacting us. Our team will get back to you
+                    shortly.
                   </p>
+                </div>
+              )}
+
+              {!!isSuccess && isSuccess === 3 && (
+                <div className="mt-8">
+                  <p className="text-red-500 text:md md:text-xl">{message}</p>
                 </div>
               )}
             </form>
