@@ -147,4 +147,12 @@
     /* border: 1px solid var(--border-primary) !important;
     border-right: 1px solid var(--border-primary) !important; */
   }
+
+  .responsiveBottomBorder {
+    border-bottom: 1px solid var(--border-primary) !important;
+  }
+
+  .responsiveBottomBorder:last-child {
+    border-bottom: 1px solid transparent !important;
+  }
 }

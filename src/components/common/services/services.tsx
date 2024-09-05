@@ -53,9 +53,7 @@ const Services: React.FC<ServicesProps> = ({
         return (
           <div
             key={index}
-            className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] [&:nth-child(${columns}n)]:border-r-transparent [&:nth-last-child(-n+${itemsInLastRow})]:border-b-transparent ${
-              itemsInLastRow === 1 ? "[&:last-child]:border-b-transparent" : ""
-            }`}
+            className={`${getColumnClass()} border-b md:border-r border-[var(--border-primary)] [&:nth-child(${columns}n)]:border-r-transparent [&:nth-last-child(-n+${itemsInLastRow})]:border-b-transparent [&:last-child]:border-b-transparent ${styles.responsiveBottomBorder}`}
           >
             <div className={`${styles.servicesbox}`}>
               <div className={styles.servicesinnerbox}>
