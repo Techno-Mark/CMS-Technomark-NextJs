@@ -36,7 +36,7 @@ const Services: React.FC<ServicesProps> = ({
   };
 
   const getColumnClass = () => {
-    if (columns === 5) return "w-1/2 md:w-1/5";
+    if (columns === 5) return `w-1/2 md:w-1/5 ${styles.responsiveFiveBottomBorder}`;
     if (columns === 4) return "w-full md:w-1/2 lg:w-1/4";
     if (columns === 3) return "w-full md:w-1/3";
   };
@@ -44,7 +44,7 @@ const Services: React.FC<ServicesProps> = ({
   const isLastRow = (index: number) =>
     index >= totalItems - (totalItems % columns || columns);
   const isLastColumn = (index: number) => (index + 1) % columns === 0;
-  const itemsInLastRow = totalItems % columns || columns;
+  // const itemsInLastRow = totalItems % columns || columns;
 
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>

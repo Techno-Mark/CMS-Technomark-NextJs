@@ -27,11 +27,9 @@
   width: 5rem;
   height: 5rem;
   margin: 0 auto;
-  background: linear-gradient(
-    180deg,
-    rgba(40, 74, 121, 0.8) 0%,
-    rgba(29, 53, 87, 0.8) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(40, 74, 121, 0.8) 0%,
+      rgba(29, 53, 87, 0.8) 100%);
   line-height: 5rem;
   margin-bottom: 2.5rem;
   border-radius: 100px;
@@ -101,11 +99,9 @@
   transform: translateY(40px);
   transition: 0.5s;
   opacity: 0;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0.08%,
-    var(--primary-variant-one) 99.95%
-  );
+  background: linear-gradient(90deg,
+      var(--primary-color) 0.08%,
+      var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -124,6 +120,7 @@
 .border-r-transparent {
   border-right: transparent;
 }
+
 .border-b-transparent {
   border-bottom: transparent;
 }
@@ -163,6 +160,11 @@
     border-bottom: 1px solid var(--border-primary) !important;
   }
 
+  .responsiveFiveBottomBorder:nth-last-child(2n) {
+    border-right: 1px solid var(--border-primary) !important;
+  }
+
+  .responsiveFiveBottomBorder:nth-last-child(2),
   .responsiveBottomBorder:last-child {
     border-bottom: 1px solid transparent !important;
   }
