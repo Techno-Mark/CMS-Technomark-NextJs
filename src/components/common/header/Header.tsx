@@ -280,7 +280,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             </ul>
           </div>
           <div
-            className={`${styles.headersideimg} px-7 h-full flex items-center`}
+            className={`${styles.headersideimg} px-5 h-full flex items-center`}
           >
             <div className={`${styles.themebtn} flex justify-center h-full`}>
               {/* <img src="/images/coffee.svg" alt="" /> */}

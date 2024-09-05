@@ -13,7 +13,7 @@ const Engage: React.FC<HireDeveloperProps> = ({ props }) => {
       {props?.card.map((developer: any, index: number) => (
         <div
           key={index}
-          className={`w-full md:w-1/2 2xl:w-1/3 p-4 ${styles.cardWrapper}`}
+          className={`w-full md:w-1/3 p-4 ${styles.cardWrapper}`}
         >
           <div className={`${styles.devTimeBox} flex flex-col`}>
             <div className={styles.devloperimg}>

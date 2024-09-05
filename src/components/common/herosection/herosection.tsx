@@ -18,12 +18,16 @@ interface HeroSectionProps {
   props: HeroSectionItem;
   isTechnology?: boolean;
   isTechStartup?: boolean;
+  scrollToSection?: any;
+  formSectionRef?: any;
 }
 
 const Herosection: React.FC<HeroSectionProps> = ({
   props,
   isTechnology,
   isTechStartup,
+  scrollToSection,
+  formSectionRef,
 }) => {
   if (isTechnology) {
     return (
@@ -78,19 +82,21 @@ const Herosection: React.FC<HeroSectionProps> = ({
             }}
             titleClassName="herosectiontitle"
           />
-          {isTechStartup ? (
-            <Button
-              href={props?.buttonUrl || "#"}
-              text={props?.buttonText || "Contact Now"}
-              variant="secondary"
-            />
-          ) : (
-            <Button
-              href={props?.buttonUrl || "#"}
-              text={props?.buttonText || "Get Free Consultation"}
-              variant="primary"
-            />
-          )}
+          <div className="w-fit">
+            {isTechStartup ? (
+              <Button
+                onClick={() => scrollToSection(formSectionRef)}
+                text={props?.buttonText || "Contact Now"}
+                variant="secondary"
+              />
+            ) : (
+              <Button
+                onClick={() => scrollToSection(formSectionRef)}
+                text={props?.buttonText || "Get Free Consultation"}
+                variant="primary"
+              />
+            )}
+          </div>
         </div>
         <div className="w-full md:w-1/2 relative">
           {isTechStartup && (

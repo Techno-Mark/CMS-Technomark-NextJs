@@ -13,22 +13,38 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
       "dynamic-image"
     ) as HTMLImageElement;
 
+    // Set default image to the first section's data-image
+    if (sections.length > 0 && dynamicImage) {
+      const firstSectionImage = sections[0].getAttribute("data-image");
+      if (firstSectionImage) {
+        dynamicImage.src = firstSectionImage;
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
-        let isAnySectionVisible = false;
+        let maxVisibleRatio = 0;
+        let mostVisibleSection: any = null;
+
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            isAnySectionVisible = true;
-            if (dynamicImage)
-              dynamicImage.src = entry.target.getAttribute("data-image") || "";
+          if (
+            entry.isIntersecting &&
+            entry.intersectionRatio > maxVisibleRatio
+          ) {
+            maxVisibleRatio = entry.intersectionRatio;
+            mostVisibleSection = entry.target as HTMLElement;
           }
         });
-        if (!isAnySectionVisible && dynamicImage) {
-          dynamicImage.src = "/images/1-Seed.gif";
+
+        if (mostVisibleSection && dynamicImage) {
+          const newImage = mostVisibleSection.getAttribute("data-image");
+          if (newImage) {
+            dynamicImage.src = newImage;
+          }
         }
       },
       {
-        threshold: 0.5,
+        threshold: [0.5],
       }
     );
 

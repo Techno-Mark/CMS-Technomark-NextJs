@@ -58,17 +58,17 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
             </div>
           ) : (
             // Default Home Page Layout
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center flex-col md:flex-row">
               <div className="lg:w-1/2 md:w-full">
                 <h2
-                  className={`maintitle ${techStyles.maintitle}`}
+                  className={`maintitle ${techStyles.maintitle} !text-center md:!text-left`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               </div>
               <div className="lg:w-1/2 md:w-full py-4">
-                <p className={`sub-title ${techStyles.subtitle}`}>{subTitle}</p>
-                <div className={techStyles.techbgbtn}>
-                  <Button href="#" text="Read more" variant="secondary" />
+                <p className={`sub-title ${techStyles.subtitle} !text-center md:!text-left`}>{subTitle}</p>
+                <div className={`${techStyles.techbgbtn}`}>
+                  <Button href="#" text="Read more" variant="secondary"/>
                 </div>
               </div>
             </div>

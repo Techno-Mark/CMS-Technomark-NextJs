@@ -1,7 +1,7 @@
 import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { lazy, useEffect, useState } from "react";
+import React, { lazy, useEffect, useRef, useState } from "react";
 import styles from "./home.module.css";
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
@@ -119,10 +119,24 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
     setLoading(false);
   }, [pathName]);
 
+  const formSectionRef = useRef<HTMLElement | null>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
       case "Hero Sections":
-        return sectionData && <Homesection sectionData={sectionData} />;
+        return (
+          sectionData && (
+            <Homesection
+              sectionData={sectionData}
+              scrollToSection={scrollToSection}
+              formSectionRef={formSectionRef}
+            />
+          )
+        );
       case "Tech Startup":
         return sectionData && <TechStartupBg sectionData={sectionData} />;
       case "Methodology":
@@ -198,7 +212,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Tech Icons":
         return (
           sectionData && (
-            <section className={`${styles.meetdiverse} tm-section`}>
+            <section className={`${styles.methodology} bg-white tm-section`}>
               <div className={styles.rightbubblecircle}>
                 <Image
                   src="/images/gradient-bubble.svg"
@@ -214,7 +228,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subtitle,
                   }}
                   titleFirst={true}
-                  titleClassName="meetdivresetitle"
+                  titleClassName="methodologytitle"
                 />
 
                 <TechIcons data={sectionData.icons} />
@@ -260,7 +274,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       )}
                     </div>
                   </div>
-                  <div className="lg:w-1/2 md:w-full pl-10 flex flex-col items-center justify-center">
+                  <div className="lg:w-1/2 md:w-full pl-20 flex flex-col items-start justify-center">
                     <GuaranteePoints
                       props={
                         !!sectionData.rightText ? sectionData.rightText : ""
@@ -303,7 +317,12 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       ? sectionData.subTitle
                       : "",
                   }}
-                  titleFirst={false}
+                  titleFirst={
+                    !!sectionData.isTitalFist &&
+                    sectionData.isTitalFist == "true"
+                      ? true
+                      : false
+                  }
                   titleClassName="clienttitle"
                 />
                 <Client props={!!sectionData.data ? sectionData.data : []} />
@@ -333,7 +352,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section className={`${styles.faqsection} tm-section`}>
-              {sectionData.heading}
               <div className={styles.leftbubblecircle}>
                 <Image
                   src="/images/gradient-bubble.svg"
@@ -392,6 +410,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
+              ref={formSectionRef}
               className={`${
                 pathName === "/start-up-services"
                   ? styles.techstrtupformsection
@@ -442,9 +461,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               className={`${styles.casestudydetailherosection} tm-section`}
             >
               <div className="container mx-auto">
-                <p className={styles.casestudydetaillabel}>
+                {/* <p className={styles.casestudydetaillabel}>
                   {!!sectionData.label ? sectionData.label : ""}
-                </p>
+                </p> */}
                 <TitleSection
                   sectionData={{
                     title: !!sectionData.title ? sectionData.title : "",
@@ -574,7 +593,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Key Features":
         return (
           sectionData && (
-            <section className={`${styles.methodology} tm-section bg-[#f2f5f9]`}>
+            <section
+              className={`${styles.clientspeaksection} ${styles.methodology} tm-section bg-[#f2f5f9]`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -587,7 +608,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       ? true
                       : false
                   }
-                  titleClassName="methodologytitle"
+                  titleClassName="clienttitle"
                 />
                 <Services props={sectionData.data} isProduct={true} />
               </div>
@@ -675,10 +696,13 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <Herosection
                 props={sectionData}
                 isTechStartup={
-                  !!sectionData.isTechStartup
-                    ? sectionData.isTechStartup
+                  !!sectionData.isTechStartup &&
+                  sectionData.isTechStartup == "true"
+                    ? true
                     : false
                 }
+                scrollToSection={scrollToSection}
+                formSectionRef={formSectionRef}
               />
             </section>
           )

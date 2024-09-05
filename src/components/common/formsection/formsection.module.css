@@ -118,7 +118,11 @@
 }
 
 .formbtn {
-  margin-top: 3rem;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: fit-content;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
