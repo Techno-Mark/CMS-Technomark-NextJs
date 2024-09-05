@@ -34,8 +34,8 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
     infinite: false,
     autoplaySpeed: 5000,
     autoplay: false,
-    draggable: false,
-    swipe: false,
+    // draggable: false,
+    // swipe: false,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     afterChange: (current: number) => setCurrentSlide(Math.ceil(current)),
@@ -56,7 +56,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
   };
 
   return (
-    <div className={styles.casestudyparent}>
+    <div className={`mb-16 ${styles.casestudyparent}`}>
       <div className={styles.caseslide} id="case-slide">
         <Slider {...settings}>
           {props?.map((caseStudy: any, index: number) => (
@@ -147,7 +147,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
         </Slider>
       </div>
       <div className="mx-auto viewallbtn">
-        <Button href="#" text="VIEW ALL" variant="secondary" />
+        {/* <Button href="#" text="VIEW ALL" variant="secondary" /> */}
       </div>
     </div>
   );

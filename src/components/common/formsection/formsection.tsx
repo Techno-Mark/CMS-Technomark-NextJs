@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./formsection.module.css";
 import Image from "next/image";
 import Button from "../button/button";
@@ -28,6 +28,8 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
     mobileNumber: "",
     companyName: "",
   });
+
+  const formRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -80,7 +82,6 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
             email: formData.email,
             mobileNumber: formData.mobileNumber,
             companyName: formData.companyName,
-            // message: null,
           }),
         }
       );
@@ -106,6 +107,25 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
       console.error("Error submitting form:", error);
     }
   };
+
+  // Hook to detect clicks outside the form to clear errors
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formRef.current && !formRef.current.contains(event.target as Node)) {
+        setErrors({
+          fullName: "",
+          email: "",
+          mobileNumber: "",
+          companyName: "",
+        });
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [formRef]);
 
   return (
     <>
@@ -135,7 +155,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
               />
             </div>
           </div>
-          <div className={styles.formarea}>
+          <div className={styles.formarea} ref={formRef}>
             <h4>
               {!!props.formTitle ? props.formTitle : "Request a Free Quote"}
             </h4>

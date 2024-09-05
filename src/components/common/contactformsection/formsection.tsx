@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./formsection.module.css";
 import Image from "next/image";
 import Button from "../button/button";
@@ -18,6 +18,8 @@ const ContactFormSection = ({ props }: any) => {
     companyName: "",
   });
   const [isSuccess, setIsSuccess] = useState(0);
+
+  const formRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -103,6 +105,25 @@ const ContactFormSection = ({ props }: any) => {
     }
   };
 
+  // Hook to detect clicks outside the form to clear errors
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formRef.current && !formRef.current.contains(event.target as Node)) {
+        setErrors({
+          fullName: "",
+          email: "",
+          mobileNumber: "",
+          companyName: "",
+        });
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [formRef]);
+
   return (
     <>
       <div
@@ -131,7 +152,7 @@ const ContactFormSection = ({ props }: any) => {
               />
             </div>
           </div>
-          <div className={styles.formarea}>
+          <div className={styles.formarea} ref={formRef}>
             <h4>Let&apos;s Discuss</h4>
             <form>
               <div className={styles.formwrap}>
