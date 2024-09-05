@@ -6,16 +6,21 @@ import Button from "@/components/common/button/button";
 
 interface HomeSectionProps {
   sectionData?: any;
+  scrollToSection?: any;
+  formSectionRef: any;
 }
 
-const HomeSection: React.FC<HomeSectionProps> = ({ sectionData }) => {
+const HomeSection: React.FC<HomeSectionProps> = ({
+  sectionData,
+  scrollToSection,
+  formSectionRef,
+}) => {
   const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4";
   const headingText = sectionData.headingText ?? "";
   const ctaText = sectionData.ctaText ?? "";
   const servicesChangeText =
-    sectionData?.servicesChargeText.map(
-      (entry: any) => entry.headingText
-    ) ?? [];
+    sectionData?.servicesChargeText.map((entry: any) => entry.headingText) ??
+    [];
 
   return (
     <section className={homeStyles.newhomesection} id="new-home-section">
@@ -27,7 +32,11 @@ const HomeSection: React.FC<HomeSectionProps> = ({ sectionData }) => {
       <div className={`${homeStyles.hometext} mx-auto max-w-2xl`}>
         <h1 className={homeStyles.maintitle}>{headingText}</h1>
         <TypeingTexts props={servicesChangeText} />
-        <Button href="#" text={ctaText} variant="primary" />
+        <Button
+          onClick={() => scrollToSection(formSectionRef)}
+          text={ctaText}
+          variant="primary"
+        />
         <div className={homeStyles.linearrow}>
           <Image
             src="/images/line-arrow.svg"

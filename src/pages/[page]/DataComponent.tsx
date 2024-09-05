@@ -1,7 +1,7 @@
 import Loading from "@/components/common/loading/loading";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { lazy, useEffect, useState } from "react";
+import React, { lazy, useEffect, useRef, useState } from "react";
 import styles from "./home.module.css";
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
@@ -119,10 +119,24 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
     setLoading(false);
   }, [pathName]);
 
+  const formSectionRef = useRef<HTMLElement | null>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
       case "Hero Sections":
-        return sectionData && <Homesection sectionData={sectionData} />;
+        return (
+          sectionData && (
+            <Homesection
+              sectionData={sectionData}
+              scrollToSection={scrollToSection}
+              formSectionRef={formSectionRef}
+            />
+          )
+        );
       case "Tech Startup":
         return sectionData && <TechStartupBg sectionData={sectionData} />;
       case "Methodology":
@@ -392,6 +406,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
+              ref={formSectionRef}
               className={`${
                 pathName === "/start-up-services"
                   ? styles.techstrtupformsection
@@ -574,7 +589,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Key Features":
         return (
           sectionData && (
-            <section className={`${styles.methodology} tm-section bg-[#f2f5f9]`}>
+            <section
+              className={`${styles.methodology} tm-section bg-[#f2f5f9]`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
