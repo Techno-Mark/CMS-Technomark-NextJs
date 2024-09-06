@@ -174,7 +174,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
           </div>
           <div className={styles.formarea} ref={formRef}>
             <h4>
-              {!!props.formTitle ? props.formTitle : "Request a Free Quote"}
+              {!!props.formTitle ? props.formTitle : "Request a Quote"}
             </h4>
             <form onSubmit={handleSubmit}>
               <div className={styles.formwrap}>
@@ -184,7 +184,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
                   }`}
                   type="text"
                   id="fullName"
-                  placeholder="Full name"
+                  placeholder="Full Name"
                   value={formData.fullName}
                   onChange={handleChange}
                 />
@@ -230,7 +230,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
                   }`}
                   type="text"
                   id="companyName"
-                  placeholder="Company name"
+                  placeholder="Company Name"
                   value={formData.companyName}
                   onChange={handleChange}
                 />

@@ -39,10 +39,8 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
                 aria-controls={`accordion-collapse-body-${index}`}
                 onClick={() => handleToggle(index)}
               >
-                <div className={`${styles.questionText} flex`}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  {question}
-                </div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div className={`${styles.questionText} flex`}>{question}</div>
                 <Image
                   src={
                     openIndex === index

@@ -290,6 +290,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                           alt="Gurrentee Technomark"
                           width={900}
                           height={500}
+                          className="rounded-2xl"
                         />
                       ) : (
                         <video loop autoPlay muted>

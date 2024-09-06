@@ -32,6 +32,7 @@ const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
                 alt="check"
                 height={24}
                 width={24}
+                className="!rounded-2xl"
               />
             </div>
             <h4>{point.title || ""}</h4>
