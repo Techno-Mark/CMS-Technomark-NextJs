@@ -197,11 +197,20 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <div className="flex flex-col items-center justify-center text-black">
                   <h2
-                    className="text-[#40aa46] text-6xl font-bold border-b-4 mb-6 border-[#40aa46]"
+                    className="text-4xl font-semibold mb-4 text-transparent bg-clip-text"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%)",
+                      borderBottom: "4px solid transparent",
+                      backgroundClip: "text, padding-box",
+                      WebkitBackgroundClip: "text",
+                      borderImage:
+                        "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%) 1",
+                    }}
                     dangerouslySetInnerHTML={{ __html: sectionData.title }}
                   />
                   <p
-                    className="w-[70%] text-center mb-4 opacity-70 text-2xl leading-relaxed"
+                    className="w-[70%] text-center opacity-70 text-2xl leading-relaxed mb-16"
                     dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
                   />
                 </div>
@@ -328,8 +337,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       : "",
                   }}
                   titleFirst={
-                    !!sectionData.isTitalFist &&
-                    sectionData.isTitalFist == "true"
+                    !!sectionData.isTitalFirst &&
+                    sectionData.isTitalFirst == "true"
                       ? true
                       : false
                   }

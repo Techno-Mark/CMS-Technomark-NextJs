@@ -51,9 +51,12 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
                 />
               </div>
               <div className="w-full">
-                <p className={`sub-title !text-center ${techStyles.subtitle}`}>
-                  {subTitle}
-                </p>
+                <p
+                  className={`sub-title !text-center ${techStyles.subtitle}`}
+                  dangerouslySetInnerHTML={{
+                    __html: !!subTitle ? subTitle : "",
+                  }}
+                />
               </div>
             </div>
           ) : (

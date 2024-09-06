@@ -13,13 +13,15 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
       {props.map((solution: any, index: number) => (
         <div className={`flex ${styles.resourceSolutionBox}`} key={index}>
           <div className={`w-full lg:w-1/2 ${styles.solutiontext}`}>
-            {/* <h3>{index + 1}</h3> */}
-            <h3 className="text-2xl font-bold mb-2">
-              {(index + 1).toString().padStart(2, "0")}.
-            </h3>
-            <p>
-              <b>{!!solution.challenge ? solution.challenge : ""}</b>
-            </p>
+            <div className={styles.inlineArea}>
+              <div className={`flex items-center justify-start border-r border-t border-b border-[#94CC7C] rounded-r-xl`}>
+                <h3>
+                  {(index + 1).toString().padStart(2, "0")}.
+                </h3>
+                <b>{!!solution.challengeTitle ? solution.challengeTitle : ""}</b>
+              </div>
+            </div>
+            <p>{!!solution.challengeDescription ? solution.challengeDescription : ""}</p>
           </div>
           <div className={`w-full lg:w-1/2 ${styles.solutionGreenArea}`}>
             <div className={styles.inlineArea}>

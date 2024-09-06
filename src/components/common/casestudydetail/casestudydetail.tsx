@@ -75,7 +75,7 @@ const CaseStudyDetail = ({ data }: any) => {
             )}
           </div>
 
-          <div className="w-full lg:w-[70%] flex">
+          <div className="w-full mt-10 lg:mt-0 lg:w-[70%] flex">
             <div className={`${styles.performanceimg} w-full`}>
               <Image
                 src={performanceImage}

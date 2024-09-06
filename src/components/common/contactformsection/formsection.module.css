@@ -124,7 +124,16 @@
     row-gap: 50px;
   }
 
+  .formtext h3 {
+    font-size: 20px;
+  }
+
   .desc {
+    font-size: 17px;
+    line-height: 2.5rem;
+  }
+  
+  .bottomdesc {
     font-size: 18px;
   }
 }

@@ -41,3 +41,18 @@
   line-height: 2.75rem;
   text-align: center;
 }
+
+@media only screen and (max-width: 767px) {
+  .maintitle {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .subtitle {
+    font-size: 1.6rem;
+    line-height: 1.75rem;
+  }
+  .subtitle span {
+    font-size: 1.6rem;
+    line-height: 2.75rem;
+  }
+}
