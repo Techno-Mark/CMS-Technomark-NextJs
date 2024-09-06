@@ -171,7 +171,7 @@ const ContactFormSection = ({ props }: any) => {
                   }`}
                   type="text"
                   id="fullName"
-                  placeholder="Full name"
+                  placeholder="Full Name"
                   value={formData.fullName}
                   onChange={handleChange}
                 />
@@ -217,7 +217,7 @@ const ContactFormSection = ({ props }: any) => {
                   }`}
                   type="text"
                   id="companyName"
-                  placeholder="Company name"
+                  placeholder="Company Name"
                   value={formData.companyName}
                   onChange={handleChange}
                 />

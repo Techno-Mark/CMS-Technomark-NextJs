@@ -35,6 +35,7 @@
 }
 
 .logobox img {
+  min-height: 2.8rem;
   max-height: 2.8rem;
   object-fit: contain;
 }
