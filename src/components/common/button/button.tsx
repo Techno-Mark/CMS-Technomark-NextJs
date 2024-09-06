@@ -17,14 +17,14 @@ const Button: React.FC<ButtonProps> = ({ href, text, variant, onClick }) => {
   return (
     <>
       {!!href ? (
-        <a href={href} className={`${baseClass} ${variantClass}`}>
+        <a href={href} className={`${baseClass} ${variantClass} cursor-pointer`}>
           {text}
           <span className={styles.arrowanimatebtn}>
             <i className={styles.icon}></i>
           </span>
         </a>
       ) : (
-        <p className={`${baseClass} ${variantClass}`} onClick={onClick}>
+        <p className={`${baseClass} ${variantClass} cursor-pointer`} onClick={onClick}>
           {text}
           <span className={styles.arrowanimatebtn}>
             <i className={styles.icon}></i>

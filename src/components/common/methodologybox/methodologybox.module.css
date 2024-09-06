@@ -59,7 +59,7 @@
   font-size: 5.1rem;
   line-height: 4.4rem;
   font-weight: 400;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   margin-bottom: 1.25rem;
   text-transform: uppercase;
   background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);

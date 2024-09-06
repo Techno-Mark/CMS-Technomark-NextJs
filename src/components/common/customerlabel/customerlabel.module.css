@@ -35,3 +35,15 @@
   font-weight: 600;
   line-height: 1.25rem;
 }
+
+@media only screen and (max-width: 767px) {
+  .customerfixedlabel {
+    max-width: 9rem;
+  }
+  .customerfixedlabel h5 {
+    font-size: 2rem;
+  }
+  .customerfixedlabel p {
+    font-size: 1.1rem;
+  }
+}

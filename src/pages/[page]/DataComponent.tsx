@@ -120,6 +120,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   }, [pathName]);
 
   const formSectionRef = useRef<HTMLElement | null>(null);
+  const techSectionRef = useRef<HTMLElement | null>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -134,11 +135,18 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               sectionData={sectionData}
               scrollToSection={scrollToSection}
               formSectionRef={formSectionRef}
+              techSectionRef={techSectionRef}
             />
           )
         );
       case "Tech Startup":
-        return sectionData && <TechStartupBg sectionData={sectionData} />;
+        return (
+          sectionData && (
+            <section ref={techSectionRef}>
+              <TechStartupBg sectionData={sectionData} />
+            </section>
+          )
+        );
       case "Methodology":
         return (
           sectionData && (

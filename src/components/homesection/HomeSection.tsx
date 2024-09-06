@@ -8,12 +8,14 @@ interface HomeSectionProps {
   sectionData?: any;
   scrollToSection?: any;
   formSectionRef: any;
+  techSectionRef: any;
 }
 
 const HomeSection: React.FC<HomeSectionProps> = ({
   sectionData,
   scrollToSection,
   formSectionRef,
+  techSectionRef,
 }) => {
   const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4";
   const headingText = sectionData.headingText ?? "";
@@ -37,7 +39,10 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           text={ctaText}
           variant="primary"
         />
-        <div className={homeStyles.linearrow}>
+        <div
+          className={`${homeStyles.linearrow} cursor-pointer`}
+          onClick={() => scrollToSection(techSectionRef)}
+        >
           <Image
             src="/images/line-arrow.svg"
             alt="arrow"
