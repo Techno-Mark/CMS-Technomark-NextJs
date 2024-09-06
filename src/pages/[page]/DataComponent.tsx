@@ -400,7 +400,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       titleClassName="faqtitle"
                     />
                   </div>
-                  <div className="w-full md:w-3/4">
+                  <div className="w-full md:w-3/4 mt-8 md:mt:0">
                     <Faq
                       data={
                         !!sectionData.questionAnswers

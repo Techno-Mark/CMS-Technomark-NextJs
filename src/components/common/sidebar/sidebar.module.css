@@ -62,7 +62,6 @@
 }
 
 @keyframes movingarrow {
-
   0%,
   100% {
     transform: translateX(0);
@@ -106,14 +105,36 @@
 
 .formcirlerotate {
   position: absolute;
-  top: 3rem;
-  right: 10rem;
+  top: 8rem;
+  right: 20rem;
 }
 
 .formcirlerotate img {
   animation: spin 30s linear infinite;
   margin-left: auto;
-  max-width: 12rem;
+  max-width: 15rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #C0C0C0;
+}
+
+.input::-ms-input-placeholder {
+  color: #C0C0C0;
+}
+
+.errorInput {
+  border-bottom: 1px solid red !important;
+}
+
+.errorMessage {
+  color: red !important;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
 }
 
 @keyframes spin {

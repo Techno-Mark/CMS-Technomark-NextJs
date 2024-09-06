@@ -43,6 +43,7 @@
   height: 100%;
   line-height: 4.5rem;
   display: block;
+  white-space: nowrap;
 }
 
 .navlink:hover a {
