@@ -305,16 +305,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "Video Section":
-        return (
-          sectionData && (
-            <section
-              className={`w-full overflow-hidden ${styles.videoSection}`}
-            >
-              <Video props={sectionData} />
-            </section>
-          )
-        );
+      // case "Video Section":
+      //   return (
+      //     sectionData && (
+      //       <section
+      //         className={`w-full overflow-hidden ${styles.videoSection}`}
+      //       >
+      //         <Video props={sectionData} />
+      //       </section>
+      //     )
+      //   );
       case "Client Speak":
         return (
           sectionData && (
