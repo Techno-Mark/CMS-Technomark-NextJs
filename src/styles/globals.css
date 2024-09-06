@@ -76,6 +76,6 @@ html {
 
 @media only screen and (max-width: 767px) {
   html {
-    font-size: 8px !important;
+    font-size: 10px !important;
   }
 }
