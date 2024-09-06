@@ -22,8 +22,8 @@ const TechIcons: React.FC<TechIconProps> = ({ data }) => {
               <Image
                 src={tech.icon}
                 alt={tech.title}
-                width={48}
-                height={48}
+                width={80}
+                height={80}
                 className="w-20 h-20 mx-auto"
               />
               <p>{tech.title}</p>
