@@ -435,4 +435,8 @@
   .methodology :global(.title-section p) {
     width: 100%;
   }
+
+  .faqsection :global(.title-section h2) {
+    text-align: center;
+  }
 }

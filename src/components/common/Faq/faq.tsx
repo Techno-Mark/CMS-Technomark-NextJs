@@ -33,7 +33,7 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
-                className={`flex justify-between items-center w-full p-5 ${styles.cardtitle}`}
+                className={`flex justify-between items-start w-full p-5 ${styles.cardtitle}`}
                 data-accordion-target={`#accordion-collapse-body-${index}`}
                 aria-expanded={openIndex === index}
                 aria-controls={`accordion-collapse-body-${index}`}
