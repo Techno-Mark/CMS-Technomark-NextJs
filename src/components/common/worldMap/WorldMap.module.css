@@ -263,4 +263,23 @@
   .mapContainer {
     width: 100%;
   }
+
+  .titletext h2 {
+    font-size: 22px;
+  }
+
+  .inlinecity {
+    margin-bottom: 8px;
+  }
+
+  .inlinecity h3 {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .addressbox p {
+    font-size: 17px;
+    line-height: 25px;
+    width: 100%;
+  }
 }
