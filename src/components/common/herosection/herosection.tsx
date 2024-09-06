@@ -87,7 +87,8 @@ const Herosection: React.FC<HeroSectionProps> = ({
               <Button
                 onClick={() => scrollToSection(formSectionRef)}
                 text={props?.buttonText || "Contact Now"}
-                variant="secondary"
+                // variant="secondary"
+                variant="primary"
               />
             ) : (
               <Button

@@ -7,6 +7,7 @@ import Image from "next/image";
 import NextArrow from "@/components/common/customarrow/next";
 import PrevArrow from "@/components/common/customarrow/prev";
 import Button from "../button/button";
+import ImageSlider from "./ImageSlider";
 
 interface CaseStudy {
   title: string;
@@ -98,35 +99,41 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
                   {!!caseStudy.linkText ? caseStudy.linkText : "Read More"}
                 </a>
               </div>
-              <div className={styles.resultarea}>
-                <div className={styles.videoarea}>
-                  <video autoPlay loop muted>
-                    <source
-                      width="320"
-                      height="240"
-                      src={
-                        !!caseStudy.video
-                          ? caseStudy.video
-                          : "/images/Case-study.mp4"
-                      }
-                      type="video/mp4"
-                    />
-                  </video>
-                  <div className={styles.playbtn}>
-                    <svg
-                      width="24"
-                      height="27"
-                      viewBox="0 0 24 27"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M23.9302 13.4651L0.732501 26.8583L0.732502 0.0719318L23.9302 13.4651Z"
-                        fill="#168944"
-                      ></path>
-                    </svg>
+              <div className={`${styles.resultarea} relative`}>
+                {!!caseStudy.video && caseStudy.video.includes(",") ? (
+                  <ImageSlider
+                    images={caseStudy.video.split(",")}
+                  />
+                ) : (
+                  <div className={styles.videoarea}>
+                    <video autoPlay loop muted>
+                      <source
+                        width="320"
+                        height="240"
+                        src={
+                          !!caseStudy.video
+                            ? caseStudy.video
+                            : "/images/Case-study.mp4"
+                        }
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div className={styles.playbtn}>
+                      <svg
+                        width="24"
+                        height="27"
+                        viewBox="0 0 24 27"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M23.9302 13.4651L0.732501 26.8583L0.732502 0.0719318L23.9302 13.4651Z"
+                          fill="#168944"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className={styles.resultview}>
                   <h4>
                     {!!caseStudy.additionalTitle

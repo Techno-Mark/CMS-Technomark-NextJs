@@ -1,5 +1,5 @@
 .achivementbox {
-  padding: 4rem 1.25rem;
+  padding: 2.3rem 1.25rem;
   border: 1px solid var(--border-primary);
   background: var(--white-color);
   transition: 0.5s ease-in-out all;
@@ -10,12 +10,10 @@
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   border: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(
-    90deg,
-    #ebcb5b 0%,
-    #017ca1 49.5%,
-    #61b946 100%
-  );
+  border-image-source: linear-gradient(90deg,
+      #ebcb5b 0%,
+      #017ca1 49.5%,
+      #61b946 100%);
 }
 
 .achivementbox h3 {
@@ -38,6 +36,7 @@
     margin-bottom: 20px;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .achivementbox {
     width: 90%;

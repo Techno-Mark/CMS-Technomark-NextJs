@@ -150,7 +150,7 @@ const ContactFormSection = ({ props }: any) => {
             </b>
           </div>
         </div>
-        <div className={styles.formright}>
+        <div className={`${styles.formright} w-[90%] lg:w-auto`}>
           <div className={styles.formbubblebg}>
             <div className={styles.formbubblecircle}>
               <Image
