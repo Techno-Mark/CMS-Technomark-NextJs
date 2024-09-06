@@ -176,7 +176,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
     >
       <nav className={`${styles.navigationbar} bg-white`}>
         <div
-          className={`${styles.navcontainer} flex flex-wrap justify-between items-center mx-auto`}
+          className={`${styles.navcontainer} flex flex-wrap lg:flex-nowrap justify-between items-center mx-auto`}
         >
           <div className={styles.logocontainer}>
             <Link
@@ -211,7 +211,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             className={`${
               styles.megamenufull
             } items-center justify-between font-medium ${
-              isMenuOpen ? "flex" : "hidden"
+              isMenuOpen ? "flex" : styles.headerRemoveResponsive
             } w-full h-full lg:flex md:w-auto`}
           >
             <ul
