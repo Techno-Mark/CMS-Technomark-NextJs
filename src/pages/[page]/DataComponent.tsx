@@ -719,7 +719,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
-              className={`${styles.prodcutherosection} tm-section bg-white`}
+              className={`${styles.prodcutherosection} tm-section bg-white !p-0 !m-0 !pt-4`}
             >
               <Herosection
                 props={sectionData}
