@@ -218,7 +218,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     dangerouslySetInnerHTML={{ __html: sectionData.title }}
                   />
                   <p
-                    className="w-[70%] text-center opacity-70 text-2xl leading-relaxed mb-16"
+                    className="md:w-[70%] text-center opacity-70 text-2xl leading-relaxed mb-16"
                     dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
                   />
                 </div>

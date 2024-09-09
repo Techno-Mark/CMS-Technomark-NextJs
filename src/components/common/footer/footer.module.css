@@ -1,19 +1,24 @@
 .footerlogo {
   margin-bottom: 1.25rem;
 }
+
 .footerlogo img {
   width: auto;
 }
+
 .footerContainer {
   background: var(--secondary--color);
   position: relative;
 }
+
 .footerdetails {
   flex: 1;
 }
+
 .footerlinks {
   flex: 2;
 }
+
 .footerlogotext h3 {
   color: var(--white-color);
   font-family: Montserrat;
@@ -23,6 +28,7 @@
   line-height: 3rem;
   max-width: 24rem;
 }
+
 .footerlogotext h3 span {
   color: var(--primary-color);
 }
@@ -50,14 +56,14 @@
   border-radius: 100%;
 }
 
-.sociallinks a img{
+.sociallinks a img {
   height: 2rem;
   width: 2rem;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(16%) sepia(7%) saturate(7465%) hue-rotate(183deg) brightness(92%) contrast(88%);
 }
 
-.sociallinks a:hover img{
+.sociallinks a:hover img {
   filter: none;
 }
 
@@ -70,11 +76,13 @@
   font-weight: 400;
   line-height: 2.25rem;
 }
+
 .footerbottomright a:first-child {
   padding-right: 10px;
   margin-right: 10px;
   border-right: 1px solid var(--footer--primary);
 }
+
 .footerlinks h3 {
   color: var(--white-color);
   font-family: Montserrat;
@@ -83,6 +91,7 @@
   font-weight: 600;
   line-height: 2rem;
 }
+
 .footerlinksul li a {
   color: var(--white-color);
   font-family: Montserrat;
@@ -91,15 +100,18 @@
   font-weight: 400;
   line-height: 2rem;
 }
-.footerarrow{
+
+.footerarrow {
   position: absolute;
   right: 10rem;
   top: -35px;
 }
-.footerbottom{
+
+.footerbottom {
   background: var(--bg-footer);
 }
-.footerbottom :global(.container){
+
+.footerbottom :global(.container) {
   max-width: 85rem;
 }
 
@@ -108,17 +120,26 @@
     font-size: 1.5rem;
     line-height: 2rem;
   }
-  .footerlinksul li a{
+
+  .footerlinksul li a {
     font-size: 1.5rem;
     line-height: 3rem;
   }
-  .footerbottomright a, .footerbottomleft{
+
+  .footerbottomright a,
+  .footerbottomleft {
     font-size: 1.5rem;
   }
-  .footerlogotext h3{
+
+  .footerlogotext h3 {
     max-width: 100%;
   }
+
   .footerlinks h3 {
     font-size: 2rem;
+  }
+
+  .footerarrow {
+    right: 5rem;
   }
 }
