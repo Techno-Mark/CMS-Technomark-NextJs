@@ -54,8 +54,10 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(var(--primary-color) 100%,
-      var(--primary-variant-one) 100%);
+  background: linear-gradient(
+    var(--primary-color) 100%,
+    var(--primary-variant-one) 100%
+  );
   top: 17px;
 }
 
@@ -139,6 +141,20 @@
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.prodcutherosection :global(.title-section h2) {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--border-quaternary);
+}
+
+.prodcutherosection :global(.title-section p) {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 5rem;
 }
 
 .trustsection {
@@ -439,5 +455,14 @@
 
   .faqsection :global(.title-section h2) {
     text-align: center;
+  }
+
+  .prodcutherosection :global(.title-section h2) {
+    font-size: 1.2rem;
+  }
+  
+  .prodcutherosection :global(.title-section p) {
+    font-size: 1.2rem !important;
+    line-height: 1.8rem !important;
   }
 }

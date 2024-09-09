@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
               </h3>
             </div>
             <div className={`${styles.companyinfo} flex flex-col my-12`}>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center w-fit">
                 <Image
                   src="/images/Phone.svg"
                   alt="phone"
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                 />
                 <span>USA: +1 (206) 347 1395</span>
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center w-fit">
                 <Image
                   src="/images/Phone.svg"
                   alt="contact"
@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                 />
                 <span>UK: +44 (203) 423 6509</span>
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center w-fit">
                 <Image
                   src="/images/whatsapp.svg"
                   alt="whatsapp"
@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                 />
                 <span>Whatsapp | +91 -7069008181</span>
               </Link>
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center w-fit">
                 <Image
                   src="/images/mail.svg"
                   alt="mail"
