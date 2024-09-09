@@ -50,25 +50,23 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
             </div>
           </div>
           <div className="flex flex-wrap mt-10 justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-4">
-              {mapData.map((location: any, index: number) => (
-                <div key={index} className={`${styles.addressbox} mb-10 mx-4`}>
-                  <div className={`${styles.inlinecity}`}>
-                    <Image
-                      src={!!location.icon ? location.icon : ""}
-                      alt={`${!!location.country ? location.country : ""}-flag`}
-                      height={35}
-                      width={35}
-                    />
-                    <h3>
-                      {!!location.city ? location.city : ""},
-                      {!!location.country ? location.country : ""}
-                    </h3>
-                  </div>
-                  <p>{!!location.address ? location.address : ""}</p>
+            {mapData.map((location: any, index: number) => (
+              <div key={index} className={`${styles.addressbox} mb-10 px-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4`}>
+                <div className={`${styles.inlinecity}`}>
+                  <Image
+                    src={!!location.icon ? location.icon : ""}
+                    alt={`${!!location.country ? location.country : ""}-flag`}
+                    height={35}
+                    width={35}
+                  />
+                  <h3>
+                    {!!location.city ? location.city : ""},
+                    {!!location.country ? location.country : ""}
+                  </h3>
                 </div>
-              ))}
-            </div>
+                <p>{!!location.address ? location.address : ""}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

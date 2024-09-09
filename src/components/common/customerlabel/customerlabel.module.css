@@ -7,6 +7,7 @@
   padding: 1.25rem;
   max-width: 8rem;
 }
+
 .customerfixedlabel img {
   position: absolute;
   right: 10px;
@@ -15,6 +16,7 @@
   max-height: 3rem;
   object-fit: contain;
 }
+
 .customerfixedlabel h5 {
   color: var(--white-color);
   text-align: center;
@@ -26,6 +28,7 @@
   text-transform: uppercase;
   margin-bottom: 4px;
 }
+
 .customerfixedlabel p {
   color: var(--white-color);
   text-align: center;
@@ -39,11 +42,11 @@
 @media only screen and (max-width: 767px) {
   .customerfixedlabel {
     max-width: 9rem;
+    padding: 1rem;
+    top: 6rem;
   }
+
   .customerfixedlabel h5 {
-    font-size: 2rem;
-  }
-  .customerfixedlabel p {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 }

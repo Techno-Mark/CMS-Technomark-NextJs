@@ -302,7 +302,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       )}
                     </div>
                   </div>
-                  <div className="lg:w-1/2 md:w-full pl-20 flex flex-col items-start justify-center">
+                  <div className="lg:w-1/2 md:w-full md:pl-20 flex flex-col items-start justify-center">
                     <GuaranteePoints
                       props={
                         !!sectionData.rightText ? sectionData.rightText : ""
