@@ -97,3 +97,18 @@
     margin-bottom: 2rem;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .iconTextArea {
+    padding-top: 2rem;
+  }
+  .iconTextArea .inlineIcon h4 {
+    margin-left: 10px;
+  }
+  .iconTextArea p {
+    width: 100%;
+  }
+  .iconTextArea {
+    margin-bottom: 2rem;
+  }
+}
