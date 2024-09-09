@@ -32,11 +32,11 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
           <ul>
             {listItems.map((listItem, index) => (
               <li key={index}>
-                <div className={styles.scalearea}>
+                <div className={`${styles.scalearea} text-[13px]` }>
                   <Image
                     src="/images/arrow-right-solution.png"
                     alt="arrow"
-                    height={50}
+                    height={40}
                     width={80}
                   />
                   {listItem?.text || ""}
