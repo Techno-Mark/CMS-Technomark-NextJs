@@ -1,12 +1,11 @@
+import NextArrow from "@/components/common/customarrow/next";
+import PrevArrow from "@/components/common/customarrow/prev";
+import Image from "next/image";
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styles from "./casestudy.module.css";
-import Image from "next/image";
-import NextArrow from "@/components/common/customarrow/next";
-import PrevArrow from "@/components/common/customarrow/prev";
-import Button from "../button/button";
 import ImageSlider from "./ImageSlider";
 
 interface CaseStudy {
@@ -101,9 +100,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
               </div>
               <div className={`${styles.resultarea} relative`}>
                 {!!caseStudy.video && caseStudy.video.includes(",") ? (
-                  <ImageSlider
-                    images={caseStudy.video.split(",")}
-                  />
+                  <ImageSlider images={caseStudy.video.split(",")} />
                 ) : (
                   <div className={styles.videoarea}>
                     <video autoPlay loop muted>

@@ -72,7 +72,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
         isTechStartup ? styles.techstartpcontainer : ""
       }`}
     >
-      <div className="flex flex-wrap sm:flex-row flex-col-reverse items-center">
+      <div className="flex flex-wrap sm:flex-row flex-col items-center">
         <div className="w-full md:w-1/2">
           <p className={styles.label}>{props?.label || ""}</p>
           <TitleSection
@@ -82,7 +82,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
             }}
             titleClassName="herosectiontitle"
           />
-          <div className="w-fit">
+          <div className="w-fit mb-8 md:mb-0">
             {isTechStartup ? (
               <Button
                 onClick={() => scrollToSection(formSectionRef)}
@@ -112,6 +112,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           )}
           <div className={styles.imagecontainer}>
             <Image
+              className="w-auto"
               src={props?.heroImage || ""}
               alt="Hero Image"
               width={500}

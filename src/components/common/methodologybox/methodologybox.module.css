@@ -142,7 +142,7 @@
 
 @media only screen and (max-width: 767px) {
   .flipcard {
-    max-width: 80%;
+    /* max-width: 80%; */
     margin: 0 auto 20px;
     border: 1px solid var(--border-primary);
   }
