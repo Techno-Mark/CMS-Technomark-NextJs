@@ -4,6 +4,8 @@ import DataComponent from "./DataComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import Popup from "@/components/common/popup/popup";
+import { useEffect, useState } from "react";
 
 interface HomeProps {
   data: any;
@@ -36,7 +38,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 
     return {
       props: {
-        data
+        data,
       },
     };
   } catch (error) {
@@ -52,6 +54,18 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
+  const [showPopups, setShowPopups] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (data.popups?.length > 0) {
+      data.popups.forEach((popup: any) => {
+        setTimeout(() => {
+          setShowPopups((prev) => [...prev, popup]);
+        }, popup.delaySec * 1000);
+      });
+    }
+  }, [data]);
+  
   return (
     <>
       <Head>
@@ -63,6 +77,9 @@ const Page: React.FC<
         <link rel="icon" href="/favicon.png" />
       </Head>
       <ToastContainer />
+      {showPopups.map((popup: any, index: number) => (
+        <Popup key={index} {...popup} />
+      ))}
       <DataComponent data={data} />
     </>
   );
