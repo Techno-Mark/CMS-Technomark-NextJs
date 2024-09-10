@@ -143,19 +143,16 @@
   z-index: -1;
 }
 
-/* .prodcutherosection :global(.title-section h2) {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--border-quaternary);
+.prodcutherosection :global(.title-section h2) {
+  font-size: 2.3rem;
+  font-weight: 600 !important;
 }
 
 .prodcutherosection :global(.title-section p) {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.4rem !important;
+  line-height: unset !important;
   margin-bottom: 5rem;
-} */
+}
 
 .trustsection {
   background: var(--white-color);
