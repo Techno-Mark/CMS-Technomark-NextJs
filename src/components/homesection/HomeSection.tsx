@@ -31,24 +31,26 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           <source src={backgroundVideo} type="video/mp4" />
         </video>
       </div>
-      <div className={`${homeStyles.hometext} mx-auto max-w-2xl`}>
-        <h1 className={homeStyles.maintitle}>{headingText}</h1>
-        <TypeingTexts props={servicesChangeText} />
-        <Button
-          onClick={() => scrollToSection(formSectionRef)}
-          text={ctaText}
-          variant="primary"
-        />
-        <div
-          className={`${homeStyles.linearrow} cursor-pointer`}
-          onClick={() => scrollToSection(techSectionRef)}
-        >
-          <Image
-            src="/images/line-arrow.svg"
-            alt="arrow"
-            height={130}
-            width={36}
+      <div className={`${homeStyles.hometext}`}>
+        <div className="container">
+          <h1 className={homeStyles.maintitle}>{headingText}</h1>
+          <TypeingTexts props={servicesChangeText} />
+          <Button
+            onClick={() => scrollToSection(formSectionRef)}
+            text={ctaText}
+            variant="primary"
           />
+          <div
+            className={`${homeStyles.linearrow} cursor-pointer`}
+            onClick={() => scrollToSection(techSectionRef)}
+          >
+            <Image
+              src="/images/line-arrow.svg"
+              alt="arrow"
+              height={130}
+              width={36}
+            />
+          </div>
         </div>
       </div>
     </section>

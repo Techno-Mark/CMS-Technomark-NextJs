@@ -27,6 +27,7 @@
   --bg-footer: #182d4a;
   --footer--primary: #BFCFD9;
   --red--primary: #f13c31;
+  --slick--arrow: #545960;
 }
 
 @media (prefers-color-scheme: dark) {

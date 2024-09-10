@@ -4,9 +4,8 @@
   margin-right: 2rem;
   border: 1px solid var(--border-primary);
   transition: width 1s ease-in-out;
-  background: linear-gradient(0deg,
-      var(--white-color) 0%,
-      var(--white-color) 100%),
+  background:
+    linear-gradient(0deg, var(--white-color) 0%, var(--white-color) 100%),
     lightgray 50% / cover no-repeat;
   display: flex !important;
   width: auto !important;
@@ -14,18 +13,11 @@
 }
 
 .activeSlide.casebox {
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(347.79% 137.52% at 0% 0%,
-      #f3f3dd 0%,
-      #e1e3ef 35%,
-      #e4f4e9 74%,
-      #f1e1f1 100%);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #f9fcf8 0, #f9f9fc 49%, #f9fbfe 100%);
   border: 1px solid #ebcb5b;
   border-image-slice: 1;
-  border-image-source: linear-gradient(90deg,
-      #ebcb5b 0%,
-      #017ca1 50%,
-      #61b946 100%);
+  border-image-source: linear-gradient(90deg, #ebcb5b 0%, #017ca1 50%, #61b946 100%);
 }
 
 .casebox .textarea {
@@ -79,9 +71,7 @@
 .readmore {
   margin: 0;
   transition: 0.5s;
-  background: linear-gradient(90deg,
-      var(--primary-color) 0.08%,
-      var(--primary-variant-one) 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -114,7 +104,8 @@
   border-radius: 15px;
   background: var(--white-color);
   border: 1px solid var(--border-ternary);
-  box-shadow: 0 0 0 1px rgba(203, 132, 12, 0.1),
+  box-shadow:
+    0 0 0 1px rgba(203, 132, 12, 0.1),
     0 1px 3px 0 rgba(119, 105, 83, 0.2);
 }
 
@@ -127,7 +118,7 @@
 
 .successratiobox li span {
   color: var(--secondary--color);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 2rem;
 }
@@ -199,9 +190,7 @@
 .readmore {
   margin: 0;
   transition: 0.5s;
-  background: linear-gradient(90deg,
-      var(--primary-color) 0.08%,
-      var(--primary-variant-one) 99.95%);
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -216,7 +205,6 @@
 
 .caseslide :global(.slick-list) {
   overflow: visible;
-
 }
 
 .caseslide :global(.slick-arrow) {
@@ -237,12 +225,11 @@
 }
 
 .caseslide :global(.slick-arrow:hover svg) {
-  background: var(--secondary--color);
+  background: var(--slick--arrow);
 }
 
 .caseslide :global(.slick-arrow:hover svg path) {
   stroke: var(--white-color);
-
 }
 
 .caseslide :global(.slick-arrow::before) {
@@ -262,13 +249,25 @@
   margin-right: initial;
 }
 
+@media only screen and (max-width: 992px) {
+  .successratiobox li span {
+    display: block;
+    min-height: 40px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .casebox {
     flex-direction: column;
     row-gap: 40px;
     padding-bottom: 50px;
+    padding-inline: 1rem;
   }
 
+  .successratiobox {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
   .casebox .resultarea {
     border-left: none;
     padding-left: 0;
@@ -276,5 +275,16 @@
 
   .techusetext li img {
     top: 2px;
+  }
+
+  .casebox .textarea {
+    padding-right: 0;
+    min-height: 310px;
+  }
+  .textarea img {
+    max-width: 120px;
+  }
+  .successratiobox li span {
+    min-height: auto;
   }
 }

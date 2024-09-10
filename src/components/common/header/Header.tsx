@@ -181,7 +181,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
           <div className={styles.logocontainer}>
             <Link
               href="/"
-              className="flex items-center space-x-3 rtl:space-x-reverse px-14"
+              className="flex items-center space-x-3 rtl:space-x-reverse px-6 lg:px-14"
             >
               <Image
                 src="/images/logo.svg"
