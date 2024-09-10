@@ -3,6 +3,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { lazy, useEffect, useRef, useState } from "react";
 import styles from "./home.module.css";
+import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider";
 import BlogList from "../blogs/list/blogList/BlogList";
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
@@ -115,6 +116,10 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   const pathName: any = usePathname();
   const [homeData, setHomeData] = useState<any>();
   const [loading, setLoading] = useState(true);
+  const [detailedSliderOpen, setDetailedOpen] = useState<boolean>(false);
+  const [detailedSliderImagesUrl, setDetailedImagesUrl] = useState<string[]>(
+    []
+  );
 
   useEffect(() => {
     setHomeData(data);
@@ -233,7 +238,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName="casestudytitle"
                 /> */}
-                <CaseStudy props={!!sectionData.data ? sectionData.data : []} />
+                <CaseStudy
+                  props={!!sectionData.data ? sectionData.data : []}
+                  setDetailedOpen={setDetailedOpen}
+                  setDetailedImagesUrl={setDetailedImagesUrl}
+                />
               </div>
             </section>
           )
@@ -979,6 +988,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   console.log(homeData);
   return (
     <>
+      <MaximizedSlider
+        isOpen={detailedSliderOpen}
+        images={detailedSliderImagesUrl}
+        onClose={() => setDetailedOpen(false)}
+      />
       {homeData ? (
         homeData.formatData.map((sectionName: any, index: number) => (
           <React.Fragment key={index}>
