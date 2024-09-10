@@ -3,6 +3,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { lazy, useEffect, useRef, useState } from "react";
 import styles from "./home.module.css";
+import BlogList from "../blogs/list/blogList/BlogList";
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
 const TechStartupBg = lazy(
@@ -71,7 +72,7 @@ const ContactFormSection = lazy(
   () => import("@/components/common/contactformsection/formsection")
 );
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
-const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
+// const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -765,7 +766,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "technologyhomesection":
+      case "Technology Home Section":
         return (
           sectionData && (
             <>
@@ -778,18 +779,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </>
           )
         );
-      case "techslider":
+      case "Tech Slider":
         return (
           sectionData && (
             <section className={`${styles.techslider} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -800,18 +799,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "techservices":
+      case "Tech Services":
         return (
           sectionData && (
             <section className={`${styles.techservices} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -822,7 +819,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "techbenefits":
+      case "Tech Benefits":
         return (
           sectionData && (
             <section className={`${styles.technenifits} bg-white tm-section`}>
@@ -830,7 +827,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "hiredeveloper":
+      case "Hire Developer":
         return (
           sectionData && (
             <section className={`${styles.hiredeveloper} tm-section bg-white`}>
@@ -920,33 +917,50 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         );
       case "Locations":
         return sectionData && <WorldMap props={sectionData} />;
-      case "bloglist":
+      case "Blog Title":
         return (
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
-                <p className={styles.casestudylistlabel}>
-                  {sectionData.find((item: any) => item.label)
-                    ? sectionData.find((item: any) => item.label).label
-                    : ""}
-                </p>
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subtitle)
-                      ? sectionData.find((item: any) => item.subtitle).subtitle
-                      : "",
+                    title: !!sectionData.title ? sectionData.title : "",
                   }}
                   titleFirst={true}
                   titleClassName="casestudylisttitle"
                 />
-                <BlogList props={sectionData} />
+                <BlogList buttons={false} />
               </div>
             </section>
           )
         );
+      // case "bloglist":
+      //   return (
+      //     sectionData && (
+      //       <section className={`${styles.casestudylist} tm-section bg-white`}>
+      //         <div className="container mx-auto">
+      //           <p className={styles.casestudylistlabel}>
+      //             {sectionData.find((item: any) => item.label)
+      //               ? sectionData.find((item: any) => item.label).label
+      //               : ""}
+      //           </p>
+      //           <TitleSection
+      //             sectionData={{
+      //               title: sectionData.find((item: any) => item.title)
+      //                 ? sectionData.find((item: any) => item.title).title
+      //                 : "",
+      //               subtitle: sectionData.find((item: any) => item.subtitle)
+      //                 ? sectionData.find((item: any) => item.subtitle).subtitle
+      //                 : "",
+      //             }}
+      //             titleFirst={true}
+      //             titleClassName="casestudylisttitle"
+      //           />
+      //           <BlogList props={sectionData} />
+      //         </div>
+      //       </section>
+      //     )
+      //   );
       default:
         return null;
     }
