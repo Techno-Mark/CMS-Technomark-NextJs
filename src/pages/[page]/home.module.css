@@ -4,7 +4,8 @@
 }
 
 .methodology :global(.title-section h2) {
-  margin-bottom: 1.25rem;
+  /* margin-bottom: 1.25rem; */
+  font-size: 2.5rem;
 }
 
 .methodology :global(.title-section p) {
