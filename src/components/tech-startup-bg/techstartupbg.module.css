@@ -93,4 +93,7 @@
   .techbgbtn a {
     margin-left: auto;
   }
+  .techsubcontainer {
+    padding: 2rem 1rem;
+  }
 }

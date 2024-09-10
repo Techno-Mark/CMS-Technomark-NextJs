@@ -89,6 +89,7 @@
 
 .responsiveheader .togglebtn {
   margin-left: auto;
+  margin-top: 10px;
 }
 
 .projectbtn {
@@ -106,6 +107,9 @@
 .responsiveheader .projectbtn {
   display: block;
   flex: 2;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
 }
 
 .submenu {
@@ -174,6 +178,10 @@
   display: none;
 }
 
+.togglebtn {
+  display: none;
+}
+
 @media only screen and (max-width: 1023px) {
   .navlink .cursorpointer>a {
     font-size: 1.1rem;
@@ -193,13 +201,7 @@
   .megamenufull .megamenuul {
     flex-direction: column;
   }
-}
 
-.togglebtn {
-  display: none;
-}
-
-@media only screen and (max-width: 991px) {
   .togglebtn {
     display: inline-flex;
   }
@@ -218,7 +220,7 @@
 
   .responsiveheader .headersideimg .themebtn {
     border-right: 1px solid var(--border-secondary);
-    padding: 10px 40px;
+    padding: 10px 20px;
   }
 
   .responsiveheader .headersideimg .themebtn img {
@@ -255,10 +257,13 @@
     display: flex;
     border: none;
   }
-
+  .responsiveheader .navlink {
+    height: auto;
+    padding: 10px 0;
+  }
   .navlink .cursorpointer>a {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 
   .submenulink a img {
@@ -271,5 +276,8 @@
 
   .cursorpointer {
     height: auto;
+  }
+  .logocontainer {
+    border-right: none;
   }
 }
