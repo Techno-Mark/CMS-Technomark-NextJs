@@ -54,10 +54,7 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(
-    var(--primary-color) 100%,
-    var(--primary-variant-one) 100%
-  );
+  background: linear-gradient(var(--primary-color) 100%, var(--primary-variant-one) 100%);
   top: 17px;
 }
 
@@ -78,8 +75,12 @@
   box-shadow: 10px 0px 0px 0px var(--white-color);
 }
 
-.guaranteetmsection :global(.title-section h2) {
+/* .guaranteetmsection :global(.title-section h2) {
   margin-bottom: 5rem;
+} */
+
+.guaranteetmsection :global(.title-section h2 span) {
+  border-bottom: none;
 }
 
 .guaranteetmsection .videoarea {
@@ -130,11 +131,13 @@
 }
 
 .clientspeaksection :global(.title-section h2) {
-  margin-bottom: 5rem;
+  /* margin-bottom: 5rem; */
+  font-size: 2.8rem;
 }
 
 .clientspeaksection :global(.title-section p) {
-  margin-bottom: 0.6rem;
+  padding-bottom: 3rem;
+  opacity: 0.7;
 }
 
 .clientcurve {
@@ -161,7 +164,8 @@
 }
 
 .trustsection :global(.title-section h2) {
-  margin-bottom: 1.2rem;
+  /* margin-bottom: 1.2rem; */
+  font-size: 2.5rem;
 }
 
 .trustsection :global(.title-section p) {
@@ -170,9 +174,10 @@
 
 .trustsection :global(.title-section p span) {
   display: block;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
   font-weight: 700;
+  padding-top: 8px;
 }
 
 .faqsection {
@@ -457,7 +462,7 @@
   .prodcutherosection :global(.title-section h2) {
     font-size: 1.2rem;
   }
-  
+
   .prodcutherosection :global(.title-section p) {
     font-size: 1.2rem !important;
     line-height: 1.8rem !important;
