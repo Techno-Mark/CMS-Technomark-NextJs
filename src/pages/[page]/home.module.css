@@ -467,4 +467,24 @@
     font-size: 1.2rem !important;
     line-height: 1.8rem !important;
   }
+
+  .techslider :global(.title-section h2) {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .techslider :global(.title-section p) {
+    max-width: 100%;
+  }
+
+  .techservices :global(.title-section h2) {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .techservices :global(.title-section p) {
+    max-width: 100%;
+  }
 }

@@ -5,7 +5,7 @@ import Button from "@/components/common/button/button";
 import axios from "axios";
 import { convertDate } from "@/utils/commonFunction";
 
-const BlogList = ({ props }: any) => {
+const BlogList = ({ buttons = true }: { buttons?: boolean }) => {
   const Buttons = [
     "Software Development",
     "Development & Operation",
@@ -19,12 +19,13 @@ const BlogList = ({ props }: any) => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const [data, setData] = useState([]);
 
-  const filteredBlogs =
-    data?.filter((blog: any) =>
-      blog.categories?.some(
-        (category: any) => category.name === selectedCategory
-      )
-    ) || [];
+  const filteredBlogs = buttons
+    ? data?.filter((blog: any) =>
+        blog.categories?.some(
+          (category: any) => category.name === selectedCategory
+        )
+      ) || []
+    : data;
 
   // Decide which blogs to display
   const displayedBlogs = showAll ? filteredBlogs : filteredBlogs.slice(0, 9);
@@ -54,19 +55,21 @@ const BlogList = ({ props }: any) => {
 
   return (
     <div className={styles.caseslide} id="case-slide">
-      <div className={styles.tabContainer}>
-        {Buttons?.map((text: any, index: number) => (
-          <button
-            key={index}
-            className={`${styles.tabButton} ${
-              selectedCategory == text ? styles.activeTab : ""
-            }`}
-            onClick={() => setSelectedCategory(text)}
-          >
-            {text}
-          </button>
-        ))}
-      </div>
+      {buttons && (
+        <div className={styles.tabContainer}>
+          {Buttons?.map((text: any, index: number) => (
+            <button
+              key={index}
+              className={`${styles.tabButton} ${
+                selectedCategory == text ? styles.activeTab : ""
+              }`}
+              onClick={() => setSelectedCategory(text)}
+            >
+              {text}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div
         className={`flex flex-wrap justify-start text-black ${styles.hireengaged}`}
@@ -102,8 +105,12 @@ const BlogList = ({ props }: any) => {
         })}
       </div>
 
-      <div className="mx-auto viewallbtn" onClick={handleToggleShow}>
-        <Button href="#" text="VIEW ALL" variant="secondary" />
+      <div className="mx-auto viewallbtn">
+        <Button
+          text="VIEW ALL"
+          variant="secondary"
+          onClick={handleToggleShow}
+        />
       </div>
     </div>
   );

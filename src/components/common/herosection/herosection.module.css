@@ -98,4 +98,14 @@
     font-size: 1.8rem;
     line-height: unset;
   }
+
+  .techherocontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+    line-height: unset;
+  }
+  .techherocontainer :global(.title-section p) {
+    font-size: 1.8rem;
+    line-height: unset;
+    width: 100%;
+  }
 }
