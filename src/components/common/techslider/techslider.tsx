@@ -8,28 +8,13 @@ import Button from "@/components/common/button/button";
 import NextArrow from "@/components/common/customarrow/next";
 import PrevArrow from "@/components/common/customarrow/prev";
 
-interface ImageData {
-  src: string;
-  alt: string;
-}
-
-interface CombineBox {
-  images: ImageData[];
-}
-
-interface CombineText {
-  title: string;
-  description: string;
-}
-
 interface TechSliderProps {
   props: any;
 }
 
 const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
-  const slides = props.find((item: any) => item.Slides)?.Slides || [];
-  const buttonText =
-    props.find((item: any) => item.buttonText)?.buttonText || "";
+  const slides = props?.slides || [];
+  const buttonText = props?.buttonText || "";
 
   const settings = {
     slidesToShow: 3,
@@ -81,12 +66,7 @@ const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
               <ul>
                 <li className="flex gap-4">
                   <Image
-                    src={
-                      slide.items.find((item: any) => item.firstImage)
-                        ? slide.items.find((item: any) => item.firstImage)
-                            .firstImage
-                        : ""
-                    }
+                    src={!!slide.firstImage ? slide.firstImage : ""}
                     alt=""
                     width={36}
                     height={36}
@@ -98,12 +78,7 @@ const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
                     height={36}
                   />
                   <Image
-                    src={
-                      slide.items.find((item: any) => item.secondImage)
-                        ? slide.items.find((item: any) => item.secondImage)
-                            .secondImage
-                        : ""
-                    }
+                    src={!!slide.secondImage ? slide.secondImage : ""}
                     alt=""
                     width={36}
                     height={36}
@@ -112,17 +87,8 @@ const TechSlider: React.FC<TechSliderProps> = ({ props }) => {
               </ul>
             </div>
             <div className={styles.combinetext}>
-              <h3>
-                {slide.items.find((item: any) => item.title)
-                  ? slide.items.find((item: any) => item.title).title
-                  : ""}
-              </h3>
-              <p>
-                {slide.items.find((item: any) => item.description)
-                  ? slide.items.find((item: any) => item.description)
-                      .description
-                  : ""}
-              </p>
+              <h3>{!!slide.title ? slide.title : ""}</h3>
+              <p>{!!slide.description ? slide.description : ""}</p>
             </div>
           </div>
         ))}

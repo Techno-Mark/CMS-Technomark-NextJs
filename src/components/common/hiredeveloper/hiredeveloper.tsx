@@ -11,19 +11,15 @@ interface DeveloperItem {
   buttonText?: string;
 }
 
-interface DeveloperCard {
-  items: DeveloperItem[];
-}
-
 interface HireDeveloperProps {
   props: {
-    "Developer Card": DeveloperCard[];
+    developerCard: DeveloperItem[];
   };
   isengaged?: boolean;
 }
 
 const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
-  const developerCards = props["Developer Card"] || [];
+  const developerCards = !!props.developerCard ? props.developerCard : [];
 
   return (
     <div
@@ -36,39 +32,33 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
           <div className={styles.devTimeBox}>
             <div className={styles.devloperimg}>
               <Image
-                src={developer.items.find((item) => item.image)?.image || ""}
+                src={developer?.image || ""}
                 alt="Developer Image"
                 width={125}
                 height={105}
               />
             </div>
-            <h2>{developer.items.find((item) => item.type)?.type || ""}</h2>
-            <p>{developer.items.find((item) => item.hours)?.hours || ""}</p>
+            <h2>{developer?.type || ""}</h2>
+            <p>{developer?.hours || ""}</p>
             <ul className="list-none">
-              {developer.items
-                .find((item) => item.details)
-                ?.details?.split(",")
-                .map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-center my-2">
-                    <Image
-                      src="/images/arrow-right-resource.png"
-                      height={26}
-                      width={26}
-                      alt="Arrow Icon"
-                      className="mr-2"
-                    />
-                    <p>{detail}</p>
-                  </li>
-                ))}
+              {developer?.details?.split(",").map((detail, detailIndex) => (
+                <li key={detailIndex} className="flex items-center my-2">
+                  <Image
+                    src="/images/arrow-right-resource.png"
+                    height={26}
+                    width={26}
+                    alt="Arrow Icon"
+                    className="mr-2"
+                  />
+                  <p>{detail}</p>
+                </li>
+              ))}
             </ul>
             <a
-              href={
-                developer.items.find((item) => item.buttonUrl)?.buttonUrl || ""
-              }
+              href={developer?.buttonUrl || ""}
               className={`${styles.roundedBtn} rounded-btn btn-w-100`}
             >
-              {developer.items.find((item) => item.buttonText)?.buttonText ||
-                ""}
+              {developer?.buttonText || ""}
             </a>
           </div>
         </div>
