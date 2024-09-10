@@ -255,7 +255,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subtitle,
                   }}
                   titleFirst={true}
-                  titleClassName="methodologytitle"
+                  titleClassName={styles.methodologytitle}
                 />
 
                 <TechIcons data={sectionData.icons} />
