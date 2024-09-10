@@ -275,8 +275,8 @@
 
 .businessimpactsection :global(.title-section p) {
   color: var(--white-color);
-  width: 70%;
   margin-inline: auto;
+  font-size: 20px;
   font-weight: 400;
 }
 
