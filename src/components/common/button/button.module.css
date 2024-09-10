@@ -112,8 +112,8 @@
 
 @media only screen and (max-width: 767px) {
   .newPrimarybtn {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
   .newPrimarybtn:hover .arrowanimatebtn::before {
     transform: translateX(-6px);

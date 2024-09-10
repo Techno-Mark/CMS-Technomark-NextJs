@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./formsection.module.css";
 import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../button/button";
-import { toast } from "react-toastify";
+import styles from "./formsection.module.css";
 
 const ContactFormSection = ({ props }: any) => {
   const [formData, setFormData] = useState({

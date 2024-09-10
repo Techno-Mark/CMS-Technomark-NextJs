@@ -54,8 +54,10 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(var(--primary-color) 100%,
-      var(--primary-variant-one) 100%);
+  background: linear-gradient(
+    var(--primary-color) 100%,
+    var(--primary-variant-one) 100%
+  );
   top: 17px;
 }
 
@@ -139,6 +141,17 @@
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.prodcutherosection :global(.title-section h2) {
+  font-size: 2.3rem;
+  font-weight: 600 !important;
+}
+
+.prodcutherosection :global(.title-section p) {
+  font-size: 1.4rem !important;
+  line-height: unset !important;
+  margin-bottom: 5rem;
 }
 
 .trustsection {
@@ -259,8 +272,8 @@
 
 .businessimpactsection :global(.title-section p) {
   color: var(--white-color);
-  width: 70%;
   margin-inline: auto;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -439,5 +452,14 @@
 
   .faqsection :global(.title-section h2) {
     text-align: center;
+  }
+
+  .prodcutherosection :global(.title-section h2) {
+    font-size: 1.2rem;
+  }
+  
+  .prodcutherosection :global(.title-section p) {
+    font-size: 1.2rem !important;
+    line-height: 1.8rem !important;
   }
 }

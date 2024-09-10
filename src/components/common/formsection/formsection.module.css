@@ -141,4 +141,8 @@
     width: 100%;
     max-width: 450px;
   }
+
+  .formarea h4 {
+    margin-bottom: 0;
+  }
 }

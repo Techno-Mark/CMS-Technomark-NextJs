@@ -70,7 +70,7 @@
 
 .solutiontext .inlineArea b {
     color: var(--secondary--color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     line-height: 3.2rem;
     letter-spacing: 0.24px;
@@ -85,9 +85,9 @@
 }
 
 .solutiontext p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    line-height: 3.2rem;
+    line-height: 2.2rem;
     letter-spacing: 0.24px;
     padding: 1.25rem 2.5rem 0;
 }
@@ -135,7 +135,7 @@
 
 .solutionGreenArea .inlineArea b {
     color: var(--secondary--color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     line-height: 3.2rem;
     letter-spacing: 0.24px;
@@ -147,9 +147,9 @@
 
 .solutionGreenArea p {
     color: var(--white-color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    line-height: 3.2rem;
+    line-height: 2.2rem;
     letter-spacing: 0.24px;
     padding: 1.25rem 2.5rem 0;
 }
