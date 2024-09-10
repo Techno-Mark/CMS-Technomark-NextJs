@@ -12,20 +12,20 @@
 }
 
 .iconTextArea .inlineIcon h4 {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   color: var(--secondary--color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 2.6rem;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .iconTextArea p {
   color: var(--secondary--color);
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 500;
   line-height: 2.2rem;
-  width: 80%;
+  width: 90%;
   padding-left: 3.5rem;
 }
 
@@ -33,7 +33,7 @@
   width: 2rem;
 }
 .checkicon img {
-  width: 2rem;
+  width: 1.5rem;
 }
 
 .problemStatement {
@@ -47,9 +47,9 @@
   width: 100%;
   font-weight: 400;
 }
-.problemStatement.iconTextArea .inlineIcon h4 {
+/* .problemStatement.iconTextArea .inlineIcon h4 {
   margin: 0;
-}
+} */
 .problemStatement .checkicon {
   position: relative;
   top: 15px;
@@ -87,9 +87,9 @@
   .iconTextArea {
     padding-top: 2rem;
   }
-  .iconTextArea .inlineIcon h4 {
+  /* .iconTextArea .inlineIcon h4 {
     margin-left: 10px;
-  }
+  } */
   .iconTextArea p {
     width: 100%;
   }
@@ -101,9 +101,6 @@
 @media only screen and (max-width: 767px) {
   .iconTextArea {
     padding-top: 2rem;
-  }
-  .iconTextArea .inlineIcon h4 {
-    margin-left: 10px;
   }
   .iconTextArea p {
     width: 100%;

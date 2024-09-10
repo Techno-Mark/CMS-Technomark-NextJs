@@ -273,7 +273,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     title: sectionData.heading ? sectionData.heading : "",
                   }}
                   titleFirst={true}
-                  titleClassName="guaranteetitle"
+                  titleClassName={styles.guaranteetitle}
                 />
                 <div className="flex flex-wrap !mt-24">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
@@ -302,7 +302,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       )}
                     </div>
                   </div>
-                  <div className="lg:w-1/2 md:w-full md:pl-20 flex flex-col items-start justify-center">
+                  <div className="lg:w-1/2 md:w-full md:pl-12 flex flex-col items-start justify-center">
                     <GuaranteePoints
                       props={
                         !!sectionData.rightText ? sectionData.rightText : ""
@@ -369,7 +369,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subTitle,
                   }}
                   titleFirst={true}
-                  titleClassName="achievementtitle"
+                  titleClassName={styles.achievementtitle}
                 />
                 <Achievement data={sectionData.data} />
               </div>
