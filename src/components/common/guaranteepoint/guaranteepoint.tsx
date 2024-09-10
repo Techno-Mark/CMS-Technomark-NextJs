@@ -30,8 +30,8 @@ const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
               <Image
                 src="/images/check-circle.png"
                 alt="check"
-                height={24}
-                width={24}
+                height={18}
+                width={18}
                 className="!rounded-2xl"
               />
             </div>
