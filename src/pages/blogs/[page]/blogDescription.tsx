@@ -20,14 +20,14 @@ const BlogDescription: React.FC<{ props: BlogDescProps }> = ({ props }) => {
       </div>
 
       {/* Right Section: Sticky Social Icons */}
-      <div className="sticky top-[75px] ml-10 mt-20 self-start">
+      <div className="sticky top-[75px] ml-10 md:ml-14 mt-20 self-start">
         {["whatsapp", "linkdin", "twitter", "youtube", "facebook", "share"].map(
           (icon, index) => (
             <Link key={index} href={"/"} target="_blank">
               <img
                 key={index}
                 src={`/images/${icon}.png`}
-                className="rounded-full mb-7 h-[40px] w-[40px] lg:h-[60px] lg:w-[60px]"
+                className="rounded-full mb-7 h-[40px] w-[40px]"
                 alt={`${icon}-icon`}
               />
             </Link>
