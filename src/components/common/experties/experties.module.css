@@ -1,0 +1,366 @@
+.expertiescontainer {
+  position: relative;
+  padding: 5rem 0 20rem;
+}
+
+.expertiescontainer :global(.title-section h2) {
+  margin-bottom: 2rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+.expertiescontainer img {
+  width: 8rem;
+  margin-top: 8rem;
+}
+
+.expertiescontainer .circle {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+/* Add specific positions for each circle */
+.expertiescontainer .circle1 {
+  bottom: 0%;
+  right: 72rem;
+  width: 12rem;
+  height: 12rem;
+}
+
+.expertiescontainer .circle2 {
+  bottom: 0%;
+  right: 56rem;
+  width: 16rem;
+  height: 16rem;
+}
+
+.expertiescontainer .circle3 {
+  bottom: 0%;
+  right: 38rem;
+  width: 18rem;
+  height: 18rem;
+}
+
+.expertiescontainer .circle4 {
+  bottom: 0%;
+  right: 18rem;
+  width: 20rem;
+  height: 20rem;
+}
+
+.expertiescontainer .circle5 {
+  bottom: 0%;
+  right: 0;
+  width: 18rem;
+  height: 18rem;
+}
+
+.expertiescontainer .circle6 {
+  bottom: 16.5rem;
+  right: 30.5rem;
+  width: 18rem;
+  height: 18rem;
+}
+
+.expertiescontainer .circle7 {
+  bottom: 16.5rem;
+  right: 7.5rem;
+  width: 18rem;
+  height: 18rem;
+}
+
+.expertiescontainer .circle8 {
+  bottom: 30rem;
+  right: 20rem;
+  width: 16rem;
+  height: 16rem;
+}
+
+/* Responsive adjustments for mobile */
+@media only screen and (max-width: 1024px) {
+  .expertiescontainer .circle1 {
+    right: 77rem;
+  }
+  .expertiescontainer .circle2 {
+    right: 61rem;
+  }
+  .expertiescontainer .circle3 {
+    right: 43rem;
+  }
+  .expertiescontainer .circle4 {
+    right: 23rem;
+  }
+  .expertiescontainer .circle5 {
+    right: 5rem;
+  }
+  .expertiescontainer .circle6 {
+    right: 35rem;
+  }
+  .expertiescontainer .circle7 {
+    right: 13rem;
+  }
+  .expertiescontainer .circle8 {
+    right: 25rem;
+    bottom: 30.7rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expertiescontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+    line-height: unset;
+  }
+  .expertiescontainer .circle1 {
+    bottom: 0%;
+    right: 60rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .expertiescontainer .circle2 {
+    bottom: 0%;
+    right: 47rem;
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .expertiescontainer .circle3 {
+    bottom: 0%;
+    right: 32rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .expertiescontainer .circle4 {
+    bottom: 0%;
+    right: 15rem;
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .expertiescontainer .circle5 {
+    bottom: 0%;
+    right: 0;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .expertiescontainer .circle6 {
+    bottom: 13.9rem;
+    right: 25.75rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .expertiescontainer .circle7 {
+    bottom: 13.8rem;
+    right: 6.2rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .expertiescontainer .circle8 {
+    bottom: 25rem;
+    right: 16.9rem;
+    width: 13rem;
+    height: 13rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .expertiescontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+    line-height: unset;
+  }
+  .expertiescontainer .circle {
+    font-size: 1rem;
+  }
+  .expertiescontainer .circle1 {
+    right: 36rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .expertiescontainer .circle2 {
+    right: 29rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .expertiescontainer .circle3 {
+    right: 20rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .expertiescontainer .circle4 {
+    right: 9rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle5 {
+    right: 0;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .expertiescontainer .circle6 {
+    bottom: 8.7rem;
+    right: 16rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle7 {
+    bottom: 8.8rem;
+    right: 2em;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle8 {
+    bottom: 17rem;
+    right: 10rem;
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .expertiescontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+    line-height: unset;
+  }
+  .expertiescontainer .circle {
+    font-size: 1rem;
+  }
+  .expertiescontainer .circle1 {
+    bottom: 6.5rem;
+    right: 27.5rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .expertiescontainer .circle2 {
+    right: 29rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .expertiescontainer .circle3 {
+    right: 20rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .expertiescontainer .circle4 {
+    right: 9rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle5 {
+    right: 0;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .expertiescontainer .circle6 {
+    bottom: 8.7rem;
+    right: 16rem;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle7 {
+    bottom: 8.8rem;
+    right: 2em;
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .expertiescontainer .circle8 {
+    bottom: 17rem;
+    right: 10rem;
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .expertiescontainer {
+    position: relative;
+    padding: 5rem 0 12rem;
+  }
+  .expertiescontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+    line-height: unset;
+  }
+  .expertiescontainer .circle {
+    font-size: 0.8rem;
+  }
+  .expertiescontainer .circle1 {
+    bottom: 5rem;
+    right: 22rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .expertiescontainer .circle2 {
+    right: 23rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .expertiescontainer .circle3 {
+    right: 16rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .expertiescontainer .circle4 {
+    right: 7rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .expertiescontainer .circle5 {
+    right: 0;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .expertiescontainer .circle6 {
+    bottom: 6.8rem;
+    right: 13.4rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .expertiescontainer .circle7 {
+    bottom: 7rem;
+    right: 2rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .expertiescontainer .circle8 {
+    bottom: 12.5rem;
+    right: 8.2rem;
+    width: 7rem;
+    height: 7rem;
+  }
+}

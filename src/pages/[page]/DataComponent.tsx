@@ -73,6 +73,7 @@ const ContactFormSection = lazy(
   () => import("@/components/common/contactformsection/formsection")
 );
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
+const Experties = lazy(() => import("@/components/common/experties/experties"));
 // const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
@@ -926,6 +927,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         );
       case "Locations":
         return sectionData && <WorldMap props={sectionData} />;
+      case "Technology Experties":
+        return (
+          sectionData && (
+            <section className={`bg-[#EEF8F0]`}>
+              <div className="container mx-auto">
+                <Experties data={sectionData} />
+              </div>
+            </section>
+          )
+        );
       case "Blog Title":
         return (
           sectionData && (
