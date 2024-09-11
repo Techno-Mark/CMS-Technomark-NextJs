@@ -134,8 +134,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   };
 
   const renderSection = (sectionName: string, sectionData: any) => {
-
-    console.log(sectionName)
     switch (sectionName) {
       case "Hero Sections":
         return (
