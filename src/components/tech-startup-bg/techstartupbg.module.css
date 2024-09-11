@@ -91,9 +91,20 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .techstartupbg h2 {
+    font-size: 2.1rem;
+    line-height: 3.4rem;
+  }
+
+  .techstartupbg p {
+    font-size: 1.6rem;
+    padding: 0 5px;
+  }
+
   .techbgbtn a {
     margin-left: auto;
   }
+
   .techsubcontainer {
     padding: 2rem 1rem;
   }

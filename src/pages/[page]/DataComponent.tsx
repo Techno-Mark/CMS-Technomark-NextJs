@@ -227,7 +227,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     dangerouslySetInnerHTML={{ __html: sectionData.title }}
                   />
                   <p
-                    className="md:w-[70%] text-center opacity-70 text-2xl leading-relaxed mb-16"
+                    className="md:w-[70%] text-center text-[var(--secondary--color)] opacity-70 font-medium text-[1.33rem] leading-relaxed mb-16"
                     dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
                   />
                 </div>
@@ -675,7 +675,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             <section
               className={`${styles.clientspeaksection} tm-section bg-[#f2f5f9]`}
             >
-              <div className="container mx-auto">
+              <div className="container  mx-auto">
                 <TitleSection
                   sectionData={{
                     title: sectionData.title,

@@ -22,7 +22,7 @@
 .cardtitle {
   margin-bottom: 0;
   color: var(--secondary--color);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 2rem;
   text-align: left;
@@ -48,7 +48,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 2rem;
-  padding-left: 3rem;
+  padding-left: 1.7rem;
 }
 .collapsed {
   max-height: 0;
