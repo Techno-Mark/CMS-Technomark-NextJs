@@ -49,7 +49,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
       {
         breakpoint: 1450,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1.2,
         },
       },
       {

@@ -247,7 +247,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                             isTechnologiesSubMenuOpen) ||
                           (menu.name === "Services" && isServicesSubMenuOpen)
                             ? "customblock"
-                            : "hidden"
+                            : styles.defaultsubmenu
                         }`}
                       >
                         {menu.children.map((submenu) => (
