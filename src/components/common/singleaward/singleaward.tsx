@@ -17,7 +17,7 @@ interface SingleAwardProps {
 
 const SingleAward: React.FC<SingleAwardProps> = ({ props }) => {
   return (
-    <div className="award-section">
+    <div className="award-section pt-8">
       <ul className={styles.awardlist}>
         {props.map((award, index) => (
           <li key={index}>

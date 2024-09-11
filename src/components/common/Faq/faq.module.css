@@ -13,13 +13,9 @@
 }
 .cardheader:hover {
   border: 1px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    90deg,
-    #ebcb5b 0%,
-    #017ca1 49.5%,
-    #61b946 100%
-  );
+  border-radius: 12px;
+  /* border-image-slice: 1; */
+  /* border-image-source: linear-gradient(90deg, #ebcb5b 0%, #017ca1 49.5%, #61b946 100%); */
   /* border-image-source: url(/images/faq3.svg) round; */
   background: rgba(22, 137, 68, 0.05);
 }

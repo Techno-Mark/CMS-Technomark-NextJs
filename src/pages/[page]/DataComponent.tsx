@@ -3,6 +3,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { lazy, useEffect, useRef, useState } from "react";
 import styles from "./home.module.css";
+import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider";
+import BlogList from "../blogs/list/blogList/BlogList";
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
 const TechStartupBg = lazy(
@@ -71,7 +73,8 @@ const ContactFormSection = lazy(
   () => import("@/components/common/contactformsection/formsection")
 );
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
-const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
+const Experties = lazy(() => import("@/components/common/experties/experties"));
+// const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
   sectionsOrder: string[];
@@ -113,6 +116,10 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   const pathName: any = usePathname();
   const [homeData, setHomeData] = useState<any>();
   const [loading, setLoading] = useState(true);
+  const [detailedSliderOpen, setDetailedOpen] = useState<boolean>(false);
+  const [detailedSliderImagesUrl, setDetailedImagesUrl] = useState<string[]>(
+    []
+  );
 
   useEffect(() => {
     setHomeData(data);
@@ -231,7 +238,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName="casestudytitle"
                 /> */}
-                <CaseStudy props={!!sectionData.data ? sectionData.data : []} />
+                <CaseStudy
+                  props={!!sectionData.data ? sectionData.data : []}
+                  setDetailedOpen={setDetailedOpen}
+                  setDetailedImagesUrl={setDetailedImagesUrl}
+                />
               </div>
             </section>
           )
@@ -255,7 +266,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subtitle,
                   }}
                   titleFirst={true}
-                  titleClassName="methodologytitle"
+                  titleClassName={styles.methodologytitle}
                 />
 
                 <TechIcons data={sectionData.icons} />
@@ -273,7 +284,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     title: sectionData.heading ? sectionData.heading : "",
                   }}
                   titleFirst={true}
-                  titleClassName="guaranteetitle"
+                  titleClassName={styles.guaranteetitle}
                 />
                 <div className="flex flex-wrap !mt-24">
                   <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
@@ -302,7 +313,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       )}
                     </div>
                   </div>
-                  <div className="lg:w-1/2 md:w-full md:pl-20 flex flex-col items-start justify-center">
+                  <div className="lg:w-1/2 md:w-full md:pl-12 flex flex-col items-start justify-center">
                     <GuaranteePoints
                       props={
                         !!sectionData.rightText ? sectionData.rightText : ""
@@ -369,7 +380,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: sectionData.subTitle,
                   }}
                   titleFirst={true}
-                  titleClassName="achievementtitle"
+                  titleClassName={styles.achievementtitle}
                 />
                 <Achievement data={sectionData.data} />
               </div>
@@ -622,7 +633,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
-              className={`${styles.clientspeaksection} ${styles.methodology} tm-section bg-[#f2f5f9]`}
+              className={`${styles.clientspeaksection} tm-section bg-[#f2f5f9]`}
             >
               <div className="container mx-auto">
                 <TitleSection
@@ -765,7 +776,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "technologyhomesection":
+      case "Technology Home Section":
         return (
           sectionData && (
             <>
@@ -778,18 +789,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </>
           )
         );
-      case "techslider":
+      case "Tech Slider":
         return (
           sectionData && (
             <section className={`${styles.techslider} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -800,18 +809,16 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "techservices":
+      case "Tech Services":
         return (
           sectionData && (
             <section className={`${styles.techservices} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subTitle)
-                      ? sectionData.find((item: any) => item.subTitle).subTitle
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subTitle
+                      ? sectionData.subTitle
                       : "",
                   }}
                   titleFirst={true}
@@ -822,7 +829,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "techbenefits":
+      case "Tech Benefits":
         return (
           sectionData && (
             <section className={`${styles.technenifits} bg-white tm-section`}>
@@ -830,7 +837,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "hiredeveloper":
+      case "Hire Developer":
         return (
           sectionData && (
             <section className={`${styles.hiredeveloper} tm-section bg-white`}>
@@ -920,33 +927,60 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         );
       case "Locations":
         return sectionData && <WorldMap props={sectionData} />;
-      case "bloglist":
+      case "Technology Experties":
         return (
           sectionData && (
-            <section className={`${styles.casestudylist} tm-section bg-white`}>
+            <section className={`bg-[#EEF8F0]`}>
               <div className="container mx-auto">
-                <p className={styles.casestudylistlabel}>
-                  {sectionData.find((item: any) => item.label)
-                    ? sectionData.find((item: any) => item.label).label
-                    : ""}
-                </p>
-                <TitleSection
-                  sectionData={{
-                    title: sectionData.find((item: any) => item.title)
-                      ? sectionData.find((item: any) => item.title).title
-                      : "",
-                    subtitle: sectionData.find((item: any) => item.subtitle)
-                      ? sectionData.find((item: any) => item.subtitle).subtitle
-                      : "",
-                  }}
-                  titleFirst={true}
-                  titleClassName="casestudylisttitle"
-                />
-                <BlogList props={sectionData} />
+                <Experties data={sectionData} />
               </div>
             </section>
           )
         );
+      case "Blog Title":
+        return (
+          sectionData && (
+            <section className={`${styles.casestudylist} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="casestudylisttitle"
+                />
+                <BlogList buttons={false} />
+              </div>
+            </section>
+          )
+        );
+      // case "bloglist":
+      //   return (
+      //     sectionData && (
+      //       <section className={`${styles.casestudylist} tm-section bg-white`}>
+      //         <div className="container mx-auto">
+      //           <p className={styles.casestudylistlabel}>
+      //             {sectionData.find((item: any) => item.label)
+      //               ? sectionData.find((item: any) => item.label).label
+      //               : ""}
+      //           </p>
+      //           <TitleSection
+      //             sectionData={{
+      //               title: sectionData.find((item: any) => item.title)
+      //                 ? sectionData.find((item: any) => item.title).title
+      //                 : "",
+      //               subtitle: sectionData.find((item: any) => item.subtitle)
+      //                 ? sectionData.find((item: any) => item.subtitle).subtitle
+      //                 : "",
+      //             }}
+      //             titleFirst={true}
+      //             titleClassName="casestudylisttitle"
+      //           />
+      //           <BlogList props={sectionData} />
+      //         </div>
+      //       </section>
+      //     )
+      //   );
       default:
         return null;
     }
@@ -954,6 +988,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   console.log(homeData);
   return (
     <>
+      <MaximizedSlider
+        isOpen={detailedSliderOpen}
+        images={detailedSliderImagesUrl}
+        onClose={() => setDetailedOpen(false)}
+      />
       {homeData ? (
         homeData.formatData.map((sectionName: any, index: number) => (
           <React.Fragment key={index}>

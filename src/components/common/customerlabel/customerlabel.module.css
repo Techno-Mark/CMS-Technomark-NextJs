@@ -41,6 +41,7 @@
 
 @media only screen and (max-width: 767px) {
   .customerfixedlabel {
+    display: none;
     max-width: 9rem;
     padding: 1rem;
     top: 6rem;

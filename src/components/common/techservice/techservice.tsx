@@ -7,20 +7,15 @@ interface TechServiceProps {
 }
 
 const TechService: React.FC<TechServiceProps> = ({ props }) => {
-  const services = props.find((item: any) => item.Services)?.Services || [];
-  const buttonText =
-    props.find((item: any) => item.buttonText)?.buttonText || "";
+  const services = props?.services || [];
+  const buttonText = props?.buttonText || "View All";
   return (
     <div className={`flex flex-wrap`}>
       {services.map((service: any, index: number) => (
         <div key={index} className="w-full md:w-1/2 pr-8 pb-8">
           <div className={`${styles.serviceborderbox}`}>
             <div className={`${styles.titleiconinline} flex items-center mb-5`}>
-              <h4>
-                {service.items.find((item: any) => item.title)
-                  ? service.items.find((item: any) => item.title).title
-                  : ""}
-              </h4>
+              <h4>{!!service.title ? service.title : ""}</h4>
               <div className={`${styles.arrowicon} ml-4`}>
                 <svg
                   width="45"
@@ -74,12 +69,7 @@ const TechService: React.FC<TechServiceProps> = ({ props }) => {
                 </svg>
               </div>
             </div>
-            <p>
-              {service.items.find((item: any) => item.description)
-                ? service.items.find((item: any) => item.description)
-                    .description
-                : ""}
-            </p>
+            <p>{!!service.description ? service.description : ""}</p>
           </div>
         </div>
       ))}

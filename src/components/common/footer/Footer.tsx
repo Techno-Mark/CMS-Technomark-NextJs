@@ -48,45 +48,62 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
               </h3>
             </div>
             <div className={`${styles.companyinfo} flex flex-col my-12`}>
-              <Link href="/" className="flex items-center w-fit">
+              <Link
+                href="tel:+1-2063471395"
+                className="flex items-center w-fit"
+              >
                 <Image
                   src="/images/Phone.svg"
                   alt="phone"
-                  height={27}
-                  width={27}
+                  height={22}
+                  width={22}
                 />
                 <span>USA: +1 (206) 347 1395</span>
               </Link>
-              <Link href="/" className="flex items-center w-fit">
+              <Link
+                href="tel:+44-2034236509"
+                className="flex items-center w-fit"
+              >
                 <Image
                   src="/images/Phone.svg"
                   alt="contact"
-                  height={27}
-                  width={27}
+                  height={22}
+                  width={22}
                 />
                 <span>UK: +44 (203) 423 6509</span>
               </Link>
-              <Link href="/" className="flex items-center w-fit">
+              <Link
+                href="https://wa.me/7069008181"
+                target="_blank"
+                className="flex items-center w-fit"
+              >
                 <Image
                   src="/images/whatsapp.svg"
                   alt="whatsapp"
-                  height={27}
-                  width={27}
+                  height={22}
+                  width={22}
                 />
                 <span>Whatsapp | +91 -7069008181</span>
               </Link>
-              <Link href="/" className="flex items-center w-fit">
+              <Link
+                href="mailto:info@technomark.io"
+                className="flex items-center w-fit"
+              >
                 <Image
                   src="/images/mail.svg"
                   alt="mail"
-                  height={27}
-                  width={27}
+                  height={22}
+                  width={22}
                 />
                 <span>info@technomark.io</span>
               </Link>
             </div>
             <div className={`${styles.sociallinks} flex`}>
-              <Link href="/" className="flex items-center justify-center">
+              <Link
+                href="https://www.facebook.com/TechnoMarkio"
+                target="_blank"
+                className="flex items-center justify-center"
+              >
                 <Image
                   src="/images/facebook1.svg"
                   alt="facebook"
@@ -94,7 +111,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center justify-center">
+              <Link
+                href="https://www.youtube.com/@TechnoMarkSolutions"
+                target="_blank"
+                className="flex items-center justify-center"
+              >
                 <Image
                   src="/images/youtube1.svg"
                   alt="youtube"
@@ -102,7 +123,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center justify-center">
+              <Link
+                href="https://www.linkedin.com/company/technomarkio/"
+                target="_blank"
+                className="flex items-center justify-center"
+              >
                 <Image
                   src="/images/linkedin1.svg"
                   alt="linkedin"
@@ -110,7 +135,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   width={54}
                 />
               </Link>
-              <Link href="/" className="flex items-center justify-center">
+              <Link
+                href="https://twitter.com/Technomark_io"
+                target="_blank"
+                className="flex items-center justify-center"
+              >
                 <Image
                   src="/images/twitter1.svg"
                   alt="twitter"
@@ -132,7 +161,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   {section.children.map((link, linkIndex) => (
                     <li className="mb-4" key={linkIndex}>
                       <Link href={link.link}>
-                        <span className="md:text-[1rem]">{link.name}</span>
+                        <span className="md:text-[1.1rem]">{link.name}</span>
                       </Link>
                     </li>
                   ))}

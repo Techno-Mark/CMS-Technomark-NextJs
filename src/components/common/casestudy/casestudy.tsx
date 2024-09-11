@@ -20,9 +20,15 @@ interface CaseStudy {
 
 interface CaseStudyProps {
   props?: CaseStudy[];
+  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
+const CaseStudy: React.FC<CaseStudyProps> = ({
+  props,
+  setDetailedOpen,
+  setDetailedImagesUrl,
+}: CaseStudyProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
@@ -43,7 +49,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
       {
         breakpoint: 1450,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1.2,
         },
       },
       {
@@ -100,7 +106,11 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ props }: any) => {
               </div>
               <div className={`${styles.resultarea} relative`}>
                 {!!caseStudy.video && caseStudy.video.includes(",") ? (
-                  <ImageSlider images={caseStudy.video.split(",")} />
+                  <ImageSlider
+                    setDetailedImagesUrl={setDetailedImagesUrl}
+                    setDetailedOpen={setDetailedOpen}
+                    images={caseStudy.video.split(",")}
+                  />
                 ) : (
                   <div className={styles.videoarea}>
                     <video autoPlay loop muted>
