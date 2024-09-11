@@ -144,16 +144,11 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .servicesbox {
-    width: 90%;
-    margin: 0 auto 20px;
-    padding-top: 40px;
-    /* border: 1px solid var(--border-primary) !important;
-    border-right: 1px solid var(--border-primary) !important; */
-  }
-
   .responsiveBottomBorder {
     border-bottom: 1px solid var(--border-primary) !important;
+  }
+  .responsiveBottomBorder:last-child .servicesbox {
+    padding-bottom: 0;
   }
 
   .responsiveFiveBottomBorder:nth-last-child(2n) {

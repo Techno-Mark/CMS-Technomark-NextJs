@@ -43,6 +43,7 @@
 
 .imagecontainer img {
   max-width: 350px;
+  width: 100%;
 }
 
 .herocontainer :global(a) {

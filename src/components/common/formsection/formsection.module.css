@@ -134,7 +134,7 @@
 @media only screen and (max-width: 767px) {
   .formcontainer {
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 30px;
   }
 
   .formright {
@@ -144,5 +144,9 @@
 
   .formarea h4 {
     margin-bottom: 0;
+  }
+
+  .formarea {
+    padding: 2rem;
   }
 }
