@@ -29,11 +29,11 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
         const answer = faqData.answer || "";
 
         return (
-          <div key={index} className={`${styles.cardheader} mb-5`}>
+          <div key={index} className={`${styles.cardheader} p-4 mb-5`}>
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
-                className={`flex justify-between items-start w-full p-5 ${styles.cardtitle}`}
+                className={`flex justify-between items-start w-full  ${styles.cardtitle}`}
                 data-accordion-target={`#accordion-collapse-body-${index}`}
                 aria-expanded={openIndex === index}
                 aria-controls={`accordion-collapse-body-${index}`}

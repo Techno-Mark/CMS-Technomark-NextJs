@@ -135,6 +135,7 @@
     border-left: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
   }
+
   .flipcard:nth-child(4) {
     border-bottom: 1px solid var(--border-primary);
   }
@@ -145,5 +146,11 @@
     /* max-width: 80%; */
     margin: 0 auto 20px;
     border: 1px solid var(--border-primary);
+  }
+
+  .flipcard .inner .front .cardtext {
+    width: 85%;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
   }
 }
