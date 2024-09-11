@@ -165,7 +165,8 @@
   }
 
   .textpadding {
-    padding: 0;
-    font-size: 1.4rem !important;
+    padding: 0 5px;
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
   }
 }

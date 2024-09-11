@@ -452,8 +452,16 @@
     padding-inline: 2rem;
   }
 
+  .clientspeaksection :global(.title-section h2),
+  .methodology :global(.title-section h2) {
+    font-size: 2rem;
+  }
+
+  .clientspeaksection :global(.title-section p),
   .methodology :global(.title-section p) {
     width: 100%;
+    font-size: 1.6rem;
+    padding: 0 5px;
   }
 
   .faqsection :global(.title-section h2) {
