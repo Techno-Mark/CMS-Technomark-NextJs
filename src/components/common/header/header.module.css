@@ -32,7 +32,7 @@
   border-bottom: 1px solid var(--border-quaternary);
 }
 
-.navlink .cursorpointer>a {
+.navlink .cursorpointer > a {
   font-family: Montserrat;
   color: var(--secondary--color);
   font-size: 1.25rem;
@@ -122,12 +122,21 @@
   border-right: 1px solid var(--border-ternary);
   border-bottom: 1px solid var(--border-ternary);
   border-left: 1px solid var(--border-ternary);
-  z-index: 1000;
+  z-index: 0;
+  transition: all 0.5s;
 }
 
-.navlink:hover .submenu {
+.defaultsubmenu {
+  top: -410%;
+  transition: all 1.2s ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  z-index: -1;
+  box-shadow: 0 19px 18px 5px rgba(0, 0, 0, 0.15);
+}
+
+.navlink:hover .defaultsubmenu {
+  top: 100%;
 }
 
 .submenulink a img {
@@ -183,7 +192,7 @@
 }
 
 @media only screen and (max-width: 1023px) {
-  .navlink .cursorpointer>a {
+  .navlink .cursorpointer > a {
     font-size: 1.1rem;
   }
 }
@@ -261,7 +270,7 @@
     height: auto;
     padding: 10px 0;
   }
-  .navlink .cursorpointer>a {
+  .navlink .cursorpointer > a {
     font-size: 1.5rem;
     line-height: 2.5rem;
   }

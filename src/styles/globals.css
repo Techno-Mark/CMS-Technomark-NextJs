@@ -28,6 +28,7 @@
   --footer--primary: #BFCFD9;
   --red--primary: #f13c31;
   --slick--arrow: #545960;
+  --text-casestudy: #262626;
 }
 
 @media (prefers-color-scheme: dark) {
