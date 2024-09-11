@@ -38,8 +38,8 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
               <Image
                 src="/images/footerlogo.svg"
                 alt="Logo"
-                height={120}
-                width={100}
+                height={80}
+                width={80}
               />
             </Link>
             <div className={styles.footerlogotext}>
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                 Experience the New way of <span>Developments</span>
               </h3>
             </div>
-            <div className={`${styles.companyinfo} flex flex-col my-12`}>
+            <div className={`${styles.companyinfo} flex flex-col my-8`}>
               <Link
                 href="tel:+1-2063471395"
                 className="flex items-center w-fit"
