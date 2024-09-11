@@ -633,7 +633,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
-              className={`${styles.clientspeaksection} ${styles.methodology} tm-section bg-[#f2f5f9]`}
+              className={`${styles.clientspeaksection} tm-section bg-[#f2f5f9]`}
             >
               <div className="container mx-auto">
                 <TitleSection
