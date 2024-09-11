@@ -73,6 +73,7 @@
   font-size: 1.2rem;
   width: 370px;
   font-weight: 500;
+  max-width: 100%;
 }
 
 .textpadding {
