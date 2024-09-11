@@ -13,6 +13,7 @@ const apiCall = async (param: string) => {
   try {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
+      // `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/companylist`,
       {
         headers: {
           referal: process.env.REFERAL_HEADER || "",

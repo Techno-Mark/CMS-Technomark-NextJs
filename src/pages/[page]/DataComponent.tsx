@@ -134,6 +134,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   };
 
   const renderSection = (sectionName: string, sectionData: any) => {
+
+    console.log(sectionName)
     switch (sectionName) {
       case "Hero Sections":
         return (
@@ -387,7 +389,45 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "Frequently  Asked  Questions":
+        case "Frequently  Asked  Questions":
+          return (
+            sectionData && (
+              <section className={`${styles.faqsection} tm-section`}>
+                <div className={styles.leftbubblecircle}>
+                  <Image
+                    src="/images/gradient-bubble.svg"
+                    alt="bubble"
+                    height={850}
+                    width={850}
+                  />
+                </div>
+                <div className="container mx-auto relative z-10">
+                  <div className="flex flex-wrap">
+                    <div className="w-full md:w-1/4">
+                      <TitleSection
+                        sectionData={{
+                          title: !!sectionData.heading ? sectionData.heading : "",
+                          subtitle: "",
+                        }}
+                        titleFirst={true}
+                        titleClassName="faqtitle"
+                      />
+                    </div>
+                    <div className="w-full md:w-3/4 mt-8 md:mt:0">
+                      <Faq
+                        data={
+                          !!sectionData.questionAnswers
+                            ? sectionData.questionAnswers
+                            : []
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )
+          );
+      case "Frequently  Asked Questions":
         return (
           sectionData && (
             <section className={`${styles.faqsection} tm-section`}>
