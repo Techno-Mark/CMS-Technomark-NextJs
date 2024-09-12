@@ -39,7 +39,12 @@ const CaseStudyDetail = ({ data }: any) => {
             const value = benefitItem?.value || "";
 
             return (
-              <li key={index} className="flex items-center">
+              <li
+                key={index}
+                className={`flex items-center ${
+                  index !== 1 ? styles.img1 : styles.img2
+                }`}
+              >
                 {icon && (
                   <Image src={icon} alt={label} height={32} width={32} />
                 )}

@@ -13,16 +13,23 @@
   column-gap: 8rem;
 }
 
-.resourcestripe ul li img {
+.img1 img {
+  margin-right: 1rem;
+  width: 40px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.img2 img {
   margin-right: 1rem;
   width: 2rem;
 }
 
 .resourcestripe ul li b {
   color: var(--white-color);
-  font-size: 1.25rem;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: 26px;
   margin-right: 0.8rem;
 }
 
@@ -40,7 +47,7 @@
 
 .performancebox {
   border: 2px solid transparent;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0 1rem 0;
   transition: 0.5s ease-in-out all;
   width: 92%;
   background: var(--white-color);
@@ -52,10 +59,12 @@
 .performancebox:hover {
   border: 2px solid;
   border-image-slice: 2;
-  border-image-source: linear-gradient(90deg,
-      #ebcb5b 0%,
-      #017ca1 49.5%,
-      #61b946 100%);
+  border-image-source: linear-gradient(
+    90deg,
+    #ebcb5b 0%,
+    #017ca1 49.5%,
+    #61b946 100%
+  );
 }
 
 .performancebox:after {
@@ -63,9 +72,11 @@
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg,
-      var(--primary-color) 0.08%,
-      var(--primary-variant-one) 99.95%);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0.08%,
+    var(--primary-variant-one) 99.95%
+  );
   transition: width 0.8s;
   position: absolute;
   left: 0;
@@ -78,34 +89,40 @@
 }
 
 .performancebox:hover h2 {
-  background: var(--white-color);
-  /* background-clip: text;
+  background: linear-gradient(
+    90deg,
+    var(--white-color) 0.08%,
+    var(--white-color) 99.95%
+  );
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
 }
 
 .performancebox h2 {
-  font-size: 2.334rem;
+  font-size: 38px;
   font-weight: 700;
-  line-height: unset;
+  line-height: 5.6rem;
   transition: 0.5s ease-in-out all;
   margin-bottom: 0;
-  background: linear-gradient(90deg,
-      var(--primary-color) 0.08%,
-      var(--primary-variant-one) 99.95%);
-  color: #000;
-  /* background-clip: text;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0.08%,
+    var(--primary-variant-one) 99.95%
+  );
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
 }
 
 .performancebox p {
   color: var(--secondary--color);
-  font-size: 1.4rem;
+  font-size: 19px;
   font-weight: 500;
-  line-height: 2.34rem;
+  line-height: 2.5rem;
   letter-spacing: 0.22px;
   margin-bottom: 0;
+  width: 55%;
 }
 
 .performancebox:hover p {
@@ -113,9 +130,50 @@
   font-weight: 400;
 }
 
-
 @media only screen and (max-width: 1023px) {
   .performancebox {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .performancebox {
+    width: 100%;
+  }
+  .performancebox p {
+    width: 100%;
+  }
+  .resourcestripe ul {
+    column-gap: 4rem;
+  }
+  .resourcestripe ul li b {
+    font-size: 12px;
+    margin-right: 0.8rem;
+  }  
+  .resourcestripe ul li p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .performancebox {
+    width: 100%;
+  }
+  .performancebox p {
+    width: 100%;
+  }
+  .resourcestripe ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .resourcestripe ul li b {
+    font-size: 12px;
+    margin-right: 0.8rem;
+  }  
+  .resourcestripe ul li p {
+    font-size: 1rem;
   }
 }

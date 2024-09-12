@@ -264,17 +264,19 @@
 .casestudydetailherosection :global(.title-section h2) {
   margin-bottom: 0 !important;
   color: var(--white-color) !important;
-  font-size: 2.4rem;
+  font-size: 30px;
   font-weight: 700;
-  line-height: 4.167rem;
+  line-height: 50px;
+  margin-top: 4rem;
+  padding: 0 15% !important;
 }
 
 .casestudydetailherosection :global(.title-section p) {
-  margin: 0 auto;
+  margin: 2rem auto 0;
   max-width: 75%;
   color: var(--white-color);
-  font-size: 1.35rem;
-  line-height: 2.34rem;
+  font-size: 22px;
+  line-height: 40px;
 }
 
 .casestudydetaillabel {
@@ -473,6 +475,7 @@
 
   .casestudylist :global(.title-section p),
   .casestudydetailherosection :global(.title-section p) {
+    margin: 2rem auto 0;
     max-width: 90%;
   }
 
@@ -544,6 +547,21 @@
     font-size: 1.4rem;
     line-height: 2rem;
     padding: 0 5px;
+  }
+
+  .casestudydetailherosection :global(.title-section h2) {
+    margin-top: 2rem;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 !important;
+  }
+  
+  .casestudydetailherosection :global(.title-section p) {
+    margin: 2rem auto 0;
+    max-width: 100%;
+    color: var(--white-color);
+    font-size: 16px;
+    line-height: 30px;
   }
 }
 
