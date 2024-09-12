@@ -11,6 +11,23 @@
   line-height: 4rem;
 }
 
+.techstartpcontainer :global(.title-section h2) {
+  margin-bottom: 2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 3.5rem !important;
+  width: 80%;
+}
+
+.techstartpcontainer :global(.title-section p) {
+  margin-bottom: 4rem;
+  text-align: left;
+  font-size: 2.2rem;
+  line-height: 2.5rem !important;
+  width: 90%;
+}
+
 .techherocontainer :global(.title-section h2) {
   margin: 2rem 0;
   font-weight: 700;
@@ -42,10 +59,12 @@
 }
 
 .imagecontainer img {
-  max-width: 350px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.herocontainer :global(a) {
+.herocontainer :global(a),
+.techstartpcontainer :global(a) {
   margin-left: inherit;
   margin-right: auto;
 }
@@ -85,27 +104,58 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .label {
     margin-bottom: 1.5rem;
   }
 
   .herocontainer :global(.title-section h2) {
     font-size: 2.5rem;
-    line-height: unset;
   }
   .herocontainer :global(.title-section p) {
     font-size: 1.8rem;
-    line-height: unset;
+  }
+
+  .techstartpcontainer :global(.title-section h2) {
+    font-size: 2.5rem;
+  }
+  .techstartpcontainer :global(.title-section p) {
+    font-size: 1.8rem;
   }
 
   .techherocontainer :global(.title-section h2) {
     font-size: 2.5rem;
-    line-height: unset;
   }
   .techherocontainer :global(.title-section p) {
     font-size: 1.8rem;
-    line-height: unset;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .label {
+    margin-bottom: 1.2rem;
+  }
+
+  .herocontainer :global(.title-section h2) {
+    font-size: 2.2rem;
+  }
+  .herocontainer :global(.title-section p) {
+    font-size: 1.5rem;
+  }
+
+  .techstartpcontainer :global(.title-section h2) {
+    font-size: 2.2rem;
+  }
+  .techstartpcontainer :global(.title-section p) {
+    font-size: 1.5rem;
+  }
+
+  .techherocontainer :global(.title-section h2) {
+    font-size: 2.2rem;
+  }
+  .techherocontainer :global(.title-section p) {
+    font-size: 1.5rem;
     width: 100%;
   }
 }

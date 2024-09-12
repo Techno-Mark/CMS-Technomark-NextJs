@@ -74,6 +74,14 @@ const ContactFormSection = lazy(
 );
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
 const Experties = lazy(() => import("@/components/common/experties/experties"));
+const Team = lazy(() => import("@/components/common/team/team"));
+const Recrute = lazy(() => import("@/components/common/recrute/recrute"));
+const ImageSlider = lazy(
+  () => import("@/components/common/imageSlider/imageSlider")
+);
+const CurrentOpenings = lazy(
+  () => import("@/components/common/currentOpenings/currentOpenings")
+);
 // const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
@@ -216,7 +224,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     style={{
                       backgroundImage:
                         "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%)",
-                      borderBottom: "4px solid transparent",
+                      borderBottom: "3px solid transparent",
                       backgroundClip: "text, padding-box",
                       WebkitBackgroundClip: "text",
                       borderImage:
@@ -387,44 +395,44 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-        case "Frequently  Asked  Questions":
-          return (
-            sectionData && (
-              <section className={`${styles.faqsection} tm-section`}>
-                <div className={styles.leftbubblecircle}>
-                  <Image
-                    src="/images/gradient-bubble.svg"
-                    alt="bubble"
-                    height={850}
-                    width={850}
-                  />
-                </div>
-                <div className="container mx-auto relative z-10">
-                  <div className="flex flex-wrap">
-                    <div className="w-full md:w-1/4">
-                      <TitleSection
-                        sectionData={{
-                          title: !!sectionData.heading ? sectionData.heading : "",
-                          subtitle: "",
-                        }}
-                        titleFirst={true}
-                        titleClassName="faqtitle"
-                      />
-                    </div>
-                    <div className="w-full md:w-3/4 mt-8 md:mt:0">
-                      <Faq
-                        data={
-                          !!sectionData.questionAnswers
-                            ? sectionData.questionAnswers
-                            : []
-                        }
-                      />
-                    </div>
+      case "Frequently  Asked  Questions":
+        return (
+          sectionData && (
+            <section className={`${styles.faqsection} tm-section`}>
+              <div className={styles.leftbubblecircle}>
+                <Image
+                  src="/images/gradient-bubble.svg"
+                  alt="bubble"
+                  height={850}
+                  width={850}
+                />
+              </div>
+              <div className="container mx-auto relative z-10">
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-1/4">
+                    <TitleSection
+                      sectionData={{
+                        title: !!sectionData.heading ? sectionData.heading : "",
+                        subtitle: "",
+                      }}
+                      titleFirst={true}
+                      titleClassName="faqtitle"
+                    />
+                  </div>
+                  <div className="w-full md:w-3/4 mt-8 md:mt:0">
+                    <Faq
+                      data={
+                        !!sectionData.questionAnswers
+                          ? sectionData.questionAnswers
+                          : []
+                      }
+                    />
                   </div>
                 </div>
-              </section>
-            )
-          );
+              </div>
+            </section>
+          )
+        );
       case "Frequently  Asked Questions":
         return (
           sectionData && (
@@ -488,11 +496,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           sectionData && (
             <section
               ref={formSectionRef}
-              className={`${
-                pathName === "/start-up-services"
-                  ? styles.techstrtupformsection
-                  : styles.formsection
-              } tm-section bg-white`}
+              className={`${styles.formsection} tm-section bg-white`}
             >
               <div className="container mx-auto">
                 <FormSection
@@ -723,8 +727,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     subtitle: "",
                   }}
                   titleFirst={
-                    !!sectionData.isTitleFirst
-                      ? sectionData.isTitleFirst
+                    !!sectionData.isTitleFirst &&
+                    sectionData.isTitleFirst == "true"
+                      ? true
                       : false
                   }
                   titleClassName="featurestitle"
@@ -750,8 +755,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       : "",
                   }}
                   titleFirst={
-                    !!sectionData.isTitleFirst
-                      ? sectionData.isTitleFirst
+                    !!sectionData.isTitleFirst &&
+                    sectionData.isTitleFirst == "true"
+                      ? true
                       : false
                   }
                   titleClassName="featurestitle"
@@ -773,8 +779,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <Herosection
                 props={sectionData}
                 isTechStartup={
-                  !!sectionData.isTechStartup &&
-                  sectionData.isTechStartup == "true"
+                  !!sectionData && sectionData.isTechStartup == "true"
                     ? true
                     : false
                 }
@@ -926,7 +931,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Value Service":
         return (
           sectionData && (
-            <section className={`${styles.valueservice} tm-section bg-white`}>
+            <section className={`bg-[#F7F8FB]`}>
               <div className="container mx-auto">
                 <ValueService props={sectionData} />
               </div>
@@ -978,7 +983,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Blog Title":
         return (
           sectionData && (
-            <section className={`${styles.casestudylist} tm-section bg-white`}>
+            <section className={`${styles.blogTitle} tm-section bg-white`}>
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -991,6 +996,49 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
+        );
+      case "Team Speak":
+        return (
+          sectionData && (
+            <section
+              className={`${styles.clientspeaksection} tm-section bg-white`}
+            >
+              <Image
+                className={styles.clientcurve}
+                src="/images/client-shape.png"
+                alt="shape"
+                height={1060}
+                width={1930}
+              />
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: "",
+                  }}
+                  titleFirst={false}
+                  titleClassName="clienttitle"
+                />
+                <Team props={!!sectionData.data ? sectionData.data : []} />
+              </div>
+            </section>
+          )
+        );
+      case "Current Openings":
+        return (
+          <section className={`${styles.careerTitle} tm-section bg-white`}>
+            <div className="container mx-auto">
+              <TitleSection
+                sectionData={{
+                  title: !!sectionData.title ? sectionData.title : "",
+                  subtitle: "",
+                }}
+                titleFirst={false}
+                titleClassName="clienttitle"
+              />
+              <CurrentOpenings data={!!sectionData ? sectionData : []} />
+            </div>
+          </section>
         );
       // case "bloglist":
       //   return (
