@@ -10,7 +10,10 @@
 }
 
 .awardlist li img {
-    max-width: 7rem;
+    /* max-width: 7rem; */
+    max-width: max-content;
+    max-height: 7rem;
+    width: auto;
 }
 
 @media only screen and (max-width: 767px) {
@@ -18,6 +21,7 @@
         grid-row-gap: 3rem;
         grid-column-gap: 3rem;
     }
+
     .awardlist li img {
         max-width: 6rem;
     }
