@@ -62,7 +62,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
   };
 
   return (
-    <div className={`mb-16 ${styles.casestudyparent}`}>
+    <div className={`mb-20 ${styles.casestudyparent}`}>
       <div className={styles.caseslide} id="case-slide">
         <Slider {...settings}>
           {props?.map((caseStudy: any, index: number) => (
