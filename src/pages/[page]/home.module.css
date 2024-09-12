@@ -456,7 +456,9 @@
   }
 
   .clientspeaksection :global(.title-section h2),
-  .methodology :global(.title-section h2) {
+  .methodology :global(.title-section h2),
+  .faqsection :global(.title-section h2),
+  .awardsection :global(.title-section h2) {
     font-size: 2rem;
   }
 
@@ -469,6 +471,8 @@
 
   .faqsection :global(.title-section h2) {
     text-align: center;
+    line-height: unset;
+    padding-right: 0;
   }
 
   .prodcutherosection :global(.title-section h2) {
