@@ -29,18 +29,18 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
         const answer = faqData.answer || "";
 
         return (
-          <div key={index} className={`${styles.cardheader} p-4 mb-5`}>
+          <div key={index} className={`${styles.cardheader}  mb-5`}>
             <h2 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
-                className={`flex justify-between items-start w-full  ${styles.cardtitle}`}
+                className={`flex justify-between items-center w-full  ${styles.cardtitle}`}
                 data-accordion-target={`#accordion-collapse-body-${index}`}
                 aria-expanded={openIndex === index}
                 aria-controls={`accordion-collapse-body-${index}`}
                 onClick={() => handleToggle(index)}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <div className={`${styles.questionText} flex`}>{question}</div>
+                <div className={`${styles.questionText} flex `}>{question}</div>
                 <Image
                   src={
                     openIndex === index
@@ -49,8 +49,8 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
                   }
                   alt={openIndex === index ? "Collapse" : "Expand"}
                   className={styles.faqimg}
-                  height={36}
-                  width={36}
+                  height={32}
+                  width={32}
                 />
               </button>
             </h2>

@@ -3,6 +3,7 @@
 }
 .cardheader {
   position: relative;
+  padding: 8px 20px;
   transition: all 0.3s ease;
 }
 .cardheader {
@@ -45,7 +46,7 @@
 
 .cardbody p {
   color: var(--secondary--color);
-  font-size: 1.25rem;
+  font-size: 1.33rem;
   font-weight: 500;
   line-height: 2rem;
   padding-left: 1.7rem;
