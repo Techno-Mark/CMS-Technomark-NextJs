@@ -40,7 +40,7 @@
 
 .performancebox {
   border: 2px solid transparent;
-  padding: 1rem 0 1rem 2.5rem;
+  padding: 1rem 1.5rem;
   transition: 0.5s ease-in-out all;
   width: 92%;
   background: var(--white-color);
@@ -52,12 +52,10 @@
 .performancebox:hover {
   border: 2px solid;
   border-image-slice: 2;
-  border-image-source: linear-gradient(
-    90deg,
-    #ebcb5b 0%,
-    #017ca1 49.5%,
-    #61b946 100%
-  );
+  border-image-source: linear-gradient(90deg,
+      #ebcb5b 0%,
+      #017ca1 49.5%,
+      #61b946 100%);
 }
 
 .performancebox:after {
@@ -65,11 +63,9 @@
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0.08%,
-    var(--primary-variant-one) 99.95%
-  );
+  background: linear-gradient(90deg,
+      var(--primary-color) 0.08%,
+      var(--primary-variant-one) 99.95%);
   transition: width 0.8s;
   position: absolute;
   left: 0;
@@ -82,37 +78,32 @@
 }
 
 .performancebox:hover h2 {
-  background: linear-gradient(
-    90deg,
-    var(--white-color) 0.08%,
-    var(--white-color) 99.95%
-  );
-  background-clip: text;
+  background: var(--white-color);
+  /* background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .performancebox h2 {
-  font-size: 3.75rem;
+  font-size: 2.334rem;
   font-weight: 700;
-  line-height: 5.6rem;
+  line-height: unset;
   transition: 0.5s ease-in-out all;
   margin-bottom: 0;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0.08%,
-    var(--primary-variant-one) 99.95%
-  );
-  background-clip: text;
+  background: linear-gradient(90deg,
+      var(--primary-color) 0.08%,
+      var(--primary-variant-one) 99.95%);
+  color: #000;
+  /* background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .performancebox p {
   color: var(--secondary--color);
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 2.5rem;
+  line-height: 2.34rem;
   letter-spacing: 0.22px;
   margin-bottom: 0;
 }

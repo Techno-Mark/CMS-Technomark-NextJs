@@ -530,7 +530,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName="casestudylisttitle"
                 />
-                <CaseStudyList props={sectionData} />
+                <CaseStudyList
+                  props={sectionData}
+                  setDetailedOpen={setDetailedOpen}
+                  setDetailedImagesUrl={setDetailedImagesUrl}
+                />
               </div>
             </section>
           )
