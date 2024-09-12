@@ -38,10 +38,16 @@
 .stickycol h2 {
   text-align: left;
   margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 4rem;
 }
 .stickycol p{
     text-align: left;
     width: 80%;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: #5E6F88;
 }
 
 .borderleftscroll {
@@ -53,16 +59,10 @@
 
 .servicesscrollbox h2 {
   color: var(--white-color);
-  text-align: center;
   font-family: "Bebas Neue";
   font-size: 2rem;
-  line-height: 2rem;
   font-weight: 400;
-  border-radius: 100px;
   background: rgba(29, 53, 87, 0.8);
-  width: 50px;
-  height: 50px;
-  padding: 0.75rem;
   margin-bottom: 20px;
   outline: 4px solid transparent;
   transition: 0.5s ease-in-out;
@@ -100,12 +100,12 @@
 }
 
 .servicesscrollbox ul li img {
-  width: 2rem;
+  width: 1.8rem;
 }
 
 .servicesscrollbox ul li p {
   color: var(--secondary--variant-one);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 2.5rem;
   letter-spacing: 0.24px;

@@ -68,13 +68,13 @@ const Herosection: React.FC<HeroSectionProps> = ({
 
   return (
     <div
-      className={`container mx-auto ${styles.herocontainer} ${
-        isTechStartup ? styles.techstartpcontainer : ""
+      className={`container mx-auto ${
+        isTechStartup ? styles.techstartpcontainer : styles.herocontainer
       }`}
     >
       <div className="flex flex-wrap sm:flex-row flex-col items-center">
         <div className="w-full md:w-1/2">
-          <p className={styles.label}>{props?.label || ""}</p>
+          {/* <p className={styles.label}>{props?.label || ""}</p> */}
           <TitleSection
             sectionData={{
               title: props?.title || "",
@@ -100,7 +100,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
         <div className="w-full md:w-1/2 relative">
-          {isTechStartup && (
+          {/* {isTechStartup && (
             <div className={styles.formcirlerotate}>
               <Image
                 src="/images/animatecircle.png"
@@ -109,7 +109,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
                 height={250}
               />
             </div>
-          )}
+          )} */}
           <div className={styles.imagecontainer}>
             <Image
               className="w-auto"

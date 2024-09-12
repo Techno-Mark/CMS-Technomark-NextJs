@@ -82,7 +82,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
           />
         </div>
       </div>
-      <div className={`w-full md:w-1/2 ${styles.borderleftscroll}`}>
+      <div className={`w-full md:w-1/2 !m-0 ${styles.borderleftscroll}`}>
         <div className={`${styles.sectioncontent}`}>
           {services.map((service: any, index: number) => (
             <section
@@ -93,7 +93,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
               }.gif`}
             >
               <div className={styles.servicesscrollbox}>
-                <h2>{index + 1}</h2>
+                <h2 className="flex items-center justify-center w-16 h-16 rounded-full">{index + 1}</h2>
                 <h3>{!!service.title ? service.title : ""}</h3>
                 <ul>
                   {service?.items
