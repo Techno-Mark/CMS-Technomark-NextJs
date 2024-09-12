@@ -11,7 +11,7 @@
 .methodology :global(.title-section p) {
   width: 70%;
   margin: 0 auto 3.8rem;
-  /* opacity: 0.7; */
+  opacity: 0.7;
 }
 
 .coreservices {
@@ -55,10 +55,7 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(
-    var(--primary-color) 100%,
-    var(--primary-variant-one) 100%
-  );
+  background: linear-gradient(var(--primary-color) 100%, var(--primary-variant-one) 100%);
   top: 17px;
 }
 
@@ -541,9 +538,23 @@
   .clientspeaksection :global(.title-section p),
   .methodology :global(.title-section p) {
     width: 100%;
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    line-height: 2.33rem;
     padding: 0 5px;
+  }
+
+  .guaranteetmsection :global(.title-section h2) {
+    /* margin-bottom: 5rem; */
+    font-size: 1.5rem;
+  }
+
+  .trustsection :global(.title-section h2) {
+    /* margin-bottom: 1.2rem; */
+    font-size: 1.5rem;
+  }
+
+  .trustsection :global(.title-section p span) {
+    font-size: 1.25rem;
   }
 }
 
@@ -558,8 +569,8 @@
   .clientspeaksection :global(.title-section p),
   .methodology :global(.title-section p) {
     width: 100%;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 2.3rem;
     padding: 0;
   }
 }

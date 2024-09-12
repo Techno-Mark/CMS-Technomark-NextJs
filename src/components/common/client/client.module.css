@@ -124,3 +124,9 @@
     margin-bottom: 1rem;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .logobox img {
+    max-height: 0rem;
+  }
+}
