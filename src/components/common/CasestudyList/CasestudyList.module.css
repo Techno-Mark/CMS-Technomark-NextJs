@@ -23,6 +23,7 @@
   flex: 1;
   border-left: 1px solid #c0c0c0;
   padding-left: 2rem;
+  max-width: 43rem;
 }
 
 .casebox .textarea p {
