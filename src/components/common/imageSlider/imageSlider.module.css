@@ -1,0 +1,46 @@
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-100% + 70vw)
+    ); /* Scroll 70% of viewport width */
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(calc(-100% + 70vw)); /* Start from the end */
+  }
+  100% {
+    transform: translateX(0); /* Scroll back to the start */
+  }
+}
+
+.scrollLeft {
+  animation: scrollLeft 10s linear infinite;
+}
+
+.scrollRight {
+  animation: scrollRight 10s linear infinite;
+}
+
+.sliderContainer {
+  width: 70vw; /* Limit slider to 70% of viewport width */
+  overflow: hidden; /* Hide overflow images */
+  margin: 0 auto; /* Center the container */
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  height: 40px; /* Set the height of the slider */
+}
+
+.image {
+  flex: 0 0 auto; /* Ensure images stay at their natural width */
+  height: 100%; /* Fit the height of the slider */
+  width: auto; /* Maintain aspect ratio */
+}

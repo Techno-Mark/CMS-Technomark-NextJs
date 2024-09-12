@@ -1,0 +1,133 @@
+.card {
+  width: 190px;
+  height: 190px;
+}
+
+.border1 {
+  transform: rotate(80deg);
+}
+.border2 {
+  transform: rotate(-80deg);
+}
+
+.rightTop1 {
+  top: 46px;
+  right: -56px;
+  width: 97.5px;
+}
+
+.rightBottom1 {
+  bottom: 46px;
+  right: -56px;
+  width: 97.5px;
+}
+
+.rightTop2 {
+  top: 46px;
+  left: -70px;
+  width: 97.5px;
+}
+
+.rightBottom2 {
+  bottom: 46px;
+  left: -70px;
+  width: 97.5px;
+}
+
+.leftTop1 {
+  top: 46px;
+  left: -40px;
+  width: 97.5px;
+}
+
+.leftBottom1 {
+  bottom: 46px;
+  left: -40px;
+  width: 97.5px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .rightTop1 {
+    top: 37px;
+    right: -48px;
+    width: 78px;
+  }
+
+  .rightBottom1 {
+    bottom: 37px;
+    right: -48px;
+    width: 78px;
+  }
+
+  .rightTop2 {
+    top: 37px;
+    left: -54px;
+    width: 78px;
+  }
+
+  .rightBottom2 {
+    bottom: 37px;
+    left: -54px;
+    width: 78px;
+  }
+
+  .leftTop1 {
+    top: 37px;
+    left: -34px;
+    width: 78px;
+  }
+
+  .leftBottom1 {
+    bottom: 37px;
+    left: -34px;
+    width: 78px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .rightTop1 {
+    top: 28px;
+    right: -35px;
+    width: 60.5px;
+  }
+
+  .rightBottom1 {
+    bottom: 28px;
+    right: -35px;
+    width: 60.5px;
+  }
+
+  .rightTop2 {
+    top: 28px;
+    left: -40px;
+    width: 60.5px;
+  }
+
+  .rightBottom2 {
+    bottom: 28px;
+    left: -40px;
+    width: 60.5px;
+  }
+
+  .leftTop1 {
+    top: 28px;
+    left: -26px;
+    width: 60.5px;
+  }
+
+  .leftBottom1 {
+    bottom: 28px;
+    left: -26px;
+    width: 60.5px;
+  }
+}

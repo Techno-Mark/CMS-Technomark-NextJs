@@ -55,7 +55,10 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(var(--primary-color) 100%, var(--primary-variant-one) 100%);
+  background: linear-gradient(
+    var(--primary-color) 100%,
+    var(--primary-variant-one) 100%
+  );
   top: 17px;
 }
 
@@ -231,6 +234,25 @@
   margin: 0 auto 3.8rem;
   font-size: 1.5rem;
   line-height: 2.5rem;
+}
+
+.careerTitle :global(.title-section h2) {
+  padding-bottom: 2rem !important;
+  font-weight: bold;
+}
+
+.careerTitle :global(.title-section p) {
+  width: 70%;
+  margin: 0 auto 3.8rem;
+  font-size: 1.7rem;
+  line-height: 3rem;
+}
+
+.blogTitle :global(.title-section h2) {
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: bold;
 }
 
 .casestudydetailherosection {
@@ -506,5 +528,38 @@
 
   .techservices :global(.title-section p) {
     max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .clientspeaksection :global(.title-section h2),
+  .methodology :global(.title-section h2) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .clientspeaksection :global(.title-section p),
+  .methodology :global(.title-section p) {
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    padding: 0 5px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .clientspeaksection :global(.title-section h2),
+  .methodology :global(.title-section h2) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .clientspeaksection :global(.title-section p),
+  .methodology :global(.title-section p) {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 0;
   }
 }
