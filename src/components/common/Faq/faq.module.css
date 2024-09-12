@@ -1,5 +1,5 @@
 .faqcontainer {
-  padding-left: 6rem;
+  padding-left: 3rem;
 }
 .cardheader {
   position: relative;
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 .cardheader:hover {
-  border: 1px solid;
+  border: 1px solid var(--secondary--color);
   border-radius: 12px;
   /* border-image-slice: 1; */
   /* border-image-source: linear-gradient(90deg, #ebcb5b 0%, #017ca1 49.5%, #61b946 100%); */
