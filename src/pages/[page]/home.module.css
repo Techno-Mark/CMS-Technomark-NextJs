@@ -11,7 +11,7 @@
 .methodology :global(.title-section p) {
   width: 70%;
   margin: 0 auto 3.8rem;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 .coreservices {
@@ -156,7 +156,7 @@
 }
 
 .prodcutherosection :global(.title-section p) {
-  font-size: 1.4rem !important;
+  font-size: 1.5rem !important;
   line-height: unset !important;
   margin-bottom: 5rem;
 }

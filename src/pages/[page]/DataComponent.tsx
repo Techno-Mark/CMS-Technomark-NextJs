@@ -216,7 +216,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     style={{
                       backgroundImage:
                         "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%)",
-                      borderBottom: "4px solid transparent",
+                      borderBottom: "3px solid transparent",
                       backgroundClip: "text, padding-box",
                       WebkitBackgroundClip: "text",
                       borderImage:

@@ -209,6 +209,7 @@
   z-index: 99;
   top: auto;
   bottom: -3.125rem;
+  padding-bottom: 40px;
   cursor: pointer;
   width: 5rem;
 }
