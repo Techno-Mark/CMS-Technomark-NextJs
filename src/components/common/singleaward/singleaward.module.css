@@ -1,4 +1,4 @@
-.awardlist{
+.awardlist {
     grid-row-gap: 5rem;
     grid-column-gap: 5rem;
     list-style-type: none;
@@ -8,8 +8,23 @@
     align-items: center;
     justify-content: center;
 }
-.awardlist li img{
-    max-width: 7rem;
+
+.awardlist li img {
+    /* max-width: 7rem; */
+    max-width: max-content;
+    max-height: 7rem;
+    width: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .awardlist {
+        grid-row-gap: 3rem;
+        grid-column-gap: 3rem;
+    }
+
+    .awardlist li img {
+        max-width: 6rem;
+    }
 }
 
 /* .awardlist{
@@ -25,4 +40,3 @@
 .awardlist li img{
     max-width: 10rem;
 } */
-

@@ -350,6 +350,7 @@
 }
 
 .productsolutions {
+  padding: 6rem 0;
   border: none;
   border-bottom: 4px solid;
   border-image-slice: 1;
@@ -464,6 +465,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .productsolutions {
+    padding: 1rem 0;
+  }
   .guaranteetmsection .videoarea {
     padding-bottom: 20px;
   }
@@ -478,7 +482,9 @@
   }
 
   .clientspeaksection :global(.title-section h2),
-  .methodology :global(.title-section h2) {
+  .methodology :global(.title-section h2),
+  .faqsection :global(.title-section h2),
+  .awardsection :global(.title-section h2) {
     font-size: 2rem;
   }
 
@@ -491,15 +497,17 @@
 
   .faqsection :global(.title-section h2) {
     text-align: center;
+    line-height: unset;
+    padding-right: 0;
   }
 
   .prodcutherosection :global(.title-section h2) {
-    font-size: 1.2rem;
+    font-size: 2rem !important;
   }
 
   .prodcutherosection :global(.title-section p) {
-    font-size: 1.2rem !important;
-    line-height: 1.8rem !important;
+    font-size: 1.6rem !important;
+    line-height: 3rem !important;
   }
 
   .techslider :global(.title-section h2) {

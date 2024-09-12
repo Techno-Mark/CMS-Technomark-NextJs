@@ -21,18 +21,18 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
 
   return (
     <div className="flex flex-wrap items-center">
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-5/12">
         <div
           className={styles.productbg}
           style={{ backgroundImage: `url(${image})` }}
         ></div>
       </div>
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-7/12">
         <div className={styles.productsolutionlist}>
           <ul>
             {listItems.map((listItem, index) => (
               <li key={index}>
-                <div className={`${styles.scalearea} text-[13px]` }>
+                <div className={`${styles.scalearea}` }>{/* text-[13px] */}
                   <Image
                     src="/images/arrow-right-solution.png"
                     alt="arrow"
