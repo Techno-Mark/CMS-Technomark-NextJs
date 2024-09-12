@@ -8,6 +8,10 @@
   max-width: 8rem;
 }
 
+.whitesidebar {
+  display: none;
+}
+
 .customerfixedlabel img {
   position: absolute;
   right: 10px;
