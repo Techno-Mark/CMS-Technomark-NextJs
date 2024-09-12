@@ -294,8 +294,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName={styles.guaranteetitle}
                 />
-                <div className="flex flex-wrap !mt-24">
-                  <div className="pb-10 lg:w-1/2 md:w-full md:pb-0">
+                <div className="flex flex-wrap md:!mt-24 !mt-4">
+                  <div className="lg:w-1/2 md:w-full md:pb-0">
                     <div className={styles.videoarea}>
                       {!!sectionData.image &&
                       sectionData.image.includes(".mp4") ? (
