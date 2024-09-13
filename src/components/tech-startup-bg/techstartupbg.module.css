@@ -40,11 +40,11 @@
 
 .techstartupbg h2 {
   color: var(--secondary--color);
-  font-size: 3rem;
+  font-size: 26px;
   font-style: normal;
   font-weight: 600;
-  line-height: 4.25rem;
-  margin: 0;
+  /* line-height: 4.25rem; */
+  margin: 0 0 15px;
   text-align: left;
 }
 
@@ -58,19 +58,19 @@
 }
 
 .techstartupbg p {
-  font-size: 1.6rem;
-  line-height: 2.75rem;
+  font-size: 18px;
+  line-height: 32px;
   font-weight: 500;
   /* opacity: 0.7; */
 }
 
-.casestudytech h2 {
+/* .casestudytech h2 {
   font-weight: 700;
 }
 
 .casestudytech p {
   opacity: 1;
-}
+} */
 
 .newPrimarybtn {
   margin-left: initial;
@@ -82,13 +82,13 @@
   margin-right: auto;
 }
 
-.techcasestudycontainer h2 {
+/* .techcasestudycontainer h2 {
   margin-bottom: 2.5rem;
 }
 
 .techcasestudycontainer h2 span {
   font-weight: 600;
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .techstartupbg h2 {

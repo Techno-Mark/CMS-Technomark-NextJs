@@ -517,19 +517,21 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
-                <p className={`!mb-1 ${styles.casestudylistlabel}`}>
-                  {!!sectionData.label ? sectionData.label : ""}
-                </p>
-                <TitleSection
-                  sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: !!sectionData.subtitle
-                      ? sectionData.subtitle
-                      : "",
-                  }}
-                  titleFirst={true}
-                  titleClassName="casestudylisttitle"
-                />
+                <div className="container max-w-[1140px] w-[100%]">
+                  <p className={`${styles.casestudylistlabel}`}>
+                    {!!sectionData.label ? sectionData.label : ""}
+                  </p>
+                  <TitleSection
+                    sectionData={{
+                      title: !!sectionData.title ? sectionData.title : "",
+                      subtitle: !!sectionData.subtitle
+                        ? sectionData.subtitle
+                        : "",
+                    }}
+                    titleFirst={true}
+                    titleClassName="casestudylisttitle"
+                  />
+                </div>
                 <CaseStudyList
                   props={sectionData}
                   setDetailedOpen={setDetailedOpen}
@@ -568,7 +570,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section className={`${styles.businessimpactsection} tm-section`}>
-              <div className="container mx-auto">
+              <div className="container mx-auto max-w-[1140px] w-[100%]">
                 <TitleSection
                   sectionData={{
                     title: !!sectionData.title ? sectionData.title : "",

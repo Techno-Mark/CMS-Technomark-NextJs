@@ -6,10 +6,12 @@ const ImageSlider = ({
   images,
   setDetailedOpen,
   setDetailedImagesUrl,
+  large = false,
 }: {
   images: string[];
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
+  large?: boolean;
 }) => {
   const image_slider = useRef(null);
 
@@ -25,11 +27,11 @@ const ImageSlider = ({
   };
 
   return (
-    <div className={styles.sliderContainer}>
+    <div className={large ? styles.sliderContainer2 : styles.sliderContainer1}>
       <Slider ref={image_slider} {...img_slider_settings}>
         {images.map((item, i: number) => (
           <div className={styles.imageSlide} key={i}>
-            <img width={500} src={item} alt="" />
+            <img width={large ? 600 : 500} src={item} alt="" />
             <div
               className={styles.overlay}
               onClick={() => {

@@ -108,6 +108,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                 setDetailedImagesUrl={setDetailedImagesUrl}
                 setDetailedOpen={setDetailedOpen}
                 images={caseStudy.video.split(",")}
+                large={true}
               />
             ) : (
               <div className={styles.videoarea}>

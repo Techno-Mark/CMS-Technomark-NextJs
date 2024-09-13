@@ -215,25 +215,27 @@
 
 .casestudylistlabel {
   font-family: Montserrat;
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 4rem;
+  line-height: 40px;
   text-align: center;
   color: rgba(29, 53, 87, 0.5);
-  margin-bottom: 3rem;
   text-transform: uppercase;
 }
 
 .casestudylist :global(.title-section h2) {
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   font-weight: bold;
+  font-size: 30px !important;
+  line-height: 50px !important;
 }
 
 .casestudylist :global(.title-section p) {
-  width: 70%;
-  margin: 0 auto 3.8rem;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
+  /* width: 75%; */
+  margin: auto auto 7rem;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 40px;
 }
 
 .careerTitle :global(.title-section h2) {
@@ -275,10 +277,10 @@
 
 .casestudydetailherosection :global(.title-section p) {
   margin: 2rem auto 0;
-  max-width: 75%;
   color: var(--white-color);
-  font-size: 22px;
-  line-height: 40px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 65%;
 }
 
 .casestudydetaillabel {
@@ -300,14 +302,18 @@
 
 .businessimpactsection :global(.title-section h2) {
   color: var(--white-color) !important;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 50px;
 }
 
 .businessimpactsection :global(.title-section p) {
   color: var(--white-color);
-  margin-inline: auto;
-  font-size: 20px;
   font-weight: 400;
+  font-size: 22px;
+  width: auto;
+  line-height: 42px;
 }
 
 .problemstatement {
