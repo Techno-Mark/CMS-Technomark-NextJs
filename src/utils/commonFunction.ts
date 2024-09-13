@@ -83,5 +83,40 @@ export const convertDetails2Date = (dateString: string): string => {
 
   const formattedDay = day.padStart(2, "0")
 
-  return `${monthNames[date.getMonth()]} ${formattedDay}, ${year}`
+  return `${monthNames[date.getMonth()]} ${formattedDay}, ${year}`;
+};
+
+
+export function formatEventDate(startDate: string, endDate: string): string {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const addOrdinalSuffix = (day: number): string => {
+    if (day > 3 && day < 21) return `${day}th`;
+    switch (day % 10) {
+      case 1: return `${day}st`;
+      case 2: return `${day}nd`;
+      case 3: return `${day}rd`;
+      default: return `${day}th`;
+    }
+  };
+
+  const formatDate = (date: Date): string => {
+    const day = addOrdinalSuffix(date.getDate());
+    const month = date.toLocaleString('en-GB', { month: 'long' });
+    const year = date.getFullYear();
+    return `${day} ${month}, ${year}`;
+  };
+
+  const startFormatted = formatDate(start);
+  const endFormatted = formatDate(end);
+
+  if (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()) {
+    return `${addOrdinalSuffix(start.getDate())} - ${addOrdinalSuffix(end.getDate())} ${start.toLocaleString('en-GB', { month: 'long' })}, ${start.getFullYear()}`;
+  } else {
+    return `${startFormatted} - ${endFormatted}`;
+  }
 }
+
+
+
