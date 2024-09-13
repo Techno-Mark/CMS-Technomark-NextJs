@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./CasestudyList.module.css";
+import ImageSlider from "../casestudy/ImageSlider";
 
 interface Casestudy {
   category: string;
@@ -15,11 +16,18 @@ interface Casestudy {
 
 interface CaseStudyListProps {
   props: any;
+  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
+const CaseStudyList: React.FC<CaseStudyListProps> = ({
+  props,
+  setDetailedOpen,
+  setDetailedImagesUrl,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [showAll, setShowAll] = useState<boolean>(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const categories = [
     "All",
@@ -94,35 +102,44 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({ props }) => {
               {!!caseStudy.linkText ? caseStudy.linkText : "Read More"}
             </a>
           </div>
-          <div className={styles.resultarea}>
-            <div className={styles.videoarea}>
-              <video autoPlay loop muted>
-                <source
-                  width="320"
-                  height="240"
-                  src={
-                    !!caseStudy.video
-                      ? caseStudy.video
-                      : "/images/Case-study.mp4"
-                  }
-                  type="video/mp4"
-                />
-              </video>
-              <div className={styles.playbtn}>
-                <svg
-                  width="24"
-                  height="27"
-                  viewBox="0 0 24 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23.9302 13.4651L0.732501 26.8583L0.732502 0.0719318L23.9302 13.4651Z"
-                    fill="#168944"
-                  ></path>
-                </svg>
+          <div className={`${styles.resultarea} relative`}>
+            {!!caseStudy.video && caseStudy.video.includes(",") ? (
+              <ImageSlider
+                setDetailedImagesUrl={setDetailedImagesUrl}
+                setDetailedOpen={setDetailedOpen}
+                images={caseStudy.video.split(",")}
+                large={true}
+              />
+            ) : (
+              <div className={styles.videoarea}>
+                <video autoPlay loop muted>
+                  <source
+                    width="320"
+                    height="240"
+                    src={
+                      !!caseStudy.video
+                        ? caseStudy.video
+                        : "/images/Case-study.mp4"
+                    }
+                    type="video/mp4"
+                  />
+                </video>
+                <div className={styles.playbtn}>
+                  <svg
+                    width="24"
+                    height="27"
+                    viewBox="0 0 24 27"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.9302 13.4651L0.732501 26.8583L0.732502 0.0719318L23.9302 13.4651Z"
+                      fill="#168944"
+                    ></path>
+                  </svg>
+                </div>
               </div>
-            </div>
+            )}
             <div className={styles.resultview}>
               <h4>
                 {!!caseStudy.additionalTitle ? caseStudy.additionalTitle : ""}

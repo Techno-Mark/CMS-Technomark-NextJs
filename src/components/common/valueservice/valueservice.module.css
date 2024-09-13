@@ -42,12 +42,12 @@
   font-weight: 700;
   line-height: 4rem;
 }
-.stickycol p{
-    text-align: left;
-    width: 80%;
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    color: #5E6F88;
+.stickycol p {
+  text-align: left;
+  width: 80%;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #5e6f88;
 }
 
 .borderleftscroll {
@@ -76,7 +76,7 @@
 
 .servicesscrollbox h3 {
   color: #1d3557;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-style: italic;
   font-weight: 700;
   line-height: 3rem;
@@ -178,4 +178,25 @@
   border-radius: 50px;
   top: 40%;
   left: -4px;
+}
+
+@media only screen and (max-width: 767px) {
+  .borderleftscroll {
+    border-left: none;
+  }
+
+  .borderleftscroll::before,
+  .borderleftscroll::after {
+    content: none;
+  }
+
+  .bottomimage,
+  .stickycol {
+    position: inherit;
+  }
+
+  .servicesscrollbox {
+    width: 100%;
+    margin-left: 0;
+  }
 }

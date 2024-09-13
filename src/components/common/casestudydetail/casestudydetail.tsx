@@ -39,7 +39,12 @@ const CaseStudyDetail = ({ data }: any) => {
             const value = benefitItem?.value || "";
 
             return (
-              <li key={index} className="flex items-center">
+              <li
+                key={index}
+                className={`flex items-center ${
+                  index !== 1 ? styles.img1 : styles.img2
+                }`}
+              >
                 {icon && (
                   <Image src={icon} alt={label} height={32} width={32} />
                 )}
@@ -52,7 +57,7 @@ const CaseStudyDetail = ({ data }: any) => {
       </div>
       <div className="performance-section">
         <div className="flex flex-wrap lg:flex-nowrap items-stretch">
-          <div className="w-full lg:w-[30%] flex flex-col items-center justify-center">
+          <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
             {performances.map(
               (performanceItem: PerformanceItem, index: number) => {
                 const title = performanceItem?.title || "";
@@ -62,10 +67,10 @@ const CaseStudyDetail = ({ data }: any) => {
                   <div
                     key={index}
                     className={`${styles.performancebox} ${
-                      performances.length === index + 1 ? "" : "mb-[2rem]"
-                    } flex-grow !p-0`}
+                      performances.length === index + 1 ? "" : "mb-[1.5rem]"
+                    } flex-grow`}
                   >
-                    <div className="flex flex-col gap-4 items-center justify-center h-full">
+                    <div className="flex flex-col items-center justify-center h-full">
                       <h2>{title}</h2>
                       <p className="text-center">{description}</p>
                     </div>

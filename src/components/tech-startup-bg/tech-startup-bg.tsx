@@ -39,7 +39,7 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
           width={1920}
         />
       </div>
-      <div className={`container mx-auto relative z-5`}>
+      <div className={`container mx-auto relative z-5 max-w-[1140px] w-[100%]`}>
         <div className={containerClassNames}>
           {isCaseStudy ? (
             // Case Study Detail Page Layout
