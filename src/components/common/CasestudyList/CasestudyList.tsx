@@ -1,21 +1,15 @@
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./CasestudyList.module.css";
 import ImageSlider from "../casestudy/ImageSlider";
+import styles from "./CasestudyList.module.css";
 
 interface Casestudy {
-  category: string;
-  title: string;
-  image: string;
-  text: string;
-  subpoints: string[];
-  video: string;
-  additionalTitle: string;
-  additionalPoints: { score: string; description: string }[];
+  buttons: [];
+  data: JSON[];
 }
 
 interface CaseStudyListProps {
-  props: any;
+  props: Casestudy;
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }

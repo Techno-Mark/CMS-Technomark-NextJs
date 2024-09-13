@@ -517,21 +517,19 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
-                <div className="container max-w-[1140px] w-[100%]">
-                  <p className={`${styles.casestudylistlabel}`}>
-                    {!!sectionData.label ? sectionData.label : ""}
-                  </p>
-                  <TitleSection
-                    sectionData={{
-                      title: !!sectionData.title ? sectionData.title : "",
-                      subtitle: !!sectionData.subtitle
-                        ? sectionData.subtitle
-                        : "",
-                    }}
-                    titleFirst={true}
-                    titleClassName="casestudylisttitle"
-                  />
-                </div>
+                <p className={`${styles.casestudylistlabel}`}>
+                  {!!sectionData.label ? sectionData.label : ""}
+                </p>
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: !!sectionData.subtitle
+                      ? sectionData.subtitle
+                      : "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="casestudylisttitle"
+                />
                 <CaseStudyList
                   props={sectionData}
                   setDetailedOpen={setDetailedOpen}

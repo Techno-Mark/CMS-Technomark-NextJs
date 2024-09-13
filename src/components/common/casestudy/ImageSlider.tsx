@@ -24,6 +24,14 @@ const ImageSlider = ({
     autoplaySpeed: 2000,
     variableWidth: true,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
