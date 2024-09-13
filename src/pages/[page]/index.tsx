@@ -4,6 +4,7 @@ import DataComponent from "./DataComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import Popup from "@/components/popup/popup";
 
 interface HomeProps {
   data: any;
@@ -63,6 +64,10 @@ const Page: React.FC<
         <link rel="icon" href="/favicon.png" />
       </Head>
       <ToastContainer />
+      {data?.popups && !!data.popups.length && (
+        <Popup popupData={data?.popups} />
+      )}
+
       <DataComponent data={data} />
     </>
   );
