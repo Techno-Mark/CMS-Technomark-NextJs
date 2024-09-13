@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./hiredeveloper.module.css";
+import React from "react"
+import Image from "next/image"
+import styles from "./hiredeveloper.module.css"
 
 interface DeveloperItem {
   image?: string;
@@ -19,7 +19,7 @@ interface HireDeveloperProps {
 }
 
 const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
-  const developerCards = !!props.developerCard ? props.developerCard : [];
+  const developerCards = props.developerCard ? props.developerCard : []
 
   return (
     <div
@@ -64,7 +64,7 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default HireDeveloper;
+export default HireDeveloper

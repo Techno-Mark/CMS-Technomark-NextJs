@@ -8,7 +8,7 @@ import { NextPageContext } from "next";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false)
   const [commonData, setCommonData] = useState({
     headerData: null as any,
     footerData: null as any,
@@ -22,8 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   const toggleDrawer = () => {
-    setIsDrawerVisible((prev) => !prev);
-  };
+    setIsDrawerVisible((prev) => !prev)
+  }
 
   return (
     <div className="maindiv">
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer footerData={commonData?.footerData?.menuItem} />
     </div>
-  );
+  )
 }
 
 App.getInitialProps = async (ctx: NextPageContext) => {

@@ -1,7 +1,7 @@
 // components/Challenges/Challenges.tsx
-import React from "react";
-import Image from "next/image";
-import styles from "./Challenges.module.css";
+import React from "react"
+import Image from "next/image"
+import styles from "./Challenges.module.css"
 
 interface ChallengesProps {
   props: any;
@@ -18,10 +18,10 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
                 <h3>
                   {(index + 1).toString().padStart(2, "0")}.
                 </h3>
-                <b>{!!solution.challengeTitle ? solution.challengeTitle : ""}</b>
+                <b>{solution.challengeTitle ? solution.challengeTitle : ""}</b>
               </div>
             </div>
-            <p>{!!solution.challengeDescription ? solution.challengeDescription : ""}</p>
+            <p>{solution.challengeDescription ? solution.challengeDescription : ""}</p>
           </div>
           <div className={`w-full lg:w-1/2 ${styles.solutionGreenArea}`}>
             <div className={styles.inlineArea}>
@@ -32,19 +32,17 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
                   width={35}
                   height={35}
                 />
-                <b>{!!solution.solutionTitle ? solution.solutionTitle : ""}</b>
+                <b>{solution.solutionTitle ? solution.solutionTitle : ""}</b>
               </div>
             </div>
             <p>
-              {!!solution.solutionDescription
-                ? solution.solutionDescription
-                : ""}
+              {solution.solutionDescription ? solution.solutionDescription : ""}
             </p>
           </div>
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Challenges;
+export default Challenges

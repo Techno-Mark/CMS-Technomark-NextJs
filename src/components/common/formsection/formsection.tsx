@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./formsection.module.css";
-import Image from "next/image";
-import Button from "../button/button";
-import { toast } from "react-toastify";
+import React, { useState, useEffect, useRef } from "react"
+import styles from "./formsection.module.css"
+import Image from "next/image"
+import Button from "../button/button"
 
 interface FormSectionData {
   text: string;
@@ -20,111 +19,109 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
     fullName: "",
     email: "",
     mobileNumber: "",
-    companyName: "",
-  });
+    companyName: ""
+  })
   const [errors, setErrors] = useState({
     fullName: "",
     email: "",
     mobileNumber: "",
-    companyName: "",
-  });
-  const [isSuccess, setIsSuccess] = useState(0);
-  const [message, setMessage] = useState("");
+    companyName: ""
+  })
+  const [isSuccess, setIsSuccess] = useState(0)
+  const [message, setMessage] = useState("")
 
-  const formRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
+    const { id, value } = e.target
 
-    setErrors((prev) => ({ ...prev, [id]: "" }));
+    setErrors((prev) => ({ ...prev, [id]: "" }))
 
     if (id === "mobileNumber") {
-      const filteredValue = value.replace(/\D/g, "").slice(0, 10);
-      setFormData((prev) => ({ ...prev, [id]: filteredValue }));
+      const filteredValue = value.replace(/\D/g, "").slice(0, 10)
+      setFormData((prev) => ({ ...prev, [id]: filteredValue }))
     } else {
-      setFormData((prev) => ({ ...prev, [id]: value }));
+      setFormData((prev) => ({ ...prev, [id]: value }))
     }
-  };
+  }
 
   const validate = () => {
-    const newErrors: any = {};
-    if (!formData.fullName) newErrors.fullName = "Full name is required";
-    if (!formData.email) newErrors.email = "E-mail is required";
-    if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Invalid e-mail address";
+    const newErrors: any = {}
+    if (!formData.fullName) newErrors.fullName = "Full name is required"
+    if (!formData.email) newErrors.email = "E-mail is required"
+    if (!/\S+@\S+\.\S+/.test(formData.email)) { newErrors.email = "Invalid e-mail address" }
     if (!formData.mobileNumber) {
-      newErrors.mobileNumber = "Mobile Number is required";
+      newErrors.mobileNumber = "Mobile Number is required"
     } else if (!/^\d{10}$/.test(formData.mobileNumber)) {
-      newErrors.mobileNumber = "Mobile Number must be exactly 10 digits";
+      newErrors.mobileNumber = "Mobile Number must be exactly 10 digits"
     }
-    if (!formData.companyName)
-      newErrors.companyName = "Company name is required";
-    return newErrors;
-  };
+    if (!formData.companyName) { newErrors.companyName = "Company name is required" }
+    return newErrors
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const validationErrors = validate();
+    e.preventDefault()
+    const validationErrors = validate()
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
+      setErrors(validationErrors)
+      return
     }
 
     try {
       if (isSuccess !== 1) {
-        setIsSuccess(1);
+        setIsSuccess(1)
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}contact-us/save`,
           {
             method: "POST",
             headers: {
               referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({
               name: formData.fullName,
               email: formData.email,
               mobileNumber: formData.mobileNumber,
-              companyName: formData.companyName,
-            }),
+              companyName: formData.companyName
+            })
           }
-        );
+        )
 
-        const responseData = await response.json();
+        const responseData = await response.json()
 
         if (!response.ok) {
-          setIsSuccess(3);
-          setMessage(responseData.data.email);
+          setIsSuccess(3)
+          setMessage(responseData.data.email)
           setTimeout(() => {
-            setIsSuccess(0);
-            setMessage("");
-          }, 10000);
-          return;
+            setIsSuccess(0)
+            setMessage("")
+          }, 10000)
+          return
         }
 
-        setIsSuccess(2);
+        setIsSuccess(2)
         setTimeout(() => {
-          setIsSuccess(0);
-          setMessage("");
-        }, 10000);
+          setIsSuccess(0)
+          setMessage("")
+        }, 10000)
 
         setFormData({
           fullName: "",
           email: "",
           mobileNumber: "",
-          companyName: "",
-        });
+          companyName: ""
+        })
         setErrors({
           fullName: "",
           email: "",
           mobileNumber: "",
-          companyName: "",
-        });
+          companyName: ""
+        })
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error)
     }
-  };
+  }
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -133,16 +130,16 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
           fullName: "",
           email: "",
           mobileNumber: "",
-          companyName: "",
-        });
+          companyName: ""
+        })
       }
-    };
+    }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [formRef]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [formRef])
 
   return (
     <>
@@ -174,7 +171,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
           </div>
           <div className={styles.formarea} ref={formRef}>
             <h4>
-              {!!props.formTitle ? props.formTitle : "Request a Quote"}
+              {props.formTitle ? props.formTitle : "Request a Quote"}
             </h4>
             <form onSubmit={handleSubmit}>
               <div className={styles.formwrap}>
@@ -241,7 +238,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
               <div className={styles.formbtn}>
                 <Button
                   text={
-                    !!props.buttonLabel ? props.buttonLabel : "Send Request"
+                    props.buttonLabel ? props.buttonLabel : "Send Request"
                   }
                   variant="primary"
                   onClick={handleSubmit}
@@ -267,7 +264,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FormSection;
+export default FormSection

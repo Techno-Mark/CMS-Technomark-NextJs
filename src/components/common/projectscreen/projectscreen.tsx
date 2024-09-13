@@ -1,9 +1,9 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import styles from "./projectscreen.module.css";
-import Image from "next/image";
+import React from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import styles from "./projectscreen.module.css"
+import Image from "next/image"
 
 interface ProjectImage {
   imageUrl: string;
@@ -29,29 +29,29 @@ const ProjectScreen: React.FC<ProjectScreenProps> = ({ props }) => {
       {
         breakpoint: 1450,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
       {
         breakpoint: 1399,
         settings: {
-          slidesToShow: 1.8,
-        },
+          slidesToShow: 1.8
+        }
       },
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 1.5,
-        },
+          slidesToShow: 1.5
+        }
       },
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+          slidesToShow: 1
+        }
+      }
+    ]
+  }
 
   return (
     <div className={styles.projectslidewrapper}>
@@ -71,7 +71,7 @@ const ProjectScreen: React.FC<ProjectScreenProps> = ({ props }) => {
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectScreen;
+export default ProjectScreen

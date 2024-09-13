@@ -1,10 +1,10 @@
-import Close from "@/assets/icon/close";
-import Hamburger from "@/assets/icon/hamburger";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import styles from "./header.module.css";
-import MenuLink from "./menuLink/MenuLink";
+import React, { useEffect, useState } from "react"
+import Close from "@/assets/icon/close"
+import Hamburger from "@/assets/icon/hamburger"
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./header.module.css"
+import MenuLink from "./menuLink/MenuLink"
 
 interface SubmenuItem {
   name: string;
@@ -24,36 +24,36 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false)
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
-    useState(false);
-  const [isSticky, setIsSticky] = useState(false);
-  
+    useState(false)
+  const [isSticky, setIsSticky] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
-    };
+      setIsSticky(window.scrollY > 100)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
-    document.body.classList.toggle(styles.noscroll, isMenuOpen);
-  }, [isMenuOpen]);
+    document.body.classList.toggle(styles.noscroll, isMenuOpen)
+  }, [isMenuOpen])
 
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev)
 
   const toggleSubMenu = (menuType: string) => {
     if (menuType === "services") {
-      setIsServicesSubMenuOpen((prev) => !prev);
-      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false);
+      setIsServicesSubMenuOpen((prev) => !prev)
+      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false)
     } else if (menuType === "technologies") {
-      setIsTechnologiesSubMenuOpen((prev) => !prev);
-      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false);
+      setIsTechnologiesSubMenuOpen((prev) => !prev)
+      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false)
     }
-  };
+  }
 
   // const menuItems: any[] = [
   //   {
@@ -207,6 +207,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             )}
           </button>
           <div
+            // eslint-disable-next-line multiline-ternary
             id="mega-menu-full"
             className={`${
               styles.megamenufull
@@ -219,13 +220,10 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             >
               {headerData?.map((menu) => (
                 <li
+                  // eslint-disable-next-line multiline-ternary
                   className={`${styles.navlink} h-full flex items-center ${
-                    (menu.name === "Technologies" &&
-                      isTechnologiesSubMenuOpen &&
-                      isMenuOpen) ||
-                    (menu.name === "Services" &&
-                      isServicesSubMenuOpen &&
-                      isMenuOpen)
+                    ((menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
+                     (menu.name === "Services" && isServicesSubMenuOpen)) && isMenuOpen
                       ? styles.active
                       : ""
                   }`}
@@ -242,13 +240,12 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                     <MenuLink item={menu} key={menu.name} />
                     {menu.children && menu.children.length > 0 && (
                       <ul
-                        className={`${styles.submenu} ${
-                          (menu.name === "Technologies" &&
-                            isTechnologiesSubMenuOpen) ||
-                          (menu.name === "Services" && isServicesSubMenuOpen)
-                            ? "customblock"
-                            : styles.defaultsubmenu
-                        }`}
+                      className={`${styles.submenu} ${
+                        (menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
+                        (menu.name === "Services" && isServicesSubMenuOpen)
+                          ? "customblock"
+                          : styles.defaultsubmenu
+                      }`}
                       >
                         {menu.children.map((submenu) => (
                           <li
@@ -293,7 +290,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

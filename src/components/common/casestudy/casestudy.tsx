@@ -1,14 +1,14 @@
-import NextArrow from "@/components/common/customarrow/next";
-import PrevArrow from "@/components/common/customarrow/prev";
-import Image from "next/image";
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import styles from "./casestudy.module.css";
-import ImageSlider from "./ImageSlider";
+import NextArrow from "@/components/common/customarrow/next"
+import PrevArrow from "@/components/common/customarrow/prev"
+import Image from "next/image"
+import React, { useState } from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import styles from "./casestudy.module.css"
+import ImageSlider from "./ImageSlider"
 
-interface CaseStudy {
+interface CaseStudyList {
   title: string;
   image: string;
   text: string;
@@ -19,7 +19,7 @@ interface CaseStudy {
 }
 
 interface CaseStudyProps {
-  props?: CaseStudy[];
+  props?: CaseStudyList[];
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }
@@ -27,9 +27,9 @@ interface CaseStudyProps {
 const CaseStudy: React.FC<CaseStudyProps> = ({
   props,
   setDetailedOpen,
-  setDetailedImagesUrl,
+  setDetailedImagesUrl
 }: CaseStudyProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   const settings = {
     slidesToShow: 1.2,
@@ -49,17 +49,17 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
       {
         breakpoint: 1450,
         settings: {
-          slidesToShow: 1.2,
-        },
+          slidesToShow: 1.2
+        }
       },
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+          slidesToShow: 1
+        }
+      }
+    ]
+  }
 
   return (
     <div className={`mb-20 ${styles.casestudyparent}`}>
@@ -74,12 +74,12 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
             >
               <div className={styles.textarea}>
                 <Image
-                  src={!!caseStudy.image ? caseStudy.image : ""}
+                  src={caseStudy.image ? caseStudy.image : ""}
                   alt="logo"
                   width={200}
                   height={200}
                 />
-                <p>{!!caseStudy.text ? caseStudy.text : ""}</p>
+                <p>{caseStudy.text ? caseStudy.text : ""}</p>
                 <ul className={styles.techusetext}>
                   {!!caseStudy.subpoints &&
                     caseStudy.subpoints
@@ -99,9 +99,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                 </ul>
                 <a
                   className={styles.readmore}
-                  href={!!caseStudy.linkUrl ? caseStudy.linkUrl : "#"}
+                  href={caseStudy.linkUrl ? caseStudy.linkUrl : "#"}
                 >
-                  {!!caseStudy.linkText ? caseStudy.linkText : "Read More"}
+                  {caseStudy.linkText ? caseStudy.linkText : "Read More"}
                 </a>
               </div>
               <div className={`${styles.resultarea} relative`}>
@@ -118,9 +118,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                         width="320"
                         height="240"
                         src={
-                          !!caseStudy.video
-                            ? caseStudy.video
-                            : "/images/Case-study.mp4"
+                          caseStudy.video ? caseStudy.video : "/images/Case-study.mp4"
                         }
                         type="video/mp4"
                       />
@@ -143,16 +141,12 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                 )}
                 <div className={styles.resultview}>
                   <h4>
-                    {!!caseStudy.additionalTitle
-                      ? caseStudy.additionalTitle
-                      : ""}
+                    {caseStudy.additionalTitle ? caseStudy.additionalTitle : ""}
                   </h4>
                   <ul
                     className={styles.successratiobox}
                     dangerouslySetInnerHTML={{
-                      __html: !!caseStudy.additionalPoints
-                        ? caseStudy.additionalPoints
-                        : "",
+                      __html: caseStudy.additionalPoints ? caseStudy.additionalPoints : ""
                     }}
                   />
                 </div>
@@ -165,7 +159,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
         {/* <Button href="#" text="VIEW ALL" variant="secondary" /> */}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CaseStudy;
+export default CaseStudy

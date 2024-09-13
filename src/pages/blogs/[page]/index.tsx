@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
-import TitleSection from "@/components/common/title/title";
-import axios from "axios";
-import { useParams, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import styles from "../list/home.module.css";
-import Image from "next/image";
+import axios from "axios"
+import { useParams, useSearchParams } from "next/navigation"
+import React, { useEffect, useState } from "react"
+import styles from "../list/home.module.css"
+import Image from "next/image"
 import {
   convertDetails1Date,
-  convertDetails2Date,
-} from "@/utils/commonFunction";
-import BlogDescription from "./blogDescription";
-import FormSection from "@/components/common/formsection/formsection";
-import Head from "next/head";
+  convertDetails2Date
+} from "@/utils/commonFunction"
+import BlogDescription from "./blogDescription"
+import FormSection from "@/components/common/formsection/formsection"
+import Head from "next/head"
 
 interface BlogData {
   title: string;
@@ -34,41 +33,39 @@ interface BlogData {
   updatedAt: string;
 }
 
-interface FormSectionData {
-  formatData: {
-    formsection: any;
-  }[];
-}
+// interface FormSectionData {
+//   formatData: {
+//     formsection: any;
+//   }[];
+// }
 
 const BlogPage: React.FC = () => {
-  const param = useParams();
-  const searchParams = useSearchParams();
-  const [data, setData] = useState<BlogData | null>(null);
-  const [formData, setFormData] = useState<any>(null);
+  const param = useParams()
+  const searchParams = useSearchParams()
+  const [data, setData] = useState<BlogData | null>(null)
+  const [formData, setFormData] = useState<any>(null)
 
-  const isPreview = searchParams.get("preview") === "true";
+  const isPreview = searchParams.get("preview") === "true"
 
   const apiCall = async (slug: string | string[]) => {
     try {
-      let hashId = searchParams.get("id");
-      const url = isPreview
-        ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
-        : `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`;
+      const hashId = searchParams.get("id")
+      const url = isPreview ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}` : `${process.env.NEXT_PUBLIC_API_URL || ""}blog/getBySlug/${slug}`
 
       const res = await axios.get(url, {
         headers: {
-          referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-        },
-      });
-      if(isPreview){
-        setData(res.data.data.data);
-        return;
+          referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+        }
+      })
+      if (isPreview) {
+        setData(res.data.data.data)
+        return
       }
-      setData(res.data.data);
+      setData(res.data.data)
     } catch (error) {
-      console.error("Error fetching blog data:", error);
+      console.error("Error fetching blog data:", error)
     }
-  };
+  }
 
   const apiCallForm = async (param: any) => {
     try {
@@ -76,34 +73,34 @@ const BlogPage: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-          },
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+          }
         }
-      );
-      setFormData(res.data.data.formatData[0]);
+      )
+      setFormData(res.data.data.formatData[0])
     } catch (error) {
-      console.error("Error fetching data:", error);
-      return null;
+      console.error("Error fetching data:", error)
+      return null
     }
-  };
+  }
 
   useEffect(() => {
     if (param?.page) {
-      apiCall(param.page);
+      apiCall(param.page)
     }
-  }, [param]);
+  }, [param])
 
   useEffect(() => {
-    apiCallForm("blogs");
-  }, []);
+    apiCallForm("blogs")
+  }, [])
 
   return (
     <>
       <Head>
-        <title>{!!data ? data.title : ""}</title>
-        <meta name="title" content={!!data ? data.metaTitle : ""} />
-        <meta name="description" content={!!data ? data.metaDescription : ""} />
-        <meta name="keywords" content={!!data ? data.metaKeywords : ""} />
+        <title>{data ? data.title : ""}</title>
+        <meta name="title" content={data ? data.metaTitle : ""} />
+        <meta name="description" content={data ? data.metaDescription : ""} />
+        <meta name="keywords" content={data ? data.metaKeywords : ""} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -192,7 +189,7 @@ const BlogPage: React.FC = () => {
         </section>
       )}
     </>
-  );
-};
+  )
+}
 
-export default BlogPage;
+export default BlogPage

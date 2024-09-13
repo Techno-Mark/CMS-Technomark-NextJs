@@ -1,36 +1,36 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./techbenifits.module.css";
-import TitleSection from "@/components/common/title/title";
-import Button from "@/components/common/button/button";
+import React from "react"
+import Image from "next/image"
+import styles from "./techbenifits.module.css"
+import TitleSection from "@/components/common/title/title"
+import Button from "@/components/common/button/button"
 
-interface BenefitProps {
-  image: {
-    src: string;
-    alt: string;
-  };
-  text: string;
-}
+// interface BenefitProps {
+//   image: {
+//     src: string;
+//     alt: string;
+//   };
+//   text: string;
+// }
 
 interface TechBenefitsProps {
   props: any;
 }
 
 const TechBenefits: React.FC<TechBenefitsProps> = ({ props }) => {
-  const title = props?.title || "";
-  const subTitle = props?.subTitle || "";
-  const heroImage = props?.heroImage || "";
-  const benefits = props?.benefits || [];
-  const buttonText = props?.buttonText || "";
-  const buttonUrl = props?.buttonUrl || "#";
+  const title = props?.title || ""
+  const subTitle = props?.subTitle || ""
+  const heroImage = props?.heroImage || ""
+  const benefits = props?.benefits || []
+  const buttonText = props?.buttonText || ""
+  const buttonUrl = props?.buttonUrl || "#"
   return (
     <div className={`container mx-auto ${styles.benifitContainer}`}>
       <div className="flex flex-wrap items-center">
         <div className={`w-full md:w-1/2 ${styles.benifitdetails}`}>
           <TitleSection
             sectionData={{
-              title: title,
-              subtitle: subTitle,
+              title,
+              subtitle: subTitle
             }}
             titleClassName="techbenifitstitle"
           />
@@ -47,12 +47,12 @@ const TechBenefits: React.FC<TechBenefitsProps> = ({ props }) => {
               {benefits.map((benefit: any, index: number) => (
                 <div key={index} className={styles.benefitListItem}>
                   <Image
-                    src={!!benefit.image ? benefit.image : ""}
+                    src={benefit.image ? benefit.image : ""}
                     alt=""
                     width={36}
                     height={36}
                   />
-                  <p>{!!benefit.text ? benefit.text : ""}</p>
+                  <p>{benefit.text ? benefit.text : ""}</p>
                 </div>
               ))}
             </div>
@@ -60,7 +60,7 @@ const TechBenefits: React.FC<TechBenefitsProps> = ({ props }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechBenefits;
+export default TechBenefits

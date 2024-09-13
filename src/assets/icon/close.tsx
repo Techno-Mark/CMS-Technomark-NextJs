@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 interface CloseProps {
     className?: string;
@@ -6,7 +6,7 @@ interface CloseProps {
 }
 
 const Close: React.FC<CloseProps> = ({ className, color = "#1D3557" }) => {
-    return (
+  return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="34"
@@ -30,7 +30,7 @@ const Close: React.FC<CloseProps> = ({ className, color = "#1D3557" }) => {
                 strokeLinejoin="round"
             />
         </svg>
-    );
-};
+  )
+}
 
-export default Close;
+export default Close

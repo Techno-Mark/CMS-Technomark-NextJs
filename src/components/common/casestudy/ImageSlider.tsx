@@ -1,21 +1,21 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
-import styles from "./imageslider.module.css";
+import React, { useRef } from "react"
+import Slider from "react-slick"
+import styles from "./imageslider.module.css"
 
 const ImageSlider = ({
   images,
   setDetailedOpen,
   setDetailedImagesUrl,
-  large = false,
+  large = false
 }: {
   images: string[];
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
   large?: boolean;
 }) => {
-  const image_slider = useRef(null);
+  const imageSlider = useRef(null)
 
-  const img_slider_settings = {
+  const imgSliderSettings = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
@@ -33,18 +33,17 @@ const ImageSlider = ({
       },
     ],
   };
-
   return (
     <div className={large ? styles.sliderContainer2 : styles.sliderContainer1}>
-      <Slider ref={image_slider} {...img_slider_settings}>
+      <Slider ref={imageSlider} {...imgSliderSettings}>
         {images.map((item, i: number) => (
           <div className={styles.imageSlide} key={i}>
             <img width={large ? 600 : 500} src={item} alt="" />
             <div
               className={styles.overlay}
               onClick={() => {
-                setDetailedOpen(true);
-                setDetailedImagesUrl(images);
+                setDetailedOpen(true)
+                setDetailedImagesUrl(images)
               }}
             >
               <img src="/images/maximize-4.svg" alt="maximize" />
@@ -53,7 +52,7 @@ const ImageSlider = ({
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ImageSlider;
+export default ImageSlider

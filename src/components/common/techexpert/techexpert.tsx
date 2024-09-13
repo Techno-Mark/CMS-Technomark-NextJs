@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./techexpert.module.css";
-import TitleSection from "@/components/common/title/title";
+import React from "react"
+import Image from "next/image"
+import styles from "./techexpert.module.css"
+import TitleSection from "@/components/common/title/title"
 
 interface TechExpertProps {
   props: any;
@@ -10,19 +10,19 @@ interface TechExpertProps {
 
 const TechExpert: React.FC<TechExpertProps> = ({
   props,
-  istechstartupexpert,
+  istechstartupexpert
 }) => {
-  const title = props?.title || "";
-  const image = props?.image || "";
-  const expertiseList = props?.expertiseList || [];
+  const title = props?.title || ""
+  const image = props?.image || ""
+  const expertiseList = props?.expertiseList || []
   return (
     <div className={`container mx-auto ${styles.expertContainer}`}>
       <div className="flex flex-wrap sm:flex-row flex-col">
         <div className={`w-full md:w-1/2 ${styles.expertdetails}`}>
           <TitleSection
             sectionData={{
-              title: title,
-              subtitle: "",
+              title,
+              subtitle: ""
             }}
             titleClassName="techexperttitle"
             singleLine={true}
@@ -37,9 +37,7 @@ const TechExpert: React.FC<TechExpertProps> = ({
               <div
                 key={index}
                 className={
-                  istechstartupexpert
-                    ? styles.techstartupbox
-                    : styles.expertlistbox
+                  istechstartupexpert ? styles.techstartupbox : styles.expertlistbox
                 }
               >
                 {istechstartupexpert ? (
@@ -64,7 +62,7 @@ const TechExpert: React.FC<TechExpertProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechExpert;
+export default TechExpert

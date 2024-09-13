@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./productsolutions.module.css";
-import Image from "next/image";
+import React from "react"
+import styles from "./productsolutions.module.css"
+import Image from "next/image"
 
 interface ListItem {
   text?: string;
@@ -16,8 +16,8 @@ interface ProductSolutionsProps {
 }
 
 const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
-  const image = props?.image || "";
-  const listItems = !!props.listItems ? props.listItems : [];
+  const image = props?.image || ""
+  const listItems = props.listItems ? props.listItems : []
 
   return (
     <div className="flex flex-wrap items-center">
@@ -47,7 +47,7 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductSolutions;
+export default ProductSolutions

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import styles from "./blogDescription.module.css";
-import Link from "next/link";
+import React from "react"
+import styles from "./blogDescription.module.css"
+import Link from "next/link"
 
 interface BlogDescProps {
   description: string;
@@ -35,7 +35,7 @@ const BlogDescription: React.FC<{ props: BlogDescProps }> = ({ props }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogDescription;
+export default BlogDescription
