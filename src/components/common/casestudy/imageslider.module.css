@@ -75,6 +75,15 @@
   .sliderContainer img {
     width: 340px;
   }
+  
+  .sliderContainer2 {
+    height: 200px;
+  }
+
+  .imageSlide img {
+    position: relative;
+    width: 350px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -86,6 +95,15 @@
   .sliderContainer img {
     width: 280px;
   }
+  
+  .sliderContainer2 {
+    height: 170px;
+  }
+
+  .imageSlide img {
+    position: relative;
+    width: 300px;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -96,5 +114,14 @@
 
   .sliderContainer img {
     width: 230px;
+  }
+  
+  .sliderContainer2 {
+    height: 143px;
+  }
+
+  .imageSlide img {
+    position: relative;
+    width: 250px;
   }
 }
