@@ -1,10 +1,11 @@
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import axios from "axios";
-import DataComponent from "./DataComponent";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Head from "next/head";
-import Popup from "@/components/popup/popup";
+import React from "react"
+import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import axios from "axios"
+import DataComponent from "./DataComponent"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Head from "next/head"
+import Popup from "@/components/popup/popup"
 
 interface HomeProps {
   data: any;

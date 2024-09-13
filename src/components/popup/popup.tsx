@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Button from "@/components/common/button/button";
-import styles from "./popup.module.css";
-import { useRouter } from "next/router";
-import { formatEventDate } from "@/utils/commonFunction";
-
-let supportedPopupTypes = ["Event"];
+import React, { useEffect, useState } from "react"
+import Image from "next/image"
+import Button from "@/components/common/button/button"
+import styles from "./popup.module.css"
+import { useRouter } from "next/router"
+import { formatEventDate } from "@/utils/commonFunction"
 
 const Popup = ({ popupData }: any) => {
-  popupData = popupData[0];
-  if (!popupData) return;
-
-  const [isVisible, setIsVisible] = useState(false);
-  const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
-    let frequency = popupData?.frequency;
-    let delay = popupData?.delay;
+    const frequency = popupData?.frequency
+    const delay = popupData?.delay
 
-    const shownCount = sessionStorage.getItem("popupShownCount") || "0";
-    const parsedCount = parseInt(shownCount, 10);
+    const shownCount = sessionStorage.getItem("popupShownCount") || "0"
+    const parsedCount = parseInt(shownCount, 10)
 
     if (parsedCount < frequency) {
       const timer = setTimeout(() => {
-        setIsVisible(true);
+        setIsVisible(true)
 
-        sessionStorage.setItem("popupShownCount", (parsedCount + 1).toString());
-      }, delay);
+        sessionStorage.setItem("popupShownCount", (parsedCount + 1).toString())
+      }, delay)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [router.asPath]);
+  }, [router.asPath])
+
+  popupData = popupData[0]
+  if (!popupData) return
 
   const handleClose = () => {
-    setIsVisible(false);
-  };
+    setIsVisible(false)
+  }
 
-  if (!isVisible || !popupData) return null;
+  if (!isVisible || !popupData) return null
 
   if (popupData.popupType === "Event") {
     return (
@@ -54,23 +52,9 @@ const Popup = ({ popupData }: any) => {
             <div
               className={styles.popupcontainer}
               style={{
-                backgroundImage: `url(https://crm-stageapi.pacificabs.com:3004/${popupData?.image})`,
+                backgroundImage: `url(${popupData?.image})`
               }}
             >
-              <div className={styles.popupheader}>
-                <Image
-                  src={popupData?.headerLeftIcon}
-                  alt="SEAMLESS EU"
-                  width={200}
-                  height={100}
-                />
-                <Image
-                  src={popupData?.headerRightIcon}
-                  alt="TM Logo"
-                  width={200}
-                  height={100}
-                />
-              </div>
               <div className={styles.popupdetails}>
                 <h2>{popupData?.eventTitle}</h2>
                 <h1>{popupData?.heading}</h1>
@@ -109,8 +93,8 @@ const Popup = ({ popupData }: any) => {
           </div>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
-export default Popup;
+export default Popup
