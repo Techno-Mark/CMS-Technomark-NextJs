@@ -1,11 +1,11 @@
-import React from "react";
-import dynamic from "next/dynamic";
-import styles from "./typeingtexts.module.css";
+import React from "react"
+import dynamic from "next/dynamic"
+import styles from "./typeingtexts.module.css"
 
 const Typewriter = dynamic(
   () => import("nextjs-simple-typewriter").then((mod) => mod.Typewriter),
   { ssr: false }
-);
+)
 
 interface TypeingTextsProps {
   props: string[];
@@ -18,7 +18,7 @@ const TypeingTexts: React.FC<TypeingTextsProps> = ({ props }) => {
         <Typewriter words={props} loop={0} />
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default TypeingTexts;
+export default TypeingTexts

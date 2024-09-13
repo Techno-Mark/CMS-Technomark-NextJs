@@ -1,8 +1,8 @@
-import React from "react";
-import homeStyles from "./homesection.module.css";
-import Image from "next/image";
-import TypeingTexts from "@/components/common/typeingtexts/TypeingTexts";
-import Button from "@/components/common/button/button";
+import React from "react"
+import homeStyles from "./homesection.module.css"
+import Image from "next/image"
+import TypeingTexts from "@/components/common/typeingtexts/TypeingTexts"
+import Button from "@/components/common/button/button"
 
 interface HomeSectionProps {
   sectionData?: any;
@@ -15,14 +15,14 @@ const HomeSection: React.FC<HomeSectionProps> = ({
   sectionData,
   scrollToSection,
   formSectionRef,
-  techSectionRef,
+  techSectionRef
 }) => {
-  const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4";
-  const headingText = sectionData.headingText ?? "";
-  const ctaText = sectionData.ctaText ?? "";
+  const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4"
+  const headingText = sectionData.headingText ?? ""
+  const ctaText = sectionData.ctaText ?? ""
   const servicesChangeText =
     sectionData?.servicesChargeText.map((entry: any) => entry.headingText) ??
-    [];
+    []
 
   return (
     <section className={homeStyles.newhomesection} id="new-home-section">
@@ -54,7 +54,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default HomeSection;
+export default HomeSection

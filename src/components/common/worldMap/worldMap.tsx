@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./WorldMap.module.css";
+import React from "react"
+import Image from "next/image"
+import styles from "./WorldMap.module.css"
 
 interface WorldMapProps {
   props: any;
 }
 
 const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
-  const mapData = props?.data || [];
+  const mapData = props?.data || []
   return (
     <section className={`${styles.mapsection} ${styles.paddtb}`}>
       <div className={styles.mapContainer}>
@@ -42,7 +42,7 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
             <div className={`text-left ${styles.titletext}`}>
               <h2
                 dangerouslySetInnerHTML={{
-                  __html: !!props.title ? props.title : "",
+                  __html: props.title ? props.title : ""
                 }}
               />
             </div>
@@ -56,23 +56,23 @@ const WorldMap: React.FC<WorldMapProps> = ({ props }) => {
             >
               <div className={`${styles.inlinecity}`}>
                 <Image
-                  src={!!location.icon ? location.icon : ""}
-                  alt={`${!!location.country ? location.country : ""}-flag`}
+                  src={location.icon ? location.icon : ""}
+                  alt={`${location.country ? location.country : ""}-flag`}
                   height={35}
                   width={35}
                 />
                 <h3>
-                  {!!location.city ? location.city : ""},
-                  {!!location.country ? location.country : ""}
+                  {location.city ? location.city : ""},
+                  {location.country ? location.country : ""}
                 </h3>
               </div>
-              <p>{!!location.address ? location.address : ""}</p>
+              <p>{location.address ? location.address : ""}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default WorldMap;
+export default WorldMap

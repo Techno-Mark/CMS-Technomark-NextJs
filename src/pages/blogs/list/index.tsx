@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from "react";
-import styles from "./home.module.css";
-import TitleSection from "@/components/common/title/title";
-import BlogList from "./blogList/BlogList";
-import axios from "axios";
-import FormSection from "@/components/common/formsection/formsection";
-import Head from "next/head";
+import React, { useEffect, useState } from "react"
+import styles from "./home.module.css"
+import TitleSection from "@/components/common/title/title"
+import BlogList from "./blogList/BlogList"
+import axios from "axios"
+import FormSection from "@/components/common/formsection/formsection"
+import Head from "next/head"
 
 interface FormSectionData {
   formsection: any;
@@ -18,8 +18,8 @@ interface ApiResponse {
 }
 
 const Index: React.FC = () => {
-  const [data, setData] = useState<any>(null);
-  const [formData, setFormData] = useState<any>(null);
+  const [data, setData] = useState<any>(null)
+  const [formData, setFormData] = useState<any>(null)
 
   const apiCallForm = async (param: string) => {
     try {
@@ -27,28 +27,28 @@ const Index: React.FC = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-          },
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+          }
         }
-      );
-      setData(res.data.data);
-      setFormData(res.data.data.formatData[0]);
+      )
+      setData(res.data.data)
+      setFormData(res.data.data.formatData[0])
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error)
     }
-  };
+  }
 
   useEffect(() => {
-    apiCallForm("blogs");
-  }, []);
+    apiCallForm("blogs")
+  }, [])
 
   return (
     <>
       <Head>
-        <title>{!!data ? data.title : ""}</title>
-        <meta name="title" content={!!data ? data.metaTitle : ""} />
-        <meta name="description" content={!!data ? data.metaDescription : ""} />
-        <meta name="keywords" content={!!data ? data.metaKeywords : ""} />
+        <title>{data ? data.title : ""}</title>
+        <meta name="title" content={data ? data.metaTitle : ""} />
+        <meta name="description" content={data ? data.metaDescription : ""} />
+        <meta name="keywords" content={data ? data.metaKeywords : ""} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -59,7 +59,7 @@ const Index: React.FC = () => {
             sectionData={{
               title: "Blogs & News",
               subtitle:
-                "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!",
+                "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!"
             }}
             titleFirst={true}
             titleClassName="casestudylisttitle"
@@ -75,7 +75,7 @@ const Index: React.FC = () => {
         </section>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

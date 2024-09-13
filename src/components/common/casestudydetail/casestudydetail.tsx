@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./casestudydetail.module.css";
-import Image from "next/image";
+import React from "react"
+import styles from "./casestudydetail.module.css"
+import Image from "next/image"
 
 interface BenefitItem {
   icon?: string;
@@ -13,30 +13,30 @@ interface PerformanceItem {
   description?: string;
 }
 
-interface CaseStudyDetailProps {
-  label: string;
-  title: string;
-  benefits: BenefitItem[];
-  subTitle: string;
-  performances: PerformanceItem[];
-  performanceImage: string;
-}
+// interface CaseStudyDetailProps {
+//   label: string;
+//   title: string;
+//   benefits: BenefitItem[];
+//   subTitle: string;
+//   performances: PerformanceItem[];
+//   performanceImage: string;
+// }
 
 const CaseStudyDetail = ({ data }: any) => {
-  const firstItem = data || {};
+  const firstItem = data || {}
 
-  const benefits = firstItem.benefits || [];
-  const performances = firstItem.performances || [];
-  const performanceImage = firstItem.performanceImage || "";
+  const benefits = firstItem.benefits || []
+  const performances = firstItem.performances || []
+  const performanceImage = firstItem.performanceImage || ""
 
   return (
     <div className="case-study-detail">
       <div className={styles.resourcestripe}>
         <ul className="flex flex-wrap justify-center items-center">
           {benefits.map((benefitItem: BenefitItem, index: number) => {
-            const icon = benefitItem?.icon || "";
-            const label = benefitItem?.label || "";
-            const value = benefitItem?.value || "";
+            const icon = benefitItem?.icon || ""
+            const label = benefitItem?.label || ""
+            const value = benefitItem?.value || ""
 
             return (
               <li
@@ -51,7 +51,7 @@ const CaseStudyDetail = ({ data }: any) => {
                 <b>{label}</b>
                 <p>{value}</p>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
@@ -60,8 +60,8 @@ const CaseStudyDetail = ({ data }: any) => {
           <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
             {performances.map(
               (performanceItem: PerformanceItem, index: number) => {
-                const title = performanceItem?.title || "";
-                const description = performanceItem?.description || "";
+                const title = performanceItem?.title || ""
+                const description = performanceItem?.description || ""
 
                 return (
                   <div
@@ -75,7 +75,7 @@ const CaseStudyDetail = ({ data }: any) => {
                       <p className="text-center">{description}</p>
                     </div>
                   </div>
-                );
+                )
               }
             )}
           </div>
@@ -94,7 +94,7 @@ const CaseStudyDetail = ({ data }: any) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CaseStudyDetail;
+export default CaseStudyDetail

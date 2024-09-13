@@ -1,7 +1,8 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import styles from "./menulink.module.css";
+"use client"
+import React from 'react'
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import styles from "./menulink.module.css"
 
 interface MenuItem {
   name: string;
@@ -13,8 +14,8 @@ interface MenuLinkProps {
 }
 
 const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
-  const pathname = usePathname();
-  const isActive = pathname === item.link;
+  const pathname = usePathname()
+  const isActive = pathname === item.link
   return (
     <Link
       href={item.link}
@@ -25,7 +26,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
     >
       {item.name}
     </Link>
-  );
-};
+  )
+}
 
-export default MenuLink;
+export default MenuLink

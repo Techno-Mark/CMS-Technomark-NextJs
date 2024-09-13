@@ -1,22 +1,22 @@
-import React from "react";
-import techStyles from "./techstartupbg.module.css";
-import Image from "next/image";
-import Button from "../common/button/button";
+import React from "react"
+import techStyles from "./techstartupbg.module.css"
+import Image from "next/image"
+import Button from "../common/button/button"
 
 interface TechStartupBgProps {
   sectionData: any;
 }
 
 const TechStartupBg: React.FC<TechStartupBgProps> = ({
-  sectionData = { title: "", subTitle: "", isCaseStudy: false },
+  sectionData = { title: "", subTitle: "", isCaseStudy: false }
 }) => {
-  const isCaseStudy = sectionData?.isCaseStudy == "true";
-  const title = sectionData?.title ?? "";
-  const subTitle = sectionData?.subTitle ?? "";
+  const isCaseStudy = sectionData?.isCaseStudy == "true"
+  const title = sectionData?.title ?? ""
+  const subTitle = sectionData?.subTitle ?? ""
 
   const containerClassNames = `bg-white flex flex-wrap ${
     techStyles.techsubcontainer
-  } ${isCaseStudy ? `flex-col ${techStyles.techcasestudycontainer}` : ""}`;
+  } ${isCaseStudy ? `flex-col ${techStyles.techcasestudycontainer}` : ""}`
 
   return (
     <section
@@ -54,7 +54,7 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
                 <p
                   className={`sub-title !text-center ${techStyles.subtitle}`}
                   dangerouslySetInnerHTML={{
-                    __html: !!subTitle ? subTitle : "",
+                    __html: subTitle || ""
                   }}
                 />
               </div>
@@ -83,7 +83,7 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TechStartupBg;
+export default TechStartupBg

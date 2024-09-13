@@ -1,7 +1,7 @@
 export const convertDate = (dateString: any) => {
-  const [day, month, year] = dateString.split("/");
+  const [day, month, year] = dateString.split("/")
 
-  const date = new Date(`${year}-${month}-${day}`);
+  const date = new Date(`${year}-${month}-${day}`)
 
   const monthNames = [
     "Jan",
@@ -15,16 +15,16 @@ export const convertDate = (dateString: any) => {
     "Sep",
     "Oct",
     "Nov",
-    "Dec",
-  ];
+    "Dec"
+  ]
 
-  return `${day} ${monthNames[date.getMonth()]} ${year}`;
-};
+  return `${day} ${monthNames[date.getMonth()]} ${year}`
+}
 
 export const convertDetails1Date = (dateString: string): string => {
-  const [day, month, year] = dateString.split("/");
+  const [day, month, year] = dateString.split("/")
 
-  const date = new Date(`${year}-${month}-${day}`);
+  const date = new Date(`${year}-${month}-${day}`)
 
   const monthNames = [
     "January",
@@ -38,33 +38,33 @@ export const convertDetails1Date = (dateString: string): string => {
     "September",
     "October",
     "November",
-    "December",
-  ];
+    "December"
+  ]
 
   const getDaySuffix = (day: number): string => {
-    if (day > 3 && day < 21) return "th";
+    if (day > 3 && day < 21) return "th"
     switch (day % 10) {
       case 1:
-        return "st";
+        return "st"
       case 2:
-        return "nd";
+        return "nd"
       case 3:
-        return "rd";
+        return "rd"
       default:
-        return "th";
+        return "th"
     }
-  };
+  }
 
-  const dayNumber = parseInt(day, 10);
-  const daySuffix = getDaySuffix(dayNumber);
+  const dayNumber = parseInt(day, 10)
+  const daySuffix = getDaySuffix(dayNumber)
 
-  return `${dayNumber}${daySuffix} ${monthNames[date.getMonth()]}, ${year}`;
-};
+  return `${dayNumber}${daySuffix} ${monthNames[date.getMonth()]}, ${year}`
+}
 
 export const convertDetails2Date = (dateString: string): string => {
-  const [day, month, year] = dateString.split("/");
+  const [day, month, year] = dateString.split("/")
 
-  const date = new Date(`${year}-${month}-${day}`);
+  const date = new Date(`${year}-${month}-${day}`)
 
   const monthNames = [
     "January",
@@ -78,10 +78,10 @@ export const convertDetails2Date = (dateString: string): string => {
     "September",
     "October",
     "November",
-    "December",
-  ];
+    "December"
+  ]
 
-  const formattedDay = day.padStart(2, "0");
+  const formattedDay = day.padStart(2, "0")
 
-  return `${monthNames[date.getMonth()]} ${formattedDay}, ${year}`;
-};
+  return `${monthNames[date.getMonth()]} ${formattedDay}, ${year}`
+}

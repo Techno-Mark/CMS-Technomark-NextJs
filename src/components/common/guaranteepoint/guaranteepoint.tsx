@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import styles from "./GuaranteePoints.module.css";
+import Image from "next/image"
+import React from "react"
+import styles from "./GuaranteePoints.module.css"
 
 interface PointItem {
   title: string;
@@ -14,7 +14,7 @@ interface GuaranteePointsProps {
 
 const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
   props,
-  isProblemStatement,
+  isProblemStatement
 }) => {
   return (
     <>
@@ -40,13 +40,13 @@ const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
           <p
             className={styles.description}
             dangerouslySetInnerHTML={{
-              __html: point.description || "",
+              __html: point.description || ""
             }}
           />
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default GuaranteePoints;
+export default GuaranteePoints

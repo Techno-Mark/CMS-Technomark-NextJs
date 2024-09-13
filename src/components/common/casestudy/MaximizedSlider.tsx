@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
+import React, { useEffect, useRef, useState } from "react"
+import Slider from "react-slick"
 
 function Slider1NextArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { onClick } = props
   return (
     <div
       className={`cursor-pointer absolute top-1/2 right-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
@@ -10,11 +10,11 @@ function Slider1NextArrow(props: any) {
     >
       <img src="/images/Arrow-slideright.png" alt="" />
     </div>
-  );
+  )
 }
 
 function Slider1PrevArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { onClick } = props
   return (
     <div
       className={`cursor-pointer absolute top-1/2 left-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
@@ -22,39 +22,39 @@ function Slider1PrevArrow(props: any) {
     >
       <img src="/images/Arrow-slideleft.png" alt="" />
     </div>
-  );
+  )
 }
 
 function Slider2NextArrow(props: any) {
-  const { className, style, onClick } = props;
-  return <div className={`hidden`}></div>;
+  // const { className, style, onClick } = props
+  return <div className={`hidden`}></div>
 }
 
 function Slider2PrevArrow(props: any) {
-  const { className, style, onClick } = props;
-  return <div className={`hidden`}></div>;
+  // const { className, style, onClick } = props
+  return <div className={`hidden`}></div>
 }
 
 const MaximizedSlider = ({
   isOpen,
   images,
-  onClose,
+  onClose
 }: {
   isOpen: boolean;
   images: string[];
   onClose: () => void;
 }) => {
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
-  let sliderRef1 = useRef(null);
-  let sliderRef2 = useRef(null);
+  const [nav1, setNav1] = useState()
+  const [nav2, setNav2] = useState()
+  const sliderRef1 = useRef(null)
+  const sliderRef2 = useRef(null)
 
   useEffect(() => {
     if (sliderRef1.current && sliderRef2.current) {
-      setNav1(sliderRef1.current);
-      setNav2(sliderRef2.current);
+      setNav1(sliderRef1.current)
+      setNav2(sliderRef2.current)
     }
-  }, []);
+  }, [])
 
   const slider1Settings = {
     infinite: true,
@@ -64,23 +64,23 @@ const MaximizedSlider = ({
     autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <Slider1NextArrow />,
-    prevArrow: <Slider1PrevArrow />,
-  };
+    prevArrow: <Slider1PrevArrow />
+  }
 
   const slider2Settings = {
     slidesToShow: images.length,
     nextArrow: <Slider2NextArrow />,
-    prevArrow: <Slider2PrevArrow />,
-  };
+    prevArrow: <Slider2PrevArrow />
+  }
 
   const handleSlideClick = (index: number) => {
     // Use slickGoTo to navigate to the clicked slide in the first slider
     if (sliderRef1.current) {
-      (sliderRef1.current as any).slickGoTo(index);
+      (sliderRef1.current as any).slickGoTo(index)
     }
-  };
+  }
 
-  if (isOpen)
+  if (isOpen) {
     return (
       <div className="fixed top-0 left-0 bg-[#000000e6] !h-[100%] !w-[100%] z-[999] ">
         <div className="">
@@ -117,7 +117,8 @@ const MaximizedSlider = ({
           </div>
         </div>
       </div>
-    );
-};
+    )
+  }
+}
 
-export default MaximizedSlider;
+export default MaximizedSlider

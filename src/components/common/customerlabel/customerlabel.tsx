@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import styles from "./customerlabel.module.css";
+import React, { useEffect, useState } from "react"
+import Image from "next/image"
+import styles from "./customerlabel.module.css"
 
 const CustomerLabel: React.FC = () => {
-  const [isWhiteSidebar, setIsWhiteSidebar] = useState(false);
+  const [isWhiteSidebar, setIsWhiteSidebar] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsWhiteSidebar(window.scrollY >= window.innerHeight);
-    };
+      setIsWhiteSidebar(window.scrollY >= window.innerHeight)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <div
       className={`${styles.customerfixedlabel}
@@ -30,7 +30,7 @@ const CustomerLabel: React.FC = () => {
         height={48}
       />
     </div>
-  );
-};
+  )
+}
 
-export default CustomerLabel;
+export default CustomerLabel

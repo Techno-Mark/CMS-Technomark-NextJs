@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./title.module.css";
+import React from "react"
+import styles from "./title.module.css"
 
 interface SectionData {
   title?: string;
@@ -18,10 +18,10 @@ const TitleSection: React.FC<TitleSectionProps> = ({
   sectionData = { title: "", subtitle: "", subDesc: "" },
   titleFirst = true,
   titleClassName = "",
-  singleLine = false,
+  singleLine = false
 }) => {
-  const dynamicClassName = titleClassName ? styles[titleClassName] : "";
-  const singleLineClass = singleLine ? styles.singleLine : "";
+  const dynamicClassName = titleClassName ? styles[titleClassName] : ""
+  const singleLineClass = singleLine ? styles.singleLine : ""
 
   return (
     <div
@@ -59,7 +59,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default TitleSection;
+export default TitleSection

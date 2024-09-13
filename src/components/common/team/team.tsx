@@ -1,8 +1,9 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import styles from "./team.module.css";
-import Image from "next/image";
+import React from 'react'
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import styles from "./team.module.css"
+import Image from "next/image"
 
 interface TeamItem {
   name?: string;
@@ -25,21 +26,21 @@ const Team: React.FC<TestimonialsProps> = ({ props }) => {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1.1,
-        },
-      },
-    ],
-  };
+          slidesToShow: 1.1
+        }
+      }
+    ]
+  }
 
   return (
     <div className={styles.clientcontainer}>
       <Slider {...settings}>
         {props.map((clientData, index) => {
-          const items = clientData;
-          const name = items?.name || "";
-          const testimonial = items?.description || "";
-          const designation = items?.position || "";
-          const profileImage = items?.profileImage || "";
+          const items = clientData
+          const name = items?.name || ""
+          const testimonial = items?.description || ""
+          const designation = items?.position || ""
+          const profileImage = items?.profileImage || ""
 
           return (
             <div className={styles.clientslideinner} key={index}>
@@ -61,11 +62,11 @@ const Team: React.FC<TestimonialsProps> = ({ props }) => {
                 )}
               </div>
             </div>
-          );
+          )
         })}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default Team;
+export default Team

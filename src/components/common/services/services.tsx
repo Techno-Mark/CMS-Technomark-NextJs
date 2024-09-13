@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./services.module.css";
-import Image from "next/image";
+import React from "react"
+import styles from "./services.module.css"
+import Image from "next/image"
 
 interface ServiceItem {
   icon?: string;
@@ -22,37 +22,37 @@ const Services: React.FC<ServicesProps> = ({
   isFeatured = false,
   isProduct = false,
   istechservice = false,
-  iscontactservice = false,
+  iscontactservice = false
 }) => {
-  const services = props || [];
-  const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4;
-  const totalItems = services.length;
+  const services = props || []
+  const columns = isFeatured ? 5 : isProduct || istechservice ? 3 : 4
+  const totalItems = services.length
 
   const getClassName = () => {
-    if (isFeatured) return styles.featureservices;
-    if (isProduct) return styles.productservices;
-    if (istechservice) return styles.techservices;
-    return styles.simpleservices;
-  };
+    if (isFeatured) return styles.featureservices
+    if (isProduct) return styles.productservices
+    if (istechservice) return styles.techservices
+    return styles.simpleservices
+  }
 
   const getColumnClass = () => {
-    if (columns === 5) return `w-1/2 md:w-1/5 ${styles.responsiveFiveBottomBorder}`;
-    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4";
-    if (columns === 3) return "w-full md:w-1/3";
-  };
+    if (columns === 5) return `w-1/2 md:w-1/5 ${styles.responsiveFiveBottomBorder}`
+    if (columns === 4) return "w-full md:w-1/2 lg:w-1/4"
+    if (columns === 3) return "w-full md:w-1/3"
+  }
 
   const isLastRow = (index: number) =>
-    index >= totalItems - (totalItems % columns || columns);
-  const isLastColumn = (index: number) => (index + 1) % columns === 0;
+    index >= totalItems - (totalItems % columns || columns)
+  const isLastColumn = (index: number) => (index + 1) % columns === 0
   // const itemsInLastRow = totalItems % columns || columns;
 
   return (
     <div className={`flex flex-wrap ${getClassName()}`}>
       {services.map((service, index) => {
-        const icon = service?.icon || "";
-        const text = service?.text || "";
-        const description = service?.description || "";
-        const alt = service?.alt || "";
+        const icon = service?.icon || ""
+        const text = service?.text || ""
+        const description = service?.description || ""
+        const alt = service?.alt || ""
 
         return (
           <div
@@ -95,14 +95,14 @@ const Services: React.FC<ServicesProps> = ({
                     <div className={styles.moresection}>
                       <a href="#">read more</a>
                     </div>
-                  )}
+                )}
               </div>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

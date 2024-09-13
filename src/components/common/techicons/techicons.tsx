@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import styles from "./techicons.module.css";
+import Image from "next/image"
+import React from "react"
+import styles from "./techicons.module.css"
 
 interface TechIcon {
   src: string;
@@ -28,11 +28,11 @@ const TechIcons: React.FC<TechIconProps> = ({ data }) => {
               />
               <p>{tech.title}</p>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default TechIcons;
+export default TechIcons

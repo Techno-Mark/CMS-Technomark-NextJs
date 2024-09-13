@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./achievement.module.css";
+import React from "react"
+import styles from "./achievement.module.css"
 
 interface AchievementProps {
   data: {
@@ -19,10 +19,10 @@ const Achievement: React.FC<AchievementProps> = ({ data }) => {
               <p>{achievement?.title ?? ""}</p>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Achievement;
+export default Achievement

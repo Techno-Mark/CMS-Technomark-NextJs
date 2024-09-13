@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./projectButton.module.css";
+import React from "react"
+import styles from "./projectButton.module.css"
 
 interface ProjectButtonProps {
   onClick: () => void;
@@ -10,7 +10,7 @@ interface ProjectButtonProps {
 const ProjectButton: React.FC<ProjectButtonProps> = ({
   onClick,
   className = "",
-  buttonText = "START A NEW PROJECT",
+  buttonText = "START A NEW PROJECT"
 }) => {
   return (
     <button
@@ -20,7 +20,7 @@ const ProjectButton: React.FC<ProjectButtonProps> = ({
     >
       {buttonText}
     </button>
-  );
-};
+  )
+}
 
-export default ProjectButton;
+export default ProjectButton
