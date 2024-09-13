@@ -11,7 +11,7 @@
 .methodology :global(.title-section p) {
   width: 70%;
   margin: 0 auto 3.8rem;
-  /* opacity: 0.7; */
+  opacity: 0.7;
 }
 
 .coreservices {
@@ -264,19 +264,21 @@
 }
 
 .casestudydetailherosection :global(.title-section h2) {
-  margin-bottom: 2rem;
+  margin-bottom: 0 !important;
   color: var(--white-color) !important;
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: 700;
-  line-height: inherit;
+  line-height: 50px;
+  margin-top: 4rem;
+  padding: 0 15% !important;
 }
 
 .casestudydetailherosection :global(.title-section p) {
-  margin: 0 auto 5rem;
+  margin: 2rem auto 0;
   max-width: 75%;
   color: var(--white-color);
-  font-size: 1.25rem;
-  line-height: inherit;
+  font-size: 22px;
+  line-height: 40px;
 }
 
 .casestudydetaillabel {
@@ -468,12 +470,14 @@
   .productsolutions {
     padding: 1rem 0;
   }
+
   .guaranteetmsection .videoarea {
     padding-bottom: 20px;
   }
 
   .casestudylist :global(.title-section p),
   .casestudydetailherosection :global(.title-section p) {
+    margin: 2rem auto 0;
     max-width: 90%;
   }
 
@@ -541,9 +545,37 @@
   .clientspeaksection :global(.title-section p),
   .methodology :global(.title-section p) {
     width: 100%;
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    line-height: 2.33rem;
     padding: 0 5px;
+  }
+
+  .casestudydetailherosection :global(.title-section h2) {
+    margin-top: 2rem;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 !important;
+  }
+
+  .casestudydetailherosection :global(.title-section p) {
+    margin: 2rem auto 0;
+    max-width: 100%;
+    color: var(--white-color);
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .guaranteetmsection :global(.title-section h2) {
+    /* margin-bottom: 5rem; */
+    font-size: 1.5rem;
+  }
+
+  .trustsection :global(.title-section h2) {
+    /* margin-bottom: 1.2rem; */
+    font-size: 1.5rem;
+  }
+
+  .trustsection :global(.title-section p span) {
+    font-size: 1.25rem;
   }
 }
 
@@ -558,8 +590,8 @@
   .clientspeaksection :global(.title-section p),
   .methodology :global(.title-section p) {
     width: 100%;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 2.3rem;
     padding: 0;
   }
 }
