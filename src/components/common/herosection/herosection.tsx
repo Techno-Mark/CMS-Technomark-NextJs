@@ -1,8 +1,8 @@
-import Button from "@/components/common/button/button";
-import TitleSection from "@/components/common/title/title";
-import Image from "next/image";
-import React from "react";
-import styles from "./herosection.module.css";
+import Button from "@/components/common/button/button"
+import TitleSection from "@/components/common/title/title"
+import Image from "next/image"
+import React from "react"
+import styles from "./herosection.module.css"
 
 interface HeroSectionItem {
   label?: string;
@@ -27,7 +27,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
   isTechnology,
   isTechStartup,
   scrollToSection,
-  formSectionRef,
+  formSectionRef
 }) => {
   if (isTechnology) {
     return (
@@ -52,7 +52,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           <TitleSection
             sectionData={{
               title: props?.title || "",
-              subtitle: props?.subTitle || "",
+              subtitle: props?.subTitle || ""
             }}
             titleClassName="techherosectiontitle"
           />
@@ -63,7 +63,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           />
         </div>
       </>
-    );
+    )
   }
 
   return (
@@ -78,7 +78,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           <TitleSection
             sectionData={{
               title: props?.title || "",
-              subtitle: props?.subTitle || "",
+              subtitle: props?.subTitle || ""
             }}
             titleClassName="herosectiontitle"
           />
@@ -122,7 +122,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Herosection;
+export default Herosection

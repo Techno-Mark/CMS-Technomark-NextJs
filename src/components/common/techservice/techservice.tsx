@@ -1,21 +1,21 @@
-import React from "react";
-import styles from "./techservice.module.css";
-import Button from "../button/button";
+import React from "react"
+import styles from "./techservice.module.css"
+import Button from "../button/button"
 
 interface TechServiceProps {
   props: any;
 }
 
 const TechService: React.FC<TechServiceProps> = ({ props }) => {
-  const services = props?.services || [];
-  const buttonText = props?.buttonText || "View All";
+  const services = props?.services || []
+  const buttonText = props?.buttonText || "View All"
   return (
     <div className={`flex flex-wrap`}>
       {services.map((service: any, index: number) => (
         <div key={index} className="w-full md:w-1/2 pr-8 pb-8">
           <div className={`${styles.serviceborderbox}`}>
             <div className={`${styles.titleiconinline} flex items-center mb-5`}>
-              <h4>{!!service.title ? service.title : ""}</h4>
+              <h4>{service.title ? service.title : ""}</h4>
               <div className={`${styles.arrowicon} ml-4`}>
                 <svg
                   width="45"
@@ -69,13 +69,13 @@ const TechService: React.FC<TechServiceProps> = ({ props }) => {
                 </svg>
               </div>
             </div>
-            <p>{!!service.description ? service.description : ""}</p>
+            <p>{service.description ? service.description : ""}</p>
           </div>
         </div>
       ))}
       <Button href="#" text={buttonText} variant="secondary" />
     </div>
-  );
-};
+  )
+}
 
-export default TechService;
+export default TechService

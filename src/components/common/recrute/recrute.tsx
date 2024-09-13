@@ -1,13 +1,13 @@
-import React from "react";
-import style from "./recrute.module.css";
+import React from "react"
+import style from "./recrute.module.css"
 
 const data = [
   { number: "01", title: "Screening" },
   { number: "02", title: "Technical round" },
   { number: "03", title: "practical round" },
   { number: "04", title: "final hr round" },
-  { number: "05", title: "offer rollout" },
-];
+  { number: "05", title: "offer rollout" }
+]
 
 const Recrute = () => {
   return (
@@ -57,7 +57,7 @@ const Recrute = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Recrute;
+export default Recrute

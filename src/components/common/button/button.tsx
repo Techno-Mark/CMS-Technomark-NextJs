@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./button.module.css";
+import React from "react"
+import styles from "./button.module.css"
 
 interface ButtonProps {
   href?: string;
@@ -9,14 +9,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ href, text, variant, onClick }) => {
-  const baseClass = styles.newPrimarybtn;
-  const variantClass = variant === "secondary" ? styles.secondarybtn : "";
-  const strokeColor =
-    variant === "secondary" ? "#1D3557" : "var(--white-color)";
+  const baseClass = styles.newPrimarybtn
+  const variantClass = variant === "secondary" ? styles.secondarybtn : ""
+  // const strokeColor =
+  //   variant === "secondary" ? "#1D3557" : "var(--white-color)"
 
   return (
     <>
-      {!!href ? (
+      {href ? (
         <a
           href={href}
           className={`${baseClass} ${variantClass} cursor-pointer`}
@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({ href, text, variant, onClick }) => {
         </button>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

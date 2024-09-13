@@ -1,6 +1,5 @@
 // PrevArrow.tsx
-import Image from 'next/image';
-import React from 'react';
+import React from 'react'
 
 interface PrevArrowProps {
   onClick?: () => void;
@@ -14,6 +13,6 @@ const PrevArrow: React.FC<PrevArrowProps> = ({ onClick }) => (
       <path d="M50.6312 40H29.5938" stroke="#1D3557" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </div>
-);
+)
 
-export default PrevArrow;
+export default PrevArrow

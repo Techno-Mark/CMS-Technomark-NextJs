@@ -1,15 +1,14 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import Loading from "@/components/common/loading/loading";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 const index = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
-    router.push("/home");
-  }, [router]);
-  return <Loading />;
-};
+    router.push("/home")
+  }, [router])
+  return <Loading />
+}
 
-export default index;
+export default index

@@ -1,9 +1,9 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import styles from "./screenslider.module.css";
-import Image from "next/image";
+import React from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import styles from "./screenslider.module.css"
+import Image from "next/image"
 
 interface ImageItem {
   imaegUrl: string;
@@ -27,9 +27,9 @@ const settings1 = {
     { breakpoint: 1450, settings: { slidesToShow: 2 } },
     { breakpoint: 1399, settings: { slidesToShow: 1.8 } },
     { breakpoint: 1199, settings: { slidesToShow: 1.5 } },
-    { breakpoint: 576, settings: { slidesToShow: 1 } },
-  ],
-};
+    { breakpoint: 576, settings: { slidesToShow: 1 } }
+  ]
+}
 
 const settings2 = {
   slidesToShow: 1.2,
@@ -44,12 +44,12 @@ const settings2 = {
     { breakpoint: 1450, settings: { slidesToShow: 1 } },
     { breakpoint: 1399, settings: { slidesToShow: 1 } },
     { breakpoint: 1199, settings: { slidesToShow: 1 } },
-    { breakpoint: 576, settings: { slidesToShow: 1 } },
-  ],
-};
+    { breakpoint: 576, settings: { slidesToShow: 1 } }
+  ]
+}
 
 const ScreenSlider: React.FC<ScreenSliderProps> = ({ props, useSlider1 }) => {
-  const selectedSettings = useSlider1 ? settings1 : settings2;
+  const selectedSettings = useSlider1 ? settings1 : settings2
   return (
     <div
       className={
@@ -70,7 +70,7 @@ const ScreenSlider: React.FC<ScreenSliderProps> = ({ props, useSlider1 }) => {
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ScreenSlider;
+export default ScreenSlider

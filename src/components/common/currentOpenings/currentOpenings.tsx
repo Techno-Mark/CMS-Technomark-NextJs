@@ -1,24 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
-import Button from "../button/button";
-import styles from "./currentOpening.module.css";
+import React, { useState } from "react"
+import Button from "../button/button"
+import styles from "./currentOpening.module.css"
 
 const CurrentOpenings = ({ data }: any) => {
   const [showAll, setShowAll] = useState<boolean>(
-    !!data && data.data.length > 5 ? false : true
-  );
+    !(!!data && data.data.length > 5)
+  )
   const [isLocationDropdownVisible, setLocationDropdownVisible] =
-    useState<boolean>(false);
+    useState<boolean>(false)
 
-  const [selectedMode, setSelectedMode] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedMode, setSelectedMode] = useState<string>("All")
+  const [searchTerm, setSearchTerm] = useState<string>("")
 
-  const displayedData = showAll ? data.data : data.data.slice(0, 5);
+  const displayedData = showAll ? data.data : data.data.slice(0, 5)
 
   const handleLocationClick = () => {
-    setLocationDropdownVisible(!isLocationDropdownVisible);
-  };
+    setLocationDropdownVisible(!isLocationDropdownVisible)
+  }
 
   const filteredData = displayedData
     .filter(
@@ -34,16 +34,16 @@ const CurrentOpenings = ({ data }: any) => {
     )
     .filter((job: any) =>
       selectedMode === "All" ? true : job.mode === selectedMode
-    );
+    )
 
   const handleModeSelect = (mode: string) => {
-    setLocationDropdownVisible(false);
-    setSelectedMode(mode);
-  };
+    setLocationDropdownVisible(false)
+    setSelectedMode(mode)
+  }
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   return (
     <>
@@ -115,15 +115,11 @@ const CurrentOpenings = ({ data }: any) => {
                     <img
                       className="w-7"
                       src={
-                        !!data && !!data.experienceIcon
-                          ? data.experienceIcon
-                          : ""
+                        !!data && !!data.experienceIcon ? data.experienceIcon : ""
                       }
                     />
                     <p className="">
-                      {!!data && !!data.experienceTitle
-                        ? data.experienceTitle
-                        : ""}
+                      {!!data && !!data.experienceTitle ? data.experienceTitle : ""}
                     </p>
                     <p className="group-hover:underline duration-700">
                       {i.experience}
@@ -133,15 +129,11 @@ const CurrentOpenings = ({ data }: any) => {
                     <img
                       className="w-7"
                       src={
-                        !!data && !!data.noOfOpeningsIcon
-                          ? data.noOfOpeningsIcon
-                          : ""
+                        !!data && !!data.noOfOpeningsIcon ? data.noOfOpeningsIcon : ""
                       }
                     />
                     <p className="">
-                      {!!data && !!data.noOfOpeningsTitle
-                        ? data.noOfOpeningsTitle
-                        : ""}
+                      {!!data && !!data.noOfOpeningsTitle ? data.noOfOpeningsTitle : ""}
                     </p>
                     <p className="group-hover:underline duration-700">
                       {i.noOfOpenings}
@@ -189,7 +181,7 @@ const CurrentOpenings = ({ data }: any) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default CurrentOpenings;
+export default CurrentOpenings

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 interface HamburgerProps {
     className?: string;
@@ -6,7 +6,7 @@ interface HamburgerProps {
 }
 
 const Hamburger: React.FC<HamburgerProps> = ({ className, color = "#1D3557" }) => {
-    return (
+  return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="34"
@@ -34,7 +34,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ className, color = "#1D3557" }) =
                 strokeLinecap="round"
             />
         </svg>
-    );
-};
+  )
+}
 
-export default Hamburger;
+export default Hamburger

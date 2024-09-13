@@ -1,6 +1,5 @@
 // NextArrow.tsx
-import Image from 'next/image';
-import React from 'react';
+import React from 'react'
 
 interface NextArrowProps {
   onClick?: () => void;
@@ -14,6 +13,6 @@ const NextArrow: React.FC<NextArrowProps> = ({ onClick }) => (
       <path d="M29.3688 40H50.4062" stroke="#1D3557" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </div>
-);
+)
 
-export default NextArrow;
+export default NextArrow

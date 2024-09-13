@@ -1,21 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./CasestudyList.module.css";
 import ImageSlider from "../casestudy/ImageSlider";
+import styles from "./CasestudyList.module.css";
 
 interface Casestudy {
-  category: string;
-  title: string;
-  image: string;
-  text: string;
-  subpoints: string[];
-  video: string;
-  additionalTitle: string;
-  additionalPoints: { score: string; description: string }[];
+  buttons: [];
+  data: JSON[];
 }
-
 interface CaseStudyListProps {
-  props: any;
+  props: Casestudy;
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }
@@ -25,27 +18,25 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
   setDetailedOpen,
   setDetailedImagesUrl,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory] = useState<string>("All");
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0)
 
-  const categories = [
-    "All",
-    ...Array.from(
-      new Set(
-        !!props.buttons
-          ? props.buttons.map((entry: any) => entry.buttonText)
-          : []
-      )
-    ),
-  ];
+  // const categories = [
+  //   "All",
+  //   ...Array.from(
+  //     new Set(
+  //       props.buttons ? props.buttons.map((entry: any) => entry.buttonText) : []
+  //     )
+  //   )
+  // ]
 
   const filteredData =
     selectedCategory === "All"
-      ? !!props.data
+      ? props.data
         ? props.data
         : []
-      : !!props.data
+      : props.data
       ? props.data.filter(
           (caseStudy: any) => caseStudy.category === selectedCategory
         )
@@ -73,12 +64,12 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
         <div key={index} className={styles.casebox}>
           <div className={styles.textarea}>
             <Image
-              src={!!caseStudy.image ? caseStudy.image : ""}
+              src={caseStudy.image ? caseStudy.image : ""}
               alt="logo"
               width={200}
               height={200}
             />
-            <p>{!!caseStudy.text ? caseStudy.text : ""}</p>
+            <p>{caseStudy.text ? caseStudy.text : ""}</p>
             <ul className={styles.techusetext}>
               {!!caseStudy.subPoints &&
                 caseStudy.subPoints
@@ -97,9 +88,9 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
             </ul>
             <a
               className={styles.readmore}
-              href={!!caseStudy.linkUrl ? caseStudy.linkUrl : "#"}
+              href={caseStudy.linkUrl ? caseStudy.linkUrl : "#"}
             >
-              {!!caseStudy.linkText ? caseStudy.linkText : "Read More"}
+              {caseStudy.linkText ? caseStudy.linkText : "Read More"}
             </a>
           </div>
           <div className={`${styles.resultarea} relative`}>
@@ -117,7 +108,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                     width="320"
                     height="240"
                     src={
-                      !!caseStudy.video
+                      caseStudy.video
                         ? caseStudy.video
                         : "/images/Case-study.mp4"
                     }
@@ -142,12 +133,12 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
             )}
             <div className={styles.resultview}>
               <h4>
-                {!!caseStudy.additionalTitle ? caseStudy.additionalTitle : ""}
+                {caseStudy.additionalTitle ? caseStudy.additionalTitle : ""}
               </h4>
               <ul
                 className={styles.successratiobox}
                 dangerouslySetInnerHTML={{
-                  __html: !!caseStudy.additionalPoints
+                  __html: caseStudy.additionalPoints
                     ? caseStudy.additionalPoints
                     : "",
                 }}

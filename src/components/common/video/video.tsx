@@ -1,4 +1,4 @@
-import styles from "./video.module.css";
+import styles from "./video.module.css"
 
 const Video = ({ props }: any) => {
   return (
@@ -6,9 +6,7 @@ const Video = ({ props }: any) => {
       <video
         className={styles.video}
         src={
-          !!props.videoUrl
-            ? props.videoUrl
-            : "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4"
+          props.videoUrl ? props.videoUrl : "https://tm-html-phi.vercel.app/assets/images/We%20are_1.mp4"
         }
         autoPlay
         loop
@@ -16,10 +14,10 @@ const Video = ({ props }: any) => {
       />
       <div className={`${styles.textOverlay}`}>
         <p className={`${styles.videoTextSubTitle}`}>
-          {!!props.subTitle ? props.subTitle : ""}
+          {props.subTitle ? props.subTitle : ""}
         </p>
         <h3 className={`${styles.videoTextTitle}`}>
-          {!!props.title ? props.title : ""}
+          {props.title ? props.title : ""}
         </h3>
       </div>
     </div>
@@ -45,7 +43,7 @@ const Video = ({ props }: any) => {
     //     <p>TechnoMark</p>
     //   </div>
     // </div>
-  );
-};
+  )
+}
 
-export default Video;
+export default Video

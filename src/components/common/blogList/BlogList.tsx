@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import styles from "./BlogList.module.css";
-import Image from "next/image";
-import Button from "../button/button";
+import React, { useState } from "react"
+import styles from "./BlogList.module.css"
+import Image from "next/image"
+import Button from "../button/button"
 
 const BlogList = ({ props }: any) => {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     props
       ?.find((item: any) => item.Buttons)
       ?.Buttons[0].items.find((item: any) => item.buttonText).buttonText || ""
-  );
-  const [showAll, setShowAll] = useState<boolean>(false);
+  )
+  const [showAll, setShowAll] = useState<boolean>(false)
 
   const filteredBlogs =
     props
       ?.find((item: any) => item.Data)
       ?.Data?.filter((blog: any) =>
         blog.items.some((item: any) => item.category === selectedCategory)
-      ) || [];
+      ) || []
 
-  const displayedBlogs = showAll ? filteredBlogs : filteredBlogs.slice(0, 9);
+  const displayedBlogs = showAll ? filteredBlogs : filteredBlogs.slice(0, 9)
 
-  const handleToggleShow = () => setShowAll(true);
+  const handleToggleShow = () => setShowAll(true)
 
   return (
     <div className={styles.caseslide} id="case-slide">
@@ -32,9 +32,7 @@ const BlogList = ({ props }: any) => {
               key={index}
               className={`${styles.tabButton} ${
                 selectedCategory ===
-                text.items.find((item: any) => item.buttonText).buttonText
-                  ? styles.activeTab
-                  : ""
+                text.items.find((item: any) => item.buttonText).buttonText ? styles.activeTab : ""
               }`}
               onClick={() =>
                 setSelectedCategory(
@@ -51,20 +49,20 @@ const BlogList = ({ props }: any) => {
         className={`flex flex-wrap justify-start text-black ${styles.hireengaged}`}
       >
         {displayedBlogs.map((blog: any, index: number) => {
-          const title = blog.items.find((item: any) => item.title)?.title || "";
+          const title = blog.items.find((item: any) => item.title)?.title || ""
           const description =
-            blog.items.find((item: any) => item.description)?.description || "";
+            blog.items.find((item: any) => item.description)?.description || ""
           const imageUrl =
-            blog.items.find((item: any) => item.imageUrl)?.imageUrl || "";
+            blog.items.find((item: any) => item.imageUrl)?.imageUrl || ""
           const category =
-            blog.items.find((item: any) => item.category)?.category || "";
-          const date = blog.items.find((item: any) => item.date)?.date || "";
+            blog.items.find((item: any) => item.category)?.category || ""
+          const date = blog.items.find((item: any) => item.date)?.date || ""
           const redirectLink =
             blog.items.find((item: any) => item.redirectLink)?.redirectLink ||
-            "#";
+            "#"
           const redirectText =
             blog.items.find((item: any) => item.redirectText)?.redirectText ||
-            "Read More";
+            "Read More"
 
           return (
             <div key={index} className="w-full md:w-1/2 2xl:w-1/3 px-4 mb-8">
@@ -85,7 +83,7 @@ const BlogList = ({ props }: any) => {
                 </p>
               </div>
             </div>
-          );
+          )
         })}
       </div>
 
@@ -93,15 +91,13 @@ const BlogList = ({ props }: any) => {
         <Button
           href="#"
           text={
-            props.find((item: any) => item.buttonText)
-              ? props.find((item: any) => item.buttonText).buttonText
-              : "VIEW ALL"
+            props.find((item: any) => item.buttonText) ? props.find((item: any) => item.buttonText).buttonText : "VIEW ALL"
           }
           variant="secondary"
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogList;
+export default BlogList
