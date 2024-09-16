@@ -151,7 +151,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             </div>
           </div>
           <div
-            className={`${styles.footerlinks} grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-4`}
+            className={`${styles.footerlinks} grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-6 sm:grid-cols-4`}
           >
             {footerData?.map((section, sectionIndex) => (
               <div key={sectionIndex}>

@@ -23,7 +23,7 @@
     flex-direction: column;
     /* background: url(/images/popupbg.png); */
     padding: 2.5rem 2.5rem;
-    height: 90vh;
+    height: 590px;
     background-size: cover;
     overflow-y: scroll;
     background-position: bottom;
@@ -127,12 +127,14 @@
   @media only screen and (max-width: 992px) {
     .popupcontainer {
       justify-content: center;
+      height: 90vh;
     }
   }
   
   @media only screen and (max-width: 767px) {
     .popupcontainer {
       padding: 1.8rem;
+      height: 90vh;
     }
     .popupheader,
     .popuplinks {
