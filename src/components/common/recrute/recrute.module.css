@@ -90,9 +90,17 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
   .card {
     width: 120px;
     height: 120px;
+    rotate: 90deg;
+  }
+  .cardContent {
+    rotate: -90deg;
   }
 
   .rightTop1 {

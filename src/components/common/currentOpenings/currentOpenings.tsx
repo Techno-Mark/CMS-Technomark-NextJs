@@ -48,7 +48,7 @@ const CurrentOpenings = ({ data }: any) => {
   return (
     <>
       {!!data && data.isSearchAvailable == "true" && (
-        <div className="mx-4 my-4 flex flex-wrap justify-between lg:mx-40">
+        <div className="mx-4 my-4 flex flex-wrap justify-between lg:mx-40 mt-10">
           <div className="px-5 mb-4 border h-20 w-full flex items-center gap-4 md:w-[48%] md:mb-0">
             <img width={20} src="/images/search.svg" />
             <input
