@@ -111,9 +111,9 @@
   background: var(--bg-footer);
 }
 
-.footerbottom :global(.container) {
+/* .footerbottom :global(.container) {
   max-width: 85rem;
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .companyinfo a {

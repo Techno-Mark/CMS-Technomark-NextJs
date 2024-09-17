@@ -17,7 +17,7 @@
   background: linear-gradient(180deg, #f9fcf8 0, #f9f9fc 49%, #f9fbfe 100%);
   border: 1px solid #ebcb5b;
   border-image-slice: 1;
-  border-image-source: linear-gradient(90deg, #ebcb5b 0%, #017ca1 50%, #61b946 100%);
+  border-image-source: linear-gradient(90deg,#ebcb5b 0,#017ca1 49.5%,#61b946 100%);
 }
 
 .casebox .textarea {
