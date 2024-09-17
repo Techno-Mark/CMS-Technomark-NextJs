@@ -5,7 +5,6 @@ import Button from "../button/button"
 import styles from "./currentOpening.module.css"
 
 const CurrentOpenings = ({ data }: any) => {
-  console.log(data)
   const [showAll, setShowAll] = useState<boolean>(
     !(!!data && data.data.length > 5)
   )
@@ -158,8 +157,7 @@ const CurrentOpenings = ({ data }: any) => {
                 <Button
                   text={i.buttonText}
                   variant="primary"
-                  href=""
-                  onClick={() => {}}
+                  href={i.buttonUrl}
                 />
               </div>
             </div>

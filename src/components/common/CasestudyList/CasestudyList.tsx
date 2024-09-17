@@ -1,21 +1,14 @@
-import React, { useState } from "react"
-import Image from "next/image"
-import styles from "./CasestudyList.module.css"
-import ImageSlider from "../casestudy/ImageSlider"
+import Image from "next/image";
+import { useState } from "react";
+import ImageSlider from "../casestudy/ImageSlider";
+import styles from "./CasestudyList.module.css";
 
-// interface Casestudy {
-//   category: string;
-//   title: string;
-//   image: string;
-//   text: string;
-//   subpoints: string[];
-//   video: string;
-//   additionalTitle: string;
-//   additionalPoints: { score: string; description: string }[];
-// }
-
+interface Casestudy {
+  buttons: [];
+  data: JSON[];
+}
 interface CaseStudyListProps {
-  props: any;
+  props: Casestudy;
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
 }
@@ -23,10 +16,10 @@ interface CaseStudyListProps {
 const CaseStudyList: React.FC<CaseStudyListProps> = ({
   props,
   setDetailedOpen,
-  setDetailedImagesUrl
+  setDetailedImagesUrl,
 }) => {
-  const [selectedCategory] = useState<string>("All")
-  const [showAll, setShowAll] = useState<boolean>(false)
+  const [selectedCategory] = useState<string>("All");
+  const [showAll, setShowAll] = useState<boolean>(false);
   // const [currentSlide, setCurrentSlide] = useState(0)
 
   // const categories = [
@@ -39,12 +32,18 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
   // ]
 
   const filteredData =
-    selectedCategory === "All" ? props.data ? props.data : [] : props.data ? props.data.filter(
-      (caseStudy: any) => caseStudy.category === selectedCategory
-    ) : []
+    selectedCategory === "All"
+      ? props.data
+        ? props.data
+        : []
+      : props.data
+      ? props.data.filter(
+          (caseStudy: any) => caseStudy.category === selectedCategory
+        )
+      : [];
 
   // Display 3 items by default, show all if "View All" is clicked
-  const displayedData = showAll ? filteredData : filteredData.slice(0, 3)
+  const displayedData = showAll ? filteredData : filteredData.slice(0, 3);
 
   return (
     <div className={styles.caseslide} id="case-slide">
@@ -109,7 +108,9 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                     width="320"
                     height="240"
                     src={
-                      caseStudy.video ? caseStudy.video : "/images/Case-study.mp4"
+                      caseStudy.video
+                        ? caseStudy.video
+                        : "/images/Case-study.mp4"
                     }
                     type="video/mp4"
                   />
@@ -137,7 +138,9 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
               <ul
                 className={styles.successratiobox}
                 dangerouslySetInnerHTML={{
-                  __html: caseStudy.additionalPoints ? caseStudy.additionalPoints : ""
+                  __html: caseStudy.additionalPoints
+                    ? caseStudy.additionalPoints
+                    : "",
                 }}
               />
             </div>
@@ -153,7 +156,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
         </button>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CaseStudyList
+export default CaseStudyList;

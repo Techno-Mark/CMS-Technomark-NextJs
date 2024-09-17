@@ -55,10 +55,8 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(
-    var(--primary-color) 100%,
-    var(--primary-variant-one) 100%
-  );
+  background: linear-gradient(var(--primary-color) 100%,
+      var(--primary-variant-one) 100%);
   top: 17px;
 }
 
@@ -226,8 +224,8 @@
 .casestudylist :global(.title-section h2) {
   margin: 1rem 0;
   font-weight: bold;
-  font-size: 30px !important;
-  line-height: 50px !important;
+  font-size: 30px;
+  line-height: 50px;
 }
 
 .casestudylist :global(.title-section p) {
@@ -244,7 +242,7 @@
 }
 
 .careerTitle :global(.title-section p) {
-  width: 70%;
+  width: 50%;
   margin: 0 auto 3.8rem;
   font-size: 1.7rem;
   line-height: 3rem;
@@ -481,7 +479,6 @@
     padding-bottom: 20px;
   }
 
-  .casestudylist :global(.title-section p),
   .casestudydetailherosection :global(.title-section p) {
     margin: 2rem auto 0;
     max-width: 90%;
@@ -489,6 +486,22 @@
 
   .technenifits {
     padding-inline: 2rem;
+  }
+
+  .casestudylistlabel {
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .casestudylist :global(.title-section h2) {
+    font-size: 2.3rem;
+    line-height: unset;
+  }
+
+  .casestudylist :global(.title-section p) {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    margin-bottom: 5rem;
   }
 
   .clientspeaksection :global(.title-section h2),
@@ -539,9 +552,18 @@
   .techservices :global(.title-section p) {
     max-width: 100%;
   }
+
+  .careerTitle :global(.title-section h2) {
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .careerTitle :global(.title-section p) {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 425px) {
+
   .clientspeaksection :global(.title-section h2),
   .methodology :global(.title-section h2) {
     font-size: 2rem;
@@ -570,6 +592,7 @@
     font-size: 16px;
     line-height: 30px;
   }
+
   .guaranteetmsection :global(.title-section h2) {
     /* margin-bottom: 5rem; */
     font-size: 1.5rem;
@@ -585,7 +608,8 @@
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
+
   .clientspeaksection :global(.title-section h2),
   .methodology :global(.title-section h2) {
     font-size: 1.5rem;

@@ -23,9 +23,16 @@ const ImageSlider = ({
     autoplay: true,
     autoplaySpeed: 2000,
     variableWidth: true,
-    pauseOnHover: true
-  }
-
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+  };
   return (
     <div className={large ? styles.sliderContainer2 : styles.sliderContainer1}>
       <Slider ref={imageSlider} {...imgSliderSettings}>

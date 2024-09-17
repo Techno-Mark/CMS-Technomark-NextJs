@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import Loading from "@/components/common/loading/loading"
-import { useRouter } from "next/navigation"
-import React, { useEffect } from "react"
+import Loading from "@/components/common/loading/loading";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 const index = () => {
   const router = useRouter()
