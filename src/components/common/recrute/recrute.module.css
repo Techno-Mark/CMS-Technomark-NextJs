@@ -6,6 +6,7 @@
 .border1 {
   transform: rotate(80deg);
 }
+
 .border2 {
   transform: rotate(-80deg);
 }
@@ -44,6 +45,11 @@
   bottom: 46px;
   left: -40px;
   width: 97.5px;
+}
+
+.gridContainer {
+  max-width: calc(100% - 70px);
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -89,16 +95,19 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .gridContainer {
     grid-template-columns: 1fr !important;
     flex-direction: column !important;
+    width: auto;
   }
+
   .card {
     width: 120px;
     height: 120px;
     rotate: 90deg;
   }
+
   .cardContent {
     rotate: -90deg;
   }

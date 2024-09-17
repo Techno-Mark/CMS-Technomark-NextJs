@@ -4,15 +4,13 @@ import style from "./recrute.module.css";
 const Recrute = ({ props }: any) => {
   return (
     <div className="bg-white py-10 text-black flex items-center justify-center space-x-4">
-      <div
-        className={`flex gap-12 ${style.gridContainer}`}
-      >
+      <div className={`flex gap-12 ${style.gridContainer}`}>
         {props.data.map((i: any, index: number) => (
           <div
             key={index}
             className={`relative ${
               style.card
-            } bg-white border-t border-b border-[#E7E7E7] text-[#1D3557] font-semibold flex flex-col items-center justify-center text-[12px] lg:text-md ${
+            } bg-white border-t border-b border-[#E7E7E7] text-[#1D3557] font-semibold flex flex-col items-center justify-center text-[12px] md:text-[10px] lg:text-md ${
               index === 0 ? "border-l" : ""
             } ${index === props.data.length - 1 ? "border-r" : ""}`}
           >
