@@ -157,8 +157,7 @@ const CurrentOpenings = ({ data }: any) => {
                 <Button
                   text={i.buttonText}
                   variant="primary"
-                  href=""
-                  onClick={() => {}}
+                  href={i.buttonUrl}
                 />
               </div>
             </div>
