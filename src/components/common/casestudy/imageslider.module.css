@@ -39,6 +39,10 @@
   transition: opacity 0.3s ease;
 }
 
+.overlay img {
+  max-width: 44px !important;
+}
+
 .imageSlide:hover .overlay {
   opacity: 1;
 }
@@ -53,10 +57,6 @@
   .sliderContainer img {
     width: 350px;
     max-width: 100%;
-  }
-
-  .overlay img {
-    width: 60%;
   }
 }
 
