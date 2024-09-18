@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
-import Slider from "react-slick"
+import React, { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 
 function Slider1NextArrow(props: any) {
-  const { onClick } = props
+  const { onClick } = props;
   return (
     <div
       className={`cursor-pointer absolute top-1/2 right-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
@@ -10,51 +10,51 @@ function Slider1NextArrow(props: any) {
     >
       <img src="/images/Arrow-slideright.png" alt="" />
     </div>
-  )
+  );
 }
 
 function Slider1PrevArrow(props: any) {
-  const { onClick } = props
+  const { onClick } = props;
   return (
     <div
-      className={`cursor-pointer absolute top-1/2 left-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
+      className={`cursor-pointer absolute top-1/2 left-2.5 z-10 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
       onClick={onClick}
     >
       <img src="/images/Arrow-slideleft.png" alt="" />
     </div>
-  )
+  );
 }
 
 function Slider2NextArrow(props: any) {
   // const { className, style, onClick } = props
-  return <div className={`hidden`}></div>
+  return <div className={`hidden`}></div>;
 }
 
 function Slider2PrevArrow(props: any) {
   // const { className, style, onClick } = props
-  return <div className={`hidden`}></div>
+  return <div className={`hidden`}></div>;
 }
 
 const MaximizedSlider = ({
   isOpen,
   images,
-  onClose
+  onClose,
 }: {
   isOpen: boolean;
   images: string[];
   onClose: () => void;
 }) => {
-  const [nav1, setNav1] = useState()
-  const [nav2, setNav2] = useState()
-  const sliderRef1 = useRef(null)
-  const sliderRef2 = useRef(null)
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+  const sliderRef1 = useRef(null);
+  const sliderRef2 = useRef(null);
 
   useEffect(() => {
     if (sliderRef1.current && sliderRef2.current) {
-      setNav1(sliderRef1.current)
-      setNav2(sliderRef2.current)
+      setNav1(sliderRef1.current);
+      setNav2(sliderRef2.current);
     }
-  }, [])
+  }, []);
 
   const slider1Settings = {
     infinite: true,
@@ -64,21 +64,21 @@ const MaximizedSlider = ({
     autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <Slider1NextArrow />,
-    prevArrow: <Slider1PrevArrow />
-  }
+    prevArrow: <Slider1PrevArrow />,
+  };
 
   const slider2Settings = {
     slidesToShow: images.length,
     nextArrow: <Slider2NextArrow />,
-    prevArrow: <Slider2PrevArrow />
-  }
+    prevArrow: <Slider2PrevArrow />,
+  };
 
   const handleSlideClick = (index: number) => {
     // Use slickGoTo to navigate to the clicked slide in the first slider
     if (sliderRef1.current) {
-      (sliderRef1.current as any).slickGoTo(index)
+      (sliderRef1.current as any).slickGoTo(index);
     }
-  }
+  };
 
   if (isOpen) {
     return (
@@ -97,16 +97,16 @@ const MaximizedSlider = ({
           </div>
           <Slider ref={sliderRef1} asNavFor={nav2} {...slider1Settings}>
             {images.map((item, i: number) => (
-              <div className="px-60 h-[85vh]" key={i}>
-                <img src={item} alt="" />
+              <div className="h-[85vh]" key={i}>
+                <img className="w-full h-full object-contain" src={item} alt={`image${i}`} />
               </div>
             ))}
           </Slider>
-          <div className="mx-72 mt-8">
+          <div className="md:mx-72 md:mt-8">
             <Slider ref={sliderRef2} asNavFor={nav1} {...slider2Settings}>
               {images.map((item, i: number) => (
                 <div
-                  className="cursor-pointer py-1 bg-[#ffffffb3] rounded-sm !w-[50px] !h-[50px] !flex items-center"
+                  className="cursor-pointer py-1 bg-[#ffffffb3] rounded-sm md:!w-[50px] md:!h-[50px] !flex items-center"
                   key={i}
                   onClick={() => handleSlideClick(i)}
                 >
@@ -117,8 +117,8 @@ const MaximizedSlider = ({
           </div>
         </div>
       </div>
-    )
+    );
   }
-}
+};
 
-export default MaximizedSlider
+export default MaximizedSlider;

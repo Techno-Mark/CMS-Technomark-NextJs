@@ -1137,7 +1137,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  console.log(homeData);
   // <CareerDetailsForm />
   return (
     <>

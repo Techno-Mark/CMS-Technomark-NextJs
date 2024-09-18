@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react"
-import Close from "@/assets/icon/close"
-import Hamburger from "@/assets/icon/hamburger"
-import Image from "next/image"
-import Link from "next/link"
-import styles from "./header.module.css"
-import MenuLink from "./menuLink/MenuLink"
+import Close from "@/assets/icon/close";
+import Hamburger from "@/assets/icon/hamburger";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import styles from "./header.module.css";
+import MenuLink from "./menuLink/MenuLink";
 
 interface SubmenuItem {
   name: string;
@@ -24,149 +24,42 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
-    useState(false)
-  const [isSticky, setIsSticky] = useState(false)
+    useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 100)
-    }
+      setIsSticky(window.scrollY > 100);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    document.body.classList.toggle(styles.noscroll, isMenuOpen)
-  }, [isMenuOpen])
+    document.body.classList.toggle(styles.noscroll, isMenuOpen);
+  }, [isMenuOpen]);
 
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev)
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   const toggleSubMenu = (menuType: string) => {
     if (menuType === "services") {
-      setIsServicesSubMenuOpen((prev) => !prev)
-      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false)
+      setIsServicesSubMenuOpen((prev) => !prev);
+      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false);
     } else if (menuType === "technologies") {
-      setIsTechnologiesSubMenuOpen((prev) => !prev)
-      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false)
+      setIsTechnologiesSubMenuOpen((prev) => !prev);
+      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false);
     }
-  }
-
-  // const menuItems: any[] = [
-  //   {
-  //     name: "Home",
-  //     path: "/home",
-  //   },
-  //   {
-  //     name: "Services",
-  //     path: "/productengineering",
-  //     submenu: [
-  //       {
-  //         name: "Product engineering",
-  //         path: "/productengineering",
-  //         icons: "/images/product.svg",
-  //       },
-  //       {
-  //         name: "Testing & Automation",
-  //         path: "/testingautomation",
-  //         icons: "/images/testing.svg",
-  //       },
-  //       {
-  //         name: "AI & ML Development",
-  //         path: "/aiml",
-  //         icons: "/images/aiml.svg",
-  //       },
-  //       {
-  //         name: "Software development",
-  //         path: "/softwaredevelopment",
-  //         icons: "/images/software.svg",
-  //       },
-  //       {
-  //         name: "Consultation",
-  //         path: "/consultation",
-  //         icons: "/images/consultation.svg",
-  //       },
-  //       {
-  //         name: "Blockchain",
-  //         path: "/blockchain",
-  //         icons: "/images/blockchain.svg",
-  //       },
-  //       {
-  //         name: "Mobile Apps",
-  //         path: "/mobileapps",
-  //         icons: "/images/mobileapp.svg",
-  //       },
-  //       {
-  //         name: "Digital transformation",
-  //         path: "/digitaltransformation",
-  //         icons: "/images/digital.svg",
-  //       },
-  //       { name: "iop app", path: "/iotservice", icons: "/images/iot.svg" },
-  //       { name: "UI & UX Design", path: "/uiux", icons: "/images/uiux.svg" },
-  //       {
-  //         name: "Cloud engineering & Devops",
-  //         path: "/cloudengineering",
-  //         icons: "/images/cloud.svg",
-  //       },
-  //       // {
-  //       //   name: "migration & modernization",
-  //       //   path: "/migrationmodernization",
-  //       //   icons: "/images/migration.svg",
-  //       // },
-  //     ],
-  //   },
-  //   {
-  //     name: "Start-up Services",
-  //     path: "/start-up-services",
-  //   },
-  //   {
-  //     name: "Case Studies",
-  //     path: "/casestudylist",
-  //   },
-  //   {
-  //     name: "Blogs",
-  //     path: "/blogs/list",
-  //   },
-  //   // {
-  //   //   name: "Technologies",
-  //   //   path: "/technology",
-  //   //   submenu: [
-  //   //     { name: "Android", path: "/android", icons: "/images/android.svg" },
-  //   //     { name: "iOS", path: "/ios", icons: "/images/ios.svg" },
-  //   //     { name: "Kotlin", path: "/kotlin", icons: "/images/kotlin.svg" },
-  //   //     { name: "Swift", path: "/swift", icons: "/images/swift.svg" },
-  //   //     {
-  //   //       name: "React native",
-  //   //       path: "/reactnative",
-  //   //       icons: "/images/reactnative.svg",
-  //   //     },
-  //   //     { name: "flutter", path: "/flutter", icons: "/images/flutter.svg" },
-  //   //     { name: "react", path: "/react", icons: "/images/react.svg" },
-  //   //     { name: "next js", path: "/nextjs", icons: "/images/nextjs.svg" },
-  //   //     { name: "angular", path: "/angular", icons: "/images/angular.svg" },
-  //   //     { name: "js", path: "/js", icons: "/images/js.svg" },
-  //   //     { name: "jquery", path: "/jquery", icons: "/images/jquery.svg" },
-  //   //     { name: "html5", path: "/html", icons: "/images/html5.svg" },
-  //   //     { name: "nodejs", path: "/nodejs", icons: "/images/nodejs.svg" },
-  //   //     { name: "php", path: "/php", icons: "/images/php.svg" },
-  //   //     { name: "python", path: "/python", icons: "/images/python.svg" },
-  //   //     { name: ".net", path: "/dotnet", icons: "/images/dotnet.svg" },
-  //   //     { name: "laravel", path: "/laravel", icons: "/images/laravel.svg" },
-  //   //     {
-  //   //       name: "rubyonrails",
-  //   //       path: "/rubyonrails",
-  //   //       icons: "/images/rubyonrails.svg",
-  //   //     },
-  //   //   ],
-  //   // },
-  //   {
-  //     name: "Contact Us",
-  //     path: "/contact-us",
-  //   },
-  // ];
+  };
 
   return (
     <header
@@ -207,7 +100,6 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             )}
           </button>
           <div
-            // eslint-disable-next-line multiline-ternary
             id="mega-menu-full"
             className={`${
               styles.megamenufull
@@ -220,10 +112,11 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             >
               {headerData?.map((menu) => (
                 <li
-                  // eslint-disable-next-line multiline-ternary
                   className={`${styles.navlink} h-full flex items-center ${
-                    ((menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
-                     (menu.name === "Services" && isServicesSubMenuOpen)) && isMenuOpen
+                    ((menu.name === "Technologies" &&
+                      isTechnologiesSubMenuOpen) ||
+                      (menu.name === "Services" && isServicesSubMenuOpen)) &&
+                    isMenuOpen
                       ? styles.active
                       : ""
                   }`}
@@ -233,19 +126,24 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                     onClick={
                       menu.children && menu.children.length
                         ? () => toggleSubMenu(menu.name.toLowerCase())
-                        : undefined
+                        : () => closeMenu() // Close the menu if no children
                     }
                     className={styles.cursorpointer}
                   >
-                    <MenuLink item={menu} key={menu.name} />
+                    <MenuLink
+                      item={menu}
+                      key={menu.name}
+                      toggleMenu={menu.children ? undefined : closeMenu}
+                    />
                     {menu.children && menu.children.length > 0 && (
                       <ul
-                      className={`${styles.submenu} ${
-                        (menu.name === "Technologies" && isTechnologiesSubMenuOpen) ||
-                        (menu.name === "Services" && isServicesSubMenuOpen)
-                          ? "customblock"
-                          : styles.defaultsubmenu
-                      }`}
+                        className={`${styles.submenu} ${
+                          (menu.name === "Technologies" &&
+                            isTechnologiesSubMenuOpen) ||
+                          (menu.name === "Services" && isServicesSubMenuOpen)
+                            ? "customblock"
+                            : styles.defaultsubmenu
+                        }`}
                       >
                         {menu.children.map((submenu) => (
                           <li
@@ -256,7 +154,8 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                           >
                             <Link
                               href={submenu.link}
-                              className="whitespace-nowrap"
+                              className="md:whitespace-nowrap flex items-center"
+                              onClick={closeMenu} // Close the menu when the submenu link is clicked
                             >
                               <Image
                                 src={submenu.logo!}
@@ -280,7 +179,6 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             className={`${styles.headersideimg} px-5 h-full flex items-center`}
           >
             <div className={`${styles.themebtn} flex justify-center h-full`}>
-              {/* <img src="/images/coffee.svg" alt="" /> */}
               <Image src="/images/coffee.svg" alt="" width={90} height={90} />
             </div>
             <div className={styles.projectbtn}>
@@ -290,7 +188,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
