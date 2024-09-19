@@ -10,7 +10,7 @@ type FormDataType = {
   agreeTermsConditions: boolean;
 };
 
-const Form = ({ props }: any) => {
+const Form = () => {
   const [formData, setFormData] = useState<FormDataType>({
     fullName: "",
     email: "",
@@ -55,9 +55,9 @@ const Form = ({ props }: any) => {
   };
 
   return (
-    <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px]  flex flex-col shadow-career-form">
+    <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px]  flex flex-col shadow-career-form !w-full">
       <p className="mb-10 lg:mb-[60px] text-[#344968] text-[24px] lg:text-[30px] font-medium">
-        {!!props ? props.formTitle : ""}
+        Apply for this position
       </p>
       <div className="flex flex-col gap-10">
         <div>
@@ -211,7 +211,8 @@ const Form = ({ props }: any) => {
             htmlFor="agreeTermsAndCondition"
             className="ml-2 text-[14px] md:text-[16px] lg:text-[18px] font-medium text-[#1D3557] text-end"
           >
-            {!!props ? props.formDescription : ""}
+            By using this form you agree with the storage and handling of your
+            data by this website.
           </label>
           {!!formErr.agreeTermsConditions && (
             <p className="mt-0.5 text-base text-red-600">
@@ -222,11 +223,7 @@ const Form = ({ props }: any) => {
       </div>
       <div className="w-full flex items-start">
         <div>
-          <Button
-            text={!!props ? props.buttonLabel : ""}
-            variant="primary"
-            onClick={handleSubmit}
-          />
+          <Button text="Apply now" variant="primary" onClick={handleSubmit} />
         </div>
       </div>
     </div>

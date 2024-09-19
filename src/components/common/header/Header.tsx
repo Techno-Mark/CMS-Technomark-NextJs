@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
             } w-full h-full lg:flex md:w-auto`}
           >
             <ul
-              className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 lg:mt-4 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 text-black font-semibold`}
+              className={`${styles.megamenuul} flex flex-col items-center h-full p-4 md:p-0 md:space-x-5 rtl:space-x-reverse md:flex-row text-black font-semibold`}
             >
               {headerData?.map((menu) => (
                 <li
