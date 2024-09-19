@@ -1137,7 +1137,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  // <CareerDetailsForm />
+  console.log(homeData)
   return (
     <>
       <MaximizedSlider
