@@ -1031,59 +1031,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
-      case "Career Details Hero Section":
-        return (
-          sectionData && (
-            <section className={`${styles.careerTitle} tm-section bg-white`}>
-              <div className="container mx-auto lg:w-[60%]">
-                <p className={`!mb-8 ${styles.casestudylistlabel}`}>
-                  {!!sectionData.label ? sectionData.label : ""}
-                </p>
-                <TitleSection
-                  sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: !!sectionData.subTitle
-                      ? sectionData.subTitle
-                      : "",
-                  }}
-                  titleFirst={true}
-                  titleClassName="clienttitle"
-                />
-                <div className="flex flex-col items-center justify-center w-full gap-6 md:gap-12 md:flex-row bg-[#F4FBF6] text-[#1D3557] border rounded-lg border-[#D4EBCC] py-4 md:px-[10%] lg:px-[10%]">
-                  {!!sectionData.data &&
-                    sectionData.data.map((i: any, index: number) => (
-                      <span
-                        className="mx-1 flex gap-2.5 text-xl font-medium whitespace-nowrap"
-                        key={index}
-                      >
-                        <Image
-                          className="w-7"
-                          src={i.icon}
-                          width={100}
-                          height={100}
-                          alt={""}
-                        />
-                        <p className="font-bold">{i.label}</p>
-                        <p className="group-hover:underline duration-700">
-                          {i.value}
-                        </p>
-                      </span>
-                    ))}
-                </div>
-              </div>
-            </section>
-          )
-        );
-      case "Job opportunity":
-        return (
-          sectionData && (
-            <section className={`${styles.careerTitle} tm-section bg-white`}>
-              <div className="container mx-auto">
-                <CareerDetailsForm props={sectionData} />
-              </div>
-            </section>
-          )
-        );
       case "Image Gallery":
         return <ImageSlider sectionData={sectionData} />;
       case "Process of Recruiting":
@@ -1137,7 +1084,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  console.log(homeData)
+  console.log(homeData);
   return (
     <>
       <MaximizedSlider

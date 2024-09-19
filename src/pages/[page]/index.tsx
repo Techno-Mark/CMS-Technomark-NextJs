@@ -34,7 +34,10 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   const { resolvedUrl } = context;
 
   try {
-    const data = resolvedUrl != "/blogs" && (await apiCall(resolvedUrl));
+    const data =
+      resolvedUrl != "/blogs" &&
+      resolvedUrl != "/careerDetails" &&
+      (await apiCall(resolvedUrl));
 
     return {
       props: {
