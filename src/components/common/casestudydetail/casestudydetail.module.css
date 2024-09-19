@@ -15,14 +15,14 @@
 
 .img1 img {
   margin-right: 1rem;
-  width: 40px;
+  width: 30px;
   padding: 0 !important;
   margin: 0 !important;
 }
 
 .img2 img {
   margin-right: 1rem;
-  width: 2rem;
+  width: 1.5rem;
 }
 
 .resourcestripe ul li b {
@@ -122,7 +122,7 @@
   line-height: 2.5rem;
   letter-spacing: 0.22px;
   margin-bottom: 0;
-  width: 55%;
+  width: 90%;
 }
 
 .performancebox:hover p {

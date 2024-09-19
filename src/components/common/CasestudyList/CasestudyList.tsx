@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageSlider from "../casestudy/ImageSlider";
 import styles from "./CasestudyList.module.css";
 
@@ -20,6 +20,26 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
 }) => {
   const [selectedCategory] = useState<string>("All");
   const [showAll, setShowAll] = useState<boolean>(false);
+  const [isSmall, setIsSmall] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 1500) {
+      setIsSmall(true);
+    } else {
+      setIsSmall(false);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // const [currentSlide, setCurrentSlide] = useState(0)
 
   // const categories = [
@@ -99,7 +119,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                 setDetailedImagesUrl={setDetailedImagesUrl}
                 setDetailedOpen={setDetailedOpen}
                 images={caseStudy.video.split(",")}
-                large={true}
+                small={isSmall}
               />
             ) : (
               <div className={styles.videoarea}>
