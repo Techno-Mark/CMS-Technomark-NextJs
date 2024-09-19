@@ -69,22 +69,22 @@
 
 .solutiontext .inlineArea b {
   color: var(--secondary--color);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 44px;
+  line-height: 28px;
   letter-spacing: 0.24px;
 }
 
 .solutiontext .inlineArea h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 3.2rem;
+  line-height: 2.3rem;
   letter-spacing: 0.24px;
   padding: 0 1rem 0 2rem;
 }
 
 .solutiontext p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 30px;
   padding: 20px 40px 0 60px;
@@ -94,11 +94,9 @@
 /* ------------------------------------------------ */
 
 .solutionGreenArea {
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.6) 0%,
-      rgba(255, 255, 255, 0.6) 100%
-    ),
+      rgba(255, 255, 255, 0.6) 100%),
     var(--primary-background);
   padding: 2rem 0;
   border-radius: 12px;
@@ -139,9 +137,9 @@
 
 .solutionGreenArea .inlineArea b {
   color: var(--secondary--color);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 44px;
+  line-height: 30px;
   letter-spacing: 0.24px;
 }
 
@@ -163,9 +161,11 @@
     flex-direction: column;
     row-gap: 20px;
   }
+
   .solutiontext {
     max-width: 100%;
   }
+
   .solutionGreenArea {
     max-width: 100%;
   }
@@ -176,16 +176,13 @@
     flex-direction: column;
     row-gap: 20px;
   }
+
   .solutiontext {
     max-width: 100%;
   }
+
   .solutionGreenArea {
     max-width: 100%;
-  }
-
-  .solutiontext .inlineArea b {
-    font-size: 16px;
-    line-height: 30px;
   }
 
   .solutiontext p {
