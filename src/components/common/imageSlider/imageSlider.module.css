@@ -1,46 +1,65 @@
-@keyframes scrollLeft {
+.sliderTrack {
+  display: flex;
+  animation: scroll 20s linear alternate infinite;
+}
+
+.sliderTrack2 {
+  animation: scroll 20s linear infinite alternate-reverse;
+}
+
+.slide {
+  flex: 0 0 auto;
+  padding: 10px;
+}
+
+.slide img {
+  border-radius: 16px;
+  max-height: 220px;
+}
+
+.imageGalleryTitle {
+  padding-bottom: 3.5rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--secondary--color);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.imageGalleryTitle span {
+  color: var(--primary-color);
+}
+
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(
-      calc(-100% + 70vw)
-    ); /* Scroll 70% of viewport width */
+    transform: translateX(-95%);
   }
 }
 
-@keyframes scrollRight {
-  0% {
-    transform: translateX(calc(-100% + 70vw)); /* Start from the end */
+.leftbubblecircle {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  transform: translate(0, -50%);
+  z-index: 0;
+}
+
+.leftbubblecircle img {
+  max-width: 40rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .imageGalleryTitle {
+    font-size: 2rem;
+    padding-bottom: 2rem;
   }
-  100% {
-    transform: translateX(0); /* Scroll back to the start */
+
+  .slide img {
+    max-height: 110px;
   }
-}
-
-.scrollLeft {
-  animation: scrollLeft 10s linear infinite;
-}
-
-.scrollRight {
-  animation: scrollRight 10s linear infinite;
-}
-
-.sliderContainer {
-  width: 70vw; /* Limit slider to 70% of viewport width */
-  overflow: hidden; /* Hide overflow images */
-  margin: 0 auto; /* Center the container */
-  display: flex;
-  justify-content: center;
-}
-
-.slider {
-  display: flex;
-  height: 40px; /* Set the height of the slider */
-}
-
-.image {
-  flex: 0 0 auto; /* Ensure images stay at their natural width */
-  height: 100%; /* Fit the height of the slider */
-  width: auto; /* Maintain aspect ratio */
 }

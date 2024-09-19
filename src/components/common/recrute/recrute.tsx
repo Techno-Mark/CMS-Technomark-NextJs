@@ -4,7 +4,7 @@ import style from "./recrute.module.css";
 const Recrute = ({ props }: any) => {
   return (
     <div className="bg-white py-10 text-black flex items-center justify-center space-x-4">
-      <div className={`flex gap-12 ${style.gridContainer}`}>
+      <div className={`flex gap-12 justify-center ${style.gridContainer}`}>
         {props.data.map((i: any, index: number) => (
           <div
             key={index}

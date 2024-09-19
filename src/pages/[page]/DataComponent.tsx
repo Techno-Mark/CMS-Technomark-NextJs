@@ -77,9 +77,9 @@ const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
 const Experties = lazy(() => import("@/components/common/experties/experties"));
 const Team = lazy(() => import("@/components/common/team/team"));
 const Recrute = lazy(() => import("@/components/common/recrute/recrute"));
-// const ImageSlider = lazy(
-//   () => import("@/components/common/imageSlider/imageSlider")
-// )
+const ImageSlider = lazy(
+  () => import("@/components/common/imageSlider/imageSlider")
+);
 const CurrentOpenings = lazy(
   () => import("@/components/common/currentOpenings/currentOpenings")
 );
@@ -1014,7 +1014,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Current Openings":
         return (
           sectionData && (
-            <section className={`${styles.clientspeaksection} tm-section bg-white`}>
+            <section
+              className={`${styles.clientspeaksection} tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -1082,10 +1084,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         );
+      case "Image Gallery":
+        return <ImageSlider sectionData={sectionData} />;
       case "Process of Recruiting":
         return (
           sectionData && (
-            <section className={`${styles.clientspeaksection} tm-section bg-white`}>
+            <section
+              className={`${styles.clientspeaksection} tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -1131,7 +1137,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  console.log(homeData);
   // <CareerDetailsForm />
   return (
     <>
