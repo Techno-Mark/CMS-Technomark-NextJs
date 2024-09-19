@@ -76,10 +76,10 @@ const ContactFormSection = lazy(
 const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
 const Experties = lazy(() => import("@/components/common/experties/experties"));
 const Team = lazy(() => import("@/components/common/team/team"));
-// const Recrute = lazy(() => import("@/components/common/recrute/recrute"))
-// const ImageSlider = lazy(
-//   () => import("@/components/common/imageSlider/imageSlider")
-// )
+const Recrute = lazy(() => import("@/components/common/recrute/recrute"));
+const ImageSlider = lazy(
+  () => import("@/components/common/imageSlider/imageSlider")
+);
 const CurrentOpenings = lazy(
   () => import("@/components/common/currentOpenings/currentOpenings")
 );
@@ -1014,7 +1014,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       case "Current Openings":
         return (
           sectionData && (
-            <section className={`${styles.careerTitle} tm-section bg-white`}>
+            <section
+              className={`${styles.clientspeaksection} tm-section bg-white`}
+            >
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
@@ -1047,11 +1049,11 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                   titleFirst={true}
                   titleClassName="clienttitle"
                 />
-                <div className="flex flex-col items-center justify-between w-full gap-6 md:gap-12 md:flex-row bg-[#F4FBF6] text-[#1D3557] border rounded-lg border-[#D4EBCC] py-4 md:px-[10%] lg:px-[10%]">
+                <div className="flex flex-col items-center justify-center w-full gap-6 md:gap-12 md:flex-row bg-[#F4FBF6] text-[#1D3557] border rounded-lg border-[#D4EBCC] py-4 md:px-[10%] lg:px-[10%]">
                   {!!sectionData.data &&
                     sectionData.data.map((i: any, index: number) => (
                       <span
-                        className="mx-1 flex gap-2.5 text-xl font-medium"
+                        className="mx-1 flex gap-2.5 text-xl font-medium whitespace-nowrap"
                         key={index}
                       >
                         <Image
@@ -1078,6 +1080,28 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             <section className={`${styles.careerTitle} tm-section bg-white`}>
               <div className="container mx-auto">
                 <CareerDetailsForm props={sectionData} />
+              </div>
+            </section>
+          )
+        );
+      case "Image Gallery":
+        return <ImageSlider sectionData={sectionData} />;
+      case "Process of Recruiting":
+        return (
+          sectionData && (
+            <section
+              className={`${styles.clientspeaksection} tm-section bg-white`}
+            >
+              <div className="container mx-auto">
+                <TitleSection
+                  sectionData={{
+                    title: !!sectionData.title ? sectionData.title : "",
+                    subtitle: "",
+                  }}
+                  titleFirst={true}
+                  titleClassName="clienttitle"
+                />
+                <Recrute props={sectionData} />
               </div>
             </section>
           )
@@ -1113,7 +1137,6 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return null;
     }
   };
-  console.log(homeData);
   // <CareerDetailsForm />
   return (
     <>

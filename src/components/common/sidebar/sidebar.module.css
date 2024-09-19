@@ -20,6 +20,7 @@
 .whitesidebar {
   background: var(--white-color);
 }
+
 .sidebarbtn {
   height: 100%;
   color: var(--border-quaternary);
@@ -62,6 +63,7 @@
 }
 
 @keyframes movingarrow {
+
   0%,
   100% {
     transform: translateX(0);
@@ -80,7 +82,7 @@
   animation: spin 3s linear infinite;
 } */
 .container {
-  padding: 5rem 10rem 0;
+  padding: 3rem 10rem 0;
 }
 
 .drawer {
@@ -200,17 +202,9 @@
 }
 
 @media only screen and (max-width: 991px) {
-  .drawer {
-    width: 100%;
-    padding-top: 10rem;
-  }
-
-  .container {
-    padding: 10rem 0 0;
-  }
 
   .formcirlerotate {
-    top: 12rem;
+    top: -4rem;
   }
 
   .sidebar {
@@ -222,5 +216,21 @@
   .projectform textarea {
     font-size: 2rem;
     line-height: 3rem;
+  }
+
+  .drawer {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .projectform label,
+  .projectform input,
+  .projectform textarea {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }

@@ -1,32 +1,28 @@
-import React from "react"
-import style from "./recrute.module.css"
+import React from "react";
+import style from "./recrute.module.css";
 
-const data = [
-  { number: "01", title: "Screening" },
-  { number: "02", title: "Technical round" },
-  { number: "03", title: "practical round" },
-  { number: "04", title: "final hr round" },
-  { number: "05", title: "offer rollout" }
-]
-
-const Recrute = () => {
+const Recrute = ({ props }: any) => {
   return (
-    <div className="bg-white py-20 text-black flex items-center justify-center space-x-4">
-      <div className="grid grid-cols-5 gap-6 md:gap-8 lg:gap-12">
-        {data.map((i, index) => (
+    <div className="bg-white py-10 text-black flex items-center justify-center space-x-4">
+      <div className={`flex gap-12 justify-center ${style.gridContainer}`}>
+        {props.data.map((i: any, index: number) => (
           <div
             key={index}
             className={`relative ${
               style.card
-            } bg-white border-t border-b border-[#E7E7E7] text-[#1D3557] font-semibold flex flex-col items-center justify-center text-[12px] lg:text-md ${
+            } bg-white border-t border-b border-[#E7E7E7] text-[#1D3557] font-semibold flex flex-col items-center justify-center text-[12px] md:text-[10px] lg:text-md ${
               index === 0 ? "border-l" : ""
-            } ${index === data.length - 1 ? "border-r" : ""}`}
+            } ${index === props.data.length - 1 ? "border-r" : ""}`}
           >
-            <div className="font-bold text-[#BBC2CD] text-3xl lg:text-5xl mb-1 lg:mb-2">
-              {i.number}
+            <div
+              className={`flex flex-col items-center justify-center ${style.cardContent}`}
+            >
+              <div className="font-bold text-[#BBC2CD] text-3xl lg:text-5xl mb-1 lg:mb-2">
+                {i.title}
+              </div>
+              <div className="text-center">{i.description}</div>
             </div>
-            <div>{i.title}</div>
-            {index !== data.length - 1 && (
+            {index !== props.data.length - 1 && (
               <>
                 <div
                   className={`absolute border-t ${style.rightTop1} ${style.border1}`}
@@ -57,7 +53,7 @@ const Recrute = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Recrute
+export default Recrute;
