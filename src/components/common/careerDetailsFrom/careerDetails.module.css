@@ -6,15 +6,16 @@
 
 .techstartupbox h1 {
   text-align: left;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
+  margin-bottom: 1rem !important;
 }
 
 .techstartupbox li {
   padding-bottom: 20px;
   color: var(--secondary--color);
   font-family: Montserrat;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 2.6rem;
@@ -24,12 +25,19 @@
 
 .techstartupbox li span {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  position: relative;
+  padding-left: 30px;
 }
 
-.techstartupbox li span img {
-  margin-right: 10px;
+.techstartupbox li span::before {
+  content: "";
+  width: 25px;
+  height: 30px;
+  background: url(/images/arrow-right-resource.png) no-repeat top;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .techstartupbox li:hover {

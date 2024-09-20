@@ -1,7 +1,7 @@
 // components/Challenges/Challenges.tsx
-import React from "react";
-import Image from "next/image";
-import styles from "./Challenges.module.css";
+import React from "react"
+import Image from "next/image"
+import styles from "./Challenges.module.css"
 
 interface ChallengesProps {
   props: any;
@@ -46,7 +46,7 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Challenges;
+export default Challenges
