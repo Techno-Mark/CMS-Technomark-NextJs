@@ -18,6 +18,7 @@
 
 .clientslideinner .clientpic {
   flex: 1;
+  max-width: 270px;
 }
 
 .clientslideinner .clientpic img {
@@ -31,7 +32,7 @@
 .logobox {
   border: 1px solid var(--border-secondary);
   display: inline-block;
-  padding: 2rem 3rem;
+  padding: 1.4rem 1.2rem;
 }
 
 .logobox img {
@@ -48,8 +49,8 @@
   color: var(--secondary--color);
   font-size: 1.3rem;
   font-weight: 400;
-  line-height: 2rem;
-  margin-bottom: 3.5rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
   width: 100%;
   min-height: 120px;
 }
