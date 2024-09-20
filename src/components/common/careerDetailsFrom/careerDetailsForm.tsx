@@ -7,7 +7,7 @@ const CareerDetailsForm = ({ props }: any) => {
     <div className="w-full flex bg-white items-center justify-center">
       <div className="flex flex-col lg:flex-row justify-between overflow-auto">
         {!!props && (
-          <div className={`my-10 mx-4 md:mx-24 lg:w-1/2 text-black ${styles.techstartupbox}`}>
+          <div className={`my-10 mx-4 md:mx-10 lg:w-1/2 text-black ${styles.techstartupbox}`}>
             <p
               dangerouslySetInnerHTML={{
                 __html: props || ""

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import ImageSlider from "../casestudy/ImageSlider"
 import styles from "./CasestudyList.module.css"
 

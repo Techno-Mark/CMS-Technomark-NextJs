@@ -1,6 +1,7 @@
 import Image from "next/image"
 import TitleSection from "../title/title"
 import styles from "./techexpert.module.css"
+import React from "react"
 
 interface TechExpertProps {
   props: any;

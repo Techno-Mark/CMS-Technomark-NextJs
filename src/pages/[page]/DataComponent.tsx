@@ -345,7 +345,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <section
-              className={`${styles.clientspeaksection} tm-section bg-white`}
+              className={`${styles.clientspeaksection} tm-section bg-[#fafafa]`}
             >
               <Image
                 className={styles.clientcurve}

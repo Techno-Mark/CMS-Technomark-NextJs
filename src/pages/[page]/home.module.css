@@ -237,12 +237,12 @@
 }
 
 .careerTitle :global(.title-section h2) {
-  padding-bottom: 2rem !important;
+  /* padding-bottom: 2rem !important; */
   font-weight: bold;
 }
 
 .careerTitle :global(.title-section p) {
-  width: 50%;
+  /* width: 50%; */
   margin: 0 auto 3.8rem;
   font-size: 1.7rem;
   line-height: 3rem;
