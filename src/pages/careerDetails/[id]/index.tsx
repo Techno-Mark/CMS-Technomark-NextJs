@@ -17,7 +17,7 @@ const Index = () => {
     try {
       const url = `${
         process.env.NEXT_PUBLIC_API_URL || ""
-      }career/getById/${id}`
+      }career/getBySlug/${id}`
 
       const res = await axios.get(url, {
         headers: {
