@@ -89,6 +89,7 @@ const CurrentOpenings = ({ data }: any) => {
 
       const data = res?.data?.data
       if (data) {
+        console.log(data)
         setCurrentOpeningData(data.careers || [])
       }
     } catch (error) {

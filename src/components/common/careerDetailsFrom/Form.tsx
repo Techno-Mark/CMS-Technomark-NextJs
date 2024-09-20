@@ -48,9 +48,7 @@ const Form = () => {
   const handleSubmit = () => {
     validate()
 
-    if (Object.values(formErr).some((value) => !value)) {
-      console.log("hi")
-    } else {
+    if (!Object.values(formErr).some((value) => !value)) {
       console.log("submitted")
     }
   }
@@ -116,6 +114,7 @@ const Form = () => {
             value={formData.mobileNo}
             className="h[52px] text-black w-full border-b border-b-[#344968] outline-none"
             onChange={(e) => {
+              // eslint-disable-next-line
               if (e.target.value.length > 10) {
                 console.log("")
               } else if (!/^[0-9\s]*$/.test(e.target.value)) {
