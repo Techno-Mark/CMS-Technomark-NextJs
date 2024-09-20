@@ -55,11 +55,11 @@ const Form = () => {
   };
 
   return (
-    <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px]  flex flex-col shadow-career-form !w-full">
-      <p className="mb-10 lg:mb-[60px] text-[#344968] text-[24px] lg:text-[30px] font-medium">
+    <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px] flex flex-col shadow-career-form !w-full">
+      <p className="mb-10 text-[#344968] text-[24px] font-medium">
         Apply for this position
       </p>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-5">
         <div>
           <label className="text-[#344968] text-xl font-normal">
             Full name
@@ -209,7 +209,7 @@ const Form = () => {
           />
           <label
             htmlFor="agreeTermsAndCondition"
-            className="ml-2 text-[14px] md:text-[16px] lg:text-[18px] font-medium text-[#1D3557] text-end"
+            className="ml-2 text-[14px] font-medium text-[#1D3557] text-end"
           >
             By using this form you agree with the storage and handling of your
             data by this website.
