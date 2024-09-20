@@ -28,11 +28,11 @@ const ImageSlider = ({
       {
         breakpoint: 767,
         settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
+          arrows: false
+        }
+      }
+    ]
+  }
   return (
     <div className={small ? styles.sliderContainer2 : styles.sliderContainer1}>
       <Slider ref={imageSlider} {...imgSliderSettings}>

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import styles from "./imageSlider.module.css";
+import Image from "next/image"
+import React from "react"
+import styles from "./imageSlider.module.css"
 
 interface GalleryData {
   title?: string;
@@ -12,10 +12,10 @@ interface ImageGalleryProps {
 }
 
 const ImageSlider: React.FC<ImageGalleryProps> = ({ sectionData }) => {
-  const images = sectionData.Images;
-  const half = Math.ceil(images.length / 2);
-  const firstRowImages = images.slice(0, half);
-  const secondRowImages = images.slice(half);
+  const images = sectionData.Images
+  const half = Math.ceil(images.length / 2)
+  const firstRowImages = images.slice(0, half)
+  const secondRowImages = images.slice(half)
 
   return (
     <section className="bg-white py-8 md:py-24 relative border-t border-b border-[var(--secondary--color)] overflow-hidden">
@@ -62,7 +62,7 @@ const ImageSlider: React.FC<ImageGalleryProps> = ({ sectionData }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ImageSlider;
+export default ImageSlider

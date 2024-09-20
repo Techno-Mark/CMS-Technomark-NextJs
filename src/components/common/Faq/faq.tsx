@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styles from "./faq.module.css";
-import Image from "next/image";
+import React, { useState } from "react"
+import styles from "./faq.module.css"
+import Image from "next/image"
 
 interface FaqItem {
   question: string;
@@ -12,11 +12,11 @@ interface FaqProps {
 }
 
 const Faq: React.FC<FaqProps> = ({ data }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <div
@@ -25,8 +25,8 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
       data-accordion="collapse"
     >
       {data.map((faqData, index) => {
-        const question = faqData.question || "";
-        const answer = faqData.answer || "";
+        const question = faqData.question || ""
+        const answer = faqData.answer || ""
 
         return (
           <div key={index} className={`${styles.cardheader}  mb-5`}>
@@ -70,16 +70,16 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
               <div className={`${styles.cardbody} ml-5 mb-5`}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: answer || "",
+                    __html: answer || ""
                   }}
                 />
               </div>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq

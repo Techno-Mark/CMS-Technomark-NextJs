@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import ImageSlider from "../casestudy/ImageSlider";
-import styles from "./CasestudyList.module.css";
+import Image from "next/image"
+import { useEffect, useState } from "react"
+import ImageSlider from "../casestudy/ImageSlider"
+import styles from "./CasestudyList.module.css"
 
 interface Casestudy {
   buttons: [];
@@ -16,29 +16,29 @@ interface CaseStudyListProps {
 const CaseStudyList: React.FC<CaseStudyListProps> = ({
   props,
   setDetailedOpen,
-  setDetailedImagesUrl,
+  setDetailedImagesUrl
 }) => {
-  const [selectedCategory] = useState<string>("All");
-  const [showAll, setShowAll] = useState<boolean>(false);
-  const [isSmall, setIsSmall] = useState(false);
+  const [selectedCategory] = useState<string>("All")
+  const [showAll, setShowAll] = useState<boolean>(false)
+  const [isSmall, setIsSmall] = useState(false)
 
   const handleResize = () => {
     if (window.innerWidth <= 1500) {
-      setIsSmall(true);
+      setIsSmall(true)
     } else {
-      setIsSmall(false);
+      setIsSmall(false)
     }
-  };
+  }
 
   useEffect(() => {
-    handleResize();
+    handleResize()
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   // const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -57,13 +57,13 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
         ? props.data
         : []
       : props.data
-      ? props.data.filter(
+        ? props.data.filter(
           (caseStudy: any) => caseStudy.category === selectedCategory
         )
-      : [];
+        : []
 
   // Display 3 items by default, show all if "View All" is clicked
-  const displayedData = showAll ? filteredData : filteredData.slice(0, 3);
+  const displayedData = showAll ? filteredData : filteredData.slice(0, 3)
 
   return (
     <div className={styles.caseslide} id="case-slide">
@@ -160,7 +160,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                 dangerouslySetInnerHTML={{
                   __html: caseStudy.additionalPoints
                     ? caseStudy.additionalPoints
-                    : "",
+                    : ""
                 }}
               />
             </div>
@@ -176,7 +176,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CaseStudyList;
+export default CaseStudyList

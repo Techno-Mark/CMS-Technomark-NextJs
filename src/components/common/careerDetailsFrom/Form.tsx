@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Button from "../button/button";
+import { useState } from "react"
+import Button from "../button/button"
 
 type FormDataType = {
   fullName: string;
@@ -17,8 +17,8 @@ const Form = () => {
     mobileNo: "",
     coverLetter: null,
     resume: null,
-    agreeTermsConditions: false,
-  });
+    agreeTermsConditions: false
+  })
 
   const [formErr, setFormErr] = useState<any>({
     fullName: "",
@@ -26,33 +26,31 @@ const Form = () => {
     mobileNo: "",
     coverLetter: "",
     resume: "",
-    agreeTermsConditions: "",
-  });
+    agreeTermsConditions: ""
+  })
 
   const validate = () => {
     const availableErrors: Partial<Record<keyof FormDataType, string>> = {};
     (Object.keys(formData) as any).forEach((key: keyof FormDataType) => {
       if (!formData[key]) {
         if (key === "agreeTermsConditions") {
-          availableErrors[key] = "Please agree to terms & conditions";
+          availableErrors[key] = "Please agree to terms & conditions"
         } else {
-          availableErrors[key] = "Field is required";
+          availableErrors[key] = "Field is required"
         }
       }
-    });
+    })
 
-    setFormErr(availableErrors);
-  };
+    setFormErr(availableErrors)
+  }
 
   const handleSubmit = () => {
-    validate();
+    validate()
 
-    if (Object.values(formErr).some((value) => !value)) {
-      return;
-    } else {
-      console.log("submitted");
+    if (!Object.values(formErr).some((value) => !value)) {
+      console.log("submitted")
     }
-  };
+  }
 
   return (
     <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px]  flex flex-col shadow-career-form !w-full">
@@ -69,8 +67,8 @@ const Form = () => {
             value={formData.fullName}
             className="h[52px] text-black w-full border-b border-b-[#344968] outline-none"
             onChange={(e) => {
-              setFormErr({ ...formErr, fullName: "" });
-              setFormData({ ...formData, fullName: e.target.value });
+              setFormErr({ ...formErr, fullName: "" })
+              setFormData({ ...formData, fullName: e.target.value })
             }}
           />
           {!!formErr.fullName && (
@@ -87,14 +85,13 @@ const Form = () => {
             type="text"
             className="h[52px] text-black w-full border-b border-b-[#344968] outline-none"
             onChange={(e) => {
-              setFormErr({ ...formErr, email: "" });
-              setFormData({ ...formData, email: e.target.value });
+              setFormErr({ ...formErr, email: "" })
+              setFormData({ ...formData, email: e.target.value })
             }}
             onBlur={(e) => {
-              if (
-                !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e.target.value.trim())
-              ) {
-                setFormErr({ ...formErr, email: "Email is not valid" });
+              // eslint-disable-next-line
+              if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e.target.value.trim())) {
+                setFormErr({ ...formErr, email: "Email is not valid" })
               }
             }}
           />
@@ -115,16 +112,17 @@ const Form = () => {
             value={formData.mobileNo}
             className="h[52px] text-black w-full border-b border-b-[#344968] outline-none"
             onChange={(e) => {
+              // eslint-disable-next-line
               if (e.target.value.length > 10) {
-                return;
+                // eslint-disable-next-line
               } else if (!/^[0-9\s]*$/.test(e.target.value)) {
-                return;
+
               } else {
-                setFormErr({ ...formErr, mobileNo: "" });
+                setFormErr({ ...formErr, mobileNo: "" })
                 setFormData({
                   ...formData,
-                  mobileNo: e.target.value.trim(),
-                });
+                  mobileNo: e.target.value.trim()
+                })
               }
             }}
           />
@@ -143,12 +141,12 @@ const Form = () => {
             id="uploadResume"
             type="file"
             className={`absolute left-0 bottom-0 w-full text-lg ${
-              !!formData.coverLetter ? "" : "text-opacity-0"
+              formData.coverLetter ? "" : "text-opacity-0"
             } text-black file:hidden`}
             placeholder="Upload CV/Resume"
             onChange={(e) => {
-              setFormErr({ ...formErr, coverLetter: "" });
-              setFormData({ ...formData, coverLetter: e.target.files });
+              setFormErr({ ...formErr, coverLetter: "" })
+              setFormData({ ...formData, coverLetter: e.target.files })
             }}
           />
           <label htmlFor="uploadResume" className="cursor-pointer">
@@ -175,12 +173,12 @@ const Form = () => {
             id="uploadResume"
             type="file"
             className={`absolute left-0 bottom-0 w-full text-lg ${
-              !!formData.resume ? "" : "text-opacity-0"
+              formData.resume ? "" : "text-opacity-0"
             } text-black file:hidden`}
             placeholder="Upload CV/Resume"
             onChange={(e) => {
-              setFormErr({ ...formErr, resume: "" });
-              setFormData({ ...formData, resume: e.target.files });
+              setFormErr({ ...formErr, resume: "" })
+              setFormData({ ...formData, resume: e.target.files })
             }}
           />
           <label htmlFor="uploadResume" className="cursor-pointer">
@@ -203,7 +201,7 @@ const Form = () => {
             onChange={(e) =>
               setFormData({
                 ...formData,
-                agreeTermsConditions: e.target.checked,
+                agreeTermsConditions: e.target.checked
               })
             }
           />
@@ -227,7 +225,7 @@ const Form = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form

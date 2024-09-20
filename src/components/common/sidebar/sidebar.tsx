@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import styles from "./sidebar.module.css";
-import Button from "../button/button";
+import React, { useState, useEffect } from "react"
+import Image from "next/image"
+import styles from "./sidebar.module.css"
+import Button from "../button/button"
 
 interface SidebarProps {
   isDrawerVisible: boolean;
@@ -9,110 +9,110 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
-  const [isWhiteSidebar, setIsWhiteSidebar] = useState(false);
+  const [isWhiteSidebar, setIsWhiteSidebar] = useState(false)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     mobileNumber: "",
     companyName: "",
-    message: "",
-  });
+    message: ""
+  })
   const [errors, setErrors] = useState({
     fullName: "",
     email: "",
     mobileNumber: "",
     companyName: "",
-    message: "",
-  });
-  const [isSuccess, setIsSuccess] = useState(0);
-  const [message, setMessage] = useState("");
+    message: ""
+  })
+  const [isSuccess, setIsSuccess] = useState(0)
+  const [message, setMessage] = useState("")
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { id, value } = e.target;
+    const { id, value } = e.target
 
-    setErrors((prev) => ({ ...prev, [id]: "" }));
+    setErrors((prev) => ({ ...prev, [id]: "" }))
 
     if (id === "mobileNumber") {
-      const filteredValue = value.replace(/\D/g, "").slice(0, 10);
-      setFormData((prev) => ({ ...prev, [id]: filteredValue }));
+      const filteredValue = value.replace(/\D/g, "").slice(0, 10)
+      setFormData((prev) => ({ ...prev, [id]: filteredValue }))
     } else {
-      setFormData((prev) => ({ ...prev, [id]: value }));
+      setFormData((prev) => ({ ...prev, [id]: value }))
     }
-  };
+  }
 
   const validate = () => {
-    const newErrors: any = {};
-    if (!formData.fullName) newErrors.fullName = "Full name is required";
-    if (!formData.email) newErrors.email = "E-mail is required";
+    const newErrors: any = {}
+    if (!formData.fullName) newErrors.fullName = "Full name is required"
+    if (!formData.email) newErrors.email = "E-mail is required"
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid e-mail address";
+      newErrors.email = "Invalid e-mail address"
     }
     if (!formData.mobileNumber) {
-      newErrors.mobileNumber = "Mobile Number is required";
+      newErrors.mobileNumber = "Mobile Number is required"
     } else if (!/^\d{10}$/.test(formData.mobileNumber)) {
-      newErrors.mobileNumber = "Mobile Number must be exactly 10 digits";
+      newErrors.mobileNumber = "Mobile Number must be exactly 10 digits"
     }
     if (!formData.companyName) {
-      newErrors.companyName = "Company name is required";
+      newErrors.companyName = "Company name is required"
     }
-    if (!formData.message) newErrors.message = "Message is required";
-    return newErrors;
-  };
+    if (!formData.message) newErrors.message = "Message is required"
+    return newErrors
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const validationErrors = validate();
+    e.preventDefault()
+    const validationErrors = validate()
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
+      setErrors(validationErrors)
+      return
     }
 
     try {
       if (isSuccess !== 1) {
-        setIsSuccess(1);
+        setIsSuccess(1)
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}contact-us/save`,
           {
             method: "POST",
             headers: {
               referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({
               name: formData.fullName,
               email: formData.email,
               mobileNumber: formData.mobileNumber,
               companyName: formData.companyName,
-              message: formData.message,
-            }),
+              message: formData.message
+            })
           }
-        );
+        )
 
-        const responseData = await response.json();
+        const responseData = await response.json()
 
         if (!response.ok) {
-          setIsSuccess(3);
-          setMessage(responseData.data.email);
+          setIsSuccess(3)
+          setMessage(responseData.data.email)
           setTimeout(() => {
-            setIsSuccess(0);
-            setMessage("");
-          }, 10000);
-          return;
+            setIsSuccess(0)
+            setMessage("")
+          }, 10000)
+          return
         }
 
-        setIsSuccess(2);
-        clearAll();
+        setIsSuccess(2)
+        clearAll()
         setTimeout(() => {
-          setIsSuccess(0);
-          setMessage("");
-        }, 10000);
+          setIsSuccess(0)
+          setMessage("")
+        }, 10000)
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error)
     }
-  };
+  }
 
   const clearAll = () => {
     setFormData({
@@ -120,27 +120,27 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
       email: "",
       mobileNumber: "",
       companyName: "",
-      message: "",
-    });
+      message: ""
+    })
     setErrors({
       fullName: "",
       email: "",
       mobileNumber: "",
       companyName: "",
-      message: "",
-    });
-  };
+      message: ""
+    })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsWhiteSidebar(window.scrollY >= window.innerHeight);
-    };
+      setIsWhiteSidebar(window.scrollY >= window.innerHeight)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <section
@@ -182,8 +182,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
           <button
             className={styles.closeButton}
             onClick={() => {
-              toggleDrawer();
-              clearAll();
+              toggleDrawer()
+              clearAll()
             }}
           >
             <Image src="/images/close.png" alt="close" width={24} height={24} />
@@ -334,7 +334,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
         ></div>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

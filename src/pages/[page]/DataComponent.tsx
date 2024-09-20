@@ -1,88 +1,87 @@
-import Loading from "@/components/common/loading/loading";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import React, { lazy, useEffect, useRef, useState } from "react";
-import styles from "./home.module.css";
-import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider";
-import BlogList from "../blogs/list/blogList/BlogList";
-import CareerDetailsForm from "@/components/common/careerDetailsFrom/careerDetailsForm";
+import Loading from "@/components/common/loading/loading"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
+import React, { lazy, useEffect, useRef, useState } from "react"
+import styles from "./home.module.css"
+import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider"
+import BlogList from "../blogs/list/blogList/BlogList"
 
-const Homesection = lazy(() => import("@/components/homesection/HomeSection"));
+const Homesection = lazy(() => import("@/components/homesection/HomeSection"))
 const TechStartupBg = lazy(
   () => import("@/components/tech-startup-bg/tech-startup-bg")
-);
-const TitleSection = lazy(() => import("@/components/common/title/title"));
+)
+const TitleSection = lazy(() => import("@/components/common/title/title"))
 const MethodologyBox = lazy(
   () => import("@/components/common/methodologybox/methodologybox")
-);
-const Services = lazy(() => import("@/components/common/services/services"));
-const CaseStudy = lazy(() => import("@/components/common/casestudy/casestudy"));
-const TechIcons = lazy(() => import("@/components/common/techicons/techicons"));
+)
+const Services = lazy(() => import("@/components/common/services/services"))
+const CaseStudy = lazy(() => import("@/components/common/casestudy/casestudy"))
+const TechIcons = lazy(() => import("@/components/common/techicons/techicons"))
 const GuaranteePoints = lazy(
   () => import("@/components/common/guaranteepoint/guaranteepoint")
-);
+)
 // const Video = lazy(() => import("@/components/common/video/video"))
-const Client = lazy(() => import("@/components/common/client/client"));
+const Client = lazy(() => import("@/components/common/client/client"))
 const Achievement = lazy(
   () => import("@/components/common/achievement/achievement")
-);
-const Faq = lazy(() => import("@/components/common/Faq/faq"));
+)
+const Faq = lazy(() => import("@/components/common/Faq/faq"))
 const Singleaward = lazy(
   () => import("@/components/common/singleaward/singleaward")
-);
+)
 const FormSection = lazy(
   () => import("@/components/common/formsection/formsection")
-);
+)
 const CaseStudyList = lazy(
   () => import("@/components/common/CasestudyList/CasestudyList")
-);
+)
 const CaseStudyDetail = lazy(
   () => import("@/components/common/casestudydetail/casestudydetail")
-);
+)
 const ScreenSlider = lazy(
   () => import("@/components/common/screenslider/screenslider")
-);
+)
 const Challenges = lazy(
   () => import("@/components/common/Challenges/Challenges")
-);
+)
 const Herosection = lazy(
   () => import("@/components/common/herosection/herosection")
-);
+)
 const ProductSolutions = lazy(
   () => import("@/components/common/productsolutions/productsolutions")
-);
+)
 const TechSlider = lazy(
   () => import("@/components/common/techslider/techslider")
-);
+)
 const TechService = lazy(
   () => import("@/components/common/techservice/techservice")
-);
+)
 const TechExpert = lazy(
   () => import("@/components/common/techexpert/techexpert")
-);
+)
 const TechBenifits = lazy(
   () => import("@/components/common/techbenifits/techbenifits")
-);
+)
 const HireDeveloper = lazy(
   () => import("@/components/common/hiredeveloper/hiredeveloper")
-);
-const Engage = lazy(() => import("@/components/common/engageSection/engage"));
+)
+const Engage = lazy(() => import("@/components/common/engageSection/engage"))
 const ValueService = lazy(
   () => import("@/components/common/valueservice/valueservice")
-);
+)
 const ContactFormSection = lazy(
   () => import("@/components/common/contactformsection/formsection")
-);
-const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"));
-const Experties = lazy(() => import("@/components/common/experties/experties"));
-const Team = lazy(() => import("@/components/common/team/team"));
-const Recrute = lazy(() => import("@/components/common/recrute/recrute"));
+)
+const WorldMap = lazy(() => import("@/components/common/worldMap/worldMap"))
+const Experties = lazy(() => import("@/components/common/experties/experties"))
+const Team = lazy(() => import("@/components/common/team/team"))
+const Recrute = lazy(() => import("@/components/common/recrute/recrute"))
 const ImageSlider = lazy(
   () => import("@/components/common/imageSlider/imageSlider")
-);
+)
 const CurrentOpenings = lazy(
   () => import("@/components/common/currentOpenings/currentOpenings")
-);
+)
 // const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
@@ -122,25 +121,25 @@ interface HomeProps {
 }
 
 const DataComponent = ({ data }: { data: HomeProps }) => {
-  const pathName: any = usePathname();
-  const [homeData, setHomeData] = useState<any>();
-  const [loading, setLoading] = useState(true);
-  const [detailedSliderOpen, setDetailedOpen] = useState<boolean>(false);
+  const pathName: any = usePathname()
+  const [homeData, setHomeData] = useState<any>()
+  const [loading, setLoading] = useState(true)
+  const [detailedSliderOpen, setDetailedOpen] = useState<boolean>(false)
   const [detailedSliderImagesUrl, setDetailedImagesUrl] = useState<string[]>(
     []
-  );
+  )
 
   useEffect(() => {
-    setHomeData(data);
-    setLoading(false);
-  }, [pathName]);
+    setHomeData(data)
+    setLoading(false)
+  }, [pathName])
 
-  const formSectionRef = useRef<HTMLElement | null>(null);
-  const techSectionRef = useRef<HTMLElement | null>(null);
+  const formSectionRef = useRef<HTMLElement | null>(null)
+  const techSectionRef = useRef<HTMLElement | null>(null)
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+    ref.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
@@ -154,7 +153,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               techSectionRef={techSectionRef}
             />
           )
-        );
+        )
       case "Tech Startup":
         return (
           sectionData && (
@@ -162,7 +161,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <TechStartupBg sectionData={sectionData} />
             </section>
           )
-        );
+        )
       case "Methodology":
         return (
           sectionData && (
@@ -183,7 +182,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       : "",
                     subtitle: sectionData.subDescriptionText
                       ? sectionData.subDescriptionText
-                      : "",
+                      : ""
                   }}
                   titleClassName="methodologytitle"
                 />
@@ -193,7 +192,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       // case "services":
       //   return (
       //     homeData?.services && (
@@ -229,7 +228,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                       backgroundClip: "text, padding-box",
                       WebkitBackgroundClip: "text",
                       borderImage:
-                        "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%) 1",
+                        "linear-gradient(90deg, #168944 0.08%, #40aa46 99.95%) 1"
                     }}
                     dangerouslySetInnerHTML={{ __html: sectionData.title }}
                   />
@@ -255,7 +254,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Tech Icons":
         return (
           sectionData && (
@@ -272,7 +271,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title,
-                    subtitle: sectionData.subtitle,
+                    subtitle: sectionData.subtitle
                   }}
                   titleFirst={true}
                   titleClassName={styles.methodologytitle}
@@ -282,7 +281,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Guarantee":
         return (
           sectionData && (
@@ -290,7 +289,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.heading ? sectionData.heading : "",
+                    title: sectionData.heading ? sectionData.heading : ""
                   }}
                   titleFirst={true}
                   titleClassName={styles.guaranteetitle}
@@ -303,7 +302,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                         <video loop autoPlay muted>
                           <source src={sectionData.image} type="video/mp4" />
                         </video>
-                      ) : !!sectionData.image &&
+                          ) : !!sectionData.image &&
                         !sectionData.image.includes(".mp4") ? (
                         <Image
                           src={sectionData.image}
@@ -312,14 +311,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                           height={500}
                           className="rounded-2xl"
                         />
-                      ) : (
+                              ) : (
                         <video loop autoPlay muted>
                           <source
                             src={"/images/Case-study.mp4"}
                             type="video/mp4"
                           />
                         </video>
-                      )}
+                              )}
                     </div>
                   </div>
                   <div className="lg:w-1/2 md:w-full md:pl-12 flex flex-col items-start justify-center">
@@ -331,7 +330,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       // case "Video Section":
       //   return (
       //     sectionData && (
@@ -359,7 +358,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={
                     !!(
@@ -373,7 +372,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Achievement":
         return (
           sectionData && (
@@ -382,7 +381,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title,
-                    subtitle: sectionData.subTitle,
+                    subtitle: sectionData.subTitle
                   }}
                   titleFirst={true}
                   titleClassName={styles.achievementtitle}
@@ -391,7 +390,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Frequently  Asked  Questions":
         return (
           sectionData && (
@@ -410,7 +409,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     <TitleSection
                       sectionData={{
                         title: sectionData.heading ? sectionData.heading : "",
-                        subtitle: "",
+                        subtitle: ""
                       }}
                       titleFirst={true}
                       titleClassName="faqtitle"
@@ -429,7 +428,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Frequently  Asked Questions":
         return (
           sectionData && (
@@ -448,7 +447,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     <TitleSection
                       sectionData={{
                         title: sectionData.heading ? sectionData.heading : "",
-                        subtitle: "",
+                        subtitle: ""
                       }}
                       titleFirst={true}
                       titleClassName="faqtitle"
@@ -467,7 +466,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Awards & Recognition":
         return (
           sectionData && (
@@ -476,7 +475,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.heading ? sectionData.heading : "",
-                    subtitle: "",
+                    subtitle: ""
                   }}
                   titleFirst={true}
                   titleClassName="awardtitle"
@@ -487,7 +486,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Contact Form Section":
         return (
           sectionData && (
@@ -508,21 +507,21 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Case Study List":
         return (
           sectionData && (
             <section className={`${styles.casestudylist} tm-section bg-white`}>
               <div className="container mx-auto">
                 <p className={`${styles.casestudylistlabel}`}>
-                  {!!sectionData.label ? sectionData.label : ""}
+                  {sectionData.label ? sectionData.label : ""}
                 </p>
                 <TitleSection
                   sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: !!sectionData.subtitle
+                    title: sectionData.title ? sectionData.title : "",
+                    subtitle: sectionData.subtitle
                       ? sectionData.subtitle
-                      : "",
+                      : ""
                   }}
                   titleFirst={true}
                   titleClassName="casestudylisttitle"
@@ -535,7 +534,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Case Study Detail Hero Section":
         return (
           sectionData && (
@@ -549,7 +548,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={true}
                   titleClassName="casestudydetailtitle"
@@ -558,7 +557,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Business Impact":
         return (
           sectionData && (
@@ -567,7 +566,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={true}
                   titleClassName="businessimpacttitle"
@@ -575,7 +574,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       // case "problemstatement":
       //   return (
       //     homeData?.problemstatement && (
@@ -616,7 +615,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Challenges Solutions":
         return (
           sectionData && (
@@ -626,7 +625,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.title ? sectionData.title : "",
+                    title: sectionData.title ? sectionData.title : ""
                   }}
                   titleClassName="Challengessolutionstitle"
                 />
@@ -640,7 +639,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Major Screen":
         return (
           sectionData && (
@@ -655,7 +654,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Contact Feature":
         return (
           sectionData && (
@@ -667,7 +666,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Key Features":
         return (
           sectionData && (
@@ -678,7 +677,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title,
-                    subtitle: sectionData.subtitle,
+                    subtitle: sectionData.subtitle
                   }}
                   titleFirst={
                     !!(
@@ -692,7 +691,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "keyFeatureWithDetails":
         return (
           sectionData && (
@@ -701,7 +700,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subtitle ? sectionData.subtitle : "",
+                    subtitle: sectionData.subtitle ? sectionData.subtitle : ""
                   }}
                   titleFirst={false}
                   titleClassName="featurestitle"
@@ -710,7 +709,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Tech Feature":
         return (
           sectionData && (
@@ -719,7 +718,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    subtitle: ""
                   }}
                   titleFirst={
                     !!(
@@ -736,7 +735,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Tech Feature With Sub Title":
         return (
           sectionData && (
@@ -745,7 +744,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={
                     !!(
@@ -762,7 +761,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Product Hero Section":
         return (
           sectionData && (
@@ -779,7 +778,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               />
             </section>
           )
-        );
+        )
       // case "productservices":
       //   return (
       //     homeData?.productservices && (
@@ -809,7 +808,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Technology Home Section":
         return (
           sectionData && (
@@ -822,7 +821,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </section>
             </>
           )
-        );
+        )
       case "Tech Slider":
         return (
           sectionData && (
@@ -831,7 +830,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={true}
                   titleClassName="techslidertitle"
@@ -840,7 +839,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Tech Services":
         return (
           sectionData && (
@@ -849,7 +848,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: sectionData.subTitle ? sectionData.subTitle : "",
+                    subtitle: sectionData.subTitle ? sectionData.subTitle : ""
                   }}
                   titleFirst={true}
                   titleClassName="techservicestitle"
@@ -858,7 +857,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Tech Benefits":
         return (
           sectionData && (
@@ -866,7 +865,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <TechBenifits props={sectionData} />
             </section>
           )
-        );
+        )
       case "Hire Developer":
         return (
           sectionData && (
@@ -876,7 +875,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       // case "singletechservices":
       //   return (
       //     homeData?.singletechservices && (
@@ -914,7 +913,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Value Service":
         return (
           sectionData && (
@@ -924,7 +923,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Engage Section":
         return (
           sectionData && (
@@ -933,7 +932,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    subtitle: ""
                   }}
                   titleFirst={true}
                   titleClassName="servicestitle"
@@ -942,7 +941,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Contact Form":
         return (
           sectionData && (
@@ -954,9 +953,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </section>
             </>
           )
-        );
+        )
       case "Locations":
-        return sectionData && <WorldMap props={sectionData} />;
+        return sectionData && <WorldMap props={sectionData} />
       case "Technology Experties":
         return (
           sectionData && (
@@ -966,7 +965,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Blog Title":
         return (
           sectionData && (
@@ -974,7 +973,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: sectionData.title ? sectionData.title : "",
+                    title: sectionData.title ? sectionData.title : ""
                   }}
                   titleFirst={true}
                   titleClassName="casestudylisttitle"
@@ -983,7 +982,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Team Speak":
         return (
           sectionData && (
@@ -1001,7 +1000,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    subtitle: ""
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
@@ -1010,7 +1009,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       case "Current Openings":
         return (
           sectionData && (
@@ -1020,19 +1019,19 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    title: sectionData.title ? sectionData.title : "",
+                    subtitle: ""
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
                 />
-                <CurrentOpenings data={!!sectionData ? sectionData : []} />
+                <CurrentOpenings data={sectionData || []} />
               </div>
             </section>
           )
-        );
+        )
       case "Image Gallery":
-        return <ImageSlider sectionData={sectionData} />;
+        return <ImageSlider sectionData={sectionData} />
       case "Process of Recruiting":
         return (
           sectionData && (
@@ -1042,8 +1041,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    title: sectionData.title ? sectionData.title : "",
+                    subtitle: ""
                   }}
                   titleFirst={true}
                   titleClassName="clienttitle"
@@ -1052,7 +1051,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
               </div>
             </section>
           )
-        );
+        )
       // case "bloglist":
       //   return (
       //     sectionData && (
@@ -1081,10 +1080,10 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
       //     )
       //   );
       default:
-        return null;
+        return null
     }
-  };
-  console.log(homeData);
+  }
+  console.log(homeData)
   return (
     <>
       <MaximizedSlider
@@ -1115,7 +1114,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default DataComponent;
+export default DataComponent

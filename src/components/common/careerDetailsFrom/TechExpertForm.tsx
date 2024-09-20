@@ -1,6 +1,6 @@
-import Image from "next/image";
-import TitleSection from "../title/title";
-import styles from "./techexpert.module.css";
+import Image from "next/image"
+import TitleSection from "../title/title"
+import styles from "./techexpert.module.css"
 
 interface TechExpertProps {
   props: any;
@@ -17,8 +17,8 @@ const TechExpertForm: React.FC<TechExpertProps> = ({ props }) => {
               <div className={`w-full ${styles.expertdetails}`}>
                 <TitleSection
                   sectionData={{
-                    title: !!i.title ? i.title : "",
-                    subtitle: "",
+                    title: i.title ? i.title : "",
+                    subtitle: ""
                   }}
                   titleClassName="techexperttitle"
                   singleLine={true}
@@ -37,7 +37,7 @@ const TechExpertForm: React.FC<TechExpertProps> = ({ props }) => {
                           alt="arrow"
                           className="mr-2"
                         />
-                        <p>{expertise ? expertise : ""}</p>
+                        <p>{expertise || ""}</p>
                       </div>
                     ))}
               </div>
@@ -45,7 +45,7 @@ const TechExpertForm: React.FC<TechExpertProps> = ({ props }) => {
           ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechExpertForm;
+export default TechExpertForm
