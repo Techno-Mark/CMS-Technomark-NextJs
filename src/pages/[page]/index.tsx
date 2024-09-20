@@ -35,7 +35,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 
   try {
     const data = resolvedUrl != "/blogs" && (await apiCall(resolvedUrl));
-
     return {
       props: {
         data,
@@ -66,9 +65,10 @@ const Page: React.FC<
       </Head>
       <ToastContainer />
       {data?.popups && !!data.popups.length && (
-        <Popup popupData={data?.popups} />
+        data.popups?.map((popupDetail:any)=>
+          <Popup popupData={popupDetail} />
+        )
       )}
-
       <DataComponent data={data} />
     </>
   );

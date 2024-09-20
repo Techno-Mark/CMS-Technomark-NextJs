@@ -6,29 +6,31 @@ import { useRouter } from "next/router"
 import { formatEventDate } from "@/utils/commonFunction"
 
 const Popup = ({ popupData }: any) => {
+
+  if (!popupData) return
+
   const [isVisible, setIsVisible] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
     const frequency = popupData?.frequency
+    // const delay = popupData?.delay * 1000;  // in millisecond
     const delay = popupData?.delay
+    let keyVal = `${popupData.popupType}${popupData.title}`
 
-    const shownCount = sessionStorage.getItem("popupShownCount") || "0"
+    const shownCount = sessionStorage.getItem(`${keyVal}`) || "0"
     const parsedCount = parseInt(shownCount, 10)
 
     if (parsedCount < frequency) {
       const timer = setTimeout(() => {
         setIsVisible(true)
 
-        sessionStorage.setItem("popupShownCount", (parsedCount + 1).toString())
+        sessionStorage.setItem(`${keyVal}`, (parsedCount + 1).toString())
       }, delay)
 
       return () => clearTimeout(timer)
     }
   }, [router.asPath])
-
-  popupData = popupData[0]
-  if (!popupData) return
 
   const handleClose = () => {
     setIsVisible(false)
@@ -52,7 +54,7 @@ const Popup = ({ popupData }: any) => {
             <div
               className={styles.popupcontainer}
               style={{
-                backgroundImage: `url(${popupData?.image})`
+                backgroundImage: `url('${popupData?.image}')`          
               }}
             >
               <div className={styles.popupdetails}>
