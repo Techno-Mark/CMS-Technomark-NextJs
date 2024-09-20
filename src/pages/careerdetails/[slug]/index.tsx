@@ -1,34 +1,35 @@
-import TitleSection from "@/components/common/title/title";
-import axios from "axios";
-import Image from "next/image";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import styles from "../../[page]/home.module.css";
-import CareerDetailsForm from "@/components/common/careerDetailsFrom/careerDetailsForm";
-import CurrentOpenings from "@/components/common/currentOpenings/currentOpenings";
-import Team from "@/components/common/team/team";
+/* eslint-disable react-hooks/rules-of-hooks */
+import TitleSection from "@/components/common/title/title"
+import axios from "axios"
+import Image from "next/image"
+import { useParams } from "next/navigation"
+import React, { useEffect, useState } from "react"
+import styles from "../../[page]/home.module.css"
+import CareerDetailsForm from "@/components/common/careerDetailsFrom/careerDetailsForm"
+import CurrentOpenings from "@/components/common/currentOpenings/currentOpenings"
+import Team from "@/components/common/team/team"
 
-const index = () => {
-  const param = useParams();
-  const [idData, setIdData] = useState<any>(null);
-  const [data, setData] = useState<any>(null);
+const index: React.FC = () => {
+  const param = useParams()
+  const [idData, setIdData] = useState<any>(null)
+  const [data, setData] = useState<any>(null)
 
   const apiCall = async (slug: any) => {
     try {
       const url = `${
         process.env.NEXT_PUBLIC_API_URL || ""
-      }career/getBySlug/${slug}`;
+      }career/getBySlug/${slug}`
 
       const res = await axios.get(url, {
         headers: {
-          referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-        },
-      });
-      setIdData(res.data.data);
+          referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+        }
+      })
+      setIdData(res.data.data)
     } catch (error) {
-      console.error("Error fetching blog data:", error);
+      console.error("Error fetching blog data:", error)
     }
-  };
+  }
 
   const apiCallForm = async (param: any) => {
     try {
@@ -36,26 +37,26 @@ const index = () => {
         `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug/${param}`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-          },
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+          }
         }
-      );
-      setData(res.data.data.formatData);
+      )
+      setData(res.data.data.formatData)
     } catch (error) {
-      console.error("Error fetching data:", error);
-      return null;
+      console.error("Error fetching data:", error)
+      return null
     }
-  };
+  }
 
   useEffect(() => {
     if (param?.slug) {
-      apiCall(param.slug);
+      apiCall(param.slug)
     }
-  }, [param]);
+  }, [param])
 
   useEffect(() => {
-    apiCallForm("careerdetail");
-  }, []);
+    apiCallForm("careerdetail")
+  }, [])
 
   const renderSection = (sectionName: string, sectionData: any) => {
     switch (sectionName) {
@@ -66,12 +67,12 @@ const index = () => {
               <section className={`${styles.careerTitle} tm-section bg-white`}>
                 <div className="container mx-auto lg:w-[60%]">
                   <p className={`!mb-8 ${styles.casestudylistlabel}`}>
-                    {!!sectionData ? sectionData.title : ""}
+                    {sectionData ? sectionData.title : ""}
                   </p>
                   <TitleSection
                     sectionData={{
-                      title: !!idData ? idData.jobTitle : "",
-                      subtitle: !!idData ? idData.subTitle : "",
+                      title: idData ? idData.jobTitle : "",
+                      subtitle: idData ? idData.subTitle : ""
                     }}
                     titleFirst={true}
                     titleClassName="clienttitle"
@@ -83,7 +84,7 @@ const index = () => {
                           <Image
                             className="w-7"
                             src={
-                              !!sectionData ? sectionData.experienceIcon : ""
+                              sectionData ? sectionData.experienceIcon : ""
                             }
                             width={100}
                             height={100}
@@ -91,7 +92,7 @@ const index = () => {
                           />
                           <p className="font-bold">Experience</p>
                           <p className="group-hover:underline duration-700">
-                            {!!idData.yearsOfExperience
+                            {idData.yearsOfExperience
                               ? idData.yearsOfExperience
                               : ""}+ Years
                           </p>
@@ -100,7 +101,7 @@ const index = () => {
                           <Image
                             className="w-7"
                             src={
-                              !!sectionData
+                              sectionData
                                 ? sectionData.numberOfPositionIcon
                                 : ""
                             }
@@ -110,7 +111,7 @@ const index = () => {
                           />
                           <p className="font-bold">No. of openings</p>
                           <p className="group-hover:underline duration-700">
-                            {!!idData.numberOfPosition
+                            {idData.numberOfPosition
                               ? idData.numberOfPosition
                               : ""}
                           </p>
@@ -118,14 +119,14 @@ const index = () => {
                         <span className="mx-1 flex gap-2.5 text-xl font-medium whitespace-nowrap">
                           <Image
                             className="w-7"
-                            src={!!sectionData ? sectionData.modeIcon : ""}
+                            src={sectionData ? sectionData.modeIcon : ""}
                             width={100}
                             height={100}
                             alt={""}
                           />
                           <p className="font-bold">Mode</p>
                           <p className="group-hover:underline duration-700">
-                            {!!idData.mode ? idData.mode : ""}
+                            {idData.mode ? idData.mode : ""}
                           </p>
                         </span>
                       </>
@@ -137,13 +138,13 @@ const index = () => {
               <section className={`${styles.careerTitle} tm-section bg-white`}>
                 <div className="container mx-auto">
                   <CareerDetailsForm
-                    props={!!idData ? idData.description : ""}
+                    props={idData ? idData.description : ""}
                   />
                 </div>
               </section>
             </>
           )
-        );
+        )
       case "Team Speak":
         return (
           sectionData && (
@@ -161,7 +162,7 @@ const index = () => {
                 <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    subtitle: ""
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
@@ -170,7 +171,7 @@ const index = () => {
               </div>
             </section>
           )
-        );
+        )
       case "Current Openings":
         return (
           sectionData && (
@@ -180,19 +181,19 @@ const index = () => {
               <div className="container mx-auto">
                 <TitleSection
                   sectionData={{
-                    title: !!sectionData.title ? sectionData.title : "",
-                    subtitle: "",
+                    title: sectionData.title ? sectionData.title : "",
+                    subtitle: ""
                   }}
                   titleFirst={false}
                   titleClassName="clienttitle"
                 />
-                <CurrentOpenings data={!!sectionData ? sectionData : []} />
+                <CurrentOpenings data={sectionData || []} />
               </div>
             </section>
           )
-        );
+        )
     }
-  };
+  }
 
   return (
     <div>
@@ -205,7 +206,7 @@ const index = () => {
           </React.Fragment>
         ))}
     </div>
-  );
-};
+  )
+}
 
-export default index;
+export default index

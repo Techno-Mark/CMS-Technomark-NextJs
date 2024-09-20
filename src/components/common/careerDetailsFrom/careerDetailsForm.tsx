@@ -1,7 +1,6 @@
-import React from "react";
-import TechExpertForm from "./TechExpertForm";
-import Form from "./Form";
-import styles from "./careerDetails.module.css";
+import React from "react"
+import Form from "./Form"
+import styles from "./careerDetails.module.css"
 
 const CareerDetailsForm = ({ props }: any) => {
   return (
@@ -11,7 +10,7 @@ const CareerDetailsForm = ({ props }: any) => {
           <div className={`my-10 mx-4 md:mx-10 lg:w-1/2 text-black ${styles.techstartupbox}`}>
             <p
               dangerouslySetInnerHTML={{
-                __html: props || "",
+                __html: props || ""
               }}
             />
           </div>
@@ -21,7 +20,7 @@ const CareerDetailsForm = ({ props }: any) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CareerDetailsForm;
+export default CareerDetailsForm

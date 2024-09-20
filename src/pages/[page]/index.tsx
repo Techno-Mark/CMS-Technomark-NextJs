@@ -1,11 +1,11 @@
-import React from "react";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import axios from "axios";
-import DataComponent from "./DataComponent";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Head from "next/head";
-import Popup from "@/components/popup/popup";
+import React from "react"
+import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import axios from "axios"
+import DataComponent from "./DataComponent"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Head from "next/head"
+import Popup from "@/components/popup/popup"
 
 interface HomeProps {
   data: any;
@@ -17,42 +17,42 @@ const apiCall = async (param: string) => {
       `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
       {
         headers: {
-          referal: process.env.REFERAL_HEADER || "",
-        },
+          referal: process.env.REFERAL_HEADER || ""
+        }
       }
-    );
-    return res.data.data;
+    )
+    return res.data.data
   } catch (error) {
-    console.error(`Error fetching ${param} data:`, error);
-    return null;
+    console.error(`Error fetching ${param} data:`, error)
+    return null
   }
-};
+}
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
-  const { resolvedUrl } = context;
+  const { resolvedUrl } = context
 
   try {
     const data =
       resolvedUrl != "/blogs" &&
       resolvedUrl != "/careerdetails" &&
-      (await apiCall(resolvedUrl));
+      (await apiCall(resolvedUrl))
 
     return {
       props: {
-        data,
-      },
-    };
+        data
+      }
+    }
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", error)
     return {
       props: {
-        data: null,
-      },
-    };
+        data: null
+      }
+    }
   }
-};
+}
 
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
@@ -74,7 +74,7 @@ const Page: React.FC<
 
       <DataComponent data={data} />
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styles from "./imageslider.module.css"
@@ -28,11 +29,11 @@ const ImageSlider = ({
       {
         breakpoint: 767,
         settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
+          arrows: false
+        }
+      }
+    ]
+  }
   return (
     <div className={small ? styles.sliderContainer2 : styles.sliderContainer1}>
       <Slider ref={imageSlider} {...imgSliderSettings}>
