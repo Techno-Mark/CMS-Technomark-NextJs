@@ -55,7 +55,7 @@ const Form = () => {
   };
 
   return (
-    <div className="py-10 lg:py-20 px-5 md:px-28 bg-white border rounded-[20px] flex flex-col shadow-career-form !w-full">
+    <div className="py-10 lg:py-20 px-5 md:px-10 bg-white border rounded-[20px] flex flex-col shadow-career-form !w-full">
       <p className="mb-10 text-[#344968] text-[24px] font-medium">
         Apply for this position
       </p>

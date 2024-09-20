@@ -34,15 +34,26 @@ const CurrentOpenings = ({ data }: any) => {
   const filteredData = displayedData
     .filter(
       (job: any) =>
-        job.jobTitle.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
+        job.jobTitle
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.trim().toLowerCase()) ||
         job.yearsOfExperience
+          .toString()
           .toLowerCase()
           .includes(searchTerm.trim().toLowerCase()) ||
         job.numberOfPosition
+          .toString()
           .toLowerCase()
           .includes(searchTerm.trim().toLowerCase()) ||
-        job.location.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
-        job.mode.toLowerCase().includes(searchTerm.trim().toLowerCase())
+        job.location
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.trim().toLowerCase()) ||
+        job.mode
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.trim().toLowerCase())
     )
     .filter((job: any) =>
       selectedMode === "All" ? true : job.mode === selectedMode
@@ -243,7 +254,7 @@ const CurrentOpenings = ({ data }: any) => {
                 <Button
                   text="Apply now"
                   variant="primary"
-                  href={`/careerDetails/${i.careerId}`}
+                  href={`/careerdetails/${i.slug}`}
                 />
               </div>
             </div>
