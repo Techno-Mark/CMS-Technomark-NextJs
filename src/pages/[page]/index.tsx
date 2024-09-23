@@ -1,11 +1,11 @@
-import React from "react";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import axios from "axios";
-import DataComponent from "./DataComponent";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Head from "next/head";
-import Popup from "@/components/popup/popup";
+import React from "react"
+import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import axios from "axios"
+import DataComponent from "./DataComponent"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Head from "next/head"
+import Popup from "@/components/popup/popup"
 
 interface HomeProps {
   data: any;
@@ -24,8 +24,8 @@ const apiCall = async (param: string, preview:string|string[]|undefined, id:stri
       `${url}`,
       {
         headers: {
-          referal: process.env.REFERAL_HEADER || "",
-        },
+          referal: process.env.REFERAL_HEADER || ""
+        }
       }
     )
     if (isPreview) {
@@ -34,10 +34,10 @@ const apiCall = async (param: string, preview:string|string[]|undefined, id:stri
 
     return res.data.data
   } catch (error) {
-    console.error(`Error fetching ${param} data:`, error);
-    return null;
+    console.error(`Error fetching ${param} data:`, error)
+    return null
   }
-};
+}
 
 const seoData = async () => {
   try {
@@ -45,21 +45,20 @@ const seoData = async () => {
       `${process.env.NEXT_PUBLIC_API_URL}/site/seo-script`,
       {
         headers: {
-          referal: process.env.REFERAL_HEADER || "",
-        },
+          referal: process.env.REFERAL_HEADER || ""
+        }
       }
-    );
-    return res.data.data;
+    )
+    return res.data.data
   } catch (error) {
-    console.error(`Error fetching  data:`, error);
-    return null;
+    console.error(`Error fetching  data:`, error)
+    return null
   }
-};
+}
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
-  const { resolvedUrl } = context;
   const { resolvedUrl, query } = context
   const { preview, id } = query
 
@@ -67,27 +66,27 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
     const data =
       resolvedUrl != "/blogs" &&
       resolvedUrl != "/careerDetails" &&
-      (await apiCall(resolvedUrl));
+      (await apiCall(resolvedUrl, preview, id))
 
     const seo = await seoData();
-      (await apiCall(resolvedUrl, preview, id))
+    (await apiCall(resolvedUrl, preview, id))
 
     return {
       props: {
         data,
-        seo,
-      },
-    };
+        seo
+      }
+    }
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", error)
     return {
       props: {
         data: null,
-        seo: null,
-      },
-    };
+        seo: null
+      }
+    }
   }
-};
+}
 
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
@@ -130,7 +129,7 @@ const Page: React.FC<
         />
       )} */}
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
