@@ -1,9 +1,9 @@
-import React from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick-theme.css"
-import "slick-carousel/slick/slick.css"
-import styles from "./client.module.css"
-import Image from "next/image"
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import styles from "./client.module.css";
+import Image from "next/image";
 
 interface ClientItem {
   name?: string;
@@ -20,6 +20,7 @@ interface TestimonialsProps {
 const Client: React.FC<TestimonialsProps> = ({ props }) => {
   const settings = {
     infinite: false,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -27,23 +28,23 @@ const Client: React.FC<TestimonialsProps> = ({ props }) => {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1.1
-        }
-      }
-    ]
-  }
+          slidesToShow: 1.1,
+        },
+      },
+    ],
+  };
 
   return (
     <div className={styles.clientcontainer}>
       <Slider {...settings}>
         {props.map((clientData, index) => {
-          const items = clientData
-          const name = items?.name || "Anonymous"
-          const testimonial = items?.testimonial || "No testimonial available."
+          const items = clientData;
+          const name = items?.name || "Anonymous";
+          const testimonial = items?.testimonial || "No testimonial available.";
           const designation =
-            items?.designation || "Designation not available."
-          const profileImage = items?.profileImage || ""
-          const companyLogo = items?.companyLogo || ""
+            items?.designation || "Designation not available.";
+          const profileImage = items?.profileImage || "";
+          const companyLogo = items?.companyLogo || "";
 
           return (
             <div className={styles.clientslideinner} key={index}>
@@ -75,11 +76,11 @@ const Client: React.FC<TestimonialsProps> = ({ props }) => {
                 )}
               </div>
             </div>
-          )
+          );
         })}
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default Client
+export default Client;
