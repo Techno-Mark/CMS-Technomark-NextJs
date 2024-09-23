@@ -44,9 +44,9 @@ const TechStartupBg: React.FC<TechStartupBgProps> = ({
           {isCaseStudy ? (
             // Case Study Detail Page Layout
             <div className={techStyles.casestudytech}>
-              <div className="w-full">
+              <div className="w-full flex items-center justify-center">
                 <h2
-                  className={`maintitle !text-center ${techStyles.maintitle}`}
+                  className={`maintitle flex items-center justify-center !text-center whitespace-nowrap gap-4 ${techStyles.maintitle}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               </div>
