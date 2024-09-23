@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 import { useState } from "react"
 import Button from "../button/button"
 
@@ -90,7 +89,7 @@ const Form = () => {
             }}
             onBlur={(e) => {
               if (
-                !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e.target.value.trim())
+                !/^[\w.-]+@[\w-]+\.[\w-]{2,4}$/.test(e.target.value.trim())
               ) {
                 setFormErr({ ...formErr, email: "Email is not valid" })
               }

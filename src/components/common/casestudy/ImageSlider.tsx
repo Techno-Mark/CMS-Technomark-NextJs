@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styles from "./imageslider.module.css"

@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios"
 import { useParams, useSearchParams } from "next/navigation"
 import React, { useEffect, useState } from "react"

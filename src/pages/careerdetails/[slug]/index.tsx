@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import TitleSection from "@/components/common/title/title"
 import axios from "axios"
 import Image from "next/image"
@@ -9,16 +8,14 @@ import CareerDetailsForm from "@/components/common/careerDetailsFrom/careerDetai
 import CurrentOpenings from "@/components/common/currentOpenings/currentOpenings"
 import Team from "@/components/common/team/team"
 
-const index: React.FC = () => {
+const CareerPage = () => {
   const param = useParams()
   const [idData, setIdData] = useState<any>(null)
   const [data, setData] = useState<any>(null)
 
   const apiCall = async (slug: any) => {
     try {
-      const url = `${
-        process.env.NEXT_PUBLIC_API_URL || ""
-      }career/getBySlug/${slug}`
+      const url = `${process.env.NEXT_PUBLIC_API_URL || ""}career/getBySlug/${slug}`
 
       const res = await axios.get(url, {
         headers: {
@@ -83,9 +80,7 @@ const index: React.FC = () => {
                         <span className="mx-1 flex gap-2.5 text-xl font-medium whitespace-nowrap">
                           <Image
                             className="w-7"
-                            src={
-                              sectionData ? sectionData.experienceIcon : ""
-                            }
+                            src={sectionData ? sectionData.experienceIcon : ""}
                             width={100}
                             height={100}
                             alt={""}
@@ -94,16 +89,15 @@ const index: React.FC = () => {
                           <p className="group-hover:underline duration-700">
                             {idData.yearsOfExperience
                               ? idData.yearsOfExperience
-                              : ""}+ Years
+                              : ""}{" "}
+                            + Years
                           </p>
                         </span>
                         <span className="mx-1 flex gap-2.5 text-xl font-medium whitespace-nowrap">
                           <Image
                             className="w-7"
                             src={
-                              sectionData
-                                ? sectionData.numberOfPositionIcon
-                                : ""
+                              sectionData ? sectionData.numberOfPositionIcon : ""
                             }
                             width={100}
                             height={100}
@@ -209,4 +203,4 @@ const index: React.FC = () => {
   )
 }
 
-export default index
+export default CareerPage
