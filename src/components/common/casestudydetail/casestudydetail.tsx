@@ -41,7 +41,7 @@ const CaseStudyDetail = ({ data }: any) => {
             return (
               <li
                 key={index}
-                className={`flex items-center ${
+                className={`flex items-center justify-center ${
                   index !== 1 ? styles.img1 : styles.img2
                 }`}
               >
@@ -57,7 +57,7 @@ const CaseStudyDetail = ({ data }: any) => {
       </div>
       <div className="performance-section">
         <div className="flex flex-wrap lg:flex-nowrap items-stretch">
-          <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
+          <div className="w-full lg:w-[30%] flex flex-col items-start text-center">
             {performances.map(
               (performanceItem: PerformanceItem, index: number) => {
                 const title = performanceItem?.title || ""

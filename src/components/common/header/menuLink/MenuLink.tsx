@@ -1,19 +1,19 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import styles from "./menulink.module.css";
+"use client"
+import React from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import styles from "./menulink.module.css"
 interface MenuLinkProps {
   item: { name: string; link: string; children?: any };
   toggleMenu?: () => void;
 }
 
 const MenuLink: React.FC<MenuLinkProps> = ({ item, toggleMenu }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const isActive =
     pathname === item.link ||
     (item?.children.length > 0 &&
-      item?.children.map((i: any) => i.link === pathname).includes(true));
+      item?.children.map((i: any) => i.link === pathname).includes(true))
   return (
     <Link
       href={item.link}
@@ -25,7 +25,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item, toggleMenu }) => {
     >
       {item.name}
     </Link>
-  );
-};
+  )
+}
 
-export default MenuLink;
+export default MenuLink

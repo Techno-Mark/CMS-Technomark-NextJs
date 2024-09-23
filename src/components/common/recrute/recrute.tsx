@@ -1,5 +1,5 @@
-import React from "react";
-import style from "./recrute.module.css";
+import React from "react"
+import style from "./recrute.module.css"
 
 const Recrute = ({ props }: any) => {
   return (
@@ -53,7 +53,7 @@ const Recrute = ({ props }: any) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Recrute;
+export default Recrute

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styles from "./imageslider.module.css"
@@ -6,12 +7,12 @@ const ImageSlider = ({
   images,
   setDetailedOpen,
   setDetailedImagesUrl,
-  large = false
+  small = false
 }: {
   images: string[];
   setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
-  large?: boolean;
+  small?: boolean;
 }) => {
   const imageSlider = useRef(null)
 
@@ -28,17 +29,17 @@ const ImageSlider = ({
       {
         breakpoint: 767,
         settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
+          arrows: false
+        }
+      }
+    ]
+  }
   return (
-    <div className={large ? styles.sliderContainer2 : styles.sliderContainer1}>
+    <div className={small ? styles.sliderContainer2 : styles.sliderContainer1}>
       <Slider ref={imageSlider} {...imgSliderSettings}>
         {images.map((item, i: number) => (
           <div className={styles.imageSlide} key={i}>
-            <img width={large ? 600 : 500} src={item} alt="" />
+            <img width={small ? 350 : 500} src={item} alt="" />
             <div
               className={styles.overlay}
               onClick={() => {

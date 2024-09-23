@@ -237,12 +237,12 @@
 }
 
 .careerTitle :global(.title-section h2) {
-  padding-bottom: 2rem !important;
+  /* padding-bottom: 2rem !important; */
   font-weight: bold;
 }
 
 .careerTitle :global(.title-section p) {
-  width: 50%;
+  /* width: 50%; */
   margin: 0 auto 3.8rem;
   font-size: 1.7rem;
   line-height: 3rem;
@@ -266,19 +266,18 @@
 .casestudydetailherosection :global(.title-section h2) {
   margin-bottom: 0 !important;
   color: var(--white-color) !important;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 50px;
-  margin-top: 4rem;
-  padding: 0 15% !important;
+  padding: 0 10% !important;
 }
 
 .casestudydetailherosection :global(.title-section p) {
-  margin: 2rem auto 0;
+  margin: 0 auto;
   color: var(--white-color);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 30px;
-  width: 65%;
+  width: 75%;
 }
 
 .casestudydetaillabel {
@@ -328,7 +327,8 @@
 }
 
 .challangesolutions :global(.title-section h2) {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem !important;
+  font-weight: 700;
 }
 
 .majorscreensection {

@@ -1,24 +1,24 @@
-import CustomerLabel from "@/components/common/customerlabel/customerlabel";
-import Footer from "@/components/common/footer/Footer";
-import Header from "@/components/common/header/Header";
-import SideBar from "@/components/common/sidebar/sidebar";
-import { fetchHeaderFooterData } from "@/serverAction/fetchHeaderFooterData";
-import "@/styles/globals.css";
-import { NextPageContext } from "next";
-import type { AppProps } from "next/app";
-import { useState } from "react";
+import CustomerLabel from "@/components/common/customerlabel/customerlabel"
+import Footer from "@/components/common/footer/Footer"
+import Header from "@/components/common/header/Header"
+import SideBar from "@/components/common/sidebar/sidebar"
+import { fetchHeaderFooterData } from "@/serverAction/fetchHeaderFooterData"
+import "@/styles/globals.css"
+import { NextPageContext } from "next"
+import type { AppProps } from "next/app"
+import { useState } from "react"
 export default function App({ Component, pageProps }: AppProps) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
   const [commonData, setCommonData] = useState({
     headerData: null as any,
-    footerData: null as any,
-  });
+    footerData: null as any
+  })
 
   if (commonData.headerData === null && commonData.footerData === null) {
     setCommonData({
       headerData: pageProps.headerData,
-      footerData: pageProps.footerData,
-    });
+      footerData: pageProps.footerData
+    })
   }
 
   const toggleDrawer = () => {
@@ -42,13 +42,13 @@ export default function App({ Component, pageProps }: AppProps) {
 App.getInitialProps = async (ctx: NextPageContext) => {
   const [header, footer] = await Promise.all([
     fetchHeaderFooterData("Main Header Menu"),
-    fetchHeaderFooterData("Footer Menu"),
-  ]);
+    fetchHeaderFooterData("Footer Menu")
+  ])
 
   return {
     pageProps: {
       headerData: header,
-      footerData: footer,
-    },
-  };
-};
+      footerData: footer
+    }
+  }
+}

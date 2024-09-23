@@ -46,7 +46,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
         <>
           {sectionData.subtitle && (
             <p
-              className={styles.subtitle}
+              className={`${styles.subtitle} !pb-1`}
               dangerouslySetInnerHTML={{ __html: sectionData.subtitle }}
             />
           )}
