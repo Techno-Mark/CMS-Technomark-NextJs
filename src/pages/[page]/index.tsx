@@ -12,17 +12,27 @@ interface HomeProps {
   seo: any;
 }
 
-const apiCall = async (param: string) => {
+const apiCall = async (param: string, preview:string|string[]|undefined, id:string|string[]|undefined) => {
   try {
+    const isPreview = preview === 'true'
+    const hashId = id || ''
+    const url = isPreview
+      ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
+      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`
+
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}page/getBySlug${param}`,
+      `${url}`,
       {
         headers: {
           referal: process.env.REFERAL_HEADER || "",
         },
       }
-    );
-    return res.data.data;
+    )
+    if (isPreview) {
+      return res.data?.data?.data
+    }
+
+    return res.data.data
   } catch (error) {
     console.error(`Error fetching ${param} data:`, error);
     return null;
@@ -50,6 +60,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
   const { resolvedUrl } = context;
+  const { resolvedUrl, query } = context
+  const { preview, id } = query
 
   try {
     const data =
@@ -58,6 +70,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
       (await apiCall(resolvedUrl));
 
     const seo = await seoData();
+      (await apiCall(resolvedUrl, preview, id))
 
     return {
       props: {
@@ -104,9 +117,10 @@ const Page: React.FC<
       </Head>
       <ToastContainer />
       {data?.popups && !!data.popups.length && (
-        <Popup popupData={data?.popups} />
+        data.popups?.map((popupDetail:any, index:number) =>
+          <Popup popupData={popupDetail} key={index} />
+        )
       )}
-
       <DataComponent data={data} />
 
       {/* Inject Google Analytics afterScript */}
