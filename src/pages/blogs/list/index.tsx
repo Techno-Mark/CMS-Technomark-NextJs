@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react"
 import styles from "./home.module.css"
 import TitleSection from "@/components/common/title/title"

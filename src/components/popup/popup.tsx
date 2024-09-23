@@ -6,17 +6,14 @@ import { useRouter } from "next/router"
 import { formatEventDate } from "@/utils/commonFunction"
 
 const Popup = ({ popupData }: any) => {
-  if (!popupData) return
-
-  // eslint-disable-next-line
   const [isVisible, setIsVisible] = useState(false)
-  // eslint-disable-next-line
   const router = useRouter()
 
-  // eslint-disable-next-line
   useEffect(() => {
+    if (!popupData) return
+
     const frequency = popupData?.frequency
-    const delay = popupData?.delay * 1000 // in millisecond
+    const delay = popupData?.delay * 1000
     const keyVal = `${popupData.popupType}${popupData.title}`
 
     const shownCount = sessionStorage.getItem(`${keyVal}`) || "0"
@@ -31,13 +28,13 @@ const Popup = ({ popupData }: any) => {
 
       return () => clearTimeout(timer)
     }
-  }, [router.asPath])
+  }, [popupData, router.asPath])
 
   const handleClose = () => {
     setIsVisible(false)
   }
 
-  if (!isVisible || !popupData) return null
+  if (!popupData || !isVisible) return null
 
   if (popupData.popupType === "Event") {
     return (
@@ -71,7 +68,12 @@ const Popup = ({ popupData }: any) => {
                     width={24}
                     height={24}
                   />
-                  <p>{formatEventDate(popupData?.eventStartDate, popupData?.eventEndDate)}</p>
+                  <p>
+                    {formatEventDate(
+                      popupData?.eventStartDate,
+                      popupData?.eventEndDate
+                    )}
+                  </p>
                 </div>
                 {popupData?.location && (
                   <div className={styles.popupsinglelink}>
@@ -98,6 +100,8 @@ const Popup = ({ popupData }: any) => {
       </div>
     )
   }
+
+  return null
 }
 
 export default Popup
