@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from "react";
-import Button from "../button/button";
-import styles from "./currentOpening.module.css";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import Button from "../button/button"
+import styles from "./currentOpening.module.css"
+import axios from "axios"
 
 const CurrentOpenings = ({ data }: any) => {
-  const [currentOpeningData, setCurrentOpeningData] = useState<any>([]);
+  const [currentOpeningData, setCurrentOpeningData] = useState<any>([])
   const [showAll, setShowAll] = useState<boolean>(
     !(currentOpeningData.length > 5)
-  );
+  )
   const [isLocationDropdownVisible, setLocationDropdownVisible] =
-    useState<boolean>(false);
+    useState<boolean>(false)
   const [isShiftDropdownVisible, setShiftDropdownVisible] =
-    useState<boolean>(false);
+    useState<boolean>(false)
 
-  const [selectedMode, setSelectedMode] = useState<string>("All");
-  const [selectedLocation, setSelectedLocation] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedMode, setSelectedMode] = useState<string>("All")
+  const [selectedLocation, setSelectedLocation] = useState<string>("All")
+  const [searchTerm, setSearchTerm] = useState<string>("")
 
   const displayedData = showAll
     ? currentOpeningData
-    : currentOpeningData.slice(0, 5);
+    : currentOpeningData.slice(0, 5)
 
   const handleShiftClick = () => {
-    setShiftDropdownVisible(!isShiftDropdownVisible);
-  };
+    setShiftDropdownVisible(!isShiftDropdownVisible)
+  }
 
   const handleLocationClick = () => {
-    setLocationDropdownVisible(!isLocationDropdownVisible);
-  };
+    setLocationDropdownVisible(!isLocationDropdownVisible)
+  }
 
   const filteredData = displayedData
     .filter(
@@ -58,21 +58,21 @@ const CurrentOpenings = ({ data }: any) => {
     )
     .filter((job: any) =>
       selectedLocation === "All" ? true : job.location === selectedLocation
-    );
+    )
 
   const handleModeSelect = (mode: string) => {
-    setShiftDropdownVisible(false);
-    setSelectedMode(mode);
-  };
+    setShiftDropdownVisible(false)
+    setSelectedMode(mode)
+  }
 
   const handleLocationSelect = (location: string) => {
-    setLocationDropdownVisible(false);
-    setSelectedLocation(location);
-  };
+    setLocationDropdownVisible(false)
+    setSelectedLocation(location)
+  }
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   const apiCall = async () => {
     try {
@@ -80,23 +80,23 @@ const CurrentOpenings = ({ data }: any) => {
         `${process.env.NEXT_PUBLIC_API_URL}career/list`,
         {
           headers: {
-            referal: process.env.REFERAL_HEADER || "http://localhost:3001",
-          },
+            referal: process.env.REFERAL_HEADER || "http://localhost:3001"
+          }
         }
-      );
+      )
 
-      const data = res?.data?.data;
+      const data = res?.data?.data
       if (data) {
-        setCurrentOpeningData(data.careers || []);
+        setCurrentOpeningData(data.careers || [])
       }
     } catch (error) {
-      console.error(`Error fetching data:`, error);
+      console.error(`Error fetching data:`, error)
     }
-  };
+  }
 
   useEffect(() => {
-    apiCall();
-  }, []);
+    apiCall()
+  }, [])
 
   return (
     <>
@@ -275,7 +275,7 @@ const CurrentOpenings = ({ data }: any) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default CurrentOpenings;
+export default CurrentOpenings
