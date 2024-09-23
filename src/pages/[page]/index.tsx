@@ -11,13 +11,13 @@ interface HomeProps {
   data: any;
 }
 
-const apiCall = async (param: string,preview:string|string[]|undefined, id:string|string[]|undefined) => {
+const apiCall = async (param: string, preview:string|string[]|undefined, id:string|string[]|undefined) => {
   try {
-    const isPreview = preview === 'true';
-    const hashId = id || '';
+    const isPreview = preview === 'true'
+    const hashId = id || ''
     const url = isPreview
       ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
-      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`;
+      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`
 
     const res = await axios.get(
       `${url}`,
@@ -27,10 +27,10 @@ const apiCall = async (param: string,preview:string|string[]|undefined, id:strin
         }
       }
     )
-    if(isPreview){
+    if (isPreview) {
       return res.data?.data?.data
     }
-    
+
     return res.data.data
   } catch (error) {
     console.error(`Error fetching ${param} data:`, error)
@@ -41,14 +41,14 @@ const apiCall = async (param: string,preview:string|string[]|undefined, id:strin
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
-  const { resolvedUrl, query } = context;
-  const { preview, id } = query;
+  const { resolvedUrl, query } = context
+  const { preview, id } = query
 
   try {
     const data =
       resolvedUrl != "/blogs" &&
       resolvedUrl != "/careerDetails" &&
-      (await apiCall(resolvedUrl,preview,id))
+      (await apiCall(resolvedUrl, preview, id))
 
     return {
       props: {
