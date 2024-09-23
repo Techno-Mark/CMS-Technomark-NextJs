@@ -1102,7 +1102,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           </React.Fragment>
         ))
       ) : loading ? (
-        <Loading />
+        <div className="flex items-center justify-center h-[100vh]">
+          <Loading />
+        </div>
       ) : (
         <>
           <div className="flex items-center justify-center py-10">
