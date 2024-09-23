@@ -2,6 +2,7 @@
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styles from "./imageslider.module.css"
+import Image from "next/image"
 
 const ImageSlider = ({
   images,
@@ -39,7 +40,7 @@ const ImageSlider = ({
       <Slider ref={imageSlider} {...imgSliderSettings}>
         {images.map((item, i: number) => (
           <div className={styles.imageSlide} key={i}>
-            <img width={small ? 350 : 500} src={item} alt="" />
+            <Image width={small ? 350 : 500} src={item} alt="" height={10} />
             <div
               className={styles.overlay}
               onClick={() => {
@@ -47,7 +48,7 @@ const ImageSlider = ({
                 setDetailedImagesUrl(images)
               }}
             >
-              <img src="/images/maximize-4.svg" alt="maximize" />
+              <img src="/images/maximize-4.svg" alt={`${item}-${i}`} width={40} height={40} />
             </div>
           </div>
         ))}
