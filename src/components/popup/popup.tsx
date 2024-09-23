@@ -6,17 +6,18 @@ import { useRouter } from "next/router"
 import { formatEventDate } from "@/utils/commonFunction"
 
 const Popup = ({ popupData }: any) => {
-
   if (!popupData) return
 
+  // eslint-disable-next-line
   const [isVisible, setIsVisible] = useState(false)
+  // eslint-disable-next-line
   const router = useRouter()
 
+  // eslint-disable-next-line
   useEffect(() => {
     const frequency = popupData?.frequency
-    // const delay = popupData?.delay * 1000;  // in millisecond
-    const delay = popupData?.delay
-    let keyVal = `${popupData.popupType}${popupData.title}`
+    const delay = popupData?.delay * 1000 // in millisecond
+    const keyVal = `${popupData.popupType}${popupData.title}`
 
     const shownCount = sessionStorage.getItem(`${keyVal}`) || "0"
     const parsedCount = parseInt(shownCount, 10)
@@ -54,7 +55,7 @@ const Popup = ({ popupData }: any) => {
             <div
               className={styles.popupcontainer}
               style={{
-                backgroundImage: `url('${popupData?.image}')`          
+                backgroundImage: `url('${popupData?.image}')`
               }}
             >
               <div className={styles.popupdetails}>

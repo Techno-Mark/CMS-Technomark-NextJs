@@ -69,8 +69,8 @@ const Page: React.FC<
       </Head>
       <ToastContainer />
       {data?.popups && !!data.popups.length && (
-        data.popups?.map((popupDetail:any)=>
-          <Popup popupData={popupDetail} />
+        data.popups?.map((popupDetail:any, index:number) =>
+          <Popup popupData={popupDetail} key={index} />
         )
       )}
       <DataComponent data={data} />
