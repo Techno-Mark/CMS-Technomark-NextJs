@@ -6,6 +6,7 @@ import { fetchHeaderFooterData } from "@/serverAction/fetchHeaderFooterData"
 import "@/styles/globals.css"
 import { NextPageContext } from "next"
 import type { AppProps } from "next/app"
+import Head from "next/head"
 import { useState } from "react"
 export default function App({ Component, pageProps }: AppProps) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
@@ -26,16 +27,28 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <div className="maindiv">
-      <Header
-        onShowDrawer={toggleDrawer}
-        headerData={commonData?.headerData?.menuItem}
-      />
-      <SideBar isDrawerVisible={isDrawerVisible} toggleDrawer={toggleDrawer} />
-      <CustomerLabel />
-      <Component {...pageProps} />
-      <Footer footerData={commonData?.footerData?.menuItem} />
-    </div>
+    <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preload" href="/path/to/your/font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </Head>
+      <div className="maindiv">
+        <Header
+          onShowDrawer={toggleDrawer}
+          headerData={commonData?.headerData?.menuItem}
+        />
+        <SideBar
+          isDrawerVisible={isDrawerVisible}
+          toggleDrawer={toggleDrawer}
+        />
+        <CustomerLabel />
+        <Component {...pageProps} />
+        <Footer footerData={commonData?.footerData?.menuItem} />
+      </div>
+    </>
   )
 }
 

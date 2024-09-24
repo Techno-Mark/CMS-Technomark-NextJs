@@ -117,6 +117,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
               alt="Hero Image"
               width={500}
               height={700}
+              loading="lazy"
             />
           </div>
         </div>

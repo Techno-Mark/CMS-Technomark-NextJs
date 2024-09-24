@@ -102,7 +102,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
                       <li key={itemIndex}>
                         <img
                           src="/images/arrow-right-resource.png"
-                          alt="arrow"
+                          alt={`arrow-item-${itemIndex}`}
                         />
                         <p>{item}</p>
                       </li>
