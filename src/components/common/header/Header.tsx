@@ -82,6 +82,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                 alt="Logo"
                 width={232}
                 height={37}
+                loading="lazy"
               />
             </Link>
           </div>
