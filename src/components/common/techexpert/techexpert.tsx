@@ -45,7 +45,7 @@ const TechExpert: React.FC<TechExpertProps> = ({
                     src="/images/arrow-right-resource.png"
                     height={26}
                     width={26}
-                    alt="arrow"
+                    alt={`arrow-expertise-${index}`}
                     className="mr-2"
                   />
                 ) : (

@@ -32,7 +32,7 @@ const Challenges: React.FC<ChallengesProps> = ({ props }) => {
               <div className={styles.scaleAnimate}>
                 <Image
                   src="/images/arrow-right-resource.png"
-                  alt="arrow"
+                  alt={`${solution}-${index}`}
                   width={28}
                   height={28}
                 />
