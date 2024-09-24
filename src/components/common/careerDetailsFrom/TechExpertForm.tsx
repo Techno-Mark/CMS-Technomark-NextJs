@@ -35,7 +35,7 @@ const TechExpertForm: React.FC<TechExpertProps> = ({ props }) => {
                           src="/images/arrow-right-resource.png"
                           height={26}
                           width={26}
-                          alt="arrow"
+                          alt={`${expertise}-${index}`}
                           className="mr-2"
                         />
                         <p>{expertise || ""}</p>
