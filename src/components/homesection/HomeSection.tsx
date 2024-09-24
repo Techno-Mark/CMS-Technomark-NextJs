@@ -24,34 +24,16 @@ const HomeSection: React.FC<HomeSectionProps> = ({
     sectionData?.servicesChargeText.map((entry: any) => entry.headingText) ??
     []
 
-  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false)
-
   return (
     <section className={homeStyles.newhomesection} id="new-home-section">
       <div className={homeStyles.homevideo}>
-      {!isVideoLoaded && (
-        <Image
-          src="/images/line-arrow.svg"
-          alt="hero poster"
-          layout="fill"
-          objectFit="cover"
-        />
-      )}
-        <video
-          className="video"
-          loop
-          autoPlay
-          muted
-          preload="metadata"
-          onCanPlay={() => setIsVideoLoaded(true)}
-          style={{ display: isVideoLoaded ? 'block' : 'none', width: '100%', height: 'auto' }}
-        >
+        <video className="video" loop autoPlay muted>
           <source src={backgroundVideo} type="video/mp4" />
         </video>
       </div>
       <div className={`${homeStyles.hometext}`}>
         <div className="container">
-          {!!headingText && <h1 className={homeStyles.maintitle}>{headingText}</h1>}
+          <h1 className={homeStyles.maintitle}>{headingText}</h1>
           <TypeingTexts props={servicesChangeText} />
           <Button
             onClick={() => scrollToSection(formSectionRef)}
