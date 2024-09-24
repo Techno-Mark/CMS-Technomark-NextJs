@@ -75,7 +75,7 @@ const BlogPage: React.FC = () => {
           }
         }
       )
-      setFormData(res.data.data.formatData[0])
+      setFormData(res.data.data.formatData)
     } catch (error) {
       console.error("Error fetching data:", error)
       return null
@@ -92,26 +92,16 @@ const BlogPage: React.FC = () => {
     apiCallForm("blogs")
   }, [])
 
-  return (
-    <>
-      <Head>
-        <title>{data ? data.title : ""}</title>
-        <meta name="title" content={data ? data.metaTitle : ""} />
-        <meta name="description" content={data ? data.metaDescription : ""} />
-        <meta name="keywords" content={data ? data.metaKeywords : ""} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+  const renderSection = (sectionName: string, sectionData: any) => {
+    switch (sectionName) {
+      case "Blog hero section":
+        return (
+          sectionData && (
+            <>
+
       <section className={`${styles.casestudylist} tm-section bg-white`}>
         <div className="container mx-auto">
-          <p className={styles.casestudylistlabel}>Resources</p>
-          {/* <TitleSection
-            sectionData={{
-              title: data?.title || "",
-              subtitle: data?.subTitle || "",
-            }}
-            titleClassName="bloglisttitle w-[75%]"
-          /> */}
+          <p className={styles.casestudylistlabel}>{sectionData ? sectionData.label : ""}</p>
           {data?.title && (
             <h2 className="md:max-w-[65%] mx-auto text-[var(--secondary--color)] text-3xl md:text-5xl font-bold !leading-normal text-center mb-10 md:mb-16">
               {data.title}
@@ -178,14 +168,40 @@ const BlogPage: React.FC = () => {
       <section className="bg-white relative pb-8 md:pb-16">
         {data && <BlogDescription props={data} />}
       </section>
+            </>
+          )
+        )
+      case "Contact Form Section":
+        return (
+          sectionData && (
+            <section className={`${styles.formsection} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <FormSection props={sectionData} />
+              </div>
+            </section>
+          )
+        )
+    }
+  }
 
-      {formData?.["Contact Form Section"] && (
-        <section className={`${styles.formsection} tm-section bg-white`}>
-          <div className="container mx-auto">
-            <FormSection props={formData?.["Contact Form Section"]} />
-          </div>
-        </section>
-      )}
+  return (
+    <>
+      <Head>
+        <title>{data ? data.title : ""}</title>
+        <meta name="title" content={data ? data.metaTitle : ""} />
+        <meta name="description" content={data ? data.metaDescription : ""} />
+        <meta name="keywords" content={data ? data.metaKeywords : ""} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      {!!formData &&
+        formData.map((sectionName: any, index: number) => (
+          <React.Fragment key={index}>
+            {Object.entries(sectionName).map(([key, value]) => (
+              <div key={key}>{renderSection(key, value)}</div>
+            ))}
+          </React.Fragment>
+        ))}
     </>
   )
 }

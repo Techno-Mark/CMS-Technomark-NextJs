@@ -161,20 +161,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
         <div className={styles.imgone}>
           <Image
             src="/images/border-shape-new.png"
-            alt="arrow1"
+            alt="arrow"
             width={40}
             height={50}
-            loading="lazy"
           />
         </div>
         <div className={styles.imgtwo}>
           <Image
             src="/images/animate-arrow.png"
-            alt="arrow2"
+            alt="arrow"
             className="animate-spin-slow"
             width={50}
             height={50}
-            loading="lazy"
           />
         </div>
       </div>
@@ -188,7 +186,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
               clearAll()
             }}
           >
-            <Image src="/images/close.png" alt="close" width={24} height={24} loading="lazy" />
+            <Image src="/images/close.png" alt="close" width={24} height={24} />
           </button>
         </div>
 
@@ -201,7 +199,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
               alt="circle"
               width={250}
               height={250}
-              loading="lazy"
             />
           </div>
           <h3 className={styles.formtitle}>Request a quote.</h3>

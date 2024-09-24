@@ -18,7 +18,6 @@ const HomeSection: React.FC<HomeSectionProps> = ({
   techSectionRef
 }) => {
   const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4"
-  const headingText = sectionData.headingText ?? ""
   const ctaText = sectionData.ctaText ?? ""
   const servicesChangeText =
     sectionData?.servicesChargeText.map((entry: any) => entry.headingText) ??
@@ -51,7 +50,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
       </div>
       <div className={`${homeStyles.hometext}`}>
         <div className="container">
-          {!!headingText && <h1 className={homeStyles.maintitle}>{headingText}</h1>}
+          <h1 className={homeStyles.maintitle}>{sectionData?.headingText || ""}</h1>
           <TypeingTexts props={servicesChangeText} />
           <Button
             onClick={() => scrollToSection(formSectionRef)}
