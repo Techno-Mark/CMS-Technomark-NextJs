@@ -43,7 +43,7 @@
 .formtext ul li {
   font-family: Montserrat;
   color: var(--secondary--color);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 3rem;
   list-style-type: auto;
@@ -59,9 +59,9 @@
 
 .formbubblebg .formbubblecircle img {
   position: absolute;
-  left: -11rem;
+  left: -13rem;
   width: 570px;
-  top: 14rem;
+  top: 18rem;
 }
 
 .formarea {
@@ -83,7 +83,7 @@
   font-family: Montserrat;
   margin-bottom: 4rem;
   color: var(--secondary--color);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 500;
 }
 

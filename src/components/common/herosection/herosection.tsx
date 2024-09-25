@@ -41,7 +41,7 @@ const Herosection: React.FC<HeroSectionProps> = ({
           />
         </div>
         <div className={`container mx-auto ${styles.techherocontainer}`}>
-          <div className={`flex justify-center ${styles.herotechimg}`}>
+          <div className={`flex justify-center`}>
             <Image
               src={props?.heroImage || ""}
               alt="hero image"

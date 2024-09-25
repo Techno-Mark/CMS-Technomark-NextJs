@@ -60,7 +60,8 @@
   height: 2rem;
   width: 2rem;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(16%) sepia(7%) saturate(7465%) hue-rotate(183deg) brightness(92%) contrast(88%);
+  filter: brightness(0) saturate(100%) invert(16%) sepia(7%) saturate(7465%)
+    hue-rotate(183deg) brightness(92%) contrast(88%);
 }
 
 .sociallinks a:hover img {
@@ -104,11 +105,15 @@
 .footerarrow {
   position: absolute;
   right: 10rem;
-  top: -35px;
+  top: -24px;
 }
 
 .footerbottom {
   background: var(--bg-footer);
+}
+
+.extraDot {
+  color: var(--secondary--color);
 }
 
 /* .footerbottom :global(.container) {
