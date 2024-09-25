@@ -1,65 +1,65 @@
-import React, { useEffect, useState } from "react";
-import Close from "@/assets/icon/close";
-import Hamburger from "@/assets/icon/hamburger";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./header.module.css";
-import MenuLink from "./menuLink/MenuLink";
+import React, { useEffect, useState } from "react"
+import Close from "@/assets/icon/close"
+import Hamburger from "@/assets/icon/hamburger"
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./header.module.css"
+import MenuLink from "./menuLink/MenuLink"
 
 interface SubmenuItem {
-  name: string;
-  link: string;
-  logo: string;
+  name: string
+  link: string
+  logo: string
 }
 
 interface MenuItem {
-  name: string;
-  link: string;
-  children?: SubmenuItem[];
+  name: string
+  link: string
+  children?: SubmenuItem[]
 }
 
 interface HeaderProps {
-  onShowDrawer: () => void;
-  headerData: Array<MenuItem>;
+  onShowDrawer: () => void
+  headerData: Array<MenuItem>
 }
 
 const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesSubMenuOpen, setIsServicesSubMenuOpen] = useState(false)
   const [isTechnologiesSubMenuOpen, setIsTechnologiesSubMenuOpen] =
-    useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+    useState(false)
+  const [isSticky, setIsSticky] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
-    };
+      setIsSticky(window.scrollY > 100)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
-    document.body.classList.toggle(styles.noscroll, isMenuOpen);
-  }, [isMenuOpen]);
+    document.body.classList.toggle(styles.noscroll, isMenuOpen)
+  }, [isMenuOpen])
 
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+    setIsMenuOpen((prev) => !prev)
+  }
 
   const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+    setIsMenuOpen(false)
+  }
 
   const toggleSubMenu = (menuType: string) => {
     if (menuType === "services") {
-      setIsServicesSubMenuOpen((prev) => !prev);
-      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false);
+      setIsServicesSubMenuOpen((prev) => !prev)
+      if (isTechnologiesSubMenuOpen) setIsTechnologiesSubMenuOpen(false)
     } else if (menuType === "technologies") {
-      setIsTechnologiesSubMenuOpen((prev) => !prev);
-      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false);
+      setIsTechnologiesSubMenuOpen((prev) => !prev)
+      if (isServicesSubMenuOpen) setIsServicesSubMenuOpen(false)
     }
-  };
+  }
 
   return (
     <header
@@ -189,7 +189,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

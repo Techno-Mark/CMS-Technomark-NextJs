@@ -1,20 +1,20 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
-import styles from "./imageslider.module.css";
-import Image from "next/image";
+import React, { useRef } from "react"
+import Slider from "react-slick"
+import styles from "./imageslider.module.css"
+import Image from "next/image"
 
 const ImageSlider = ({
   images,
   setDetailedOpen,
   setDetailedImagesUrl,
-  small = false,
+  small = false
 }: {
   images: string[];
-  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
-  small?: boolean;
+  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>
+  small?: boolean
 }) => {
-  const imageSlider = useRef(null);
+  const imageSlider = useRef(null)
 
   const imgSliderSettings = {
     dots: false,
@@ -29,16 +29,16 @@ const ImageSlider = ({
       {
         breakpoint: 767,
         settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
+          arrows: false
+        }
+      }
+    ]
+  }
 
   const handleOverlayClick = () => {
-    setDetailedOpen(true);
-    setDetailedImagesUrl(images);
-  };
+    setDetailedOpen(true)
+    setDetailedImagesUrl(images)
+  }
 
   return (
     <div className={small ? styles.sliderContainer2 : styles.sliderContainer1}>
@@ -59,7 +59,7 @@ const ImageSlider = ({
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ImageSlider;
+export default ImageSlider
