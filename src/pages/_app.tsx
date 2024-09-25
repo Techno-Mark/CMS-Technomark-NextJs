@@ -14,12 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
     footerData: null as any
   })
 
-  if (commonData.headerData === null && commonData.footerData === null) {
-    setCommonData({
-      headerData: pageProps.headerData,
-      footerData: pageProps.footerData
-    })
-  }
+  // if (commonData.headerData === null && commonData.footerData === null) {
+  //   setCommonData({
+  //     headerData: pageProps.headerData,
+  //     footerData: pageProps.footerData
+  //   })
+  // }
 
   const toggleDrawer = () => {
     setIsDrawerVisible((prev) => !prev)
