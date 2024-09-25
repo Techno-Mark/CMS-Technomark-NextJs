@@ -223,12 +223,12 @@
     display: flex !important;
     height: 60px;
     width: 100%;
-    border-top: 1px solid var(--border-secondary);
+    border-top: 2px solid var(--border-secondary);
     padding: 0 !important;
   }
 
   .responsiveheader .headersideimg .themebtn {
-    border-right: 1px solid var(--border-secondary);
+    border-right: 2px solid var(--border-secondary);
     padding: 10px 20px;
   }
 

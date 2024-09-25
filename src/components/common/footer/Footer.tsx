@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from "next/link"
-import Image from "next/image"
-import styles from "./footer.module.css"
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./footer.module.css";
 
 interface FooterProps {
   footerData: {
@@ -15,8 +15,8 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ footerData }) => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className={styles.footerContainer}>
@@ -84,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   height={22}
                   width={22}
                 />
-                <span>Whatsapp | +91 -7069008181</span>
+                <span>Whatsapp | +91 - 7069008181</span>
               </Link>
               <Link
                 href="mailto:info@technomark.io"
@@ -156,7 +156,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             {footerData?.map((section, sectionIndex) => (
               <div key={sectionIndex}>
                 <h3 className="mb-6 font-medium text-white capitalize">
-                  {section.name}
+                  {section.name.trim() ? section.name : <p className={`${styles.extraDot}`}>.</p>}
                 </h3>
                 <ul className={styles.footerlinksul}>
                   {section.children.map((link, linkIndex) => (
@@ -187,7 +187,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
