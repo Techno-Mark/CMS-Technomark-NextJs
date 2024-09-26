@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./footer.module.css";
+import React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import styles from "./footer.module.css"
 
 interface FooterProps {
   footerData: {
@@ -15,8 +15,8 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ footerData }) => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
     <footer className={styles.footerContainer}>
@@ -187,7 +187,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
