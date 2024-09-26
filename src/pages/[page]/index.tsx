@@ -1,43 +1,45 @@
-import React from "react"
-import { GetServerSideProps, InferGetServerSidePropsType } from "next"
-import axios from "axios"
-import DataComponent from "./DataComponent"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import Head from "next/head"
-import Popup from "@/components/popup/popup"
+import React from "react";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import axios from "axios";
+import DataComponent from "./DataComponent";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
+import Popup from "@/components/popup/popup";
 
 interface HomeProps {
   data: any;
   seo: any;
+  Theme: any;
 }
 
-const apiCall = async (param: string, preview:string|string[]|undefined, id:string|string[]|undefined) => {
+const apiCall = async (
+  param: string,
+  preview: string | string[] | undefined,
+  id: string | string[] | undefined
+) => {
   try {
-    const isPreview = preview === 'true'
-    const hashId = id || ''
+    const isPreview = preview === "true";
+    const hashId = id || "";
     const url = isPreview
       ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
-      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`
+      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`;
 
-    const res = await axios.get(
-      `${url}`,
-      {
-        headers: {
-          referal: process.env.REFERAL_HEADER || ""
-        }
-      }
-    )
+    const res = await axios.get(`${url}`, {
+      headers: {
+        referal: process.env.REFERAL_HEADER || "",
+      },
+    });
     if (isPreview) {
-      return res.data?.data?.data
+      return res.data?.data?.data;
     }
 
-    return res.data.data
+    return res.data.data;
   } catch (error) {
-    console.error(`Error fetching ${param} data:`, error)
-    return null
+    console.error(`Error fetching ${param} data:`, error);
+    return null;
   }
-}
+};
 
 const seoData = async () => {
   try {
@@ -45,52 +47,73 @@ const seoData = async () => {
       `${process.env.NEXT_PUBLIC_API_URL}/site/seo-script`,
       {
         headers: {
-          referal: process.env.REFERAL_HEADER || ""
-        }
+          referal: process.env.REFERAL_HEADER || "",
+        },
       }
-    )
-    return res.data.data
+    );
+    return res.data.data;
   } catch (error) {
-    console.error(`Error fetching  data:`, error)
-    return null
+    console.error(`Error fetching  data:`, error);
+    return null;
   }
-}
+};
+
+const ThemeData = async () => {
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/site/theme-data`, {
+      headers: {
+        referal: process.env.REFERAL_HEADER || "",
+      },
+    });
+    console.log(res.data.data);
+
+    return res.data.data;
+  } catch (error) {
+    console.error(`Error fetching  data:`, error);
+    return null;
+  }
+};
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
-  const { resolvedUrl, query } = context
-  const { preview, id } = query
+  const { resolvedUrl, query } = context;
+  const { preview, id } = query;
 
   try {
     const data =
       resolvedUrl != "/blogs" &&
       resolvedUrl != "/careerDetails" &&
-      (await apiCall(resolvedUrl, preview, id))
+      (await apiCall(resolvedUrl, preview, id));
 
     const seo = await seoData();
-    (await apiCall(resolvedUrl, preview, id))
+    await apiCall(resolvedUrl, preview, id);
+
+    const Theme = await ThemeData();
+    await apiCall(resolvedUrl, preview, id);
 
     return {
       props: {
         data,
-        seo
-      }
-    }
+        seo,
+        Theme,
+      },
+    };
   } catch (error) {
-    console.error("Error fetching data:", error)
+    console.error("Error fetching data:", error);
     return {
       props: {
         data: null,
-        seo: null
-      }
-    }
+        seo: null,
+        Theme: null,
+      },
+    };
   }
-}
+};
 
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ data }) => {
+> = ({ data, Theme }) => {
   return (
     <>
       <Head>
@@ -115,11 +138,19 @@ const Page: React.FC<
         )} */}
       </Head>
       <ToastContainer />
-      {data?.popups && !!data.popups.length && (
-        data.popups?.map((popupDetail:any, index:number) =>
+
+      <style jsx global>{`
+        :root {
+          --primary-color: ${Theme.buttonColor};
+          --hover-color: ${Theme.hoverColor};
+        }
+      `}</style>
+
+      {data?.popups &&
+        !!data.popups.length &&
+        data.popups?.map((popupDetail: any, index: number) => (
           <Popup popupData={popupDetail} key={index} />
-        )
-      )}
+        ))}
       <DataComponent data={data} />
 
       {/* Inject Google Analytics afterScript */}
@@ -129,7 +160,7 @@ const Page: React.FC<
         />
       )} */}
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

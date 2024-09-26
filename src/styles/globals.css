@@ -7,7 +7,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --primary-color: #168944;
+  /* --primary-color: #168944; */
+  --primary-color: var(--primary-color);
   --primary-variant-one: #40AA46;
   --primary-variant-two: #0a843f;
   --primary-background: #E7F8EA;
