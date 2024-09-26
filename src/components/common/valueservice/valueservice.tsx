@@ -1,9 +1,10 @@
 import React, { useEffect } from "react"
 import styles from "./valueservice.module.css"
 import TitleSection from "@/components/common/title/title"
+import Image from "next/image"
 
 interface ValueServiceProps {
-  props: any;
+  props: any
 }
 
 const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
@@ -75,7 +76,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
           titleClassName="valueservice"
         />
         <div className={`${styles.bottomimage}`}>
-          <img
+          <Image
             id="dynamic-image"
             src="/images/1-Seed.gif"
             alt="Dynamic Image"
@@ -100,7 +101,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
                     .split(",")
                     .map((item: any, itemIndex: number) => (
                       <li key={itemIndex}>
-                        <img
+                        <Image
                           src="/images/arrow-right-resource.png"
                           alt={`arrow-item-${itemIndex}`}
                         />

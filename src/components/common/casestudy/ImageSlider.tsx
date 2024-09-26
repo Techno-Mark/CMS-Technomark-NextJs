@@ -48,7 +48,7 @@ const ImageSlider = ({
             {/* Use item as key if unique */}
             <Image width={small ? 350 : 500} src={item} alt="" height={10} />
             <div className={styles.overlay} onClick={handleOverlayClick}>
-              <img
+              <Image
                 src="/images/maximize-4.svg"
                 alt={`${item}-${i}`}
                 width={40}
