@@ -1,7 +1,7 @@
-import React from "react"
-import Image from "next/image"
-import TypeingTexts from "@/components/common/typeingtexts/TypeingTexts"
-import Button from "@/components/common/button/button"
+import React from "react";
+import Image from "next/image";
+import TypeingTexts from "@/components/common/typeingtexts/TypeingTexts";
+import Button from "@/components/common/button/button";
 
 interface HomeSectionProps {
   sectionData?: any;
@@ -14,15 +14,15 @@ const HomeSection: React.FC<HomeSectionProps> = ({
   sectionData,
   scrollToSection,
   formSectionRef,
-  techSectionRef
+  techSectionRef,
 }) => {
-  const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4"
-  const ctaText = sectionData.ctaText ?? ""
+  const backgroundVideo = sectionData.backgroundVideo ?? "/images/hero.mp4";
+  const ctaText = sectionData.ctaText ?? "";
   const servicesChangeText =
     sectionData?.servicesChargeText.map((entry: any) => entry.headingText) ??
-    []
+    [];
 
-  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false)
+  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
 
   return (
     <section
@@ -53,12 +53,11 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           style={{
             display: isVideoLoaded ? "block" : "none",
             width: "100%",
-            height: "auto"
+            height: "auto",
           }}
         >
           <source src={backgroundVideo} type="video/mp4" />
         </video>
-        git config pull.rebase false
       </div>
       <div
         className={`absolute left-0 right-0 z-[1] top-1/2 transform translate-y-[-50%]`}
@@ -87,7 +86,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HomeSection
+export default HomeSection;
