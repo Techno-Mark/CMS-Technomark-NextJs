@@ -47,7 +47,7 @@ const HireDeveloper: React.FC<HireDeveloperProps> = ({ props, isengaged }) => {
                     src="/images/arrow-right-resource.png"
                     height={26}
                     width={26}
-                    alt="Arrow Icon"
+                    alt={`Arrow Icon-${detailIndex}`}
                     className="mr-2"
                   />
                   <p>{detail}</p>

@@ -35,7 +35,7 @@ const ProductSolutions: React.FC<ProductSolutionsProps> = ({ props }) => {
                 <div className={`${styles.scalearea}` }>{/* text-[13px] */}
                   <Image
                     src="/images/arrow-right-solution.png"
-                    alt="arrow"
+                    alt={`arrow-${index}`}
                     height={40}
                     width={80}
                   />

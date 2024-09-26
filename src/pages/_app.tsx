@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
 App.getInitialProps = async (ctx: NextPageContext) => {
   const [header, footer] = await Promise.all([
-    fetchHeaderFooterData("Main Header Menu"),
-    fetchHeaderFooterData("Footer Menu")
+    fetchHeaderFooterData("header"),
+    fetchHeaderFooterData("footer")
   ])
 
   return {

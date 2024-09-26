@@ -31,7 +31,7 @@ const Index: React.FC = () => {
         }
       )
       setData(res.data.data)
-      setFormData(res.data.data.formatData[0])
+      setFormData(res.data.data.formatData)
     } catch (error) {
       console.error("Error fetching data:", error)
     }
@@ -40,6 +40,40 @@ const Index: React.FC = () => {
   useEffect(() => {
     apiCallForm("blogs")
   }, [])
+
+  const renderSection = (sectionName: string, sectionData: any) => {
+    switch (sectionName) {
+      case "Blog hero section":
+        return (
+          sectionData && (
+            <section className={`${styles.casestudylist} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <p className={styles.casestudylistlabel}>{sectionData ? sectionData.label : ""}</p>
+                <TitleSection
+                  sectionData={{
+                    title: sectionData ? sectionData.title : "",
+                    subtitle: sectionData ? sectionData.subTitle : ""
+                  }}
+                  titleFirst={true}
+                  titleClassName="casestudylisttitle"
+                />
+                <BlogList />
+              </div>
+            </section>
+          )
+        )
+      case "Contact Form Section":
+        return (
+          sectionData && (
+            <section className={`${styles.formsection} tm-section bg-white`}>
+              <div className="container mx-auto">
+                <FormSection props={sectionData} />
+              </div>
+            </section>
+          )
+        )
+    }
+  }
 
   return (
     <>
@@ -51,28 +85,14 @@ const Index: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <section className={`${styles.casestudylist} tm-section bg-white`}>
-        <div className="container mx-auto">
-          <p className={styles.casestudylistlabel}>Resources</p>
-          <TitleSection
-            sectionData={{
-              title: "Blogs & News",
-              subtitle:
-                "Explore & Discover the most outstanding articles that are trending on the Technologies which can enhance the way of Thinking & Innovation!"
-            }}
-            titleFirst={true}
-            titleClassName="casestudylisttitle"
-          />
-          <BlogList />
-        </div>
-      </section>
-      {formData?.["Contact Form Section"] && (
-        <section className={`${styles.formsection} tm-section bg-white`}>
-          <div className="container mx-auto">
-            <FormSection props={formData?.["Contact Form Section"]} />
-          </div>
-        </section>
-      )}
+      {!!formData &&
+        formData.map((sectionName: any, index: number) => (
+          <React.Fragment key={index}>
+            {Object.entries(sectionName).map(([key, value]) => (
+              <div key={key}>{renderSection(key, value)}</div>
+            ))}
+          </React.Fragment>
+        ))}
     </>
   )
 }

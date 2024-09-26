@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Button from "../button/button"
 import styles from "./currentOpening.module.css"
 import axios from "axios"
+import Image from "next/image"
 
 const CurrentOpenings = ({ data }: any) => {
   const [currentOpeningData, setCurrentOpeningData] = useState<any>([])
@@ -103,7 +104,7 @@ const CurrentOpenings = ({ data }: any) => {
       {!!data && data.isSearchAvailable == "true" && (
         <div className="mx-4 my-4 flex flex-wrap justify-between lg:mx-40 mt-10">
           <div className="px-5 mb-4 border h-20 w-full flex items-center gap-4 md:w-[48%] md:mb-0">
-            <img width={20} src="/images/search.svg" />
+            <Image width={20} src="/images/search.svg" alt="searchIcon" />
             <input
               type="text"
               placeholder="Search"
@@ -119,7 +120,7 @@ const CurrentOpenings = ({ data }: any) => {
             <span className="text-2xl font-medium text-[#1D3557]">
               {selectedMode === "All" ? "All Job Shift" : selectedMode}
             </span>
-            <img width={20} src="/images/arrowDown.svg" />
+            <Image width={20} src="/images/arrowDown.svg" alt="arrowDown" />
 
             {isShiftDropdownVisible && (
               <div className="absolute top-full left-0 w-full bg-white border shadow-md z-10">
@@ -157,7 +158,7 @@ const CurrentOpenings = ({ data }: any) => {
                 ? "All Job Location"
                 : selectedLocation}
             </span>
-            <img width={20} src="/images/arrowDown.svg" />
+            <Image width={20} src="/images/arrowDown.svg" alt="arrowDown" />
 
             {isLocationDropdownVisible && (
               <div className="absolute top-full left-0 w-full bg-white border shadow-md z-10">
@@ -199,13 +200,14 @@ const CurrentOpenings = ({ data }: any) => {
                 </h1>
                 <div className="flex flex-col gap-6 lg:gap-10 lg:flex-row">
                   <span className="mx-1 flex gap-2.5 text-xl font-medium text-[#617289]">
-                    <img
+                    <Image
                       className="w-7"
                       src={
                         !!data && !!data.experienceIcon
                           ? data.experienceIcon
                           : ""
                       }
+                      alt="experienceIcon"
                     />
                     <p className="">
                       {!!data && !!data.experienceTitle
@@ -217,13 +219,14 @@ const CurrentOpenings = ({ data }: any) => {
                     </p>
                   </span>
                   <span className="mx-1 flex gap-2.5 text-xl font-medium text-[#617289]">
-                    <img
+                    <Image
                       className="w-7"
                       src={
                         !!data && !!data.noOfOpeningsIcon
                           ? data.noOfOpeningsIcon
                           : ""
                       }
+                      alt="noOfOpenings"
                     />
                     <p className="">
                       {!!data && !!data.noOfOpeningsTitle
@@ -235,7 +238,8 @@ const CurrentOpenings = ({ data }: any) => {
                     </p>
                   </span>
                   <span className="mx-1 flex gap-2.5 text-xl font-medium text-[#617289]">
-                    <img
+                    <Image
+                    alt="modeIcon"
                       className="w-7"
                       src={!!data && !!data.modeIcon ? data.modeIcon : ""}
                     />

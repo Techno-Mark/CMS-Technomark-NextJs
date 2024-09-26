@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./blogDescription.module.css"
 import Link from "next/link"
+import Image from "next/image"
 
 interface BlogDescProps {
   description: string;
@@ -23,7 +24,7 @@ const BlogDescription: React.FC<{ props: BlogDescProps }> = ({ props }) => {
         {["whatsapp", "linkdin", "twitter", "youtube", "facebook", "share"].map(
           (icon, index) => (
             <Link key={index} href={"/"} target="_blank">
-              <img
+              <Image
                 key={index}
                 src={`/images/${icon}.png`}
                 className="rounded-full mb-7 h-[40px] w-[40px]"

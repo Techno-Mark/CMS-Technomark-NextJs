@@ -170,7 +170,7 @@
 
 .trustsection :global(.title-section h2) {
   /* margin-bottom: 1.2rem; */
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .trustsection :global(.title-section p) {
@@ -179,7 +179,7 @@
 
 .trustsection :global(.title-section p span) {
   display: block;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
   font-weight: 700;
   padding-top: 8px;
@@ -441,9 +441,9 @@
 .leftbubblecircle {
   position: absolute;
   left: -16rem;
-  top: 50%;
+  top: 80%;
   transform: translate(0, -50%);
-  z-index: 0;
+  z-index: 109;
 }
 
 .leftbubblecircle img {
@@ -606,6 +606,7 @@
   .trustsection :global(.title-section p span) {
     font-size: 1.25rem;
   }
+  
 }
 
 @media only screen and (max-width: 767px) {

@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./footer.module.css"
 
 interface FooterProps {
   footerData: {
-    name: string;
+    name: string
     children: {
-      name: string;
-      link: string;
-    }[];
-  }[];
+      name: string
+      link: string
+    }[]
+  }[]
 }
 
 const Footer: React.FC<FooterProps> = ({ footerData }) => {
@@ -84,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
                   height={22}
                   width={22}
                 />
-                <span>Whatsapp | +91 -7069008181</span>
+                <span>Whatsapp | +91 - 7069008181</span>
               </Link>
               <Link
                 href="mailto:info@technomark.io"
@@ -156,7 +156,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             {footerData?.map((section, sectionIndex) => (
               <div key={sectionIndex}>
                 <h3 className="mb-6 font-medium text-white capitalize">
-                  {section.name}
+                  {section.name.trim() ? section.name : <p className={`${styles.extraDot}`}>.</p>}
                 </h3>
                 <ul className={styles.footerlinksul}>
                   {section.children.map((link, linkIndex) => (
