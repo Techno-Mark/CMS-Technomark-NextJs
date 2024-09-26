@@ -139,12 +139,12 @@ const Page: React.FC<
       </Head>
       <ToastContainer />
 
-      <style jsx global>{`
+      {/* <style jsx global>{`
         :root {
-          --primary-color: ${Theme.buttonColor};
-          --hover-color: ${Theme.hoverColor};
+          --primary-color: ${Theme?.buttonColor};
+          --hover-color: ${Theme?.hoverColor};
         }
-      `}</style>
+      `}</style> */}
 
       {data?.popups &&
         !!data.popups.length &&

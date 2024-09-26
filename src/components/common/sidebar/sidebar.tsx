@@ -191,7 +191,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
         </div>
 
         <div
-          className={`container lg:max-w-[80%] xl:max-w-[60%] h-[90vh] flex flex-col lg:mt-10 xl:mt-28 mx-auto justify-center ${styles.container}`}
+          className={`container lg:max-w-[80%] xl:max-w-[100%] flex flex-col lg:mt-10 xl:mt-28 mx-auto justify-center ${styles.container}`}
         >
           <div className={styles.formcirlerotate}>
             <Image
