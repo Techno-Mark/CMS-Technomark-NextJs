@@ -1,14 +1,15 @@
 import { useState } from "react"
 import Button from "../button/button"
+import Image from "next/image"
 
 type FormDataType = {
-  fullName: string;
-  email: string;
-  mobileNo: string;
-  coverLetter: FileList | null;
-  resume: FileList | null;
-  agreeTermsConditions: boolean;
-};
+  fullName: string
+  email: string
+  mobileNo: string
+  coverLetter: FileList | null
+  resume: FileList | null
+  agreeTermsConditions: boolean
+}
 
 const Form = () => {
   const [formData, setFormData] = useState<FormDataType>({
@@ -149,9 +150,10 @@ const Form = () => {
             }}
           />
           <label htmlFor="uploadResume" className="cursor-pointer">
-            <img
+            <Image
               src="/images/upload.svg"
               className="absolute right-0 top-0 w-7 h-"
+              alt="upload"
             />
           </label>
           <hr className="mt-[22px] w-full h-[1px] border-t border-t-[#344968]" />
@@ -181,9 +183,10 @@ const Form = () => {
             }}
           />
           <label htmlFor="uploadResume" className="cursor-pointer">
-            <img
+            <Image
               src="/images/upload.svg"
               className="absolute right-0 top-0 w-7 h-"
+              alt="upload"
             />
           </label>
           <hr className="mt-[22px] w-full h-[1px] border-t border-t-[#344968]" />

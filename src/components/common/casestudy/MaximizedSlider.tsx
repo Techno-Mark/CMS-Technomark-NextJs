@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react"
 import Slider from "react-slick"
 
@@ -8,7 +9,7 @@ function Slider1NextArrow(props: any) {
       className={`cursor-pointer absolute top-1/2 right-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
       onClick={onClick}
     >
-      <img src="/images/Arrow-slideright.png" alt="" />
+      <Image src="/images/Arrow-slideright.png" alt="" />
     </div>
   )
 }
@@ -20,7 +21,7 @@ function Slider1PrevArrow(props: any) {
       className={`cursor-pointer absolute top-1/2 left-2.5 z-10 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
       onClick={onClick}
     >
-      <img src="/images/Arrow-slideleft.png" alt="" />
+      <Image src="/images/Arrow-slideleft.png" alt="" />
     </div>
   )
 }
@@ -40,9 +41,9 @@ const MaximizedSlider = ({
   images,
   onClose
 }: {
-  isOpen: boolean;
-  images: string[];
-  onClose: () => void;
+  isOpen: boolean
+  images: string[]
+  onClose: () => void
 }) => {
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
@@ -88,7 +89,7 @@ const MaximizedSlider = ({
             className={`cursor-pointer absolute top-2.5 right-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99] z-[1000] flex justify-center items-center`}
             onClick={onClose}
           >
-            <img
+            <Image
               height={15}
               width={15}
               src="/images/close-circle.png"
@@ -98,7 +99,11 @@ const MaximizedSlider = ({
           <Slider ref={sliderRef1} asNavFor={nav2} {...slider1Settings}>
             {images.map((item, i: number) => (
               <div className="h-[85vh]" key={i}>
-                <img className="w-full h-full object-contain" src={item} alt={`image${i}`} />
+                <Image
+                  className="w-full h-full object-contain"
+                  src={item}
+                  alt={`image${i}`}
+                />
               </div>
             ))}
           </Slider>
@@ -110,7 +115,7 @@ const MaximizedSlider = ({
                   key={i}
                   onClick={() => handleSlideClick(i)}
                 >
-                  <img src={item} alt="" />
+                  <Image src={item} alt="" />
                 </div>
               ))}
             </Slider>

@@ -7,20 +7,20 @@ import styles from "./header.module.css"
 import MenuLink from "./menuLink/MenuLink"
 
 interface SubmenuItem {
-  name: string;
-  link: string;
-  logo: string;
+  name: string
+  link: string
+  logo: string
 }
 
 interface MenuItem {
-  name: string;
-  link: string;
-  children?: SubmenuItem[];
+  name: string
+  link: string
+  children?: SubmenuItem[]
 }
 
 interface HeaderProps {
-  onShowDrawer: () => void;
-  headerData: Array<MenuItem>;
+  onShowDrawer: () => void
+  headerData: Array<MenuItem>
 }
 
 const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ onShowDrawer, headerData }) => {
                 className="h-10"
                 alt="Logo"
                 width={232}
-                height={37}
+                height={40}
                 loading="lazy"
               />
             </Link>

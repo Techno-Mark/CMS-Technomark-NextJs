@@ -143,7 +143,7 @@ const BlogPage: React.FC = () => {
             </div>
             <div className="w-full mt-10">
               {data?.bannerImageUrl && (
-                <img
+                <Image
                   src={data.bannerImageUrl}
                   className="object-contain w-full"
                   alt="banner"
