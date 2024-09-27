@@ -6,18 +6,19 @@ import axios from "axios"
 import { convertDate } from "@/utils/commonFunction"
 
 const BlogList = ({ buttons = true }: { buttons?: boolean }) => {
-  const Buttons = [
-    "Software Development",
-    "Development & Operation",
-    "Artificial Intelligence",
-    "Automation",
-    "Marketing"
-  ]
+  // const Buttons = [
+  //   "Software Development",
+  //   "Development & Operation",
+  //   "Artificial Intelligence",
+  //   "Automation",
+  //   "Marketing"
+  // ]
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "Software Development"
   )
   const [showAll, setShowAll] = useState<boolean>(false)
   const [data, setData] = useState([])
+  const [activeCategory, setActiveCategory] = useState<Array<string>>([])
 
   const filteredBlogs = buttons ? data?.filter((blog: any) =>
     blog.categories?.some(
@@ -30,6 +31,13 @@ const BlogList = ({ buttons = true }: { buttons?: boolean }) => {
 
   const handleToggleShow = () => setShowAll(true)
 
+  function updateActiveCategory(blogs:any) {
+    const allCategories = blogs
+      ?.flatMap((blog: any) => blog.categories)
+      .map((category: any) => category.name)
+    setActiveCategory(Array.from(new Set(allCategories)))
+  }
+
   const apiCall = async () => {
     try {
       const res = await axios.get(
@@ -41,6 +49,7 @@ const BlogList = ({ buttons = true }: { buttons?: boolean }) => {
         }
       )
       setData(res.data.data.blogs)
+      updateActiveCategory(res.data.data.blogs)
     } catch (error) {
       console.error(`Error fetching data:`, error)
       return null
@@ -53,9 +62,9 @@ const BlogList = ({ buttons = true }: { buttons?: boolean }) => {
 
   return (
     <div className={styles.caseslide} id="case-slide">
-      {buttons && (
+      {activeCategory && (
         <div className={styles.tabContainer}>
-          {Buttons?.map((text: any, index: number) => (
+          {activeCategory?.map((text: any, index: number) => (
             <button
               key={index}
               className={`${styles.tabButton} ${
