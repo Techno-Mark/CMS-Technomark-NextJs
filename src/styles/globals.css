@@ -9,23 +9,23 @@
   --background-end-rgb: 255, 255, 255;
   --primary-color: #168944;
   /* --primary-color: var(--primary-color); */
-  --primary-variant-one: #40AA46;
+  --primary-variant-one: #40aa46;
   --primary-variant-two: #0a843f;
-  --primary-background: #E7F8EA;
-  --secondary--color: #1D3557;
+  --primary-background: #e7f8ea;
+  --secondary--color: #1d3557;
   --secondary--variant-one: #344968;
   --white-color: #fff;
-  --border-primary: #BBC2CD;
-  --border-secondary: #E8EBEE;
+  --border-primary: #bbc2cd;
+  --border-secondary: #e8ebee;
   --border-ternary: #e6e6e6;
-  --border-quaternary: #8E9AAB;
-  --border-quinary: #94CC7C;
+  --border-quaternary: #8e9aab;
+  --border-quinary: #94cc7c;
   --bg-primary: #f8fafb;
   --bg-secondary: #f2f5f9;
-  --bg-ternary: #FAFBFC;
+  --bg-ternary: #fafbfc;
   --bg-quaternary: #e3f3e6;
   --bg-footer: #182d4a;
-  --footer--primary: #BFCFD9;
+  --footer--primary: #bfcfd9;
   --red--primary: #f13c31;
   --slick--arrow: #545960;
   --text-casestudy: #262626;
@@ -43,6 +43,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #fff;
   font-size: 16px;
+  scroll-behavior: smooth;
   font-family: "Montserrat" !important;
 }
 

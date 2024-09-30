@@ -1,5 +1,5 @@
-import React from "react"
-import styles from "./methodologybox.module.css"
+import React from "react";
+import styles from "./methodologybox.module.css";
 
 interface MethodologyBoxProps {
   heading?: string;
@@ -20,13 +20,15 @@ const MethodologyBox = ({ data }: any) => {
             <div className={styles.front}>
               <h3>{card?.heading || ""}</h3>
               <h5 className={styles.cardtitle}>{card?.subHeading || ""}</h5>
-              <p className={styles.cardtext}>{card?.description || ""}</p>
+              <p className={`${styles.cardtext} min-h-[105px]`}>
+                {card?.description || ""}
+              </p>
             </div>
             <div className={styles.back}>
               <ul
                 className={styles.successratiobox}
                 dangerouslySetInnerHTML={{
-                  __html: card?.flipText || ""
+                  __html: card?.flipText || "",
                 }}
               />
             </div>
@@ -34,7 +36,7 @@ const MethodologyBox = ({ data }: any) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default MethodologyBox
+export default MethodologyBox;

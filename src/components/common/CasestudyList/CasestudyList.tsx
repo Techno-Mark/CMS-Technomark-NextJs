@@ -64,7 +64,6 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
 
   // Display 3 items by default, show all if "View All" is clicked
   const displayedData = showAll ? filteredData : filteredData.slice(0, 3)
-  console.log("🚀 ~ displayedData:", displayedData)
 
   return (
     <div className={styles.caseslide} id="case-slide">

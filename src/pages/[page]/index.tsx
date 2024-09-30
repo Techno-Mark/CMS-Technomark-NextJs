@@ -1,11 +1,11 @@
-import React from "react";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import axios from "axios";
-import DataComponent from "./DataComponent";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Head from "next/head";
-import Popup from "@/components/popup/popup";
+import React from "react"
+import { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import axios from "axios"
+import DataComponent from "./DataComponent"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Head from "next/head"
+import Popup from "@/components/popup/popup"
 
 interface HomeProps {
   data: any;
@@ -19,27 +19,27 @@ const apiCall = async (
   id: string | string[] | undefined
 ) => {
   try {
-    const isPreview = preview === "true";
-    const hashId = id || "";
+    const isPreview = preview === "true"
+    const hashId = id || ""
     const url = isPreview
       ? `${process.env.NEXT_PUBLIC_API_URL || ""}preview/${hashId}`
-      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`;
+      : `${process.env.NEXT_PUBLIC_API_URL || ""}page/getBySlug${param}`
 
     const res = await axios.get(`${url}`, {
       headers: {
-        referal: process.env.REFERAL_HEADER || "",
-      },
-    });
+        referal: process.env.REFERAL_HEADER || ""
+      }
+    })
     if (isPreview) {
-      return res.data?.data?.data;
+      return res.data?.data?.data
     }
 
-    return res.data.data;
+    return res.data.data
   } catch (error) {
-    console.error(`Error fetching ${param} data:`, error);
-    return null;
+    console.error(`Error fetching ${param} data:`, error)
+    return null
   }
-};
+}
 
 const seoData = async () => {
   try {
@@ -47,69 +47,68 @@ const seoData = async () => {
       `${process.env.NEXT_PUBLIC_API_URL}/site/seo-script`,
       {
         headers: {
-          referal: process.env.REFERAL_HEADER || "",
-        },
+          referal: process.env.REFERAL_HEADER || ""
+        }
       }
-    );
-    return res.data.data;
+    )
+    return res.data.data
   } catch (error) {
-    console.error(`Error fetching  data:`, error);
-    return null;
+    console.error(`Error fetching  data:`, error)
+    return null
   }
-};
+}
 
 const ThemeData = async () => {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/site/theme-data`, {
       headers: {
-        referal: process.env.REFERAL_HEADER || "",
-      },
-    });
-    console.log(res.data.data);
+        referal: process.env.REFERAL_HEADER || ""
+      }
+    })
 
-    return res.data.data;
+    return res.data.data
   } catch (error) {
-    console.error(`Error fetching  data:`, error);
-    return null;
+    console.error(`Error fetching  data:`, error)
+    return null
   }
-};
+}
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   context
 ) => {
-  const { resolvedUrl, query } = context;
-  const { preview, id } = query;
+  const { resolvedUrl, query } = context
+  const { preview, id } = query
 
   try {
     const data =
       resolvedUrl != "/blogs" &&
       resolvedUrl != "/careerDetails" &&
-      (await apiCall(resolvedUrl, preview, id));
+      (await apiCall(resolvedUrl, preview, id))
 
-    const seo = await seoData();
-    await apiCall(resolvedUrl, preview, id);
+    const seo = await seoData()
+    await apiCall(resolvedUrl, preview, id)
 
-    const Theme = await ThemeData();
-    await apiCall(resolvedUrl, preview, id);
+    const Theme = await ThemeData()
+    await apiCall(resolvedUrl, preview, id)
 
     return {
       props: {
         data,
         seo,
-        Theme,
-      },
-    };
+        Theme
+      }
+    }
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", error)
     return {
       props: {
         data: null,
         seo: null,
-        Theme: null,
-      },
-    };
+        Theme: null
+      }
+    }
   }
-};
+}
 
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
@@ -160,7 +159,7 @@ const Page: React.FC<
         />
       )} */}
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
