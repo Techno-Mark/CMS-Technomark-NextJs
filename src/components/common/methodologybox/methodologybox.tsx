@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./methodologybox.module.css";
+import React from "react"
+import styles from "./methodologybox.module.css"
 
 interface MethodologyBoxProps {
   heading?: string;
@@ -28,7 +28,7 @@ const MethodologyBox = ({ data }: any) => {
               <ul
                 className={styles.successratiobox}
                 dangerouslySetInnerHTML={{
-                  __html: card?.flipText || "",
+                  __html: card?.flipText || ""
                 }}
               />
             </div>
@@ -36,7 +36,7 @@ const MethodologyBox = ({ data }: any) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default MethodologyBox;
+export default MethodologyBox
