@@ -46,7 +46,7 @@ const ImageSlider = ({
         {images.map((item, i) => (
           <div className={styles.imageSlide} key={i}>
             {/* Use item as key if unique */}
-            <Image width={small ? 350 : 500} src={item} alt="" height={10} />
+            <Image width={small ? 350 : 500} src={item} alt="" height={small ? 350 : 600} />
             <div className={styles.overlay} onClick={handleOverlayClick}>
               <Image
                 src="/images/maximize-4.svg"
