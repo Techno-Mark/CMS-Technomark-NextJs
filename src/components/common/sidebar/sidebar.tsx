@@ -178,7 +178,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
       </div>
 
       <div id="drawer" className={styles.drawer}>
-        <div className="flex justify-end">
+        <div className="flex overflow-auto justify-end">
           <button
             className={styles.closeButton}
             onClick={() => {
@@ -191,7 +191,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
         </div>
 
         <div
-          className={`container lg:max-w-[80%] xl:max-w-[100%] flex flex-col lg:mt-10 xl:mt-28 mx-auto justify-center ${styles.container}`}
+          className={`container lg:max-w-[80%] xl:max-w-[100%] flex flex-col  mx-auto justify-center ${styles.container}`}
         >
           <div className={styles.formcirlerotate}>
             <Image
@@ -298,7 +298,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDrawerVisible, toggleDrawer }) => {
               )}
             </div>
 
-            <div className={styles.submitbtn}>
+            <div className={`${styles.submitbtn} `}>
               <Button
                 text="SEND REQUEST"
                 variant="primary"

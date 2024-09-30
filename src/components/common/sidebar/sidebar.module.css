@@ -107,14 +107,14 @@
 
 .formcirlerotate {
   position: absolute;
-  top: 8rem;
-  right: 20rem;
+  top: 4rem;
+  right: 10rem;
 }
 
 .formcirlerotate img {
   animation: spin 30s linear infinite;
   margin-left: auto;
-  max-width: 15rem;
+  max-width: 11rem;
 }
 
 .input:focus {

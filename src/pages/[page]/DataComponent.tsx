@@ -138,7 +138,9 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
   const techSectionRef = useRef<HTMLElement | null>(null)
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" })
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
   }
 
   const renderSection = (sectionName: string, sectionData: any) => {
@@ -1101,7 +1103,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           </React.Fragment>
         ))
       ) : loading ? (
-          <Loading />
+        <Loading />
       ) : (
         <>
           <div className="flex items-center justify-center py-10">

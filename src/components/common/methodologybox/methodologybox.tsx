@@ -20,7 +20,9 @@ const MethodologyBox = ({ data }: any) => {
             <div className={styles.front}>
               <h3>{card?.heading || ""}</h3>
               <h5 className={styles.cardtitle}>{card?.subHeading || ""}</h5>
-              <p className={styles.cardtext}>{card?.description || ""}</p>
+              <p className={`${styles.cardtext} min-h-[105px]`}>
+                {card?.description || ""}
+              </p>
             </div>
             <div className={styles.back}>
               <ul

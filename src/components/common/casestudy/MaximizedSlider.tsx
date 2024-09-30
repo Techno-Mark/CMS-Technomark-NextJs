@@ -9,7 +9,7 @@ function Slider1NextArrow(props: any) {
       className={`cursor-pointer absolute top-1/2 right-2.5 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
       onClick={onClick}
     >
-      <Image src="/images/Arrow-slideright.png" alt="" />
+      <Image src="/images/Arrow-slideright.png" width={30} height={30} alt="" />
     </div>
   )
 }
@@ -21,7 +21,7 @@ function Slider1PrevArrow(props: any) {
       className={`cursor-pointer absolute top-1/2 left-2.5 z-10 w-[30px] h-[30px] rounded-full bg-[#ffffff99]`}
       onClick={onClick}
     >
-      <Image src="/images/Arrow-slideleft.png" alt="" />
+      <Image src="/images/Arrow-slideleft.png" width={30} height={30} alt="" />
     </div>
   )
 }
@@ -41,9 +41,9 @@ const MaximizedSlider = ({
   images,
   onClose
 }: {
-  isOpen: boolean
-  images: string[]
-  onClose: () => void
+  isOpen: boolean;
+  images: string[];
+  onClose: () => void;
 }) => {
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
@@ -102,6 +102,8 @@ const MaximizedSlider = ({
                 <Image
                   className="w-full h-full object-contain"
                   src={item}
+                  height={256}
+                  width={456}
                   alt={`image${i}`}
                 />
               </div>
@@ -115,7 +117,7 @@ const MaximizedSlider = ({
                   key={i}
                   onClick={() => handleSlideClick(i)}
                 >
-                  <Image src={item} alt="" />
+                  <Image src={item} height={256} width={456} alt="" />
                 </div>
               ))}
             </Slider>
