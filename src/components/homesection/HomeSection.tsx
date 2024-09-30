@@ -53,7 +53,6 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           style={{
             display: isVideoLoaded ? "block" : "none",
             width: "100%",
-            height: "auto"
           }}
         >
           <source src={backgroundVideo} type="video/mp4" />
