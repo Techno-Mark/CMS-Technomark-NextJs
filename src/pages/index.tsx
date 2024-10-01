@@ -8,7 +8,7 @@ const Index = () => {
   useEffect(() => {
     router.push("/home")
   }, [router])
-  return <Loading />
+  return;
 }
 
 export default Index
