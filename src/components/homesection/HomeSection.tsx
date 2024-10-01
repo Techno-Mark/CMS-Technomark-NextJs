@@ -43,16 +43,17 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           />
         )}
         <video
-          className="w-full h-[100vh] object-cover"
+          className="w-full h-[100vh] pointer-events-none object-cover"
           // "video"
           loop
           autoPlay
+          playsInline
           muted
           preload="metadata"
           onCanPlay={() => setIsVideoLoaded(true)}
           style={{
             display: isVideoLoaded ? "block" : "none",
-            width: "100%",
+            width: "100%"
           }}
         >
           <source src={backgroundVideo} type="video/mp4" />
@@ -72,7 +73,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
             variant="primary"
           />
           <div
-            className={`flex justify-center mt-[30px] cursor-pointer`}
+            className={`flex w-fit mx-auto justify-center mt-[30px] cursor-pointer`}
             onClick={() => scrollToSection(techSectionRef)}
           >
             <Image

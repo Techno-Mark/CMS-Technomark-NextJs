@@ -152,7 +152,7 @@ const FormSection: React.FC<FormProps> = ({ props, techstartupform }: any) => {
           <div className={styles.formtext}>
             <h3>{props?.title || ""}</h3>
             <ul>
-              {props?.data.map((item: any, index: any) => (
+              {props?.data?.map((item: any, index: any) => (
                 <li key={index}>{item.text || ""}</li>
               ))}
             </ul>

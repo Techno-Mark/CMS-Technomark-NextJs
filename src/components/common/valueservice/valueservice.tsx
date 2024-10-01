@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import styles from "./valueservice.module.css";
-import TitleSection from "@/components/common/title/title";
-import Image from "next/image";
+import React, { useEffect } from "react"
+import styles from "./valueservice.module.css"
+import TitleSection from "@/components/common/title/title"
+import Image from "next/image"
 
 interface ValueServiceProps {
   props: any;
@@ -9,60 +9,60 @@ interface ValueServiceProps {
 
 const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll("section")
     const dynamicImage = document.getElementById(
       "dynamic-image"
-    ) as HTMLImageElement;
+    ) as HTMLImageElement
 
     // Set default image to the first section's data-image
     if (sections.length > 0 && dynamicImage) {
-      const firstSectionImage = sections[0].getAttribute("data-image");
+      const firstSectionImage = sections[0].getAttribute("data-image")
       if (firstSectionImage) {
-        dynamicImage.src = firstSectionImage;
+        dynamicImage.src = firstSectionImage
       }
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        let maxVisibleRatio = 0;
-        let mostVisibleSection: any = null;
+        let maxVisibleRatio = 0
+        let mostVisibleSection: any = null
 
         entries.forEach((entry) => {
           if (
             entry.isIntersecting &&
             entry.intersectionRatio > maxVisibleRatio
           ) {
-            maxVisibleRatio = entry.intersectionRatio;
-            mostVisibleSection = entry.target as HTMLElement;
+            maxVisibleRatio = entry.intersectionRatio
+            mostVisibleSection = entry.target as HTMLElement
           }
-        });
+        })
 
         if (mostVisibleSection && dynamicImage) {
-          const newImage = mostVisibleSection.getAttribute("data-image");
+          const newImage = mostVisibleSection.getAttribute("data-image")
           if (newImage) {
-            dynamicImage.src = newImage;
+            dynamicImage.src = newImage
           }
         }
       },
       {
-        threshold: [0.5],
+        threshold: [0.5]
       }
-    );
+    )
 
     sections.forEach((section) => {
-      observer.observe(section);
-    });
+      observer.observe(section)
+    })
 
     return () => {
       sections.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
+        observer.unobserve(section)
+      })
+    }
+  }, [])
 
-  const title = props?.title || "";
-  const subtitle = props?.subTitle || "";
-  const services = props?.services || [];
+  const title = props?.title || ""
+  const subtitle = props?.subTitle || ""
+  const services = props?.services || []
 
   return (
     <div className="flex flex-wrap sm:flex-row flex-col">
@@ -70,7 +70,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
         <TitleSection
           sectionData={{
             title,
-            subtitle,
+            subtitle
           }}
           titleFirst={true}
           titleClassName="valueservice"
@@ -121,7 +121,7 @@ const ValueService: React.FC<ValueServiceProps> = ({ props }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ValueService;
+export default ValueService
