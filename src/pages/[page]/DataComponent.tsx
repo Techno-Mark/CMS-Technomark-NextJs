@@ -82,6 +82,9 @@ const ImageSlider = lazy(
 const CurrentOpenings = lazy(
   () => import("@/components/common/currentOpenings/currentOpenings")
 )
+const PrivacyPolicy = lazy(
+  () => import("@/components/common/privacyPolicy/privacyPolicy")
+)
 // const BlogList = lazy(() => import("@/components/common/blogList/BlogList"));
 
 interface HomeProps {
@@ -1054,6 +1057,14 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <Recrute props={sectionData} />
               </div>
             </section>
+          )
+        )
+      case "Privacy Policy":
+        return (
+          sectionData && (
+            <PrivacyPolicy
+              content={sectionData}
+            />
           )
         )
       // case "bloglist":
