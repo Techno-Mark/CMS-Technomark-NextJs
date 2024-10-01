@@ -182,7 +182,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             className={`${styles.footerbottomright} flex mt-4 sm:justify-center sm:mt-0`}
           >
             <Link href="/">Terms of Use</Link>
-            <Link href="/">Privacy Policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </div>
         </div>
       </div>
