@@ -43,14 +43,11 @@ const apiCall = async (
 
 const seoData = async () => {
   try {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/site/seo-script`,
-      {
-        headers: {
-          referal: process.env.REFERAL_HEADER || ""
-        }
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/seo-script`, {
+      headers: {
+        referal: process.env.REFERAL_HEADER || ""
       }
-    )
+    })
     return res.data.data
   } catch (error) {
     console.error(`Error fetching  data:`, error)
@@ -60,15 +57,11 @@ const seoData = async () => {
 
 const ThemeData = async () => {
   try {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/site/theme-data`,
-      {
-        headers: {
-          referal: process.env.REFERAL_HEADER || ""
-        }
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/theme-data`, {
+      headers: {
+        referal: process.env.REFERAL_HEADER || ""
       }
-    )
-
+    })
     return res.data.data
   } catch (error) {
     console.error(`Error fetching  data:`, error)
@@ -116,8 +109,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data, seo, Theme }) => {
-  console.log(seo)
-
   return (
     <>
       <Head>
