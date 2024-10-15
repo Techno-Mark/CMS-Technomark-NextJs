@@ -60,11 +60,14 @@ const seoData = async () => {
 
 const ThemeData = async () => {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/site/theme-data`, {
-      headers: {
-        referal: process.env.REFERAL_HEADER || ""
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/site/theme-data`,
+      {
+        headers: {
+          referal: process.env.REFERAL_HEADER || ""
+        }
       }
-    })
+    )
 
     return res.data.data
   } catch (error) {
@@ -112,7 +115,9 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 
 const Page: React.FC<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ data, Theme }) => {
+> = ({ data, seo, Theme }) => {
+  console.log(seo)
+
   return (
     <>
       <Head>
@@ -123,18 +128,18 @@ const Page: React.FC<
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
         {/* Inject Google Analytics beforeScript */}
-        {/* {data?.googleAnalytics?.beforeScript && (
+        {seo?.googleAnalytics?.beforeScript && (
           <script
             dangerouslySetInnerHTML={{
-              __html: data.googleAnalytics.beforeScript,
+              __html: seo.googleAnalytics.beforeScript
             }}
           />
-        )} */}
+        )}
 
         {/* Inject Facebook Script */}
-        {/* {data?.facebookScript && (
-          <script dangerouslySetInnerHTML={{ __html: data.facebookScript }} />
-        )} */}
+        {seo?.facebookScript && (
+          <script dangerouslySetInnerHTML={{ __html: seo.facebookScript }} />
+        )}
       </Head>
       <ToastContainer />
 
@@ -145,19 +150,18 @@ const Page: React.FC<
         }
       `}</style> */}
 
+      {/* Inject Google Analytics afterScript */}
+      {seo?.googleAnalytics?.afterScript && (
+        <script
+          dangerouslySetInnerHTML={{ __html: seo.googleAnalytics.afterScript }}
+        />
+      )}
       {data?.popups &&
         !!data.popups.length &&
         data.popups?.map((popupDetail: any, index: number) => (
           <Popup popupData={popupDetail} key={index} />
         ))}
       <DataComponent data={data} />
-
-      {/* Inject Google Analytics afterScript */}
-      {/* {data?.googleAnalytics?.afterScript && (
-        <script
-          dangerouslySetInnerHTML={{ __html: data.googleAnalytics.afterScript }}
-        />
-      )} */}
     </>
   )
 }
