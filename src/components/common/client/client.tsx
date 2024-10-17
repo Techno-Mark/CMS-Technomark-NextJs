@@ -61,8 +61,8 @@ const Client: React.FC<TestimonialsProps> = ({ props }) => {
                 </div>
                 <div className={styles.textbox}>
                   <p>{testimonial}</p>
-                  <h4>{name}</h4>
-                  <h6>{designation}</h6>
+                  <h3>{name}</h3>
+                  <h4>{designation}</h4>
                 </div>
               </div>
               <div className={styles.clientpic}>

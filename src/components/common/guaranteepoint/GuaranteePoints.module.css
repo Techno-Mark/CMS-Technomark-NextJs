@@ -11,7 +11,7 @@
   margin-bottom: 0;
 }
 
-.iconTextArea .inlineIcon h4 {
+.iconTextArea .inlineIcon h3 {
   /* margin-bottom: 1rem; */
   color: var(--secondary--color);
   font-size: 1.5rem;
@@ -111,7 +111,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-  .iconTextArea .inlineIcon h4 {
+  .iconTextArea .inlineIcon h3 {
     font-size: 1.25rem;
   }
 

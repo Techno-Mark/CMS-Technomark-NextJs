@@ -16,7 +16,7 @@
   flex: 2;
 }
 
-.formtext h3 {
+.formtext h2 {
   font-family: Montserrat;
   color: var(--secondary--color);
   font-size: 2.5rem;
@@ -155,7 +155,7 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .formtext h3 {
+  .formtext h2 {
     font-size: 1.5rem;
   }
 }

@@ -35,7 +35,7 @@ const GuaranteePoints: React.FC<GuaranteePointsProps> = ({
                 className="!rounded-2xl"
               />
             </div>
-            <h4>{point.title || ""}</h4>
+            <h3>{point.title || ""}</h3>
           </div>
           <p
             className={styles.description}

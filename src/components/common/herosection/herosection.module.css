@@ -1,7 +1,48 @@
-.herocontainer :global(.title-section h2) {
+.title-section {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.singleLine h1,
+.singleLine p {
+  display: inline; /* Make title and subtitle inline */
+  margin-right: 0.5rem; /* Optional: Add some space between title and subtitle */
+}
+
+.maintitle {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4.25rem;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.maintitle.maindarktitle {
+  color: var(--secondary--color);
+}
+
+.maintitlespan span {
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  border-bottom: 3px solid var(--primary-variant-one);
+}
+
+.subtitle {
+  color: var(--secondary--color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.75rem;
+  text-align: center;
+}
+
+.herocontainer :global(.title-section h1) {
   margin-bottom: 2rem;
   text-align: left;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 2.3rem;
 }
 
 .herocontainer :global(.title-section p) {
@@ -11,10 +52,10 @@
   line-height: 4rem;
 }
 
-.techstartpcontainer :global(.title-section h2) {
+.techstartpcontainer :global(.title-section h1) {
   margin-bottom: 2rem;
   text-align: left;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.3rem;
   line-height: 3.5rem !important;
   width: 80%;
@@ -28,7 +69,7 @@
   width: 90%;
 }
 
-.techherocontainer :global(.title-section h2) {
+.techherocontainer :global(.title-section h1) {
   margin: 2rem 0;
   font-weight: 700;
 }
@@ -109,21 +150,21 @@
     margin-bottom: 1.5rem;
   }
 
-  .herocontainer :global(.title-section h2) {
+  .herocontainer :global(.title-section h1) {
     font-size: 2.5rem;
   }
   .herocontainer :global(.title-section p) {
     font-size: 1.8rem;
   }
 
-  .techstartpcontainer :global(.title-section h2) {
+  .techstartpcontainer :global(.title-section h1) {
     font-size: 2.5rem;
   }
   .techstartpcontainer :global(.title-section p) {
     font-size: 1.8rem;
   }
 
-  .techherocontainer :global(.title-section h2) {
+  .techherocontainer :global(.title-section h1) {
     font-size: 2.5rem;
   }
   .techherocontainer :global(.title-section p) {
@@ -137,21 +178,21 @@
     margin-bottom: 1.2rem;
   }
 
-  .herocontainer :global(.title-section h2) {
+  .herocontainer :global(.title-section h1) {
     font-size: 2.2rem;
   }
   .herocontainer :global(.title-section p) {
     font-size: 1.5rem;
   }
 
-  .techstartpcontainer :global(.title-section h2) {
+  .techstartpcontainer :global(.title-section h1) {
     font-size: 2.2rem;
   }
   .techstartpcontainer :global(.title-section p) {
     font-size: 1.5rem;
   }
 
-  .techherocontainer :global(.title-section h2) {
+  .techherocontainer :global(.title-section h1) {
     font-size: 2.2rem;
   }
   .techherocontainer :global(.title-section p) {

@@ -37,7 +37,7 @@
   border-bottom: 1px solid var(--border-secondary);
 }
 
-.casestudiessection :global(.title-section h2) {
+.casestudiessection :global(.title-section h1) {
   text-align: left;
   margin-bottom: 1.25rem;
 }
@@ -55,8 +55,7 @@
   height: 4px;
   position: absolute;
   left: 0;
-  background: linear-gradient(var(--primary-color) 100%,
-      var(--primary-variant-one) 100%);
+  background: linear-gradient(var(--primary-color) 100%, var(--primary-variant-one) 100%);
   top: 17px;
 }
 
@@ -221,11 +220,51 @@
   text-transform: uppercase;
 }
 
-.casestudylist :global(.title-section h2) {
+.casestudylist :global(.title-section h1) {
   margin: 1rem 0;
   font-weight: bold;
   font-size: 30px;
   line-height: 50px;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.singleLine h2,
+.singleLine p {
+  display: inline; /* Make title and subtitle inline */
+  margin-right: 0.5rem; /* Optional: Add some space between title and subtitle */
+}
+
+.maintitle {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4.25rem;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.maintitle.maindarktitle {
+  color: var(--secondary--color);
+}
+
+.maintitlespan span {
+  background: linear-gradient(90deg, var(--primary-color) 0.08%, var(--primary-variant-one) 99.95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  border-bottom: 3px solid var(--primary-variant-one);
+}
+
+.subtitle {
+  color: var(--secondary--color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.75rem;
+  text-align: center;
 }
 
 .casestudylist :global(.title-section p) {
@@ -556,14 +595,13 @@
   .careerTitle :global(.title-section h2) {
     padding-bottom: 0.5rem !important;
   }
-  
+
   .careerTitle :global(.title-section p) {
     width: 90%;
   }
 }
 
 @media only screen and (max-width: 425px) {
-
   .clientspeaksection :global(.title-section h2),
   .methodology :global(.title-section h2) {
     font-size: 2rem;
@@ -606,11 +644,9 @@
   .trustsection :global(.title-section p span) {
     font-size: 1.25rem;
   }
-  
 }
 
 @media only screen and (max-width: 767px) {
-
   .clientspeaksection :global(.title-section h2),
   .methodology :global(.title-section h2) {
     font-size: 1.5rem;

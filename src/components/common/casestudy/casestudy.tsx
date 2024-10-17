@@ -144,9 +144,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                   </div>
                 )}
                 <div className={styles.resultview}>
-                  <h4>
+                  <h3>
                     {caseStudy.additionalTitle ? caseStudy.additionalTitle : ""}
-                  </h4>
+                  </h3>
                   <ul
                     className={styles.successratiobox}
                     dangerouslySetInnerHTML={{

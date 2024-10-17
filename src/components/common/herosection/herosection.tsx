@@ -1,5 +1,4 @@
 import Button from "@/components/common/button/button"
-import TitleSection from "@/components/common/title/title"
 import Image from "next/image"
 import React from "react"
 import styles from "./herosection.module.css"
@@ -49,13 +48,16 @@ const Herosection: React.FC<HeroSectionProps> = ({
               width={160}
             />
           </div>
-          <TitleSection
-            sectionData={{
-              title: props?.title || "",
-              subtitle: props?.subTitle || ""
-            }}
-            titleClassName="techherosectiontitle"
-          />
+          <div className={`title-section mb-6 `}>
+            <h1
+              className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan} !mb-4`}
+              dangerouslySetInnerHTML={{ __html: props?.title || "" }}
+            />
+            <p
+              className={styles.subtitle}
+              dangerouslySetInnerHTML={{ __html: props?.subTitle || "" }}
+            />
+          </div>
           <Button
             href={props?.buttonUrl || "#"}
             text={props?.buttonText || ""}
@@ -75,13 +77,16 @@ const Herosection: React.FC<HeroSectionProps> = ({
       <div className="flex flex-wrap sm:flex-row flex-col items-center">
         <div className="w-full md:w-1/2">
           {/* <p className={styles.label}>{props?.label || ""}</p> */}
-          <TitleSection
-            sectionData={{
-              title: props?.title || "",
-              subtitle: props?.subTitle || ""
-            }}
-            titleClassName="herosectiontitle"
-          />
+          <div className={`title-section mb-6 herosectiontitle`}>
+            <h1
+              className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan} !mb-4`}
+              dangerouslySetInnerHTML={{ __html: props?.title || "" }}
+            />
+            <p
+              className={styles.subtitle}
+              dangerouslySetInnerHTML={{ __html: props?.subTitle || "" }}
+            />
+          </div>
           <div className="w-fit mb-8 md:mb-0">
             {isTechStartup ? (
               <Button
