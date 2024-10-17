@@ -5,14 +5,16 @@ import Image from "next/image"
 
 const ImageSlider = ({
   images,
+  alt,
   setDetailedOpen,
   setDetailedImagesUrl,
   small = false
 }: {
   images: string[];
-  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>
-  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>
-  small?: boolean
+  alt: string[];
+  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
+  small?: boolean;
 }) => {
   const imageSlider = useRef(null)
 
@@ -46,11 +48,16 @@ const ImageSlider = ({
         {images.map((item, i) => (
           <div className={styles.imageSlide} key={i}>
             {/* Use item as key if unique */}
-            <Image width={small ? 350 : 500} src={item} alt="" height={small ? 350 : 600} />
+            <Image
+              width={small ? 350 : 500}
+              src={item}
+              alt={alt[i]}
+              height={small ? 350 : 600}
+            />
             <div className={styles.overlay} onClick={handleOverlayClick}>
               <Image
                 src="/images/maximize-4.svg"
-                alt={`${item}-${i}`}
+                alt={alt[i]}
                 width={40}
                 height={40}
               />

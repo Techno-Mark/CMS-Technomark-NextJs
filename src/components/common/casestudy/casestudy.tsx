@@ -13,6 +13,7 @@ interface CaseStudyList {
   image: string;
   text: string;
   subpoints: string[];
+  alt?: string[];
   video: string;
   additionalTitle: string;
   additionalPoints: { score: string; description: string }[];
@@ -110,6 +111,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                     setDetailedImagesUrl={setDetailedImagesUrl}
                     setDetailedOpen={setDetailedOpen}
                     images={caseStudy.video.split(",")}
+                    alt={caseStudy.alt?.split(",")}
                   />
                 ) : (
                   <div className={styles.videoarea}>
@@ -118,7 +120,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                         width="320"
                         height="240"
                         src={
-                          caseStudy.video ? caseStudy.video : "/images/Case-study.mp4"
+                          caseStudy.video
+                            ? caseStudy.video
+                            : "/images/Case-study.mp4"
                         }
                         type="video/mp4"
                       />
@@ -146,7 +150,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
                   <ul
                     className={styles.successratiobox}
                     dangerouslySetInnerHTML={{
-                      __html: caseStudy.additionalPoints ? caseStudy.additionalPoints : ""
+                      __html: caseStudy.additionalPoints
+                        ? caseStudy.additionalPoints
+                        : ""
                     }}
                   />
                 </div>
