@@ -30,7 +30,7 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
 
         return (
           <div key={index} className={`${styles.cardheader}  mb-5`}>
-            <h2 id={`accordion-collapse-heading-${index}`}>
+            <h3 id={`accordion-collapse-heading-${index}`}>
               <button
                 type="button"
                 className={`flex justify-between items-center w-full  ${styles.cardtitle}`}
@@ -59,7 +59,7 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
                   width={32}
                 />
               </button>
-            </h2>
+            </h3>
             <div
               id={`accordion-collapse-body-${index}`}
               className={`transition-max-height duration-500 ease-in-out overflow-hidden ${

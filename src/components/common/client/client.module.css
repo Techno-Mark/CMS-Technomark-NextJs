@@ -55,7 +55,7 @@
   min-height: 200px;
 }
 
-.textbox h4 {
+.textbox h3 {
   color: var(--secondary--color);
   font-size: 2rem;
   font-weight: 600;
@@ -64,7 +64,7 @@
   padding: 1rem 0 0;
 }
 
-.textbox h6 {
+.textbox h4 {
   color: var(--secondary--color);
   font-size: 1.5rem;
   font-weight: 500;

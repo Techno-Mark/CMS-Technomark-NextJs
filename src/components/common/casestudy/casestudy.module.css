@@ -85,7 +85,7 @@
   border-bottom: 2px solid var(--primary-color);
 }
 
-.resultview h4 {
+.resultview h3 {
   color: var(--text-casestudy);
   font-size: 1.4rem;
   font-weight: 700;

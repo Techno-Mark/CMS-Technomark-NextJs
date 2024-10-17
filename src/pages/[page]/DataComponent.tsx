@@ -521,14 +521,25 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <p className={`${styles.casestudylistlabel}`}>
                   {sectionData.label ? sectionData.label : ""}
                 </p>
-                <TitleSection
+                {/* <TitleSection
                   sectionData={{
                     title: sectionData.title ? sectionData.title : "",
                     subtitle: sectionData.subtitle ? sectionData.subtitle : ""
                   }}
                   titleFirst={true}
                   titleClassName="casestudylisttitle"
-                />
+                /> */}
+                <div className={`title-section mb-6 `}>
+                  <h1
+                    className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan} !mb-4`}
+                    dangerouslySetInnerHTML={{ __html: sectionData.title ? sectionData.title : "" }}
+                  />
+                  <p
+                    className={styles.subtitle}
+                    dangerouslySetInnerHTML={{ __html: sectionData?.subtitle || "" }}
+                  />
+                </div>
+
                 <CaseStudyList
                   props={sectionData}
                   setDetailedOpen={setDetailedOpen}
@@ -1060,13 +1071,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
           )
         )
       case "Privacy Policy":
-        return (
-          sectionData && (
-            <PrivacyPolicy
-              content={sectionData}
-            />
-          )
-        )
+        return sectionData && <PrivacyPolicy content={sectionData} />
       // case "bloglist":
       //   return (
       //     sectionData && (
