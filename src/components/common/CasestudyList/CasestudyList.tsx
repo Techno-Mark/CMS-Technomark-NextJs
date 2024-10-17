@@ -119,8 +119,7 @@ const CaseStudyList: React.FC<CaseStudyListProps> = ({
                 setDetailedImagesUrl={setDetailedImagesUrl}
                 setDetailedOpen={setDetailedOpen}
                 images={caseStudy.video.split(",")}
-                small={isSmall}
-              />
+                small={isSmall} alt={[]} />
             ) : (
               <div className={styles.videoarea}>
                 <video autoPlay loop muted>
