@@ -1,20 +1,22 @@
-import React, { useRef } from "react"
-import Slider from "react-slick"
-import styles from "./imageslider.module.css"
-import Image from "next/image"
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import styles from "./imageslider.module.css";
+import Image from "next/image";
 
 const ImageSlider = ({
   images,
+  alt,
   setDetailedOpen,
   setDetailedImagesUrl,
-  small = false
+  small = false,
 }: {
   images: string[];
-  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>
-  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>
-  small?: boolean
+  alt: string[];
+  setDetailedOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDetailedImagesUrl: React.Dispatch<React.SetStateAction<string[]>>;
+  small?: boolean;
 }) => {
-  const imageSlider = useRef(null)
+  const imageSlider = useRef(null);
 
   const imgSliderSettings = {
     dots: false,
@@ -29,16 +31,16 @@ const ImageSlider = ({
       {
         breakpoint: 767,
         settings: {
-          arrows: false
-        }
-      }
-    ]
-  }
+          arrows: false,
+        },
+      },
+    ],
+  };
 
   const handleOverlayClick = () => {
-    setDetailedOpen(true)
-    setDetailedImagesUrl(images)
-  }
+    setDetailedOpen(true);
+    setDetailedImagesUrl(images);
+  };
 
   return (
     <div className={small ? styles.sliderContainer2 : styles.sliderContainer1}>
@@ -46,11 +48,16 @@ const ImageSlider = ({
         {images.map((item, i) => (
           <div className={styles.imageSlide} key={i}>
             {/* Use item as key if unique */}
-            <Image width={small ? 350 : 500} src={item} alt="" height={small ? 350 : 600} />
+            <Image
+              width={small ? 350 : 500}
+              src={item}
+              alt={alt[i]}
+              height={small ? 350 : 600}
+            />
             <div className={styles.overlay} onClick={handleOverlayClick}>
               <Image
                 src="/images/maximize-4.svg"
-                alt={`${item}-${i}`}
+                alt={alt[i]}
                 width={40}
                 height={40}
               />
@@ -59,7 +66,7 @@ const ImageSlider = ({
         ))}
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default ImageSlider
+export default ImageSlider;
