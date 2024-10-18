@@ -5,6 +5,7 @@ import React, { lazy, useEffect, useRef, useState } from "react"
 import styles from "./home.module.css"
 import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider"
 import BlogList from "../blogs/list/blogList/BlogList"
+import DevelopmentExpertise from "@/components/common/developmentExertise/developmentExpertise"
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"))
 const TechStartupBg = lazy(
@@ -532,11 +533,15 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                 <div className={`title-section mb-6 `}>
                   <h1
                     className={`${styles.maintitle} ${styles.maindarktitle} ${styles.maintitlespan} !mb-4`}
-                    dangerouslySetInnerHTML={{ __html: sectionData.title ? sectionData.title : "" }}
+                    dangerouslySetInnerHTML={{
+                      __html: sectionData.title ? sectionData.title : ""
+                    }}
                   />
                   <p
                     className={styles.subtitle}
-                    dangerouslySetInnerHTML={{ __html: sectionData?.subtitle || "" }}
+                    dangerouslySetInnerHTML={{
+                      __html: sectionData?.subtitle || ""
+                    }}
                   />
                 </div>
 
@@ -1070,6 +1075,8 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
             </section>
           )
         )
+      case "Development Expertise":
+        return sectionData && <DevelopmentExpertise data={sectionData} />
       case "Privacy Policy":
         return sectionData && <PrivacyPolicy content={sectionData} />
       // case "bloglist":
@@ -1110,6 +1117,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         images={detailedSliderImagesUrl}
         onClose={() => setDetailedOpen(false)}
       />
+
       {homeData ? (
         homeData.formatData.map((sectionName: any, index: number) => (
           <React.Fragment key={index}>
