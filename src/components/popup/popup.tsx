@@ -99,6 +99,30 @@ const Popup = ({ popupData }: any) => {
         </div>
       </div>
     )
+  } else if (popupData.popupType === "Normal") {
+    return (
+      <div className="popup">
+        <div className={styles.popupmain}>
+          <div className={styles.popupcontent}>
+            <button className={styles.closeButton} onClick={handleClose}>
+              <Image
+                src="/images/close.png"
+                alt="close"
+                width={36}
+                height={36}
+              />
+            </button>
+            <div
+              className={styles.popupcontainer}
+              style={{
+                backgroundImage: `url('${popupData?.image}')`
+              }}
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return null
