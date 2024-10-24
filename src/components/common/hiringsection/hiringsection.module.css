@@ -1,0 +1,253 @@
+.formcontainer {
+  display: flex;
+}
+
+.techstartupform {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.jointeam {
+  margin-bottom: 2.5rem;
+}
+
+.formleft {
+  flex: 3;
+}
+
+.formright {
+  flex: 2;
+}
+
+.formtext h2 {
+  font-family: Montserrat;
+  color: var(--secondary--color);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.formtext .inlineIcon {
+  display: flex;
+  align-items: center;
+}
+
+.formtext .inlineIcon {
+  display: flex;
+  align-items: center;
+}
+
+.formtext .inlineIcon h3 {
+  color: var(--secondary--color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-left: 15px;
+}
+
+.formtext :global(.title-section h2) {
+  font-style: normal !important;
+  text-align: start !important;
+  max-width: 550px;
+  margin-bottom: 50px !important;
+}
+
+.jointeam p {
+  color: var(--secondary--color);
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  width: 90%;
+  padding-left: 4.5rem;
+}
+
+.jointeam .description span {
+  padding-right: 5px;
+  transition: 1s ease-in-out all;
+  padding: 2px 5px 2px 1px;
+  position: relative;
+  font-weight: 500;
+}
+
+.jointeam .description span:hover {
+  background: #e6f7e9;
+}
+
+.jointeam .description span:hover::after {
+  width: 100%;
+}
+
+.inlineIcon .checkicon {
+  border-radius: 100px;
+}
+
+/* Hover effect for both the icon and the h3 when hovering either one */
+.inlineIcon:hover .checkicon {
+  outline: 6px solid rgba(22, 137, 68, 0.5);
+  background: var(--secondary--color);
+}
+
+.inlineIcon h3 {
+  transition:
+    border-bottom 0.2s ease-in-out 0.2s,
+    color 0.2s ease-in-out;
+}
+
+.inlineIcon:hover h3 {
+  color: rgba(22, 137, 68, 1);
+  border-bottom: 2px solid #168944;
+}
+
+.techstartupform .formleft,
+.techstartupform .formright {
+  flex: 2;
+}
+
+.techstartupform .formleft {
+  padding-left: 10rem;
+}
+
+.formtext ul {
+  margin: 0;
+  padding-left: 1.7rem;
+  width: 88%;
+}
+
+.formtext ul li {
+  font-family: Montserrat;
+  color: var(--secondary--color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 3rem;
+  list-style-type: auto;
+}
+
+.formbubblebg {
+  position: relative;
+}
+
+.techstartupform .formbubblebg {
+  display: none;
+}
+
+.formbubblebg .formbubblecircle img {
+  position: absolute;
+  left: -13rem;
+  width: 570px;
+  top: 18rem;
+}
+
+.formarea {
+  border-radius: 20px;
+  padding: 4rem;
+  border: 1px solid var(--border-ternary);
+  background: var(--white-color);
+  position: relative;
+  z-index: 5;
+  box-shadow:
+    0px 0px 0px 1px #eaeaea,
+    0px 1px 3px 0px rgba(143, 143, 143, 0.2),
+    0px -2.4px 0px 0px rgba(61, 61, 61, 0.04) inset,
+    0px 6px 13px 0px rgba(0, 0, 0, 0.04),
+    0px 53px 32px 0px rgba(0, 0, 0, 0.02);
+}
+
+.formarea h4 {
+  font-family: Montserrat;
+  margin-bottom: 4rem;
+  color: var(--secondary--color);
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.formwrap {
+  margin-bottom: 2.5rem;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid var(--secondary--variant-one);
+  width: 100%;
+  padding-bottom: 1.2rem;
+  color: var(--secondary--variant-one);
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  background: var(--white-color);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--secondary--variant-one);
+}
+
+.input::-ms-input-placeholder {
+  color: var(--secondary--variant-one);
+}
+
+.errorInput {
+  border-bottom: 1px solid red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.formbtn {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: fit-content;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1055px) {
+ 
+
+  .jointeam p {
+    padding-left: 5.3rem;
+  }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+  .formcontainer {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .jointeam p {
+    padding-left: 5.3rem;
+  }
+
+  .formright {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .formarea h4 {
+    margin-bottom: 0;
+  }
+
+  .formarea {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .formtext h2 {
+    font-size: 1.5rem;
+  }
+
+  .formtext .inlineIcon h3 {
+    font-size: 1.25rem;
+  }
+}
