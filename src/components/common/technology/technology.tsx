@@ -8,11 +8,9 @@ const predefinedPositions = [
   { left: 68, top: 27 },
   { left: 80, top: 15 },
   { left: 88, top: 25 },
-  //   { left: 10, top: 40 }, //{ left: "10%", top: "37%" },
-  { left: 20, top: 42 }, //{ left: "8%", top: "52%" },
-  { left: 80, top: 42 }, //{ left: "80%", top: "38%" },
-  { left: 90, top: 50 }, //{ left: "93%", top: "55%" },
-  //   { left: 8, top: 75 },
+  { left: 20, top: 42 },
+  { left: 80, top: 42 },
+  { left: 90, top: 50 },
   { left: 16, top: 61 },
   { left: 25, top: 80 },
   { left: 35, top: 67 },
@@ -21,7 +19,12 @@ const predefinedPositions = [
   { left: 65, top: 80 },
   { left: 75, top: 63 },
   { left: 80, top: 78 },
-  //   { left: 92, top: 70 },
+  { left: 8, top: 75 },
+  { left: 10, top: 40 },
+  { left: 92, top: 70 },
+  { left: 95, top: 95 },
+  { left: 15, top: 85 },
+  { left: 5, top: 10 },
 ];
 
 const TechnologyNewComponent = ({
@@ -56,7 +59,14 @@ const TechnologyNewComponent = ({
         >
           <div className="text-3xl md:text-4xl lg:text-2xl">
             {/* {images.ico[index % images.length]} */}
-            <img src={pos.icon} alt={pos.title} className="w-[20px]" />
+            <div className="flex flex-col gap-1 justify-center items-center">
+              <img
+                src={pos.icon}
+                alt={pos.title}
+                className="lg:w-[40px] md:w-[30px] w-[20px]"
+              />
+              <p className="lg:text-base md:text-sm text-xs">{pos.title}</p>
+            </div>
           </div>
         </div>
       ))}

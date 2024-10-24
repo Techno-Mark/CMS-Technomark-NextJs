@@ -266,7 +266,7 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
         return (
           sectionData && (
             <TechnologyNewComponent
-              title={sectionData.title} //"Our Technologies"
+              title={sectionData.title}
               description={sectionData.subtitle}
               images={sectionData.icons}
             />
