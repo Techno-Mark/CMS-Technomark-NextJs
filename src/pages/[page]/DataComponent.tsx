@@ -6,6 +6,7 @@ import styles from "./home.module.css"
 import MaximizedSlider from "@/components/common/casestudy/MaximizedSlider"
 import BlogList from "../blogs/list/blogList/BlogList"
 import DevelopmentExpertise from "@/components/common/developmentExertise/developmentExpertise"
+import HiringSection from "@/components/common/hiringsection/hiringsection"
 
 const Homesection = lazy(() => import("@/components/homesection/HomeSection"))
 const TechStartupBg = lazy(
@@ -510,6 +511,19 @@ const DataComponent = ({ data }: { data: HomeProps }) => {
                     )
                   }
                 />
+              </div>
+            </section>
+          )
+        )
+      case "Hiring Easy Step Section":
+        return (
+          sectionData && (
+            <section
+              ref={formSectionRef}
+              className={`${styles.formsection} tm-section bg-[var(--bg-quaternary)]`}
+            >
+              <div className="container mx-auto">
+                <HiringSection props={sectionData} />
               </div>
             </section>
           )
